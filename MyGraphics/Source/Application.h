@@ -5,6 +5,7 @@
 #include "timer.h"
 #include "sceneSP2.h"
 #include "DetectMemoryLeak.h"
+#include "GameObject.h"
 
 class Application
 {
