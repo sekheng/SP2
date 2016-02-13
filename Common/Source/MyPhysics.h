@@ -1,25 +1,38 @@
+/******************************************************************************/
+/*!
+\file       MyPhysics.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief
+header file for physics helper function
+*/
+/******************************************************************************/
 #ifndef MY_PHYSICS_H_
 #define MY_PHYSICS_H_
 
 /******************************************************************************/
 /*!
 \brief
-Math namespace
+Physics namespace
 */
 /******************************************************************************/
 namespace Physics
 {
-    //Earth's gravitional force is not this value!
-    int earth_gravitational_force = 50;
+    //Earth's gravitional force is not this value! and realism sucks
+    int earth_gravitational_force = 10;
 
     /******************************************************************************/
     /*!
     \brief
-    decreases the acceleration and velocity. 
-    Do note that time is double
+    decreases the velocity. 
+    Do note that time's data type is double
 
-    \param pull - the force or acceleration
+    \param pull - the force or speed
     \param dt - time passes
+    \param gravity - the gravity that will affect the the acceleration, but is being default to earth's gravitational force
+
+    \return 
+    Affected Speed
     */
     /******************************************************************************/
     template<typename T>
@@ -29,13 +42,19 @@ namespace Physics
         return pull_speed;
     }
 
-    template<typename T>
-    void speed(T& speed, T force, T mass,double dt)
-    {
-        if (speed * mass < force)
-            speed += (T)(force * dt);
-    }
+    /******************************************************************************/
+    /*!
+    \brief
+    Get the acceleration from the force and mass. 
+    Do note that the force should be impulse instead of a regular force
 
+    \param force - the force or impulse
+    \param mass - mass of the object
+
+    \return
+    Acceleration
+    */
+    /******************************************************************************/
     template<typename T>
     T getAcceleration(T force, T mass)
     {
