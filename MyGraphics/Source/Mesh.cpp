@@ -77,6 +77,15 @@ void Mesh::Render()
     }
 }
 
+/******************************************************************************/
+/*!
+\brief
+OpenGL render code with offset and count to get specific position of the image.
+
+\param offset - the distance between each of the rendering stuff
+\param count - how many stuff are there
+*/
+/******************************************************************************/
 void Mesh::Render(unsigned offset, unsigned count)
 {
     glEnableVertexAttribArray(0); // 1st attribute buffer : positions

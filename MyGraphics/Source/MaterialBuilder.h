@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file       MaterialBuilder.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+A factory to create different types of materials
+*/
+/******************************************************************************/
 #ifndef MATERIAL_BUILDER_H
 #define MATERIAL_BUILDER_H
 

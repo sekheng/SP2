@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file       Mesh.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+class to define mesh
+*/
+/******************************************************************************/
 #ifndef MESH_H
 #define MESH_H
 

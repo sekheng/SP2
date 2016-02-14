@@ -1,3 +1,13 @@
+/******************************************************************************/
+/*!
+\file       sceneSP2.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+Creating a clean scene so that my teammates can code in ease
+Hopefully they don't mess it up
+*/
+/******************************************************************************/
 #ifndef SCENE_SP2_H_
 #define SCENE_SP2_H_
 
@@ -8,6 +18,14 @@
 #include "MatrixStack.h"
 #include "removeMonospace.h"
 
+/******************************************************************************/
+/*!
+Class sceneSP2:
+\brief
+inheirited from Scene and made improvised to it. 
+To turn it into a game.
+*/
+/******************************************************************************/
 class sceneSP2 : public Scene
 {
     enum GEOMETRY_TYPE

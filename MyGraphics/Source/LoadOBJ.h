@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file       LoadOBJ.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+loading of the OBJ from external source
+*/
+/******************************************************************************/
 #ifndef LOAD_OBJ_H
 #define LOAD_OBJ_H
 

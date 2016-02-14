@@ -1,8 +1,25 @@
+/******************************************************************************/
+/*!
+\file       Camera3.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+An improvised camera inheirited from Camera Class
+*/
+/******************************************************************************/
 #ifndef CAMERA_3_H
 #define CAMERA_3_H
 
 #include "Camera.h"
 
+/******************************************************************************/
+/*!
+Class Camera3:
+\brief
+First Person Camera included
+Extremely Complex functions of the camera which incorporates mouse control
+*/
+/******************************************************************************/
 class Camera3 : public Camera
 {
 public:

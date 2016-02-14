@@ -1,8 +1,24 @@
+/******************************************************************************/
+/*!
+\file       Camera.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+Creating the functions of a Camera. But not fully improvised so it is important to create another camera class and inheirit from it
+*/
+/******************************************************************************/
 #ifndef CAMERA_H
 #define CAMERA_H
 
 #include "Vector3.h"
 
+/******************************************************************************/
+/*!
+Class Camera:
+\brief
+basic functions of the camera
+*/
+/******************************************************************************/
 class Camera
 {
 public:

@@ -81,16 +81,43 @@ void Camera::Update(double dt)
 	};
 }
 
+/******************************************************************************/
+/*!
+\brief - 
+Move the x coordinate of the camera in a circular way
+
+\param phi - an angle
+\param thetha - an angle
+*/
+/******************************************************************************/
 float Camera::moveX(float phi, float theta)
 {
 	return (cos(Math::DegreeToRadian(phi))) * (cos(Math::DegreeToRadian(theta)));
 }
 
+/******************************************************************************/
+/*!
+\brief -
+Move the y coordinate of the camera in a circular way
+
+\param phi - an angle
+\param thetha - an angle
+*/
+/******************************************************************************/
 float Camera::moveY(float phi, float theta)
 {
 	return sin(Math::DegreeToRadian(phi));
 }
 
+/******************************************************************************/
+/*!
+\brief -
+Move the z coordinate of the camera in a circular way
+
+\param phi - an angle
+\param thetha - an angle
+*/
+/******************************************************************************/
 float Camera::moveZ(float phi, float theta)
 {
 	return (cos(Math::DegreeToRadian(phi))) * (sin(Math::DegreeToRadian(theta)));
