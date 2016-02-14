@@ -398,6 +398,9 @@ rendering of the texts using quads on screen
 \param mesh - a pointer to the specific mesh
 \param text - the text that needs to be rendered
 \param color - the color of the text
+\param size - size of the text
+\param x - x coordinate of the text
+\param y - y coordinate of the text
 */
 /******************************************************************************/
 void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
@@ -440,6 +443,19 @@ void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
     modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering of image using quad on screen
+
+\param mesh - a pointer to the specific mesh
+\param text - the text that needs to be rendered
+\param color - the color of the text
+\param size - size of the text
+\param x - x coordinate of the text
+\param y - y coordinate of the text
+*/
+/******************************************************************************/
 void sceneSP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;

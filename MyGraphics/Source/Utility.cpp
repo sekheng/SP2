@@ -1,5 +1,16 @@
 #include "Utility.h"
 
+/******************************************************************************/
+/*!
+\brief -
+an operator to multiply Mtx44 and positionc coordinates
+
+\param lhs - the matrix
+\param rhx - the position
+
+\return a new copy of Position
+*/
+/******************************************************************************/
 Position operator*(const Mtx44& lhs, const Position& rhs)
 {
 	float b[4];

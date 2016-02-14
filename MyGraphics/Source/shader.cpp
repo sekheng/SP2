@@ -13,7 +13,16 @@ using namespace std;
 
 #include "shader.hpp"
 
-GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path){
+/******************************************************************************/
+/*!
+\brief -
+loading of the vertex shaders and fragment shaders from external source
+
+\param vertex_file_path - path name to the vertex file location
+\param fragment_file_path - path name to the fragment file location
+*/
+/******************************************************************************/
+GLuint LoadShaders(const char * vertex_file_path, const char * fragment_file_path){
 
 	// Create the shaders
 	GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
