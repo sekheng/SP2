@@ -16,38 +16,89 @@ GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 
-//Define an error callback
+/******************************************************************************/
+/*!
+\brief
+define an error callback
+*/
+/******************************************************************************/
 static void error_callback(int error, const char* description)
 {
 	fputs(description, stderr);
 	_fgetchar();
 }
 
-//Define the key input callback
+/******************************************************************************/
+/*!
+\brief
+Closes the window when press ESC
+*/
+/******************************************************************************/
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, GL_TRUE);
 }
 
+/******************************************************************************/
+/*!
+\brief - 
+Define the key input callback and prevent the key from pressing twice
+
+\return - whether the key that the player pressed is true
+*/
+/******************************************************************************/
 bool Application::IsKeyPressed(unsigned short key)
 {
     return ((GetAsyncKeyState(key) & 0x8001) != 0);
 }
 
+/******************************************************************************/
+/*!
+\brief -
+Default Constructor
+*/
+/******************************************************************************/
 Application::Application()
 {
 }
 
+/******************************************************************************/
+/*!
+\brief -
+Destructor
+*/
+/******************************************************************************/
 Application::~Application()
 {
 }
 
+/******************************************************************************/
+/*!
+\brief -
+update the opengl with new window size
+
+\param window - 
+The original window
+
+\param w - 
+the new width of the window
+
+\param h - 
+the new height of the window
+*/
+/******************************************************************************/
 void resize_callback(GLFWwindow* window, int w, int h)
 { 
 	glViewport(0, 0, w, h);	//update opengl the new window size
 }
 
+/******************************************************************************/
+/*!
+\brief -
+Where the initialization of the glfw and glew, window size, and window's location
+*/
+/******************************************************************************/
 void Application::Init()
 {
 	//Set the error callback
@@ -106,6 +157,12 @@ void Application::Init()
     glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 }
 
+/******************************************************************************/
+/*!
+\brief -
+Initializing of the scene, and starting of the game
+*/
+/******************************************************************************/
 void Application::Run()
 {
 	//Main Loop
@@ -130,6 +187,12 @@ void Application::Run()
 	delete scene;
 }
 
+/******************************************************************************/
+/*!
+\brief -
+Calls for the destroying of windows and cleaning up GLFW
+*/
+/******************************************************************************/
 void Application::Exit()
 {
 	//Close OpenGL window and terminate GLFW
