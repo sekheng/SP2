@@ -5,14 +5,37 @@
 #include "MyPhysics.h"
 #include "MyMath.h"
 
+/******************************************************************************/
+/*!
+\brief
+Default constructor
+*/
+/******************************************************************************/
 Camera3::Camera3()
 {
 }
 
+/******************************************************************************/
+/*!
+\brief
+Destructor
+*/
+/******************************************************************************/
 Camera3::~Camera3()
 {
 }
 
+/******************************************************************************/
+/*!
+\brief
+Initialize camera
+
+\param pos - position of camera
+\param target - where the camera is looking at
+\param up - up vector of camera
+\param mass - mass of the camera which is default to 0
+*/
+/******************************************************************************/
 void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up, int mass)
 {
     this->position = defaultPosition = pos;
@@ -32,6 +55,14 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up,
     float cameraSpeed = 1;
 }
 
+/******************************************************************************/
+/*!
+\brief
+To be called every frame. Camera will get user inputs and update its position and orientation
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void Camera3::Update(double dt)
 {
     static const float CAMERA_SPEED = 50.f;
@@ -126,6 +157,12 @@ void Camera3::Update(double dt)
     }
 }
 
+/******************************************************************************/
+/*!
+\brief
+Reset the camera settings
+*/
+/******************************************************************************/
 void Camera3::Reset()
 {
     position = defaultPosition;
@@ -135,6 +172,14 @@ void Camera3::Reset()
     CameraYrotation = defaultCameraYrotation;
 }
 
+/******************************************************************************/
+/*!
+\brief
+rotation of the camera based on the mouse movement
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void Camera3::rotateCamera(double dt)
 {
     POINT mousePosition;
@@ -150,6 +195,14 @@ void Camera3::rotateCamera(double dt)
     up = right.Cross(view);
 }
 
+/******************************************************************************/
+/*!
+\brief
+An improved camera movement based on first person
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void Camera3::cameraMovement(double dt)
 {
     float walkingX = 0;
@@ -184,31 +237,81 @@ void Camera3::cameraMovement(double dt)
     position.z += walkingZ;
 }
 
+/******************************************************************************/
+/*!
+\brief
+getting camera's position of x coordinate
+
+\return - x coordinate of camera's position
+*/
+/******************************************************************************/
 float Camera3::getCameraXcoord()
 {
     return position.x;
 }
 
+/******************************************************************************/
+/*!
+\brief
+getting camera's position of z coordinate
+
+\return - z coordinate of camera's position
+*/
+/******************************************************************************/
 float Camera3::getCameraZcoord()
 {
     return position.z;
 }
 
 
+/******************************************************************************/
+/*!
+\brief
+getting camera's position of y coordinate
+
+\return - y coordinate of camera's position
+*/
+/******************************************************************************/
 float Camera3::getCameraYcoord()
 {
     return position.y;
 }
 
 
+/******************************************************************************/
+/*!
+\brief
+getting camera's rotation based on the x axis
+
+\return - camera's rotational angle based on the x axis
+*/
+/******************************************************************************/
 float Camera3::getCameraXrotation() {
     return CameraXrotation;
 }
 
+/******************************************************************************/
+/*!
+\brief
+getting camera's rotation based on the y axis
+
+\return - camera's rotational angle based on the y axis
+*/
+/******************************************************************************/
 float Camera3::getCameraYrotation() {
     return CameraYrotation;
 }
 
+/******************************************************************************/
+/*!
+\brief
+Setting the coordinates of the camera's position
+
+\param x - coordinate x of the camera's position
+\param y - coordinate y of the camera's position
+\param z - coordinate z of the camera's position
+*/
+/******************************************************************************/
 void Camera3::setLocation(float x, float y, float z) {
     position.x = x;
     defaultPosition.x = x;

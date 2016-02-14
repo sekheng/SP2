@@ -1,4 +1,3 @@
-
 /******************************************************************************/
 /*!
 \file       main.cpp
@@ -12,7 +11,15 @@ Taken from Mr Tang's framework
 
 #include "Application.h"
 
-int main( void )
+/******************************************************************************/
+/*!
+\brief -
+the primary functions that the program will run
+
+\return 0
+*/
+/******************************************************************************/
+int main(void)
 {
 	Application app;
 	app.Init();

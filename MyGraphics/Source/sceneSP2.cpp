@@ -15,13 +15,33 @@
 #include "LoadTGA.h"
 
 
+/******************************************************************************/
+/*!
+\brief - 
+constructor with 2 arguments to store the width and height of the screen
+
+\param screenwidth - width of the screen
+\param screenheight - height of the screen
+*/
+/******************************************************************************/
 sceneSP2::sceneSP2(float screenwidth, float screenheight)
     : screenWidth(screenwidth), screenHeight(screenheight)
 {
 }
+/******************************************************************************/
+/*!
+\brief - destructor
+*/
+/******************************************************************************/
 sceneSP2::~sceneSP2()
 {
 }
+/******************************************************************************/
+/*!
+\brief - 
+initializing whatever is needed for the scene
+*/
+/******************************************************************************/
 void sceneSP2::Init()
 {
 
@@ -129,6 +149,14 @@ void sceneSP2::Init()
     camera.cursorCoordY = screenHeight / 2;
 }
 
+/******************************************************************************/
+/*!
+\brief - 
+where the logic of the game is, and update
+
+\param dt - time frame
+*/
+/******************************************************************************/
 void sceneSP2::Update(double dt)
 {
     camera.Update(dt);
@@ -183,6 +211,14 @@ void sceneSP2::Update(double dt)
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - rendering of the meshes
+
+\param mesh - the specific mesh
+\param enableLight - to enable lighting on the object
+*/
+/******************************************************************************/
 void sceneSP2::renderMesh(Mesh *mesh, bool enableLight)
 {
     Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -225,6 +261,12 @@ void sceneSP2::renderMesh(Mesh *mesh, bool enableLight)
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - 
+where the rendering of all the stuff we needed will be here
+*/
+/******************************************************************************/
 void sceneSP2::Render()
 {
     // Render VBO here
@@ -298,12 +340,28 @@ void sceneSP2::Render()
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 }
 
+/******************************************************************************/
+/*!
+\brief - 
+cleans up the scene
+*/
+/******************************************************************************/
 void sceneSP2::Exit()
 {
     glDeleteVertexArrays(1, &m_vertexArrayID);
     glDeleteProgram(m_programID);
 }
 
+/******************************************************************************/
+/*!
+\brief - 
+rendering of the texts using quads
+
+\param mesh - a pointer to the specific mesh
+\param text - the text that needs to be rendered
+\param color - the color of the text
+*/
+/******************************************************************************/
 void sceneSP2::RenderText(Mesh* mesh, std::string text, Color color)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -332,6 +390,16 @@ void sceneSP2::RenderText(Mesh* mesh, std::string text, Color color)
     glEnable(GL_DEPTH_TEST);
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering of the texts using quads on screen
+
+\param mesh - a pointer to the specific mesh
+\param text - the text that needs to be rendered
+\param color - the color of the text
+*/
+/******************************************************************************/
 void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check

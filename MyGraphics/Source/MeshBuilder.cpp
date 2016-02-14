@@ -63,8 +63,7 @@ Generate the vertices of a quad; Use random color for each vertex
 Then generate the VBO/IBO and store them in Mesh object
 
 \param meshName - name of mesh
-\param lengthX - width of quad
-\param lengthY - height of quad
+\param color - color of the quad
 
 \return Pointer to mesh storing VBO/IBO of quad
 */
@@ -182,21 +181,68 @@ Mesh* MeshBuilder::GenerateCube(const std::string &meshName, Color color)
     return mesh;
 }
 
+/******************************************************************************/
+/*!
+\brief - 
+get the x coordinate of the vertice based on a circular motion
+
+\param phi - an angle
+\param theta - an angle
+
+\return x coordinate of the vertice
+*/
+/******************************************************************************/
 float SphereX(float phi, float theta)
 {
 	return cos(Math::DegreeToRadian(phi)) * cos(Math::DegreeToRadian(theta));
 }
 
+/******************************************************************************/
+/*!
+\brief -
+get the y coordinate of the vertice based on a circular motion
+
+\param phi - an angle
+\param theta - an angle
+
+\return y coordinate of the vertice
+*/
+/******************************************************************************/
 float SphereY(float phi, float theta)
 {
 	return sin(Math::DegreeToRadian(phi));
 }
 
+/******************************************************************************/
+/*!
+\brief -
+get the z coordinate of the vertice based on a circular motion
+
+\param phi - an angle
+\param theta - an angle
+
+\return z coordinate of the vertice
+*/
+/******************************************************************************/
 float SphereZ(float phi, float theta)
 {
 	return cos(Math::DegreeToRadian(phi)) * sin(Math::DegreeToRadian(theta));
 }
 
+/******************************************************************************/
+/*!
+\brief
+Generate the vertices of a sphere;
+Then generate the VBO/IBO and store them in Mesh object
+
+\param meshName - name of mesh
+\param color - colour of the sphere
+\param numStacks - number of stacks to make up a sphere
+\param numSlices - number of slices to make up a stack
+
+\return Pointer to mesh storing VBO/IBO of cube
+*/
+/******************************************************************************/
 Mesh* MeshBuilder::GenerateSphere(const std::string &meshName, Color color, unsigned numStacks, unsigned numSlices)
 {
 	std::vector<Vertex> vertex_buffer_data;
@@ -241,6 +287,18 @@ Mesh* MeshBuilder::GenerateSphere(const std::string &meshName, Color color, unsi
 }
 
 
+/******************************************************************************/
+/*!
+\brief
+Generate the vertices of an object;
+Then generate the VBO/IBO and store them in Mesh object
+
+\param meshName - name of mesh
+\param file_path - the path name to the file's location
+
+\return Pointer to mesh storing VBO/IBO of cube
+*/
+/******************************************************************************/
 Mesh* MeshBuilder::GenerateOBJ(const std::string &meshName, const std::string &file_path)
 {
     //Read vertices, texcoords & normals from OBJ
@@ -269,6 +327,19 @@ Mesh* MeshBuilder::GenerateOBJ(const std::string &meshName, const std::string &f
     return mesh;
 }
 
+/******************************************************************************/
+/*!
+\brief
+Generate the vertices of texts;
+Then generate the VBO/IBO and store them in Mesh object
+
+\param meshName - name of mesh
+\param numRow - number of rows
+\param numCol - number of columns
+
+\return Pointer to mesh storing VBO/IBO of cube
+*/
+/******************************************************************************/
 Mesh* MeshBuilder::GenerateText(const std::string &meshName, unsigned numRow, unsigned numCol) {
     std::vector<Vertex> vertex_buffer_data;
     std::vector<GLuint> index_buffer_data;

@@ -5,6 +5,17 @@
 
 #include "LoadTGA.h"
 
+/******************************************************************************/
+/*!
+\brief -
+loading of targa file from external source
+
+\param file_path - the location of the file
+
+\return 0 - if the targa file can't be opened
+\return GLuint - if the targa file is loaded successfully
+*/
+/******************************************************************************/
 GLuint LoadTGA(const char *file_path)				// load TGA file to memory
 {
 	std::ifstream fileStream(file_path, std::ios::binary);

@@ -4,6 +4,20 @@
 
 #include "LoadOBJ.h"
 
+/******************************************************************************/
+/*!
+\brief - 
+loading of object file from external source
+
+\param file_path - the location of the file
+\param out_vertices - a referenced vector of vertices
+\param out_uvs - a referenced vector of texture coordinates
+\param out_normals - a referenced vector of normals
+
+\return false - if loading object file does not work
+\return true - if loading object file works
+*/
+/******************************************************************************/
 bool LoadOBJ(
 	const char *file_path, 
 	std::vector<Position> & out_vertices, 
@@ -120,6 +134,12 @@ bool LoadOBJ(
 	return true;
 }
 
+/******************************************************************************/
+/*!
+struct PackedVertex:
+\brief - vertex with it's properties
+*/
+/******************************************************************************/
 struct PackedVertex{
 	Position position;
 	TexCoord uv;
@@ -129,7 +149,20 @@ struct PackedVertex{
 	};
 };
 
-bool getSimilarVertexIndex_fast( 
+/******************************************************************************/
+/*!
+\brief -
+Copying of vertex
+
+\param packed - a referenced of PackedVertex
+\param out_vertices - a referenced vector of vertices
+\param out_uvs - a referenced vector of texture coordinates
+
+\return false - if copying finished
+\return true - if not copying finished
+*/
+/******************************************************************************/
+bool getSimilarVertexIndex_fast(
 	PackedVertex & packed, 
 	std::map<PackedVertex, unsigned short> & VertexToOutIndex,
 	unsigned short & result
@@ -146,6 +179,18 @@ bool getSimilarVertexIndex_fast(
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+indexing the vertices
+
+\param in_vertices - a referenced vector of vertices
+\param in_uvs - a referenced vector of texture coordinates
+\param in_normals - a referenced vector of normals
+\param out_indices - a referenced vector of indices
+\param out_vertices - a referenced vector of vertices
+*/
+/******************************************************************************/
 void IndexVBO(
 	std::vector<Position> & in_vertices,
 	std::vector<TexCoord> & in_uvs,
