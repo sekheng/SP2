@@ -87,6 +87,7 @@ void Camera3::Init(const char *fileLocation)
             }
             cameraCoordinates.insert(std::pair<string, float>(taking_the_stuff, static_cast<float>(stoi(values))));
         }
+        fileStream.close();
     }
     map<string, float>::iterator it = cameraCoordinates.find("positionx");
     this->position.x = defaultPosition.x = it->second;
