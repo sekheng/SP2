@@ -48,8 +48,8 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up,
     camType = COMMON;
     CameraXrotation = 0;
     CameraYrotation = 180;
-    maxCameraXrotation = 89;
-    minCameraXrotation = -89;
+    maxCameraXrotation = 88;
+    minCameraXrotation = -88;
     defaultCameraYrotation = CameraYrotation;
     defaultCameraXrotation = CameraXrotation;
     float cameraSpeed = 1;

@@ -11,6 +11,11 @@ An improvised camera inheirited from Camera Class
 #define CAMERA_3_H
 
 #include "Camera.h"
+#include <map>
+#include <string>
+
+using std::map;
+using std::string;
 
 /******************************************************************************/
 /*!
@@ -57,6 +62,7 @@ private:
     float CameraYrotation, maxCameraXrotation, minCameraXrotation;
     void cameraMovement(double dt);
     float cameraSpeed;
+    map<string, float> cameraCoordinates;
 };
 
 #endif
