@@ -4,6 +4,9 @@
 
 #include "MyPhysics.h"
 #include "MyMath.h"
+#include <fstream>
+#include <iostream>
+#include <locale>
 
 /******************************************************************************/
 /*!
@@ -36,15 +39,57 @@ Initialize camera
 \param mass - mass of the camera which is default to 0
 */
 /******************************************************************************/
-void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up, int mass)
+void Camera3::Init(const char* fileLocation)
 {
-    this->position = defaultPosition = pos;
-    this->target = defaultTarget = target;
+    std::ifstream fileStream(fileLocation, std::ios::binary);
+    if (!fileStream.is_open()) {
+        std::cout << "Impossible to open " << fileLocation << ". Are you in the right directory ?\n";
+    }
+    else {
+        while (!fileStream.eof()) {
+            string data = "";
+            getline(fileStream, data);
+            char *nextStuff;
+            char *stringtoken = strtok_s(const_cast<char*>(data.c_str()), ",", &nextStuff);
+            string taking_the_stuff = "";
+            string values = "";
+            taking_the_stuff.append(stringtoken);
+            values.append(nextStuff);
+            std::locale loc;
+            for (size_t num = 0; num < taking_the_stuff.size(); ++num) {
+                taking_the_stuff[num] = tolower(taking_the_stuff[num], loc);
+            }
+            cameraCoordinates.insert(std::pair<string, float>(taking_the_stuff, static_cast<float>(stoi(values))));
+        }
+    }
+    map<string, float>::iterator it = cameraCoordinates.find("positionx");
+    this->position.x = defaultPosition.x = it->second;
+    it = cameraCoordinates.find("positiony");
+    this->position.y = defaultPosition.y = it->second;
+    it = cameraCoordinates.find("positionz");
+    this->position.z = defaultPosition.z = it->second;
+
+    it = cameraCoordinates.find("targetx");
+    this->target.x = defaultTarget.x = it->second;
+    it = cameraCoordinates.find("targety");
+    this->target.y = defaultTarget.y = it->second;
+    it = cameraCoordinates.find("targetz");
+    this->target.z = defaultTarget.z = it->second;
+
+    Vector3 decoyUp;
+    it = cameraCoordinates.find("upx");
+    decoyUp.x = it->second;
+    it = cameraCoordinates.find("upy");
+    decoyUp.y = it->second;
+    it = cameraCoordinates.find("upz");
+    decoyUp.z = it->second;
+
     Vector3 view = (target - position).Normalized();
-    Vector3 right = view.Cross(up);
+    Vector3 right = view.Cross(decoyUp);
     right.y = 0;
     right.Normalize();
     this->up = defaultUp = right.Cross(view).Normalized();
+<<<<<<< HEAD
     camType = COMMON;
     CameraXrotation = 0;
     CameraYrotation = 180;
@@ -53,6 +98,20 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up,
     defaultCameraYrotation = CameraYrotation;
     defaultCameraXrotation = CameraXrotation;
     float cameraSpeed = 1;
+=======
+    camType = FIRST_PERSON;
+    
+    it = cameraCoordinates.find("camerarotationx");
+    CameraXrotation = defaultCameraXrotation = it->second;
+    it = cameraCoordinates.find("camerarotationy");
+    CameraYrotation = defaultCameraYrotation = it->second;
+
+    maxCameraXrotation = 80;
+    minCameraXrotation = -80;
+
+    it = cameraCoordinates.find("cameraspeed");
+    float cameraSpeed = it->second;
+>>>>>>> a22053d3b2643970c5307bd5e4a93abf244a9c48
 }
 
 /******************************************************************************/
@@ -210,23 +269,23 @@ void Camera3::cameraMovement(double dt)
     if (Application::IsKeyPressed('W'))
      //got a bug on the turning and walking
     {
-        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation)) * dt);
-        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation)) * dt);
+        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation)) * dt * cameraSpeed);
+        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation)) * dt * cameraSpeed);
     }
     if (Application::IsKeyPressed('A'))
     {
-        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 90)) * dt);
-        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 90)) * dt);
+        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 90)) * dt * cameraSpeed);
+        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 90)) * dt * cameraSpeed);
     }
     if (Application::IsKeyPressed('S'))
     {
-        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 180)) * dt);
-        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 180)) * dt);
+        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 180)) * dt * cameraSpeed);
+        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 180)) * dt * cameraSpeed);
     }
     if (Application::IsKeyPressed('D'))
     {
-        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 270)) * dt);
-        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 270)) * dt);
+        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 270)) * dt * cameraSpeed);
+        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 270)) * dt * cameraSpeed);
     }
     if (Application::IsKeyPressed(VK_LSHIFT))
     {
