@@ -89,6 +89,16 @@ void Camera3::Init(const char* fileLocation)
     right.y = 0;
     right.Normalize();
     this->up = defaultUp = right.Cross(view).Normalized();
+<<<<<<< HEAD
+    camType = COMMON;
+    CameraXrotation = 0;
+    CameraYrotation = 180;
+    maxCameraXrotation = 80;
+    minCameraXrotation = -80;
+    defaultCameraYrotation = CameraYrotation;
+    defaultCameraXrotation = CameraXrotation;
+    float cameraSpeed = 1;
+=======
     camType = FIRST_PERSON;
     
     it = cameraCoordinates.find("camerarotationx");
@@ -101,6 +111,7 @@ void Camera3::Init(const char* fileLocation)
 
     it = cameraCoordinates.find("cameraspeed");
     float cameraSpeed = it->second;
+>>>>>>> a22053d3b2643970c5307bd5e4a93abf244a9c48
 }
 
 /******************************************************************************/
