@@ -4,6 +4,8 @@
 
 #include "MyPhysics.h"
 #include "MyMath.h"
+#include <fstream>
+#include <locale>
 
 /******************************************************************************/
 /*!
@@ -36,7 +38,7 @@ Initialize camera
 \param mass - mass of the camera which is default to 0
 */
 /******************************************************************************/
-void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up, int mass)
+void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
     this->position = defaultPosition = pos;
     this->target = defaultTarget = target;
@@ -48,11 +50,66 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up,
     camType = COMMON;
     CameraXrotation = 0;
     CameraYrotation = 180;
-    maxCameraXrotation = 89;
-    minCameraXrotation = -89;
+    maxCameraXrotation = 80;
+    minCameraXrotation = -80;
     defaultCameraYrotation = CameraYrotation;
     defaultCameraXrotation = CameraXrotation;
     float cameraSpeed = 1;
+    //std::ifstream fileStream(fileLocation, std::ios::binary);
+    //if (!fileStream.is_open()) {
+    //    std::cout << "Impossible to open " << fileLocation << ". Are you in the right directory ?\n";
+    //}
+    //else {
+    //    while (!fileStream.eof()) {
+    //        string data = "";
+    //        getline(fileStream, data);
+    //        char *nextStuff;
+    //        char *stringtoken = strtok_s(const_cast<char*>(data.c_str()), ",", &nextStuff);
+    //        string taking_the_stuff = "";
+    //        string values = "";
+    //        taking_the_stuff.append(stringtoken);
+    //        values.append(nextStuff);
+    //        std::locale loc;
+    //        for (size_t num = 0; num < taking_the_stuff.size(); ++num) {
+    //            taking_the_stuff[num] = tolower(taking_the_stuff[num], loc);
+    //        }
+    //        cameraCoordinates.insert(std::pair<string, float>(taking_the_stuff, static_cast<float>(stoi(values))));
+    //    }
+    //}
+    //map<string, float>::iterator it = cameraCoordinates.find("positionx");
+    //this->position.x = defaultPosition.x = it->second;
+    //it = cameraCoordinates.find("positiony");
+    //this->position.y = defaultPosition.y = it->second;
+    //it = cameraCoordinates.find("positionz");
+    //this->position.z = defaultPosition.z = it->second;
+
+    //it = cameraCoordinates.find("targetx");
+    //this->target.x = defaultTarget.x = it->second;
+    //it = cameraCoordinates.find("targety");
+    //this->target.y = defaultTarget.y = it->second;
+    //it = cameraCoordinates.find("targetz");
+    //this->target.z = defaultTarget.z = it->second;
+
+    //Vector3 decoyUp;
+    //it = cameraCoordinates.find("upx");
+    //decoyUp.x = it->second;
+    //it = cameraCoordinates.find("upy");
+    //decoyUp.y = it->second;
+    //it = cameraCoordinates.find("upz");
+    //decoyUp.z = it->second;
+
+    //camType = FIRST_PERSON;
+
+    //it = cameraCoordinates.find("camerarotationx");
+    //CameraXrotation = defaultCameraXrotation = it->second;
+    //it = cameraCoordinates.find("camerarotationy");
+    //CameraYrotation = defaultCameraYrotation = it->second;
+
+    //maxCameraXrotation = 80;
+    //minCameraXrotation = -80;
+
+    //it = cameraCoordinates.find("cameraspeed");
+    //float cameraSpeed = it->second;
 }
 
 /******************************************************************************/
