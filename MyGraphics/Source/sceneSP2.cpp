@@ -154,6 +154,10 @@ void sceneSP2::Init()
     projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
 
+    //initialise camera_position_x and z;
+    camera_position_x = 0;
+    camera_position_z = 0;
+    //initialise camera_position_x and z;
     framePerSecond = 0;
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
@@ -171,6 +175,20 @@ void sceneSP2::Update(double dt)
 {
     camera.Update(dt);
     framePerSecond = 1 / dt;
+
+    //detect camera coords
+    std::stringstream player_x;
+    player_x << "X : ";
+    camera_position_x = camera.position.x;
+    player_x << camera_position_x;
+    show_player_x = player_x.str();
+    std::stringstream player_z;
+    player_z << "Z : ";
+    camera_position_z = camera.position.z;
+    player_z << camera_position_z;
+    show_player_z = player_z.str();
+    //detect camera coords
+
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
     if (Application::IsKeyPressed('2')) //disable back face culling
@@ -363,7 +381,12 @@ void sceneSP2::Render()
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
     std::stringstream ss;
     ss << "FPS : " << framePerSecond;
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8, 1.25, 16.5);
+    
+    //show x and z coords for player
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], show_player_x, Color(0, 1, 0), 1.8, 1.5, 21.2);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], show_player_z, Color(0, 1, 0), 1.8, 1.5, 19);
+    //show x and z coords for player
 }
 
 /******************************************************************************/
@@ -582,7 +605,6 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
     modelStack.Translate(x, y, 0);
     modelStack.Scale(80, 80, 80);
     modelStack.Rotate(90, 0, -1, 0);
-    renderMesh(meshList[GEO_AXES], false);
     renderMesh(mesh, false);
 
     projectionStack.PopMatrix();
