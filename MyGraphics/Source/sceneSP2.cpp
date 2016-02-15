@@ -352,7 +352,7 @@ void sceneSP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0-50, 50, 100);
+	modelStack.Translate(0, 50, 100);
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Scale(10, 10, 10);
 	renderMesh(meshList[GEO_FLYINGVEHICLE], false);

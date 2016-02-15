@@ -258,23 +258,23 @@ void Camera3::cameraMovement(double dt)
     if (Application::IsKeyPressed('W'))
      //got a bug on the turning and walking
     {
-        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation)) * dt * cameraSpeed);
-        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation)) * dt * cameraSpeed);
+        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation)) * dt);
+        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation)) * dt);
     }
     if (Application::IsKeyPressed('A'))
     {
-        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 90)) * dt * cameraSpeed);
-        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 90)) * dt * cameraSpeed);
+        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 90)) * dt);
+        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 90)) * dt);
     }
     if (Application::IsKeyPressed('S'))
     {
-        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 180)) * dt * cameraSpeed);
-        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 180)) * dt * cameraSpeed);
+        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 180)) * dt);
+        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 180)) * dt);
     }
     if (Application::IsKeyPressed('D'))
     {
-        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 270)) * dt * cameraSpeed);
-        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 270)) * dt * cameraSpeed);
+        walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation + 270)) * dt);
+        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation + 270)) * dt);
     }
     if (Application::IsKeyPressed(VK_LSHIFT))
     {
