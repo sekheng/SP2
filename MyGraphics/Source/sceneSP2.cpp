@@ -139,17 +139,17 @@ void sceneSP2::Init()
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1,1,1));
 
     //skybox
-    meshList[GEO_FRONT] = MeshBuilder::GenerateOBJ("front", "ft.obj");
+    meshList[GEO_FRONT] = MeshBuilder::GenerateOBJ("front", "OBJ//ft.obj");
     meshList[GEO_FRONT]->textureID = LoadTGA("Image//skybox//ft.tga");
-    meshList[GEO_BACK] = MeshBuilder::GenerateOBJ("back", "bk.obj");
+    meshList[GEO_BACK] = MeshBuilder::GenerateOBJ("back", "OBJ//bk.obj");
     meshList[GEO_BACK]->textureID = LoadTGA("Image//skybox//bk.tga");
-    meshList[GEO_LEFT] = MeshBuilder::GenerateOBJ("left", "lf.obj");
-    meshList[GEO_LEFT]->textureID = LoadTGA("Image//skybox//lt.tga");
-    meshList[GEO_RIGHT] = MeshBuilder::GenerateOBJ("right", "rt.obj");
+    meshList[GEO_LEFT] = MeshBuilder::GenerateOBJ("left", "OBJ//lf.obj");
+    meshList[GEO_LEFT]->textureID = LoadTGA("Image//skybox//lf.tga");
+    meshList[GEO_RIGHT] = MeshBuilder::GenerateOBJ("right", "OBJ//rt.obj");
     meshList[GEO_RIGHT]->textureID = LoadTGA("Image//skybox//rt.tga");
-    meshList[GEO_UP] = MeshBuilder::GenerateOBJ("top", "up.obj");
+    meshList[GEO_UP] = MeshBuilder::GenerateOBJ("top", "OBJ//up.obj");
     meshList[GEO_UP]->textureID = LoadTGA("Image//skybox//up.tga");
-    meshList[GEO_DOWN] = MeshBuilder::GenerateOBJ("bottom", "dn.obj");
+    meshList[GEO_DOWN] = MeshBuilder::GenerateOBJ("bottom", "OBJ//dn.obj");
     meshList[GEO_DOWN]->textureID = LoadTGA("Image//skybox//dn.tga");
     //skybox
 
