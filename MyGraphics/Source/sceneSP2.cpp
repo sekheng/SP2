@@ -456,7 +456,7 @@ void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
     {
         Mtx44 characterSpacing;
         int widthOfChar = text[i];
-        characterSpacing.SetToTranslation(i + (forComicSans.eachCharSpace[widthOfChar] / 23), 0, 0); //1.0f is the spacing of each character, you may change this value
+        characterSpacing.SetToTranslation(i * 0.5f /*+ (forComicSans.eachCharSpace[widthOfChar] / 23)*/, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
