@@ -42,7 +42,7 @@ public:
 
     Camera3();
     ~Camera3();
-    virtual void Init(const Vector3& pos, const Vector3& target, const Vector3& up, int mass = 0);
+    virtual void Init(const char* fileLocation);
     virtual void Update(double dt);
     virtual void Reset();
 

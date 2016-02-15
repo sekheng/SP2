@@ -127,7 +127,7 @@ void sceneSP2::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(0, 50, 200), Vector3(10, 10, 10), Vector3(0, 1, 0));
+    camera.Init("cameraDriven//scene1.txt");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -352,7 +352,7 @@ void sceneSP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-100, 50, 100);
+	modelStack.Translate(0-50, 50, 100);
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Scale(10, 10, 10);
 	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
