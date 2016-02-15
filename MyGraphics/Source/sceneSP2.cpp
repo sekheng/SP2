@@ -165,7 +165,7 @@ void sceneSP2::Init()
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 10000.f);
+    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
@@ -355,6 +355,7 @@ void sceneSP2::Render()
     renderMesh(meshList[GEO_AXES], false);
 
     modelStack.PushMatrix();
+    modelStack.Translate(0, -2000, 0);
     modelStack.Scale(300, 300, 300);
     RenderSkybox();
     modelStack.PopMatrix();
