@@ -147,7 +147,10 @@ void sceneSP2::Init()
     meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
     meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
     //User Interface
-
+    //Space ground mesh
+    meshList[GEO_UI] = MeshBuilder::GenerateOBJ("Space ground mesh", "OBJ//Space_groundmesh.obj");
+    meshList[GEO_UI]->textureID = LoadTGA("Image//Space_groundmesh.tga");
+    //Space ground mesh
     on_light = true;
 
     Mtx44 projection;
@@ -358,15 +361,19 @@ void sceneSP2::Render()
 
     renderMesh(meshList[GEO_AXES], false);
 
+    //render skybox
     modelStack.PushMatrix();
     modelStack.Translate(0, -2000, 0);
     modelStack.Scale(300, 300, 300);
     RenderSkybox();
     modelStack.PopMatrix();
+    //render skybox
 
+    //render ground mesh
     /*modelStack.PushMatrix();
-    renderMesh(meshList[GEO_UI],false),
+    Rendergroundmesh();
     modelStack.PopMatrix();*/
+    //render ground mesh
 
     modelStack.PushMatrix();
     //scale, translate, rotate
@@ -609,5 +616,11 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
+    modelStack.PopMatrix();
+}
+void sceneSP2::Rendergroundmesh()
+{
+    modelStack.PushMatrix();
+    renderMesh(meshList[GEO_SPACE_GROUNDMESH], false);
     modelStack.PopMatrix();
 }
