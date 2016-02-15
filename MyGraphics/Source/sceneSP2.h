@@ -33,6 +33,7 @@ class sceneSP2 : public Scene
         GEO_AXES,
         GEO_LIGHTBALL,
         GEO_COMIC_TEXT,
+
         
         //skybox
         GEO_UP,
@@ -43,7 +44,8 @@ class sceneSP2 : public Scene
         GEO_FRONT,
         //skybox
         
-        
+		GEO_BOX,
+
         NUM_GEOMETRY,
     };
 
@@ -89,7 +91,7 @@ private:
     Light light[1];
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
-    void RenderSkybox(Vector3 Position);
+    void RenderSkybox();
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 
