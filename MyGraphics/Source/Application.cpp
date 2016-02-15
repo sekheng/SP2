@@ -15,6 +15,10 @@ GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 
+//global variables needed for transition
+Scene *g_Scene;
+Scene *g_SceneSP2_1;
+Scene *g_SceneSP2_2;
 /******************************************************************************/
 /*!
 \brief
@@ -166,15 +170,18 @@ void Application::Run()
 {
 	//Main Loop
     const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
-    Scene *scene = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	scene->Init();
+    g_SceneSP2_1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
+    g_SceneSP2_1->Init();
+    g_SceneSP2_2 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
+    g_SceneSP2_2->Init();
+    g_Scene = g_SceneSP2_1;
     std::cout << "Number of object created: " << GameObject::getCount() << std::endl;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
 	{
-		scene->Update(m_timer.getElapsedTime());
-		scene->Render();
+        g_Scene->Update(m_timer.getElapsedTime());
+        g_Scene->Render();
 		//Swap buffers
 		glfwSwapBuffers(m_window);
 		//Get and organize events, like keyboard and mouse input, window resizing, etc...
@@ -182,8 +189,9 @@ void Application::Run()
         m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
 
 	} //Check if the ESC key had been pressed or if the window had been closed
-	scene->Exit();
-	delete scene;
+    g_Scene->Exit();
+	delete g_SceneSP2_1;
+    delete g_SceneSP2_2;
 }
 
 /******************************************************************************/
