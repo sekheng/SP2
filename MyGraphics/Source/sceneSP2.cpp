@@ -141,7 +141,7 @@ void sceneSP2::Init()
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(75.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 10000.f);
+    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
