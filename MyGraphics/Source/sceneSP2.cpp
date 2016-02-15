@@ -328,6 +328,8 @@ void sceneSP2::Render()
         modelStack.PopMatrix();
     }
 
+    renderMesh(meshList[GEO_AXES], false);
+
     modelStack.PushMatrix();
     //scale, translate, rotate
     modelStack.Scale(20, 20, 1);
