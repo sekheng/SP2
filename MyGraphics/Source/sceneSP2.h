@@ -33,6 +33,8 @@ class sceneSP2 : public Scene
         GEO_AXES,
         GEO_LIGHTBALL,
         GEO_COMIC_TEXT,
+		GEO_LANDVEHICLE,
+		GEO_FLYINGVEHICLE,
         NUM_GEOMETRY,
     };
 
