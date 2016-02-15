@@ -140,19 +140,13 @@ void sceneSP2::Init()
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1,1,1));
 
     //skybox
-    meshList[GEO_FRONT] = MeshBuilder::GenerateOBJ("front", "OBJ//ft.obj");
-    meshList[GEO_FRONT]->textureID = LoadTGA("Image//skybox//ft.tga");
-    meshList[GEO_BACK] = MeshBuilder::GenerateOBJ("back", "OBJ//bk.obj");
-    meshList[GEO_BACK]->textureID = LoadTGA("Image//skybox//bk.tga");
-    meshList[GEO_LEFT] = MeshBuilder::GenerateOBJ("left", "OBJ//lf.obj");
-    meshList[GEO_LEFT]->textureID = LoadTGA("Image//skybox//lf.tga");
-    meshList[GEO_RIGHT] = MeshBuilder::GenerateOBJ("right", "OBJ//rt.obj");
-    meshList[GEO_RIGHT]->textureID = LoadTGA("Image//skybox//rt.tga");
-    meshList[GEO_UP] = MeshBuilder::GenerateOBJ("top", "OBJ//up.obj");
-    meshList[GEO_UP]->textureID = LoadTGA("Image//skybox//up.tga");
-    meshList[GEO_DOWN] = MeshBuilder::GenerateOBJ("bottom", "OBJ//dn.obj");
-    meshList[GEO_DOWN]->textureID = LoadTGA("Image//skybox//dn.tga");
+    meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
+    meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
     //skybox
+    //User Interface
+    meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
+    meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
+    //User Interface
 
     on_light = true;
 
@@ -352,10 +346,18 @@ void sceneSP2::Render()
     RenderSkybox();
     modelStack.PopMatrix();
 
+    /*modelStack.PushMatrix();
+    renderMesh(meshList[GEO_UI],false),
+    modelStack.PopMatrix();*/
+
     modelStack.PushMatrix();
     //scale, translate, rotate
     modelStack.Scale(20, 20, 1);
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
     modelStack.PopMatrix();
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
@@ -507,12 +509,7 @@ void sceneSP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
 void sceneSP2::RenderSkybox()
 {
     modelStack.PushMatrix();
-    renderMesh(meshList[GEO_UP], false);
-    renderMesh(meshList[GEO_DOWN], false);
-    renderMesh(meshList[GEO_LEFT], false);
-    renderMesh(meshList[GEO_RIGHT], false);
-    renderMesh(meshList[GEO_FRONT], false);
-    renderMesh(meshList[GEO_BACK], false);
+    renderMesh(meshList[GEO_SPACE_SKYBOX], false);
     modelStack.PopMatrix();
     //float SCALE = 2000;
     //float TRANSLATE = SCALE / 2 - SCALE / 500;
@@ -566,4 +563,29 @@ void sceneSP2::RenderSkybox()
     //renderMesh(meshList[GEO_RIGHT], false);
     //modelStack.PopMatrix();
     //modelStack.PopMatrix();
+}
+
+void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
+{
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 80, -10, 10); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 0);
+    modelStack.Scale(80, 80, 80);
+    modelStack.Rotate(90, 0, -1, 0);
+    renderMesh(meshList[GEO_AXES], false);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
 }

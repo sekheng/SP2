@@ -36,14 +36,12 @@ class sceneSP2 : public Scene
 
         
         //skybox
-        GEO_UP,
-        GEO_DOWN,
-        GEO_LEFT,
-        GEO_RIGHT,
-        GEO_BACK,
-        GEO_FRONT,
+        GEO_SPACE_SKYBOX,
         //skybox
-        
+        //User Interface
+        GEO_UI,
+        //User Interface
+
 		GEO_BOX,
 
         NUM_GEOMETRY,
@@ -92,6 +90,7 @@ private:
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
+    void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 
