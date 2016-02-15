@@ -370,9 +370,9 @@ void sceneSP2::Render()
     //render skybox
 
     //render ground mesh
-    /*modelStack.PushMatrix();
+    modelStack.PushMatrix();
     Rendergroundmesh();
-    modelStack.PopMatrix();*/
+    modelStack.PopMatrix();
     //render ground mesh
 
     modelStack.PushMatrix();
