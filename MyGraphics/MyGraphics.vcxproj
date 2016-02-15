@@ -98,7 +98,6 @@
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\removeMonospace.cpp" />
-    <ClCompile Include="Source\Scene3SP2.cpp" />
     <ClCompile Include="Source\sceneSP2.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
@@ -118,7 +117,6 @@
     <ClInclude Include="Source\MeshBuilder.h" />
     <ClInclude Include="Source\removeMonospace.h" />
     <ClInclude Include="Source\Scene.h" />
-    <ClInclude Include="Source\scene3SP2.h" />
     <ClInclude Include="Source\sceneSP2.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Utility.h" />

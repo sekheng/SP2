@@ -35,6 +35,7 @@ class sceneSP2 : public Scene
         GEO_COMIC_TEXT,
 		GEO_LANDVEHICLE,
 		GEO_FLYINGVEHICLE,
+		GEO_BOX,
         NUM_GEOMETRY,
     };
 
