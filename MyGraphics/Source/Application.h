@@ -12,9 +12,10 @@ Taken from Mr Tang's original framework
 #define APPLICATION_H
 
 #include "timer.h"
-#include "sceneSP2.h"
 #include "DetectMemoryLeak.h"
 #include "GameObject.h"
+#include "sceneSP2.h"
+#include "scene2_SP2.h"
 /******************************************************************************/
 /*!
 Class Application:
