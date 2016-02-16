@@ -127,6 +127,7 @@ void scene3_SP2::Init()
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene3.txt");
+    //camera.InitObjects("scenario2Driven//");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -138,6 +139,11 @@ void scene3_SP2::Init()
     //skybox
     meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
     meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
+
+    //spaceship
+    meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
+    meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
+    meshList[GEO_FLYINGVEHICLE]->material = MaterialBuilder::GenerateBlinn();
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
@@ -345,6 +351,10 @@ void scene3_SP2::Render()
     RenderSkybox();
     modelStack.PopMatrix();
 
+    modelStack.PushMatrix();
+    renderSpaceShip();
+    modelStack.PopMatrix();
+
     std::stringstream connectPosX;
     connectPosX << "X : " << camera.getCameraXcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
@@ -511,4 +521,15 @@ void scene3_SP2::RenderSkybox()
     modelStack.PushMatrix();
     renderMesh(meshList[GEO_SPACE_SKYBOX], false);
     modelStack.PopMatrix();
+}
+
+void scene3_SP2::renderSpaceShip() {
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "spaceship") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            renderMesh(meshList[GEO_FLYINGVEHICLE], true);
+            modelStack.PopMatrix();
+        }
+    }
 }

@@ -365,13 +365,6 @@ void scene2_SP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	renderMesh(meshList[GEO_LANDVEHICLE], false);
-	modelStack.PopMatrix();
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "spacevehicle") {
             modelStack.PushMatrix();
