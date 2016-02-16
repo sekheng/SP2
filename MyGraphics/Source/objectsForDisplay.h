@@ -10,7 +10,7 @@ public:
     ~objectsForDisplay();
 
     void init(const char *fileLocation);
-    bool boundaryCheck(const Vector3& playerPos);
+    bool boundaryCheck(const float& playerPosX, const float& playerPosZ);
 
     float getObjectposX();
     float getObjectposY();
@@ -18,7 +18,7 @@ public:
 
 private:
     Vector3 objectPos;
-    float boundaryRadius;
+    float boundaryRadiusX, boundaryRadiusZ;
 };
 
 #endif
