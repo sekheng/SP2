@@ -37,6 +37,7 @@ class scene2_SP2 : public Scene
 
 		GEO_LANDVEHICLE,
 		GEO_FLYINGVEHICLE,
+		GEO_CRYOSTASIS,
 
 		//skybox
 		GEO_PLANET_SKYBOX,

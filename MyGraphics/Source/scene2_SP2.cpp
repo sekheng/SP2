@@ -152,6 +152,10 @@ void scene2_SP2::Init()
 	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 
+	//Cryostasis
+	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//cryotasis.obj");
+	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryotasis.tga");
+
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
 	meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
@@ -390,6 +394,13 @@ void scene2_SP2::Render()
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Scale(10, 10, 10);
 	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(100, 0, 0);
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	renderMesh(meshList[GEO_CRYOSTASIS], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
