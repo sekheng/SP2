@@ -40,8 +40,9 @@ class sceneSP2 : public Scene
         GEO_SPACE_SKYBOX,
         //skybox
 
+		//cryostasis
+		GEO_CRYOSTASIS,
         
-
         //User Interface
         GEO_UI,
         //User Interface
@@ -107,6 +108,9 @@ private:
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
     void Rendergroundmesh();
+
+	void RenderCryostasis();
+
 	void RenderStation();
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
@@ -122,6 +126,7 @@ private:
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
+
 
     double framePerSecond;
     float screenWidth, screenHeight;
