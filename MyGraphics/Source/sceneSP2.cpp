@@ -140,19 +140,13 @@ void sceneSP2::Init()
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1,1,1));
 
     //skybox
-    meshList[GEO_FRONT] = MeshBuilder::GenerateOBJ("front", "OBJ//ft.obj");
-    meshList[GEO_FRONT]->textureID = LoadTGA("Image//skybox//ft.tga");
-    meshList[GEO_BACK] = MeshBuilder::GenerateOBJ("back", "OBJ//bk.obj");
-    meshList[GEO_BACK]->textureID = LoadTGA("Image//skybox//bk.tga");
-    meshList[GEO_LEFT] = MeshBuilder::GenerateOBJ("left", "OBJ//lf.obj");
-    meshList[GEO_LEFT]->textureID = LoadTGA("Image//skybox//lf.tga");
-    meshList[GEO_RIGHT] = MeshBuilder::GenerateOBJ("right", "OBJ//rt.obj");
-    meshList[GEO_RIGHT]->textureID = LoadTGA("Image//skybox//rt.tga");
-    meshList[GEO_UP] = MeshBuilder::GenerateOBJ("top", "OBJ//up.obj");
-    meshList[GEO_UP]->textureID = LoadTGA("Image//skybox//up.tga");
-    meshList[GEO_DOWN] = MeshBuilder::GenerateOBJ("bottom", "OBJ//dn.obj");
-    meshList[GEO_DOWN]->textureID = LoadTGA("Image//skybox//dn.tga");
+    meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
+    meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
     //skybox
+    //User Interface
+    meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
+    meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
+    //User Interface
 
 	//LandVehicle
 	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//LandVehicle.obj");
@@ -168,6 +162,7 @@ void sceneSP2::Init()
     projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
 
+    //initialise camera_position_x and z;
     framePerSecond = 0;
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
@@ -185,6 +180,7 @@ void sceneSP2::Update(double dt)
 {
     camera.Update(dt);
     framePerSecond = 1 / dt;
+
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
     if (Application::IsKeyPressed('2')) //disable back face culling
@@ -360,12 +356,17 @@ void sceneSP2::Render()
     RenderSkybox();
     modelStack.PopMatrix();
 
+    /*modelStack.PushMatrix();
+    renderMesh(meshList[GEO_UI],false),
+    modelStack.PopMatrix();*/
+
     modelStack.PushMatrix();
     //scale, translate, rotate
     modelStack.Scale(20, 20, 1);
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
+<<<<<<< HEAD
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 100);
 	modelStack.Rotate(-90, 0, 1, 0);
@@ -381,9 +382,19 @@ void sceneSP2::Render()
 	modelStack.PopMatrix();
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
+=======
+    //modelStack.PushMatrix();
+    //RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
+    //modelStack.PopMatrix();
+
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
+>>>>>>> ff45bf942c6b90ec3d37e7fd2eb25632bc09871b
     std::stringstream ss;
-    ss << "FPS : " << framePerSecond;
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
+    ss << "FPS : " << static_cast<int>(framePerSecond);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
+    
+    std::stringstream connectPosX;
+    connectPosX << "Player's X : " << camera.getCameraXcoord();
 }
 
 /******************************************************************************/
@@ -421,11 +432,14 @@ void sceneSP2::RenderText(Mesh* mesh, std::string text, Color color)
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        int widthOfChar = text[i];
-        characterSpacing.SetToTranslation(i + (forComicSans.eachCharSpace[widthOfChar] / 23), 0, 0); //1.0f is the spacing of each character, you may change this value
+        if (i != 0) {
+            int widthOfChar = text[i];
+            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
+        }
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -472,11 +486,15 @@ void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        int widthOfChar = text[i];
-        characterSpacing.SetToTranslation(i + (forComicSans.eachCharSpace[widthOfChar] / 23), 0, 0); //1.0f is the spacing of each character, you may change this value
+        if (i != 0) {
+            int widthOfChar = text[i];
+            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
+        }
+        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -529,12 +547,7 @@ void sceneSP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
 void sceneSP2::RenderSkybox()
 {
     modelStack.PushMatrix();
-    renderMesh(meshList[GEO_UP], false);
-    renderMesh(meshList[GEO_DOWN], false);
-    renderMesh(meshList[GEO_LEFT], false);
-    renderMesh(meshList[GEO_RIGHT], false);
-    renderMesh(meshList[GEO_FRONT], false);
-    renderMesh(meshList[GEO_BACK], false);
+    renderMesh(meshList[GEO_SPACE_SKYBOX], false);
     modelStack.PopMatrix();
     //float SCALE = 2000;
     //float TRANSLATE = SCALE / 2 - SCALE / 500;
@@ -588,4 +601,28 @@ void sceneSP2::RenderSkybox()
     //renderMesh(meshList[GEO_RIGHT], false);
     //modelStack.PopMatrix();
     //modelStack.PopMatrix();
+}
+
+void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
+{
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 80, -10, 10); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 0);
+    modelStack.Scale(80, 80, 80);
+    modelStack.Rotate(90, 0, -1, 0);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
 }
