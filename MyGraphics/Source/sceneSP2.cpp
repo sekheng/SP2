@@ -152,6 +152,17 @@ void sceneSP2::Init()
     meshList[GEO_SPACE_GROUNDMESH]->textureID = LoadTGA("Image//Space_groundmesh.tga");
     meshList[GEO_SPACE_GROUNDMESH]->material = MaterialBuilder::GenerateBlinn();
     //Space ground mesh
+    //quest items
+    meshList[GEO_SCREWDRIVER] = MeshBuilder::GenerateOBJ("screw driver", "OBJ//ScrewDriver.obj");
+    meshList[GEO_SCREWDRIVER]->textureID = LoadTGA("Image//Screwdriver.tga");
+    meshList[GEO_CONTAINER] = MeshBuilder::GenerateOBJ("container", "OBJ//Container.obj");
+    meshList[GEO_CONTAINER]->textureID = LoadTGA("Image//Container.tga");
+    meshList[GEO_GASOLINE] = MeshBuilder::GenerateOBJ("gasoline", "OBJ//Gasoline.obj");
+    meshList[GEO_GASOLINE]->textureID = LoadTGA("Image//Gasoline.tga");
+    meshList[GEO_HAMMER] = MeshBuilder::GenerateOBJ("hammer", "OBJ//Hammer.obj");
+    meshList[GEO_HAMMER]->textureID = LoadTGA("Image//Hammer.tga");
+
+    //quest items
 
 	
 
@@ -373,6 +384,25 @@ void sceneSP2::Render()
     modelStack.PopMatrix();
     //render ground mesh
 
+    modelStack.PushMatrix();
+    RenderScrewDriver();
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    RenderContainer();
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    RenderGasoline();
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    RenderHammer();
+    modelStack.PopMatrix();
+
+    //****************************************************************************//
+    //On screen objects
+    //****************************************************************************//
     modelStack.PushMatrix();
     //scale, translate, rotate
     modelStack.Scale(20, 20, 1);
@@ -640,3 +670,35 @@ void sceneSP2::Rendergroundmesh()
     renderMesh(meshList[GEO_SPACE_GROUNDMESH], false);
     modelStack.PopMatrix();
 }
+//render quest items////////////////////////////////////////////////////////
+void sceneSP2::RenderScrewDriver()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(30, 0, -30);
+    renderMesh(meshList[GEO_CONTAINER], false);
+    modelStack.PopMatrix();
+}
+void sceneSP2::RenderHammer()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, 0);
+
+    renderMesh(meshList[GEO_GASOLINE], false);
+    modelStack.PopMatrix();
+}
+void sceneSP2::RenderContainer()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, 0);
+
+    renderMesh(meshList[GEO_HAMMER], false);
+    modelStack.PopMatrix();
+}
+void sceneSP2::RenderGasoline()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, 0);
+    renderMesh(meshList[GEO_SCREWDRIVER], false);
+    modelStack.PopMatrix();
+}
+///////////////////////////////////////////////////////////////////////////

@@ -39,16 +39,19 @@ class sceneSP2 : public Scene
         //skybox
         GEO_SPACE_SKYBOX,
         //skybox
-
-        
-
         //User Interface
         GEO_UI,
         //User Interface
-
         //Space ground mesh
         GEO_SPACE_GROUNDMESH,
         //Space ground mesh
+        //quest items
+        GEO_SCREWDRIVER,
+        GEO_CONTAINER,
+        GEO_GASOLINE,
+        GEO_HAMMER,
+        //quest items
+
 
 		GEO_BOX,
 
@@ -99,6 +102,12 @@ private:
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
     void Rendergroundmesh();
+    //render quest items
+    void RenderScrewDriver();
+    void RenderHammer();
+    void RenderContainer();
+    void RenderGasoline();
+    //render quest items
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
