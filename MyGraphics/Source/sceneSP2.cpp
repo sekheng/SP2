@@ -1,4 +1,3 @@
-#include "sceneSP2.h"
 #include "GL\glew.h"
 #include <sstream>
 

@@ -1,4 +1,3 @@
-#include "scene3_SP2.h"
 #include "GL\glew.h"
 #include <sstream>
 
@@ -135,6 +134,10 @@ void scene3_SP2::Init()
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
     meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
     forComicSans.loadSpace("removeMonospace//comicSans.txt");
+
+    //skybox
+    meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
+    meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
@@ -338,12 +341,18 @@ void scene3_SP2::Render()
     renderMesh(meshList[GEO_AXES], false);
 
     modelStack.PushMatrix();
-    //scale, translate, rotate
-    modelStack.Scale(20, 20, 1);
-    RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
+    modelStack.Scale(300, 300, 300);
+    RenderSkybox();
     modelStack.PopMatrix();
 
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
+    std::stringstream connectPosX;
+    connectPosX << "X : " << camera.getCameraXcoord();
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
+
+    std::stringstream connectPosZ;
+    connectPosZ << "Z : " << camera.getCameraZcoord();
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
+
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
@@ -494,5 +503,12 @@ void scene3_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
 
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
+    modelStack.PopMatrix();
+}
+
+void scene3_SP2::RenderSkybox()
+{
+    modelStack.PushMatrix();
+    renderMesh(meshList[GEO_SPACE_SKYBOX], false);
     modelStack.PopMatrix();
 }

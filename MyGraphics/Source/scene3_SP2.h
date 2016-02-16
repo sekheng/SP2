@@ -23,6 +23,9 @@ class scene3_SP2 : public Scene
         GEO_AXES,
         GEO_LIGHTBALL,
         GEO_COMIC_TEXT,
+        //skybox
+        GEO_SPACE_SKYBOX,
+        //skybox
         NUM_GEOMETRY,
     };
 
@@ -85,6 +88,9 @@ private:
     double framePerSecond;
     float screenWidth, screenHeight;
     removeMonospace forComicSans;
+
+    void RenderSkybox();
+    void renderSpaceShip();
 };
 
 
