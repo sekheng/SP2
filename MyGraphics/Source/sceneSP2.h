@@ -60,6 +60,8 @@ class sceneSP2 : public Scene
 		GEO_TABLE,
 		//Box
 		GEO_BOX,
+		//Door
+		GEO_DOOR,
 
         NUM_GEOMETRY,
     };
