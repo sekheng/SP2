@@ -12,7 +12,7 @@ Constructor with 1 string argument - construct an object with a name assigned to
 /******************************************************************************/
 GameObject::GameObject(const string& str)
 {
-	const_cast<string&>(kName) = str;
+	Name_ = str;
 	++count_;
 }
 
@@ -38,7 +38,7 @@ string kName
 /******************************************************************************/
 string GameObject::getName(void)
 {
-	return kName;
+	return Name_;
 }
 
 /******************************************************************************/

@@ -20,6 +20,9 @@ const unsigned int frameTime = 1000 / FPS; // time for each frame
 Scene *g_Scene;
 Scene *g_SceneSP2_1;
 Scene *g_SceneSP2_2;
+Scene* Application::scenario1;
+Scene* Application::scene;
+Scene* Application::scenario3;
 /******************************************************************************/
 /*!
 \brief
@@ -176,13 +179,20 @@ void Application::Run()
     g_SceneSP2_2 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     g_SceneSP2_2->Init();
     g_Scene = g_SceneSP2_2;
+
+    scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
+    scenario1->Init();
+    scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
+    scenario3->Init();
+    scene = scenario1;
+
     std::cout << "Number of object created: " << GameObject::getCount() << std::endl;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
 	{
-        g_Scene->Update(m_timer.getElapsedTime());
-        g_Scene->Render();
+        scene->Update(m_timer.getElapsedTime());
+        scene->Render();
 		//Swap buffers
 		glfwSwapBuffers(m_window);
 		//Get and organize events, like keyboard and mouse input, window resizing, etc...
@@ -190,9 +200,11 @@ void Application::Run()
         m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
 
 	} //Check if the ESC key had been pressed or if the window had been closed
-    g_Scene->Exit();
+    scene->Exit();
 	delete g_SceneSP2_1;
     delete g_SceneSP2_2;
+    delete scenario1;
+    delete scenario3;
 }
 
 /******************************************************************************/
@@ -207,4 +219,12 @@ void Application::Exit()
 	glfwDestroyWindow(m_window);
 	//Finalize and clean up GLFW
 	glfwTerminate();
+}
+
+void Application::changeIntoScenario3(){
+    scene = scenario3;
+}
+
+void Application::changeIntoScenario1() {
+    scene = scenario1;
 }

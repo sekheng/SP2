@@ -12,3 +12,4 @@ cameraRotationY,180
 cameraSpeed,5
 boundsCheckX,100
 boundsCheckZ,100
+numberofObjects,1

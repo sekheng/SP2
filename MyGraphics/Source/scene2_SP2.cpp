@@ -210,6 +210,10 @@ void scene2_SP2::Update(double dt)
         light[0].type = Light::LIGHT_SPOT;
         glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
     }
+
+    if (Application::IsKeyPressed(VK_NUMPAD1)) {
+        Application::changeIntoScenario1();
+    }
 }
 
 /******************************************************************************/

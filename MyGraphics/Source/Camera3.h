@@ -13,6 +13,7 @@ An improvised camera inheirited from Camera Class
 #include "Camera.h"
 #include <string>
 #include <map>
+#include "objectsForDisplay.h"
 
 using std::string;
 using std::map;
