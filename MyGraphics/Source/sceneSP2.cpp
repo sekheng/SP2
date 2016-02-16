@@ -143,6 +143,10 @@ void sceneSP2::Init()
     meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
     //skybox
 
+	//Cryostasis
+	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("cryostasis", "OBJ//cryostasis.obj");
+	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryostasis.tga");
+
     //User Interface
     meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
     meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
@@ -150,7 +154,7 @@ void sceneSP2::Init()
     //Space ground mesh
     meshList[GEO_SPACE_GROUNDMESH] = MeshBuilder::GenerateOBJ("Space ground mesh", "OBJ//Space_groundmesh.obj");
     meshList[GEO_SPACE_GROUNDMESH]->textureID = LoadTGA("Image//Space_groundmesh.tga");
-    meshList[GEO_SPACE_GROUNDMESH]->material = MaterialBuilder::GenerateBlinn();
+   // meshList[GEO_SPACE_GROUNDMESH]->material = MaterialBuilder::GenerateBlinn();
     //Space ground mesh
 
 	
@@ -378,6 +382,8 @@ void sceneSP2::Render()
     modelStack.PopMatrix();
     //render ground mesh
 
+	//render cryostasis
+	RenderCryostasis();
 
     modelStack.PushMatrix();
     //scale, translate, rotate
@@ -648,4 +654,11 @@ void sceneSP2::Rendergroundmesh()
     modelStack.PushMatrix();
     renderMesh(meshList[GEO_SPACE_GROUNDMESH], false);
     modelStack.PopMatrix();
+}
+
+void sceneSP2::RenderCryostasis()
+{
+	modelStack.PushMatrix();
+	renderMesh(meshList[GEO_CRYOSTASIS], false);
+	modelStack.PopMatrix();
 }

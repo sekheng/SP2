@@ -152,9 +152,7 @@ void scene2_SP2::Init()
 	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 
-	//Cryostasis
-	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//cryotasis.obj");
-	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryotasis.tga");
+	
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -162,8 +160,8 @@ void scene2_SP2::Init()
 	//User Interface
 
 	//GroundMesh
-	meshList[GEO_GROUND] = MeshBuilder::GenerateQuad("groundmesh", Color(1, 1, 1));
-	meshList[GEO_GROUND]->textureID = LoadTGA("Image//planet_ground2.tga");
+	meshList[GEO_GROUND] = MeshBuilder::GenerateOBJ("ground", "OBJ//ground.obj");
+	meshList[GEO_GROUND]->textureID = LoadTGA("Image//ground.tga");
 
     on_light = true;
 
@@ -378,7 +376,7 @@ void scene2_SP2::Render()
 	renderMesh(meshList[GEO_LANDVEHICLE], false);
 	modelStack.PopMatrix();
     for (auto it : camera.storage_of_objects) {
-        if (it.getName() == "spaceship\r") {
+        if (it.getName() == "spaceship") {
             modelStack.PushMatrix();
             modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
             modelStack.Rotate(-90, 0, 1, 0);
@@ -388,7 +386,7 @@ void scene2_SP2::Render()
         }
     }
 
-
+	//render flyingvehicle
 	modelStack.PushMatrix();
 	modelStack.Translate(-50, 100, 0);
 	modelStack.Rotate(-90, 0, 1, 0);
@@ -396,23 +394,19 @@ void scene2_SP2::Render()
 	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(100, 0, 0);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	renderMesh(meshList[GEO_CRYOSTASIS], false);
-	modelStack.PopMatrix();
-
+	//render UI
 	modelStack.PushMatrix();
 	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
 	modelStack.PopMatrix();
 
+	//render ground
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	modelStack.Scale(200, 200, 200);
+	modelStack.Translate(0,0, 0);
+	//modelStack.Scale(100, 0, 100);
 	renderMesh(meshList[GEO_GROUND], false);
 	modelStack.PopMatrix();
 
+	//render skybox 
 	modelStack.PushMatrix();
 	modelStack.Translate(0, -2000, 0);
 	modelStack.Scale(300, 300, 300);
@@ -421,27 +415,17 @@ void scene2_SP2::Render()
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
-	//fps
-   /* std::stringstream ss;
-    ss << "FPS : " << framePerSecond;
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);*/
-	//x position
 	std::stringstream connectPosX;
-	connectPosX << "Player's X : " << camera.getCameraXcoord();
+	connectPosX << "X : " << camera.getCameraXcoord();
 	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 19.f);
-	//y position
-	std::stringstream connectPosY;
-	connectPosY << "Player's Y : " << camera.getCameraYcoord();
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.25f, 21.5f);
-	//z position
-	std::stringstream connectPosZ;
-	connectPosZ << "Player's Z : " << camera.getCameraZcoord();
+
+    std::stringstream connectPosZ;
+	connectPosZ << "Z : " << camera.getCameraZcoord();
 	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
 
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
-
 }
 
 /******************************************************************************/
