@@ -143,19 +143,12 @@ void sceneSP2::Init()
     meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
     meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
     //skybox
+
     //User Interface
     meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
     meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
     //User Interface
-
-	//LandVehicle
-	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//LandVehicle.obj");
-	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
-
-	//FlyingVehicle
-	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
-	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
-
+	
     on_light = true;
 
     Mtx44 projection;
@@ -366,29 +359,13 @@ void sceneSP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
-<<<<<<< HEAD
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 100);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	renderMesh(meshList[GEO_LANDVEHICLE], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 50, 100);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
-	modelStack.PopMatrix();
-
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
-=======
+
     //modelStack.PushMatrix();
     //RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
     //modelStack.PopMatrix();
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
->>>>>>> ff45bf942c6b90ec3d37e7fd2eb25632bc09871b
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);

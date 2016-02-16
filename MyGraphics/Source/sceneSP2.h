@@ -39,13 +39,13 @@ class sceneSP2 : public Scene
         //skybox
         GEO_SPACE_SKYBOX,
         //skybox
-<<<<<<< HEAD
+
         
-=======
+
         //User Interface
         GEO_UI,
         //User Interface
->>>>>>> ff45bf942c6b90ec3d37e7fd2eb25632bc09871b
+
 
 		GEO_BOX,
 
