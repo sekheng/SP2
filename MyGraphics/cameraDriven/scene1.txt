@@ -1,6 +1,6 @@
-positionx,0
+positionx,-280
 positiony,5
-positionz,200
+positionz,300
 targetx,10
 targety,10
 targetz,10

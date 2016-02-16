@@ -154,6 +154,17 @@ void sceneSP2::Init()
     //Space ground mesh
 
 	
+	//SpaceStation
+	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("Station", "OBJ//Station.obj");
+	meshList[GEO_STATION]->textureID = LoadTGA("Image//Station.tga");
+	//SpaceStationChair
+	meshList[GEO_CHAIR] = MeshBuilder::GenerateOBJ("Chair", "OBJ//Chair.obj");
+	meshList[GEO_CHAIR]->textureID = LoadTGA("Image//Chair.tga");
+
+	//SpaceStationTable
+	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("Table", "OBJ//Table.obj");
+	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
+
 
     on_light = true;
 
@@ -290,6 +301,30 @@ void sceneSP2::renderMesh(Mesh *mesh, bool enableLight)
     }
 }
 
+
+void sceneSP2::RenderStation()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(-275, 0, 290);
+	modelStack.Scale(20,10,10);
+	renderMesh(meshList[GEO_STATION], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(300, 0, -290);
+	modelStack.Scale(1.5, 1.5, 1.5);
+	modelStack.Rotate(180, 1, 0, 0);
+	renderMesh(meshList[GEO_CHAIR], false);
+	modelStack.PopMatrix();
+
+
+	modelStack.PushMatrix();
+	modelStack.Translate(-300, 0, 293);
+	modelStack.Scale(5, 5, 5);
+	renderMesh(meshList[GEO_TABLE], false);
+	modelStack.PopMatrix();
+}
+
 /******************************************************************************/
 /*!
 \brief - 
@@ -389,6 +424,8 @@ void sceneSP2::Render()
     //modelStack.PushMatrix();
     //RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
     //modelStack.PopMatrix();
+
+	RenderStation();
 
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
