@@ -402,11 +402,11 @@ void scene2_SP2::Render()
 	renderMesh(meshList[GEO_GROUND], false);
 	modelStack.PopMatrix();
 
-	/*modelStack.PushMatrix();
+	modelStack.PushMatrix();
 	modelStack.Translate(0, -2000, 0);
 	modelStack.Scale(300, 300, 300);
 	RenderSkybox();
-	modelStack.PopMatrix();*/
+	modelStack.PopMatrix();
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 

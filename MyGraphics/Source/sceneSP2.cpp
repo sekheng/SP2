@@ -147,7 +147,14 @@ void sceneSP2::Init()
     meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
     meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
     //User Interface
+    //Space ground mesh
+    meshList[GEO_SPACE_GROUNDMESH] = MeshBuilder::GenerateOBJ("Space ground mesh", "OBJ//Space_groundmesh.obj");
+    meshList[GEO_SPACE_GROUNDMESH]->textureID = LoadTGA("Image//Space_groundmesh.tga");
+    meshList[GEO_SPACE_GROUNDMESH]->material = MaterialBuilder::GenerateBlinn();
+    //Space ground mesh
+
 	
+
     on_light = true;
 
     Mtx44 projection;
@@ -352,20 +359,35 @@ void sceneSP2::Render()
 
     renderMesh(meshList[GEO_AXES], false);
 
+    //render skybox
     modelStack.PushMatrix();
-    modelStack.Translate(0, -2000, 0);
     modelStack.Scale(300, 300, 300);
     RenderSkybox();
     modelStack.PopMatrix();
+    //render skybox
+
 
    /* modelStack.PushMatrix();
     renderMesh(meshList[GEO_UI],false),
     modelStack.PopMatrix();*/
 
+    //render ground mesh
+    modelStack.PushMatrix();
+    modelStack.Scale(20, 1, 20);
+    Rendergroundmesh();
+    modelStack.PopMatrix();
+    //render ground mesh
+
+
     modelStack.PushMatrix();
     //scale, translate, rotate
     modelStack.Scale(20, 20, 1);
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
+    modelStack.PopMatrix();
+
+
+    modelStack.PushMatrix();
+    RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
     modelStack.PopMatrix();
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
@@ -374,22 +396,21 @@ void sceneSP2::Render()
     RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
     modelStack.PopMatrix();
 
+
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
     /*std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);*/
     
     std::stringstream connectPosX;
-    connectPosX << "Player's X : " << camera.getCameraXcoord();
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 19.f);
 
-	std::stringstream connectPosY;
-	connectPosY << "Player's Y : " << camera.getCameraYcoord();
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.25f, 21.5f);
+    connectPosX << "X : " << camera.getCameraXcoord();
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
 
-	std::stringstream connectPosZ;
-	connectPosZ << "Player's Z : " << camera.getCameraZcoord();
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
+    std::stringstream connectPosZ;
+    connectPosZ << "Z : " << camera.getCameraZcoord();
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
+
 }
 
 
@@ -620,5 +641,11 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
+    modelStack.PopMatrix();
+}
+void sceneSP2::Rendergroundmesh()
+{
+    modelStack.PushMatrix();
+    renderMesh(meshList[GEO_SPACE_GROUNDMESH], false);
     modelStack.PopMatrix();
 }

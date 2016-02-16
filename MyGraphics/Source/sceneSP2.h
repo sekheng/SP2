@@ -46,6 +46,9 @@ class sceneSP2 : public Scene
         GEO_UI,
         //User Interface
 
+        //Space ground mesh
+        GEO_SPACE_GROUNDMESH,
+        //Space ground mesh
 
 		GEO_BOX,
 
@@ -95,6 +98,7 @@ private:
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
+    void Rendergroundmesh();
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
