@@ -4,7 +4,7 @@
 #include "GameObject.h"
 #include "Vector3.h"
 
-class objectsForDisplay : protected GameObject {
+class objectsForDisplay : public GameObject {
 public:
     objectsForDisplay();
     ~objectsForDisplay();

@@ -16,6 +16,7 @@ Taken from Mr Tang's original framework
 #include "GameObject.h"
 #include "scene2_SP2.h"
 #include "sceneSP2.h"
+#include "scene3_SP2.h"
 /******************************************************************************/
 /*!
 Class Application:
@@ -36,11 +37,12 @@ public:
 
     static void changeIntoScenario3();
     static void changeIntoScenario1();
-    static void changeScenarios();
+    static void changeIntoScenario2();
 private:
     static Scene *scene;
     static Scene * scenario1;
     static Scene *scenario3;
+    static Scene *scenario2;
 	//Declare a window object
 	StopWatch m_timer;
 };

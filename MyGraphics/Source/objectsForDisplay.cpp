@@ -31,6 +31,7 @@ void objectsForDisplay::init(const char *fileLocation) {
             string values = "";
             taking_the_stuff.append(stringtoken);
             values.append(nextStuff);
+            //values.erase(std::remove(value.begin(), value.end(), )
             std::locale loc;
             for (size_t num = 0; num < taking_the_stuff.size(); ++num) {
                 taking_the_stuff[num] = tolower(taking_the_stuff[num], loc);
@@ -56,7 +57,6 @@ void objectsForDisplay::init(const char *fileLocation) {
 }
 
 bool objectsForDisplay::boundaryCheck(const Vector3& playerPos) {
-
     return true;
 }
 

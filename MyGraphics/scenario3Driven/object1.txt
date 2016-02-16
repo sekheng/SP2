@@ -1,0 +1,5 @@
+Name,spaceship
+objectX,0
+objectY,0
+objectZ,0
+boundaryRadius,10
