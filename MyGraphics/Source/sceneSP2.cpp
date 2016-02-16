@@ -169,6 +169,9 @@ void sceneSP2::Init()
 	//SpaceStationBox
 	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("Box", "OBJ//Box.obj");
 	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
+	//SpaceStationBox
+	meshList[GEO_DOOR] = MeshBuilder::GenerateOBJ("Door", "OBJ//Door.obj");
+	meshList[GEO_DOOR]->textureID = LoadTGA("Image//Door.tga");
 
     on_light = true;
 
@@ -413,7 +416,11 @@ void sceneSP2::RenderStation()
 		renderMesh(meshList[GEO_BOX], false);
 		modelStack.PopMatrix();
 	}
-
+	modelStack.PushMatrix();
+	modelStack.Translate(-270.f, 0.f, 263);
+	modelStack.Scale(5, 3, 6);
+	renderMesh(meshList[GEO_DOOR], false);
+	modelStack.PopMatrix();
 
 }
 
