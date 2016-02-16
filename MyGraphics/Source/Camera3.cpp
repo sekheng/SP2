@@ -101,12 +101,10 @@ void Camera3::Init(const char *fileLocation)
     it = cameraCoordinates.find("positionz");
     this->position.z = defaultPosition.z = it->second;
 
-    it = cameraCoordinates.find("targetx");
-    this->target.x = defaultTarget.x = it->second;
-    it = cameraCoordinates.find("targety");
-    this->target.y = defaultTarget.y = it->second;
-    it = cameraCoordinates.find("targetz");
-    this->target.z = defaultTarget.z = it->second;
+    it = cameraCoordinates.find("camerarotationx");
+    CameraXrotation = defaultCameraXrotation = it->second;
+    it = cameraCoordinates.find("camerarotationy");
+    CameraYrotation = defaultCameraYrotation = it->second;
 
     Vector3 decoyUp;
     it = cameraCoordinates.find("upx");
@@ -116,18 +114,12 @@ void Camera3::Init(const char *fileLocation)
     it = cameraCoordinates.find("upz");
     decoyUp.z = it->second;
 
+    this->target = Vector3(sin(Math::DegreeToRadian(CameraYrotation)) * cos(Math::DegreeToRadian(CameraXrotation)) + position.x, -sin(Math::DegreeToRadian(CameraXrotation)) + position.y, cos(Math::DegreeToRadian(CameraYrotation)) * cos(Math::DegreeToRadian(CameraXrotation)) + position.z);
     Vector3 view = (target - position).Normalized();
     Vector3 right = view.Cross(decoyUp);
-    right.y = 0;
-    right.Normalize();
-    this->up = defaultUp = right.Cross(view).Normalized();
+    this->up = defaultUp = right.Cross(view);
 
     camType = FIRST_PERSON;
-
-    it = cameraCoordinates.find("camerarotationx");
-    CameraXrotation = defaultCameraXrotation = it->second;
-    it = cameraCoordinates.find("camerarotationy");
-    CameraYrotation = defaultCameraYrotation = it->second;
 
     maxCameraXrotation = 80;
     minCameraXrotation = -80;
