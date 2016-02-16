@@ -11,12 +11,10 @@ An improvised camera inheirited from Camera Class
 #define CAMERA_3_H
 
 #include "Camera.h"
-#include <string>
-#include <map>
+#include "objectsForDisplay.h"
+#include <vector>
 
-using std::string;
-using std::map;
-
+using std::vector;
 /******************************************************************************/
 /*!
 Class Camera3:
@@ -47,6 +45,8 @@ public:
     virtual void Update(double dt);
     virtual void Reset();
 
+    void InitObjects(const char *fileLocation);
+
     void setLocation(float x, float y, float z);
 
     float getCameraXcoord();
@@ -57,13 +57,24 @@ public:
 
     float cursorCoordX;
     float cursorCoordY;
+    vector<objectsForDisplay> storage_of_objects;
+
 private:
     void rotateCamera(double dt);
     float CameraXrotation;
     float CameraYrotation, maxCameraXrotation, minCameraXrotation;
     void cameraMovement(double dt);
     float cameraSpeed;
-    map<string, float> cameraCoordinates;
+
+    //bounce check
+    float boundaryX, boundaryZ;
+    bool boundsCheckXaxis(const float& x, const float& posX);
+    bool boundsCheckZaxis(const float& z, const float& posZ);
+    //bounce check
+
+    //number of objects are there
+    size_t num_of_objects;
+    //number of objects are there
 };
 
 #endif

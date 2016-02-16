@@ -6,7 +6,10 @@
 #include "MyMath.h"
 #include <fstream>
 #include <locale>
+#include <map>
+#include <sstream>
 
+using std::map;
 /******************************************************************************/
 /*!
 \brief
@@ -14,6 +17,7 @@ Default constructor
 */
 /******************************************************************************/
 Camera3::Camera3()
+    : boundaryX(0), boundaryZ(0)
 {
 }
 
@@ -67,6 +71,7 @@ Initialize camera
 /******************************************************************************/
 void Camera3::Init(const char *fileLocation)
 {
+    map<string, float> cameraCoordinates;
     std::ifstream fileStream(fileLocation, std::ios::binary);
     if (!fileStream.is_open()) {
         std::cout << "Impossible to open " << fileLocation << ". Are you in the right directory ?\n";
@@ -129,6 +134,15 @@ void Camera3::Init(const char *fileLocation)
 
     it = cameraCoordinates.find("cameraspeed");
     float cameraSpeed = it->second;
+
+    it = cameraCoordinates.find("boundscheckx");
+    boundaryX = it->second;
+    
+    it = cameraCoordinates.find("boundscheckz");
+    boundaryZ = it->second;
+
+    it = cameraCoordinates.find("numberofobjects");
+    num_of_objects = static_cast<size_t>(it->second);
 }
 /******************************************************************************/
 /*!
@@ -308,8 +322,10 @@ void Camera3::cameraMovement(double dt)
         walkingX *= 50;
         walkingZ *= 50;
     }
-    position.x += walkingX;
-    position.z += walkingZ;
+    if (boundaryX != 0 && boundsCheckXaxis(boundaryX, position.x + walkingX))
+        position.x += walkingX;
+    if (boundaryZ != 0 && boundsCheckZaxis(boundaryZ, position.z + walkingZ))
+        position.z += walkingZ;
 }
 
 /******************************************************************************/
@@ -394,4 +410,33 @@ void Camera3::setLocation(float x, float y, float z) {
     defaultPosition.y = y;
     position.z = z;
     defaultPosition.z = z;
+}
+
+bool Camera3::boundsCheckXaxis(const float& x, const float& posX) {
+    if (posX < x && posX > -x)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Camera3::boundsCheckZaxis(const float& z, const float& posZ) {
+    if (posZ < z && posZ > -z)
+    {
+        return true;
+    }
+    return false;
+}
+
+void Camera3::InitObjects(const char *fileLocation) {
+    if (num_of_objects > 0) {
+        for (size_t num = 1; num <= num_of_objects; ++num) {
+            std::stringstream ss;
+            ss << fileLocation << "object" << num << ".txt";
+            string filename = ss.str();
+            objectsForDisplay object;
+            object.init(filename.c_str());
+            storage_of_objects.push_back(object);
+        }
+    }
 }

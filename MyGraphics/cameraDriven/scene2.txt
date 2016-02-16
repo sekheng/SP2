@@ -1,0 +1,15 @@
+positionx,0
+positiony,5
+positionz,50
+targetx,10
+targety,10
+targetz,10
+upx,0
+upy,1
+upz,0
+cameraRotationX,-10
+cameraRotationY,180
+cameraSpeed,5
+boundsCheckX,100
+boundsCheckZ,100
+numberofObjects,1

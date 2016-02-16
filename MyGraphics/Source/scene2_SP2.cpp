@@ -127,8 +127,8 @@ void scene2_SP2::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    //camera.Init(Vector3(0, 5, 200), Vector3(10, 10, 10), Vector3(0, 1, 0));
-    camera.Init("cameraDriven//scene1.txt");
+    camera.Init("cameraDriven//scene2.txt");
+    camera.InitObjects("scenario3Driven//");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -222,6 +222,13 @@ void scene2_SP2::Update(double dt)
     {
         light[0].type = Light::LIGHT_SPOT;
         glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
+    }
+
+    if (Application::IsKeyPressed(VK_NUMPAD1)) {
+        Application::changeIntoScenario1();
+    }
+    if (Application::IsKeyPressed(VK_NUMPAD2)) {
+        Application::changeIntoScenario2();
     }
 }
 
@@ -350,12 +357,16 @@ void scene2_SP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 100);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	renderMesh(meshList[GEO_LANDVEHICLE], false);
-	modelStack.PopMatrix();
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "spaceship\r") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Rotate(-90, 0, 1, 0);
+            modelStack.Scale(10, 10, 10);
+            renderMesh(meshList[GEO_LANDVEHICLE], false);
+            modelStack.PopMatrix();
+        }
+    }
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-50, 50, 100);
@@ -373,7 +384,7 @@ void scene2_SP2::Render()
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
     std::stringstream ss;
-    ss << "FPS : " << framePerSecond;
+    ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 }
 
@@ -420,6 +431,7 @@ void scene2_SP2::RenderText(Mesh* mesh, std::string text, Color color)
             int widthOfChar = text[i];
             moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
         }
+        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
