@@ -151,6 +151,9 @@ void scene2_SP2::Init()
 	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 
+	////Deadpool
+	//meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("deadpool", "OBJ//Deadpool.obj");
+	//meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//CHR_Deadpool_Body_TEXTSET_Color_NormX.tga");
 	
 
 	//User Interface
@@ -404,6 +407,13 @@ void scene2_SP2::Render()
 	//modelStack.Scale(100, 0, 100);
 	renderMesh(meshList[GEO_GROUND], false);
 	modelStack.PopMatrix();
+
+	////render deadpool
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0, 0, 0);
+	//modelStack.Scale(10, 10, 10);
+	//renderMesh(meshList[GEO_DEADPOOL], false);
+	//modelStack.PopMatrix();
 
 	//render skybox 
 	modelStack.PushMatrix();
