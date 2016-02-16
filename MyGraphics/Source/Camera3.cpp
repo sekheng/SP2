@@ -6,7 +6,10 @@
 #include "MyMath.h"
 #include <fstream>
 #include <locale>
+#include <map>
+#include <sstream>
 
+using std::map;
 /******************************************************************************/
 /*!
 \brief
@@ -68,6 +71,7 @@ Initialize camera
 /******************************************************************************/
 void Camera3::Init(const char *fileLocation)
 {
+    map<string, float> cameraCoordinates;
     std::ifstream fileStream(fileLocation, std::ios::binary);
     if (!fileStream.is_open()) {
         std::cout << "Impossible to open " << fileLocation << ". Are you in the right directory ?\n";
@@ -136,6 +140,9 @@ void Camera3::Init(const char *fileLocation)
     
     it = cameraCoordinates.find("boundscheckz");
     boundaryZ = it->second;
+
+    it = cameraCoordinates.find("numberofobjects");
+    num_of_objects = static_cast<size_t>(it->second);
 }
 /******************************************************************************/
 /*!
@@ -419,4 +426,17 @@ bool Camera3::boundsCheckZaxis(const float& z, const float& posZ) {
         return true;
     }
     return false;
+}
+
+void Camera3::InitObjects(const char *fileLocation) {
+    if (num_of_objects > 0) {
+        for (size_t num = 1; num <= num_of_objects; ++num) {
+            std::stringstream ss;
+            ss << fileLocation << "object" << num << ".txt";
+            string filename = ss.str();
+            objectsForDisplay object;
+            object.init(filename.c_str());
+            storage_of_objects.push_back(object);
+        }
+    }
 }

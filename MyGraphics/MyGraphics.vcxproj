@@ -100,6 +100,7 @@
     <ClCompile Include="Source\objectsForDisplay.cpp" />
     <ClCompile Include="Source\removeMonospace.cpp" />
     <ClCompile Include="Source\scene2_SP2.cpp" />
+    <ClCompile Include="Source\scene3_SP2.cpp" />
     <ClCompile Include="Source\sceneSP2.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
@@ -121,6 +122,7 @@
     <ClInclude Include="Source\removeMonospace.h" />
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\scene2_SP2.h" />
+    <ClInclude Include="Source\scene3_SP2.h" />
     <ClInclude Include="Source\sceneSP2.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Utility.h" />

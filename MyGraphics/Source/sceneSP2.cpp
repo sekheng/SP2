@@ -127,7 +127,6 @@ void sceneSP2::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    //camera.Init(Vector3(0, 5, 200), Vector3(10, 10, 10), Vector3(0, 1, 0));
     camera.Init("cameraDriven//scene1.txt");
     camera.camType = Camera3::FIRST_PERSON;
 
@@ -224,6 +223,9 @@ void sceneSP2::Update(double dt)
     }
 
     //transit scene
+    if (Application::IsKeyPressed(VK_NUMPAD2)) {
+        Application::changeIntoScenario2();
+    }
     if (Application::IsKeyPressed(VK_NUMPAD3)) {
         Application::changeIntoScenario3();
     }
