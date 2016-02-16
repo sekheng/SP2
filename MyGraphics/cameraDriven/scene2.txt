@@ -10,6 +10,6 @@ upz,0
 cameraRotationX,-10
 cameraRotationY,180
 cameraSpeed,5
-boundsCheckX,100
-boundsCheckZ,100
+boundsCheckX,1000
+boundsCheckZ,1000
 numberofObjects,1

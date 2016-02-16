@@ -322,10 +322,25 @@ void Camera3::cameraMovement(double dt)
         walkingX *= 50;
         walkingZ *= 50;
     }
-    if (boundaryX != 0 && boundsCheckXaxis(boundaryX, position.x + walkingX))
-        position.x += walkingX;
-    if (boundaryZ != 0 && boundsCheckZaxis(boundaryZ, position.z + walkingZ))
-        position.z += walkingZ;
+    if (walkingX != 0 && boundsCheckXaxis(boundaryX, position.x + walkingX))
+    {
+        bool canWalk = true;
+        for (auto it : storage_of_objects) {
+            if (it.boundaryCheck(position.x + walkingX, position.z) == false)
+                canWalk = false;
+        }
+        if (canWalk)
+            position.x += walkingX;
+    }
+    if (walkingZ != 0 && boundsCheckZaxis(boundaryZ, position.z + walkingZ)) {
+        bool canWalk = true;
+        for (auto it : storage_of_objects) {
+            if (it.boundaryCheck(position.x, position.z + walkingZ) == false)
+                canWalk = false;
+        }
+        if (canWalk)
+            position.z += walkingZ;
+    }
 }
 
 /******************************************************************************/
