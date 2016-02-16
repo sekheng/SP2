@@ -1,4 +1,3 @@
-
 #include "Application.h"
 
 //Include GLEW
@@ -17,9 +16,6 @@ const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 
 //global variables needed for transition
-Scene *g_Scene;
-Scene *g_SceneSP2_1;
-Scene *g_SceneSP2_2;
 Scene* Application::scenario1;
 Scene* Application::scene;
 Scene* Application::scenario3;
@@ -174,11 +170,6 @@ void Application::Run()
 {
 	//Main Loop
     const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
-    g_SceneSP2_1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    g_SceneSP2_1->Init();
-    g_SceneSP2_2 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    g_SceneSP2_2->Init();
-    g_Scene = g_SceneSP2_2;
 
     scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     scenario1->Init();
@@ -201,8 +192,6 @@ void Application::Run()
 
 	} //Check if the ESC key had been pressed or if the window had been closed
     scene->Exit();
-	delete g_SceneSP2_1;
-    delete g_SceneSP2_2;
     delete scenario1;
     delete scenario3;
 }

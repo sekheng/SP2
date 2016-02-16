@@ -139,6 +139,19 @@ void scene2_SP2::Init()
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
+	//skybox
+	meshList[GEO_PLANET_SKYBOX] = MeshBuilder::GenerateOBJ("planet skybox", "OBJ//Planet_skybox.obj");
+	meshList[GEO_PLANET_SKYBOX]->textureID = LoadTGA("Image//skybox//Planet_skybox_UV.tga");
+	//skybox
+
+	//LandVehicle
+	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//LandVehicle.obj");
+	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
+
+	//FlyingVehicle
+	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
+	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
+
     on_light = true;
 
     Mtx44 projection;
@@ -341,6 +354,27 @@ void scene2_SP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 100);
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	renderMesh(meshList[GEO_LANDVEHICLE], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(-50, 50, 100);
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, -2000, 0);
+	modelStack.Scale(300, 300, 300);
+	RenderSkybox();
+	modelStack.PopMatrix();
+
+
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
@@ -493,4 +527,12 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();
+}
+
+void scene2_SP2::RenderSkybox()
+{
+	modelStack.PushMatrix();
+	//modelStack.Scale(0.5, 0.5, 0.5);
+	renderMesh(meshList[GEO_PLANET_SKYBOX], false);
+	modelStack.PopMatrix();
 }

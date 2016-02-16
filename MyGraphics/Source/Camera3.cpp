@@ -293,7 +293,7 @@ void Camera3::cameraMovement(double dt)
      //got a bug on the turning and walking
     {
         walkingX += (float)(sin(Math::DegreeToRadian(CameraYrotation)) * dt);
-        walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation)) * dt);
+		walkingZ += (float)(cos(Math::DegreeToRadian(CameraYrotation)) * dt);
     }
     if (Application::IsKeyPressed('A'))
     {

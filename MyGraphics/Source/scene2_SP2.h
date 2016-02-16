@@ -31,10 +31,26 @@ class scene2_SP2 : public Scene
 {
     enum GEOMETRY_TYPE
     {
-        GEO_AXES,
-        GEO_LIGHTBALL,
-        GEO_COMIC_TEXT,
-        NUM_GEOMETRY,
+		GEO_AXES,
+		GEO_LIGHTBALL,
+		GEO_COMIC_TEXT,
+
+		GEO_LANDVEHICLE,
+		GEO_FLYINGVEHICLE,
+		//skybox
+		GEO_PLANET_SKYBOX,
+		//skybox
+
+
+
+		//User Interface
+		GEO_UI,
+		//User Interface
+
+
+		GEO_BOX,
+
+		NUM_GEOMETRY,
     };
 
     enum UNIFORM_TYPE
@@ -79,7 +95,7 @@ private:
     Light light[1];
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
-
+	void RenderSkybox();
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 

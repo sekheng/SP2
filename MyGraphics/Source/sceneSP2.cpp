@@ -143,11 +143,12 @@ void sceneSP2::Init()
     meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
     meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
     //skybox
+
     //User Interface
     meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
     meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
     //User Interface
-
+	
     on_light = true;
 
     Mtx44 projection;
@@ -364,6 +365,8 @@ void sceneSP2::Render()
     modelStack.Scale(20, 20, 1);
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
+
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
     //modelStack.PushMatrix();
     //RenderUserInterface(meshList[GEO_UI], 1, 40, 40);

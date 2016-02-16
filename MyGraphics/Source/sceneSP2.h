@@ -34,13 +34,18 @@ class sceneSP2 : public Scene
         GEO_LIGHTBALL,
         GEO_COMIC_TEXT,
 
-        
+		GEO_LANDVEHICLE,
+		GEO_FLYINGVEHICLE,
         //skybox
         GEO_SPACE_SKYBOX,
         //skybox
+
+        
+
         //User Interface
         GEO_UI,
         //User Interface
+
 
 		GEO_BOX,
 
