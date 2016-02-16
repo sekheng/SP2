@@ -160,11 +160,12 @@ void sceneSP2::Init()
 	//SpaceStationChair
 	meshList[GEO_CHAIR] = MeshBuilder::GenerateOBJ("Chair", "OBJ//Chair.obj");
 	meshList[GEO_CHAIR]->textureID = LoadTGA("Image//Chair.tga");
-
 	//SpaceStationTable
 	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("Table", "OBJ//Table.obj");
 	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
-
+	//SpaceStationBox
+	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("Box", "OBJ//Box.obj");
+	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
 
     on_light = true;
 
@@ -310,19 +311,107 @@ void sceneSP2::RenderStation()
 	renderMesh(meshList[GEO_STATION], false);
 	modelStack.PopMatrix();
 
+	//Table and chair set 1
 	modelStack.PushMatrix();
-	modelStack.Translate(300, 0, -290);
+	modelStack.Translate(-300, 0, 290);
 	modelStack.Scale(1.5, 1.5, 1.5);
-	modelStack.Rotate(180, 1, 0, 0);
 	renderMesh(meshList[GEO_CHAIR], false);
 	modelStack.PopMatrix();
 
+	modelStack.PushMatrix();
+	modelStack.Rotate(180,0,1,0);
+	modelStack.Translate(300, 0, -295);
+	modelStack.Scale(1.5,1.5,1.5);
+	renderMesh(meshList[GEO_CHAIR], false);
+	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-300, 0, 293);
 	modelStack.Scale(5, 5, 5);
 	renderMesh(meshList[GEO_TABLE], false);
 	modelStack.PopMatrix();
+
+	//Table and chair set2 
+	modelStack.PushMatrix();
+	modelStack.Translate(-300, 0, 303);
+	modelStack.Scale(1.5, 1.5, 1.5);
+	renderMesh(meshList[GEO_CHAIR], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Translate(300, 0, -307);
+	modelStack.Scale(1.5, 1.5, 1.5);
+	renderMesh(meshList[GEO_CHAIR], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(-300, 0, 305);
+	modelStack.Scale(5, 5, 5);
+	renderMesh(meshList[GEO_TABLE], false);
+	modelStack.PopMatrix();
+
+
+	//Table and chair set3 
+	modelStack.PushMatrix();
+	modelStack.Translate(-300, 0, 280);
+	modelStack.Scale(1.5, 1.5, 1.5);
+	renderMesh(meshList[GEO_CHAIR], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Translate(300, 0, -284);
+	modelStack.Scale(1.5, 1.5, 1.5);
+	renderMesh(meshList[GEO_CHAIR], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(-300, 0, 282);
+	modelStack.Scale(5, 5, 5);
+	renderMesh(meshList[GEO_TABLE], false);
+	modelStack.PopMatrix();
+
+
+	//Box
+	modelStack.PushMatrix();
+	modelStack.Translate(-307, 0, 270);
+	modelStack.Scale(5, 5, 5);
+	renderMesh(meshList[GEO_BOX], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	renderMesh(meshList[GEO_BOX], false);
+	modelStack.PopMatrix();
+
+	for (size_t i = 0; i < 50; i += 10)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(-255, 0, 270 + i);
+		modelStack.Scale(5, 5, 5);
+		renderMesh(meshList[GEO_BOX], false);
+		modelStack.PopMatrix();
+	}
+
+	for (size_t i = 0; i < 50; i += 5)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(-255, 5, 268 + i);
+		modelStack.Scale(5, 5, 5);
+		renderMesh(meshList[GEO_BOX], false);
+		modelStack.PopMatrix();
+	}
+
+	for (size_t i = 0; i < 55; i += 5)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(-250, 0, 265 + i);
+		modelStack.Scale(5, 5, 5);
+		renderMesh(meshList[GEO_BOX], false);
+		modelStack.PopMatrix();
+	}
+
+
 }
 
 /******************************************************************************/

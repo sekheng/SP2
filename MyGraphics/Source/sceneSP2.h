@@ -57,7 +57,7 @@ class sceneSP2 : public Scene
 		GEO_CHAIR,
 		//Table
 		GEO_TABLE,
-
+		//Box
 		GEO_BOX,
 
         NUM_GEOMETRY,
