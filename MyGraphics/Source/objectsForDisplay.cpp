@@ -3,6 +3,7 @@
 #include <iostream>
 #include <map>
 #include <locale>
+#include <algorithm>
 
 using std::map;
 
@@ -31,7 +32,7 @@ void objectsForDisplay::init(const char *fileLocation) {
             string values = "";
             taking_the_stuff.append(stringtoken);
             values.append(nextStuff);
-            //values.erase(std::remove(value.begin(), value.end(), )
+            values.erase(std::remove(values.begin(), values.end(), '\r'));
             std::locale loc;
             for (size_t num = 0; num < taking_the_stuff.size(); ++num) {
                 taking_the_stuff[num] = tolower(taking_the_stuff[num], loc);
@@ -41,6 +42,10 @@ void objectsForDisplay::init(const char *fileLocation) {
         fileStream.close();
     }
     map<string, string>::iterator it = object_stuff.find("name");
+    std::locale loc;
+    for (size_t num = 0; num < it->second.size(); ++num) {
+        it->second[num] = tolower(it->second[num], loc);
+    }
     Name_ = it->second;
 
     it = object_stuff.find("objectx");
@@ -52,11 +57,20 @@ void objectsForDisplay::init(const char *fileLocation) {
     it = object_stuff.find("objectz");
     objectPos.z = static_cast<float>(stoi(it->second));
 
-    it = object_stuff.find("boundaryradius");
-    boundaryRadius = static_cast<float>(stoi(it->second));
+    it = object_stuff.find("boundaryradiusx");
+    boundaryRadiusX = static_cast<float>(stoi(it->second));
+    it = object_stuff.find("boundaryradiusz");
+    boundaryRadiusZ = static_cast<float>(stoi(it->second));
 }
 
-bool objectsForDisplay::boundaryCheck(const Vector3& playerPos) {
+bool objectsForDisplay::boundaryCheck(const float& playerPosX, const float& playerPosZ) {
+    if ((objectPos.x + boundaryRadiusX) > playerPosX &&
+        (objectPos.x - boundaryRadiusX) < playerPosX &&
+        (objectPos.z + boundaryRadiusZ) > playerPosZ &&
+        (objectPos.z - boundaryRadiusZ) < playerPosZ)
+    {
+        return false;
+    }
     return true;
 }
 

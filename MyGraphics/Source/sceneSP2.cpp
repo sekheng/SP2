@@ -377,12 +377,18 @@ void sceneSP2::Render()
     modelStack.PopMatrix();
     //render skybox
 
+
+   /* modelStack.PushMatrix();
+    renderMesh(meshList[GEO_UI],false),
+    modelStack.PopMatrix();*/
+
     //render ground mesh
     modelStack.PushMatrix();
     modelStack.Scale(20, 1, 20);
     Rendergroundmesh();
     modelStack.PopMatrix();
     //render ground mesh
+
 
     modelStack.PushMatrix();
     RenderScrewDriver();
@@ -416,9 +422,9 @@ void sceneSP2::Render()
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
-    //modelStack.PushMatrix();
-    //RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
-    //modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
+    modelStack.PopMatrix();
 
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
@@ -427,13 +433,16 @@ void sceneSP2::Render()
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
     
     std::stringstream connectPosX;
+
     connectPosX << "X : " << camera.getCameraXcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
 
     std::stringstream connectPosZ;
     connectPosZ << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
+
 }
+
 
 /******************************************************************************/
 /*!
@@ -674,30 +683,28 @@ void sceneSP2::Rendergroundmesh()
 void sceneSP2::RenderScrewDriver()
 {
     modelStack.PushMatrix();
-    modelStack.Translate(30, 0, -30);
+    modelStack.Translate(0, 0, 0);
     renderMesh(meshList[GEO_CONTAINER], false);
     modelStack.PopMatrix();
 }
 void sceneSP2::RenderHammer()
 {
     modelStack.PushMatrix();
-    modelStack.Translate(0, 0, 0);
-
+    modelStack.Translate(0, 0, -200);
     renderMesh(meshList[GEO_GASOLINE], false);
     modelStack.PopMatrix();
 }
 void sceneSP2::RenderContainer()
 {
     modelStack.PushMatrix();
-    modelStack.Translate(0, 0, 0);
-
+    modelStack.Translate(30, 0, 20);
     renderMesh(meshList[GEO_HAMMER], false);
     modelStack.PopMatrix();
 }
 void sceneSP2::RenderGasoline()
 {
     modelStack.PushMatrix();
-    modelStack.Translate(0, 0, 0);
+    modelStack.Translate(90, 0, -30);
     renderMesh(meshList[GEO_SCREWDRIVER], false);
     modelStack.PopMatrix();
 }
