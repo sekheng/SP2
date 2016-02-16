@@ -1,6 +1,6 @@
-positionx,0
+positionx,-280
 positiony,5
-positionz,200
+positionz,300
 upx,0
 upy,1
 upz,0
