@@ -6,6 +6,7 @@
 \brief -
 Creating a clean scene so that my teammates can code in ease
 Hopefully they don't mess it up
+This is for landing on the vault
 */
 /******************************************************************************/
 #ifndef SCENE2_SP2_H_
