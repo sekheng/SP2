@@ -378,11 +378,14 @@ void scene2_SP2::RenderText(Mesh* mesh, std::string text, Color color)
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        int widthOfChar = text[i];
-        characterSpacing.SetToTranslation(i + (forComicSans.eachCharSpace[widthOfChar] / 23), 0, 0); //1.0f is the spacing of each character, you may change this value
+        if (i != 0) {
+            int widthOfChar = text[i];
+            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
+        }
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 

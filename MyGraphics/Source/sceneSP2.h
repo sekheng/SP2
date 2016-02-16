@@ -107,12 +107,6 @@ private:
 
     double framePerSecond;
     float screenWidth, screenHeight;
-    //camera coords
-    float camera_position_x;
-    string show_player_x;
-    float camera_position_z;
-    string show_player_z;
-    //camera coords
     removeMonospace forComicSans;
 };
 

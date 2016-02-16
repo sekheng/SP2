@@ -14,8 +14,8 @@ Taken from Mr Tang's original framework
 #include "timer.h"
 #include "DetectMemoryLeak.h"
 #include "GameObject.h"
-#include "sceneSP2.h"
 #include "scene2_SP2.h"
+#include "sceneSP2.h"
 /******************************************************************************/
 /*!
 Class Application:
@@ -35,7 +35,7 @@ public:
 	static bool IsKeyPressed(unsigned short key);
 
 private:
-
+    
 	//Declare a window object
 	StopWatch m_timer;
 };
