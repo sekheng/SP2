@@ -1,4 +1,3 @@
-#include "scene2_SP2.h"
 #include "GL\glew.h"
 #include <sstream>
 
@@ -376,7 +375,7 @@ void scene2_SP2::Render()
 	renderMesh(meshList[GEO_LANDVEHICLE], false);
 	modelStack.PopMatrix();
     for (auto it : camera.storage_of_objects) {
-        if (it.getName() == "spaceship") {
+        if (it.getName() == "spacevehicle") {
             modelStack.PushMatrix();
             modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
             modelStack.Rotate(-90, 0, 1, 0);
