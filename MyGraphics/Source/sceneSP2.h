@@ -51,6 +51,14 @@ class sceneSP2 : public Scene
         GEO_SPACE_GROUNDMESH,
         //Space ground mesh
 
+
+		//SpaceStation
+		GEO_STATION,
+		//Chair
+		GEO_CHAIR,
+		//Table
+		GEO_TABLE,
+		//Box
 		GEO_BOX,
 
         NUM_GEOMETRY,
@@ -100,7 +108,10 @@ private:
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
     void Rendergroundmesh();
+
 	void RenderCryostasis();
+
+	void RenderStation();
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

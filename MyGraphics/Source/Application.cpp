@@ -178,7 +178,7 @@ void Application::Run()
     scenario3->Init();
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     scenario2->Init();
-    scene = scenario3;
+	scene = scenario1;
 
 
     std::cout << "Number of object created: " << GameObject::getCount() << std::endl;
