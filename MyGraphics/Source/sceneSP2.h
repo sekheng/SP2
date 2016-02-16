@@ -39,6 +39,13 @@ class sceneSP2 : public Scene
         //skybox
         GEO_SPACE_SKYBOX,
         //skybox
+<<<<<<< HEAD
+=======
+
+		//cryostasis
+		GEO_CRYOSTASIS,
+        
+>>>>>>> 6410d507dd00fc70067a5a3ac05d09d22f94304d
         //User Interface
         GEO_UI,
         //User Interface
@@ -111,12 +118,16 @@ private:
     void RenderSkybox();
     void Rendergroundmesh();
 
+<<<<<<< HEAD
     //render quest items
     void RenderScrewDriver();
     void RenderHammer();
     void RenderContainer();
     void RenderGasoline();
     //render quest items
+=======
+	void RenderCryostasis();
+>>>>>>> 6410d507dd00fc70067a5a3ac05d09d22f94304d
 
 	void RenderStation();
 
@@ -134,6 +145,7 @@ private:
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
+
 
     double framePerSecond;
     float screenWidth, screenHeight;

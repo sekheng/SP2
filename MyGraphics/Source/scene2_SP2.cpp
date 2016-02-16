@@ -151,6 +151,11 @@ void scene2_SP2::Init()
 	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 
+	////Deadpool
+	//meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("deadpool", "OBJ//Deadpool.obj");
+	//meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//CHR_Deadpool_Body_TEXTSET_Color_NormX.tga");
+	
+
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
 	meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
@@ -365,13 +370,6 @@ void scene2_SP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	renderMesh(meshList[GEO_LANDVEHICLE], false);
-	modelStack.PopMatrix();
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "spacevehicle") {
             modelStack.PushMatrix();
@@ -383,7 +381,7 @@ void scene2_SP2::Render()
         }
     }
 
-
+	//render flyingvehicle
 	modelStack.PushMatrix();
 	modelStack.Translate(-50, 100, 0);
 	modelStack.Rotate(-90, 0, 1, 0);
@@ -391,17 +389,27 @@ void scene2_SP2::Render()
 	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
 	modelStack.PopMatrix();
 
+	//render UI
 	modelStack.PushMatrix();
 
 	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
 	modelStack.PopMatrix();
 
+	//render ground
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 0);
-	modelStack.Scale(200, 200, 200);
+	modelStack.Translate(0,0, 0);
+	//modelStack.Scale(100, 0, 100);
 	renderMesh(meshList[GEO_GROUND], false);
 	modelStack.PopMatrix();
 
+	////render deadpool
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0, 0, 0);
+	//modelStack.Scale(10, 10, 10);
+	//renderMesh(meshList[GEO_DEADPOOL], false);
+	//modelStack.PopMatrix();
+
+	//render skybox 
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.Scale(300, 300, 300);
