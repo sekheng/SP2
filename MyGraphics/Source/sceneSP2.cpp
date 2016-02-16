@@ -158,9 +158,6 @@ void sceneSP2::Init()
     projectionStack.LoadMatrix(projection);
 
     //initialise camera_position_x and z;
-    camera_position_x = 0;
-    camera_position_z = 0;
-    //initialise camera_position_x and z;
     framePerSecond = 0;
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
@@ -178,19 +175,6 @@ void sceneSP2::Update(double dt)
 {
     camera.Update(dt);
     framePerSecond = 1 / dt;
-
-    //detect camera coords
-    std::stringstream player_x;
-    player_x << "X : ";
-    camera_position_x = camera.position.x;
-    player_x << camera_position_x;
-    show_player_x = player_x.str();
-    std::stringstream player_z;
-    player_z << "Z : ";
-    camera_position_z = camera.position.z;
-    player_z << camera_position_z;
-    show_player_z = player_z.str();
-    //detect camera coords
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -381,19 +365,17 @@ void sceneSP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
-    modelStack.PopMatrix();
+    //modelStack.PushMatrix();
+    //RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
+    //modelStack.PopMatrix();
 
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
     std::stringstream ss;
-    ss << "FPS : " << framePerSecond;
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8, 1.25, 16.5);
+    ss << "FPS : " << static_cast<int>(framePerSecond);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
     
-    //show x and z coords for player
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], show_player_x, Color(0, 1, 0), 1.8, 1.5, 21.2);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], show_player_z, Color(0, 1, 0), 1.8, 1.5, 19);
-    //show x and z coords for player
+    std::stringstream connectPosX;
+    connectPosX << "Player's X : " << camera.getCameraXcoord();
 }
 
 /******************************************************************************/
@@ -431,11 +413,14 @@ void sceneSP2::RenderText(Mesh* mesh, std::string text, Color color)
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        int widthOfChar = text[i];
-        characterSpacing.SetToTranslation(i + (forComicSans.eachCharSpace[widthOfChar] / 23), 0, 0); //1.0f is the spacing of each character, you may change this value
+        if (i != 0) {
+            int widthOfChar = text[i];
+            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
+        }
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -482,11 +467,15 @@ void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        int widthOfChar = text[i];
-        characterSpacing.SetToTranslation(i * 0.5f /*+ (forComicSans.eachCharSpace[widthOfChar] / 23)*/, 0, 0); //1.0f is the spacing of each character, you may change this value
+        if (i != 0) {
+            int widthOfChar = text[i];
+            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
+        }
+        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
