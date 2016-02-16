@@ -152,6 +152,15 @@ void scene2_SP2::Init()
 	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 
+	//User Interface
+	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
+	meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
+	//User Interface
+
+	//GroundMesh
+	meshList[GEO_GROUND] = MeshBuilder::GenerateQuad("groundmesh", Color(1, 1, 1));
+	meshList[GEO_GROUND]->textureID = LoadTGA("Image//planet_ground2.tga");
+
     on_light = true;
 
     Mtx44 projection;
@@ -357,6 +366,13 @@ void scene2_SP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Scale(10, 10, 10);
+	renderMesh(meshList[GEO_LANDVEHICLE], false);
+	modelStack.PopMatrix();
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "spaceship") {
             modelStack.PushMatrix();
@@ -368,11 +384,22 @@ void scene2_SP2::Render()
         }
     }
 
+
 	modelStack.PushMatrix();
-	modelStack.Translate(-50, 50, 100);
+	modelStack.Translate(-50, 100, 0);
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Scale(10, 10, 10);
 	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.Scale(200, 200, 200);
+	renderMesh(meshList[GEO_GROUND], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
@@ -381,15 +408,16 @@ void scene2_SP2::Render()
 	RenderSkybox();
 	modelStack.PopMatrix();
 
-    std::stringstream connectPosX;
-    connectPosX << "X : " << camera.getCameraXcoord();
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
+
+	std::stringstream connectPosX;
+	connectPosX << "X : " << camera.getCameraXcoord();
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 19.f);
 
     std::stringstream connectPosZ;
-    connectPosZ << "Z : " << camera.getCameraZcoord();
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
+	connectPosZ << "Z : " << camera.getCameraZcoord();
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
 
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
@@ -548,5 +576,29 @@ void scene2_SP2::RenderSkybox()
 	modelStack.PushMatrix();
 	//modelStack.Scale(0.5, 0.5, 0.5);
 	renderMesh(meshList[GEO_PLANET_SKYBOX], false);
+	modelStack.PopMatrix();
+}
+
+void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
+{
+	if (!mesh || mesh->textureID <= 0) //Proper error check
+		return;
+
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 80, -10, 10); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+
+	modelStack.Translate(x, y, 0);
+	modelStack.Scale(80, 80, 80);
+	modelStack.Rotate(90, 0, -1, 0);
+	renderMesh(mesh, false);
+
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
