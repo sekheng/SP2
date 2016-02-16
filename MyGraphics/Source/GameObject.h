@@ -25,11 +25,11 @@ using std::string;
 class GameObject
 {
 private:
-	const string kName;
 	static int count_;
 
 protected:
 	explicit GameObject(const string& str);
+	string Name_;
 
 public:
 	virtual ~GameObject();

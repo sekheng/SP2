@@ -34,8 +34,13 @@ public:
 	void Exit();
 	static bool IsKeyPressed(unsigned short key);
 
+    static void changeIntoScenario3();
+    static void changeIntoScenario1();
+    static void changeScenarios();
 private:
-    
+    static Scene *scene;
+    static Scene * scenario1;
+    static Scene *scenario3;
 	//Declare a window object
 	StopWatch m_timer;
 };

@@ -40,13 +40,10 @@ class scene2_SP2 : public Scene
 		//skybox
 		GEO_PLANET_SKYBOX,
 		//skybox
-
-
-
+		GEO_GROUND,
 		//User Interface
 		GEO_UI,
 		//User Interface
-
 
 		GEO_BOX,
 

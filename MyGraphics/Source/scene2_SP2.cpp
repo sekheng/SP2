@@ -128,7 +128,7 @@ void scene2_SP2::Init()
 
     //Initialize camera settings
     //camera.Init(Vector3(0, 5, 200), Vector3(10, 10, 10), Vector3(0, 1, 0));
-    camera.Init("cameraDriven//scene1.txt");
+    camera.Init("cameraDriven//scene2.txt");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -156,6 +156,10 @@ void scene2_SP2::Init()
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
 	meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
 	//User Interface
+
+	//GroundMesh
+	meshList[GEO_GROUND] = MeshBuilder::GenerateQuad("groundmesh", Color(1, 1, 1));
+	meshList[GEO_GROUND]->textureID = LoadTGA("Image//planet_ground2.tga");
 
     on_light = true;
 
@@ -227,6 +231,10 @@ void scene2_SP2::Update(double dt)
     {
         light[0].type = Light::LIGHT_SPOT;
         glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
+    }
+
+    if (Application::IsKeyPressed(VK_NUMPAD1)) {
+        Application::changeIntoScenario1();
     }
 }
 
@@ -356,14 +364,14 @@ void scene2_SP2::Render()
     modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 100);
+	modelStack.Translate(0, 0, 0);
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Scale(10, 10, 10);
 	renderMesh(meshList[GEO_LANDVEHICLE], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-50, 50, 100);
+	modelStack.Translate(-50, 100, 0);
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Scale(10, 10, 10);
 	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
@@ -373,16 +381,20 @@ void scene2_SP2::Render()
 	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
 	modelStack.PopMatrix();
 
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 0);
+	modelStack.Scale(200, 200, 200);
+	renderMesh(meshList[GEO_GROUND], false);
+	modelStack.PopMatrix();
+
 	/*modelStack.PushMatrix();
 	modelStack.Translate(0, -2000, 0);
 	modelStack.Scale(300, 300, 300);
 	RenderSkybox();
 	modelStack.PopMatrix();*/
 
-	
-
-
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
+
 	//fps
    /* std::stringstream ss;
     ss << "FPS : " << framePerSecond;
@@ -399,6 +411,11 @@ void scene2_SP2::Render()
 	std::stringstream connectPosZ;
 	connectPosZ << "Player's Z : " << camera.getCameraZcoord();
 	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
+
+    std::stringstream ss;
+    ss << "FPS : " << static_cast<int>(framePerSecond);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
+
 }
 
 /******************************************************************************/
@@ -444,6 +461,7 @@ void scene2_SP2::RenderText(Mesh* mesh, std::string text, Color color)
             int widthOfChar = text[i];
             moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
         }
+        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 

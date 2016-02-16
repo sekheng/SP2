@@ -222,6 +222,13 @@ void sceneSP2::Update(double dt)
         light[0].type = Light::LIGHT_SPOT;
         glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
     }
+
+    //transit scene
+    if (Application::IsKeyPressed(VK_NUMPAD3)) {
+        Application::changeIntoScenario3();
+    }
+    //transit scene
+
 }
 
 /******************************************************************************/
