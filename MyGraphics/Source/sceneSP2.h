@@ -36,9 +36,10 @@ class sceneSP2 : public Scene
 
 		GEO_LANDVEHICLE,
 		GEO_FLYINGVEHICLE,
-        //skybox
+        //environment**********************************************/
         GEO_SPACE_SKYBOX,
-        //skybox
+        GEO_SPACE_GROUNDMESH,
+        //environment**********************************************/
 
 		//cryostasis
 		GEO_CRYOSTASIS,
@@ -47,9 +48,13 @@ class sceneSP2 : public Scene
         GEO_UI,
         //User Interface
 
-        //Space ground mesh
-        GEO_SPACE_GROUNDMESH,
-        //Space ground mesh
+        //quest items
+        GEO_SCREWDRIVER,
+        GEO_CONTAINER,
+        GEO_GASOLINE,
+        GEO_HAMMER,
+        //quest items
+
 
 
 		//SpaceStation
@@ -111,9 +116,16 @@ private:
     void RenderSkybox();
     void Rendergroundmesh();
 
+    //render quest items
+    void RenderScrewDriver();
+    void RenderHammer();
+    void RenderContainer();
+    void RenderGasoline();
+    //render quest items
 	void RenderCryostasis();
 
 	void RenderStation();
+
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

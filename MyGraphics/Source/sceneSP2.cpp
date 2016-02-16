@@ -155,6 +155,17 @@ void sceneSP2::Init()
     meshList[GEO_SPACE_GROUNDMESH]->textureID = LoadTGA("Image//Space_groundmesh.tga");
    // meshList[GEO_SPACE_GROUNDMESH]->material = MaterialBuilder::GenerateBlinn();
     //Space ground mesh
+    //quest items
+    meshList[GEO_SCREWDRIVER] = MeshBuilder::GenerateOBJ("screw driver", "OBJ//ScrewDriver.obj");
+    meshList[GEO_SCREWDRIVER]->textureID = LoadTGA("Image//Screwdriver.tga");
+    meshList[GEO_CONTAINER] = MeshBuilder::GenerateOBJ("container", "OBJ//Container.obj");
+    meshList[GEO_CONTAINER]->textureID = LoadTGA("Image//Container.tga");
+    meshList[GEO_GASOLINE] = MeshBuilder::GenerateOBJ("gasoline", "OBJ//Gasoline.obj");
+    meshList[GEO_GASOLINE]->textureID = LoadTGA("Image//Gasoline.tga");
+    meshList[GEO_HAMMER] = MeshBuilder::GenerateOBJ("hammer", "OBJ//Hammer.obj");
+    meshList[GEO_HAMMER]->textureID = LoadTGA("Image//Hammer.tga");
+
+    //quest items
 
 	
 	//SpaceStation
@@ -516,6 +527,25 @@ void sceneSP2::Render()
 	RenderCryostasis();
 
     modelStack.PushMatrix();
+    RenderScrewDriver();
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    RenderContainer();
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    RenderGasoline();
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    RenderHammer();
+    modelStack.PopMatrix();
+
+    //****************************************************************************//
+    //On screen objects
+    //****************************************************************************//
+    modelStack.PushMatrix();
     //scale, translate, rotate
     modelStack.Scale(20, 20, 1);
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
@@ -536,9 +566,9 @@ void sceneSP2::Render()
 
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
-    /*std::stringstream ss;
+    std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);*/
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
     
     std::stringstream connectPosX;
 
@@ -787,6 +817,41 @@ void sceneSP2::Rendergroundmesh()
     renderMesh(meshList[GEO_SPACE_GROUNDMESH], false);
     modelStack.PopMatrix();
 }
+/**********************************************************************************************************/
+//render quest items
+/**********************************************************************************************************/
+void sceneSP2::RenderScrewDriver()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, 0);
+    renderMesh(meshList[GEO_CONTAINER], false);
+    modelStack.PopMatrix();
+}
+void sceneSP2::RenderHammer()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, -200);
+    renderMesh(meshList[GEO_GASOLINE], false);
+    modelStack.PopMatrix();
+}
+void sceneSP2::RenderContainer()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(30, 0, 20);
+    renderMesh(meshList[GEO_HAMMER], false);
+    modelStack.PopMatrix();
+}
+void sceneSP2::RenderGasoline()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(90, 0, -30);
+    renderMesh(meshList[GEO_SCREWDRIVER], false);
+    modelStack.PopMatrix();
+}
+/**********************************************************************************************************/
+//render quest items
+/**********************************************************************************************************/
+
 
 
 void sceneSP2::RenderCryostasis()

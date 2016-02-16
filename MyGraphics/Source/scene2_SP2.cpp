@@ -162,9 +162,9 @@ void scene2_SP2::Init()
 	//User Interface
 
 	//GroundMesh
-	meshList[GEO_GROUND] = MeshBuilder::GenerateOBJ("ground", "OBJ//ground.obj");
-	meshList[GEO_GROUND]->textureID = LoadTGA("Image//ground.tga");
-
+    meshList[GEO_PLANET_GROUND] = MeshBuilder::GenerateOBJ("Planet ground mesh", "OBJ//planet_ground_mesh.obj");
+    meshList[GEO_PLANET_GROUND]->textureID = LoadTGA("Image//planet_ground_mesh.tga");
+    //GroundMesh
     on_light = true;
 
     Mtx44 projection;
@@ -391,14 +391,14 @@ void scene2_SP2::Render()
 
 	//render UI
 	modelStack.PushMatrix();
+
 	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
 	modelStack.PopMatrix();
 
 	//render ground
 	modelStack.PushMatrix();
-	modelStack.Translate(0,0, 0);
-	//modelStack.Scale(100, 0, 100);
-	renderMesh(meshList[GEO_GROUND], false);
+	modelStack.Scale(100, 0, 100);
+	renderMesh(meshList[GEO_PLANET_GROUND], false);
 	modelStack.PopMatrix();
 
 	////render deadpool
@@ -410,7 +410,7 @@ void scene2_SP2::Render()
 
 	//render skybox 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, -2000, 0);
+	modelStack.Translate(0, 0, 0);
 	modelStack.Scale(300, 300, 300);
 	RenderSkybox();
 	modelStack.PopMatrix();
