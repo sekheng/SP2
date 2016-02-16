@@ -383,7 +383,7 @@ void sceneSP2::RenderStation()
 	renderMesh(meshList[GEO_BOX], false);
 	modelStack.PopMatrix();
 
-	for (size_t i = 0; i < 50; i += 10)
+	for (float i = 0; i < 50; i += 10)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(-255, 0, 270 + i);
@@ -392,7 +392,7 @@ void sceneSP2::RenderStation()
 		modelStack.PopMatrix();
 	}
 
-	for (size_t i = 0; i < 50; i += 5)
+	for (float i = 0; i < 50; i += 5)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(-255, 5, 268 + i);
@@ -401,10 +401,10 @@ void sceneSP2::RenderStation()
 		modelStack.PopMatrix();
 	}
 
-	for (size_t i = 0; i < 55; i += 5)
+	for (float i = 0; i < 55; i += 5)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate(-250, 0, 265 + i);
+		modelStack.Translate(-250.f, 0.f, 265 + i);
 		modelStack.Scale(5, 5, 5);
 		renderMesh(meshList[GEO_BOX], false);
 		modelStack.PopMatrix();
