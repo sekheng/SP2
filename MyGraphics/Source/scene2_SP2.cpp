@@ -152,6 +152,11 @@ void scene2_SP2::Init()
 	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 
+	//User Interface
+	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
+	meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
+	//User Interface
+
     on_light = true;
 
     Mtx44 projection;
@@ -365,16 +370,35 @@ void scene2_SP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
+	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
+	modelStack.PopMatrix();
+
+	/*modelStack.PushMatrix();
 	modelStack.Translate(0, -2000, 0);
 	modelStack.Scale(300, 300, 300);
 	RenderSkybox();
-	modelStack.PopMatrix();
+	modelStack.PopMatrix();*/
+
+	
 
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
-    std::stringstream ss;
+	//fps
+   /* std::stringstream ss;
     ss << "FPS : " << framePerSecond;
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);*/
+	//x position
+	std::stringstream connectPosX;
+	connectPosX << "Player's X : " << camera.getCameraXcoord();
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 19.f);
+	//y position
+	std::stringstream connectPosY;
+	connectPosY << "Player's Y : " << camera.getCameraYcoord();
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.25f, 21.5f);
+	//z position
+	std::stringstream connectPosZ;
+	connectPosZ << "Player's Z : " << camera.getCameraZcoord();
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
 }
 
 /******************************************************************************/
@@ -529,5 +553,29 @@ void scene2_SP2::RenderSkybox()
 	modelStack.PushMatrix();
 	//modelStack.Scale(0.5, 0.5, 0.5);
 	renderMesh(meshList[GEO_PLANET_SKYBOX], false);
+	modelStack.PopMatrix();
+}
+
+void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
+{
+	if (!mesh || mesh->textureID <= 0) //Proper error check
+		return;
+
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 80, -10, 10); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+
+	modelStack.Translate(x, y, 0);
+	modelStack.Scale(80, 80, 80);
+	modelStack.Rotate(90, 0, -1, 0);
+	renderMesh(mesh, false);
+
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }

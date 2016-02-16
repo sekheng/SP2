@@ -109,6 +109,7 @@ private:
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
+	void RenderUserInterface(Mesh* mesh, float size, float x, float y);
 
     double framePerSecond;
     float screenWidth, screenHeight;

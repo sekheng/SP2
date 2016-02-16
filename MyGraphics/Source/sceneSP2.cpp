@@ -349,7 +349,7 @@ void sceneSP2::Render()
     RenderSkybox();
     modelStack.PopMatrix();
 
-    /*modelStack.PushMatrix();
+   /* modelStack.PushMatrix();
     renderMesh(meshList[GEO_UI],false),
     modelStack.PopMatrix();*/
 
@@ -361,18 +361,28 @@ void sceneSP2::Render()
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
-    //modelStack.PushMatrix();
-    //RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
-    //modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
+    modelStack.PopMatrix();
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
-    std::stringstream ss;
+    /*std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);*/
     
     std::stringstream connectPosX;
     connectPosX << "Player's X : " << camera.getCameraXcoord();
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 19.f);
+
+	std::stringstream connectPosY;
+	connectPosY << "Player's Y : " << camera.getCameraYcoord();
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.25f, 21.5f);
+
+	std::stringstream connectPosZ;
+	connectPosZ << "Player's Z : " << camera.getCameraZcoord();
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
 }
+
 
 /******************************************************************************/
 /*!
