@@ -64,6 +64,12 @@ private:
     void cameraMovement(double dt);
     float cameraSpeed;
     map<string, float> cameraCoordinates;
+
+    //bounce check
+    float boundaryX, boundaryZ;
+    bool boundsCheckXaxis(const float& x, const float& posX);
+    bool boundsCheckZaxis(const float& z, const float& posZ);
+    //bounce check
 };
 
 #endif

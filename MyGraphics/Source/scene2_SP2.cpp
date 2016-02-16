@@ -128,7 +128,7 @@ void scene2_SP2::Init()
 
     //Initialize camera settings
     //camera.Init(Vector3(0, 5, 200), Vector3(10, 10, 10), Vector3(0, 1, 0));
-    camera.Init("cameraDriven//scene1.txt");
+    camera.Init("cameraDriven//scene2.txt");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -339,7 +339,7 @@ void scene2_SP2::Render()
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
     std::stringstream ss;
-    ss << "FPS : " << framePerSecond;
+    ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 }
 
@@ -386,6 +386,7 @@ void scene2_SP2::RenderText(Mesh* mesh, std::string text, Color color)
             int widthOfChar = text[i];
             moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
         }
+        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 

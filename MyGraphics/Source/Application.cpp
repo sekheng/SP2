@@ -175,7 +175,7 @@ void Application::Run()
     g_SceneSP2_1->Init();
     g_SceneSP2_2 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     g_SceneSP2_2->Init();
-    g_Scene = g_SceneSP2_1;
+    g_Scene = g_SceneSP2_2;
     std::cout << "Number of object created: " << GameObject::getCount() << std::endl;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame

@@ -14,6 +14,7 @@ Default constructor
 */
 /******************************************************************************/
 Camera3::Camera3()
+    : boundaryX(0), boundaryZ(0)
 {
 }
 
@@ -129,6 +130,12 @@ void Camera3::Init(const char *fileLocation)
 
     it = cameraCoordinates.find("cameraspeed");
     float cameraSpeed = it->second;
+
+    it = cameraCoordinates.find("boundscheckx");
+    boundaryX = it->second;
+    
+    it = cameraCoordinates.find("boundscheckz");
+    boundaryZ = it->second;
 }
 /******************************************************************************/
 /*!
@@ -308,8 +315,10 @@ void Camera3::cameraMovement(double dt)
         walkingX *= 50;
         walkingZ *= 50;
     }
-    position.x += walkingX;
-    position.z += walkingZ;
+    if (boundaryX != 0 && boundsCheckXaxis(boundaryX, position.x + walkingX))
+        position.x += walkingX;
+    if (boundaryZ != 0 && boundsCheckZaxis(boundaryZ, position.z + walkingZ))
+        position.z += walkingZ;
 }
 
 /******************************************************************************/
@@ -394,4 +403,20 @@ void Camera3::setLocation(float x, float y, float z) {
     defaultPosition.y = y;
     position.z = z;
     defaultPosition.z = z;
+}
+
+bool Camera3::boundsCheckXaxis(const float& x, const float& posX) {
+    if (posX < x && posX > -x)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Camera3::boundsCheckZaxis(const float& z, const float& posZ) {
+    if (posZ < z && posZ > -z)
+    {
+        return true;
+    }
+    return false;
 }
