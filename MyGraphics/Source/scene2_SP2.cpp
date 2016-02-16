@@ -162,8 +162,8 @@ void scene2_SP2::Init()
 	//User Interface
 
 	//GroundMesh
-    meshList[GEO_GROUND] = MeshBuilder::GenerateOBJ("groundmesh", "OBJ//planet_ground.obj");
-	meshList[GEO_GROUND]->textureID = LoadTGA("Image//planet_ground_mesh.tga");
+    meshList[GEO_PLANET_GROUND] = MeshBuilder::GenerateOBJ("Planet ground mesh", "OBJ//planet_ground_mesh.obj");
+    meshList[GEO_PLANET_GROUND]->textureID = LoadTGA("Image//planet_ground_mesh.tga");
     //GroundMesh
     on_light = true;
 
@@ -397,9 +397,8 @@ void scene2_SP2::Render()
 
 	//render ground
 	modelStack.PushMatrix();
-	modelStack.Translate(0,0, 0);
-	//modelStack.Scale(100, 0, 100);
-	renderMesh(meshList[GEO_GROUND], false);
+	modelStack.Scale(100, 0, 100);
+	renderMesh(meshList[GEO_PLANET_GROUND], false);
 	modelStack.PopMatrix();
 
 	////render deadpool

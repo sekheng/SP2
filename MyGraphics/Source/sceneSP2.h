@@ -36,22 +36,18 @@ class sceneSP2 : public Scene
 
 		GEO_LANDVEHICLE,
 		GEO_FLYINGVEHICLE,
-        //skybox
+        //environment**********************************************/
         GEO_SPACE_SKYBOX,
-        //skybox
-<<<<<<< HEAD
-=======
+        GEO_SPACE_GROUNDMESH,
+        //environment**********************************************/
 
 		//cryostasis
 		GEO_CRYOSTASIS,
         
->>>>>>> 6410d507dd00fc70067a5a3ac05d09d22f94304d
         //User Interface
         GEO_UI,
         //User Interface
-        //Space ground mesh
-        GEO_SPACE_GROUNDMESH,
-        //Space ground mesh
+
         //quest items
         GEO_SCREWDRIVER,
         GEO_CONTAINER,
@@ -118,16 +114,13 @@ private:
     void RenderSkybox();
     void Rendergroundmesh();
 
-<<<<<<< HEAD
     //render quest items
     void RenderScrewDriver();
     void RenderHammer();
     void RenderContainer();
     void RenderGasoline();
     //render quest items
-=======
 	void RenderCryostasis();
->>>>>>> 6410d507dd00fc70067a5a3ac05d09d22f94304d
 
 	void RenderStation();
 

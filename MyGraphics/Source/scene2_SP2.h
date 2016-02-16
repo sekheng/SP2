@@ -39,14 +39,15 @@ class scene2_SP2 : public Scene
 		GEO_FLYINGVEHICLE,
 		GEO_DEADPOOL,
 
-		//skybox
+		//environment************************************************************//
 		GEO_PLANET_SKYBOX,
-		//skybox
+        GEO_PLANET_GROUND,
+		//environment************************************************************//
 
-		GEO_GROUND,
 		//User Interface
 		GEO_UI,
 		//User Interface
+
 		GEO_BOX,
 
 		NUM_GEOMETRY,

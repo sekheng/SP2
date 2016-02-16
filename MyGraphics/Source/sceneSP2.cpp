@@ -810,8 +810,9 @@ void sceneSP2::Rendergroundmesh()
     renderMesh(meshList[GEO_SPACE_GROUNDMESH], false);
     modelStack.PopMatrix();
 }
-<<<<<<< HEAD
-//render quest items////////////////////////////////////////////////////////
+/**********************************************************************************************************/
+//render quest items
+/**********************************************************************************************************/
 void sceneSP2::RenderScrewDriver()
 {
     modelStack.PushMatrix();
@@ -840,9 +841,10 @@ void sceneSP2::RenderGasoline()
     renderMesh(meshList[GEO_SCREWDRIVER], false);
     modelStack.PopMatrix();
 }
-///////////////////////////////////////////////////////////////////////////
+/**********************************************************************************************************/
+//render quest items
+/**********************************************************************************************************/
 
-=======
 
 
 void sceneSP2::RenderCryostasis()
@@ -851,4 +853,3 @@ void sceneSP2::RenderCryostasis()
 	renderMesh(meshList[GEO_CRYOSTASIS], false);
 	modelStack.PopMatrix();
 }
->>>>>>> 6410d507dd00fc70067a5a3ac05d09d22f94304d
