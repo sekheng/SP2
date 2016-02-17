@@ -55,6 +55,13 @@ public:
     float getCameraYrotation();
     float getCameraXrotation();
 
+    //CrossHair Stuff
+    float getCrossHairX();
+    float getCrossHairY();
+    float getCrossHairZ();
+    void setRadiusBetcrosshair_cam(float radius);
+    //CrossHair Stuff
+
     float cursorCoordX;
     float cursorCoordY;
     vector<objectsForDisplay> storage_of_objects;
@@ -75,6 +82,11 @@ private:
     //number of objects are there
     size_t num_of_objects;
     //number of objects are there
+
+    //Crosshair stuff
+    Vector3 invisibleCrossHair;
+    float crossHairRadius;
+    //Crosshair stuff
 };
 
 #endif
