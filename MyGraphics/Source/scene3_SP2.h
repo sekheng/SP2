@@ -104,6 +104,10 @@ private:
     bool warppingOn;
     float flyToZ;
     //animating the spaceShip
+
+    //animating the SkyBox
+    float scaleSkyBoxZ_;
+    //animating the SkyBox
 };
 
 
