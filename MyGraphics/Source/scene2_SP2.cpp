@@ -150,11 +150,10 @@ void scene2_SP2::Init()
 	//FlyingVehicle
 	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
-
-	////Deadpool
-	//meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("deadpool", "OBJ//Deadpool.obj");
-	//meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//CHR_Deadpool_Body_TEXTSET_Color_NormX.tga");
 	
+	//Robot
+	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("robot", "OBJ//Robocop_Black.obj");
+	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//Robocop_Black_D.tga");
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -401,19 +400,15 @@ void scene2_SP2::Render()
 	renderMesh(meshList[GEO_PLANET_GROUND], false);
 	modelStack.PopMatrix();
 
-	////render deadpool
-	//modelStack.PushMatrix();
-	//modelStack.Translate(0, 0, 0);
-	//modelStack.Scale(10, 10, 10);
-	//renderMesh(meshList[GEO_DEADPOOL], false);
-	//modelStack.PopMatrix();
-
 	//render skybox 
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.Scale(300, 300, 300);
 	RenderSkybox();
 	modelStack.PopMatrix();
+
+	//render robot
+	RenderRobot();
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
@@ -607,5 +602,13 @@ void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 
 	projectionStack.PopMatrix();
 	viewStack.PopMatrix();
+	modelStack.PopMatrix();
+}
+
+void scene2_SP2::RenderRobot()
+{
+	modelStack.PushMatrix();
+	modelStack.Scale(7, 7, 7);
+	renderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
 }
