@@ -1,6 +1,6 @@
 Name,KeyCard2
 objectX,-296
-objectY,4
+objectY,3.7
 objectZ,292
 boundaryRadiusX,1
 boundaryRadiusZ,1
