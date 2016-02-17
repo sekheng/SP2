@@ -582,7 +582,7 @@ void scene3_SP2::animateSpaceShip(double dt) {
 	{
         scaleShipZ -= 10 * (float)(dt);
     }
-    if (warppingOn == false) 
+    if (warppingOn == false)
 	{
         flyToZ -= 1000 * (float)(dt);
     }
