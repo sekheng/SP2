@@ -27,6 +27,9 @@ class scene3_SP2 : public Scene
         GEO_SPACE_SKYBOX,
         //skybox
         GEO_FLYINGVEHICLE,
+        //cursor
+        GEO_INVI_CURSOR,
+        //cursor
         NUM_GEOMETRY,
     };
 

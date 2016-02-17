@@ -147,6 +147,10 @@ void scene3_SP2::Init()
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
+    //cursor
+    meshList[GEO_INVI_CURSOR] = MeshBuilder::GenerateSphere("cursor", Color(1, 0, 0));
+    //cursor
+
     on_light = true;
 
     Mtx44 projection;
@@ -353,6 +357,11 @@ void scene3_SP2::Render()
 
     modelStack.PushMatrix();
     renderSpaceShip();
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
+    renderMesh(meshList[GEO_INVI_CURSOR], false);
     modelStack.PopMatrix();
 
     std::stringstream connectPosX;

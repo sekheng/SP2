@@ -10,3 +10,4 @@ cameraSpeed,5
 boundsCheckX,1000
 boundsCheckZ,1000
 numberofObjects,1
+CrossHairRadius,3
