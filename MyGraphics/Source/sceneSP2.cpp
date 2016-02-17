@@ -188,6 +188,12 @@ void sceneSP2::Init()
 	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("Cryostasis", "OBJ//cryostasis.obj");
 	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryostasis.tga");
 
+    //NPC
+    meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
+    meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
+    //NPC
+
+
     on_light = true;
 
     Mtx44 projection;
@@ -198,6 +204,9 @@ void sceneSP2::Init()
     framePerSecond = 0;
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
+
+    //initialise npc
+    npc1.Init("Najib", Vector3(-30, 0, 40));
 }
 
 /******************************************************************************/
@@ -558,6 +567,10 @@ void sceneSP2::Render()
     RenderHammer();
     modelStack.PopMatrix();
 
+    modelStack.PushMatrix();
+    RenderNPC();
+    modelStack.PopMatrix();
+
     //****************************************************************************//
     //On screen objects
     //****************************************************************************//
@@ -884,4 +897,12 @@ void sceneSP2::RenderCryostasis()
 	modelStack.PushMatrix();
 	renderMesh(meshList[GEO_CRYOSTASIS], false);
 	modelStack.PopMatrix();
+}
+void sceneSP2::RenderNPC()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(npc1.NPC_getposition_x(), npc1.NPC_getposition_y(), npc1.NPC_getposition_z());
+    //modelStack.Scale(3,3,3);
+    renderMesh(meshList[GEO_NPC1], false);
+    modelStack.PopMatrix();
 }
