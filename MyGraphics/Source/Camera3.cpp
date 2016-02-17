@@ -321,6 +321,12 @@ void Camera3::cameraMovement(double dt)
         walkingX *= 50;
         walkingZ *= 50;
     }
+    if (walkingX != 0) {
+        walkingX *= cameraSpeed;
+    }
+    if (walkingZ != 0) {
+        walkingZ *= cameraSpeed;
+    }
     if (walkingX != 0 && boundsCheckXaxis(boundaryX, position.x + walkingX))
     {
         bool canWalk = true;
@@ -331,7 +337,7 @@ void Camera3::cameraMovement(double dt)
             }
         }
         if (canWalk)
-            position.x += walkingX * cameraSpeed;
+            position.x += walkingX;
     }
     if (walkingZ != 0 && boundsCheckZaxis(boundaryZ, position.z + walkingZ)) {
         bool canWalk = true;
@@ -342,7 +348,7 @@ void Camera3::cameraMovement(double dt)
             }
         }
         if (canWalk)
-            position.z += walkingZ * cameraSpeed;
+            position.z += walkingZ;
     }
 }
 
