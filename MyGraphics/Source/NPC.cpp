@@ -37,7 +37,7 @@ float NPC::NPC_getposition_y()
 
 string NPC::getDialogue()
 {
-    if (interaction() == true && time < 3);
+    if (interaction() == true && time < 3)
     {
         return Dialogues[Math::RandIntMinMax(0, Dialogues.size() - 1)];
     }
