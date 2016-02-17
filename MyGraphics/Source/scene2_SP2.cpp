@@ -687,3 +687,4 @@ void scene2_SP2::RenderVault()
 		}
 	}
 }
+
