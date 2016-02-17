@@ -125,7 +125,7 @@ void Camera3::Init(const char *fileLocation)
     minCameraXrotation = -80;
 
     it = cameraCoordinates.find("cameraspeed");
-    float cameraSpeed = it->second;
+    this->cameraSpeed = it->second;
 
     it = cameraCoordinates.find("boundscheckx");
     boundaryX = it->second;
@@ -320,6 +320,12 @@ void Camera3::cameraMovement(double dt)
     {
         walkingX *= 50;
         walkingZ *= 50;
+    }
+    if (walkingX != 0) {
+        walkingX *= cameraSpeed;
+    }
+    if (walkingZ != 0) {
+        walkingZ *= cameraSpeed;
     }
     if (walkingX != 0 && boundsCheckXaxis(boundaryX, position.x + walkingX))
     {
