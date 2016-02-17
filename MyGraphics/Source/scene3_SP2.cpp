@@ -160,6 +160,14 @@ void scene3_SP2::Init()
     framePerSecond = 0;
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
+
+    //animating the spaceShip
+    jitteringShipY = 0;
+    toggleUp = false;
+    scaleShipZ = 0;
+    warppingOn = true;
+    flyToZ = 0;
+    //animating the spaceShip
 }
 
 /******************************************************************************/
@@ -173,6 +181,7 @@ where the logic of the game is, and update
 void scene3_SP2::Update(double dt)
 {
     camera.Update(dt);
+    animateSpaceShip(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -359,11 +368,6 @@ void scene3_SP2::Render()
     renderSpaceShip();
     modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
-    renderMesh(meshList[GEO_INVI_CURSOR], false);
-    modelStack.PopMatrix();
-
     std::stringstream connectPosX;
     connectPosX << "X : " << camera.getCameraXcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
@@ -371,6 +375,10 @@ void scene3_SP2::Render()
     std::stringstream connectPosZ;
     connectPosZ << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
+    
+    std::stringstream connectPosY;
+    connectPosY << "Y : " << camera.getCameraYcoord();
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 18.f);
 
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
@@ -536,9 +544,38 @@ void scene3_SP2::renderSpaceShip() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "spaceship") {
             modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY() + jitteringShipY, it.getObjectposZ() + flyToZ);
+            modelStack.Scale(10, 10, 10 + scaleShipZ);
             renderMesh(meshList[GEO_FLYINGVEHICLE], true);
             modelStack.PopMatrix();
+            break;
         }
+    }
+}
+
+void scene3_SP2::animateSpaceShip(double dt) {
+    if (toggleUp == false) {
+        jitteringShipY -= 15 * (float)(dt);
+        if (jitteringShipY < -1) {
+            toggleUp = true;
+        }
+    }
+    else {
+        jitteringShipY += 15 * (float)(dt);
+        if (jitteringShipY > 1) {
+            toggleUp = false;
+        }
+    }
+    if (warppingOn == true) {
+        scaleShipZ += 30 * (float)(dt);
+        if (scaleShipZ > 100) {
+            warppingOn = false;
+        }
+    }
+    else if (scaleShipZ > 0){
+        scaleShipZ -= 10 * (float)(dt);
+    }
+    if (warppingOn == false) {
+        flyToZ -= 1000 * (float)(dt);
     }
 }

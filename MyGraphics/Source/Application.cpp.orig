@@ -177,8 +177,13 @@ void Application::Run()
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     //scenario3->Init();
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
+<<<<<<< HEAD
     //scenario2->Init();
+	scene = scenario1;
+=======
+    scenario2->Init();
     scene = scenario2;
+>>>>>>> 7ff21b7f473880413469424cd78f5fc2060ad92d
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))

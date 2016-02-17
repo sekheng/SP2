@@ -90,7 +90,7 @@ void Camera3::Init(const char *fileLocation)
             for (size_t num = 0; num < taking_the_stuff.size(); ++num) {
                 taking_the_stuff[num] = tolower(taking_the_stuff[num], loc);
             }
-            cameraCoordinates.insert(std::pair<string, float>(taking_the_stuff, static_cast<float>(stoi(values))));
+            cameraCoordinates.insert(std::pair<string, float>(taking_the_stuff, strtof(values.c_str(), NULL)));
         }
         fileStream.close();
     }
@@ -113,11 +113,12 @@ void Camera3::Init(const char *fileLocation)
     decoyUp.y = it->second;
     it = cameraCoordinates.find("upz");
     decoyUp.z = it->second;
+    defaultUp = decoyUp;
 
     this->target = Vector3(sin(Math::DegreeToRadian(CameraYrotation)) * cos(Math::DegreeToRadian(CameraXrotation)) + position.x, -sin(Math::DegreeToRadian(CameraXrotation)) + position.y, cos(Math::DegreeToRadian(CameraYrotation)) * cos(Math::DegreeToRadian(CameraXrotation)) + position.z);
     Vector3 view = (target - position).Normalized();
     Vector3 right = view.Cross(decoyUp);
-    this->up = defaultUp = right.Cross(view);
+    this->up = right.Cross(view);
 
     camType = FIRST_PERSON;
 
@@ -125,7 +126,7 @@ void Camera3::Init(const char *fileLocation)
     minCameraXrotation = -80;
 
     it = cameraCoordinates.find("cameraspeed");
-    float cameraSpeed = it->second;
+    this->cameraSpeed = it->second;
 
     it = cameraCoordinates.find("boundscheckx");
     boundaryX = it->second;
@@ -320,6 +321,12 @@ void Camera3::cameraMovement(double dt)
     {
         walkingX *= 50;
         walkingZ *= 50;
+    }
+    if (walkingX != 0) {
+        walkingX *= cameraSpeed;
+    }
+    if (walkingZ != 0) {
+        walkingZ *= cameraSpeed;
     }
     if (walkingX != 0 && boundsCheckXaxis(boundaryX, position.x + walkingX))
     {

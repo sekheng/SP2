@@ -1,6 +1,6 @@
 Name,spacevehicle
-objectX,100
+objectX,0
 objectY,0
-objectZ,100
+objectZ,-50
 boundaryRadiusX,40
 boundaryRadiusZ,21
