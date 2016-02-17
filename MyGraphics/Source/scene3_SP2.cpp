@@ -127,7 +127,7 @@ void scene3_SP2::Init()
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene3.txt");
-    //camera.InitObjects("scenario2Driven//");
+    camera.InitObjects("scenario2Driven//");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);

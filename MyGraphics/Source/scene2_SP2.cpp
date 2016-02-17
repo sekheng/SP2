@@ -378,6 +378,7 @@ void scene2_SP2::Render()
             modelStack.Scale(10, 10, 10);
             renderMesh(meshList[GEO_LANDVEHICLE], false);
             modelStack.PopMatrix();
+            break;
         }
     }
 

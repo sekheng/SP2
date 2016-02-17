@@ -17,7 +17,7 @@ Default constructor
 */
 /******************************************************************************/
 Camera3::Camera3()
-    : boundaryX(0), boundaryZ(0)
+    : boundaryX(0), boundaryZ(0), num_of_objects(0)
 {
 }
 
@@ -135,6 +135,7 @@ void Camera3::Init(const char *fileLocation)
 
     it = cameraCoordinates.find("numberofobjects");
     num_of_objects = static_cast<size_t>(it->second);
+    std::cout << "Number of Game Objects in this current Scene : " << num_of_objects << std::endl;
 }
 /******************************************************************************/
 /*!
@@ -318,8 +319,10 @@ void Camera3::cameraMovement(double dt)
     {
         bool canWalk = true;
         for (auto it : storage_of_objects) {
-            if (it.boundaryCheck(position.x + walkingX, position.z) == false)
+            if (it.boundaryCheck(position.x + walkingX, position.z) == false) {
                 canWalk = false;
+                break;
+            }
         }
         if (canWalk)
             position.x += walkingX;
@@ -327,8 +330,10 @@ void Camera3::cameraMovement(double dt)
     if (walkingZ != 0 && boundsCheckZaxis(boundaryZ, position.z + walkingZ)) {
         bool canWalk = true;
         for (auto it : storage_of_objects) {
-            if (it.boundaryCheck(position.x, position.z + walkingZ) == false)
+            if (it.boundaryCheck(position.x, position.z + walkingZ) == false) {
                 canWalk = false;
+                break;
+            }
         }
         if (canWalk)
             position.z += walkingZ;
