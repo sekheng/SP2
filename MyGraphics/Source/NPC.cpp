@@ -46,14 +46,14 @@ string NPC::getDialogue()
 
 bool NPC::interaction()
 {
-    if (boundschecking(cam_pointer->getCrossHairX(), cam_pointer->getCrossHairZ()) == false)
-    {
         if (Application::IsKeyPressed('E'))
         {
-            return true;
+        if (boundschecking(cam_pointer->getCrossHairX(), cam_pointer->getCrossHairZ()) == false)
+        {
+                return true;
         }
-        else return false;
-    }
+            else return false;
+        }
 }
 
 bool NPC::boundschecking(const float&bounds_x, const float &bounds_z)

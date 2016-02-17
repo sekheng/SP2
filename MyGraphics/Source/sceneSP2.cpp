@@ -913,9 +913,13 @@ void sceneSP2::RenderNPC()
     modelStack.Translate(npc1.NPC_getposition_x(), npc1.NPC_getposition_y(), npc1.NPC_getposition_z());
     //modelStack.Scale(3,3,3);
     renderMesh(meshList[GEO_NPC1], false);
-    if (npc1.interaction() == false)
+    if (npc1.interaction() == true)
+    {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to interact", Color(0, 1, 0), 3, 10, 10);
+    }
+    /*if (npc1.interaction() == true)
     {
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], npc1.getDialogue(), Color(0, 1, 0),3, 10, 10);
-    }
+    }*/
     modelStack.PopMatrix();
 }
