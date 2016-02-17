@@ -17,7 +17,7 @@ Default constructor
 */
 /******************************************************************************/
 Camera3::Camera3()
-    : boundaryX(0), boundaryZ(0)
+    : boundaryX(0), boundaryZ(0), num_of_objects(0)
 {
 }
 
@@ -135,6 +135,12 @@ void Camera3::Init(const char *fileLocation)
 
     it = cameraCoordinates.find("numberofobjects");
     num_of_objects = static_cast<size_t>(it->second);
+    std::cout << "Number of Game Objects in this current Scene : " << num_of_objects << std::endl;
+
+    if (cameraCoordinates.count("crosshairradius") == 1) {
+        it = cameraCoordinates.find("crosshairradius");
+        crossHairRadius = it->second;
+    }
 }
 /******************************************************************************/
 /*!
@@ -271,6 +277,7 @@ void Camera3::rotateCamera(double dt)
     CameraXrotation = Math::Clamp(CameraXrotation, minCameraXrotation, maxCameraXrotation);
 
    target = Vector3(sin(Math::DegreeToRadian(CameraYrotation)) * cos(Math::DegreeToRadian(CameraXrotation)) + position.x, -sin(Math::DegreeToRadian(CameraXrotation)) + position.y, cos(Math::DegreeToRadian(CameraYrotation)) * cos(Math::DegreeToRadian(CameraXrotation)) + position.z );
+   invisibleCrossHair = Vector3(crossHairRadius * sin(Math::DegreeToRadian(CameraYrotation)) * crossHairRadius * cos(Math::DegreeToRadian(CameraXrotation)) + position.x, crossHairRadius * -sin(Math::DegreeToRadian(CameraXrotation)) + position.y, crossHairRadius * cos(Math::DegreeToRadian(CameraYrotation)) * crossHairRadius * cos(Math::DegreeToRadian(CameraXrotation)) + position.z);
    Vector3 view = (target - position).Normalized();
    Vector3 right = view.Cross(defaultUp);
     up = right.Cross(view);
@@ -318,8 +325,10 @@ void Camera3::cameraMovement(double dt)
     {
         bool canWalk = true;
         for (auto it : storage_of_objects) {
-            if (it.boundaryCheck(position.x + walkingX, position.z) == false)
+            if (it.boundaryCheck(position.x + walkingX, position.z) == false) {
                 canWalk = false;
+                break;
+            }
         }
         if (canWalk)
             position.x += walkingX;
@@ -327,8 +336,10 @@ void Camera3::cameraMovement(double dt)
     if (walkingZ != 0 && boundsCheckZaxis(boundaryZ, position.z + walkingZ)) {
         bool canWalk = true;
         for (auto it : storage_of_objects) {
-            if (it.boundaryCheck(position.x, position.z + walkingZ) == false)
+            if (it.boundaryCheck(position.x, position.z + walkingZ) == false) {
                 canWalk = false;
+                break;
+            }
         }
         if (canWalk)
             position.z += walkingZ;
@@ -446,4 +457,20 @@ void Camera3::InitObjects(const char *fileLocation) {
             storage_of_objects.push_back(object);
         }
     }
+}
+
+float Camera3::getCrossHairX() {
+    return invisibleCrossHair.x;
+}
+
+float Camera3::getCrossHairY() {
+    return invisibleCrossHair.y;
+}
+
+float Camera3::getCrossHairZ() {
+    return invisibleCrossHair.z;
+}
+
+void Camera3::setRadiusBetcrosshair_cam(float radius) {
+    crossHairRadius = radius;
 }

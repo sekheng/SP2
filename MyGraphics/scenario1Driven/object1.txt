@@ -1,4 +1,4 @@
-Name,spaceship
+Name,Door
 objectX,0
 objectY,0
 objectZ,0

@@ -127,6 +127,7 @@ void sceneSP2::Init()
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene1.txt");
+	camera.InitObjects("scenario1Driven//");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -183,6 +184,9 @@ void sceneSP2::Init()
 	//SpaceStationBox
 	meshList[GEO_DOOR] = MeshBuilder::GenerateOBJ("Door", "OBJ//Door.obj");
 	meshList[GEO_DOOR]->textureID = LoadTGA("Image//Door.tga");
+	//SpaceStationCryostasis
+	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("Cryostasis", "OBJ//cryostasis.obj");
+	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryostasis.tga");
 
     on_light = true;
 
@@ -427,10 +431,22 @@ void sceneSP2::RenderStation()
 		renderMesh(meshList[GEO_BOX], false);
 		modelStack.PopMatrix();
 	}
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "door") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 3, 6);
+			renderMesh(meshList[GEO_DOOR], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
 	modelStack.PushMatrix();
-	modelStack.Translate(-270.f, 0.f, 263);
-	modelStack.Scale(5, 3, 6);
-	renderMesh(meshList[GEO_DOOR], false);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Translate(280, 0, -315);
+	modelStack.Scale(1, 1, 1);
+	renderMesh(meshList[GEO_CRYOSTASIS], false);
 	modelStack.PopMatrix();
 
 }

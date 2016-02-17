@@ -80,7 +80,7 @@
     <ClCompile Include="Source\scene3_SP2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\NPC.cpp">
+    <ClCompile Include="Source\StationScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -148,7 +148,7 @@
     <ClInclude Include="Source\scene3_SP2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\NPC.h">
+    <ClInclude Include="Source\StationScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
