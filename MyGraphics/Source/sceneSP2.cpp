@@ -194,6 +194,9 @@ void sceneSP2::Init()
     //NPC
 
 
+    meshList[GEO_INVIS_CURSOR] = MeshBuilder::GenerateSphere("invisible cursor", Color(0.5, 0.5, 0.5));
+
+
     on_light = true;
 
     Mtx44 projection;
@@ -206,7 +209,7 @@ void sceneSP2::Init()
     camera.cursorCoordY = screenHeight / 2;
 
     //initialise npc
-    npc1.Init("Najib", Vector3(-30, 0, 40));
+    npc1.Init("Najib", Vector3(-30, 0, 40),camera,5,5);
 }
 
 /******************************************************************************/
@@ -221,6 +224,7 @@ void sceneSP2::Update(double dt)
 {
     camera.Update(dt);
     framePerSecond = 1 / dt;
+    npc1.update(dt);
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -596,6 +600,11 @@ void sceneSP2::Render()
 
 	RenderStation();
 
+    modelStack.PushMatrix();
+    modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
+    renderMesh(meshList[GEO_INVIS_CURSOR], false);
+    modelStack.PopMatrix();
+
     
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
     std::stringstream ss;
@@ -904,5 +913,9 @@ void sceneSP2::RenderNPC()
     modelStack.Translate(npc1.NPC_getposition_x(), npc1.NPC_getposition_y(), npc1.NPC_getposition_z());
     //modelStack.Scale(3,3,3);
     renderMesh(meshList[GEO_NPC1], false);
+    if (npc1.interaction() == false)
+    {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], npc1.getDialogue(), Color(0, 1, 0),3, 10, 10);
+    }
     modelStack.PopMatrix();
 }

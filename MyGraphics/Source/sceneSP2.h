@@ -72,6 +72,8 @@ class sceneSP2 : public Scene
         GEO_NPC1,
         //NPC
 
+        GEO_INVIS_CURSOR,
+
         NUM_GEOMETRY,
     };
 
