@@ -17,8 +17,7 @@ Hopefully they don't mess it up
 #include "Camera3.h"
 #include "MatrixStack.h"
 #include "removeMonospace.h"
-#include "StationScene.h"
-
+#include "NPC.h"
 /******************************************************************************/
 /*!
 Class sceneSP2:
@@ -68,8 +67,12 @@ class sceneSP2 : public Scene
 		GEO_BOX,
 		//Door
 		GEO_DOOR,
-		//keyCard
-		GEO_KEYCARD,
+
+        //NPC
+        GEO_NPC1,
+        //NPC
+
+        GEO_INVIS_CURSOR,
 
         NUM_GEOMETRY,
     };
@@ -129,6 +132,8 @@ private:
 
 	void RenderStation();
 
+    void RenderNPC();
+
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -138,16 +143,19 @@ private:
 
     Camera3 camera;
 
-
     MS modelStack, viewStack, projectionStack;
+
+    NPC npc1;
 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
 
+
     double framePerSecond;
     float screenWidth, screenHeight;
     removeMonospace forComicSans;
 };
+
 
 #endif
