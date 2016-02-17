@@ -127,7 +127,7 @@ void scene3_SP2::Init()
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene3.txt");
-    //camera.InitObjects("scenario2Driven//");
+    camera.InitObjects("scenario2Driven//");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -146,6 +146,10 @@ void scene3_SP2::Init()
     meshList[GEO_FLYINGVEHICLE]->material = MaterialBuilder::GenerateBlinn();
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
+
+    //cursor
+    meshList[GEO_INVI_CURSOR] = MeshBuilder::GenerateSphere("cursor", Color(1, 0, 0));
+    //cursor
 
     on_light = true;
 
@@ -353,6 +357,11 @@ void scene3_SP2::Render()
 
     modelStack.PushMatrix();
     renderSpaceShip();
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
+    renderMesh(meshList[GEO_INVI_CURSOR], false);
     modelStack.PopMatrix();
 
     std::stringstream connectPosX;

@@ -180,9 +180,6 @@ void Application::Run()
     scenario2->Init();
 	scene = scenario3;
 
-
-    std::cout << "Number of object created: " << GameObject::getCount() << std::endl;
-
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
 	{

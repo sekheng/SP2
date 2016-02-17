@@ -61,7 +61,6 @@ void objectsForDisplay::init(const char *fileLocation) {
     boundaryRadiusX = static_cast<float>(stoi(it->second));
     it = object_stuff.find("boundaryradiusz");
     boundaryRadiusZ = static_cast<float>(stoi(it->second));
-    std::cout << getCount() << std::endl;
 }
 
 bool objectsForDisplay::boundaryCheck(const float& playerPosX, const float& playerPosZ) {

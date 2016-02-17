@@ -369,16 +369,7 @@ void scene2_SP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
-    for (auto it : camera.storage_of_objects) {
-        if (it.getName() == "spacevehicle") {
-            modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-            modelStack.Rotate(-90, 0, 1, 0);
-            modelStack.Scale(10, 10, 10);
-            renderMesh(meshList[GEO_LANDVEHICLE], false);
-            modelStack.PopMatrix();
-        }
-    }
+   
 
 	//render UI
 	modelStack.PushMatrix();
@@ -403,6 +394,9 @@ void scene2_SP2::Render()
 
 	//render flyingvehicle
 	RenderFlyingVehicle();
+
+	//render landingvehicle
+	RenderLandingVehicle();
 	
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
@@ -631,18 +625,17 @@ void scene2_SP2::RenderFlyingVehicle()
 	}
 }
 
-//void scene2_SP2::RenderLandingVehicle()
-//{
-//	for (auto it : camera.storage_of_objects)
-//	{
-//		if (it.getName() == "landingvehicle")
-//		{
-//			modelStack.PushMatrix();
-//			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-//			modelStack.Scale(7, 7, 7);
-//			renderMesh(meshList[GEO_LANDINGVEHICLE], false);
-//			modelStack.PopMatrix();
-//			break;
-//		}
-//	}
-//}
+void scene2_SP2::RenderLandingVehicle()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "spacevehicle") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_LANDVEHICLE], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
