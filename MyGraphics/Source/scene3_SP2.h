@@ -95,6 +95,15 @@ private:
 
     void RenderSkybox();
     void renderSpaceShip();
+
+    //animating the spaceShip
+    void animateSpaceShip(double dt);
+    float jitteringShipY;
+    bool toggleUp;
+    float scaleShipZ;
+    bool warppingOn;
+    float flyToZ;
+    //animating the spaceShip
 };
 
 

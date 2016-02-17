@@ -1,11 +1,11 @@
-positionx,0
-positiony,5
-positionz,200
+positionx,100
+positiony,200.5
+positionz,1999.5
 upx,0
 upy,1
 upz,0
-cameraRotationX,0
-cameraRotationY,180
+cameraRotationX,50
+cameraRotationY,200
 cameraSpeed,50
 boundsCheckX,10000
 boundsCheckZ,10000

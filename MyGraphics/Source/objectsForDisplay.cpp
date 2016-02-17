@@ -49,18 +49,18 @@ void objectsForDisplay::init(const char *fileLocation) {
     Name_ = it->second;
 
     it = object_stuff.find("objectx");
-    objectPos.x = static_cast<float>(stoi(it->second));
+    objectPos.x = static_cast<float>(strtof(it->second.c_str(), NULL));
 
     it = object_stuff.find("objecty");
-    objectPos.y = static_cast<float>(stoi(it->second));
+    objectPos.y = static_cast<float>(strtof(it->second.c_str(), NULL));
 
     it = object_stuff.find("objectz");
-    objectPos.z = static_cast<float>(stoi(it->second));
+    objectPos.z = static_cast<float>(strtof(it->second.c_str(), NULL));
 
     it = object_stuff.find("boundaryradiusx");
-    boundaryRadiusX = static_cast<float>(stoi(it->second));
+    boundaryRadiusX = static_cast<float>(strtof(it->second.c_str(), NULL));
     it = object_stuff.find("boundaryradiusz");
-    boundaryRadiusZ = static_cast<float>(stoi(it->second));
+    boundaryRadiusZ = static_cast<float>(strtof(it->second.c_str(), NULL));
 }
 
 bool objectsForDisplay::boundaryCheck(const float& playerPosX, const float& playerPosZ) {
