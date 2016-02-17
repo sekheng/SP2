@@ -11,12 +11,14 @@ public:
 	~StationScene();
 	void getQuest();
 	bool getItem();
-	bool openDoor(int& keyCard);
+	bool openDoor();
 
 
 private:
 	int count;
 	bool questTaken;
+	bool card1Taken;
+	bool card2Taken;
 	Camera3 *dubCamera;
 };
 

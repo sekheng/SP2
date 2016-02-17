@@ -12,6 +12,7 @@
 #include "Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
+#include "StationScene.h"
 
 
 /******************************************************************************/
@@ -26,6 +27,7 @@ constructor with 2 arguments to store the width and height of the screen
 sceneSP2::sceneSP2(float screenwidth, float screenheight)
     : screenWidth(screenwidth), screenHeight(screenheight)
 {
+	
 }
 /******************************************************************************/
 /*!
@@ -457,8 +459,10 @@ void sceneSP2::RenderStation()
 
 	
 
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "keycard1") {
+	for (auto it : camera.storage_of_objects) 
+	{
+		if (it.getName() == "keycard1") 
+		{
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			modelStack.Scale(1, 1, 1);
@@ -468,8 +472,10 @@ void sceneSP2::RenderStation()
 		}
 	}
 
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "keycard2") {
+	for (auto it : camera.storage_of_objects)
+	{
+		if (it.getName() == "keycard2") 
+		{
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			modelStack.Scale(1, 1, 1);
@@ -609,7 +615,6 @@ void sceneSP2::Render()
     modelStack.PopMatrix();
 
 	RenderStation();
-
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
     std::stringstream ss;

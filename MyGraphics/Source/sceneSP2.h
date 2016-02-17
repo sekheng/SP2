@@ -17,6 +17,7 @@ Hopefully they don't mess it up
 #include "Camera3.h"
 #include "MatrixStack.h"
 #include "removeMonospace.h"
+#include "StationScene.h"
 
 /******************************************************************************/
 /*!
@@ -137,12 +138,12 @@ private:
 
     Camera3 camera;
 
+
     MS modelStack, viewStack, projectionStack;
 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
-
 
     double framePerSecond;
     float screenWidth, screenHeight;

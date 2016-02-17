@@ -70,6 +70,7 @@ public:
     virtual void Update(double dt);
     virtual void Render();
     virtual void Exit();
+	void renderSpaceShip();
 private:
     bool on_light;
     Light light[1];
@@ -94,7 +95,6 @@ private:
     removeMonospace forComicSans;
 
     void RenderSkybox();
-    void renderSpaceShip();
 
     //animating the spaceShip
     void animateSpaceShip(double dt);
