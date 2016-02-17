@@ -155,6 +155,10 @@ void scene2_SP2::Init()
 	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("robot", "OBJ//Robocop_Black.obj");
 	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//Robocop_Black_D.tga");
 
+	//spaceship
+	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("robot", "OBJ//SpaceShuttle.obj");
+	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//Shuttle_UV.tga");
+
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
 	meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
@@ -369,7 +373,11 @@ void scene2_SP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
-   
+ //  //render spaceship
+	//modelStack.PushMatrix();
+	////modelStack.Scale(100, 0, 100);
+	//renderMesh(meshList[GEO_SPACESHIP], false);
+	//modelStack.PopMatrix();
 
 	//render UI
 	modelStack.PushMatrix();
@@ -397,6 +405,9 @@ void scene2_SP2::Render()
 
 	//render landingvehicle
 	RenderLandingVehicle();
+
+	//render spaceshuttle
+	RenderSpaceShuttle();
 	
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
@@ -634,6 +645,21 @@ void scene2_SP2::RenderLandingVehicle()
 			modelStack.Rotate(-90, 0, 1, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_LANDVEHICLE], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+void scene2_SP2::RenderSpaceShuttle()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "spaceshuttle") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(180, 0, 1, 0);
+			modelStack.Scale(50, 50, 50);
+			renderMesh(meshList[GEO_SPACESHUTTLE], false);
 			modelStack.PopMatrix();
 			break;
 		}

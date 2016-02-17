@@ -38,6 +38,7 @@ class scene2_SP2 : public Scene
 		GEO_LANDVEHICLE,
 		GEO_FLYINGVEHICLE,
 		GEO_ROBOT,
+		GEO_SPACESHUTTLE,
 
 		//environment************************************************************//
 		GEO_PLANET_SKYBOX,
@@ -99,6 +100,7 @@ private:
 	void RenderRobot();
 	void RenderFlyingVehicle();
 	void RenderLandingVehicle();
+	void RenderSpaceShuttle();
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 
