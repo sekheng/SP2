@@ -41,7 +41,9 @@ string NPC::getDialogue()
     {
         return Dialogues[Math::RandIntMinMax(0, Dialogues.size() - 1)];
     }
-    
+    else {
+        return "";
+    }
 }
 
 bool NPC::interaction()
