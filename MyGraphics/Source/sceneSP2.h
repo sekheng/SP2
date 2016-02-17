@@ -67,6 +67,9 @@ class sceneSP2 : public Scene
 		GEO_BOX,
 		//Door
 		GEO_DOOR,
+		//KeyCard
+		GEO_KEYCARD,
+		GEO_KEYCARD2,
 
         //NPC
         GEO_NPC1,
