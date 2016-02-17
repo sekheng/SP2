@@ -559,12 +559,15 @@ void sceneSP2::Render()
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
     modelStack.PushMatrix();
+    
     RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
+    
+    
     modelStack.PopMatrix();
 
 	RenderStation();
 
-
+    
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
@@ -578,6 +581,10 @@ void sceneSP2::Render()
     std::stringstream connectPosZ;
     connectPosZ << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
+    
+    //****************************************************************************//
+    //On screen objects
+    //****************************************************************************//
 
 }
 
@@ -792,7 +799,8 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
-
+    
+    
     Mtx44 ortho;
     ortho.SetToOrtho(0, 80, 0, 80, -10, 10); //size of screen UI
     projectionStack.PushMatrix();
@@ -805,8 +813,9 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
     modelStack.Translate(x, y, 0);
     modelStack.Scale(80, 80, 80);
     modelStack.Rotate(90, 0, -1, 0);
+    
     renderMesh(mesh, false);
-
+    
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();

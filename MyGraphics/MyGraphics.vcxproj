@@ -97,6 +97,7 @@
     <ClCompile Include="Source\MaterialBuilder.cpp" />
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
+    <ClCompile Include="Source\NPC.cpp" />
     <ClCompile Include="Source\objectsForDisplay.cpp" />
     <ClCompile Include="Source\removeMonospace.cpp" />
     <ClCompile Include="Source\scene2_SP2.cpp" />
@@ -118,6 +119,7 @@
     <ClInclude Include="Source\MaterialBuilder.h" />
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
+    <ClInclude Include="Source\NPC.h" />
     <ClInclude Include="Source\objectsForDisplay.h" />
     <ClInclude Include="Source\removeMonospace.h" />
     <ClInclude Include="Source\Scene.h" />
