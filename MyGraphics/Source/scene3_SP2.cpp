@@ -554,28 +554,36 @@ void scene3_SP2::renderSpaceShip() {
 }
 
 void scene3_SP2::animateSpaceShip(double dt) {
-    if (toggleUp == false) {
+    if (toggleUp == false) 
+	{
         jitteringShipY -= 15 * (float)(dt);
-        if (jitteringShipY < -1) {
+        if (jitteringShipY < -1) 
+		{
             toggleUp = true;
         }
     }
-    else {
+    else //toggleUp = true
+	{
         jitteringShipY += 15 * (float)(dt);
-        if (jitteringShipY > 1) {
+        if (jitteringShipY > 1) 
+		{
             toggleUp = false;
         }
     }
-    if (warppingOn == true) {
+    if (warppingOn == true) 
+	{
         scaleShipZ += 30 * (float)(dt);
-        if (scaleShipZ > 100) {
+        if (scaleShipZ > 100) 
+		{
             warppingOn = false;
         }
     }
-    else if (scaleShipZ > 0){
+    else if (scaleShipZ > 0)
+	{
         scaleShipZ -= 10 * (float)(dt);
     }
-    if (warppingOn == false) {
+    if (warppingOn == false) 
+	{
         flyToZ -= 1000 * (float)(dt);
     }
 }

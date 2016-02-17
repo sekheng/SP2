@@ -1,6 +1,6 @@
 Name,flyingvehicle
-objectX,-50
-objectY,100
-objectZ,0
-boundaryRadiusX,10
-boundaryRadiusZ,10
+objectX,150
+objectY,50
+objectZ,200
+boundaryRadiusX,50	
+boundaryRadiusZ,50
