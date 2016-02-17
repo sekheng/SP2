@@ -154,7 +154,7 @@ void scene3_SP2::Init()
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
+    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 100000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
@@ -168,6 +168,10 @@ void scene3_SP2::Init()
     warppingOn = true;
     flyToZ = 0;
     //animating the spaceShip
+
+    //animating the SkyBox
+    scaleSkyBoxZ_ = 0;
+    //animating the SkyBox
 }
 
 /******************************************************************************/
@@ -360,7 +364,7 @@ void scene3_SP2::Render()
     renderMesh(meshList[GEO_AXES], false);
 
     modelStack.PushMatrix();
-    modelStack.Scale(300, 300, 300);
+    modelStack.Scale(300, 300, 300 + scaleSkyBoxZ_);
     RenderSkybox();
     modelStack.PopMatrix();
 
@@ -573,6 +577,7 @@ void scene3_SP2::animateSpaceShip(double dt) {
     if (warppingOn == true) 
 	{
         scaleShipZ += 30 * (float)(dt);
+        scaleSkyBoxZ_ += 3000 * (float)(dt);
         if (scaleShipZ > 100) 
 		{
             warppingOn = false;

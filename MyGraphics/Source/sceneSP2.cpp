@@ -188,6 +188,15 @@ void sceneSP2::Init()
 	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("Cryostasis", "OBJ//cryostasis.obj");
 	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryostasis.tga");
 
+    //NPC
+    meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
+    meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
+    //NPC
+
+
+    meshList[GEO_INVIS_CURSOR] = MeshBuilder::GenerateSphere("invisible cursor", Color(0.5, 0.5, 0.5));
+
+
     on_light = true;
 
     Mtx44 projection;
@@ -198,6 +207,9 @@ void sceneSP2::Init()
     framePerSecond = 0;
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
+
+    //initialise npc
+    npc1.Init("Najib", Vector3(-30, 0, 40),camera,5,5);
 }
 
 /******************************************************************************/
@@ -212,6 +224,7 @@ void sceneSP2::Update(double dt)
 {
     camera.Update(dt);
     framePerSecond = 1 / dt;
+    npc1.update(dt);
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -558,6 +571,10 @@ void sceneSP2::Render()
     RenderHammer();
     modelStack.PopMatrix();
 
+    modelStack.PushMatrix();
+    RenderNPC();
+    modelStack.PopMatrix();
+
     //****************************************************************************//
     //On screen objects
     //****************************************************************************//
@@ -575,12 +592,20 @@ void sceneSP2::Render()
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
     modelStack.PushMatrix();
+    
     RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
+    
+    
     modelStack.PopMatrix();
 
 	RenderStation();
 
+    modelStack.PushMatrix();
+    modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
+    renderMesh(meshList[GEO_INVIS_CURSOR], false);
+    modelStack.PopMatrix();
 
+    
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
@@ -594,6 +619,10 @@ void sceneSP2::Render()
     std::stringstream connectPosZ;
     connectPosZ << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
+    
+    //****************************************************************************//
+    //On screen objects
+    //****************************************************************************//
 
 }
 
@@ -808,7 +837,8 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
-
+    
+    
     Mtx44 ortho;
     ortho.SetToOrtho(0, 80, 0, 80, -10, 10); //size of screen UI
     projectionStack.PushMatrix();
@@ -821,8 +851,9 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
     modelStack.Translate(x, y, 0);
     modelStack.Scale(80, 80, 80);
     modelStack.Rotate(90, 0, -1, 0);
+    
     renderMesh(mesh, false);
-
+    
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();
@@ -875,4 +906,20 @@ void sceneSP2::RenderCryostasis()
 	modelStack.PushMatrix();
 	renderMesh(meshList[GEO_CRYOSTASIS], false);
 	modelStack.PopMatrix();
+}
+void sceneSP2::RenderNPC()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(npc1.NPC_getposition_x(), npc1.NPC_getposition_y(), npc1.NPC_getposition_z());
+    //modelStack.Scale(3,3,3);
+    renderMesh(meshList[GEO_NPC1], false);
+    if (npc1.interaction() == true)
+    {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to interact", Color(0, 1, 0), 3, 10, 10);
+    }
+    /*if (npc1.interaction() == true)
+    {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], npc1.getDialogue(), Color(0, 1, 0),3, 10, 10);
+    }*/
+    modelStack.PopMatrix();
 }

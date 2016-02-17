@@ -31,6 +31,7 @@ GLuint LoadTGA(const char *file_path)				// load TGA file to memory
 	GLuint		texture = 0;
 	unsigned	width, height;
 
+
 	fileStream.read((char*)header, 18);
 	width = header[12] + header[13] * 256;
 	height = header[14] + header[15] * 256;
