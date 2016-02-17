@@ -187,6 +187,11 @@ void sceneSP2::Init()
 	//SpaceStationCryostasis
 	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("Cryostasis", "OBJ//cryostasis.obj");
 	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryostasis.tga");
+	//SpaceStationKeyCard
+	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("KeyCard", "OBJ//KeyCard.obj");
+	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
+
+
 
     on_light = true;
 
@@ -348,7 +353,7 @@ void sceneSP2::RenderStation()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-300, 0, 293);
-	modelStack.Scale(5, 5, 5);
+	modelStack.Scale(5, 4.8, 5);
 	renderMesh(meshList[GEO_TABLE], false);
 	modelStack.PopMatrix();
 
@@ -368,7 +373,7 @@ void sceneSP2::RenderStation()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-300, 0, 305);
-	modelStack.Scale(5, 5, 5);
+	modelStack.Scale(5, 4.8, 5);
 	renderMesh(meshList[GEO_TABLE], false);
 	modelStack.PopMatrix();
 
@@ -389,7 +394,7 @@ void sceneSP2::RenderStation()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-300, 0, 282);
-	modelStack.Scale(5, 5, 5);
+	modelStack.Scale(5, 4.8, 5);
 	renderMesh(meshList[GEO_TABLE], false);
 	modelStack.PopMatrix();
 
@@ -448,6 +453,31 @@ void sceneSP2::RenderStation()
 	modelStack.Scale(1, 1, 1);
 	renderMesh(meshList[GEO_CRYOSTASIS], false);
 	modelStack.PopMatrix();
+
+
+	
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "keycard1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(1, 1, 1);
+			renderMesh(meshList[GEO_KEYCARD], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "keycard2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(1, 1, 1);
+			renderMesh(meshList[GEO_KEYCARD], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
 }
 

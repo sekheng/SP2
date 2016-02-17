@@ -67,6 +67,8 @@ class sceneSP2 : public Scene
 		GEO_BOX,
 		//Door
 		GEO_DOOR,
+		//keyCard
+		GEO_KEYCARD,
 
         NUM_GEOMETRY,
     };
