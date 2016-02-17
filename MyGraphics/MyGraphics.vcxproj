@@ -103,6 +103,7 @@
     <ClCompile Include="Source\scene3_SP2.cpp" />
     <ClCompile Include="Source\sceneSP2.cpp" />
     <ClCompile Include="Source\shader.cpp" />
+    <ClCompile Include="Source\StationScene.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +126,7 @@
     <ClInclude Include="Source\scene3_SP2.h" />
     <ClInclude Include="Source\sceneSP2.h" />
     <ClInclude Include="Source\shader.hpp" />
+    <ClInclude Include="Source\StationScene.h" />
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\Vertex.h" />
   </ItemGroup>
