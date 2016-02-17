@@ -37,7 +37,8 @@ class scene2_SP2 : public Scene
 
 		GEO_LANDVEHICLE,
 		GEO_FLYINGVEHICLE,
-		GEO_DEADPOOL,
+		GEO_ROBOT,
+		GEO_SPACESHUTTLE,
 
 		//environment************************************************************//
 		GEO_PLANET_SKYBOX,
@@ -96,6 +97,10 @@ private:
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
 	void RenderSkybox();
+	void RenderRobot();
+	void RenderFlyingVehicle();
+	void RenderLandingVehicle();
+	void RenderSpaceShuttle();
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 

@@ -150,11 +150,14 @@ void scene2_SP2::Init()
 	//FlyingVehicle
 	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
-
-	////Deadpool
-	//meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("deadpool", "OBJ//Deadpool.obj");
-	//meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//CHR_Deadpool_Body_TEXTSET_Color_NormX.tga");
 	
+	//Robot
+	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("robot", "OBJ//Robocop_Black.obj");
+	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//Robocop_Black_D.tga");
+
+	//spaceship
+	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("robot", "OBJ//SpaceShuttle.obj");
+	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//Shuttle_UV.tga");
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -370,29 +373,14 @@ void scene2_SP2::Render()
     RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
     modelStack.PopMatrix();
 
-    for (auto it : camera.storage_of_objects) {
-        if (it.getName() == "spacevehicle") {
-            modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-            modelStack.Rotate(-90, 0, 1, 0);
-            modelStack.Scale(10, 10, 10);
-            renderMesh(meshList[GEO_LANDVEHICLE], false);
-            modelStack.PopMatrix();
-            break;
-        }
-    }
-
-	//render flyingvehicle
-	modelStack.PushMatrix();
-	modelStack.Translate(-50, 100, 0);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
-	modelStack.PopMatrix();
+ //  //render spaceship
+	//modelStack.PushMatrix();
+	////modelStack.Scale(100, 0, 100);
+	//renderMesh(meshList[GEO_SPACESHIP], false);
+	//modelStack.PopMatrix();
 
 	//render UI
 	modelStack.PushMatrix();
-
 	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
 	modelStack.PopMatrix();
 
@@ -402,19 +390,25 @@ void scene2_SP2::Render()
 	renderMesh(meshList[GEO_PLANET_GROUND], false);
 	modelStack.PopMatrix();
 
-	////render deadpool
-	//modelStack.PushMatrix();
-	//modelStack.Translate(0, 0, 0);
-	//modelStack.Scale(10, 10, 10);
-	//renderMesh(meshList[GEO_DEADPOOL], false);
-	//modelStack.PopMatrix();
-
 	//render skybox 
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, 0);
 	modelStack.Scale(300, 300, 300);
 	RenderSkybox();
 	modelStack.PopMatrix();
+
+	//render robot
+	RenderRobot();
+
+	//render flyingvehicle
+	RenderFlyingVehicle();
+
+	//render landingvehicle
+	RenderLandingVehicle();
+
+	//render spaceshuttle
+	RenderSpaceShuttle();
+	
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
@@ -582,7 +576,6 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
 void scene2_SP2::RenderSkybox()
 {
 	modelStack.PushMatrix();
-	//modelStack.Scale(0.5, 0.5, 0.5);
 	renderMesh(meshList[GEO_PLANET_SKYBOX], false);
 	modelStack.PopMatrix();
 }
@@ -609,4 +602,66 @@ void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 	projectionStack.PopMatrix();
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
+}
+void scene2_SP2::RenderRobot()
+{
+	for (auto it : camera.storage_of_objects)
+	{
+		if (it.getName() == "robotcop")
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(7, 7, 7);
+			renderMesh(meshList[GEO_ROBOT], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+void scene2_SP2::RenderFlyingVehicle()
+{
+	for (auto it : camera.storage_of_objects)
+	{
+		if (it.getName() == "flyingvehicle")
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_FLYINGVEHICLE], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+void scene2_SP2::RenderLandingVehicle()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "spacevehicle") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_LANDVEHICLE], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+void scene2_SP2::RenderSpaceShuttle()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "spaceshuttle") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(180, 0, 1, 0);
+			modelStack.Scale(50, 50, 50);
+			renderMesh(meshList[GEO_SPACESHUTTLE], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 }

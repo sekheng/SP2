@@ -1,0 +1,6 @@
+Name,flyingvehicle
+objectX,-50
+objectY,100
+objectZ,0
+boundaryRadiusX,10
+boundaryRadiusZ,10

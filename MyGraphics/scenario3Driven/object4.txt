@@ -1,0 +1,6 @@
+Name,spaceshuttle
+objectX,-250
+objectY,0
+objectZ,350
+boundaryRadiusX,170
+boundaryRadiusZ,250
