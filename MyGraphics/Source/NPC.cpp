@@ -37,23 +37,22 @@ float NPC::NPC_getposition_y()
 
 string NPC::getDialogue()
 {
-    if (interaction() == true && time < 3);
+    /*if (interaction() == true && time < 3);
     {
         return Dialogues[Math::RandIntMinMax(0, Dialogues.size() - 1)];
-    }
-    
+    }*/
+    return 0;
 }
 
 bool NPC::interaction()
 {
-        if (Application::IsKeyPressed('E'))
-        {
-        if (boundschecking(cam_pointer->getCrossHairX(), cam_pointer->getCrossHairZ()) == false)
+    
+        if (boundschecking(cam_pointer->getCrossHairX(), cam_pointer->getCrossHairZ()) == true)
         {
                 return true;
         }
-            else return false;
-        }
+        else return false;
+        return false;
 }
 
 bool NPC::boundschecking(const float&bounds_x, const float &bounds_z)
@@ -63,9 +62,9 @@ bool NPC::boundschecking(const float&bounds_x, const float &bounds_z)
         (NPC_getposition_z() + bound_z) > bounds_z &&
         (NPC_getposition_z() - bound_z) < bounds_z)
     {
-        return false;
+        return true;
     }
-    return true;
+    return false;
 }
 
 void NPC::update(double dt)
