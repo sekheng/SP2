@@ -359,11 +359,6 @@ void scene3_SP2::Render()
     renderSpaceShip();
     modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
-    renderMesh(meshList[GEO_INVI_CURSOR], false);
-    modelStack.PopMatrix();
-
     std::stringstream connectPosX;
     connectPosX << "X : " << camera.getCameraXcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
@@ -537,8 +532,10 @@ void scene3_SP2::renderSpaceShip() {
         if (it.getName() == "spaceship") {
             modelStack.PushMatrix();
             modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Scale(10, 10, 10);
             renderMesh(meshList[GEO_FLYINGVEHICLE], true);
             modelStack.PopMatrix();
+            break;
         }
     }
 }
