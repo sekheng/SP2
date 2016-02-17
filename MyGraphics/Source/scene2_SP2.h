@@ -97,6 +97,8 @@ private:
     void renderMesh(Mesh *mesh, bool enableLight);
 	void RenderSkybox();
 	void RenderRobot();
+	void RenderFlyingVehicle();
+	void RenderLandingVehicle();
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 

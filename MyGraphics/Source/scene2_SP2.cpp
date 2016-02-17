@@ -380,17 +380,8 @@ void scene2_SP2::Render()
         }
     }
 
-	//render flyingvehicle
-	modelStack.PushMatrix();
-	modelStack.Translate(-50, 100, 0);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(10, 10, 10);
-	renderMesh(meshList[GEO_FLYINGVEHICLE], false);
-	modelStack.PopMatrix();
-
 	//render UI
 	modelStack.PushMatrix();
-
 	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
 	modelStack.PopMatrix();
 
@@ -409,6 +400,10 @@ void scene2_SP2::Render()
 
 	//render robot
 	RenderRobot();
+
+	//render flyingvehicle
+	RenderFlyingVehicle();
+	
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
@@ -576,7 +571,6 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
 void scene2_SP2::RenderSkybox()
 {
 	modelStack.PushMatrix();
-	//modelStack.Scale(0.5, 0.5, 0.5);
 	renderMesh(meshList[GEO_PLANET_SKYBOX], false);
 	modelStack.PopMatrix();
 }
@@ -604,11 +598,51 @@ void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-
 void scene2_SP2::RenderRobot()
 {
-	modelStack.PushMatrix();
-	modelStack.Scale(7, 7, 7);
-	renderMesh(meshList[GEO_ROBOT], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects)
+	{
+		if (it.getName() == "robotcop")
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(7, 7, 7);
+			renderMesh(meshList[GEO_ROBOT], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 }
+
+void scene2_SP2::RenderFlyingVehicle()
+{
+	for (auto it : camera.storage_of_objects)
+	{
+		if (it.getName() == "flyingvehicle")
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_FLYINGVEHICLE], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+//void scene2_SP2::RenderLandingVehicle()
+//{
+//	for (auto it : camera.storage_of_objects)
+//	{
+//		if (it.getName() == "landingvehicle")
+//		{
+//			modelStack.PushMatrix();
+//			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+//			modelStack.Scale(7, 7, 7);
+//			renderMesh(meshList[GEO_LANDINGVEHICLE], false);
+//			modelStack.PopMatrix();
+//			break;
+//		}
+//	}
+//}
