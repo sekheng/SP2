@@ -2,5 +2,5 @@ Name,robotcop
 objectX,0
 objectY,0
 objectZ,0
-boundaryRadiusX,10	
-boundaryRadiusZ,10
+boundaryRadiusX,0	
+boundaryRadiusZ,0

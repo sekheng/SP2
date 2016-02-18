@@ -154,7 +154,7 @@ void scene3_SP2::Init()
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 100000.f);
+    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 100000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
@@ -591,4 +591,4 @@ void scene3_SP2::animateSpaceShip(double dt) {
 	{
         flyToZ -= 1000 * (float)(dt);
     }
-}
+}   
