@@ -14,20 +14,24 @@ public:
     NPC();
     ~NPC();
 
-    void Init(string name, Vector3 pos, Camera3 &camera_address, float boundaryX, float boundaryZ);
+    void Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camera3 &camera_address, const char *fileLocation);
     float NPC_getposition_x();
     float NPC_getposition_z();
     float NPC_getposition_y();
     bool boundschecking(const float&bounds_x, const float &bounds_z);
     void update(double dt);
-    string getDialogue();
+    string getDialogue(bool reset);
     bool interaction();
 private:
     Vector3 NPC_pos;
     vector<string> Dialogues;
     Camera3 *cam_pointer;
     float bound_x, bound_z;
+    int dialogue_switch;
+    bool dialogue_reset;
     double time;
+    bool has_interacted;
+    float text_delay;
 protected:
 };
 

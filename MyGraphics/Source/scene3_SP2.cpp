@@ -12,7 +12,7 @@
 #include "Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
-
+#include <iomanip>
 
 /******************************************************************************/
 /*!
@@ -373,15 +373,15 @@ void scene3_SP2::Render()
     modelStack.PopMatrix();
 
     std::stringstream connectPosX;
-    connectPosX << "X : " << camera.getCameraXcoord();
+    connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
 
     std::stringstream connectPosZ;
-    connectPosZ << "Z : " << camera.getCameraZcoord();
+    connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
     
     std::stringstream connectPosY;
-    connectPosY << "Y : " << camera.getCameraYcoord();
+    connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 18.f);
 
     std::stringstream ss;

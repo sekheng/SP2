@@ -6,7 +6,7 @@ upy,1
 upz,0
 cameraRotationX,0
 cameraRotationY,180
-cameraSpeed,50
+cameraSpeed,10
 boundsCheckX,10000
 boundsCheckZ,10000
 numberofObjects,3
