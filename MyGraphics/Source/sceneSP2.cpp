@@ -220,6 +220,10 @@ void sceneSP2::Init()
 
     //initialise npc
     npc1.Init("Najib",Vector3(2,2,2),5,5,camera,"NPC data//Najib.txt");
+
+    //initialise quest
+    test_quest.Init("random quest", camera,Vector3(20,20,20),5,5,Vector3(30,30,30),5,5);
+    test_quest.Quest_Taken(true);
 }
 
 /******************************************************************************/
@@ -610,6 +614,10 @@ void sceneSP2::Render()
     RenderNPC();
     modelStack.PopMatrix();
 
+    modelStack.PushMatrix();
+    RenderQuestObjects();
+    modelStack.PopMatrix();
+
     //****************************************************************************//
     //On screen objects
     //****************************************************************************//
@@ -955,4 +963,32 @@ void sceneSP2::RenderNPC()
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], npc1.getDialogue(), Color(0, 1, 0),3, 10, 10);
     }*/
     modelStack.PopMatrix();
+}
+
+void sceneSP2::RenderQuestObjects()
+{
+    //text
+    if (test_quest.Result() == true)
+    {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
+    }
+    if (test_quest.FirstObject_taken() == false)
+    {
+        //object 1
+        modelStack.PushMatrix();
+        modelStack.Translate(test_quest.get_object1_x(), 0, test_quest.get_object1_z());
+        renderMesh(meshList[GEO_SCREWDRIVER], false);
+        modelStack.PopMatrix();
+    }
+    if (test_quest.SecondObject_taken() == false)
+    {
+        //object 2
+        modelStack.PushMatrix();
+        modelStack.Translate(test_quest.get_object2_x(), 0, test_quest.get_object2_z());
+        renderMesh(meshList[GEO_CONTAINER], false);
+        modelStack.PopMatrix();
+    }
+
+        
+    
 }

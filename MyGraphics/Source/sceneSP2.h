@@ -19,6 +19,7 @@ Hopefully they don't mess it up
 #include "removeMonospace.h"
 #include "NPC.h"
 #include "StationScene.h"
+#include "Quest.h"
 /******************************************************************************/
 /*!
 Class sceneSP2:
@@ -138,6 +139,8 @@ private:
 
     void RenderNPC();
 
+    void RenderQuestObjects();
+
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -149,7 +152,11 @@ private:
 
     MS modelStack, viewStack, projectionStack;
 
+    //NPC objects
     NPC npc1;
+
+    //Quest objects
+    Quest test_quest;
 
 	StationScene door;
 	StationScene* p;

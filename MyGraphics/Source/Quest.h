@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file    NPC.h
+\author  Lim Guan Hui
+\par     email: 150623L@mymail.nyp.edu.sg
+\brief -
+The quest class
+*/
+/******************************************************************************/
 #ifndef QUEST_H_
 #define QUEST_H_
 
@@ -22,8 +31,12 @@ public:
     bool get_quest_taken();
     bool FirstObject();
     bool FirstObject_taken();
+    float get_object1_x();
+    float get_object1_z();
     bool SecondObject();
     bool SecondObject_taken();
+    float get_object2_x();
+    float get_object2_z();
     bool QuestinProgress();
     bool Result();
     bool pickup(const float& position_x, const float& position_z,

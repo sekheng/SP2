@@ -42,6 +42,14 @@ bool Quest::FirstObject()
 {
     return pickup(x_1,z_1,bounds_1_x,bounds_1_z);
 }
+float Quest::get_object1_x()
+{
+    return x_1;
+}
+float Quest::get_object1_z()
+{
+    return z_1;
+}
 bool Quest::FirstObject_taken()
 {
     if (Application::IsKeyPressed('E') && FirstObject())
@@ -51,6 +59,7 @@ bool Quest::FirstObject_taken()
     else
         return false;
 }
+
 bool Quest::SecondObject()
 {
     return pickup(x_2, z_2, bounds_2_x, bounds_2_z);
@@ -63,6 +72,14 @@ bool Quest::SecondObject_taken()
     }
     else
         return false;
+}
+float Quest::get_object2_x()
+{
+    return x_2;
+}
+float Quest::get_object2_z()
+{
+    return z_2;
 }
 bool Quest::QuestinProgress()
 {
