@@ -18,6 +18,7 @@ Hopefully they don't mess it up
 #include "MatrixStack.h"
 #include "removeMonospace.h"
 #include "NPC.h"
+#include "StationScene.h"
 /******************************************************************************/
 /*!
 Class sceneSP2:
@@ -149,6 +150,9 @@ private:
     MS modelStack, viewStack, projectionStack;
 
     NPC npc1;
+
+	StationScene door;
+	StationScene* p;
 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
