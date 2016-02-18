@@ -19,13 +19,19 @@ void Quest::Init(string Name_, Camera3 &camera_address,
     x_1 = Object_1_pos.x;
     y_1 = Object_1_pos.y;
     z_1 = Object_1_pos.z;
-
+    bounds_1_x = Object_1_bounds_x;
+    bounds_1_z = Object_1_bounds_z;
     //object 2
     x_2 = Object_2_pos.x;
     y_2 = Object_2_pos.y;
     z_2 = Object_2_pos.z;
+    bounds_2_x = Object_2_bound_x;
+    bounds_2_z = Object_2_bound_z;
 
     Quest_accept = false;
+
+    stop_change1 = false;
+    stop_change2 = false;
 }
 
 void Quest::Quest_Taken(bool taken)
@@ -54,10 +60,15 @@ bool Quest::FirstObject_taken()
 {
     if (Application::IsKeyPressed('E') && FirstObject())
     {
+        stop_change1 = true;
         return true;
     }
     else
+    {
+        if ( stop_change1 == false)
         return false;
+    }
+        
 }
 
 bool Quest::SecondObject()
@@ -66,12 +77,17 @@ bool Quest::SecondObject()
 }
 bool Quest::SecondObject_taken()
 {
-    if (Application::IsKeyPressed('E') && SecondObject())
+    if (Application::IsKeyPressed('E') && SecondObject() && stop_change2 == false )
     {
+        stop_change2 = true;
         return true;
     }
     else
+    {
+        if (stop_change2 == false)
         return false;
+    }
+        
 }
 float Quest::get_object2_x()
 {
@@ -95,7 +111,7 @@ bool Quest::Result()
 {
     if (get_quest_taken())
     {
-        if (!QuestinProgress())
+        if (QuestinProgress() == false)
             return true;
         else
             return false;
@@ -105,11 +121,11 @@ bool Quest::Result()
 /********************************************************************************/
 //basically bounds check and to check if object has been picked up or not
 /********************************************************************************/
-bool Quest::pickup(const float& position_x, const float& position_z, float bounds_x, float bounds_z)
+bool Quest::pickup( float position_x,  float position_z, float bounds_x, float bounds_z)
 {
     if ((position_x + bounds_x) > bounds_x &&
-        (position_z - bounds_x) < bounds_x &&
-        (position_x + bounds_z) > bounds_z &&
+        (position_x - bounds_x) < bounds_x &&
+        (position_z + bounds_z) > bounds_z &&
         (position_z - bounds_z) < bounds_z)
     {
         return true;

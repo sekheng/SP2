@@ -39,7 +39,7 @@ public:
     float get_object2_z();
     bool QuestinProgress();
     bool Result();
-    bool pickup(const float& position_x, const float& position_z,
+    bool pickup( float position_x,  float position_z,
                 float bounds_x, float bounds_z);
 private:
     string name;
@@ -56,6 +56,8 @@ private:
     float bounds_2_z;
 
     bool Quest_accept;
+
+    bool stop_change1,stop_change2;
 protected:
 };
 
