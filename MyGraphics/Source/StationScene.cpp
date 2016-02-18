@@ -20,6 +20,8 @@ void StationScene::Init(string name, Vector3 pos, Camera3 &camera_address, float
 	bound_x = boundaryX;
 	bound_z = boundaryZ;
 	time = 0;
+	questActive = false;
+	
 }
 
 float StationScene::Door_getposition_x()
@@ -44,17 +46,57 @@ string StationScene::getDialogue()
 	return 0;
 }
 
-bool StationScene::interaction()
+short StationScene::getQuest()
 {
-	if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 270)
+	if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == false)
 	{
-		return true;
+		if (Application::IsKeyPressed('E'))
+		{
+			questActive = true;
+			return 0;
+		}
+		else
+		{
+			return 1;
+		}
+	}
+	else if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == true)
+	{
+		return 2;
+	}
+	else if (questActive == true)
+	{
+		return 3;
 	}
 	else
 	{
-		return false;
+		return 0;
 	}
 }
+
+//bool StationScene::keyCard()
+//{
+//	bool checkQuest[2];
+//	checkQuest[0] = true;
+//	checkQuest[1] = true;
+//
+//	if (cam_pointer->position.x > -258 && cam_pointer->position.x < -255 && cam_pointer->position.z > 303 && cam_pointer->position.z < 306 && questActive == true)
+//	{
+//		if (Application::IsKeyPressed('E'))
+//		{
+//			checkQuest[0] = false;
+//		}
+//	}
+//	else if (cam_pointer->position.x > -296 && cam_pointer->position.x < -294 && cam_pointer->position.z > 290 && cam_pointer->position.z < 293 && questActive == true)
+//	{
+//		if (Application::IsKeyPressed('E'))
+//		{
+//			checkQuest[1] = false;
+//		}
+//	}
+//
+//	return checkQuest;
+//}
 
 bool StationScene::boundschecking(const float&bounds_x, const float &bounds_z)
 {

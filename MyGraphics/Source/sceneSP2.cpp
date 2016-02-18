@@ -216,7 +216,7 @@ void sceneSP2::Init()
     camera.cursorCoordY = screenHeight / 2;
 
 	door.Init("Sek heng", Vector3(-30, 0, 40), camera, 5, 5);
-	door.interaction();
+	door.getQuest();
 
     //initialise npc
     npc1.Init("Najib", Vector3(-30, 0, 40),camera,5,5);
@@ -458,24 +458,37 @@ void sceneSP2::RenderStation()
 	modelStack.Translate(-270, 0, 260);
 	modelStack.Scale(5, 3, 6);
 	renderMesh(meshList[GEO_DOOR], false);
-	if (door.interaction() == true)
+	if (door.getQuest() == 1)
 	{
-		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to interact", Color(0, 1, 0), 3, 10, 10);
+		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to open door", Color(0, 1, 0), 3, 10, 10);
+	}
+	else if (door.getQuest() == 2)
+	{
+		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the damn key for your asshole", Color(0, 1, 0), 3, 8, 10);
 	}
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(-255, 0, 307);
-	modelStack.Scale(1, 1, 1);
-	renderMesh(meshList[GEO_KEYCARD], false);
-	modelStack.PopMatrix();
+	/*if (door.getQuest() == 3)
+	{
+		
+			if (p->keyCard[0] == true)
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(-255, 0, 307);
+				modelStack.Scale(1, 1, 1);
+				renderMesh(meshList[GEO_KEYCARD], false);
+				modelStack.PopMatrix();
+			}
+			if (p->keyCard[1] == true)
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(-296, 0, 292);
+				modelStack.Scale(1, 1, 1);
+				renderMesh(meshList[GEO_KEYCARD2], false);
+				modelStack.PopMatrix();
+			}
 
-	modelStack.PushMatrix();
-	modelStack.Translate(-296, 0, 292);
-	modelStack.Scale(1, 1, 1);
-	renderMesh(meshList[GEO_KEYCARD2], false);
-	modelStack.PopMatrix();
-
+	}*/
 
 	modelStack.PushMatrix();
 	modelStack.Rotate(180, 0, 1, 0);
