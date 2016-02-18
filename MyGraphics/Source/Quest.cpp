@@ -1,0 +1,101 @@
+#include "Quest.h"
+#include "Application.h"
+Quest::Quest()
+{
+
+}
+Quest::~Quest()
+{
+
+}
+
+void Quest::Init(string Name_, Camera3 &camera_address,
+    Vector3 Object_1_pos, float Object_1_bounds_x, float Object_1_bounds_z,
+    Vector3 Object_2_pos, float Object_2_bound_x, float Object_2_bound_z)
+{
+    name = Name_;
+    camera = &camera_address;
+    //object 1
+    x_1 = Object_1_pos.x;
+    y_1 = Object_1_pos.y;
+    z_1 = Object_1_pos.z;
+
+    //object 2
+    x_2 = Object_2_pos.x;
+    y_2 = Object_2_pos.y;
+    z_2 = Object_2_pos.z;
+
+    Quest_accept = false;
+}
+
+void Quest::Quest_Taken(bool taken)
+{
+    Quest_accept = true;
+}
+
+bool Quest::get_quest_taken()
+{
+    return Quest_accept;
+}
+
+bool Quest::FirstObject()
+{
+    return pickup(x_1,z_1,bounds_1_x,bounds_1_z);
+}
+bool Quest::FirstObject_taken()
+{
+    if (Application::IsKeyPressed('E') && FirstObject())
+    {
+        return true;
+    }
+    else
+        return false;
+}
+bool Quest::SecondObject()
+{
+    return pickup(x_2, z_2, bounds_2_x, bounds_2_z);
+}
+bool Quest::SecondObject_taken()
+{
+    if (Application::IsKeyPressed('E') && SecondObject())
+    {
+        return true;
+    }
+    else
+        return false;
+}
+bool Quest::QuestinProgress()
+{
+    if (FirstObject_taken() && SecondObject_taken())
+        return false;
+    else
+        return true;
+}
+/**************************************************************************/
+//put this in update of scene to check if quest is complete
+/**************************************************************************/
+bool Quest::Result()
+{
+    if (get_quest_taken())
+    {
+        if (!QuestinProgress())
+            return true;
+        else
+            return false;
+    }
+    else return false;
+}
+/********************************************************************************/
+//basically bounds check and to check if object has been picked up or not
+/********************************************************************************/
+bool Quest::pickup(const float& position_x, const float& position_z, float bounds_x, float bounds_z)
+{
+    if ((position_x + bounds_x) > bounds_x &&
+        (position_z - bounds_x) < bounds_x &&
+        (position_x + bounds_z) > bounds_z &&
+        (position_z - bounds_z) < bounds_z)
+    {
+        return true;
+    }
+    return false;
+}
