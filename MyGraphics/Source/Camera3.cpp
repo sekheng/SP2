@@ -138,7 +138,6 @@ void Camera3::Init(const char *fileLocation)
     if (cameraCoordinates.count("numberofobjects") == 1) {
         it = cameraCoordinates.find("numberofobjects");
         num_of_objects = static_cast<size_t>(it->second);
-        std::cout << "Number of Game Objects in this current Scene : " << num_of_objects << std::endl;
     }
 
     if (cameraCoordinates.count("crosshairradius") == 1) {
@@ -237,11 +236,11 @@ void Camera3::Update(double dt)
         cameraMovement(dt);
         if (Application::IsKeyPressed(VK_SPACE))
         {
-            position.y += 10 * (float)(dt);
+            position.y += 100 * (float)(dt);
         }
         if (Application::IsKeyPressed(VK_LCONTROL))
         {
-            position.y -= 10 * (float)(dt);
+            position.y -= 100 * (float)(dt);
         }
         rotateCamera(3 * dt);
         break;

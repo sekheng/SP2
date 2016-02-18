@@ -134,7 +134,6 @@ void scene2_SP2::Init()
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
     meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
-    forComicSans.loadSpace("removeMonospace//comicSans.txt");
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
@@ -159,9 +158,22 @@ void scene2_SP2::Init()
 	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("robot", "OBJ//SpaceShuttle.obj");
 	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//Shuttle_UV.tga");
 
-	//vault
-	meshList[GEO_VAULT] = MeshBuilder::GenerateOBJ("robot", "OBJ//vault.obj");
-	meshList[GEO_VAULT]->textureID = LoadTGA("Image//vault.tga");
+	//vaultcube
+	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultcube.obj");
+	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//vaultnewest.tga");
+
+	//vaultdoor
+	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultdoor.obj");
+	meshList[GEO_VAULTDOOR]->textureID = LoadTGA("Image//vaultnewest.tga");
+
+	//vaultwheel
+	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultwheel.obj");
+	meshList[GEO_VAULTWHEEL]->textureID = LoadTGA("Image//vaultnewest.tga");
+
+	//vaultstick
+	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultstick.obj");
+	meshList[GEO_VAULTSTICK]->textureID = LoadTGA("Image//vaultnewest.tga");
+
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -185,6 +197,10 @@ void scene2_SP2::Init()
     Rot_Civ_.init("rot_civ//rot_civ_stuff.txt");
     //Rot_Civ_.InitDialogues("rot_civ//rot_civ_dialogues.txt", camera);
     camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
+
+	//vault animation
+	wheelturn = stickpush = dooropen = false;
+	wheelturning = stickpushing = dooropening = 0;
 }
 
 /******************************************************************************/
@@ -198,6 +214,7 @@ where the logic of the game is, and update
 void scene2_SP2::Update(double dt)
 {
     camera.Update(dt);
+	VaultAnimation(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -254,6 +271,9 @@ void scene2_SP2::Update(double dt)
     if (Application::IsKeyPressed(VK_NUMPAD2)) {
         Application::changeIntoScenario2();
     }
+
+	if (Application::IsKeyPressed('B'))
+		wheelturn = true;
 }
 
 /******************************************************************************/
@@ -471,15 +491,10 @@ void scene2_SP2::RenderText(Mesh* mesh, std::string text, Color color)
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        if (i != 0) {
-            int widthOfChar = text[i];
-            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
-        }
-        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
+        characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -526,15 +541,10 @@ void scene2_SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        if (i != 0) {
-            int widthOfChar = text[i];
-            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
-        }
-        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
+        characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -673,15 +683,125 @@ void scene2_SP2::RenderSpaceShuttle()
 void scene2_SP2::RenderVault()
 {
 	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "vault") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Rotate(180, 0, 1, 0);
-			modelStack.Scale(40, 25, 25);
-			renderMesh(meshList[GEO_VAULT], false);
-			modelStack.PopMatrix();
-			break;
+		
+			if (it.getName() == "vaultcube") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+				modelStack.Rotate(180, 0, 1, 0);
+				modelStack.Scale(7, 3, 3);
+				renderMesh(meshList[GEO_VAULTCUBE], false);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+		for (auto it : camera.storage_of_objects) {
+			if (it.getName() == "vaultdoor") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX()+45, it.getObjectposY()+7, it.getObjectposZ());
+				modelStack.Rotate(dooropening, 0, 1, 0);
+				renderMesh(meshList[GEO_LIGHTBALL], false);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(-45, -7, 0);
+				modelStack.Rotate(180, 0, 1, 0);
+				
+				modelStack.Scale(7, 3, 3);
+				renderMesh(meshList[GEO_VAULTDOOR], false);
+				modelStack.PopMatrix();
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+		for (auto it : camera.storage_of_objects) {
+			if (it.getName() == "vaultwheel") {
+
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX()+61, it.getObjectposY()+7, it.getObjectposZ()-10);
+				modelStack.Rotate(dooropening, 0, 1, 0);
+				renderMesh(meshList[GEO_LIGHTBALL], false);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(-61, -7, 10);
+				modelStack.Rotate(180, 0, 1, 0);
+				modelStack.Rotate(wheelturning, 0, 0, 1);
+				modelStack.Scale(3, 3, 3);
+				renderMesh(meshList[GEO_VAULTWHEEL], false);
+				modelStack.PopMatrix();
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+		for (auto it : camera.storage_of_objects) {
+			if (it.getName() == "vaultstick") {
+
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX()+33 + stickpushing, it.getObjectposY()-16, it.getObjectposZ()-5);
+				modelStack.Rotate(dooropening, 0, 1, 0);
+				renderMesh(meshList[GEO_LIGHTBALL], false);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(-33, 16, 5);
+				modelStack.Rotate(180, 0, 1, 0);
+				modelStack.Scale(5, 3, 3);
+				renderMesh(meshList[GEO_VAULTSTICK], false);
+				modelStack.PopMatrix();
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+		for (auto it : camera.storage_of_objects) {
+			if (it.getName() == "vaultstick2") {
+
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX()+33 + stickpushing, it.getObjectposY()+16, it.getObjectposZ()-5);
+				modelStack.Rotate(dooropening, 0, 1, 0);
+				renderMesh(meshList[GEO_LIGHTBALL], false);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(-33, -16, 5);
+				modelStack.Rotate(180, 0, 1, 0);
+				modelStack.Scale(5, 3, 3);
+				renderMesh(meshList[GEO_VAULTSTICK], false);
+				modelStack.PopMatrix();
+				modelStack.PopMatrix();
+				break;
+			}
 		}
 	}
+
+
+void scene2_SP2::VaultAnimation(double dt)
+{
+	if (wheelturn == true) //if 'B' pressed, wheel start rotating
+	{
+		wheelturning += 100 * (float)(dt);
+		if (wheelturning > 360)// wheel will rotate 360 degree
+		{
+			wheelturning = 360;//wheel will stop at 360 degree
+			stickpush = true; 
+		}
+	}
+	if (stickpush == true) //stick start pushing after wheel stop turning
+	{
+		stickpushing += 50 * (float)(dt);
+		if (stickpushing > 50) // stick will be translated +200 to x-axis
+		{
+			stickpushing = 50; // stick will stop when x=+200
+			dooropen = true;
+		}
+	}
+	if (dooropen == true) 
+	{
+		dooropening += 20 * (float)(dt);
+		if (dooropening > 90) //door rotate 90 degree
+			dooropening = 90;
+	}
 }
+
+
+
 

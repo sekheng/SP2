@@ -19,6 +19,9 @@
     <Filter Include="Image">
       <UniqueIdentifier>{65d610ba-2193-4c6d-98e4-3b9b81dd9ff9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scenario2Driven">
+      <UniqueIdentifier>{f6f866c1-b76b-483d-a857-812b24d4c354}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Texture.vertexshader">
@@ -213,5 +216,10 @@
     <Image Include="Image\winebottle.tga">
       <Filter>Image</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="scenario2Driven\objects.txt">
+      <Filter>scenario2Driven</Filter>
+    </Text>
   </ItemGroup>
 </Project>

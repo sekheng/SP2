@@ -1,26 +1,38 @@
 #ifndef STATIONSCENE_H
 #define STATIONSCENE_H
-#include "Camera3.h"
-#include "objectsForDisplay.h"
-#include "Application.h"
 
-class StationScene
+#include "GameObject.h"
+#include "Vector3.h"
+#include <vector>
+#include "Camera3.h"
+
+using std::vector;
+
+class StationScene : public GameObject
 {
 public:
-	StationScene(Camera3& original);
+	StationScene();
 	~StationScene();
-	void getQuest();
-	bool getItem();
-	bool openDoor();
 
+	void Init(string name, Vector3 pos, Camera3 &camera_address, float boundaryX, float boundaryZ);
+	float Door_getposition_x();
+	float Door_getposition_z();
+	float Door_getposition_y();
+	bool boundschecking(const float&bounds_x, const float &bounds_z);
+	void update(double dt);
+	string getDialogue();
+	short getQuest();
+	//bool keyCard();
 
 private:
-	int count;
-	bool questTaken;
-	bool card1Taken;
-	bool card2Taken;
-	Camera3 *dubCamera;
-};
+	Vector3 Door_pos;
+	vector<string> Dialogues;
+	Camera3 *cam_pointer;
+	float bound_x, bound_z;
+	double time;
+	bool questActive;
 
+protected:
+};
 
 #endif

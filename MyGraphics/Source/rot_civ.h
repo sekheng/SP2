@@ -13,10 +13,15 @@ public:
     vector<string> dialogues;
 
     void update(double dt);
+    string returnDialogue();
+    bool interaction();
+    void preventSpamming();
+
 private:
-    Vector3 pos;
     Camera3 *dub_camera;
-    float boundaryX, boundaryZ;
+    float interatingRadius;
+    double time;
+    size_t order_of_text;
 };
 
 #endif
