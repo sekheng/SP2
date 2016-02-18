@@ -1,6 +1,0 @@
-Name,vaultwheel
-objectX,-90
-objectY,231
-objectZ,-120
-boundaryRadiusX,0		
-boundaryRadiusZ,0

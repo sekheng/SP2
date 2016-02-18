@@ -1,6 +1,0 @@
-Name,vaultdoor
-objectX,0
-objectY,230
-objectZ,-210
-boundaryRadiusX,0		
-boundaryRadiusZ,0

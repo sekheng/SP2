@@ -127,7 +127,7 @@ void scene3_SP2::Init()
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene3.txt");
-    camera.InitObjects("scenario2Driven//");
+    camera.InitObjects("scenario2Driven//objects.txt");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -154,7 +154,7 @@ void scene3_SP2::Init()
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 100000.f);
+    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 100000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
@@ -566,7 +566,7 @@ void scene3_SP2::animateSpaceShip(double dt) {
             toggleUp = true;
         }
     }
-    else //toggleUp = true
+    else
 	{
         jitteringShipY += 15 * (float)(dt);
         if (jitteringShipY > 1) 
@@ -583,12 +583,9 @@ void scene3_SP2::animateSpaceShip(double dt) {
             warppingOn = false;
         }
     }
-    else if (scaleShipZ > 0)
+    else if (scaleShipZ > 0 && warppingOn == false)
 	{
         scaleShipZ -= 10 * (float)(dt);
-    }
-    if (warppingOn == false)
-	{
         flyToZ -= 1000 * (float)(dt);
     }
-}
+}   

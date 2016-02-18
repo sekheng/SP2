@@ -127,7 +127,7 @@ void scene2_SP2::Init()
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene2.txt");
-    camera.InitObjects("scenario3Driven//");
+    camera.InitObjects("scenario3Driven//all_static_OBJ.txt");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -156,24 +156,12 @@ void scene2_SP2::Init()
 	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//Robocop_Black_D.tga");
 
 	//spaceship
-	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("spaceshuttle", "OBJ//SpaceShuttle.obj");
+	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("robot", "OBJ//SpaceShuttle.obj");
 	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//Shuttle_UV.tga");
 
-	//vaultcube
-	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultcube.obj");
-	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//vaultnewest.tga");
-
-	//vaultdoor
-	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultdoor.obj");
-	meshList[GEO_VAULTDOOR]->textureID = LoadTGA("Image//vaultnewest.tga");
-
-	//vaultwheel
-	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultwheel.obj");
-	meshList[GEO_VAULTWHEEL]->textureID = LoadTGA("Image//vaultnewest.tga");
-
-	//vaultstick
-	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultstick.obj");
-	meshList[GEO_VAULTSTICK]->textureID = LoadTGA("Image//vaultnewest.tga");
+	//vault
+	meshList[GEO_VAULT] = MeshBuilder::GenerateOBJ("robot", "OBJ//vault.obj");
+	meshList[GEO_VAULT]->textureID = LoadTGA("Image//vault.tga");
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -187,26 +175,16 @@ void scene2_SP2::Init()
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
+    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
 
-	//vaultanimation
-
-	//wheel
-	wheelturn = false;
-	wheelturning = 0;
-
-	//stick
-	stickpush = false;
-	stickpushing = 0;
-
-	//door
-	dooropen = false;
-	dooropening = 0;
+    Rot_Civ_.init("rot_civ//rot_civ_stuff.txt");
+    //Rot_Civ_.InitDialogues("rot_civ//rot_civ_dialogues.txt", camera);
+    camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 }
 
 /******************************************************************************/
@@ -220,7 +198,6 @@ where the logic of the game is, and update
 void scene2_SP2::Update(double dt)
 {
     camera.Update(dt);
-	VaultAnimation(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -277,10 +254,6 @@ void scene2_SP2::Update(double dt)
     if (Application::IsKeyPressed(VK_NUMPAD2)) {
         Application::changeIntoScenario2();
     }
-
-	//vault animation
-	if (Application::IsKeyPressed('B'))
-		wheelturn = true;
 }
 
 /******************************************************************************/
@@ -421,7 +394,7 @@ void scene2_SP2::Render()
 
 	//render ground
 	modelStack.PushMatrix();
-	modelStack.Scale(100, 0, 100);
+	modelStack.Scale(100, 1, 100);
 	renderMesh(meshList[GEO_PLANET_GROUND], false);
 	modelStack.PopMatrix();
 
@@ -643,18 +616,11 @@ void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 }
 void scene2_SP2::RenderRobot()
 {
-	for (auto it : camera.storage_of_objects)
-	{
-		if (it.getName() == "robotcop")
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Scale(7, 7, 7);
-			renderMesh(meshList[GEO_ROBOT], false);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
+    modelStack.PushMatrix();
+    modelStack.Translate(Rot_Civ_.getObjectposX(), Rot_Civ_.getObjectposY(), Rot_Civ_.getObjectposZ());
+	modelStack.Scale(7, 7, 7);
+	renderMesh(meshList[GEO_ROBOT], false);
+	modelStack.PopMatrix();
 }
 
 void scene2_SP2::RenderFlyingVehicle()
@@ -707,114 +673,15 @@ void scene2_SP2::RenderSpaceShuttle()
 void scene2_SP2::RenderVault()
 {
 	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "vaultcube") {
+		if (it.getName() == "vault") {
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			modelStack.Rotate(180, 0, 1, 0);
 			modelStack.Scale(40, 25, 25);
-			renderMesh(meshList[GEO_VAULTCUBE], false);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "vaultdoor") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX()+270, it.getObjectposY()+150 , it.getObjectposZ()+10);
-			modelStack.Rotate(dooropening, 0, 1, 0);
-
-			modelStack.PushMatrix();
-			modelStack.Translate(-270, -150, -10);
-			modelStack.Rotate(180, 0, 1, 0);
-			modelStack.Scale(40, 25, 25);
-			renderMesh(meshList[GEO_VAULTDOOR], false);
-			modelStack.PopMatrix();
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "vaultwheel") {
-
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX() + 360, it.getObjectposY() + 150, it.getObjectposZ() - 80);
-			modelStack.Rotate(dooropening, 0, 1, 0);
-
-			modelStack.PushMatrix();
-			modelStack.Translate(-360, -150, +80);
-			modelStack.Rotate(180, 0, 1, 0);
-			modelStack.Rotate(wheelturning, 0, 0, 1);
-			modelStack.Scale(25, 25, 25);
-			renderMesh(meshList[GEO_VAULTWHEEL], false);
-			modelStack.PopMatrix();
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "vaultstick") {
-
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX()+stickpushing + 290, it.getObjectposY() + 200, it.getObjectposZ()-40 );
-			modelStack.Rotate(dooropening, 0, 1, 0);
-
-			modelStack.PushMatrix();
-			modelStack.Translate(-290, -200, +40);
-			modelStack.Rotate(180, 0, 1, 0);
-			modelStack.Scale(30, 25, 25);
-			renderMesh(meshList[GEO_VAULTSTICK], false);
-			modelStack.PopMatrix();
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "vaultstick2") {
-
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX() + stickpushing + 290, it.getObjectposY() + 200, it.getObjectposZ() - 40);
-			modelStack.Rotate(dooropening, 0, 1, 0);
-
-			modelStack.PushMatrix();
-			modelStack.Translate(-290, -200, +40);
-			modelStack.Rotate(180, 0, 1, 0);
-			modelStack.Scale(30, 25, 25);
-			renderMesh(meshList[GEO_VAULTSTICK], false);
-			modelStack.PopMatrix();
+			renderMesh(meshList[GEO_VAULT], false);
 			modelStack.PopMatrix();
 			break;
 		}
 	}
 }
 
-void scene2_SP2::VaultAnimation(double dt)
-{
-	if (wheelturn == true)
-	{
-		wheelturning += 100 * (float)(dt);
-		if (wheelturning > 360)
-		{
-			wheelturning = 360;
-			stickpush = true;
-		}
-	}
-	if (stickpush == true)
-	{
-		stickpushing += 100 * (float)(dt);
-		if (stickpushing > 200)
-		{
-			stickpushing = 200;
-			dooropen = true;
-		}
-	}
-	if (dooropen == true)
-	{
-		dooropening += 10 * (float)(dt);
-		if (dooropening > 90)
-			dooropening = 90;
-	}
-}

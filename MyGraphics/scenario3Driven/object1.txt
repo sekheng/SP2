@@ -1,6 +1,0 @@
-Name,spacevehicle
-objectX,0
-objectY,0
-objectZ,470
-boundaryRadiusX,40
-boundaryRadiusZ,21

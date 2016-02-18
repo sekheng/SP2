@@ -2,7 +2,7 @@
 This is PD Entertainment SP2 Repository
 These are the rules that you need to follow for committing into this project.
 #Rule No.1 : 
-Don't use global variables at all cost unless it is allowed and agreed by all team members!
+Don't use global variables at all cost!
 #Rule No.2 : 
 Try not to step into each other's work. If needed, ask permission from that person.
 #Rule No.3 : 

@@ -1,6 +1,0 @@
-Name,flyingvehicle
-objectX,200
-objectY,50
-objectZ,700
-boundaryRadiusX,50	
-boundaryRadiusZ,50

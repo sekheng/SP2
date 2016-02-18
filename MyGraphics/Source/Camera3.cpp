@@ -8,6 +8,7 @@
 #include <locale>
 #include <map>
 #include <sstream>
+#include <algorithm>
 
 using std::map;
 /******************************************************************************/
@@ -134,9 +135,11 @@ void Camera3::Init(const char *fileLocation)
     it = cameraCoordinates.find("boundscheckz");
     boundaryZ = it->second;
 
-    it = cameraCoordinates.find("numberofobjects");
-    num_of_objects = static_cast<size_t>(it->second);
-    std::cout << "Number of Game Objects in this current Scene : " << num_of_objects << std::endl;
+    if (cameraCoordinates.count("numberofobjects") == 1) {
+        it = cameraCoordinates.find("numberofobjects");
+        num_of_objects = static_cast<size_t>(it->second);
+        std::cout << "Number of Game Objects in this current Scene : " << num_of_objects << std::endl;
+    }
 
     if (cameraCoordinates.count("crosshairradius") == 1) {
         it = cameraCoordinates.find("crosshairradius");
@@ -454,15 +457,51 @@ bool Camera3::boundsCheckZaxis(const float& z, const float& posZ) {
 }
 
 void Camera3::InitObjects(const char *fileLocation) {
-    if (num_of_objects > 0) {
-        for (size_t num = 1; num <= num_of_objects; ++num) {
-            std::stringstream ss;
-            ss << fileLocation << "object" << num << ".txt";
-            string filename = ss.str();
-            objectsForDisplay object;
-            object.init(filename.c_str());
-            storage_of_objects.push_back(object);
+    std::ifstream fileStream(fileLocation, std::ios::binary);
+    if (!fileStream.is_open()) {
+        std::cout << "Impossible to open " << fileLocation << ". Are you in the right directory ?\n";
+    }
+    else {
+        map<string, string> objectMap;
+        while (!fileStream.eof()) {
+            string data = "";
+            getline(fileStream, data);
+            if (data == "\r" || data == "") {
+                map<string, string>::iterator it = objectMap.find("name");
+                string contain_name = it->second;
+                it = objectMap.find("objectx");
+                float posX = strtof(it->second.c_str(), NULL);
+                it = objectMap.find("objecty");
+                float posY = strtof(it->second.c_str(), NULL);
+                it = objectMap.find("objectz");
+                float posZ = strtof(it->second.c_str(), NULL);
+                it = objectMap.find("boundaryradiusx");
+                float boundX = strtof(it->second.c_str(), NULL);
+                it = objectMap.find("boundaryradiusz");
+                float boundZ = strtof(it->second.c_str(), NULL);
+
+                objectsForDisplay object;
+                object.init(Vector3(posX, posY, posZ), boundX, boundZ, contain_name);
+                storage_of_objects.push_back(object);
+
+                objectMap.clear();
+            }
+            else {
+                char *nextStuff;
+                char *stringtoken = strtok_s(const_cast<char*>(data.c_str()), ",", &nextStuff);
+                string taking_the_stuff = "";
+                string values = "";
+                taking_the_stuff.append(stringtoken);
+                values.append(nextStuff);
+                values.erase(std::remove(values.begin(), values.end(), '\r'));
+                std::locale loc;
+                for (size_t num = 0; num < taking_the_stuff.size(); ++num) {
+                    taking_the_stuff[num] = tolower(taking_the_stuff[num], loc);
+                }
+                objectMap.insert(std::pair<string, string>(taking_the_stuff, values));
+            }
         }
+        fileStream.close();
     }
 }
 

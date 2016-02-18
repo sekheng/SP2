@@ -1,6 +1,0 @@
-Name,vaultstick
-objectX,-220
-objectY,100
-objectZ,-160
-boundaryRadiusX,0		
-boundaryRadiusZ,0

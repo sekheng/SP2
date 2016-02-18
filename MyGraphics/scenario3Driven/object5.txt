@@ -1,6 +1,0 @@
-Name,vaultcube
-objectX,0
-objectY,0
-objectZ,-500
-boundaryRadiusX,550		
-boundaryRadiusZ,350
