@@ -699,7 +699,7 @@ void scene2_SP2::RenderVault()
 				modelStack.PushMatrix();
 				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 				modelStack.Rotate(180, 0, 1, 0);
-				modelStack.Scale(40, 25, 25);
+				modelStack.Scale(7, 3, 3);
 				renderMesh(meshList[GEO_VAULTCUBE], false);
 				modelStack.PopMatrix();
 				break;
@@ -709,13 +709,15 @@ void scene2_SP2::RenderVault()
 		for (auto it : camera.storage_of_objects) {
 			if (it.getName() == "vaultdoor") {
 				modelStack.PushMatrix();
-				modelStack.Translate(it.getObjectposX() + 270, it.getObjectposY() + 150, it.getObjectposZ() + 10);
+				modelStack.Translate(it.getObjectposX()+45, it.getObjectposY()+7, it.getObjectposZ());
 				modelStack.Rotate(dooropening, 0, 1, 0);
+				renderMesh(meshList[GEO_LIGHTBALL], false);
 
 				modelStack.PushMatrix();
-				modelStack.Translate(-270, -150, -10);
+				modelStack.Translate(-45, -7, 0);
 				modelStack.Rotate(180, 0, 1, 0);
-				modelStack.Scale(40, 25, 25);
+				
+				modelStack.Scale(7, 3, 3);
 				renderMesh(meshList[GEO_VAULTDOOR], false);
 				modelStack.PopMatrix();
 				modelStack.PopMatrix();
@@ -727,14 +729,15 @@ void scene2_SP2::RenderVault()
 			if (it.getName() == "vaultwheel") {
 
 				modelStack.PushMatrix();
-				modelStack.Translate(it.getObjectposX() + 360, it.getObjectposY() + 150, it.getObjectposZ() - 80);
+				modelStack.Translate(it.getObjectposX()+61, it.getObjectposY()+7, it.getObjectposZ()-10);
 				modelStack.Rotate(dooropening, 0, 1, 0);
+				renderMesh(meshList[GEO_LIGHTBALL], false);
 
 				modelStack.PushMatrix();
-				modelStack.Translate(-360, -150, +80);
+				modelStack.Translate(-61, -7, 10);
 				modelStack.Rotate(180, 0, 1, 0);
 				modelStack.Rotate(wheelturning, 0, 0, 1);
-				modelStack.Scale(25, 25, 25);
+				modelStack.Scale(3, 3, 3);
 				renderMesh(meshList[GEO_VAULTWHEEL], false);
 				modelStack.PopMatrix();
 				modelStack.PopMatrix();
@@ -746,13 +749,14 @@ void scene2_SP2::RenderVault()
 			if (it.getName() == "vaultstick") {
 
 				modelStack.PushMatrix();
-				modelStack.Translate(it.getObjectposX() + stickpushing + 290, it.getObjectposY() + 200, it.getObjectposZ() - 40);
+				modelStack.Translate(it.getObjectposX()+33 + stickpushing, it.getObjectposY()-16, it.getObjectposZ()-5);
 				modelStack.Rotate(dooropening, 0, 1, 0);
+				renderMesh(meshList[GEO_LIGHTBALL], false);
 
 				modelStack.PushMatrix();
-				modelStack.Translate(-290, -200, +40);
+				modelStack.Translate(-33, 16, 5);
 				modelStack.Rotate(180, 0, 1, 0);
-				modelStack.Scale(30, 25, 25);
+				modelStack.Scale(5, 3, 3);
 				renderMesh(meshList[GEO_VAULTSTICK], false);
 				modelStack.PopMatrix();
 				modelStack.PopMatrix();
@@ -764,13 +768,14 @@ void scene2_SP2::RenderVault()
 			if (it.getName() == "vaultstick2") {
 
 				modelStack.PushMatrix();
-				modelStack.Translate(it.getObjectposX() + stickpushing + 290, it.getObjectposY() + 200, it.getObjectposZ() - 40);
+				modelStack.Translate(it.getObjectposX()+33 + stickpushing, it.getObjectposY()+16, it.getObjectposZ()-5);
 				modelStack.Rotate(dooropening, 0, 1, 0);
+				renderMesh(meshList[GEO_LIGHTBALL], false);
 
 				modelStack.PushMatrix();
-				modelStack.Translate(-290, -200, +40);
+				modelStack.Translate(-33, -16, 5);
 				modelStack.Rotate(180, 0, 1, 0);
-				modelStack.Scale(30, 25, 25);
+				modelStack.Scale(5, 3, 3);
 				renderMesh(meshList[GEO_VAULTSTICK], false);
 				modelStack.PopMatrix();
 				modelStack.PopMatrix();
@@ -793,10 +798,10 @@ void scene2_SP2::VaultAnimation(double dt)
 	}
 	if (stickpush == true) //stick start pushing after wheel stop turning
 	{
-		stickpushing += 100 * (float)(dt);
-		if (stickpushing > 200) // stick will be translated +200 to x-axis
+		stickpushing += 50 * (float)(dt);
+		if (stickpushing > 50) // stick will be translated +200 to x-axis
 		{
-			stickpushing = 200; // stick will stop when x=+200
+			stickpushing = 50; // stick will stop when x=+200
 			dooropen = true;
 		}
 	}

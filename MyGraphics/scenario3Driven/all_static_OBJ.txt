@@ -22,34 +22,34 @@ boundaryRadiusZ,250
 Name,vaultcube
 objectX,0
 objectY,0
-objectZ,-500
-boundaryRadiusX,550		
-boundaryRadiusZ,350
+objectZ,0
+boundaryRadiusX,0		
+boundaryRadiusZ,0
 
 Name,vaultdoor
 objectX,0
-objectY,230	
-objectZ,-210
-boundaryRadiusX,300	
-boundaryRadiusZ,40
+objectY,28
+objectZ,35
+boundaryRadiusX,0	
+boundaryRadiusZ,0
 
 Name,vaultwheel
-objectX,-90
-objectY,231
-objectZ,-120
+objectX,-16
+objectY,28
+objectZ,45
 boundaryRadiusX,0		
 boundaryRadiusZ,0
 
 Name,vaultstick
-objectX,-220
-objectY,100
-objectZ,-160
+objectX,-38
+objectY,44
+objectZ,40
 boundaryRadiusX,0		
 boundaryRadiusZ,0
 
 Name,vaultstick2
-objectX,-220
-objectY,365
-objectZ,-160
+objectX,-38
+objectY,12
+objectZ,40
 boundaryRadiusX,0		
 boundaryRadiusZ,0
