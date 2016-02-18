@@ -181,6 +181,9 @@ void scene2_SP2::Init()
     framePerSecond = 0;
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
+
+    Rot_Civ_.init("rot_civ//rot_civ_stuff.txt");
+    //Rot_Civ_.InitDialogues("rot_civ//rot_civ_dialogues.txt", camera);
 }
 
 /******************************************************************************/

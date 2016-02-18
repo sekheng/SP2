@@ -15,7 +15,6 @@ This is for landing on the vault
 #include "Scene.h"
 #include "Mesh.h"
 #include "Light.h"
-#include "Camera3.h"
 #include "MatrixStack.h"
 #include "removeMonospace.h"
 #include "rot_civ.h"
@@ -32,28 +31,28 @@ class scene2_SP2 : public Scene
 {
     enum GEOMETRY_TYPE
     {
-		GEO_AXES,
-		GEO_LIGHTBALL,
-		GEO_COMIC_TEXT,
+        GEO_AXES,
+        GEO_LIGHTBALL,
+        GEO_COMIC_TEXT,
 
-		GEO_LANDVEHICLE,
-		GEO_FLYINGVEHICLE,
-		GEO_ROBOT,
-		GEO_SPACESHUTTLE,
-		GEO_VAULT,
+        GEO_LANDVEHICLE,
+        GEO_FLYINGVEHICLE,
+        GEO_ROBOT,
+        GEO_SPACESHUTTLE,
+        GEO_VAULT,
 
-		//environment************************************************************//
-		GEO_PLANET_SKYBOX,
+        //environment************************************************************//
+        GEO_PLANET_SKYBOX,
         GEO_PLANET_GROUND,
-		//environment************************************************************//
+        //environment************************************************************//
 
-		//User Interface
-		GEO_UI,
-		//User Interface
+        //User Interface
+        GEO_UI,
+        //User Interface
 
-		GEO_BOX,
+        GEO_BOX,
 
-		NUM_GEOMETRY,
+        NUM_GEOMETRY,
     };
 
     enum UNIFORM_TYPE
@@ -98,12 +97,12 @@ private:
     Light light[1];
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
-	void RenderSkybox();
-	void RenderRobot();
-	void RenderFlyingVehicle();
-	void RenderLandingVehicle();
-	void RenderSpaceShuttle();
-	void RenderVault();
+    void RenderSkybox();
+    void RenderRobot();
+    void RenderFlyingVehicle();
+    void RenderLandingVehicle();
+    void RenderSpaceShuttle();
+    void RenderVault();
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 
@@ -117,11 +116,15 @@ private:
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
-	void RenderUserInterface(Mesh* mesh, float size, float x, float y);
+    void RenderUserInterface(Mesh* mesh, float size, float x, float y);
 
     double framePerSecond;
     float screenWidth, screenHeight;
     removeMonospace forComicSans;
+
+    //Adding rot civ into the game
+    rot_civ Rot_Civ_;
+    //Adding rot civ into the game
 };
 
 #endif
