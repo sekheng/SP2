@@ -21,7 +21,8 @@ void StationScene::Init(string name, Vector3 pos, Camera3 &camera_address, float
 	bound_z = boundaryZ;
 	time = 0;
 	questActive = false;
-	
+	card1 = false;
+	card2 = false;
 }
 
 float StationScene::Door_getposition_x()
@@ -46,7 +47,7 @@ string StationScene::getDialogue()
 	return 0;
 }
 
-short StationScene::getQuest()
+short StationScene::getQuestStage()
 {
 	if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == false)
 	{
@@ -74,29 +75,59 @@ short StationScene::getQuest()
 	}
 }
 
-//bool StationScene::keyCard()
-//{
-//	bool checkQuest[2];
-//	checkQuest[0] = true;
-//	checkQuest[1] = true;
-//
-//	if (cam_pointer->position.x > -258 && cam_pointer->position.x < -255 && cam_pointer->position.z > 303 && cam_pointer->position.z < 306 && questActive == true)
-//	{
-//		if (Application::IsKeyPressed('E'))
-//		{
-//			checkQuest[0] = false;
-//		}
-//	}
-//	else if (cam_pointer->position.x > -296 && cam_pointer->position.x < -294 && cam_pointer->position.z > 290 && cam_pointer->position.z < 293 && questActive == true)
-//	{
-//		if (Application::IsKeyPressed('E'))
-//		{
-//			checkQuest[1] = false;
-//		}
-//	}
-//
-//	return checkQuest;
-//}
+short StationScene::getCard1()
+{
+	if (cam_pointer->position.x > -258 && cam_pointer->position.x < -255 && cam_pointer->position.z > 303 && cam_pointer->position.z < 308 && questActive == true && card1 == false)
+	{
+		if (Application::IsKeyPressed('E'))
+		{
+			card1 = true;
+		}
+	}
+	else if (card1 == true)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+short StationScene::getCard2()
+{
+	if (cam_pointer->position.x > -296 && cam_pointer->position.x < -294 && cam_pointer->position.z > 290 && cam_pointer->position.z < 293 && questActive == true && card2 == false)
+	{
+		if (Application::IsKeyPressed('E'))
+		{
+			card2 = true;
+		}
+	}
+	else if (card2 == true)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+bool StationScene::getCardText()
+{
+	if (cam_pointer->position.x > -258 && cam_pointer->position.x < -255 && cam_pointer->position.z > 303 && cam_pointer->position.z < 308 && questActive == true && card1 == false)
+	{
+		return true;
+	}
+	else if (cam_pointer->position.x > -296 && cam_pointer->position.x < -294 && cam_pointer->position.z > 290 && cam_pointer->position.z < 293 && questActive == true && card2 == false)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 bool StationScene::boundschecking(const float&bounds_x, const float &bounds_z)
 {

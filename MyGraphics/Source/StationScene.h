@@ -21,8 +21,10 @@ public:
 	bool boundschecking(const float&bounds_x, const float &bounds_z);
 	void update(double dt);
 	string getDialogue();
-	short getQuest();
-	//bool keyCard();
+	short getQuestStage();
+	short getCard1();
+	short getCard2();
+	bool getCardText();
 
 private:
 	Vector3 Door_pos;
@@ -31,6 +33,8 @@ private:
 	float bound_x, bound_z;
 	double time;
 	bool questActive;
+	bool card1;
+	bool card2;
 
 protected:
 };

@@ -216,7 +216,7 @@ void sceneSP2::Init()
     camera.cursorCoordY = screenHeight / 2;
 
 	door.Init("Sek heng", Vector3(-30, 0, 40), camera, 5, 5);
-	door.getQuest();
+	door.getQuestStage();
 
     //initialise npc
     npc1.Init("Najib",Vector3(2,2,2),5,5,camera,"NPC data//Najib.txt");
@@ -458,37 +458,43 @@ void sceneSP2::RenderStation()
 	modelStack.Translate(-270, 0, 260);
 	modelStack.Scale(5, 3, 6);
 	renderMesh(meshList[GEO_DOOR], false);
-	if (door.getQuest() == 1)
+	if (door.getQuestStage() == 1)
 	{
 		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to open door", Color(0, 1, 0), 3, 10, 10);
 	}
-	else if (door.getQuest() == 2)
+	else if (door.getQuestStage() == 2)
 	{
 		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the damn key for your asshole", Color(0, 1, 0), 3, 8, 10);
 	}
 	modelStack.PopMatrix();
 
-	/*if (door.getQuest() == 3)
+	if (door.getQuestStage() == 3)
 	{
-		
-			if (p->keyCard[0] == true)
+		if (door.getCard1() == 0)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(-255, 0, 307);
+			modelStack.Scale(1, 1, 1);
+			renderMesh(meshList[GEO_KEYCARD], false);
+			if (door.getCardText() == true)
 			{
-				modelStack.PushMatrix();
-				modelStack.Translate(-255, 0, 307);
-				modelStack.Scale(1, 1, 1);
-				renderMesh(meshList[GEO_KEYCARD], false);
-				modelStack.PopMatrix();
+				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to get card", Color(0, 1, 0), 3, 8, 10);
 			}
-			if (p->keyCard[1] == true)
+			modelStack.PopMatrix();
+		}
+		if (door.getCard2() == 0)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(-296, 0, 292);
+			modelStack.Scale(1, 1, 1);
+			renderMesh(meshList[GEO_KEYCARD2], false);
+			if (door.getCardText() == true)
 			{
-				modelStack.PushMatrix();
-				modelStack.Translate(-296, 0, 292);
-				modelStack.Scale(1, 1, 1);
-				renderMesh(meshList[GEO_KEYCARD2], false);
-				modelStack.PopMatrix();
+				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to get card", Color(0, 1, 0), 3, 8, 10);
 			}
-
-	}*/
+			modelStack.PopMatrix();
+		}
+	}
 
 	modelStack.PushMatrix();
 	modelStack.Rotate(180, 0, 1, 0);
