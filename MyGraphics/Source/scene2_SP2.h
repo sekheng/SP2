@@ -40,7 +40,12 @@ class scene2_SP2 : public Scene
 		GEO_FLYINGVEHICLE,
 		GEO_ROBOT,
 		GEO_SPACESHUTTLE,
-		GEO_VAULT,
+
+		//vault
+		GEO_VAULTCUBE,
+		GEO_VAULTDOOR,
+		GEO_VAULTWHEEL,
+		GEO_VAULTSTICK,
 
 		//environment************************************************************//
 		GEO_PLANET_SKYBOX,
@@ -95,8 +100,14 @@ public:
     virtual void Exit();
 private:
     bool on_light;
+	bool wheelturn;
+	bool stickpush;
+	bool dooropen;
     Light light[1];
     float LSPEED = 10.f;
+	float wheelturning;
+	float stickpushing;
+	float dooropening;
     void renderMesh(Mesh *mesh, bool enableLight);
 	void RenderSkybox();
 	void RenderRobot();
@@ -104,6 +115,7 @@ private:
 	void RenderLandingVehicle();
 	void RenderSpaceShuttle();
 	void RenderVault();
+	void VaultAnimation(double dt);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 

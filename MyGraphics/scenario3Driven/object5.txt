@@ -1,4 +1,4 @@
-Name,vault
+Name,vaultcube
 objectX,0
 objectY,0
 objectZ,-500
