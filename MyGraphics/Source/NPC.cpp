@@ -108,41 +108,8 @@ float NPC::NPC_getposition_y()
 
 string NPC::getDialogue(bool reset)
 {
-    /*dialogue_reset = reset;
-    if (dialogue_reset == false)
-    {
-        if (Application::IsKeyPressed('E'))
-        {
-            if (dialogue_switch == 4)
-            {
-                dialogue_switch = 0;
-                return Dialogues[dialogue_switch];
-            }
-            else
-            {
-                dialogue_switch += 1;
-                return Dialogues[dialogue_switch - 1];
-            }
-
-        }
-    }
-    else
-    {
-        dialogue_switch = 0;
-        dialogue_reset = false;
-        return 0;
-    }
-    */
-    //return Dialogues[0];
-
-
     dialogue_reset = reset;
-    /*if (dialogue_reset == false)
-    {
-        dialogue_switch += 1;
-        if (dialogue_switch == 4) dialogue_switch = 1;
-        return Dialogues[dialogue_switch];
-    }*/
+    
     if (dialogue_reset == true && has_interacted == false)
     {
         dialogue_switch = 0;
