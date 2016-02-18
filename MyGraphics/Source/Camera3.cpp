@@ -138,7 +138,6 @@ void Camera3::Init(const char *fileLocation)
     if (cameraCoordinates.count("numberofobjects") == 1) {
         it = cameraCoordinates.find("numberofobjects");
         num_of_objects = static_cast<size_t>(it->second);
-        std::cout << "Number of Game Objects in this current Scene : " << num_of_objects << std::endl;
     }
 
     if (cameraCoordinates.count("crosshairradius") == 1) {

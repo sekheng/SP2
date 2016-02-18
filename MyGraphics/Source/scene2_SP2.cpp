@@ -103,7 +103,7 @@ void scene2_SP2::Init()
     glUniform1i(m_parameters[U_NUMLIGHTS], 1);
 
     light[0].type = Light::LIGHT_DIRECTIONAL;
-    light[0].position.Set(0, 70, 0);
+    light[0].position.Set(0, 900, 0);
     light[0].color.Set(1, 1, 1);
     light[0].power = 1;
     light[0].kC = 1.f;
@@ -183,7 +183,7 @@ void scene2_SP2::Init()
     camera.cursorCoordY = screenHeight / 2;
 
     Rot_Civ_.init("rot_civ//rot_civ_stuff.txt");
-    //Rot_Civ_.InitDialogues("rot_civ//rot_civ_dialogues.txt", camera);
+    Rot_Civ_.InitDialogues("rot_civ//rot_civ_dialogues.txt", camera);
     camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 }
 
@@ -207,46 +207,6 @@ void scene2_SP2::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
     if (Application::IsKeyPressed('4'))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-
-    if (Application::IsKeyPressed('I'))
-        light[0].position.z -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('K'))
-        light[0].position.z += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('J'))
-        light[0].position.x -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('L'))
-        light[0].position.x += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('O'))
-        light[0].position.y -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('P'))
-        light[0].position.y += (float)(LSPEED * dt);
-
-    if (Application::IsKeyPressed('5'))
-    {
-        on_light = true;
-        light[0].color.Set(1, 1, 1);
-    }
-    if (Application::IsKeyPressed('6'))
-    {
-        on_light = false;
-        light[0].color.Set(0, 0, 0);
-    }
-
-    if (Application::IsKeyPressed('7'))
-    {
-        light[0].type = Light::LIGHT_POINT;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-    if (Application::IsKeyPressed('8'))
-    {
-        light[0].type = Light::LIGHT_DIRECTIONAL;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-    if (Application::IsKeyPressed('9'))
-    {
-        light[0].type = Light::LIGHT_SPOT;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
 
     if (Application::IsKeyPressed(VK_NUMPAD1)) {
         Application::changeIntoScenario1();
@@ -621,6 +581,9 @@ void scene2_SP2::RenderRobot()
 	modelStack.Scale(7, 7, 7);
 	renderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
+    if (Rot_Civ_.interaction()) {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "You are interacting", Color(0, 1, 0), 3, 20, 20);
+    }
 }
 
 void scene2_SP2::RenderFlyingVehicle()

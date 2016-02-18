@@ -17,7 +17,7 @@ public:
     float getObjectposY();
     float getObjectposZ();
 
-private:
+protected:
     Vector3 objectPos;
     float boundaryRadiusX, boundaryRadiusZ;
 };

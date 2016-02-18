@@ -9,6 +9,7 @@
 using std::map;
 
 rot_civ::rot_civ() 
+    : interatingRadius(4), time(0)
 {
 }
 
@@ -38,5 +39,20 @@ void rot_civ::InitDialogues(const char* fileLocation, Camera3& camera) {
 
 
 void rot_civ::update(double dt) {
+    time += dt;
+}
 
+string rot_civ::returnDialogue(size_t order) {
+    return dialogues[order];
+}
+
+bool rot_civ::interaction() {
+    if ((objectPos.x + boundaryRadiusX + interatingRadius) > dub_camera->getCameraXcoord() &&
+        (objectPos.x - boundaryRadiusX - interatingRadius) < dub_camera->getCameraXcoord() &&
+        (objectPos.z + boundaryRadiusZ + interatingRadius) > dub_camera->getCameraZcoord() &&
+        (objectPos.z - boundaryRadiusZ - interatingRadius) < dub_camera->getCameraZcoord())
+    {
+        return false;
+    }
+    return true;
 }
