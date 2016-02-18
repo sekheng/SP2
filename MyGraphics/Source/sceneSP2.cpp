@@ -215,6 +215,9 @@ void sceneSP2::Init()
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
 
+	door.Init("Sek heng", Vector3(-30, 0, 40), camera, 5, 5);
+	door.interaction();
+
     //initialise npc
     npc1.Init("Najib", Vector3(-30, 0, 40),camera,5,5);
 }
@@ -455,6 +458,10 @@ void sceneSP2::RenderStation()
 	modelStack.Translate(-270, 0, 260);
 	modelStack.Scale(5, 3, 6);
 	renderMesh(meshList[GEO_DOOR], false);
+	if (door.interaction() == true)
+	{
+		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to interact", Color(0, 1, 0), 3, 10, 10);
+	}
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
