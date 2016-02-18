@@ -12,6 +12,7 @@
 #include "Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
+#include <iomanip>
 
 
 /******************************************************************************/
@@ -215,8 +216,11 @@ void sceneSP2::Init()
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
 
+	door.Init("Sek heng", Vector3(-30, 0, 40), camera, 5, 5);
+	door.getQuest();
+
     //initialise npc
-    npc1.Init("Najib", Vector3(-30, 0, 40),camera,5,5);
+    npc1.Init("Najib",Vector3(2,2,2),5,5,camera,"NPC data//Najib.txt");
 }
 
 /******************************************************************************/
@@ -451,38 +455,41 @@ void sceneSP2::RenderStation()
 		renderMesh(meshList[GEO_BOX], false);
 		modelStack.PopMatrix();
 	}
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "door") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Scale(5, 3, 6);
-			renderMesh(meshList[GEO_DOOR], false);
-			modelStack.PopMatrix();
-			break;
-		}
+	modelStack.PushMatrix();
+	modelStack.Translate(-270, 0, 260);
+	modelStack.Scale(5, 3, 6);
+	renderMesh(meshList[GEO_DOOR], false);
+	if (door.getQuest() == 1)
+	{
+		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to open door", Color(0, 1, 0), 3, 10, 10);
 	}
+	else if (door.getQuest() == 2)
+	{
+		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the damn key for your asshole", Color(0, 1, 0), 3, 8, 10);
+	}
+	modelStack.PopMatrix();
 
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "keycard1") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Scale(1, 1, 1);
-			renderMesh(meshList[GEO_KEYCARD], false);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
+	/*if (door.getQuest() == 3)
+	{
+		
+			if (p->keyCard[0] == true)
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(-255, 0, 307);
+				modelStack.Scale(1, 1, 1);
+				renderMesh(meshList[GEO_KEYCARD], false);
+				modelStack.PopMatrix();
+			}
+			if (p->keyCard[1] == true)
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(-296, 0, 292);
+				modelStack.Scale(1, 1, 1);
+				renderMesh(meshList[GEO_KEYCARD2], false);
+				modelStack.PopMatrix();
+			}
 
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "keycard2") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Scale(1, 1, 1);
-			renderMesh(meshList[GEO_KEYCARD2], false);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
+	}*/
 
 	modelStack.PushMatrix();
 	modelStack.Rotate(180, 0, 1, 0);
@@ -642,11 +649,11 @@ void sceneSP2::Render()
     
     std::stringstream connectPosX;
 
-    connectPosX << "X : " << camera.getCameraXcoord();
+    connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
 
     std::stringstream connectPosZ;
-    connectPosZ << "Z : " << camera.getCameraZcoord();
+    connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
     
     //****************************************************************************//
@@ -944,7 +951,14 @@ void sceneSP2::RenderNPC()
     renderMesh(meshList[GEO_NPC1], false);
     if (npc1.interaction() == true)
     {
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to interact", Color(0, 1, 0), 3, 10, 10);
+        if (!Application::IsKeyPressed('E'))
+        {
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], npc1.getDialogue(true), Color(0, 1, 0), 3, 10, 10);
+        }
+        else
+        {
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], npc1.getDialogue(false), Color(0, 1, 0), 3, 10, 10);
+        }
     }
     /*if (npc1.interaction() == true)
     {

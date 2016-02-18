@@ -179,11 +179,9 @@ void Application::Run()
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     //scenario2->Init();
 
-
     //scene = scenario3;
 	//scene = scenario1;
 	scene = scenario3;
-
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
@@ -199,8 +197,8 @@ void Application::Run()
 	} //Check if the ESC key had been pressed or if the window had been closed
     scene->Exit();
     delete scenario1;
-    delete scenario3;
 	delete scenario2;
+    delete scenario3;
 }
 
 /******************************************************************************/
