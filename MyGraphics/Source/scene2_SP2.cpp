@@ -12,7 +12,7 @@
 #include "Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
-
+#include <iomanip>
 
 /******************************************************************************/
 /*!
@@ -424,11 +424,11 @@ void scene2_SP2::Render()
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
 	std::stringstream connectPosX;
-	connectPosX << "X : " << camera.getCameraXcoord();
+    connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
 	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 19.f);
 
     std::stringstream connectPosZ;
-	connectPosZ << "Z : " << camera.getCameraZcoord();
+    connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
 	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
 
     std::stringstream ss;
