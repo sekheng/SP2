@@ -207,7 +207,7 @@ void sceneSP2::Init()
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
+    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
 
     //initialise camera_position_x and z;
@@ -451,38 +451,24 @@ void sceneSP2::RenderStation()
 		renderMesh(meshList[GEO_BOX], false);
 		modelStack.PopMatrix();
 	}
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "door") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Scale(5, 3, 6);
-			renderMesh(meshList[GEO_DOOR], false);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
+	modelStack.PushMatrix();
+	modelStack.Translate(-270, 0, 260);
+	modelStack.Scale(5, 3, 6);
+	renderMesh(meshList[GEO_DOOR], false);
+	modelStack.PopMatrix();
 
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "keycard1") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Scale(1, 1, 1);
-			renderMesh(meshList[GEO_KEYCARD], false);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
+	modelStack.PushMatrix();
+	modelStack.Translate(-255, 0, 307);
+	modelStack.Scale(1, 1, 1);
+	renderMesh(meshList[GEO_KEYCARD], false);
+	modelStack.PopMatrix();
 
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "keycard2") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Scale(1, 1, 1);
-			renderMesh(meshList[GEO_KEYCARD2], false);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
+	modelStack.PushMatrix();
+	modelStack.Translate(-296, 0, 292);
+	modelStack.Scale(1, 1, 1);
+	renderMesh(meshList[GEO_KEYCARD2], false);
+	modelStack.PopMatrix();
+
 
 	modelStack.PushMatrix();
 	modelStack.Rotate(180, 0, 1, 0);
