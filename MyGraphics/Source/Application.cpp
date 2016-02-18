@@ -200,6 +200,7 @@ void Application::Run()
     scene->Exit();
     delete scenario1;
     delete scenario3;
+	delete scenario2;
 }
 
 /******************************************************************************/

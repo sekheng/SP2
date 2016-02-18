@@ -1,21 +1,21 @@
 Name,spacevehicle
 objectX,0
 objectY,0
-objectZ,-50
+objectZ,460
 boundaryRadiusX,40
 boundaryRadiusZ,21
 
 Name,flyingvehicle
-objectX,150
+objectX,200
 objectY,50
-objectZ,200
+objectZ,600
 boundaryRadiusX,50	
 boundaryRadiusZ,50
 
 Name,spaceshuttle
-objectX,-250
+objectX,-300
 objectY,0
-objectZ,350
+objectZ,700
 boundaryRadiusX,170
 boundaryRadiusZ,250
 
@@ -28,10 +28,10 @@ boundaryRadiusZ,350
 
 Name,vaultdoor
 objectX,0
-objectY,230
+objectY,230	
 objectZ,-210
-boundaryRadiusX,0		
-boundaryRadiusZ,0
+boundaryRadiusX,300	
+boundaryRadiusZ,40
 
 Name,vaultwheel
 objectX,-90

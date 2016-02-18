@@ -1,6 +1,6 @@
 Name,ROT CIV
-objectX,10
+objectX,0
 objectY,0
-objectZ,10
+objectZ,500
 boundaryRadiusX,10
 boundaryRadiusZ,10
