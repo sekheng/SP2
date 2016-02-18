@@ -566,7 +566,7 @@ void scene3_SP2::animateSpaceShip(double dt) {
             toggleUp = true;
         }
     }
-    else //toggleUp = true
+    else
 	{
         jitteringShipY += 15 * (float)(dt);
         if (jitteringShipY > 1) 
@@ -583,12 +583,9 @@ void scene3_SP2::animateSpaceShip(double dt) {
             warppingOn = false;
         }
     }
-    else if (scaleShipZ > 0)
+    else if (scaleShipZ > 0 && warppingOn == false)
 	{
         scaleShipZ -= 10 * (float)(dt);
-    }
-    if (warppingOn == false)
-	{
         flyToZ -= 1000 * (float)(dt);
     }
 }   
