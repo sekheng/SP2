@@ -11,7 +11,7 @@ class to define mesh
 #define MESH_H
 
 #include <string>
-#include "Material.h"
+#include "MaterialBuilder.h"
 
 /******************************************************************************/
 /*!
@@ -42,7 +42,7 @@ public:
 	unsigned indexSize;
     unsigned textureID;
 
-	Material material;
+	Material material = MaterialBuilder::GenerateLambert();
 };
 
 #endif

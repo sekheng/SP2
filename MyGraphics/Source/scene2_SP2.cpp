@@ -127,7 +127,7 @@ void scene2_SP2::Init()
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene2.txt");
-    camera.InitObjects("scenario3Driven//");
+    camera.InitObjects("scenario3Driven//all_static_OBJ.txt");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -175,12 +175,16 @@ void scene2_SP2::Init()
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(90.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
+    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
+
+    Rot_Civ_.init("rot_civ//rot_civ_stuff.txt");
+    //Rot_Civ_.InitDialogues("rot_civ//rot_civ_dialogues.txt", camera);
+    camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 }
 
 /******************************************************************************/
@@ -390,7 +394,7 @@ void scene2_SP2::Render()
 
 	//render ground
 	modelStack.PushMatrix();
-	modelStack.Scale(100, 0, 100);
+	modelStack.Scale(100, 1, 100);
 	renderMesh(meshList[GEO_PLANET_GROUND], false);
 	modelStack.PopMatrix();
 
@@ -612,18 +616,11 @@ void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 }
 void scene2_SP2::RenderRobot()
 {
-	for (auto it : camera.storage_of_objects)
-	{
-		if (it.getName() == "robotcop")
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Scale(7, 7, 7);
-			renderMesh(meshList[GEO_ROBOT], false);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
+    modelStack.PushMatrix();
+    modelStack.Translate(Rot_Civ_.getObjectposX(), Rot_Civ_.getObjectposY(), Rot_Civ_.getObjectposZ());
+	modelStack.Scale(7, 7, 7);
+	renderMesh(meshList[GEO_ROBOT], false);
+	modelStack.PopMatrix();
 }
 
 void scene2_SP2::RenderFlyingVehicle()

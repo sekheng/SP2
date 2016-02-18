@@ -10,6 +10,7 @@ public:
     ~objectsForDisplay();
 
     void init(const char *fileLocation);
+    void init(Vector3 pos, float boundaryX, float boundaryZ, string name);
     bool boundaryCheck(const float& playerPosX, const float& playerPosZ);
 
     float getObjectposX();

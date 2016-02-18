@@ -42,25 +42,21 @@ void objectsForDisplay::init(const char *fileLocation) {
         fileStream.close();
     }
     map<string, string>::iterator it = object_stuff.find("name");
-    std::locale loc;
-    for (size_t num = 0; num < it->second.size(); ++num) {
-        it->second[num] = tolower(it->second[num], loc);
-    }
     Name_ = it->second;
 
     it = object_stuff.find("objectx");
-    objectPos.x = static_cast<float>(strtof(it->second.c_str(), NULL));
+    objectPos.x = strtof(it->second.c_str(), NULL);
 
     it = object_stuff.find("objecty");
-    objectPos.y = static_cast<float>(strtof(it->second.c_str(), NULL));
+    objectPos.y = strtof(it->second.c_str(), NULL);
 
     it = object_stuff.find("objectz");
-    objectPos.z = static_cast<float>(strtof(it->second.c_str(), NULL));
+    objectPos.z = strtof(it->second.c_str(), NULL);
 
     it = object_stuff.find("boundaryradiusx");
-    boundaryRadiusX = static_cast<float>(strtof(it->second.c_str(), NULL));
+    boundaryRadiusX = strtof(it->second.c_str(), NULL);
     it = object_stuff.find("boundaryradiusz");
-    boundaryRadiusZ = static_cast<float>(strtof(it->second.c_str(), NULL));
+    boundaryRadiusZ = strtof(it->second.c_str(), NULL);
 }
 
 bool objectsForDisplay::boundaryCheck(const float& playerPosX, const float& playerPosZ) {
@@ -84,4 +80,11 @@ float objectsForDisplay::getObjectposY() {
 
 float objectsForDisplay::getObjectposZ() {
     return objectPos.z;
+}
+
+void objectsForDisplay::init(Vector3 pos, float boundaryX, float boundaryZ, string name) {
+    Name_ = name;
+    objectPos = pos;
+    boundaryRadiusX = boundaryX;
+    boundaryRadiusZ = boundaryZ;
 }
