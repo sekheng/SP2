@@ -81,3 +81,10 @@ float objectsForDisplay::getObjectposY() {
 float objectsForDisplay::getObjectposZ() {
     return objectPos.z;
 }
+
+void objectsForDisplay::init(Vector3 pos, float boundaryX, float boundaryZ, string name) {
+    Name_ = name;
+    objectPos = pos;
+    boundaryRadiusX = boundaryX;
+    boundaryRadiusZ = boundaryZ;
+}
