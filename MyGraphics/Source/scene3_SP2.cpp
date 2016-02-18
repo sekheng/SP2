@@ -134,7 +134,6 @@ void scene3_SP2::Init()
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
     meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
-    forComicSans.loadSpace("removeMonospace//comicSans.txt");
 
     //skybox
     meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
@@ -147,14 +146,14 @@ void scene3_SP2::Init()
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
-    //cursor
-    meshList[GEO_INVI_CURSOR] = MeshBuilder::GenerateSphere("cursor", Color(1, 0, 0));
-    //cursor
+    meshList[GEO_LIGHT_WRAP] = MeshBuilder::GenerateOBJ("light warp", "OBJ//light_warpping.obj");
+    meshList[GEO_LIGHT_WRAP]->textureID = LoadTGA("Image//light_warpping.tga");
+    meshList[GEO_LIGHT_WRAP]->material = MaterialBuilder::GenerateBlinn();
 
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 100000.f);
+    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 200000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
@@ -172,6 +171,12 @@ void scene3_SP2::Init()
     //animating the SkyBox
     scaleSkyBoxZ_ = 0;
     //animating the SkyBox
+
+    //animating the warp
+    warp_lightZ = 0;
+    //animating the warp
+
+    std::cout << "Number of objects in Scenario 2: " << camera.storage_of_objects.size() << std::endl;
 }
 
 /******************************************************************************/
@@ -184,8 +189,9 @@ where the logic of the game is, and update
 /******************************************************************************/
 void scene3_SP2::Update(double dt)
 {
-    camera.Update(dt);
+     animateWarp(dt);
     animateSpaceShip(dt);
+    camera.Update(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -218,22 +224,6 @@ void scene3_SP2::Update(double dt)
     {
         on_light = false;
         light[0].color.Set(0, 0, 0);
-    }
-
-    if (Application::IsKeyPressed('7'))
-    {
-        light[0].type = Light::LIGHT_POINT;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-    if (Application::IsKeyPressed('8'))
-    {
-        light[0].type = Light::LIGHT_DIRECTIONAL;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-    if (Application::IsKeyPressed('9'))
-    {
-        light[0].type = Light::LIGHT_SPOT;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
     }
 
     if (Application::IsKeyPressed(VK_NUMPAD1)) {
@@ -372,6 +362,8 @@ void scene3_SP2::Render()
     renderSpaceShip();
     modelStack.PopMatrix();
 
+    renderWarp();
+
     std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
@@ -424,15 +416,10 @@ void scene3_SP2::RenderText(Mesh* mesh, std::string text, Color color)
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        if (i != 0) {
-            int widthOfChar = text[i];
-            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
-        }
-        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
+        characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -479,15 +466,10 @@ void scene3_SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        if (i != 0) {
-            int widthOfChar = text[i];
-            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
-        }
-        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
+        characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -583,9 +565,37 @@ void scene3_SP2::animateSpaceShip(double dt) {
             warppingOn = false;
         }
     }
-    else if (scaleShipZ > 0 && warppingOn == false)
+    else if (scaleShipZ > 5 && warppingOn == false)
 	{
         scaleShipZ -= 10 * (float)(dt);
         flyToZ -= 1000 * (float)(dt);
+        camera.position.z -= 1000 * (float)(dt);
     }
 }   
+
+void scene3_SP2::renderWarp() {
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "Light Warp1" || 
+            it.getName() == "Light Warp2" ||
+            it.getName() == "Light Warp3" || 
+            it.getName() == "Light Warp4" ||
+            it.getName() == "Light Warp5" ||
+            it.getName() == "Light Warp6" ||
+            it.getName() == "Light Warp7" ||
+            it.getName() == "Light Warp8" ||
+            it.getName() == "Light Warp9" ||
+            it.getName() == "Light Warp10" ||
+            it.getName() == "Light Warp11" ||
+            it.getName() == "Light Warp12") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()); 
+            modelStack.Scale(1, 1, 1 + warp_lightZ);
+            renderMesh(meshList[GEO_LIGHT_WRAP], true);
+            modelStack.PopMatrix();
+        }
+    }
+}
+
+void scene3_SP2::animateWarp(double dt) {
+    warp_lightZ += 700 * (float)(dt);
+}

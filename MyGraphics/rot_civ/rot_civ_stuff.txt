@@ -1,5 +1,5 @@
 Name,ROT CIV
-objectX,10
+objectX,20
 objectY,0
 objectZ,10
 boundaryRadiusX,10

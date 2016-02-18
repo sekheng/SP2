@@ -5,11 +5,12 @@
 #include <iostream>
 #include <algorithm>
 #include <locale>
+#include "Application.h"
 
 using std::map;
 
 rot_civ::rot_civ() 
-    : interatingRadius(4), time(0)
+    : interatingRadius(4), time(0), order_of_text(0)
 {
 }
 
@@ -40,10 +41,11 @@ void rot_civ::InitDialogues(const char* fileLocation, Camera3& camera) {
 
 void rot_civ::update(double dt) {
     time += dt;
+    preventSpamming();
 }
 
-string rot_civ::returnDialogue(size_t order) {
-    return dialogues[order];
+string rot_civ::returnDialogue() {
+    return dialogues[order_of_text];
 }
 
 bool rot_civ::interaction() {
@@ -54,5 +56,18 @@ bool rot_civ::interaction() {
     {
         return false;
     }
+    order_of_text = 0;
     return true;
+}
+
+void rot_civ::preventSpamming() {
+    if (Application::IsKeyPressed('E')) {
+        if (time > 1) {
+            order_of_text += 1;
+            time = 0;
+            if (order_of_text == dialogues.size()) {
+                order_of_text = 0;
+            }
+        }
+    }
 }

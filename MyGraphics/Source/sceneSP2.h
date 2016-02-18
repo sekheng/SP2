@@ -157,7 +157,6 @@ private:
 
     double framePerSecond;
     float screenWidth, screenHeight;
-    removeMonospace forComicSans;
 };
 
 

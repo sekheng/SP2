@@ -135,7 +135,6 @@ void sceneSP2::Init()
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
     meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
-    forComicSans.loadSpace("removeMonospace//comicSans.txt");
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1,1,1));
 
@@ -692,14 +691,10 @@ void sceneSP2::RenderText(Mesh* mesh, std::string text, Color color)
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        if (i != 0) {
-            int widthOfChar = text[i];
-            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
-        }
+        characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -746,15 +741,10 @@ void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        if (i != 0) {
-            int widthOfChar = text[i];
-            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
-        }
-        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
+        characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 

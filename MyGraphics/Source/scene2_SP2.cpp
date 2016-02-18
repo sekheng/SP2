@@ -134,7 +134,6 @@ void scene2_SP2::Init()
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
     meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
-    forComicSans.loadSpace("removeMonospace//comicSans.txt");
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
@@ -184,7 +183,7 @@ void scene2_SP2::Init()
 
     Rot_Civ_.init("rot_civ//rot_civ_stuff.txt");
     Rot_Civ_.InitDialogues("rot_civ//rot_civ_dialogues.txt", camera);
-    camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
+    camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its boundary, then there will be bounds check.
 }
 
 /******************************************************************************/
@@ -214,6 +213,7 @@ void scene2_SP2::Update(double dt)
     if (Application::IsKeyPressed(VK_NUMPAD2)) {
         Application::changeIntoScenario2();
     }
+    Rot_Civ_.update(dt);
 }
 
 /******************************************************************************/
@@ -380,6 +380,9 @@ void scene2_SP2::Render()
 	//render vault
 	RenderVault();
 	
+    if (Rot_Civ_.interaction() == false) {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], Rot_Civ_.returnDialogue(), Color(0, 1, 0), 2, 5, 5);
+    }
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
@@ -431,15 +434,10 @@ void scene2_SP2::RenderText(Mesh* mesh, std::string text, Color color)
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        if (i != 0) {
-            int widthOfChar = text[i];
-            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
-        }
-        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
+        characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -486,15 +484,10 @@ void scene2_SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-    float moveText = 0;
     for (unsigned i = 0; i < text.length(); ++i)
     {
         Mtx44 characterSpacing;
-        if (i != 0) {
-            int widthOfChar = text[i];
-            moveText += (forComicSans.eachCharSpace[widthOfChar] / 23) / 2;
-        }
-        characterSpacing.SetToTranslation(moveText, 0, 0); //1.0f is the spacing of each character, you may change this value
+        characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -581,9 +574,6 @@ void scene2_SP2::RenderRobot()
 	modelStack.Scale(7, 7, 7);
 	renderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
-    if (Rot_Civ_.interaction()) {
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "You are interacting", Color(0, 1, 0), 3, 20, 20);
-    }
 }
 
 void scene2_SP2::RenderFlyingVehicle()

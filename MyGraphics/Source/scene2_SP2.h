@@ -120,7 +120,6 @@ private:
 
     double framePerSecond;
     float screenWidth, screenHeight;
-    removeMonospace forComicSans;
 
     //Adding rot civ into the game
     rot_civ Rot_Civ_;

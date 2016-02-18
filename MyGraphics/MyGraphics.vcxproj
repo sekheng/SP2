@@ -150,6 +150,9 @@
     <Image Include="Image\top.tga" />
     <Image Include="Image\winebottle.tga" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="scenario2Driven\objects.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

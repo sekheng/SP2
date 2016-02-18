@@ -27,9 +27,7 @@ class scene3_SP2 : public Scene
         GEO_SPACE_SKYBOX,
         //skybox
         GEO_FLYINGVEHICLE,
-        //cursor
-        GEO_INVI_CURSOR,
-        //cursor
+        GEO_LIGHT_WRAP,
         NUM_GEOMETRY,
     };
 
@@ -91,7 +89,6 @@ private:
 
     double framePerSecond;
     float screenWidth, screenHeight;
-    removeMonospace forComicSans;
 
     void RenderSkybox();
     void renderSpaceShip();
@@ -108,6 +105,15 @@ private:
     //animating the SkyBox
     float scaleSkyBoxZ_;
     //animating the SkyBox
+
+    //rendering of the warp
+    void renderWarp();
+    //rendering of the warp
+
+    //animating of the warp
+    void animateWarp(double dt);
+    float warp_lightZ;
+    //animating of the warp
 };
 
 
