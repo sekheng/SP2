@@ -172,3 +172,10 @@ objectY,100
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
+
+Name,Light Warp25
+objectX,40
+objectY,150
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
