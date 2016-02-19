@@ -23,6 +23,8 @@ void StationScene::Init(string name, Vector3 pos, Camera3 &camera_address, float
 	questActive = false;
 	card1 = false;
 	card2 = false;
+	questComplete = false;
+	doorOpened = false;
 }
 
 float StationScene::Door_getposition_x()
@@ -47,33 +49,6 @@ string StationScene::getDialogue()
 	return 0;
 }
 
-short StationScene::getQuestStage()
-{
-	if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == false)
-	{
-		if (Application::IsKeyPressed('E'))
-		{
-			questActive = true;
-			return 0;
-		}
-		else
-		{
-			return 1;
-		}
-	}
-	else if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == true)
-	{
-		return 2;
-	}
-	else if (questActive == true)
-	{
-		return 3;
-	}
-	else
-	{
-		return 0;
-	}
-}
 
 short StationScene::getCard1()
 {
@@ -82,6 +57,7 @@ short StationScene::getCard1()
 		if (Application::IsKeyPressed('E'))
 		{
 			card1 = true;
+			count++;
 		}
 	}
 	else if (card1 == true)
@@ -102,6 +78,7 @@ short StationScene::getCard2()
 		if (Application::IsKeyPressed('E'))
 		{
 			card2 = true;
+			count++;
 		}
 	}
 	else if (card2 == true)
@@ -130,6 +107,63 @@ bool StationScene::getCardText()
 		return false;
 	}
 }
+
+short StationScene::getQuestStage()
+{
+	if (questComplete == false)
+	{
+		if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == false)
+		{
+			if (Application::IsKeyPressed('E'))
+			{
+				questActive = true;
+				return 0;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		else if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == true)
+		{
+			return 2;
+		}
+		else if (questActive == true)
+		{
+			return 3;
+		}
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+short StationScene::openSasame()
+{
+	if (card1 == true && card2 == true)
+	{
+		questComplete = true;
+		if(cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && doorOpened == false)
+		{
+			if (Application::IsKeyPressed('E'))
+			{ 
+				doorOpened = true;
+			}
+			return 1;
+		}
+		else if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && doorOpened == true)
+		{
+			return 2;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	return 0;
+}
+
 
 bool StationScene::boundschecking(const float&bounds_x, const float &bounds_z)
 {
