@@ -20,17 +20,20 @@ NPC::~NPC()
 
 void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camera3 &camera_address, const char *fileLocation)
 {
+    //initialization of varivables
     Name_ = name;
     NPC_pos = pos;
-    //Dialogues = {"Wassup mannn","My name is Jeff","Vote for Najib", "Dai lo?", "JOHN CENAAAAAAAA"};
     cam_pointer = &camera_address;
     bound_x = boundaryX;
     bound_z = boundaryZ;
     time = 0;
     dialogue_switch = 0;
     dialogue_reset = false;
-    //read 
-    map<string, string> npc_data;
+    time = 0;
+    has_interacted = false;
+
+    //read dialogue from text file
+    map<string, string> npc_data;//dialogue is stored in map
     std::ifstream fileStream(fileLocation, std::ios::binary);
     if (!fileStream.is_open()) {
         std::cout << "Impossible to open " << fileLocation << ". Are you in the right directory ?\n";
@@ -40,7 +43,7 @@ void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camer
             string data = "";
             getline(fileStream, data);
             char *next_data;
-            char *read_data = strtok_s(const_cast<char*>(data.c_str()), ":", &next_data);
+            char *read_data = strtok_s(const_cast<char*>(data.c_str()), ":", &next_data); // before ':' is key and after ':' is data for map 
             string taking_the_stuff = "";
             string values = "";
             taking_the_stuff.append(read_data);
@@ -54,26 +57,7 @@ void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camer
         }
         fileStream.close();
     }
-    map<string, string>::iterator it;
-    //map<string, string>::iterator it = npc_data.find("name");
-    //std::locale loc;
-    //for (size_t count = 0; count < it->second.size(); ++count) {
-    //    it->second[count] = tolower(it->second[count], loc);
-    //}
-    /*Name_ = it->second;
-
-    it = npc_data.find("position_x");
-    NPC_pos.x = (strtof(it->second.c_str(), NULL));
-
-    NPC_pos.y = 0;
-
-    it = npc_data.find("position_z");
-    NPC_pos.z = (strtof(it->second.c_str(), NULL));
-
-    it = npc_data.find("bounds_x");
-    bound_x = (strtof(it->second.c_str(), NULL));
-    it = npc_data.find("bounds_z");
-    bound_z = (strtof(it->second.c_str(), NULL));*/
+    map<string, string>::iterator it;// Map key is sequence of dialog and data is their text
 
     it = npc_data.find("first");
     Dialogues.push_back(it->second);
@@ -87,12 +71,13 @@ void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camer
     it = npc_data.find("fourth");
     Dialogues.push_back(it->second);
 
-    time = 0;
-    has_interacted = false;
+    
 
-    text_delay = 2.5;
+    text_delay = 2.5; // set the delay for text
 }
-
+/*********************************************************/
+//get npc position
+/*********************************************************/
 float NPC::NPC_getposition_x()
 {
     return NPC_pos.x;
@@ -106,6 +91,9 @@ float NPC::NPC_getposition_y()
     return NPC_pos.y;
 }
 
+/*********************************************************/
+//
+/*********************************************************/
 string NPC::getDialogue(bool reset)
 {
     dialogue_reset = reset;
