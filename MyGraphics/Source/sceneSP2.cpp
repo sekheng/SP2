@@ -219,11 +219,14 @@ void sceneSP2::Init()
 	door.getQuestStage();
 
     //initialise npc
-    npc1.Init("Najib",Vector3(2,2,2),5,5,camera,"NPC data//Najib.txt");
-
+    //example
+    //npc1.Init("Najib",Vector3(2,2,2),5,5,camera,"NPC data//Najib.txt");
+    
     //initialise quest
-    test_quest.Init("random quest", camera,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
-    test_quest.Quest_Taken(true);
+    //example
+    //test_quest.Init("random quest", camera,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
+    //test_quest.Quest_Taken(true);
+    
 }
 
 /******************************************************************************/
@@ -949,6 +952,8 @@ void sceneSP2::RenderCryostasis()
 }
 void sceneSP2::RenderNPC()
 {
+    /*
+    //example
     modelStack.PushMatrix();
     modelStack.Translate(npc1.NPC_getposition_x(), npc1.NPC_getposition_y(), npc1.NPC_getposition_z());
     //modelStack.Scale(3,3,3);
@@ -964,11 +969,8 @@ void sceneSP2::RenderNPC()
             RenderTextOnScreen(meshList[GEO_COMIC_TEXT], npc1.getDialogue(false), Color(0, 1, 0), 3, 10, 10);
         }
     }
-    /*if (npc1.interaction() == true)
-    {
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], npc1.getDialogue(), Color(0, 1, 0),3, 10, 10);
-    }*/
     modelStack.PopMatrix();
+    */
 }
 
 void sceneSP2::RenderQuestObjects()
@@ -998,11 +1000,6 @@ void sceneSP2::RenderQuestObjects()
             modelStack.PopMatrix();
         }
     }
+    
     */
-    
-
-        
-    
-
-
 }
