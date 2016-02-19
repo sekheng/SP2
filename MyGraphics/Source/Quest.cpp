@@ -9,7 +9,7 @@ Quest::~Quest()
 
 }
 
-void Quest::Init(string Name_, Camera3 &camera_address,
+void Quest::Init(string Name_, Camera3 &camera_address,short no_of_objects,
     Vector3 Object_1_pos, float Object_1_bounds_x, float Object_1_bounds_z,
     Vector3 Object_2_pos, float Object_2_bound_x, float Object_2_bound_z)
 {
@@ -32,6 +32,8 @@ void Quest::Init(string Name_, Camera3 &camera_address,
 
     stop_change1 = false;
     stop_change2 = false;
+
+    number_of_objects = no_of_objects;
 }
 
 void Quest::Quest_Taken(bool taken)
@@ -77,6 +79,7 @@ bool Quest::SecondObject()
 }
 bool Quest::SecondObject_taken()
 {
+    if (number_of_objects == 1) return true;
     if (Application::IsKeyPressed('E') && SecondObject() && stop_change2 == false )
     {
         stop_change2 = true;

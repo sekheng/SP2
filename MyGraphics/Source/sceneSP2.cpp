@@ -224,7 +224,7 @@ void sceneSP2::Init()
     
     //initialise quest
     //example
-    //test_quest.Init("random quest", camera,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
+    //test_quest.Init("random quest", camera,2,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
     //test_quest.Quest_Taken(true);
     
 }
