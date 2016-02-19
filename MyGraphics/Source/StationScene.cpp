@@ -21,7 +21,10 @@ void StationScene::Init(string name, Vector3 pos, Camera3 &camera_address, float
 	bound_z = boundaryZ;
 	time = 0;
 	questActive = false;
-	
+	card1 = false;
+	card2 = false;
+	questComplete = false;
+	doorOpened = false;
 }
 
 float StationScene::Door_getposition_x()
@@ -46,57 +49,122 @@ string StationScene::getDialogue()
 	return 0;
 }
 
-short StationScene::getQuest()
+
+short StationScene::getCard1()
 {
-	if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == false)
+	if (cam_pointer->position.x > -258 && cam_pointer->position.x < -255 && cam_pointer->position.z > 303 && cam_pointer->position.z < 308 && questActive == true && card1 == false)
 	{
 		if (Application::IsKeyPressed('E'))
 		{
-			questActive = true;
-			return 0;
-		}
-		else
-		{
-			return 1;
+			card1 = true;
+			count++;
 		}
 	}
-	else if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == true)
+	else if (card1 == true)
 	{
-		return 2;
-	}
-	else if (questActive == true)
-	{
-		return 3;
+		return 1;
 	}
 	else
 	{
 		return 0;
 	}
+	return 0;
 }
 
-//bool StationScene::keyCard()
-//{
-//	bool checkQuest[2];
-//	checkQuest[0] = true;
-//	checkQuest[1] = true;
-//
-//	if (cam_pointer->position.x > -258 && cam_pointer->position.x < -255 && cam_pointer->position.z > 303 && cam_pointer->position.z < 306 && questActive == true)
-//	{
-//		if (Application::IsKeyPressed('E'))
-//		{
-//			checkQuest[0] = false;
-//		}
-//	}
-//	else if (cam_pointer->position.x > -296 && cam_pointer->position.x < -294 && cam_pointer->position.z > 290 && cam_pointer->position.z < 293 && questActive == true)
-//	{
-//		if (Application::IsKeyPressed('E'))
-//		{
-//			checkQuest[1] = false;
-//		}
-//	}
-//
-//	return checkQuest;
-//}
+short StationScene::getCard2()
+{
+	if (cam_pointer->position.x > -296 && cam_pointer->position.x < -294 && cam_pointer->position.z > 290 && cam_pointer->position.z < 293 && questActive == true && card2 == false)
+	{
+		if (Application::IsKeyPressed('E'))
+		{
+			card2 = true;
+			count++;
+		}
+	}
+	else if (card2 == true)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+	return 0;
+}
+
+bool StationScene::getCardText()
+{
+	if (cam_pointer->position.x > -258 && cam_pointer->position.x < -255 && cam_pointer->position.z > 303 && cam_pointer->position.z < 308 && questActive == true && card1 == false)
+	{
+		return true;
+	}
+	else if (cam_pointer->position.x > -296 && cam_pointer->position.x < -294 && cam_pointer->position.z > 290 && cam_pointer->position.z < 293 && questActive == true && card2 == false)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+short StationScene::getQuestStage()
+{
+	if (questComplete == false)
+	{
+		if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == false)
+		{
+			if (Application::IsKeyPressed('E'))
+			{
+				questActive = true;
+				return 0;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		else if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && questActive == true)
+		{
+			return 2;
+		}
+		else if (questActive == true)
+		{
+			return 3;
+		}
+	}
+	else
+	{
+		return 0;
+	}
+	return 0;
+}
+
+short StationScene::openSasame()
+{
+	if (card1 == true && card2 == true)
+	{
+		questComplete = true;
+		if(cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && doorOpened == false)
+		{
+			if (Application::IsKeyPressed('E'))
+			{ 
+				doorOpened = true;
+			}
+			return 1;
+		}
+		else if (cam_pointer->position.x > -293 && cam_pointer->position.x < -263 && cam_pointer->position.z > 262 && cam_pointer->position.z < 267 && doorOpened == true)
+		{
+			return 2;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	return 0;
+}
+
 
 bool StationScene::boundschecking(const float&bounds_x, const float &bounds_z)
 {
