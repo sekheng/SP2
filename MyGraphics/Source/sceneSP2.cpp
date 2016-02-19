@@ -973,7 +973,8 @@ void sceneSP2::RenderNPC()
 
 void sceneSP2::RenderQuestObjects()
 {
-    //text
+    //example
+    /*
     if (test_quest.Result() == true)
     {
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
@@ -997,8 +998,11 @@ void sceneSP2::RenderQuestObjects()
             modelStack.PopMatrix();
         }
     }
+    */
     
 
         
     
+
+
 }

@@ -46,7 +46,7 @@ bool Quest::get_quest_taken()
 
 bool Quest::FirstObject()
 {
-    return pickup(x_1,z_1,bounds_1_x,bounds_1_z);
+    return pickup(x_1,z_1,bounds_1_x,bounds_1_z, camera->getCameraXcoord(), camera->getCameraZcoord());
 }
 float Quest::get_object1_x()
 {
@@ -58,7 +58,7 @@ float Quest::get_object1_z()
 }
 bool Quest::FirstObject_taken()
 {
-    if (Application::IsKeyPressed('E') && FirstObject())
+    if (Application::IsKeyPressed('E') == true && FirstObject() == true)
     {
         stop_change1 = true;
         return true;
@@ -73,7 +73,7 @@ bool Quest::FirstObject_taken()
 
 bool Quest::SecondObject()
 {
-    return pickup(x_2, z_2, bounds_2_x, bounds_2_z);
+    return pickup(x_2, z_2, bounds_2_x, bounds_2_z, camera->getCameraXcoord(), camera->getCameraZcoord());
 }
 bool Quest::SecondObject_taken()
 {
@@ -121,12 +121,12 @@ bool Quest::Result()
 /********************************************************************************/
 //basically bounds check and to check if object has been picked up or not
 /********************************************************************************/
-bool Quest::pickup( float position_x,  float position_z, float bounds_x, float bounds_z)
+bool Quest::pickup( float position_x,  float position_z, float bounds_x, float bounds_z, float cameraposition_x, float cameraposition_z)
 {
-    if ((position_x + bounds_x) > bounds_x &&
-        (position_x - bounds_x) < bounds_x &&
-        (position_z + bounds_z) > bounds_z &&
-        (position_z - bounds_z) < bounds_z)
+    if ((position_x + bounds_x) > cameraposition_x &&
+        (position_x - bounds_x) < cameraposition_x &&
+        (position_z + bounds_z) > cameraposition_z &&
+        (position_z - bounds_z) < cameraposition_z)
     {
         return true;
     }

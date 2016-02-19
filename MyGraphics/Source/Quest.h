@@ -40,7 +40,7 @@ public:
     bool QuestinProgress();
     bool Result();
     bool pickup( float position_x,  float position_z,
-                float bounds_x, float bounds_z);
+        float bounds_x, float bounds_z, float cameraposition_x, float cameraposition_z);
 private:
     string name;
     Camera3 *camera;
