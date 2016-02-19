@@ -95,7 +95,7 @@
     <ClCompile Include="Source\rot_civ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Quest.cpp">
+    <ClCompile Include="Source\NumPad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -172,7 +172,7 @@
     <ClInclude Include="Source\rot_civ.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Quest.h">
+    <ClInclude Include="Source\NumPad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

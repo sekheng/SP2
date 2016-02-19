@@ -147,7 +147,7 @@ void scene2_SP2::Init()
 	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
 
 	//FlyingVehicle
-	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
+	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("flyingvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 	
 	//Robot
@@ -155,25 +155,44 @@ void scene2_SP2::Init()
 	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//Robocop_Black_D.tga");
 
 	//spaceship
-	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("robot", "OBJ//SpaceShuttle.obj");
+	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("spaceshuttle", "OBJ//SpaceShuttle.obj");
 	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//Shuttle_UV.tga");
 
 	//vaultcube
-	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultcube.obj");
+	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("vaultcube", "OBJ//vaultcube.obj");
 	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//vaultnewest.tga");
 
 	//vaultdoor
-	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultdoor.obj");
+	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("vaultdoor", "OBJ//vaultdoor.obj");
 	meshList[GEO_VAULTDOOR]->textureID = LoadTGA("Image//vaultnewest.tga");
 
 	//vaultwheel
-	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultwheel.obj");
+	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("vaultwheel", "OBJ//vaultwheel.obj");
 	meshList[GEO_VAULTWHEEL]->textureID = LoadTGA("Image//vaultnewest.tga");
 
 	//vaultstick
-	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultstick.obj");
+	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("vaultstick", "OBJ//vaultstick.obj");
 	meshList[GEO_VAULTSTICK]->textureID = LoadTGA("Image//vaultnewest.tga");
 
+	//numpad
+	meshList[GEO_NUMPAD] = MeshBuilder::GenerateOBJ("numpad", "OBJ//numberpad.obj");
+	meshList[GEO_NUMPAD]->textureID = LoadTGA("Image//number2_UV.tga");
+	//numroll
+	meshList[GEO_NUMROLL1] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
+	meshList[GEO_NUMROLL1]->textureID = LoadTGA("Image//number2_UV.tga");
+	//numroll
+	meshList[GEO_NUMROLL2] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
+	meshList[GEO_NUMROLL2]->textureID = LoadTGA("Image//number2_UV.tga");
+	//numroll
+	meshList[GEO_NUMROLL3] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
+	meshList[GEO_NUMROLL3]->textureID = LoadTGA("Image//number2_UV.tga");
+	//numroll
+	meshList[GEO_NUMROLL4] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
+	meshList[GEO_NUMROLL4]->textureID = LoadTGA("Image//number2_UV.tga");
+
+	//Menu
+	meshList[GEO_MENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0));
+	meshList[GEO_MENU]->textureID = LoadTGA("Image//number2_UV.tga");
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -199,8 +218,8 @@ void scene2_SP2::Init()
     camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 
 	//vault animation
-	wheelturn = stickpush = dooropen = false;
-	wheelturning = stickpushing = dooropening = 0;
+	wheelturn = stickpush = dooropen = text = screentext = false;
+	wheelturning = stickpushing = dooropening = rotating = 0;
 }
 
 /******************************************************************************/
@@ -215,6 +234,7 @@ void scene2_SP2::Update(double dt)
 {
     camera.Update(dt);
 	VaultAnimation(dt);
+	NumpadAnimation(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -274,6 +294,11 @@ void scene2_SP2::Update(double dt)
 
 	if (Application::IsKeyPressed('B'))
 		wheelturn = true;
+
+	if (Application::IsKeyPressed('C')&&camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+		screentext=true;
+	if (Application::IsKeyPressed('X'))
+		screentext = false;
 }
 
 /******************************************************************************/
@@ -425,6 +450,12 @@ void scene2_SP2::Render()
 	RenderSkybox();
 	modelStack.PopMatrix();
 
+	/*modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 50);
+	modelStack.Scale(10, 10, 10);
+	renderMesh(meshList[GEO_NUMROLL], false);
+	modelStack.PopMatrix();*/
+
 	//render robot
 	RenderRobot();
 
@@ -440,6 +471,44 @@ void scene2_SP2::Render()
 	//render vault
 	RenderVault();
 	
+	//render numpad
+	RenderNumpad();
+
+	//RenderMenu();
+	//modelStack.Rotate(90, 1, 0, 0);
+	if (/*Application::IsKeyPressed('C')*/ screentext==true)
+	{
+		RenderNumPadOnScreen(meshList[GEO_NUMPAD], 16, 40, 30, 0, 0);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL1], 15, 40, 30, 2, 0 + rotating);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 55, 30, 2, 0 + rotating);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 70, 30, 2, 0 + rotating);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 85, 30, 2, 0 + rotating);
+	}
+	
+	
+
+	//numpad text
+	if (text==true)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(5, 20, 40);
+		modelStack.Scale(5, 5, 5);
+		RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
+		modelStack.PopMatrix();
+	}
+
+	//render on screen
+	//if (screentext == true)
+	//{
+	//	viewStack.LoadIdentity();
+	//	modelStack.PushMatrix();
+	//	modelStack.Translate(3, -3, -10);
+	//	//modelStack.Rotate(90, 0, 1, 0);
+	//	modelStack.Scale(5, 5, 5);
+	//	/*RenderImageOnScreen(meshList[GEO_LANDVEHICLE],10,20,0);*/
+	//	renderMesh(meshList[GEO_NUMROLL3], false);
+	//	modelStack.PopMatrix();
+	//}
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
@@ -454,6 +523,9 @@ void scene2_SP2::Render()
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
+
+	
+	
 }
 
 /******************************************************************************/
@@ -592,6 +664,29 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();
+}
+
+void scene2_SP2::RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z,float rotate) {
+	if (!mesh || mesh->textureID <= 0) //Proper error check
+		return;
+
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+
+	modelStack.Translate(x, y, z);
+	modelStack.Scale(size, size+30, size);
+	modelStack.Rotate(rotate, 1, 0, 0);
+	renderMesh(mesh, false);
+
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
 }
 
 void scene2_SP2::RenderSkybox()
@@ -773,6 +868,109 @@ void scene2_SP2::RenderVault()
 		}
 	}
 
+void scene2_SP2::RenderNumpad()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numpad") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX()+23, it.getObjectposY(), it.getObjectposZ()-5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Translate(-23, 0, 5);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMPAD], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numroll") {
+
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 25, it.getObjectposY(), it.getObjectposZ() - 5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			modelStack.Translate(-25, 0, 5);
+			modelStack.Rotate(rotating, 1, 0, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMROLL1], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numroll") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 25, it.getObjectposY(), it.getObjectposZ() - 5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			modelStack.Translate(-15,0,5);
+			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(rotating, 1, 0, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMROLL2], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numroll") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 25, it.getObjectposY(), it.getObjectposZ() - 5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			modelStack.Translate(-5, 0, 5);
+			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(rotating, 1, 0, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMROLL3], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numroll") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 25, it.getObjectposY(), it.getObjectposZ() - 5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			modelStack.Translate(5,0,5);
+			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(rotating, 1, 0, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMROLL4], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+}
+
+//void scene2_SP2::RenderMenu()
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(0, 0, 0);
+//	modelStack.Rotate(90, 1, 0, 0);
+//	modelStack.Scale(10, 10, 10);
+//	renderMesh(meshList[GEO_MENU], false);
+//	RenderImageOnScreen(meshList[GEO_MENU], 50, 40, 30);
+//	modelStack.PopMatrix();
+//}
 
 void scene2_SP2::VaultAnimation(double dt)
 {
@@ -802,6 +1000,25 @@ void scene2_SP2::VaultAnimation(double dt)
 	}
 }
 
+void scene2_SP2::NumpadAnimation(double dt)
+{
+	if (camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+	{
+		text = true;
+	}
+	else
+	{
+		text = false;
+	}
 
+	if (Application::IsKeyPressed('V') && screentext==true)
+	{
+		//rotating += 36 * (float)(dt);
+		
+		rotating += 36;
+	}
+	
+	
+}
 
 
