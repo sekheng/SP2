@@ -92,6 +92,7 @@ short StationScene::getCard1()
 	{
 		return 0;
 	}
+	return 0;
 }
 
 short StationScene::getCard2()
@@ -111,6 +112,7 @@ short StationScene::getCard2()
 	{
 		return 0;
 	}
+	return 0;
 }
 
 bool StationScene::getCardText()
