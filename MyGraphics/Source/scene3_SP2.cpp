@@ -594,7 +594,11 @@ void scene3_SP2::renderWarp() {
             it.getName() == "Light Warp17" ||
             it.getName() == "Light Warp18" ||
             it.getName() == "Light Warp19" ||
-            it.getName() == "Light Warp20") {
+            it.getName() == "Light Warp20" ||
+            it.getName() == "Light Warp21" ||
+            it.getName() == "Light Warp22" ||
+            it.getName() == "Light Warp23" ||
+            it.getName() == "Light Warp24") {
             modelStack.PushMatrix();
             modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()); 
             modelStack.Scale(1, 1, 1 + warp_lightZ);

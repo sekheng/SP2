@@ -137,3 +137,38 @@ objectY,20
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
+
+Name,Light Warp20
+objectX,-40
+objectY,20
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp21
+objectX,70
+objectY,80
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp22
+objectX,-70
+objectY,80
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp23
+objectX,50
+objectY,100
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp24
+objectX,-50
+objectY,100
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
