@@ -14,7 +14,7 @@ boundaryRadiusZ,0
 
 Name,Light Warp2
 objectX,50
-objectY,50
+objectY,-50
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
@@ -42,28 +42,28 @@ boundaryRadiusZ,0
 
 Name,Light Warp6
 objectX,22
-objectY,10
+objectY,-70
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
 
 Name,Light Warp7
 objectX,-22
-objectY,10
+objectY,-70
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
 
 Name,Light Warp8
 objectX,0
-objectY,10
+objectY,-70
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
 
 Name,Light Warp9
 objectX,30
-objectY,10
+objectY,-60
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
@@ -91,28 +91,28 @@ boundaryRadiusZ,0
 
 Name,Light Warp13
 objectX,-15
-objectY,10
+objectY,-70
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
 
 Name,Light Warp14
 objectX,-30
-objectY,10
+objectY,-60
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
 
 Name,Light Warp15
 objectX,15
-objectY,10
+objectY,-60
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
 
 Name,Light Warp16
 objectX,-50
-objectY,50
+objectY,-50
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0
@@ -176,6 +176,62 @@ boundaryRadiusZ,0
 Name,Light Warp25
 objectX,40
 objectY,150
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp26
+objectX,80
+objectY,50
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp27
+objectX,-80
+objectY,50
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp28
+objectX,-60
+objectY,120
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp29
+objectX,60
+objectY,120
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp30
+objectX,40
+objectY,130
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp31
+objectX,-40
+objectY,130
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp32
+objectX,-60
+objectY,95
+objectZ,1800
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,Light Warp33
+objectX,-60
+objectY,95
 objectZ,1800
 boundaryRadiusX,0
 boundaryRadiusZ,0

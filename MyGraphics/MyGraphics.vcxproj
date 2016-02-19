@@ -153,6 +153,9 @@
     <Image Include="Image\winebottle.tga" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="cameraDriven\scene1.txt" />
+    <Text Include="cameraDriven\scene2.txt" />
+    <Text Include="cameraDriven\scene3.txt" />
     <Text Include="scenario2Driven\objects.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -28,6 +28,7 @@ class scene3_SP2 : public Scene
         //skybox
         GEO_FLYINGVEHICLE,
         GEO_LIGHT_WRAP,
+        GEO_LIGHT_END,
         NUM_GEOMETRY,
     };
 
@@ -52,6 +53,19 @@ class scene3_SP2 : public Scene
         U_LIGHT0_COSCUTOFF,
         U_LIGHT0_COSINNER,
         U_LIGHT0_EXPONENT,
+        //2nd light bulb
+        U_LIGHT1_POSITION,
+        U_LIGHT1_COLOR,
+        U_LIGHT1_POWER,
+        U_LIGHT1_KC,
+        U_LIGHT1_KL,
+        U_LIGHT1_KQ,
+        U_LIGHT1_TYPE,
+        U_LIGHT1_SPOTDIRECTION,
+        U_LIGHT1_COSCUTOFF,
+        U_LIGHT1_COSINNER,
+        U_LIGHT1_EXPONENT,
+        //2nd light bulb
         U_NUMLIGHTS,
         U_COLOR_TEXTURE_ENABLED,
         U_COLOR_TEXTURE,
@@ -70,7 +84,7 @@ public:
     virtual void Exit();
 private:
     bool on_light;
-    Light light[1];
+    Light light[2];
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
     unsigned m_vertexArrayID;
@@ -113,7 +127,15 @@ private:
     //animating of the warp
     void animateWarp(double dt);
     float warp_lightZ;
+    double wait_on_white_screen;
+    bool start_white_screen;
+    float scaleLightEnd;
     //animating of the warp
+
+    //logic for 2nd light bulb
+    bool turn_on_2nd;
+    //logic for 2nd light bulb
+
 };
 
 
