@@ -147,7 +147,7 @@ void scene2_SP2::Init()
 	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
 
 	//FlyingVehicle
-	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
+	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("flyingvehicle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 	
 	//Robot
@@ -155,25 +155,40 @@ void scene2_SP2::Init()
 	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//Robocop_Black_D.tga");
 
 	//spaceship
-	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("robot", "OBJ//SpaceShuttle.obj");
+	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("spaceshuttle", "OBJ//SpaceShuttle.obj");
 	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//Shuttle_UV.tga");
 
 	//vaultcube
-	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultcube.obj");
+	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("vaultcube", "OBJ//vaultcube.obj");
 	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//vaultnewest.tga");
 
 	//vaultdoor
-	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultdoor.obj");
+	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("vaultdoor", "OBJ//vaultdoor.obj");
 	meshList[GEO_VAULTDOOR]->textureID = LoadTGA("Image//vaultnewest.tga");
 
 	//vaultwheel
-	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultwheel.obj");
+	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("vaultwheel", "OBJ//vaultwheel.obj");
 	meshList[GEO_VAULTWHEEL]->textureID = LoadTGA("Image//vaultnewest.tga");
 
 	//vaultstick
-	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("robot", "OBJ//vaultstick.obj");
+	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("vaultstick", "OBJ//vaultstick.obj");
 	meshList[GEO_VAULTSTICK]->textureID = LoadTGA("Image//vaultnewest.tga");
 
+	//numpad
+	meshList[GEO_NUMPAD] = MeshBuilder::GenerateOBJ("numpad", "OBJ//numberpad.obj");
+	meshList[GEO_NUMPAD]->textureID = LoadTGA("Image//number2_UV.tga");
+	//numroll
+	meshList[GEO_NUMROLL1] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
+	meshList[GEO_NUMROLL1]->textureID = LoadTGA("Image//number2_UV.tga");
+	//numroll
+	meshList[GEO_NUMROLL2] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
+	meshList[GEO_NUMROLL2]->textureID = LoadTGA("Image//number2_UV.tga");
+	//numroll
+	meshList[GEO_NUMROLL3] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
+	meshList[GEO_NUMROLL3]->textureID = LoadTGA("Image//number2_UV.tga");
+	//numroll
+	meshList[GEO_NUMROLL4] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
+	meshList[GEO_NUMROLL4]->textureID = LoadTGA("Image//number2_UV.tga");
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -199,8 +214,8 @@ void scene2_SP2::Init()
     camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 
 	//vault animation
-	wheelturn = stickpush = dooropen = false;
-	wheelturning = stickpushing = dooropening = 0;
+	wheelturn = stickpush = dooropen = text = screentext = false;
+	wheelturning = stickpushing = dooropening = rotating = 0;
 }
 
 /******************************************************************************/
@@ -215,6 +230,7 @@ void scene2_SP2::Update(double dt)
 {
     camera.Update(dt);
 	VaultAnimation(dt);
+	NumpadAnimation(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -274,6 +290,9 @@ void scene2_SP2::Update(double dt)
 
 	if (Application::IsKeyPressed('B'))
 		wheelturn = true;
+
+	if (Application::IsKeyPressed('C'))
+		screentext=true;
 }
 
 /******************************************************************************/
@@ -425,6 +444,12 @@ void scene2_SP2::Render()
 	RenderSkybox();
 	modelStack.PopMatrix();
 
+	/*modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 50);
+	modelStack.Scale(10, 10, 10);
+	renderMesh(meshList[GEO_NUMROLL], false);
+	modelStack.PopMatrix();*/
+
 	//render robot
 	RenderRobot();
 
@@ -440,6 +465,17 @@ void scene2_SP2::Render()
 	//render vault
 	RenderVault();
 	
+	//render numpad
+	RenderNumpad();
+
+	if (/*camera.position.x > 4 && camera.position.x<45 && camera.position.z <80 && */text==true)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(5, 20, 40);
+		modelStack.Scale(5, 5, 5);
+		RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
+		modelStack.PopMatrix();
+	}
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
@@ -773,6 +809,95 @@ void scene2_SP2::RenderVault()
 		}
 	}
 
+void scene2_SP2::RenderNumpad()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numpad") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX()+23, it.getObjectposY(), it.getObjectposZ()-5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Translate(-23, 0, 5);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMPAD], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numroll") {
+
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX()+25, it.getObjectposY(), it.getObjectposZ()-5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			modelStack.Translate(-25, 0, 5);
+			modelStack.Rotate(rotating, 1, 0, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMROLL1], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numroll") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 25, it.getObjectposY(), it.getObjectposZ() - 5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			modelStack.Translate(-15,0,5);
+			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMROLL2], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numroll") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 25, it.getObjectposY(), it.getObjectposZ() - 5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			modelStack.Translate(-5, 0, 5);
+			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMROLL3], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numroll") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 25, it.getObjectposY(), it.getObjectposZ() - 5);
+			modelStack.Rotate(dooropening, 0, 1, 0);
+
+			modelStack.PushMatrix();
+			modelStack.Translate(5,0,5);
+			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_NUMROLL4], false);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+}
 
 void scene2_SP2::VaultAnimation(double dt)
 {
@@ -802,6 +927,17 @@ void scene2_SP2::VaultAnimation(double dt)
 	}
 }
 
+void scene2_SP2::NumpadAnimation(double dt)
+{
+	if (camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+	{
+		text = true;
+	}
+	else
+	{
+		text = false;
+	}
 
+}
 
 

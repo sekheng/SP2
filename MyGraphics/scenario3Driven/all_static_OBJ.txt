@@ -53,3 +53,17 @@ objectY,12
 objectZ,40
 boundaryRadiusX,0		
 boundaryRadiusZ,0
+
+Name,numpad
+objectX,22
+objectY,25
+objectZ,40
+boundaryRadiusX,0	
+boundaryRadiusZ,0
+
+Name,numroll
+objectX,20
+objectY,25
+objectZ,40
+boundaryRadiusX,0	
+boundaryRadiusZ,0
