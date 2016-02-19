@@ -68,7 +68,7 @@ bool Quest::FirstObject_taken()
         if ( stop_change1 == false)
         return false;
     }
-        
+    return false;
 }
 
 bool Quest::SecondObject()
@@ -87,7 +87,7 @@ bool Quest::SecondObject_taken()
         if (stop_change2 == false)
         return false;
     }
-        
+    return false;
 }
 float Quest::get_object2_x()
 {
