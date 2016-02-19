@@ -25,6 +25,7 @@ public:
 	short getCard1();
 	short getCard2();
 	bool getCardText();
+	bool openSasame();
 
 private:
 	Vector3 Door_pos;
