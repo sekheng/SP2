@@ -16,6 +16,7 @@ rot_civ::rot_civ()
 
 rot_civ::~rot_civ()
 {
+    delete dub_camera;
 }
 
 void rot_civ::InitDialogues(const char* fileLocation, Camera3& camera) {

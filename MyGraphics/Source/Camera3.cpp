@@ -18,7 +18,7 @@ Default constructor
 */
 /******************************************************************************/
 Camera3::Camera3()
-    : boundaryX(0), boundaryZ(0), num_of_objects(0)
+    : boundaryX(0), boundaryZ(0)
 {
 }
 
@@ -30,6 +30,7 @@ Destructor
 /******************************************************************************/
 Camera3::~Camera3()
 {
+    storage_of_objects.erase(storage_of_objects.begin(), storage_of_objects.end());
 }
 
 /******************************************************************************/
@@ -135,15 +136,11 @@ void Camera3::Init(const char *fileLocation)
     it = cameraCoordinates.find("boundscheckz");
     boundaryZ = it->second;
 
-    if (cameraCoordinates.count("numberofobjects") == 1) {
-        it = cameraCoordinates.find("numberofobjects");
-        num_of_objects = static_cast<size_t>(it->second);
-    }
-
     if (cameraCoordinates.count("crosshairradius") == 1) {
         it = cameraCoordinates.find("crosshairradius");
         crossHairRadius = it->second;
     }
+    cameraCoordinates.clear();
 }
 /******************************************************************************/
 /*!

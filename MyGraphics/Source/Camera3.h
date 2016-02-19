@@ -79,10 +79,6 @@ private:
     bool boundsCheckZaxis(const float& z, const float& posZ);
     //bounce check
 
-    //number of objects are there
-    size_t num_of_objects;
-    //number of objects are there
-
     //Crosshair stuff
     Vector3 invisibleCrossHair;
     float crossHairRadius;

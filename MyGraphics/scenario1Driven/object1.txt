@@ -1,6 +1,0 @@
-Name,Door
-objectX,-270
-objectY,0
-objectZ,260
-boundaryRadiusX,20
-boundaryRadiusZ,5

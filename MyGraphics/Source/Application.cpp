@@ -207,7 +207,8 @@ Calls for the destroying of windows and cleaning up GLFW
 /******************************************************************************/
 void Application::Exit()
 {
-	//Close OpenGL window and terminate GLFW
+    _CrtDumpMemoryLeaks();
+    //Close OpenGL window and terminate GLFW
 	glfwDestroyWindow(m_window);
 	//Finalize and clean up GLFW
 	glfwTerminate();

@@ -128,7 +128,7 @@ void sceneSP2::Init()
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene1.txt");
-	camera.InitObjects("scenario1Driven//");
+	//camera.InitObjects("scenario1Driven//");
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -705,6 +705,7 @@ cleans up the scene
 /******************************************************************************/
 void sceneSP2::Exit()
 {
+    _CrtDumpMemoryLeaks();
     glDeleteVertexArrays(1, &m_vertexArrayID);
     glDeleteProgram(m_programID);
 }
