@@ -217,6 +217,8 @@ void sceneSP2::Init()
 
 	door.Init("Sek heng", Vector3(-30, 0, 40), camera, 5, 5);
 	door.getQuestStage();
+	doorSpeed = 0;
+	
 
     //initialise npc
     //example
@@ -301,6 +303,14 @@ void sceneSP2::Update(double dt)
     }
     //transit scene
 
+	if (door.openSasame() == 2)
+	{
+		doorSpeed += (float)(LSPEED *dt) * 1;
+		if (doorSpeed > 30)
+		{
+			doorSpeed = 30;
+		}
+	}
 }
 
 /******************************************************************************/
@@ -462,7 +472,7 @@ void sceneSP2::RenderStation()
 		modelStack.PopMatrix();
 	}
 	modelStack.PushMatrix();
-	modelStack.Translate(-270, 0, 260);
+	modelStack.Translate(-270 + doorSpeed , 0, 260);
 	modelStack.Scale(5, 3, 6);
 	renderMesh(meshList[GEO_DOOR], false);
 	if (door.getQuestStage() == 1)
@@ -472,6 +482,14 @@ void sceneSP2::RenderStation()
 	else if (door.getQuestStage() == 2)
 	{
 		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the damn key for your asshole", Color(0, 1, 0), 3, 8, 10);
+	}
+	else if (door.openSasame() == 1)
+	{
+		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Now Press E to put it into your asshole", Color(0, 1, 0), 3, 8, 10);
+	}
+	else if (door.openSasame() == 2)
+	{
+		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Gratz your asshole is wide open", Color(0, 1, 0), 3, 8, 10);
 	}
 	modelStack.PopMatrix();
 

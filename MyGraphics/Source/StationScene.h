@@ -25,7 +25,7 @@ public:
 	short getCard1();
 	short getCard2();
 	bool getCardText();
-	bool openSasame();
+	short openSasame();
 
 private:
 	Vector3 Door_pos;
@@ -34,8 +34,11 @@ private:
 	float bound_x, bound_z;
 	double time;
 	bool questActive;
+	bool questComplete;
 	bool card1;
 	bool card2;
+	short count;
+	bool doorOpened;
 
 protected:
 };
