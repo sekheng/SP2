@@ -137,6 +137,7 @@ short StationScene::getQuestStage()
 	{
 		return 0;
 	}
+	return 0;
 }
 
 short StationScene::openSasame()
