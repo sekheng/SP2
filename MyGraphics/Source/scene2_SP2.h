@@ -48,6 +48,7 @@ class scene2_SP2 : public Scene
 		GEO_NUMROLL2,
 		GEO_NUMROLL3,
 		GEO_NUMROLL4,
+		GEO_MENU,
 
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
@@ -123,6 +124,7 @@ private:
     void RenderVault();
 	void RenderNumpad();
 	void RenderNumroll();
+	void RenderMenu();
 
 	//animation function
 	void VaultAnimation(double dt);
@@ -140,8 +142,10 @@ private:
 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
+	void RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
     void RenderUserInterface(Mesh* mesh, float size, float x, float y);
+
 
     double framePerSecond;
     float screenWidth, screenHeight;

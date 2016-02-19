@@ -190,6 +190,10 @@ void scene2_SP2::Init()
 	meshList[GEO_NUMROLL4] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
 	meshList[GEO_NUMROLL4]->textureID = LoadTGA("Image//number2_UV.tga");
 
+	//Menu
+	meshList[GEO_MENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0));
+	meshList[GEO_MENU]->textureID = LoadTGA("Image//number2_UV.tga");
+
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
 	meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
@@ -291,8 +295,10 @@ void scene2_SP2::Update(double dt)
 	if (Application::IsKeyPressed('B'))
 		wheelturn = true;
 
-	if (Application::IsKeyPressed('C'))
+	if (Application::IsKeyPressed('C')&&camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
 		screentext=true;
+	if (Application::IsKeyPressed('X'))
+		screentext = false;
 }
 
 /******************************************************************************/
@@ -468,7 +474,21 @@ void scene2_SP2::Render()
 	//render numpad
 	RenderNumpad();
 
-	if (/*camera.position.x > 4 && camera.position.x<45 && camera.position.z <80 && */text==true)
+	//RenderMenu();
+	//modelStack.Rotate(90, 1, 0, 0);
+	if (/*Application::IsKeyPressed('C')*/ screentext==true)
+	{
+		RenderNumPadOnScreen(meshList[GEO_NUMPAD], 16, 40, 30, 0, 0);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL1], 15, 40, 30, 2, 0 + rotating);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 55, 30, 2, 0 + rotating);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 70, 30, 2, 0 + rotating);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 85, 30, 2, 0 + rotating);
+	}
+	
+	
+
+	//numpad text
+	if (text==true)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(5, 20, 40);
@@ -476,6 +496,19 @@ void scene2_SP2::Render()
 		RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
 		modelStack.PopMatrix();
 	}
+
+	//render on screen
+	//if (screentext == true)
+	//{
+	//	viewStack.LoadIdentity();
+	//	modelStack.PushMatrix();
+	//	modelStack.Translate(3, -3, -10);
+	//	//modelStack.Rotate(90, 0, 1, 0);
+	//	modelStack.Scale(5, 5, 5);
+	//	/*RenderImageOnScreen(meshList[GEO_LANDVEHICLE],10,20,0);*/
+	//	renderMesh(meshList[GEO_NUMROLL3], false);
+	//	modelStack.PopMatrix();
+	//}
 
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
@@ -490,6 +523,9 @@ void scene2_SP2::Render()
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
+
+	
+	
 }
 
 /******************************************************************************/
@@ -628,6 +664,29 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();
+}
+
+void scene2_SP2::RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z,float rotate) {
+	if (!mesh || mesh->textureID <= 0) //Proper error check
+		return;
+
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+
+	modelStack.Translate(x, y, z);
+	modelStack.Scale(size, size+30, size);
+	modelStack.Rotate(rotate, 1, 0, 0);
+	renderMesh(mesh, false);
+
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
 }
 
 void scene2_SP2::RenderSkybox()
@@ -832,7 +891,7 @@ void scene2_SP2::RenderNumpad()
 		if (it.getName() == "numroll") {
 
 			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX()+25, it.getObjectposY(), it.getObjectposZ()-5);
+			modelStack.Translate(it.getObjectposX() + 25, it.getObjectposY(), it.getObjectposZ() - 5);
 			modelStack.Rotate(dooropening, 0, 1, 0);
 
 			modelStack.PushMatrix();
@@ -855,6 +914,7 @@ void scene2_SP2::RenderNumpad()
 			modelStack.PushMatrix();
 			modelStack.Translate(-15,0,5);
 			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(rotating, 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL2], false);
 			modelStack.PopMatrix();
@@ -872,6 +932,7 @@ void scene2_SP2::RenderNumpad()
 			modelStack.PushMatrix();
 			modelStack.Translate(-5, 0, 5);
 			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(rotating, 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL3], false);
 			modelStack.PopMatrix();
@@ -889,6 +950,7 @@ void scene2_SP2::RenderNumpad()
 			modelStack.PushMatrix();
 			modelStack.Translate(5,0,5);
 			//modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(rotating, 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL4], false);
 			modelStack.PopMatrix();
@@ -898,6 +960,17 @@ void scene2_SP2::RenderNumpad()
 	}
 
 }
+
+//void scene2_SP2::RenderMenu()
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(0, 0, 0);
+//	modelStack.Rotate(90, 1, 0, 0);
+//	modelStack.Scale(10, 10, 10);
+//	renderMesh(meshList[GEO_MENU], false);
+//	RenderImageOnScreen(meshList[GEO_MENU], 50, 40, 30);
+//	modelStack.PopMatrix();
+//}
 
 void scene2_SP2::VaultAnimation(double dt)
 {
@@ -938,6 +1011,14 @@ void scene2_SP2::NumpadAnimation(double dt)
 		text = false;
 	}
 
+	if (Application::IsKeyPressed('V') && screentext==true)
+	{
+		//rotating += 36 * (float)(dt);
+		
+		rotating += 36;
+	}
+	
+	
 }
 
 
