@@ -601,6 +601,11 @@ void scene3_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the skybox
+*/
+/******************************************************************************/
 void scene3_SP2::RenderSkybox()
 {
     modelStack.PushMatrix();
@@ -608,6 +613,11 @@ void scene3_SP2::RenderSkybox()
     modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the space Ship
+*/
+/******************************************************************************/
 void scene3_SP2::renderSpaceShip() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "spaceship") {
@@ -621,8 +631,16 @@ void scene3_SP2::renderSpaceShip() {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to animate the spaceship and it's logic
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene3_SP2::animateSpaceShip(double dt) {
-    if (toggleUp == false) 
+    //this is to make the spaceship looks jittering
+    if (toggleUp == false)  
 	{
         jitteringShipY -= 15 * (float)(dt);
         if (jitteringShipY < -1) 
@@ -638,6 +656,8 @@ void scene3_SP2::animateSpaceShip(double dt) {
             toggleUp = false;
         }
     }
+    //this is to make the spaceship looks jittering
+    //when it is warping the spaceship, skybox, and the stars look distorted
     if (warppingOn == true) 
 	{
         scaleShipZ += 30 * (float)(dt);
@@ -647,6 +667,7 @@ void scene3_SP2::animateSpaceShip(double dt) {
             warppingOn = false;
         }
     }
+    //after some time, distorting stopped and spaceship seems to be travelling
     else if (scaleShipZ > 5 && warppingOn == false)
 	{
         if (scaleShipZ < 15) {  //animating the light warp end
@@ -659,6 +680,11 @@ void scene3_SP2::animateSpaceShip(double dt) {
     }
 }   
 
+/******************************************************************************/
+/*!
+\brief - a method to render the warp
+*/
+/******************************************************************************/
 void scene3_SP2::renderWarp() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "Light Warp1" || 
@@ -703,6 +729,13 @@ void scene3_SP2::renderWarp() {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to animate the warp and it's logic
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene3_SP2::animateWarp(double dt) {
     warp_lightZ += 700 * (float)(dt);
 }

@@ -25,6 +25,7 @@ Class scene2_SP2:
 \brief
 inheirited from Scene and made improvised to it.
 To turn it into a game.
+This is Scenario 3
 */
 /******************************************************************************/
 class scene2_SP2 : public Scene

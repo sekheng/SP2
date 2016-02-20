@@ -1,3 +1,13 @@
+/******************************************************************************/
+/*!
+\file       scene3_SP2.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+Creating a clean scene so that my teammates can code in ease
+Hopefully they don't mess it up
+*/
+/******************************************************************************/
 #ifndef SCENE3_SP2_H_
 #define SCENE3_SP2_H_
 
@@ -14,6 +24,7 @@ Class scene3_SP2:
 \brief
 inheirited from Scene and made improvised to it.
 To turn it into a game.
+This is the Scenario 3.
 */
 /******************************************************************************/
 class scene3_SP2 : public Scene
