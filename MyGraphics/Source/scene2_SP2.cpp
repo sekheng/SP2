@@ -1039,6 +1039,7 @@ void scene2_SP2::renderDeadPool() {
             modelStack.Scale(4, 4, 4);
             renderMesh(meshList[GEO_DEADPOOL], true);
             modelStack.PopMatrix();
+            break;
         }
     }
 }
