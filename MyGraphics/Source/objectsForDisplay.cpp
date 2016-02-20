@@ -45,6 +45,9 @@ void objectsForDisplay::init(const char *fileLocation) {
         while (!fileStream.eof()) {
             string data = "";
             getline(fileStream, data);
+            if (data == "" || data == "\r") {
+                continue;
+            }
             //the next sentence after the delimiter. The delimiter in this case is a comma.
             char *nextStuff;
             //the next sentence after the delimiter

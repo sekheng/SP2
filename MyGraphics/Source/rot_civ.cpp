@@ -52,6 +52,9 @@ void rot_civ::InitDialogues(const char* fileLocation, Camera3& camera) {
         while (!fileStream2.eof()) {
             string data = "";
             getline(fileStream2, data);
+            if (data == "" || data == "\r") {
+                continue;
+            }
             data.erase(std::remove(data.begin(), data.end(), '\r'));
             dialogues.push_back(data);
         }

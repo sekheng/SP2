@@ -62,6 +62,10 @@ class scene2_SP2 : public Scene
 
         GEO_BOX,
 
+        //DeadPOOL
+        GEO_DEADPOOL,
+        //DeadPOOL
+
         NUM_GEOMETRY,
     };
 
@@ -154,6 +158,9 @@ private:
     //Adding rot civ into the game
     rot_civ Rot_Civ_;
     //Adding rot civ into the game
+    //rendering the DeadPool
+    void renderDeadPool();
+    //rendering the DeadPool
 };
 
 #endif
