@@ -13,6 +13,7 @@
 #include "Utility.h"
 #include "LoadTGA.h"
 #include <iomanip>
+#include <string>
 
 /******************************************************************************/
 /*!
@@ -191,8 +192,8 @@ void scene2_SP2::Init()
 	meshList[GEO_NUMROLL4]->textureID = LoadTGA("Image//number2_UV.tga");
 
 	//Menu
-	meshList[GEO_MENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0));
-	meshList[GEO_MENU]->textureID = LoadTGA("Image//number2_UV.tga");
+	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//arrow.obj");
+	meshList[GEO_ARROW]->textureID = LoadTGA("Image//arrow_UV.tga");
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -218,8 +219,14 @@ void scene2_SP2::Init()
     camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 
 	//vault animation
-	wheelturn = stickpush = dooropen = text = screentext = false;
-	wheelturning = stickpushing = dooropening = rotating = 0;
+	wheelturn = stickpush = dooropen = text = screentext = firstroll = secondroll = thirdroll = fourthroll = check = false;
+	wheelturning = stickpushing = dooropening = firstrotate = secondrotate = thirdrotate = fourthrotate = time = arrow= 0;
+	time_delay = 0.2;
+	changearrow = 19.5;
+	rendererror = false;
+	digit1 = digit2 = digit3 = digit4 = 0;
+
+
 }
 
 /******************************************************************************/
@@ -299,6 +306,53 @@ void scene2_SP2::Update(double dt)
 		screentext=true;
 	if (Application::IsKeyPressed('X'))
 		screentext = false;
+
+	if (Application::IsKeyPressed(VK_RIGHT) && camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+	{
+		if (time>time_delay)
+		{
+			time = 0;
+			changearrow += 15;
+			if (changearrow > 64.5)
+			{
+				changearrow = 19.5;
+			}
+			arrow++;
+			if (arrow > 3)
+			{
+				arrow = 0;
+			}
+
+		}
+	}
+
+	if (Application::IsKeyPressed(VK_LEFT) && camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+	{
+		if (time>time_delay)
+		{
+			time = 0;
+			changearrow -= 15;
+			if (changearrow < 19.5)
+			{
+				changearrow = 64.5;
+			}
+			arrow--;
+			if (arrow < 0)
+			{
+				arrow = 3;
+			}
+		}
+	}
+
+	if (Application::IsKeyPressed('H') && camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+	{
+		check = true;
+	}
+	else
+	{
+		check = false;
+	}
+	time += dt;
 }
 
 /******************************************************************************/
@@ -473,26 +527,32 @@ void scene2_SP2::Render()
 	
 	//render numpad
 	RenderNumpad();
+	
+	//render arrow
+	//RenderArrow();
 
 	//RenderMenu();
 	//modelStack.Rotate(90, 1, 0, 0);
 	if (/*Application::IsKeyPressed('C')*/ screentext==true)
 	{
-		RenderNumPadOnScreen(meshList[GEO_NUMPAD], 16, 40, 30, 0, 0);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL1], 15, 40, 30, 2, 0 + rotating);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 55, 30, 2, 0 + rotating);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 70, 30, 2, 0 + rotating);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 85, 30, 2, 0 + rotating);
+		RenderNumPadOnScreen(meshList[GEO_NUMPAD], 16, 40, 30, 0, 0,1,0);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL1], 15, 40, 30, 2, 0 + firstrotate,1, 0);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 55, 30, 2, 0 + secondrotate, 1, 0);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 70, 30, 2, 0 + thirdrotate, 1, 0);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 85, 30, 2, 0 + fourthrotate, 1, 0);
+		RenderNumPadOnScreen(meshList[GEO_ARROW], 3, changearrow, 3, 7, -90, 0, 1); //19.5 34.5 49.5 64.5
 	}
-	
-	
 
+	if (rendererror == true)
+	{
+		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Try Again!", Color(1, 0, 0), 5, 6, 8);
+	}
 	//numpad text
 	if (text==true)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate(5, 20, 40);
-		modelStack.Scale(5, 5, 5);
+		modelStack.Translate(5, 10, 40);
+		modelStack.Scale(3, 3, 3);
 		RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
 		modelStack.PopMatrix();
 	}
@@ -524,8 +584,10 @@ void scene2_SP2::Render()
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 
-	
-	
+	/*std::stringstream input;
+	input << "FPS : " << digit1 << digit2 << digit3 << digit4;
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);*/
+
 }
 
 /******************************************************************************/
@@ -666,7 +728,7 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     modelStack.PopMatrix();
 }
 
-void scene2_SP2::RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z,float rotate) {
+void scene2_SP2::RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate, float rotatex, float rotatey) {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
 
@@ -680,8 +742,8 @@ void scene2_SP2::RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, 
 	modelStack.LoadIdentity(); //Reset modelStack
 
 	modelStack.Translate(x, y, z);
-	modelStack.Scale(size, size+30, size);
-	modelStack.Rotate(rotate, 1, 0, 0);
+	modelStack.Scale(size, size+15, size);
+	modelStack.Rotate(rotate, rotatex, rotatey, 0);
 	renderMesh(mesh, false);
 
 	projectionStack.PopMatrix();
@@ -896,7 +958,7 @@ void scene2_SP2::RenderNumpad()
 
 			modelStack.PushMatrix();
 			modelStack.Translate(-25, 0, 5);
-			modelStack.Rotate(rotating, 1, 0, 0);
+			modelStack.Rotate(firstrotate, 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL1], false);
 			modelStack.PopMatrix();
@@ -914,7 +976,7 @@ void scene2_SP2::RenderNumpad()
 			modelStack.PushMatrix();
 			modelStack.Translate(-15,0,5);
 			//modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Rotate(rotating, 1, 0, 0);
+			modelStack.Rotate(secondrotate, 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL2], false);
 			modelStack.PopMatrix();
@@ -932,7 +994,7 @@ void scene2_SP2::RenderNumpad()
 			modelStack.PushMatrix();
 			modelStack.Translate(-5, 0, 5);
 			//modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Rotate(rotating, 1, 0, 0);
+			modelStack.Rotate(thirdrotate, 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL3], false);
 			modelStack.PopMatrix();
@@ -950,7 +1012,7 @@ void scene2_SP2::RenderNumpad()
 			modelStack.PushMatrix();
 			modelStack.Translate(5,0,5);
 			//modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Rotate(rotating, 1, 0, 0);
+			modelStack.Rotate(fourthrotate, 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL4], false);
 			modelStack.PopMatrix();
@@ -959,6 +1021,22 @@ void scene2_SP2::RenderNumpad()
 		}
 	}
 
+}
+
+void scene2_SP2::RenderArrow()
+{
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "arrow") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(10, 10, 10);
+			renderMesh(meshList[GEO_ARROW], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 }
 
 //void scene2_SP2::RenderMenu()
@@ -976,6 +1054,9 @@ void scene2_SP2::VaultAnimation(double dt)
 {
 	if (wheelturn == true) //if 'B' pressed, wheel start rotating
 	{
+		screentext = false;
+		/*camera.position.x = 0;
+		camera.position.z = 150;*/
 		wheelturning += 100 * (float)(dt);
 		if (wheelturning > 360)// wheel will rotate 360 degree
 		{
@@ -1002,6 +1083,15 @@ void scene2_SP2::VaultAnimation(double dt)
 
 void scene2_SP2::NumpadAnimation(double dt)
 {
+	/*char answer[5] = "9669";
+	char input[5];*/
+	/*int digit1;
+	int digit2;
+	int digit3;
+	int digit4;*/
+	//digit1 = digit2 = digit3 = digit4 = 0;
+
+
 	if (camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
 	{
 		text = true;
@@ -1011,14 +1101,91 @@ void scene2_SP2::NumpadAnimation(double dt)
 		text = false;
 	}
 
-	if (Application::IsKeyPressed('V') && screentext==true)
+	if (Application::IsKeyPressed('V') && screentext == true && arrow==0)
 	{
-		//rotating += 36 * (float)(dt);
-		
-		rotating += 36;
+		if (time > time_delay)
+		{
+			time = 0;
+			firstrotate += 36;
+			digit1++;
+			if (digit1 > 9)
+			{
+				digit1 = 0;
+			}
+			input[0] = digit1;
+		}
+	}
+
+	else if (Application::IsKeyPressed('V') && screentext == true && arrow == 1)
+	{
+		if (time > time_delay)
+		{
+			time = 0;
+			secondrotate += 36;
+			digit2++;
+			if (digit2 > 9)
+			{
+				digit2 = 0;
+			}
+			input[1] = digit2;
+		}
+	}
+
+	else if (Application::IsKeyPressed('V') && screentext == true && arrow == 2)
+	{
+		if (time > time_delay)
+		{
+			time = 0;
+			thirdrotate += 36;
+			digit3++;
+			if (digit3 > 9)
+			{
+				digit3 = 0;
+			}
+			input[2] = digit3;
+		}
+	}
+
+	else if (Application::IsKeyPressed('V') && screentext == true && arrow == 3)
+	{
+		if (time > time_delay)
+		{
+			time = 0;
+			fourthrotate += 36;
+			digit4++;
+			if (digit4 > 9)
+			{
+				digit4 = 0;
+			}
+			input[3] = digit4;
+		}
 	}
 	
-	
+	if (check == true)
+	{
+		if (digit1 == 9 && digit2 == 6 && digit3 == 6 && digit4 == 9)
+		{
+
+			wheelturn = true;
+			rendererror = false;
+		}
+		else
+		{
+			wheelturn = false;
+			if (time < time_delay)
+			{
+
+				rendererror = true;
+
+			}
+			else
+			{
+				rendererror = false;
+				time = 0;
+
+			}
+		}
+	}
 }
 
 

@@ -1,5 +1,5 @@
-#ifndef NPC_H_
-#define NPC_H_
+#ifndef NUMPAD_H
+#define NUMPAD_H
 
 #include "GameObject.h"
 #include "Vector3.h"
@@ -14,5 +14,9 @@ public:
 	NumPad();
 	~NumPad();
 
+	void Init();
+	void NumPadUpdate();
 
 };
+
+#endif

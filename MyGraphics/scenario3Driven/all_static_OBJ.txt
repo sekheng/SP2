@@ -64,6 +64,13 @@ boundaryRadiusZ,0
 Name,numroll
 objectX,20
 objectY,25
-objectZ,41
+objectZ,41	
+boundaryRadiusX,0	
+boundaryRadiusZ,0
+
+Name,arrow
+objectX,0
+objectY,25
+objectZ,100	
 boundaryRadiusX,0	
 boundaryRadiusZ,0
