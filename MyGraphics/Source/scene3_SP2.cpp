@@ -82,6 +82,14 @@ void scene3_SP2::Init()
     m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
     m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
     m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
+    //2nd light bulb
+    m_parameters[U_LIGHT1_POSITION] = glGetUniformLocation(m_programID, "lights[1].position_cameraspace");
+    m_parameters[U_LIGHT1_COLOR] = glGetUniformLocation(m_programID, "lights[1].color");
+    m_parameters[U_LIGHT1_POWER] = glGetUniformLocation(m_programID, "lights[1].power");
+    m_parameters[U_LIGHT1_KC] = glGetUniformLocation(m_programID, "lights[1].kC");
+    m_parameters[U_LIGHT1_KL] = glGetUniformLocation(m_programID, "lights[1].kL");
+    m_parameters[U_LIGHT1_KQ] = glGetUniformLocation(m_programID, "lights[1].kQ");
+    //2nd light bulb
     m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
     m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
     m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
@@ -89,6 +97,14 @@ void scene3_SP2::Init()
     m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
     m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
     m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
+
+    //second Light_bulb
+    m_parameters[U_LIGHT1_TYPE] = glGetUniformLocation(m_programID, "lights[1].type");
+    m_parameters[U_LIGHT1_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[1].spotDirection");
+    m_parameters[U_LIGHT1_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[1].cosCutoff");
+    m_parameters[U_LIGHT1_COSINNER] = glGetUniformLocation(m_programID, "lights[1].cosInner");
+    m_parameters[U_LIGHT1_EXPONENT] = glGetUniformLocation(m_programID, "lights[1].exponent");
+    //second Light_bulb
 
     // Get a handle for our "colorTexture" uniform
     m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
@@ -100,12 +116,12 @@ void scene3_SP2::Init()
 
     glUseProgram(m_programID);
 
-    glUniform1i(m_parameters[U_NUMLIGHTS], 1);
+    glUniform1i(m_parameters[U_NUMLIGHTS], 2);
 
     light[0].type = Light::LIGHT_DIRECTIONAL;
-    light[0].position.Set(0, 70, 0);
+    light[0].position.Set(0, 1200, 0);
     light[0].color.Set(1, 1, 1);
-    light[0].power = 1;
+    light[0].power = 0.5f;
     light[0].kC = 1.f;
     light[0].kL = 0.01f;
     light[0].kQ = 0.01f;
@@ -124,6 +140,31 @@ void scene3_SP2::Init()
     glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[0].cosCutoff);
     glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
+
+    //second light bulb
+    light[1].type = Light::LIGHT_DIRECTIONAL;
+    light[1].position.Set(0, 1200, -10000);
+    light[1].color.Set(1, 1, 1);
+    light[1].power = 1.5f;
+    light[1].kC = 1.f;
+    light[1].kL = 0.01f;
+    light[1].kQ = 0.01f;
+    light[1].cosCutoff = cos(Math::DegreeToRadian(45));
+    light[1].cosInner = cos(Math::DegreeToRadian(30));
+    light[1].exponent = 3.f;
+    light[1].spotDirection.Set(0.f, 1.f, 0.f);
+
+    glUniform1i(m_parameters[U_LIGHT1_TYPE], light[1].type);
+    glUniform3fv(m_parameters[U_LIGHT1_COLOR], 1, &light[1].color.r);
+    glUniform1f(m_parameters[U_LIGHT1_POWER], light[1].power);
+    glUniform1f(m_parameters[U_LIGHT1_KC], light[1].kC);
+    glUniform1f(m_parameters[U_LIGHT1_KL], light[1].kL);
+    glUniform1f(m_parameters[U_LIGHT1_KQ], light[1].kQ);
+    glUniform1f(m_parameters[U_LIGHT1_KQ], light[1].kQ);
+    glUniform1f(m_parameters[U_LIGHT1_COSCUTOFF], light[1].cosCutoff);
+    glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
+    glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
+    //second light bulb
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene3.txt");
@@ -150,6 +191,9 @@ void scene3_SP2::Init()
     meshList[GEO_LIGHT_WRAP]->textureID = LoadTGA("Image//light_warpping.tga");
     meshList[GEO_LIGHT_WRAP]->material = MaterialBuilder::GenerateBlinn();
 
+    meshList[GEO_LIGHT_END] = MeshBuilder::GenerateQuad("light end", Color(1, 1, 1));
+    meshList[GEO_LIGHT_END]->textureID = LoadTGA("Image//white_warp.tga");
+
     on_light = true;
 
     Mtx44 projection;
@@ -174,7 +218,17 @@ void scene3_SP2::Init()
 
     //animating the warp
     warp_lightZ = 0;
+    wait_on_white_screen = 0;
+    start_white_screen = false;
     //animating the warp
+
+    //for the 2nd light bulb
+    turn_on_2nd = true;
+    //for the 2nd light bulb
+
+    //animating the light ending
+    scaleLightEnd = 1;
+    //animating the light ending
 
     std::cout << "Number of objects in Scenario 2: " << camera.storage_of_objects.size() << std::endl;
 }
@@ -232,6 +286,14 @@ void scene3_SP2::Update(double dt)
     if (Application::IsKeyPressed(VK_NUMPAD3)) {
         Application::changeIntoScenario3();
     }
+    //transition to the 3rd scenario
+    if (start_white_screen) {   
+        wait_on_white_screen += dt;
+        if (wait_on_white_screen > 0.5) {
+            Application::changeIntoScenario3();
+        }
+    }
+    //transition to the 3rd scenario
 }
 
 /******************************************************************************/
@@ -351,6 +413,22 @@ void scene3_SP2::Render()
         modelStack.PopMatrix();
     }
 
+    if (light[1].type == Light::LIGHT_DIRECTIONAL)
+    {
+        Vector3 lightDir(light[1].position.x, light[1].position.y, light[1].position.z);
+        Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
+        glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightDirection_cameraspace.x);
+    }
+    if (turn_on_2nd) {
+        Position lightPosition_cameraspace = viewStack.Top() * light[1].position;
+        glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightPosition_cameraspace.x);
+        modelStack.PushMatrix();
+        modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
+        modelStack.Scale(0.5f, 0.5f, 0.5f);
+        renderMesh(meshList[GEO_LIGHTBALL], false);
+        modelStack.PopMatrix();
+    }
+
     renderMesh(meshList[GEO_AXES], false);
 
     modelStack.PushMatrix();
@@ -363,6 +441,10 @@ void scene3_SP2::Render()
     modelStack.PopMatrix();
 
     renderWarp();
+
+    if (start_white_screen) {
+        RenderImageOnScreen(meshList[GEO_LIGHT_END], scaleLightEnd, 40, 30);
+    }
 
     std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
@@ -519,6 +601,11 @@ void scene3_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the skybox
+*/
+/******************************************************************************/
 void scene3_SP2::RenderSkybox()
 {
     modelStack.PushMatrix();
@@ -526,6 +613,11 @@ void scene3_SP2::RenderSkybox()
     modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the space Ship
+*/
+/******************************************************************************/
 void scene3_SP2::renderSpaceShip() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "spaceship") {
@@ -539,8 +631,16 @@ void scene3_SP2::renderSpaceShip() {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to animate the spaceship and it's logic
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene3_SP2::animateSpaceShip(double dt) {
-    if (toggleUp == false) 
+    //this is to make the spaceship looks jittering
+    if (toggleUp == false)  
 	{
         jitteringShipY -= 15 * (float)(dt);
         if (jitteringShipY < -1) 
@@ -556,6 +656,8 @@ void scene3_SP2::animateSpaceShip(double dt) {
             toggleUp = false;
         }
     }
+    //this is to make the spaceship looks jittering
+    //when it is warping the spaceship, skybox, and the stars look distorted
     if (warppingOn == true) 
 	{
         scaleShipZ += 30 * (float)(dt);
@@ -565,14 +667,24 @@ void scene3_SP2::animateSpaceShip(double dt) {
             warppingOn = false;
         }
     }
+    //after some time, distorting stopped and spaceship seems to be travelling
     else if (scaleShipZ > 5 && warppingOn == false)
 	{
+        if (scaleShipZ < 15) {  //animating the light warp end
+            start_white_screen = true;
+            scaleLightEnd +=  500 * (float)(dt);
+        }
         scaleShipZ -= 10 * (float)(dt);
         flyToZ -= 1000 * (float)(dt);
         camera.position.z -= 1000 * (float)(dt);
     }
 }   
 
+/******************************************************************************/
+/*!
+\brief - a method to render the warp
+*/
+/******************************************************************************/
 void scene3_SP2::renderWarp() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "Light Warp1" || 
@@ -586,7 +698,28 @@ void scene3_SP2::renderWarp() {
             it.getName() == "Light Warp9" ||
             it.getName() == "Light Warp10" ||
             it.getName() == "Light Warp11" ||
-            it.getName() == "Light Warp12") {
+            it.getName() == "Light Warp12" ||
+            it.getName() == "Light Warp13" ||
+            it.getName() == "Light Warp14" ||
+            it.getName() == "Light Warp15" ||
+            it.getName() == "Light Warp16" ||
+            it.getName() == "Light Warp17" ||
+            it.getName() == "Light Warp18" ||
+            it.getName() == "Light Warp19" ||
+            it.getName() == "Light Warp20" ||
+            it.getName() == "Light Warp21" ||
+            it.getName() == "Light Warp22" ||
+            it.getName() == "Light Warp23" ||
+            it.getName() == "Light Warp24" ||
+            it.getName() == "Light Warp25" ||
+            it.getName() == "Light Warp26" ||
+            it.getName() == "Light Warp27" ||
+            it.getName() == "Light Warp28" ||
+            it.getName() == "Light Warp29" ||
+            it.getName() == "Light Warp30" ||
+            it.getName() == "Light Warp31" ||
+            it.getName() == "Light Warp32" ||
+            it.getName() == "Light Warp33") {
             modelStack.PushMatrix();
             modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()); 
             modelStack.Scale(1, 1, 1 + warp_lightZ);
@@ -596,6 +729,13 @@ void scene3_SP2::renderWarp() {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to animate the warp and it's logic
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene3_SP2::animateWarp(double dt) {
     warp_lightZ += 700 * (float)(dt);
 }

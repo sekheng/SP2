@@ -98,6 +98,7 @@
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\NPC.cpp" />
+    <ClCompile Include="Source\NumPad.cpp" />
     <ClCompile Include="Source\objectsForDisplay.cpp" />
     <ClCompile Include="Source\Quest.cpp" />
     <ClCompile Include="Source\removeMonospace.cpp" />
@@ -123,6 +124,7 @@
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
     <ClInclude Include="Source\NPC.h" />
+    <ClInclude Include="Source\NumPad.h" />
     <ClInclude Include="Source\objectsForDisplay.h" />
     <ClInclude Include="Source\Quest.h" />
     <ClInclude Include="Source\removeMonospace.h" />
@@ -153,6 +155,9 @@
     <Image Include="Image\winebottle.tga" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="cameraDriven\scene1.txt" />
+    <Text Include="cameraDriven\scene2.txt" />
+    <Text Include="cameraDriven\scene3.txt" />
     <Text Include="scenario2Driven\objects.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

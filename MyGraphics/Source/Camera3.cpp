@@ -18,7 +18,7 @@ Default constructor
 */
 /******************************************************************************/
 Camera3::Camera3()
-    : boundaryX(0), boundaryZ(0), num_of_objects(0)
+    : boundaryX(0), boundaryZ(0)
 {
 }
 
@@ -30,6 +30,7 @@ Destructor
 /******************************************************************************/
 Camera3::~Camera3()
 {
+    storage_of_objects.erase(storage_of_objects.begin(), storage_of_objects.end());
 }
 
 /******************************************************************************/
@@ -81,6 +82,9 @@ void Camera3::Init(const char *fileLocation)
         while (!fileStream.eof()) {
             string data = "";
             getline(fileStream, data);
+            if (data == "" || data == "\r") {
+                continue;
+            }
             char *nextStuff;
             char *stringtoken = strtok_s(const_cast<char*>(data.c_str()), ",", &nextStuff);
             string taking_the_stuff = "";
@@ -135,15 +139,11 @@ void Camera3::Init(const char *fileLocation)
     it = cameraCoordinates.find("boundscheckz");
     boundaryZ = it->second;
 
-    if (cameraCoordinates.count("numberofobjects") == 1) {
-        it = cameraCoordinates.find("numberofobjects");
-        num_of_objects = static_cast<size_t>(it->second);
-    }
-
     if (cameraCoordinates.count("crosshairradius") == 1) {
         it = cameraCoordinates.find("crosshairradius");
         crossHairRadius = it->second;
     }
+    cameraCoordinates.clear();
 }
 /******************************************************************************/
 /*!
@@ -466,6 +466,9 @@ void Camera3::InitObjects(const char *fileLocation) {
             string data = "";
             getline(fileStream, data);
             if (data == "\r" || data == "") {
+                if (objectMap.empty() == true) {
+                    continue;
+                }
                 map<string, string>::iterator it = objectMap.find("name");
                 string contain_name = it->second;
                 it = objectMap.find("objectx");

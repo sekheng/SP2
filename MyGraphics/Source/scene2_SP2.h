@@ -25,6 +25,7 @@ Class scene2_SP2:
 \brief
 inheirited from Scene and made improvised to it.
 To turn it into a game.
+This is Scenario 3
 */
 /******************************************************************************/
 class scene2_SP2 : public Scene
@@ -43,6 +44,12 @@ class scene2_SP2 : public Scene
 		GEO_VAULTWHEEL,
 		GEO_VAULTSTICK,
 		GEO_VAULTDOOR,
+		GEO_NUMPAD,
+		GEO_NUMROLL1,
+		GEO_NUMROLL2,
+		GEO_NUMROLL3,
+		GEO_NUMROLL4,
+		GEO_MENU,
 
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
@@ -54,6 +61,10 @@ class scene2_SP2 : public Scene
         //User Interface
 
         GEO_BOX,
+
+        //DeadPOOL
+        GEO_DEADPOOL,
+        //DeadPOOL
 
         NUM_GEOMETRY,
     };
@@ -100,11 +111,15 @@ private:
 	bool wheelturn;
 	bool stickpush;
 	bool dooropen;
+	bool text;
+	bool screentext;
     Light light[1];
     float LSPEED = 10.f;
 	float wheelturning;
 	float stickpushing;
 	float dooropening;
+	float rotating;
+	//renderobj function
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
     void RenderRobot();
@@ -112,7 +127,14 @@ private:
     void RenderLandingVehicle();
     void RenderSpaceShuttle();
     void RenderVault();
+	void RenderNumpad();
+	void RenderNumroll();
+	void RenderMenu();
+
+	//animation function
 	void VaultAnimation(double dt);
+	void NumpadAnimation(double dt);
+
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 
@@ -125,8 +147,10 @@ private:
 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
+	void RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
     void RenderUserInterface(Mesh* mesh, float size, float x, float y);
+
 
     double framePerSecond;
     float screenWidth, screenHeight;
@@ -134,6 +158,9 @@ private:
     //Adding rot civ into the game
     rot_civ Rot_Civ_;
     //Adding rot civ into the game
+    //rendering the DeadPool
+    void renderDeadPool();
+    //rendering the DeadPool
 };
 
 #endif

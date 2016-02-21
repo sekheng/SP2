@@ -22,6 +22,9 @@
     <Filter Include="scenario2Driven">
       <UniqueIdentifier>{f6f866c1-b76b-483d-a857-812b24d4c354}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cameraDriven">
+      <UniqueIdentifier>{1ed346f6-3b51-4765-b2b3-2ae122bb4537}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Texture.vertexshader">
@@ -92,7 +95,7 @@
     <ClCompile Include="Source\rot_civ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Quest.cpp">
+    <ClCompile Include="Source\NumPad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -169,7 +172,7 @@
     <ClInclude Include="Source\rot_civ.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Quest.h">
+    <ClInclude Include="Source\NumPad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -220,6 +223,15 @@
   <ItemGroup>
     <Text Include="scenario2Driven\objects.txt">
       <Filter>scenario2Driven</Filter>
+    </Text>
+    <Text Include="cameraDriven\scene1.txt">
+      <Filter>cameraDriven</Filter>
+    </Text>
+    <Text Include="cameraDriven\scene2.txt">
+      <Filter>cameraDriven</Filter>
+    </Text>
+    <Text Include="cameraDriven\scene3.txt">
+      <Filter>cameraDriven</Filter>
     </Text>
   </ItemGroup>
 </Project>

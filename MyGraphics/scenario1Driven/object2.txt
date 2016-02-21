@@ -1,6 +1,0 @@
-Name,KeyCard1
-objectX,-255
-objectY,0
-objectZ,307
-boundaryRadiusX,1.5
-boundaryRadiusZ,1.5
