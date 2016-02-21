@@ -671,7 +671,7 @@ void sceneSP2::Render()
     std::stringstream connectPosZ;
     connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
-    
+
     //****************************************************************************//
     //On screen objects
     //****************************************************************************//
