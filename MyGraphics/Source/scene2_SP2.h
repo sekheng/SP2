@@ -16,7 +16,6 @@ This is for landing on the vault
 #include "Mesh.h"
 #include "Light.h"
 #include "MatrixStack.h"
-#include "removeMonospace.h"
 #include "rot_civ.h"
 
 /******************************************************************************/

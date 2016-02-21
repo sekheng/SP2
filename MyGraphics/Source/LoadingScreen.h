@@ -1,15 +1,14 @@
 /******************************************************************************/
 /*!
-\file       scene3_SP2.h
+\file       LoadingScreen.h
 \author  Lee Sek Heng
 \par        email: 150629Z@mymail.nyp.edu.sg
 \brief -
-Creating a clean scene so that my teammates can code in ease
-Hopefully they don't mess it up
+The Loading Screen
 */
 /******************************************************************************/
-#ifndef SCENE3_SP2_H_
-#define SCENE3_SP2_H_
+#ifndef LOADINGSCREEN_H_
+#define LOADINGSCREEN_H_
 
 #include "Scene.h"
 #include "Mesh.h"
@@ -19,26 +18,21 @@ Hopefully they don't mess it up
 
 /******************************************************************************/
 /*!
-Class scene3_SP2:
+Class LoadingScreen:
 \brief
-inheirited from Scene and made improvised to it.
-To turn it into a game.
-This is the Scenario 3.
+Just Rendering of the Loading Screen to ease the boredom of player when initialising other scenes
 */
 /******************************************************************************/
-class scene3_SP2 : public Scene
+class LoadingScreen : public Scene
 {
     enum GEOMETRY_TYPE
     {
         GEO_AXES,
         GEO_LIGHTBALL,
         GEO_COMIC_TEXT,
-        //skybox
-        GEO_SPACE_SKYBOX,
-        //skybox
-        GEO_FLYINGVEHICLE,
-        GEO_LIGHT_WRAP,
-        GEO_LIGHT_END,
+        GEO_LOADING_SCREEN_TITLE,
+        GEO_LOADING_DOGE,
+        GEO_LOADING_BREATHING_CAT,
         NUM_GEOMETRY,
     };
 
@@ -63,19 +57,6 @@ class scene3_SP2 : public Scene
         U_LIGHT0_COSCUTOFF,
         U_LIGHT0_COSINNER,
         U_LIGHT0_EXPONENT,
-        //2nd light bulb
-        U_LIGHT1_POSITION,
-        U_LIGHT1_COLOR,
-        U_LIGHT1_POWER,
-        U_LIGHT1_KC,
-        U_LIGHT1_KL,
-        U_LIGHT1_KQ,
-        U_LIGHT1_TYPE,
-        U_LIGHT1_SPOTDIRECTION,
-        U_LIGHT1_COSCUTOFF,
-        U_LIGHT1_COSINNER,
-        U_LIGHT1_EXPONENT,
-        //2nd light bulb
         U_NUMLIGHTS,
         U_COLOR_TEXTURE_ENABLED,
         U_COLOR_TEXTURE,
@@ -85,16 +66,17 @@ class scene3_SP2 : public Scene
     };
 
 public:
-    scene3_SP2(float screenwidth, float screenheight);
-    ~scene3_SP2();
+    LoadingScreen(float screenwidth, float screenheight);
+    ~LoadingScreen();
 
     virtual void Init();
     virtual void Update(double dt);
     virtual void Render();
     virtual void Exit();
+
 private:
     bool on_light;
-    Light light[2];
+    Light light[1];
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
     unsigned m_vertexArrayID;
@@ -114,38 +96,8 @@ private:
     double framePerSecond;
     float screenWidth, screenHeight;
 
-    void RenderSkybox();
-    void renderSpaceShip();
-
-    //animating the spaceShip
-    void animateSpaceShip(double dt);
-    float jitteringShipY;
-    bool toggleUp;
-    float scaleShipZ;
-    bool warppingOn;
-    float flyToZ;
-    //animating the spaceShip
-
-    //animating the SkyBox
-    float scaleSkyBoxZ_;
-    //animating the SkyBox
-
-    //rendering of the warp
-    void renderWarp();
-    //rendering of the warp
-
-    //animating of the warp
-    void animateWarp(double dt);
-    float warp_lightZ;
-    double wait_on_white_screen;
-    bool start_white_screen;
-    float scaleLightEnd;
-    //animating of the warp
-
-    //logic for 2nd light bulb
-    bool turn_on_2nd;
-    //logic for 2nd light bulb
-
+    vector<string> loadingHints;
+    void initLoadingHints(const char *fileName);
 };
 
 
