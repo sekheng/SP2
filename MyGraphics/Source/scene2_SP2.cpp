@@ -223,14 +223,20 @@ void scene2_SP2::Init()
     camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 
 	//vault animation
-	wheelturn = stickpush = dooropen = text = screentext = firstroll = secondroll = thirdroll = fourthroll = check = false;
-	wheelturning = stickpushing = dooropening = firstrotate = secondrotate = thirdrotate = fourthrotate = time = arrow= 0;
-	time_delay = 0.2;
+	wheelturn = stickpush = dooropen /*= screentext = firstroll = secondroll = thirdroll = fourthroll = check */= false;
+	wheelturning = stickpushing = dooropening /*= firstrotate = secondrotate = thirdrotate = fourthrotate = time = arrow*/= 0;
+	/*time_delay = 0.2;
 	changearrow = 19.5;
 	rendererror = false;
-	digit1 = digit2 = digit3 = digit4 = 0;
-
-
+	digit1 = digit2 = digit3 = digit4 = 0;*/
+	time=0;
+	time_delay = 0.2;
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "numpad") {
+			Numpad.Init(camera, Vector3(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()));
+			break;
+		}
+	}
 }
 
 /******************************************************************************/
@@ -245,8 +251,11 @@ void scene2_SP2::Update(double dt)
 {
     camera.Update(dt);
 	VaultAnimation(dt);
-	NumpadAnimation(dt);
-	NumpadVerify();
+	Numpad.Update(dt);
+	Numpad.NumpadProgram();
+
+	/*NumpadAnimation(dt);
+	NumpadVerify();*/
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -307,12 +316,14 @@ void scene2_SP2::Update(double dt)
 	if (Application::IsKeyPressed('B'))
 		wheelturn = true;
 
-	if (Application::IsKeyPressed('C')&&camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
-		screentext=true;
-	if (Application::IsKeyPressed('X'))
+	if (Application::IsKeyPressed('C') && Numpad.interaction())
+		screentext = true;
+	if (Application::IsKeyPressed('X') || !Numpad.interaction())
 		screentext = false;
+	
+	time += dt;
 
-	if (Application::IsKeyPressed(VK_RIGHT) && camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+	/*if (Application::IsKeyPressed(VK_RIGHT) && Numpad.interaction())
 	{
 		if (time>time_delay)
 		{
@@ -327,11 +338,10 @@ void scene2_SP2::Update(double dt)
 			{
 				arrow = 0;
 			}
-
 		}
 	}
 
-	if (Application::IsKeyPressed(VK_LEFT) && camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+	if (Application::IsKeyPressed(VK_LEFT) && Numpad.interaction())
 	{
 		if (time>time_delay)
 		{
@@ -349,7 +359,7 @@ void scene2_SP2::Update(double dt)
 		}
 	}
 
-	if (Application::IsKeyPressed('H') && camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+	if (Application::IsKeyPressed('H') && Numpad.interaction())
 	{
 		check = true;
 	}
@@ -357,7 +367,9 @@ void scene2_SP2::Update(double dt)
 	{
 		check = false;
 	}
-	time += dt;
+	time += dt;*/
+
+
 }
 
 /******************************************************************************/
@@ -540,24 +552,22 @@ void scene2_SP2::Render()
     renderDeadPool();
     //rendering DeadPOOL
 
-	//RenderMenu();
-	//modelStack.Rotate(90, 1, 0, 0);
-	if (/*Application::IsKeyPressed('C')*/ screentext==true)
+	if (/*Numpad.screenmenu()*/ screentext == true)
 	{
 		RenderNumPadOnScreen(meshList[GEO_NUMPAD], 16, 40, 30, 0, 0,1,0);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL1], 15, 40, 30, 2, 0 + firstrotate,1, 0);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 55, 30, 2, 0 + secondrotate, 1, 0);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 70, 30, 2, 0 + thirdrotate, 1, 0);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 85, 30, 2, 0 + fourthrotate, 1, 0);
-		RenderNumPadOnScreen(meshList[GEO_ARROW], 3, changearrow, 3, 7, -90, 0, 1); //19.5 34.5 49.5 64.5
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL1], 15, 40, 30, 2, 0 + Numpad.getfirstrotate(),1, 0);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 55, 30, 2, 0 + Numpad.getsecondrotate(), 1, 0);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 70, 30, 2, 0 + Numpad.getthirdrotate(), 1, 0);
+		RenderNumPadOnScreen(meshList[GEO_NUMROLL4], 15, 85, 30, 2, 0 + Numpad.getfourthrotate(), 1, 0);
+		RenderNumPadOnScreen(meshList[GEO_ARROW], 3, Numpad.getarrowposition(), 3, 7, -90, 0, 1); //19.5 34.5 49.5 64.5
 	}
 
-	if (rendererror == true)
+	if (Numpad.displayerror() == true)
 	{
-		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Try Again!", Color(1, 0, 0), 5, 6, 8);
+			RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Try Again!", Color(1, 0, 0), 5, 6, 8);
 	}
 	//numpad text
-	if (text==true)
+	if (Numpad.interactiontext())
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(5, 10, 40);
@@ -594,7 +604,7 @@ void scene2_SP2::Render()
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 
 	/*std::stringstream input;
-	input << "FPS : " << digit1 << digit2 << digit3 << digit4;
+	input << "FPS : " << Numpad.getdigit1() << Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();
 	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);*/
 
 }
@@ -967,7 +977,7 @@ void scene2_SP2::RenderNumpad()
 
 			modelStack.PushMatrix();
 			modelStack.Translate(-25, 0, 5);
-			modelStack.Rotate(firstrotate, 1, 0, 0);
+			modelStack.Rotate(Numpad.getfirstrotate(), 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL1], false);
 			modelStack.PopMatrix();
@@ -985,7 +995,7 @@ void scene2_SP2::RenderNumpad()
 			modelStack.PushMatrix();
 			modelStack.Translate(-15,0,5);
 			//modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Rotate(secondrotate, 1, 0, 0);
+			modelStack.Rotate(Numpad.getsecondrotate(), 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL2], false);
 			modelStack.PopMatrix();
@@ -1003,7 +1013,7 @@ void scene2_SP2::RenderNumpad()
 			modelStack.PushMatrix();
 			modelStack.Translate(-5, 0, 5);
 			//modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Rotate(thirdrotate, 1, 0, 0);
+			modelStack.Rotate(Numpad.getthirdrotate(), 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL3], false);
 			modelStack.PopMatrix();
@@ -1021,7 +1031,7 @@ void scene2_SP2::RenderNumpad()
 			modelStack.PushMatrix();
 			modelStack.Translate(5,0,5);
 			//modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Rotate(fourthrotate, 1, 0, 0);
+			modelStack.Rotate(Numpad.getfourthrotate(), 1, 0, 0);
 			modelStack.Scale(10, 10, 10);
 			renderMesh(meshList[GEO_NUMROLL4], false);
 			modelStack.PopMatrix();
@@ -1061,39 +1071,55 @@ void scene2_SP2::RenderArrow()
 
 void scene2_SP2::VaultAnimation(double dt)
 {
-	if (wheelturn == true) //if 'B' pressed, wheel start rotating
+	if (Numpad.NumpadVerify()==true)
 	{
-		screentext = false;
-		camera.position.x = 0;
-		camera.position.y = 20;
-		camera.position.z = 150;
-		wheelturning += 100 * (float)(dt);
-		if (wheelturning > 360)// wheel will rotate 360 degree
+			camera.position.x = 0;
+			camera.position.y = 20;
+			camera.position.z = 150;
+			wheelturning += 100 * (float)(dt);
+			if (wheelturning > 360)// wheel will rotate 360 degree
+			{
+				wheelturning = 360;//wheel will stop at 360 degree
+				stickpush = true;
+			}
+		if (stickpush == true) //stick start pushing after wheel stop turning
 		{
-			wheelturning = 360;//wheel will stop at 360 degree
-			stickpush = true; 
+			stickpushing += 50 * (float)(dt);
+			if (stickpushing > 50) // stick will be translated +200 to x-axis
+			{
+				stickpushing = 50; // stick will stop when x=+200
+				dooropen = true;
+			}
+		}
+		if (dooropen == true)
+		{
+			dooropening += 20 * (float)(dt);
+			if (dooropening > 90) //door rotate 90 degree
+				dooropening = 90;
 		}
 	}
-	if (stickpush == true) //stick start pushing after wheel stop turning
+	/*else
 	{
-		stickpushing += 50 * (float)(dt);
-		if (stickpushing > 50) // stick will be translated +200 to x-axis
+		rendererror = true;
+		wheelturn = false;
+		if (time < time_delay)
 		{
-			stickpushing = 50; // stick will stop when x=+200
-			dooropen = true;
+
+			rendererror = true;
+
 		}
-	}
-	if (dooropen == true) 
-	{
-		dooropening += 20 * (float)(dt);
-		if (dooropening > 90) //door rotate 90 degree
-			dooropening = 90;
-	}
+		else
+		{
+			rendererror = false;
+			time = 0;
+		}
+	}*/
+	
 }
 
 void scene2_SP2::NumpadAnimation(double dt)
 {
-	if (camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
+	/*if (camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
 	{
 		text = true;
 	}
@@ -1160,14 +1186,14 @@ void scene2_SP2::NumpadAnimation(double dt)
 			}
 			input[3] = digit4;
 		}
-	}
+	}*/
 	
 	
 }
 
 void scene2_SP2::NumpadVerify()
 {
-	if (check == true)
+	/*if (check == true)
 	{
 		if (digit1 == 9 && digit2 == 6 && digit3 == 6 && digit4 == 9)
 		{
@@ -1192,7 +1218,7 @@ void scene2_SP2::NumpadVerify()
 
 			}
 		}
-	}
+	}*/
 }
 
 void scene2_SP2::renderDeadPool() {

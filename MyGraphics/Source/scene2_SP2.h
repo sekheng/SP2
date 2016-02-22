@@ -17,6 +17,7 @@ This is for landing on the vault
 #include "Light.h"
 #include "MatrixStack.h"
 #include "rot_civ.h"
+#include "NumPad.h"
 
 /******************************************************************************/
 /*!
@@ -115,10 +116,6 @@ private:
 	bool dooropen;
 	bool text;
 	bool screentext;
-	bool firstroll;
-	bool secondroll;
-	bool thirdroll;
-	bool fourthroll;
 	bool check;
 	bool rendererror;
     Light light[1];
@@ -126,18 +123,18 @@ private:
 	float wheelturning;
 	float stickpushing;
 	float dooropening;
-	float firstrotate;
-	float secondrotate;
-	float thirdrotate;
-	float fourthrotate;
+	//float firstrotate;
+	//float secondrotate;
+	//float thirdrotate;
+	//float fourthrotate;
 	float time_delay;
-	float changearrow;
-	float arrow;
-	
-	int digit1;
-	int digit2;
-	int digit3;
-	int digit4;
+	//float changearrow;
+	//float arrow;
+	//
+	//int digit1;
+	//int digit2;
+	//int digit3;
+	//int digit4;
 	double time;
 
 	char answer[5];
@@ -169,6 +166,7 @@ private:
     unsigned m_parameters[U_TOTAL];
 
     Camera3 camera;
+	NumPad Numpad;
 
     MS modelStack, viewStack, projectionStack;
 
