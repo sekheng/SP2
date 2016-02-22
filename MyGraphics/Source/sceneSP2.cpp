@@ -223,11 +223,12 @@ void sceneSP2::Init()
     //initialise npc
     //example
     //npc1.Init("Najib",Vector3(2,2,2),5,5,camera,"NPC data//Najib.txt");
-    
+    QUEST1.Init("First NPC", Vector3(-100,0,100),5,5,camera,"NPC data//NPC_1.txt");
     //initialise quest
     //example
     //test_quest.Init("random quest", camera,2,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
     //test_quest.Quest_Taken(true);
+    One.Init("First quest", camera, 1, Vector3(30, 0, 90), 5, 5, Vector3(0, 0, 0), 5, 5);
     
 }
 
@@ -668,7 +669,9 @@ void sceneSP2::Render()
     
     modelStack.PopMatrix();
 
+
 	RenderStation();
+
 
     modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
@@ -990,6 +993,21 @@ void sceneSP2::RenderNPC()
     }
     modelStack.PopMatrix();
     */
+    modelStack.PushMatrix();
+    modelStack.Translate(QUEST1.NPC_getposition_x(), QUEST1.NPC_getposition_y(), QUEST1.NPC_getposition_z());
+    renderMesh(meshList[GEO_NPC1], false);
+    if (QUEST1.interaction() == true)
+    {
+        if (!Application::IsKeyPressed('E'))
+        {
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.getDialogue(true), Color(0, 1, 0), 3, 10, 10);
+        }
+        else
+        {
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.getDialogue(false), Color(0, 1, 0), 3, 10, 10);
+        }
+    }
+    modelStack.PopMatrix();
 }
 
 void sceneSP2::RenderQuestObjects()
@@ -1019,6 +1037,28 @@ void sceneSP2::RenderQuestObjects()
             modelStack.PopMatrix();
         }
     }
-    
     */
+    if (One.Result() == true)
+    {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
+    }
+    else
+    {
+        if (One.FirstObject_taken() == false)
+        {
+            //object 1
+            modelStack.PushMatrix();
+            modelStack.Translate(One.get_object1_x(), 0, One.get_object1_z());
+            renderMesh(meshList[GEO_SCREWDRIVER], false);
+            modelStack.PopMatrix();
+        }
+        if (One.SecondObject_taken() == false)
+        {
+            //object 2
+            modelStack.PushMatrix();
+            modelStack.Translate(One.get_object2_x(), 0, One.get_object2_z());
+            renderMesh(meshList[GEO_CONTAINER], false);
+            modelStack.PopMatrix();
+        }
+    }
 }
