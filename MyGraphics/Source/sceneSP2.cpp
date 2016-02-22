@@ -193,6 +193,9 @@ void sceneSP2::Init()
 	//SpaceStationKeyCard
 	meshList[GEO_KEYCARD2] = MeshBuilder::GenerateOBJ("KeyCard2", "OBJ//KeyCard.obj");
 	meshList[GEO_KEYCARD2]->textureID = LoadTGA("Image//KeyCard.tga");
+	//SpaceShuttle
+	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("SpaceShuttle", "OBJ//FlyingVehicle.obj");
+	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 
 
     //NPC
@@ -749,8 +752,8 @@ void sceneSP2::Render()
     modelStack.PopMatrix();
     //render ground mesh
 
-	//render cryostasis
-	RenderCryostasis();
+	//render Spaceship
+	RenderSpaceShuttle();
 
     modelStack.PushMatrix();
     RenderScrewDriver();
@@ -1094,11 +1097,18 @@ void sceneSP2::RenderGasoline()
 
 
 
-void sceneSP2::RenderCryostasis()
+void sceneSP2::RenderSpaceShuttle()
 {
-	modelStack.PushMatrix();
-	renderMesh(meshList[GEO_CRYOSTASIS], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Spaceshuttle") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(30, 30, 30);
+			renderMesh(meshList[GEO_SPACESHUTTLE], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 }
 void sceneSP2::RenderNPC()
 {
