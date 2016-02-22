@@ -26,8 +26,6 @@ public:
 
     objectsForDisplay hammer;
     bool hammerInHand;
-    void getItem();
-    
 
 private:
     Camera3 *dub_camera;

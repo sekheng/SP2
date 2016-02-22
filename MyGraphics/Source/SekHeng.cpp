@@ -4,7 +4,7 @@
 #include "Application.h"
 
 SekHeng::SekHeng()
-    : order_of_text(0), stage(0), interatingRadius(4), time(0), isOkay(false), hammerInHand(false)
+    : order_of_text(0), stage(0), interatingRadius(4), time(0), isOkay(false), hammerInHand(true)
 {
     hammer.init(Vector3(0, 0, 150), 2, 2, "hammer");
 }
@@ -57,9 +57,18 @@ void SekHeng::initDialogues(const char *fileLocation, Camera3& camera) {
 void SekHeng::Update(double dt) {
     time += dt;
     preventSpamming();
-    if (Application::IsKeyPressed('E')) {
-        if (hammer.boundaryCheck(dub_camera->position.x, dub_camera->position.z))
-            hammerInHand = true;
+    //when the quest is activated, checking whether the player has the hammer
+    if (Application::IsKeyPressed('E') && stage == 1 &&
+        interaction() == false && hammerInHand == true) {
+        FinishedQuest();
+    }
+    //when the quest is activated, checking whether the player has the hammer
+    
+    //Checking whether is this an active quest and the hammer is not collected,
+    //If the hammer is within it's interacting boundary, the hammer is collected
+    else if (hammerInHand == false && Application::IsKeyPressed('E') &&
+        interactingWithItem() == false && stage == 1) {
+        hammerInHand = true;
     }
 }
 
@@ -69,6 +78,7 @@ string SekHeng::returnDialogue() {
 
 void SekHeng::activateQuest() {
     stage = 1;
+    hammerInHand = false;
 }
 
 bool SekHeng::interaction() {
@@ -111,19 +121,14 @@ bool SekHeng::SekHengSayIsOk() {
 
 void SekHeng::FinishedQuest() {
     stage = 2;
-}
-
-void SekHeng::getItem() {
-    if (interaction() == false && interactingWithItem() == false) {
-        isOkay = true;
-    }
+    isOkay = true;
 }
 
 bool SekHeng::interactingWithItem() {
-    if ((objectPos.x + boundaryRadiusX + interatingRadius) > hammer.getObjectposX() &&
-        (objectPos.x - boundaryRadiusX - interatingRadius) < hammer.getObjectposX() &&
-        (objectPos.z + boundaryRadiusZ + interatingRadius) > hammer.getObjectposZ() &&
-        (objectPos.z - boundaryRadiusZ - interatingRadius) < hammer.getObjectposZ())
+    if ((hammer.getObjectposX() + hammer.getBoundaryRadiusX()) > dub_camera->position.x &&
+        (hammer.getObjectposX() - hammer.getBoundaryRadiusX()) < dub_camera->position.x &&
+        (hammer.getObjectposZ() + hammer.getBoundaryRadiusZ()) > dub_camera->position.z &&
+        (hammer.getObjectposZ() - hammer.getBoundaryRadiusZ()) < dub_camera->position.z)
     {
         return false;
     }
