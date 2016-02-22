@@ -262,6 +262,7 @@ void LoadingScreen::Render()
 
     RenderImageOnScreen(meshList[GEO_LOADING_BREATHING_CAT], 60, 12, 10);
 
+    srand(static_cast<size_t>(time(NULL)));
     int randomiseTheHint = Math::RandIntMinMax(0, loadingHints.size() - 1);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], loadingHints[randomiseTheHint], Color(0,1,0), 2, 17, 35);
 }
