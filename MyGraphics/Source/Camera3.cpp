@@ -82,6 +82,9 @@ void Camera3::Init(const char *fileLocation)
         while (!fileStream.eof()) {
             string data = "";
             getline(fileStream, data);
+            if (data == "" || data == "\r") {
+                continue;
+            }
             char *nextStuff;
             char *stringtoken = strtok_s(const_cast<char*>(data.c_str()), ",", &nextStuff);
             string taking_the_stuff = "";
@@ -463,6 +466,9 @@ void Camera3::InitObjects(const char *fileLocation) {
             string data = "";
             getline(fileStream, data);
             if (data == "\r" || data == "") {
+                if (objectMap.empty() == true) {
+                    continue;
+                }
                 map<string, string>::iterator it = objectMap.find("name");
                 string contain_name = it->second;
                 it = objectMap.find("objectx");

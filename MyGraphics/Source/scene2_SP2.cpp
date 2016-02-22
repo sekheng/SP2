@@ -204,6 +204,10 @@ void scene2_SP2::Init()
     meshList[GEO_PLANET_GROUND] = MeshBuilder::GenerateOBJ("Planet ground mesh", "OBJ//planet_ground_mesh.obj");
     meshList[GEO_PLANET_GROUND]->textureID = LoadTGA("Image//planet_ground_mesh.tga");
     //GroundMesh
+    
+    //DeadPOOL
+    meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("Dead Pool", "OBJ//DeadPool.obj");
+    meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//DeadPool.tga");
     on_light = true;
 
     Mtx44 projection;
@@ -531,6 +535,10 @@ void scene2_SP2::Render()
 	
 	//render arrow
 	//RenderArrow();
+
+    //rendering DeadPOOL
+    renderDeadPool();
+    //rendering DeadPOOL
 
 	//RenderMenu();
 	//modelStack.Rotate(90, 1, 0, 0);
@@ -1056,8 +1064,9 @@ void scene2_SP2::VaultAnimation(double dt)
 	if (wheelturn == true) //if 'B' pressed, wheel start rotating
 	{
 		screentext = false;
-		/*camera.position.x = 0;
-		camera.position.z = 150;*/
+		camera.position.x = 0;
+		camera.position.y = 20;
+		camera.position.z = 150;
 		wheelturning += 100 * (float)(dt);
 		if (wheelturning > 360)// wheel will rotate 360 degree
 		{
@@ -1180,7 +1189,22 @@ void scene2_SP2::NumpadVerify()
 				rendererror = false;
 				time = 0;
 
+
 			}
 		}
 	}
+}
+
+void scene2_SP2::renderDeadPool() {
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "DeadPool") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Rotate(-90, 0, 1, 0);
+            modelStack.Scale(4, 4, 4);
+            renderMesh(meshList[GEO_DEADPOOL], true);
+            modelStack.PopMatrix();
+            break;
+        }
+    }
 }

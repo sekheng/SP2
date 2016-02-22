@@ -74,3 +74,10 @@ objectY,25
 objectZ,100	
 boundaryRadiusX,0	
 boundaryRadiusZ,0
+
+Name,DeadPool
+objectX,0
+objectY,0
+objectZ,0
+boundaryRadiusX,0
+boundaryRadiusZ,0

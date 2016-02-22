@@ -16,7 +16,6 @@ This is for landing on the vault
 #include "Mesh.h"
 #include "Light.h"
 #include "MatrixStack.h"
-#include "removeMonospace.h"
 #include "rot_civ.h"
 
 /******************************************************************************/
@@ -25,6 +24,7 @@ Class scene2_SP2:
 \brief
 inheirited from Scene and made improvised to it.
 To turn it into a game.
+This is Scenario 3
 */
 /******************************************************************************/
 class scene2_SP2 : public Scene
@@ -60,6 +60,10 @@ class scene2_SP2 : public Scene
         //User Interface
 
         GEO_BOX,
+
+        //DeadPOOL
+        GEO_DEADPOOL,
+        //DeadPOOL
 
         NUM_GEOMETRY,
     };
@@ -181,6 +185,9 @@ private:
     //Adding rot civ into the game
     rot_civ Rot_Civ_;
     //Adding rot civ into the game
+    //rendering the DeadPool
+    void renderDeadPool();
+    //rendering the DeadPool
 };
 
 #endif

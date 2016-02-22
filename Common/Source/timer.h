@@ -1,8 +1,25 @@
+/******************************************************************************/
+/*!
+\file       timer.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+Taken from Mr Tang's framework
+This is creating a class for real time
+*/
+/******************************************************************************/
 #ifndef _TIMER_H
 #define _TIMER_H
 
 #include <windows.h>
 
+/******************************************************************************/
+/*!
+Class StopWatch:
+\brief
+Creating a real time based timer
+*/
+/******************************************************************************/
 class StopWatch
 {
  

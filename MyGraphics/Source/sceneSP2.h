@@ -16,7 +16,6 @@ Hopefully they don't mess it up
 #include "Light.h"
 #include "Camera3.h"
 #include "MatrixStack.h"
-#include "removeMonospace.h"
 #include "NPC.h"
 #include "StationScene.h"
 #include "Quest.h"
@@ -26,6 +25,7 @@ Class sceneSP2:
 \brief
 inheirited from Scene and made improvised to it. 
 To turn it into a game.
+This is Scenario 1
 */
 /******************************************************************************/
 class sceneSP2 : public Scene

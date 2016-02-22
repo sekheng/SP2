@@ -9,6 +9,7 @@
 //Include the standard C++ headers
 #include <stdio.h>
 #include <stdlib.h>
+#include "LoadingScreen.h"
 
 
 GLFWwindow* m_window;
@@ -172,6 +173,17 @@ void Application::Run()
 	//Main Loop
     const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
+    //rendering just the loading screen
+    Scene *loadingScreen = new LoadingScreen(static_cast<float>(mode->width), static_cast<float>(mode->height));
+    loadingScreen->Init();
+    loadingScreen->Update(m_timer.getElapsedTime());
+    loadingScreen->Render();
+    glfwSwapBuffers(m_window);
+    //Get and organize events, like keyboard and mouse input, window resizing, etc...
+    glfwPollEvents();
+    m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
+    //rendering just the loading screen
+
     scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     //scenario1->Init();
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
@@ -197,6 +209,7 @@ void Application::Run()
     delete scenario1;
     delete scenario3;
     delete scenario2;
+    delete loadingScreen;
 }
 
 /******************************************************************************/
