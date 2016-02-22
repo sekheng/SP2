@@ -18,7 +18,6 @@ void BGMDriven::init() {
 }
 
 void BGMDriven::playBackground() {
-
     engine->play2D(backGround, true);
     backGround->setDefaultVolume(0.5f);
 }

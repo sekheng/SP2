@@ -40,7 +40,7 @@ public:
     static void changeIntoScenario1();
     static void changeIntoScenario2();
 
-    BGMDriven *musics;
+    static BGMDriven *musics;
 private:
     static Scene *scene;
     static Scene * scenario1;

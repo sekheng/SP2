@@ -21,6 +21,10 @@ Scene* Application::scenario1;
 Scene* Application::scene;
 Scene* Application::scenario3;
 Scene* Application::scenario2;
+
+//Sound effects
+BGMDriven* Application::musics;
+//Sound effects
 /******************************************************************************/
 /*!
 \brief
