@@ -73,6 +73,9 @@ class sceneSP2 : public Scene
 		GEO_KEYCARD,
 		GEO_KEYCARD2,
 
+		//SpaceShuttle
+		GEO_SPACESHUTTLE,
+
         //NPC
         GEO_NPC1,
         GEO_NPC_QUEST1,
@@ -137,7 +140,7 @@ private:
     void RenderContainer();
     void RenderGasoline();
     //render quest items
-	void RenderCryostasis();
+	void RenderSpaceShuttle();
 
 	void RenderStation();
 

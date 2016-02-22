@@ -109,3 +109,10 @@ objectY,0
 objectZ,315
 boundaryRadiusX,30
 boundaryRadiusZ,4
+
+Name,Spaceshuttle
+objectX,0
+objectY,0
+objectZ,0
+boundaryRadiusX,130
+boundaryRadiusZ,120
