@@ -156,6 +156,7 @@ private:
 	//animation function
 	void VaultAnimation(double dt);
 	void NumpadAnimation(double dt);
+	void NumpadVerify();
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

@@ -242,6 +242,7 @@ void scene2_SP2::Update(double dt)
     camera.Update(dt);
 	VaultAnimation(dt);
 	NumpadAnimation(dt);
+	NumpadVerify();
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -1083,15 +1084,6 @@ void scene2_SP2::VaultAnimation(double dt)
 
 void scene2_SP2::NumpadAnimation(double dt)
 {
-	/*char answer[5] = "9669";
-	char input[5];*/
-	/*int digit1;
-	int digit2;
-	int digit3;
-	int digit4;*/
-	//digit1 = digit2 = digit3 = digit4 = 0;
-
-
 	if (camera.position.x > 4 && camera.position.x<45 && camera.position.z <80)
 	{
 		text = true;
@@ -1161,6 +1153,11 @@ void scene2_SP2::NumpadAnimation(double dt)
 		}
 	}
 	
+	
+}
+
+void scene2_SP2::NumpadVerify()
+{
 	if (check == true)
 	{
 		if (digit1 == 9 && digit2 == 6 && digit3 == 6 && digit4 == 9)
@@ -1187,5 +1184,3 @@ void scene2_SP2::NumpadAnimation(double dt)
 		}
 	}
 }
-
-
