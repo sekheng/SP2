@@ -9,5 +9,4 @@ cameraRotationY,180
 cameraSpeed,20
 boundsCheckX,10000
 boundsCheckZ,10000
-numberofObjects,0
 CrossHairRadius,3

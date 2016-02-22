@@ -108,6 +108,7 @@
     <ClCompile Include="Source\scene2_SP2.cpp" />
     <ClCompile Include="Source\scene3_SP2.cpp" />
     <ClCompile Include="Source\sceneSP2.cpp" />
+    <ClCompile Include="Source\SekHeng.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\StationScene.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
@@ -149,6 +150,8 @@
     <Text Include="cameraDriven\scene3.txt" />
     <Text Include="loadingScreenDriven\hints.txt" />
     <Text Include="scenario2Driven\objects.txt" />
+    <Text Include="sekheng\dialogues.txt" />
+    <Text Include="sekheng\sek_heng_stuff.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
