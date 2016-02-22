@@ -172,21 +172,30 @@ void sceneSP2::Init()
 	//SpaceStation
 	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("Station", "OBJ//Station.obj");
 	meshList[GEO_STATION]->textureID = LoadTGA("Image//Station.tga");
+	meshList[GEO_STATION]->material = MaterialBuilder::GenerateLambert();
 	//SpaceStationChair
 	meshList[GEO_CHAIR] = MeshBuilder::GenerateOBJ("Chair", "OBJ//Chair.obj");
 	meshList[GEO_CHAIR]->textureID = LoadTGA("Image//Chair.tga");
+	meshList[GEO_CHAIR]->material = MaterialBuilder::GenerateBlinn();
 	//SpaceStationTable
 	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("Table", "OBJ//Table.obj");
 	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
+	meshList[GEO_TABLE]->material = MaterialBuilder::GenerateBlinn();
+
 	//SpaceStationBox
 	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("Box", "OBJ//Box.obj");
 	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
+	meshList[GEO_BOX]->material = MaterialBuilder::GenerateBlinn();
+
 	//SpaceStationBox
 	meshList[GEO_DOOR] = MeshBuilder::GenerateOBJ("Door", "OBJ//Door.obj");
 	meshList[GEO_DOOR]->textureID = LoadTGA("Image//Door.tga");
+	meshList[GEO_DOOR]->material = MaterialBuilder::GenerateLambert();
+
 	//SpaceStationCryostasis
 	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("Cryostasis", "OBJ//cryostasis.obj");
 	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryostasis.tga");
+	meshList[GEO_CRYOSTASIS]->material = MaterialBuilder::GenerateLambert();
 	//SpaceStationKeyCard
 	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("KeyCard", "OBJ//KeyCard.obj");
 	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
@@ -196,7 +205,7 @@ void sceneSP2::Init()
 	//SpaceShuttle
 	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("SpaceShuttle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
-
+	meshList[GEO_SPACESHUTTLE]->material = MaterialBuilder::GenerateBlinn();
 
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
@@ -233,7 +242,7 @@ void sceneSP2::Init()
     //example
     //test_quest.Init("random quest", camera,2,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
     //test_quest.Quest_Taken(true);
-    //One.Init("First quest", camera, 1, Vector3(30, 0, 90),5, 5, Vector3(0, 0, 0), 5, 5);
+    One.Init("First quest", camera, 1, Vector3(30, 0, 90),5, 5, Vector3(0, 0, 0), 5, 5);
     //only one object needed to be found
 
     //Sek Heng's stuff and initialization
