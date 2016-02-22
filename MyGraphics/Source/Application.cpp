@@ -184,6 +184,10 @@ void Application::Run()
     m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
     //rendering just the loading screen
 
+    musics = new BGMDriven();
+    musics->init();
+    musics->playBackground();
+
     scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     //scenario1->Init();
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
@@ -210,6 +214,7 @@ void Application::Run()
     delete scenario3;
     delete scenario2;
     delete loadingScreen;
+    delete musics;
 }
 
 /******************************************************************************/

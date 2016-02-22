@@ -17,6 +17,7 @@ Taken from Mr Tang's original framework
 #include "scene2_SP2.h"
 #include "sceneSP2.h"
 #include "scene3_SP2.h"
+#include "BGMDriven.h"
 /******************************************************************************/
 /*!
 Class Application:
@@ -38,6 +39,8 @@ public:
     static void changeIntoScenario3();
     static void changeIntoScenario1();
     static void changeIntoScenario2();
+
+    BGMDriven *musics;
 private:
     static Scene *scene;
     static Scene * scenario1;
