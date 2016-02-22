@@ -220,6 +220,8 @@ void sceneSP2::Init()
 	doorSpeed = 0;
 	
 
+	camera.InitObjects("scenario1Driven//objects.txt");
+
     //initialise npc
     //example
     //npc1.Init("Najib",Vector3(2,2,2),5,5,camera,"NPC data//Najib.txt");
@@ -305,10 +307,16 @@ void sceneSP2::Update(double dt)
 
 	if (door.openSasame() == 2)
 	{
-		doorSpeed += (float)(LSPEED *dt) * 1;
-		if (doorSpeed > 30)
-		{
-			doorSpeed = 30;
+		for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+			if ((*it).getName() == "Door")
+			{
+				(*it).objectPos.x += (float)(LSPEED *dt) * 10;
+				if ((*it).objectPos.x  > -242)
+				{
+					(*it).objectPos.x = -242;
+				}
+				break;
+			}
 		}
 	}
 }
@@ -366,84 +374,193 @@ void sceneSP2::renderMesh(Mesh *mesh, bool enableLight)
 
 void sceneSP2::RenderStation()
 {
-	modelStack.PushMatrix();
-	modelStack.Translate(-275, 0, 290);
-	modelStack.Scale(20,10,10);
-	renderMesh(meshList[GEO_STATION], false);
-	modelStack.PopMatrix();
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Station") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(20, 10, 10);
+			renderMesh(meshList[GEO_STATION], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
 	//Table and chair set 1
-	modelStack.PushMatrix();
-	modelStack.Translate(-300, 0, 290);
-	modelStack.Scale(1.5, 1.5, 1.5);
-	renderMesh(meshList[GEO_CHAIR], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Chair1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_CHAIR], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
-	modelStack.PushMatrix();
-	modelStack.Rotate(180,0,1,0);
-	modelStack.Translate(300, 0, -295);
-	modelStack.Scale(1.5,1.5,1.5);
-	renderMesh(meshList[GEO_CHAIR], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Chair2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(180, 0, 1, 0);
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_CHAIR], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
-	modelStack.PushMatrix();
-	modelStack.Translate(-300, 0, 293);
-	modelStack.Scale(5, 4, 5);
-	renderMesh(meshList[GEO_TABLE], false);
-	modelStack.PopMatrix();
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Table1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_TABLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
 	//Table and chair set2 
-	modelStack.PushMatrix();
-	modelStack.Translate(-300, 0, 303);
-	modelStack.Scale(1.5, 1.5, 1.5);
-	renderMesh(meshList[GEO_CHAIR], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Chair3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_CHAIR], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
-	modelStack.PushMatrix();
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Translate(300, 0, -307);
-	modelStack.Scale(1.5, 1.5, 1.5);
-	renderMesh(meshList[GEO_CHAIR], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Chair4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(180, 0, 1, 0);
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_CHAIR], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
-	modelStack.PushMatrix();
-	modelStack.Translate(-300, 0, 305);
-	modelStack.Scale(5, 4, 5);
-	renderMesh(meshList[GEO_TABLE], false);
-	modelStack.PopMatrix();
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Table2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_TABLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
 
 	//Table and chair set3 
-	modelStack.PushMatrix();
-	modelStack.Translate(-300, 0, 280);
-	modelStack.Scale(1.5, 1.5, 1.5);
-	renderMesh(meshList[GEO_CHAIR], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Chair5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_CHAIR], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
-	modelStack.PushMatrix();
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Translate(300, 0, -284);
-	modelStack.Scale(1.5, 1.5, 1.5);
-	renderMesh(meshList[GEO_CHAIR], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Chair6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(180, 0, 1, 0);
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_CHAIR], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
-	modelStack.PushMatrix();
-	modelStack.Translate(-300, 0, 282);
-	modelStack.Scale(5, 4, 5);
-	renderMesh(meshList[GEO_TABLE], false);
-	modelStack.PopMatrix();
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Table3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_TABLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
 
 	//Box
-	modelStack.PushMatrix();
-	modelStack.Translate(-307, 0, 270);
-	modelStack.Scale(5, 5, 5);
-	renderMesh(meshList[GEO_BOX], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Box1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Box2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
-	modelStack.PushMatrix();
-	renderMesh(meshList[GEO_BOX], false);
-	modelStack.PopMatrix();
+	
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Box3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Box4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Box5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (float i = 0; i < 50; i += 5)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(-310, 0, 310 - i);
+		modelStack.Scale(5, 5, 5);
+		renderMesh(meshList[GEO_BOX], false);
+		modelStack.PopMatrix();
+	}
 
 	for (float i = 0; i < 50; i += 10)
 	{
@@ -471,27 +588,36 @@ void sceneSP2::RenderStation()
 		renderMesh(meshList[GEO_BOX], false);
 		modelStack.PopMatrix();
 	}
-	modelStack.PushMatrix();
-	modelStack.Translate(-270 + doorSpeed , 0, 260);
-	modelStack.Scale(5, 3, 6);
-	renderMesh(meshList[GEO_DOOR], false);
-	if (door.getQuestStage() == 1)
-	{
-		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to open door", Color(0, 1, 0), 3, 10, 10);
+
+	//Door
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Door") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 3, 6);
+			renderMesh(meshList[GEO_DOOR], true);
+			if (door.getQuestStage() == 1)
+			{
+				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to open door", Color(0, 1, 0), 3, 10, 10);
+			}
+			else if (door.getQuestStage() == 2)
+			{
+				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the damn key for your asshole", Color(0, 1, 0), 3, 8, 10);
+			}
+			else if (door.openSasame() == 1)
+			{
+				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Now Press E to put it into your asshole", Color(0, 1, 0), 3, 8, 10);
+			}
+			modelStack.PopMatrix();
+			break;
+		}
 	}
-	else if (door.getQuestStage() == 2)
-	{
-		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the damn key for your asshole", Color(0, 1, 0), 3, 8, 10);
-	}
-	else if (door.openSasame() == 1)
-	{
-		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Now Press E to put it into your asshole", Color(0, 1, 0), 3, 8, 10);
-	}
-	else if (door.openSasame() == 2)
-	{
-		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Gratz your asshole is wide open", Color(0, 1, 0), 3, 8, 10);
-	}
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(-270 + doorSpeed , 0, 260);
+	//modelStack.Scale(5, 3, 6);
+	//renderMesh(meshList[GEO_DOOR], false);
+	//modelStack.PopMatrix();
 
 	if (door.getQuestStage() == 3)
 	{
@@ -521,12 +647,17 @@ void sceneSP2::RenderStation()
 		}
 	}
 
-	modelStack.PushMatrix();
-	modelStack.Rotate(180, 0, 1, 0);
-	modelStack.Translate(280, 0, -315);
-	modelStack.Scale(1, 1, 1);
-	renderMesh(meshList[GEO_CRYOSTASIS], false);
-	modelStack.PopMatrix();
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Cryostasis") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(180, 0, 1, 0);
+			modelStack.Scale(1, 1, 1);
+			renderMesh(meshList[GEO_CRYOSTASIS], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
 }
 
@@ -670,10 +801,10 @@ void sceneSP2::Render()
 
 	RenderStation();
 
-    modelStack.PushMatrix();
+   /* modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
     renderMesh(meshList[GEO_INVIS_CURSOR], false);
-    modelStack.PopMatrix();
+    modelStack.PopMatrix();*/
 
     
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
