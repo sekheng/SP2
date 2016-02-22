@@ -803,7 +803,12 @@ void sceneSP2::Render()
 
 	RenderStation();
 
+<<<<<<< HEAD
+
+    modelStack.PushMatrix();
+=======
    /* modelStack.PushMatrix();
+>>>>>>> 3352afc5076e0757daa98e5a0aa018f7fb671932
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
     renderMesh(meshList[GEO_INVIS_CURSOR], false);
     modelStack.PopMatrix();*/
