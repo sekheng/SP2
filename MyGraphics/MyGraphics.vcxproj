@@ -137,6 +137,7 @@
     <ClInclude Include="Source\scene2_SP2.h" />
     <ClInclude Include="Source\scene3_SP2.h" />
     <ClInclude Include="Source\sceneSP2.h" />
+    <ClInclude Include="Source\SekHeng.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\StationScene.h" />
     <ClInclude Include="Source\Utility.h" />

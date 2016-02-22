@@ -218,7 +218,7 @@ void scene2_SP2::Init()
     camera.cursorCoordY = screenHeight / 2;
 
     Rot_Civ_.init("rot_civ//rot_civ_stuff.txt");
-    //Rot_Civ_.InitDialogues("rot_civ//rot_civ_dialogues.txt", camera);
+    Rot_Civ_.InitDialogues("rot_civ//rot_civ_dialogues.txt", camera);
     camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 
 	//vault animation

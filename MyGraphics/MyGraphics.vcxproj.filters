@@ -193,6 +193,9 @@
     <ClInclude Include="Source\BGMDriven.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\SekHeng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="scenario2Driven\objects.txt">
