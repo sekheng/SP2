@@ -73,8 +73,15 @@ class sceneSP2 : public Scene
 		GEO_KEYCARD,
 		GEO_KEYCARD2,
 
+		//SpaceShuttle
+		GEO_SPACESHUTTLE,
+
         //NPC
         GEO_NPC1,
+        GEO_NPC_QUEST1,
+        GEO_NPC_QUEST2,
+        GEO_NPC_QUEST3,
+        GEO_NPC_QUEST4,
         //NPC
 
         GEO_INVIS_CURSOR,
@@ -133,7 +140,7 @@ private:
     void RenderContainer();
     void RenderGasoline();
     //render quest items
-	void RenderCryostasis();
+	void RenderSpaceShuttle();
 
 	void RenderStation();
 
@@ -153,10 +160,18 @@ private:
     MS modelStack, viewStack, projectionStack;
 
     //NPC objects
-    NPC npc1;
+    NPC npc1;//example
+    NPC QUEST1;
+    NPC QUEST2;
+    NPC QUEST3;
+    NPC QUEST4;
 
     //Quest objects
-    Quest test_quest;
+    Quest test_quest;//example
+    Quest One;
+    Quest Two;
+    Quest Three;
+    Quest Four;
 
 	StationScene door;
 	float doorSpeed;

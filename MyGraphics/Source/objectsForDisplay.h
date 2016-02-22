@@ -33,9 +33,9 @@ public:
     float getObjectposX();
     float getObjectposY();
     float getObjectposZ();
+	Vector3 objectPos;
 
 protected:
-    Vector3 objectPos;
     float boundaryRadiusX, boundaryRadiusZ;
 };
 

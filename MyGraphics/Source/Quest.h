@@ -23,7 +23,7 @@ public:
     Quest();
     ~Quest();
 
-    void Init(string Name_, Camera3 &camera_address,
+    void Init(string Name_, Camera3 &camera_address, short no_of_objects,
         Vector3 Object_1_pos, float Object_1_bounds_x, float Object_1_bounds_z,
         Vector3 Object_2_pos, float Object_2_bound_x, float Object_2_bound_z
         );
@@ -58,6 +58,8 @@ private:
     bool Quest_accept;
 
     bool stop_change1,stop_change2;
+
+    short number_of_objects;
 protected:
 };
 

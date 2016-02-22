@@ -1,4 +1,4 @@
-positionx,-250
+positionx,-230
 positiony,5
 positionz,300
 upx,0
@@ -6,7 +6,7 @@ upy,1
 upz,0
 cameraRotationX,0
 cameraRotationY,180
-cameraSpeed,10
+cameraSpeed,20
 boundsCheckX,10000
 boundsCheckZ,10000
 numberofObjects,0
