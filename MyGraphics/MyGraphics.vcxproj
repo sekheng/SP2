@@ -53,13 +53,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\glew\include;$(SolutionDir)\glfw\include;$(SolutionDir)\Common\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\irrKlang-1.5.0\include;$(SolutionDir)\glew\include;$(SolutionDir)\glfw\include;$(SolutionDir)\Common\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;winmm.lib;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\glew\lib;$(SolutionDir)\glfw\lib-msvc120;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\irrKlang-1.5.0\include;$(SolutionDir)\glew\lib;$(SolutionDir)\glfw\lib-msvc120;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -91,6 +91,7 @@
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
+    <ClCompile Include="Source\LoadingScreen.cpp" />
     <ClCompile Include="Source\LoadOBJ.cpp" />
     <ClCompile Include="Source\LoadTGA.cpp" />
     <ClCompile Include="Source\main.cpp" />
@@ -117,6 +118,7 @@
     <ClInclude Include="Source\DetectMemoryLeak.h" />
     <ClInclude Include="Source\GameObject.h" />
     <ClInclude Include="Source\Light.h" />
+    <ClInclude Include="Source\LoadingScreen.h" />
     <ClInclude Include="Source\LoadOBJ.h" />
     <ClInclude Include="Source\LoadTGA.h" />
     <ClInclude Include="Source\Material.h" />
@@ -139,25 +141,10 @@
     <ClInclude Include="Source\Vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Image\back.tga" />
-    <Image Include="Image\bottom.tga" />
-    <Image Include="Image\chair.tga" />
-    <Image Include="Image\color2.tga" />
-    <Image Include="Image\dart.tga" />
-    <Image Include="Image\dartboard.tga" />
-    <Image Include="Image\doorman.tga" />
-    <Image Include="Image\front.tga" />
-    <Image Include="Image\left.tga" />
-    <Image Include="Image\right.tga" />
-    <Image Include="Image\Sachiko_Sonozaki.tga" />
-    <Image Include="Image\shoe.tga" />
-    <Image Include="Image\top.tga" />
-    <Image Include="Image\winebottle.tga" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="cameraDriven\scene1.txt" />
     <Text Include="cameraDriven\scene2.txt" />
     <Text Include="cameraDriven\scene3.txt" />
+    <Text Include="loadingScreenDriven\hints.txt" />
     <Text Include="scenario2Driven\objects.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

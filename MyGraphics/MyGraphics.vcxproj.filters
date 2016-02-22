@@ -16,14 +16,14 @@
     <Filter Include="Shader">
       <UniqueIdentifier>{05326d47-548e-4fca-90d7-0e1e602b0e12}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Image">
-      <UniqueIdentifier>{65d610ba-2193-4c6d-98e4-3b9b81dd9ff9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scenario2Driven">
       <UniqueIdentifier>{f6f866c1-b76b-483d-a857-812b24d4c354}</UniqueIdentifier>
     </Filter>
     <Filter Include="cameraDriven">
       <UniqueIdentifier>{1ed346f6-3b51-4765-b2b3-2ae122bb4537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loadingScreenDriven">
+      <UniqueIdentifier>{1adf3c1d-a83b-44d6-a5ae-5b31e859737f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +96,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\NumPad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Quest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LoadingScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -175,50 +181,12 @@
     <ClInclude Include="Source\NumPad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Image\back.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\bottom.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\color2.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\front.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\left.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\right.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\Sachiko_Sonozaki.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\top.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\chair.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\dart.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\dartboard.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\doorman.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\shoe.tga">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="Image\winebottle.tga">
-      <Filter>Image</Filter>
-    </Image>
+    <ClInclude Include="Source\Quest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LoadingScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="scenario2Driven\objects.txt">
@@ -232,6 +200,9 @@
     </Text>
     <Text Include="cameraDriven\scene3.txt">
       <Filter>cameraDriven</Filter>
+    </Text>
+    <Text Include="loadingScreenDriven\hints.txt">
+      <Filter>loadingScreenDriven</Filter>
     </Text>
   </ItemGroup>
 </Project>

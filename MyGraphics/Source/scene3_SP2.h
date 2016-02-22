@@ -16,7 +16,6 @@ Hopefully they don't mess it up
 #include "Light.h"
 #include "Camera3.h"
 #include "MatrixStack.h"
-#include "removeMonospace.h"
 
 /******************************************************************************/
 /*!

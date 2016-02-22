@@ -1,88 +1,38 @@
 /******************************************************************************/
 /*!
-\file       sceneSP2.h
+\file       LoadingScreen.h
 \author  Lee Sek Heng
 \par        email: 150629Z@mymail.nyp.edu.sg
 \brief -
-Creating a clean scene so that my teammates can code in ease
-Hopefully they don't mess it up
+The Loading Screen
 */
 /******************************************************************************/
-#ifndef SCENE_SP2_H_
-#define SCENE_SP2_H_
+#ifndef LOADINGSCREEN_H_
+#define LOADINGSCREEN_H_
 
 #include "Scene.h"
 #include "Mesh.h"
 #include "Light.h"
 #include "Camera3.h"
 #include "MatrixStack.h"
-#include "NPC.h"
-#include "StationScene.h"
-#include "Quest.h"
+
 /******************************************************************************/
 /*!
-Class sceneSP2:
+Class LoadingScreen:
 \brief
-inheirited from Scene and made improvised to it. 
-To turn it into a game.
-This is Scenario 1
+Just Rendering of the Loading Screen to ease the boredom of player when initialising other scenes
 */
 /******************************************************************************/
-class sceneSP2 : public Scene
+class LoadingScreen : public Scene
 {
     enum GEOMETRY_TYPE
     {
         GEO_AXES,
         GEO_LIGHTBALL,
         GEO_COMIC_TEXT,
-
-		GEO_LANDVEHICLE,
-		GEO_FLYINGVEHICLE,
-        //environment**********************************************/
-        GEO_SPACE_SKYBOX,
-        GEO_SPACE_GROUNDMESH,
-        //environment**********************************************/
-
-		//cryostasis
-		GEO_CRYOSTASIS,
-        
-        //User Interface
-        GEO_UI,
-        //User Interface
-
-        //quest items
-        GEO_SCREWDRIVER,
-        GEO_CONTAINER,
-        GEO_GASOLINE,
-        GEO_HAMMER,
-        //quest items
-
-
-
-		//SpaceStation
-		GEO_STATION,
-		//Chair
-		GEO_CHAIR,
-		//Table
-		GEO_TABLE,
-		//Box
-		GEO_BOX,
-		//Door
-		GEO_DOOR,
-		//KeyCard
-		GEO_KEYCARD,
-		GEO_KEYCARD2,
-
-        //NPC
-        GEO_NPC1,
-        GEO_NPC_QUEST1,
-        GEO_NPC_QUEST2,
-        GEO_NPC_QUEST3,
-        GEO_NPC_QUEST4,
-        //NPC
-
-        GEO_INVIS_CURSOR,
-
+        GEO_LOADING_SCREEN_TITLE,
+        GEO_LOADING_DOGE,
+        GEO_LOADING_BREATHING_CAT,
         NUM_GEOMETRY,
     };
 
@@ -116,36 +66,19 @@ class sceneSP2 : public Scene
     };
 
 public:
-    sceneSP2(float screenwidth, float screenheight);
-    ~sceneSP2();
+    LoadingScreen(float screenwidth, float screenheight);
+    ~LoadingScreen();
 
     virtual void Init();
     virtual void Update(double dt);
     virtual void Render();
     virtual void Exit();
+
 private:
     bool on_light;
     Light light[1];
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
-    void RenderSkybox();
-    void Rendergroundmesh();
-
-    //render quest items
-    void RenderScrewDriver();
-    void RenderHammer();
-    void RenderContainer();
-    void RenderGasoline();
-    //render quest items
-	void RenderCryostasis();
-
-	void RenderStation();
-
-    void RenderNPC();
-
-    void RenderQuestObjects();
-
-    void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 
@@ -156,31 +89,16 @@ private:
 
     MS modelStack, viewStack, projectionStack;
 
-    //NPC objects
-    NPC npc1;//example
-    NPC QUEST1;
-    NPC QUEST2;
-    NPC QUEST3;
-    NPC QUEST4;
-
-    //Quest objects
-    Quest test_quest;//example
-    Quest One;
-    Quest Two;
-    Quest Three;
-    Quest Four;
-
-	StationScene door;
-	float doorSpeed;
-
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
 
-
     double framePerSecond;
     float screenWidth, screenHeight;
+
+    vector<string> loadingHints;
+    void initLoadingHints(const char *fileName);
 };
 
 
-#endif
+#endif // !SCENE3_SP2_H_
