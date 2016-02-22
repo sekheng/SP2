@@ -233,7 +233,7 @@ void sceneSP2::Init()
     //example
     //test_quest.Init("random quest", camera,2,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
     //test_quest.Quest_Taken(true);
-    //One.Init("First quest", camera, 1, Vector3(30, 0, 90),5, 5, Vector3(0, 0, 0), 5, 5);
+    One.Init("First quest", camera, 1, Vector3(30, 0, 90),5, 5, Vector3(0, 0, 0), 5, 5);
     //only one object needed to be found
 }
 
