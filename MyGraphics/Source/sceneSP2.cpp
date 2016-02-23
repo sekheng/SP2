@@ -790,14 +790,14 @@ void sceneSP2::Render()
 
     //render ground mesh
     modelStack.PushMatrix();
-    modelStack.Scale(20, 1, 20);
+    modelStack.Scale(19.9f, 1, 19.9f);
     Rendergroundmesh();
     
     modelStack.PopMatrix();
     //render ground mesh
 
     modelStack.PushMatrix();
-    modelStack.Scale(20, 20, 20);
+    modelStack.Scale(19.9f, 19.9f, 19.9f);
     renderMesh(meshList[GEO_SPACE_WALL], false);
     modelStack.PopMatrix();
 
@@ -859,18 +859,18 @@ void sceneSP2::Render()
     //****************************************************************************//
     //On screen objects
     //****************************************************************************//
-    modelStack.PushMatrix();
-    //scale, translate, rotate
-    modelStack.Scale(20, 20, 1);
-    RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
-    modelStack.PopMatrix();
+    //modelStack.PushMatrix();
+    ////scale, translate, rotate
+    //modelStack.Scale(20, 20, 1);
+    //RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
+    //modelStack.PopMatrix();
 
 
     modelStack.PushMatrix();
     RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
     modelStack.PopMatrix();
 
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
     modelStack.PushMatrix();
     
@@ -889,7 +889,7 @@ void sceneSP2::Render()
     modelStack.PopMatrix();*/
 
     
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
+   // RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
