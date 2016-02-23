@@ -1213,7 +1213,7 @@ void sceneSP2::RenderNPC()
     */
     modelStack.PushMatrix();
     modelStack.Translate(QUEST1.NPC_getposition_x(), QUEST1.NPC_getposition_y(), QUEST1.NPC_getposition_z());
-    renderMesh(meshList[GEO_NPC1], false);
+    renderMesh(meshList[GEO_NPC1], true);
     if (QUEST1.interaction() == true)
     {
         if (!Application::IsKeyPressed('E'))
@@ -1314,7 +1314,7 @@ void sceneSP2::RenderQuestObjects()
     {
         modelStack.PushMatrix();
         modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
-        renderMesh(meshList[GEO_SCREWDRIVER], false);
+        renderMesh(meshList[GEO_CONTAINER], true);
         modelStack.PopMatrix();
     }
     /*else if (One.stage() == 2)
@@ -1462,7 +1462,7 @@ void sceneSP2::renderChunFei()
 			modelStack.Rotate(-90, 0, 1, 0);
 			modelStack.Rotate(headrotating, 1, 0, 0);
 			modelStack.Scale(1.5,1.5,1.5);
-			renderMesh(meshList[GEO_ROBOTHEAD], false);
+			renderMesh(meshList[GEO_ROBOTHEAD], true);
 			modelStack.PopMatrix();
 			break;
 		}
@@ -1474,7 +1474,7 @@ void sceneSP2::renderChunFei()
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			modelStack.Rotate(-90, 0, 1, 0);
 			modelStack.Scale(1.5,1.5,1.5);
-			renderMesh(meshList[GEO_ROBOTBODY], false);
+			renderMesh(meshList[GEO_ROBOTBODY], true);
 			modelStack.PopMatrix();
 			break;
 		}
@@ -1486,7 +1486,7 @@ void sceneSP2::renderChunFei()
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			modelStack.Rotate(-90, 0, 1, 0);
 			modelStack.Scale(1.5,1.5,1.5);
-			renderMesh(meshList[GEO_SWORD], false);
+			renderMesh(meshList[GEO_SWORD], true);
 			modelStack.PopMatrix();
 			break;
 		}
