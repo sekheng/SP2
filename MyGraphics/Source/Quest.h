@@ -79,6 +79,7 @@ public:
     float getObject1_X();
     float getObject1_Z();
     void Update(double dt);
+    bool questComplete();
 private:
     string name;
     Camera3 *camera;
@@ -87,6 +88,8 @@ private:
     float bounds_1, bounds_2;
     float x_2, y_2, z_2;
     bool CollectItem;
+    double time;
+    bool quest_complete;
 protected:
 };
 
