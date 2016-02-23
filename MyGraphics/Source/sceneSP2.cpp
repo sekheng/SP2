@@ -143,10 +143,6 @@ void sceneSP2::Init()
     meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
     //skybox
 
-	//Cryostasis
-	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("cryostasis", "OBJ//cryostasis.obj");
-	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryostasis.tga");
-
     //User Interface
     meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
     meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
@@ -311,6 +307,12 @@ void sceneSP2::Update(double dt)
     }
     sek_heng_.Update(dt);
     //Sek Heng's stuff
+
+    //just putting the teleport stuff in here
+    if (Application::IsKeyPressed('E') && sek_heng_.SekHengSayIsOk()) {
+        teleport();
+    }
+    //just putting the teleport stuff in here
 }
 
 /******************************************************************************/
@@ -768,6 +770,10 @@ void sceneSP2::Render()
     //RenderQuestObjects();
     //modelStack.PopMatrix();
 
+    //rendering teleporter box
+    Renderteleporter();
+    //rendering teleporter box
+
     //rendering Sek Heng
     renderingSekHeng();
     //rendering Sek Heng
@@ -1202,10 +1208,7 @@ void sceneSP2::renderingSekHeng() {
     renderMesh(meshList[GEO_NPC1], true);
     modelStack.PopMatrix();
     if (sek_heng_.interaction() == false) {
-            RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 18, 5);
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.getName(), Color(0, 1, 0), 3, 3.5, 5.5);
-            RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.returnDialogue(), Color(0, 1, 0), 3, 3.5, 4);
+        renderDialogueBox(sek_heng_.getName(), sek_heng_.returnDialogue());
     }
 
     //rendering of the hammer
@@ -1278,4 +1281,45 @@ void sceneSP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, fl
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();
+}
+
+void sceneSP2::Renderteleporter() {
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "TeleporterBox") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            renderMesh(meshList[GEO_CONTAINER], true);
+            modelStack.PopMatrix();
+            if (sek_heng_.SekHengSayIsOk() == true &&
+                it.getObjectposX() + 6 > camera.position.x &&
+                it.getObjectposX() - 6 < camera.position.x &&
+                it.getObjectposZ() + 6 > camera.position.z &&
+                it.getObjectposZ() - 6 < camera.position.z)
+            {
+                renderDialogueBox(it.getName(), "Press E to go to spaceship");
+            }
+            break;
+        }
+    }
+}
+
+void sceneSP2::renderDialogueBox(const string& name, const string& dialogue) {
+    RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 23, 5);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 3.5, 5.5);
+    RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
+}
+
+void sceneSP2::teleport() {
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "TeleporterBox") {
+            if (it.getObjectposX() + 6 > camera.position.x &&
+                it.getObjectposX() - 6 < camera.position.x &&
+                it.getObjectposZ() + 6 > camera.position.z &&
+                it.getObjectposZ() - 6 < camera.position.z)
+            {
+                Application::changeIntoScenario2();
+            }
+        }
+    }
 }

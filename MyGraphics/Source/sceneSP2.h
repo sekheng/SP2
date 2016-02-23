@@ -195,6 +195,17 @@ private:
     SekHeng sek_heng_;
     void renderingSekHeng();
     //Creating the player who gives the last quest
+
+    //making dialogue box easier for use
+    void renderDialogueBox(const string& name, const string& dialogue);
+    //making dialogue box easier for use
+
+    //rendering the teleporter
+    void Renderteleporter();
+    //rendering the teleporter
+    //logic of teleporter
+    void teleport();
+    //logic of teleporter
 };
 
 
