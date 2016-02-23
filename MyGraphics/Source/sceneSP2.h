@@ -20,6 +20,7 @@ Hopefully they don't mess it up
 #include "StationScene.h"
 #include "Quest.h"
 #include "SekHeng.h"
+#include "ChunfeiNPC.h"
 /******************************************************************************/
 /*!
 Class sceneSP2:
@@ -90,6 +91,11 @@ class sceneSP2 : public Scene
         //better UI by Sek Heng
         GEO_TEXT_BOX,
         //better UI by Sek Heng
+
+		//chunfei's NPC
+		GEO_ROBOTHEAD,
+		GEO_ROBOTBODY,
+		GEO_SWORD,
 
         NUM_GEOMETRY,
     };
@@ -206,6 +212,12 @@ private:
     //logic of teleporter
     void teleport();
     //logic of teleporter
+
+	float headrotating;
+	bool headrotate;
+	void renderChunFei();
+	void headanimation(double dt);
+	ChunfeiNPC robotNPC;
 };
 
 
