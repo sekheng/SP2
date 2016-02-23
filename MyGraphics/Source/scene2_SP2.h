@@ -169,6 +169,10 @@ private:
     //rendering the DeadPool
     void renderDeadPool();
     //rendering the DeadPool
+
+    //rendering dialogue box
+    void renderDialogueBox(const string& name, const string& dialogue);
+    //rendering dialogue box
 };
 
 #endif

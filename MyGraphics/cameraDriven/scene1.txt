@@ -1,4 +1,4 @@
-positionx,-230
+positionx,-280
 positiony,5
 positionz,300
 upx,0
@@ -7,6 +7,6 @@ upz,0
 cameraRotationX,0
 cameraRotationY,180
 cameraSpeed,20
-boundsCheckX,10000
-boundsCheckZ,10000
+boundsCheckX,300
+boundsCheckZ,350
 CrossHairRadius,3

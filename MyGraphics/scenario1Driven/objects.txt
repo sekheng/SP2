@@ -145,3 +145,10 @@ objectY,0
 objectZ,30
 boundaryRadiusX,5
 boundaryRadiusZ,110
+
+Name,TeleporterBox
+objectX,10
+objectY,0
+objectZ,10
+boundaryRadiusX,0
+boundaryRadiusZ,0

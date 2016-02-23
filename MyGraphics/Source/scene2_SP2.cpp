@@ -722,10 +722,7 @@ void scene2_SP2::RenderRobot()
 	modelStack.PopMatrix();
 
     if (Rot_Civ_.interaction() == false) {
-        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 18, 5);
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], Rot_Civ_.getName(), Color(0, 1, 0), 3, 3.5, 5.5);
-        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], Rot_Civ_.returnDialogue(), Color(0, 1, 0), 3, 3.5, 4);
+        renderDialogueBox(Rot_Civ_.getName(), Rot_Civ_.returnDialogue());
     }
 }
 
@@ -1060,4 +1057,11 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, 
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();
+}
+
+void scene2_SP2::renderDialogueBox(const string& name, const string& dialogue) {
+    RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 18, 5);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 3.5, 5.5);
+    RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }

@@ -42,6 +42,7 @@ class sceneSP2 : public Scene
         //environment**********************************************/
         GEO_SPACE_SKYBOX,
         GEO_SPACE_GROUNDMESH,
+        GEO_SPACE_WALL,
         //environment**********************************************/
 
 		//cryostasis
@@ -72,7 +73,6 @@ class sceneSP2 : public Scene
 		GEO_DOOR,
 		//KeyCard
 		GEO_KEYCARD,
-		GEO_KEYCARD2,
 
 		//SpaceShuttle
 		GEO_SPACESHUTTLE,
@@ -195,6 +195,17 @@ private:
     SekHeng sek_heng_;
     void renderingSekHeng();
     //Creating the player who gives the last quest
+
+    //making dialogue box easier for use
+    void renderDialogueBox(const string& name, const string& dialogue);
+    //making dialogue box easier for use
+
+    //rendering the teleporter
+    void Renderteleporter();
+    //rendering the teleporter
+    //logic of teleporter
+    void teleport();
+    //logic of teleporter
 };
 
 
