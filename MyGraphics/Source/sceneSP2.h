@@ -19,6 +19,7 @@ Hopefully they don't mess it up
 #include "NPC.h"
 #include "StationScene.h"
 #include "Quest.h"
+#include "SekHeng.h"
 /******************************************************************************/
 /*!
 Class sceneSP2:
@@ -183,6 +184,11 @@ private:
 
     double framePerSecond;
     float screenWidth, screenHeight;
+
+    //Creating the player who gives the last quest
+    SekHeng sek_heng_;
+    void renderingSekHeng();
+    //Creating the player who gives the last quest
 };
 
 

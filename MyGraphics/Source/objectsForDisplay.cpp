@@ -171,3 +171,25 @@ void objectsForDisplay::init(Vector3 pos, float boundaryX, float boundaryZ, stri
     boundaryRadiusX = boundaryX;
     boundaryRadiusZ = boundaryZ;
 }
+
+/******************************************************************************/
+/*!
+\brief - get this object's X boundary range
+
+\return - X boundary range of the object
+*/
+/******************************************************************************/
+float objectsForDisplay::getBoundaryRadiusX() {
+    return boundaryRadiusX;
+}
+
+/******************************************************************************/
+/*!
+\brief - get this object's Z boundary range
+
+\return - Z boundary range of the object
+*/
+/******************************************************************************/
+float objectsForDisplay::getBoundaryRadiusZ() {
+    return boundaryRadiusZ;
+}

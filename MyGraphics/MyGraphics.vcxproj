@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\BGMDriven.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
@@ -107,12 +108,14 @@
     <ClCompile Include="Source\scene2_SP2.cpp" />
     <ClCompile Include="Source\scene3_SP2.cpp" />
     <ClCompile Include="Source\sceneSP2.cpp" />
+    <ClCompile Include="Source\SekHeng.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\StationScene.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h" />
+    <ClInclude Include="Source\BGMDriven.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera3.h" />
     <ClInclude Include="Source\DetectMemoryLeak.h" />
@@ -135,6 +138,7 @@
     <ClInclude Include="Source\scene2_SP2.h" />
     <ClInclude Include="Source\scene3_SP2.h" />
     <ClInclude Include="Source\sceneSP2.h" />
+    <ClInclude Include="Source\SekHeng.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\StationScene.h" />
     <ClInclude Include="Source\Utility.h" />
@@ -146,6 +150,8 @@
     <Text Include="cameraDriven\scene3.txt" />
     <Text Include="loadingScreenDriven\hints.txt" />
     <Text Include="scenario2Driven\objects.txt" />
+    <Text Include="sekheng\dialogues.txt" />
+    <Text Include="sekheng\sek_heng_stuff.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
