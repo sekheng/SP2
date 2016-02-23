@@ -846,6 +846,7 @@ void sceneSP2::Render()
 		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hi, I'm Francis", Color(0, 0, 1), 5, 4, 2);
 		
 	}
+	//chunfei stuff
 
 	/*modelStack.PushMatrix();
 	modelStack.Translate(10, 10, 10);
