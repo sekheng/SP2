@@ -215,6 +215,10 @@ void sceneSP2::Init()
 
     meshList[GEO_INVIS_CURSOR] = MeshBuilder::GenerateSphere("invisible cursor", Color(0.5, 0.5, 0.5));
 
+    //better UI by Sek Heng
+    meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
+    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
+    //better UI by Sek Heng
 
     on_light = true;
 
@@ -1197,7 +1201,10 @@ void sceneSP2::renderingSekHeng() {
     renderMesh(meshList[GEO_NPC1], true);
     modelStack.PopMatrix();
     if (sek_heng_.interaction() == false) {
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.returnDialogue(), Color(0, 1, 0), 3, 5, 5);
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 18, 5);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.getName(), Color(0, 1, 0), 3, 3.5, 5.5);
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.returnDialogue(), Color(0, 1, 0), 3, 3.5, 4);
     }
 
     //rendering of the hammer
@@ -1208,4 +1215,27 @@ void sceneSP2::renderingSekHeng() {
         modelStack.PopMatrix();
     }
     //rendering of the hammer
+}
+
+void sceneSP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 0);
+    modelStack.Scale(sizeX, sizeY, 1);
+    modelStack.Rotate(90, 1, 0, 0);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
 }

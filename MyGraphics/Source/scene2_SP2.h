@@ -66,6 +66,10 @@ class scene2_SP2 : public Scene
         GEO_DEADPOOL,
         //DeadPOOL
 
+        //text box
+        GEO_TEXT_BOX,
+        //text box
+
         NUM_GEOMETRY,
     };
 
@@ -153,6 +157,7 @@ private:
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate, float rotatex, float rotatey);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
+    void RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY);
     void RenderUserInterface(Mesh* mesh, float size, float x, float y);
 
     double framePerSecond;

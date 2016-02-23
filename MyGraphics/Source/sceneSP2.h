@@ -87,6 +87,10 @@ class sceneSP2 : public Scene
 
         GEO_INVIS_CURSOR,
 
+        //better UI by Sek Heng
+        GEO_TEXT_BOX,
+        //better UI by Sek Heng
+
         NUM_GEOMETRY,
     };
 
@@ -180,6 +184,7 @@ private:
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
+    void RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY);
 
 
     double framePerSecond;

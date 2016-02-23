@@ -232,6 +232,11 @@ void scene2_SP2::Init()
 			break;
 		}
 	}
+
+    //text box
+    meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
+    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
+    //text box
 }
 
 /******************************************************************************/
@@ -248,7 +253,7 @@ void scene2_SP2::Update(double dt)
 	VaultAnimation(dt);
 	Numpad.Update(dt);
 	Numpad.NumpadProgram();
-	Rot_Civ_.update(dt);
+    Rot_Civ_.update(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -715,6 +720,13 @@ void scene2_SP2::RenderRobot()
 	modelStack.Scale(7, 7, 7);
 	renderMesh(meshList[GEO_ROBOT], false);
 	modelStack.PopMatrix();
+
+    if (Rot_Civ_.interaction() == false) {
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 18, 5);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], Rot_Civ_.getName(), Color(0, 1, 0), 3, 3.5, 5.5);
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], Rot_Civ_.returnDialogue(), Color(0, 1, 0), 3, 3.5, 4);
+    }
 }
 
 void scene2_SP2::RenderFlyingVehicle()
@@ -1024,4 +1036,28 @@ void scene2_SP2::renderDeadPool() {
             break;
         }
     }
+}
+
+
+void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 0);
+    modelStack.Scale(sizeX, sizeY, 1);
+    modelStack.Rotate(90, 1, 0, 0);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
 }
