@@ -199,9 +199,6 @@ void sceneSP2::Init()
 	//SpaceStationKeyCard
 	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("KeyCard", "OBJ//KeyCard.obj");
 	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
-	//SpaceStationKeyCard
-	meshList[GEO_KEYCARD2] = MeshBuilder::GenerateOBJ("KeyCard2", "OBJ//KeyCard.obj");
-	meshList[GEO_KEYCARD2]->textureID = LoadTGA("Image//KeyCard.tga");
 	//SpaceShuttle
 	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("SpaceShuttle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
@@ -626,7 +623,7 @@ void sceneSP2::RenderStation()
 			modelStack.PushMatrix();
 			modelStack.Translate(-296, 0, 292);
 			modelStack.Scale(1, 1, 1);
-			renderMesh(meshList[GEO_KEYCARD2], false);
+			renderMesh(meshList[GEO_KEYCARD], false);
 			if (door.getCardText() == true)
 			{
 				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to get card", Color(0, 1, 0), 3, 8, 10);
