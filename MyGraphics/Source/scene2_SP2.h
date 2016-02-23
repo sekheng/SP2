@@ -45,10 +45,10 @@ class scene2_SP2 : public Scene
 		GEO_VAULTSTICK,
 		GEO_VAULTDOOR,
 		GEO_NUMPAD,
-		GEO_NUMROLL1,
-		GEO_NUMROLL2,
+		GEO_NUMROLL,
+		/*GEO_NUMROLL2,
 		GEO_NUMROLL3,
-		GEO_NUMROLL4,
+		GEO_NUMROLL4,*/
 		GEO_ARROW,
 
         //environment************************************************************//
@@ -114,31 +114,11 @@ private:
 	bool wheelturn;
 	bool stickpush;
 	bool dooropen;
-	bool text;
-	bool screentext;
-	bool check;
-	bool rendererror;
-    Light light[1];
+	
     float LSPEED = 10.f;
 	float wheelturning;
 	float stickpushing;
 	float dooropening;
-	//float firstrotate;
-	//float secondrotate;
-	//float thirdrotate;
-	//float fourthrotate;
-	float time_delay;
-	//float changearrow;
-	//float arrow;
-	//
-	//int digit1;
-	//int digit2;
-	//int digit3;
-	//int digit4;
-	double time;
-
-	char answer[5];
-	char input[5];
 
 	//renderobj function
     void renderMesh(Mesh *mesh, bool enableLight);
@@ -152,12 +132,10 @@ private:
 	void RenderNumroll();
 	void RenderMenu();
 	void RenderArrow();
-	void PasswordVerify();
-	void CorrectPassword();
+	
 	//animation function
 	void VaultAnimation(double dt);
-	void NumpadAnimation(double dt);
-	void NumpadVerify();
+	
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -165,6 +143,7 @@ private:
     unsigned m_programID;
     unsigned m_parameters[U_TOTAL];
 
+	Light light[1];
     Camera3 camera;
 	NumPad Numpad;
 
@@ -175,7 +154,6 @@ private:
 	void RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate, float rotatex, float rotatey);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
     void RenderUserInterface(Mesh* mesh, float size, float x, float y);
-
 
     double framePerSecond;
     float screenWidth, screenHeight;
