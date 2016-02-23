@@ -17,29 +17,35 @@ public:
 	void Init(Camera3 &cameraDub, const Vector3 &origPos);
 	void Update(double dt);
 	void NumpadProgram();
+
 	bool NumpadVerify();
 	bool interactiontext();
 	bool interaction();
 	bool displayerror();
+	bool NumpadRenderOnScreen();
 
+	float getfirstrotate();
+	float getsecondrotate();
+	float getthirdrotate();
+	float getfourthrotate();
+	float getarrowposition();
 
-	bool text;
-	bool screentext;
-	bool firstroll;
-	bool secondroll;
-	bool thirdroll;
-	bool fourthroll;
+	int getdigit1();
+	int getdigit2();
+	int getdigit3();
+	int getdigit4();
+
+private:
+
 	bool check;
-	bool rendererror;
 	bool open;
 	bool close;
-	float wheelturning;
-	float stickpushing;
-	float dooropening;
-	int firstrotate;
-	int secondrotate;
-	int thirdrotate;
-	int fourthrotate;
+	bool render;
+
+	float firstrotate;
+	float secondrotate;
+	float thirdrotate;
+	float fourthrotate;
 	float time_delay;
 	float changearrow;
 	float arrow;
@@ -48,26 +54,9 @@ public:
 	int digit2;
 	int digit3;
 	int digit4;
+
 	double time;
-
-	bool wheelturn;
-	bool stickpush;
-	bool dooropen;
-
-	int getfirstrotate();
-	int getsecondrotate();
-	int getthirdrotate();
-	int getfourthrotate();
-	float getarrowposition();
-	int getdigit1();
-	int getdigit2();
-	int getdigit3();
-	int getdigit4();
-private:
 	
-	
-	
-
 	Camera3 *camera;
 	Vector3 pos;
 };

@@ -23,8 +23,8 @@ Name,vaultcube
 objectX,0
 objectY,0
 objectZ,0
-boundaryRadiusX,0		
-boundaryRadiusZ,0
+boundaryRadiusX,100		
+boundaryRadiusZ,50
 
 Name,vaultdoor
 objectX,0
