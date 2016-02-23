@@ -13,9 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="cameraDriven">
+      <UniqueIdentifier>{be992a8f-c1d9-4e4d-a688-78401356cc30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="..\MyGraphics\cameraDriven\scene1.txt">
+      <Filter>cameraDriven</Filter>
+    </Text>
+    <Text Include="..\MyGraphics\cameraDriven\scene2.txt">
+      <Filter>cameraDriven</Filter>
+    </Text>
+    <Text Include="..\MyGraphics\cameraDriven\scene3.txt">
+      <Filter>cameraDriven</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\MatrixStack.cpp">

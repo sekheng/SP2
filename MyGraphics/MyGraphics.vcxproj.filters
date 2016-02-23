@@ -25,6 +25,9 @@
     <Filter Include="loadingScreenDriven">
       <UniqueIdentifier>{1adf3c1d-a83b-44d6-a5ae-5b31e859737f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sekheng">
+      <UniqueIdentifier>{d4d8f671-dffc-45d2-a3d3-c53b830200ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Texture.vertexshader">
@@ -102,6 +105,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\LoadingScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BGMDriven.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SekHeng.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -187,6 +196,12 @@
     <ClInclude Include="Source\LoadingScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\BGMDriven.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SekHeng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="scenario2Driven\objects.txt">
@@ -203,6 +218,12 @@
     </Text>
     <Text Include="loadingScreenDriven\hints.txt">
       <Filter>loadingScreenDriven</Filter>
+    </Text>
+    <Text Include="sekheng\dialogues.txt">
+      <Filter>sekheng</Filter>
+    </Text>
+    <Text Include="sekheng\sek_heng_stuff.txt">
+      <Filter>sekheng</Filter>
     </Text>
   </ItemGroup>
 </Project>

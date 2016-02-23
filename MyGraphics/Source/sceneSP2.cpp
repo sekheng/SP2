@@ -244,6 +244,11 @@ void sceneSP2::Init()
     //test_quest.Quest_Taken(true);
     One.Init("First quest", camera, 1, Vector3(30, 0, 90),5, 5, Vector3(0, 0, 0), 5, 5);
     //only one object needed to be found
+
+    //Sek Heng's stuff and initialization
+    sek_heng_.init("sekheng//sek_heng_stuff.txt");
+    sek_heng_.initDialogues("sekheng//dialogues.txt", camera);
+    //Sek Heng's stuff and initialization
 }
 
 /******************************************************************************/
@@ -269,46 +274,6 @@ void sceneSP2::Update(double dt)
     if (Application::IsKeyPressed('4'))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-    if (Application::IsKeyPressed('I'))
-        light[0].position.z -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('K'))
-        light[0].position.z += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('J'))
-        light[0].position.x -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('L'))
-        light[0].position.x += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('O'))
-        light[0].position.y -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('P'))
-        light[0].position.y += (float)(LSPEED * dt);
-
-    if (Application::IsKeyPressed('5'))
-    {
-        on_light = true;
-        light[0].color.Set(1, 1, 1);
-    }
-    if (Application::IsKeyPressed('6'))
-    {
-        on_light = false;
-        light[0].color.Set(0, 0, 0);
-    }
-
-    if (Application::IsKeyPressed('7'))
-    {
-        light[0].type = Light::LIGHT_POINT;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-    if (Application::IsKeyPressed('8'))
-    {
-        light[0].type = Light::LIGHT_DIRECTIONAL;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-    if (Application::IsKeyPressed('9'))
-    {
-        light[0].type = Light::LIGHT_SPOT;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-
     //transit scene
     if (Application::IsKeyPressed(VK_NUMPAD2)) {
         Application::changeIntoScenario2();
@@ -332,6 +297,16 @@ void sceneSP2::Update(double dt)
 			}
 		}
 	}
+
+    //Sek Heng's stuff
+    if (Application::IsKeyPressed('0')) {
+        sek_heng_.activateQuest();
+    }
+    if (Application::IsKeyPressed('9')) {
+        sek_heng_.FinishedQuest();
+    }
+    sek_heng_.Update(dt);
+    //Sek Heng's stuff
 }
 
 /******************************************************************************/
@@ -785,9 +760,13 @@ void sceneSP2::Render()
     RenderNPC();
     modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    RenderQuestObjects();
-    modelStack.PopMatrix();
+    //modelStack.PushMatrix();
+    //RenderQuestObjects();
+    //modelStack.PopMatrix();
+
+    //rendering Sek Heng
+    renderingSekHeng();
+    //rendering Sek Heng
 
     //****************************************************************************//
     //On screen objects
@@ -1210,4 +1189,23 @@ void sceneSP2::RenderQuestObjects()
             modelStack.PopMatrix();
         }
     }
+}
+
+void sceneSP2::renderingSekHeng() {
+    modelStack.PushMatrix();
+    modelStack.Translate(sek_heng_.getObjectposX(), sek_heng_.getObjectposY(), sek_heng_.getObjectposZ());
+    renderMesh(meshList[GEO_NPC1], true);
+    modelStack.PopMatrix();
+    if (sek_heng_.interaction() == false) {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.returnDialogue(), Color(0, 1, 0), 3, 5, 5);
+    }
+
+    //rendering of the hammer
+    if (sek_heng_.hammerInHand == false) {
+        modelStack.PushMatrix();
+        modelStack.Translate(sek_heng_.hammer.getObjectposX(), sek_heng_.hammer.getObjectposY(), sek_heng_.hammer.getObjectposZ());
+        renderMesh(meshList[GEO_HAMMER], true);
+        modelStack.PopMatrix();
+    }
+    //rendering of the hammer
 }

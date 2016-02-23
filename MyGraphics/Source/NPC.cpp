@@ -109,9 +109,11 @@ string NPC::getDialogue(bool reset)
     }
     else
     {
-        if (time > text_delay) {
+        if (time > text_delay) 
+		{
             time = 0;
-            if (dialogue_reset == false) {
+            if (dialogue_reset == false) 
+			{
                 dialogue_switch += 1;
             }
             if (dialogue_switch == 4) dialogue_switch = 1;

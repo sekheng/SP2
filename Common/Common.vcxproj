@@ -71,6 +71,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="..\MyGraphics\cameraDriven\scene1.txt" />
+    <Text Include="..\MyGraphics\cameraDriven\scene2.txt" />
+    <Text Include="..\MyGraphics\cameraDriven\scene3.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

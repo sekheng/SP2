@@ -1,0 +1,13 @@
+0,Go and help others first!
+1,Can you help me get a hammer?
+1,So I can repair the spaceShip
+2,Thank you so much!
+2,We have successfully build the spaceship
+2,Because you help to bring me the hammer
+2,And I am too blind to see it.
+2,Now you can space warp!
+2,You will be able to find your true identity
+2,And ultimately find your father.
+2,Now go near the spaceship
+2,And interact with it to travel to the planet
+2,Your future awaits you!
