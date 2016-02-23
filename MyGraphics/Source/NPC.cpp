@@ -75,7 +75,7 @@ void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camer
 
     
 
-    text_delay = 0.3; // set the delay for text
+    text_delay = 0.3f; // set the delay for text
 }
 /*********************************************************/
 //get npc position
