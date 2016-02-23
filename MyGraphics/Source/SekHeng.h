@@ -31,10 +31,10 @@ private:
     Camera3 *dub_camera;
     float interatingRadius;
     double time;
-    size_t stage;
-    size_t order_of_text;
+    short stage;
+    short order_of_text;
     
-    map<size_t, vector<string>> dialogues;
+    map<short, vector<string>> dialogues;
 
     bool isOkay;
     bool interactingWithItem();
