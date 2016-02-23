@@ -48,7 +48,7 @@ void scene2_SP2::Init()
     //// Init VBO here
 
     //// Set background color to dark blue
-    glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
     //Enable depth buffer and depth testing
     glEnable(GL_DEPTH_TEST);
