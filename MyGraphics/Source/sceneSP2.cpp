@@ -215,10 +215,10 @@ void sceneSP2::Init()
 
     meshList[GEO_INVIS_CURSOR] = MeshBuilder::GenerateSphere("invisible cursor", Color(0.5, 0.5, 0.5));
 
-    //better UI by Sek Heng
+    //text box
     meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
     meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
-    //better UI by Sek Heng
+    //text box
 
     on_light = true;
 
@@ -595,11 +595,11 @@ void sceneSP2::RenderStation()
 			}
 			else if (door.getQuestStage() == 2)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the damn key for your asshole", Color(0, 1, 0), 3, 8, 10);
+				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the key card to open", Color(0, 1, 0), 3, 8, 10);
 			}
 			else if (door.openSasame() == 1)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Now Press E to put it into your asshole", Color(0, 1, 0), 3, 8, 10);
+				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to unlock", Color(0, 1, 0), 3, 8, 10);
 			}
 			modelStack.PopMatrix();
 			break;
@@ -795,6 +795,7 @@ void sceneSP2::Render()
     
     modelStack.PopMatrix();
 
+	RenderEmptyBox();
 
 	RenderStation();
 
@@ -1201,10 +1202,10 @@ void sceneSP2::renderingSekHeng() {
     renderMesh(meshList[GEO_NPC1], true);
     modelStack.PopMatrix();
     if (sek_heng_.interaction() == false) {
-        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 18, 5);
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.getName(), Color(0, 1, 0), 3, 3.5, 5.5);
-        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.returnDialogue(), Color(0, 1, 0), 3, 3.5, 4);
+            RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 18, 5);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.getName(), Color(0, 1, 0), 3, 3.5, 5.5);
+            RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], sek_heng_.returnDialogue(), Color(0, 1, 0), 3, 3.5, 4);
     }
 
     //rendering of the hammer
@@ -1215,6 +1216,45 @@ void sceneSP2::renderingSekHeng() {
         modelStack.PopMatrix();
     }
     //rendering of the hammer
+}
+
+void sceneSP2::RenderEmptyBox()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 }
 
 void sceneSP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {

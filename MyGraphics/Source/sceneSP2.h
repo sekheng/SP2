@@ -148,6 +148,7 @@ private:
 	void RenderSpaceShuttle();
 
 	void RenderStation();
+	void RenderEmptyBox();
 
     void RenderNPC();
 
