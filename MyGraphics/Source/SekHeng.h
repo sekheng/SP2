@@ -25,7 +25,7 @@ public:
     void FinishedQuest();
 
     objectsForDisplay hammer;
-    bool hammerInHand;
+    bool gottenHammer();
 
 private:
     Camera3 *dub_camera;
@@ -38,6 +38,7 @@ private:
 
     bool isOkay;
     bool interactingWithItem();
+    bool hammerInHand;
 };
 
 #endif

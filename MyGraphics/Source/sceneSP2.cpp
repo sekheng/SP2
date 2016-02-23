@@ -1235,7 +1235,6 @@ void sceneSP2::RenderEmptyBox()
 		if (it.getName() == "EmptyBox3") {
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			renderMesh(meshList[GEO_HAMMER], true);
 			modelStack.PopMatrix();
 			break;
 		}
@@ -1245,7 +1244,6 @@ void sceneSP2::RenderEmptyBox()
 		if (it.getName() == "EmptyBox4") {
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			renderMesh(meshList[GEO_HAMMER], true);
 			modelStack.PopMatrix();
 			break;
 		}

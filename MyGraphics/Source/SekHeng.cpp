@@ -35,9 +35,7 @@ void SekHeng::initDialogues(const char *fileLocation, Camera3& camera) {
             taking_the_stuff.append(stringtoken);
             values.append(nextStuff);
             values.erase(std::remove(values.begin(), values.end(), '\r'));
-            for (size_t num = 0; num < taking_the_stuff.size(); ++num) {
-                taking_the_stuff[num] = tolower(taking_the_stuff[num]);
-            }
+            //If you did Data Struct Assignment 2 carefully, you will understand the following lines.
             size_t the_stage = static_cast<size_t>(stoi(taking_the_stuff));
             map<size_t, vector<string>>::iterator it;
             if (dialogues.count(the_stage) == 1) {
@@ -133,4 +131,11 @@ bool SekHeng::interactingWithItem() {
         return false;
     }
     return true;
+}
+
+bool SekHeng::gottenHammer() {
+    if (hammerInHand) {
+        return true;
+    }
+    return false;
 }
