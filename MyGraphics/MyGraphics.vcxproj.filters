@@ -28,6 +28,9 @@
     <Filter Include="sekheng">
       <UniqueIdentifier>{d4d8f671-dffc-45d2-a3d3-c53b830200ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scenario1Driven">
+      <UniqueIdentifier>{23b7dea5-ba96-4af2-834b-6d3c6d9f9323}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Texture.vertexshader">
@@ -224,6 +227,9 @@
     </Text>
     <Text Include="sekheng\sek_heng_stuff.txt">
       <Filter>sekheng</Filter>
+    </Text>
+    <Text Include="scenario1Driven\objects.txt">
+      <Filter>scenario1Driven</Filter>
     </Text>
   </ItemGroup>
 </Project>
