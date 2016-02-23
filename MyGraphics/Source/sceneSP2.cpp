@@ -591,11 +591,11 @@ void sceneSP2::RenderStation()
 			}
 			else if (door.getQuestStage() == 2)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the damn key for your asshole", Color(0, 1, 0), 3, 8, 10);
+				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the key card to open", Color(0, 1, 0), 3, 8, 10);
 			}
 			else if (door.openSasame() == 1)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Now Press E to put it into your asshole", Color(0, 1, 0), 3, 8, 10);
+				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to unlock", Color(0, 1, 0), 3, 8, 10);
 			}
 			modelStack.PopMatrix();
 			break;
@@ -791,6 +791,7 @@ void sceneSP2::Render()
     
     modelStack.PopMatrix();
 
+	RenderEmptyBox();
 
 	RenderStation();
 
@@ -1208,4 +1209,45 @@ void sceneSP2::renderingSekHeng() {
         modelStack.PopMatrix();
     }
     //rendering of the hammer
+}
+
+void sceneSP2::RenderEmptyBox()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			renderMesh(meshList[GEO_HAMMER], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			renderMesh(meshList[GEO_HAMMER], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 }
