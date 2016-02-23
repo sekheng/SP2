@@ -1201,7 +1201,7 @@ void sceneSP2::renderingSekHeng() {
     }
 
     //rendering of the hammer
-    if (sek_heng_.hammerInHand == false) {
+    if (sek_heng_.gottenHammer() == false) {
         modelStack.PushMatrix();
         modelStack.Translate(sek_heng_.hammer.getObjectposX(), sek_heng_.hammer.getObjectposY(), sek_heng_.hammer.getObjectposZ());
         renderMesh(meshList[GEO_HAMMER], true);
