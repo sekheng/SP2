@@ -748,14 +748,14 @@ void sceneSP2::Render()
 
     //render ground mesh
     modelStack.PushMatrix();
-    modelStack.Scale(20, 1, 20);
+    modelStack.Scale(19.9f, 1, 19.9f);
     Rendergroundmesh();
     
     modelStack.PopMatrix();
     //render ground mesh
 
     modelStack.PushMatrix();
-    modelStack.Scale(20, 20, 20);
+    modelStack.Scale(19.9f, 19.9f, 19.9f);
     renderMesh(meshList[GEO_SPACE_WALL], false);
 
     modelStack.PopMatrix();
