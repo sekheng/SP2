@@ -8,5 +8,5 @@ cameraRotationX,0
 cameraRotationY,180
 cameraSpeed,20
 boundsCheckX,300
-boundsCheckZ,350
+boundsCheckZ,360
 CrossHairRadius,3

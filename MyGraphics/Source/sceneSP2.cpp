@@ -250,7 +250,7 @@ void sceneSP2::Init()
     //example
     //test_quest.Init("random quest", camera,2,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
     //test_quest.Quest_Taken(true);
-    One.Init("First quest", camera, 1, Vector3(-270, 0, 164),5, 5, Vector3(0, 0, 0), 5, 5);
+    One.Init("First quest", camera, 1, Vector3(-270, 0, 164),5, Vector3(0, 0, 0), 5);
     //only one object needed to be found
 
     //Sek Heng's stuff and initialization
@@ -273,7 +273,8 @@ void sceneSP2::Update(double dt)
     framePerSecond = 1 / dt;
     npc1.update(dt);
     QUEST1.update(dt);
-    One.Quest_Taken(QUEST1.quest_given());
+    One.check_quest(QUEST1.quest_given());
+    One.Update(dt);
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -1249,6 +1250,26 @@ void sceneSP2::RenderQuestObjects()
     //        modelStack.PopMatrix();
     //    }
     //}
+
+    if (One.stage() == 1)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
+        renderMesh(meshList[GEO_SCREWDRIVER], false);
+        modelStack.PopMatrix();
+    }
+    /*else if (One.stage() == 2)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
+        renderMesh(meshList[GEO_SCREWDRIVER], false);
+        modelStack.PopMatrix();
+    }*/
+    else if (One.stage() == 3)
+    {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
+    }
+
 }
 
 void sceneSP2::renderingSekHeng() {
