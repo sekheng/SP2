@@ -1434,7 +1434,7 @@ void sceneSP2::Renderteleporter() {
 
 void sceneSP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 23, 5);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 3.5, 5.5);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 2.5, 5.5);
     RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }
