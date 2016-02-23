@@ -224,6 +224,16 @@ void sceneSP2::Init()
     meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
     //text box
 
+	//chunfei npc
+	meshList[GEO_ROBOTHEAD] = MeshBuilder::GenerateOBJ("robothead", "OBJ//robothead.obj");
+	meshList[GEO_ROBOTHEAD]->textureID = LoadTGA("Image//robot.tga");
+
+	meshList[GEO_ROBOTBODY] = MeshBuilder::GenerateOBJ("robotbody", "OBJ//robotbody.obj");
+	meshList[GEO_ROBOTBODY]->textureID = LoadTGA("Image//robot.tga");
+
+	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//sword.obj");
+	meshList[GEO_SWORD]->textureID = LoadTGA("Image//sword.tga");
+
     on_light = true;
 
     Mtx44 projection;
@@ -257,6 +267,17 @@ void sceneSP2::Init()
     sek_heng_.init("sekheng//sek_heng_stuff.txt");
     sek_heng_.initDialogues("sekheng//dialogues.txt", camera);
     //Sek Heng's stuff and initialization
+
+	//chunfei's robotnpc
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "robotbody") {
+			robotNPC.Init(camera, Vector3(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()));
+			break;
+		}
+	}
+	headrotate = false;
+	headrotating = 0;
+	//chunfei's stuff
 }
 
 /******************************************************************************/
@@ -275,6 +296,7 @@ void sceneSP2::Update(double dt)
     QUEST1.update(dt);
     One.check_quest(QUEST1.quest_given());
     One.Update(dt);
+	headanimation(dt);
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -324,6 +346,26 @@ void sceneSP2::Update(double dt)
         teleport();
     }
     //just putting the teleport stuff in here
+
+	/*if (headrotate == false)
+	{
+		headrotating += 15 * (float)(dt);
+		if (headrotating > 10)
+		{
+			headrotate = true;
+		}
+	}
+	else if (headrotate == true)
+	{
+		headrotating -= 15 * (float)(dt);
+		if (headrotating < -5)
+		{
+			headrotate = false;
+		}
+	}
+*/
+
+	
 }
 
 /******************************************************************************/
@@ -758,7 +800,6 @@ void sceneSP2::Render()
     modelStack.PushMatrix();
     modelStack.Scale(19.9f, 19.9f, 19.9f);
     renderMesh(meshList[GEO_SPACE_WALL], false);
-
     modelStack.PopMatrix();
 
     
@@ -797,6 +838,24 @@ void sceneSP2::Render()
     //rendering Sek Heng
     renderingSekHeng();
     //rendering Sek Heng
+
+	//render chunfei NPC
+	renderChunFei();
+
+	if (robotNPC.interaction())
+	{
+		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hi, I'm Francis", Color(0, 0, 1), 5, 4, 2);
+		
+	}
+	//chunfei stuff
+
+	/*modelStack.PushMatrix();
+	modelStack.Translate(10, 10, 10);
+	modelStack.Scale(10, 10, 10);
+	renderMesh(meshList[GEO_SWORD], false);
+	modelStack.PopMatrix();*/
+
+
 
     //****************************************************************************//
     //On screen objects
@@ -1392,4 +1451,71 @@ void sceneSP2::teleport() {
             }
         }
     }
+}
+
+void sceneSP2::renderChunFei()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "robothead") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(headrotating, 1, 0, 0);
+			modelStack.Scale(1.5,1.5,1.5);
+			renderMesh(meshList[GEO_ROBOTHEAD], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "robotbody") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(1.5,1.5,1.5);
+			renderMesh(meshList[GEO_ROBOTBODY], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "sword") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(1.5,1.5,1.5);
+			renderMesh(meshList[GEO_SWORD], false);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+void sceneSP2::headanimation(double dt)
+{
+	if (robotNPC.interaction())
+	{
+		if (headrotate == false)
+		{
+			headrotating += 15 * (float)(dt);
+			if (headrotating > 10)
+			{
+				headrotate = true;
+			}
+		}
+		else if (headrotate == true)
+		{
+			headrotating -= 15 * (float)(dt);
+			if (headrotating < -5)
+			{
+				headrotate = false;
+			}
+		}
+	}
+	else
+	{
+		headrotating = 0;
+	}
 }
