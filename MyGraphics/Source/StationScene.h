@@ -15,12 +15,7 @@ public:
 	~StationScene();
 
 	void Init(string name, Vector3 pos, Camera3 &camera_address, float boundaryX, float boundaryZ);
-	float Door_getposition_x();
-	float Door_getposition_z();
-	float Door_getposition_y();
-	bool boundschecking(const float&bounds_x, const float &bounds_z);
 	void update(double dt);
-	string getDialogue();
 	short getQuestStage();
 	short getCard1();
 	short getCard2();

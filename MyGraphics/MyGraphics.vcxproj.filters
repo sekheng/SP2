@@ -116,6 +116,9 @@
     <ClCompile Include="Source\SekHeng.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ChunfeiNPC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Scene.h">
@@ -203,6 +206,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\SekHeng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ChunfeiNPC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
