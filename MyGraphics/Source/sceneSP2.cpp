@@ -138,27 +138,38 @@ void sceneSP2::Init()
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1,1,1));
 
+    /***************************************************************************/
+    //environment
+    /***************************************************************************/
     //skybox
     meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
     meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
-    //skybox
+    //Space ground mesh
+    meshList[GEO_SPACE_GROUNDMESH] = MeshBuilder::GenerateOBJ("Space ground mesh", "OBJ//Space_groundmesh.obj");
+    meshList[GEO_SPACE_GROUNDMESH]->textureID = LoadTGA("Image//Space_groundmesh.tga");
+    // meshList[GEO_SPACE_GROUNDMESH]->material = MaterialBuilder::GenerateBlinn();
+
+    //space walls
+    meshList[GEO_SPACE_WALL] = MeshBuilder::GenerateOBJ("Space wall", "OBJ//space_walls.obj");
+    meshList[GEO_SPACE_WALL]->textureID = LoadTGA("Image//space_station_wall.tga");
+
+
 
     //User Interface
     meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
     meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
     //User Interface
-    //Space ground mesh
-    meshList[GEO_SPACE_GROUNDMESH] = MeshBuilder::GenerateOBJ("Space ground mesh", "OBJ//Space_groundmesh.obj");
-    meshList[GEO_SPACE_GROUNDMESH]->textureID = LoadTGA("Image//Space_groundmesh.tga");
-   // meshList[GEO_SPACE_GROUNDMESH]->material = MaterialBuilder::GenerateBlinn();
-    //Space ground mesh
+    
     //quest items
     meshList[GEO_SCREWDRIVER] = MeshBuilder::GenerateOBJ("screw driver", "OBJ//ScrewDriver.obj");
     meshList[GEO_SCREWDRIVER]->textureID = LoadTGA("Image//Screwdriver.tga");
+    
     meshList[GEO_CONTAINER] = MeshBuilder::GenerateOBJ("container", "OBJ//Container.obj");
     meshList[GEO_CONTAINER]->textureID = LoadTGA("Image//Container.tga");
+   
     meshList[GEO_GASOLINE] = MeshBuilder::GenerateOBJ("gasoline", "OBJ//Gasoline.obj");
     meshList[GEO_GASOLINE]->textureID = LoadTGA("Image//Gasoline.tga");
+   
     meshList[GEO_HAMMER] = MeshBuilder::GenerateOBJ("hammer", "OBJ//Hammer.obj");
     meshList[GEO_HAMMER]->textureID = LoadTGA("Image//Hammer.tga");
 
@@ -234,12 +245,12 @@ void sceneSP2::Init()
     //initialise npc
     //example
     //npc1.Init("Najib",Vector3(2,2,2),5,5,camera,"NPC data//Najib.txt");
-    QUEST1.Init("First NPC", Vector3(-100,0,100),5,5,camera,"NPC data//NPC_1.txt");
+    QUEST1.Init("First NPC", Vector3(-270, 0, 194), 5, 5, camera, "NPC data//NPC_1.txt");
     //initialise quest
     //example
     //test_quest.Init("random quest", camera,2,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
     //test_quest.Quest_Taken(true);
-    One.Init("First quest", camera, 1, Vector3(30, 0, 90),5, 5, Vector3(0, 0, 0), 5, 5);
+    One.Init("First quest", camera, 1, Vector3(-270, 0, 164),5, 5, Vector3(0, 0, 0), 5, 5);
     //only one object needed to be found
 
     //Sek Heng's stuff and initialization
@@ -261,6 +272,8 @@ void sceneSP2::Update(double dt)
     camera.Update(dt);
     framePerSecond = 1 / dt;
     npc1.update(dt);
+    QUEST1.update(dt);
+    One.Quest_Taken(QUEST1.quest_given());
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -737,12 +750,22 @@ void sceneSP2::Render()
     modelStack.PushMatrix();
     modelStack.Scale(20, 1, 20);
     Rendergroundmesh();
+    
     modelStack.PopMatrix();
     //render ground mesh
+
+    modelStack.PushMatrix();
+    modelStack.Scale(20, 20, 20);
+    renderMesh(meshList[GEO_SPACE_WALL], false);
+
+    modelStack.PopMatrix();
+
+    
 
 	//render Spaceship
 	RenderSpaceShuttle();
 
+    /*
     modelStack.PushMatrix();
     RenderScrewDriver();
     modelStack.PopMatrix();
@@ -758,14 +781,13 @@ void sceneSP2::Render()
     modelStack.PushMatrix();
     RenderHammer();
     modelStack.PopMatrix();
-
+    */
     modelStack.PushMatrix();
     RenderNPC();
     modelStack.PopMatrix();
-
-    //modelStack.PushMatrix();
-    //RenderQuestObjects();
-    //modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    RenderQuestObjects();
+    modelStack.PopMatrix();
 
     //rendering teleporter box
     Renderteleporter();
@@ -1174,29 +1196,59 @@ void sceneSP2::RenderQuestObjects()
         }
     }
     */
-    if (One.Result() == true)
-    {
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
-    }
-    else
-    {
-        if (One.FirstObject_taken() == false)
-        {
-            //object 1
-            modelStack.PushMatrix();
-            modelStack.Translate(One.get_object1_x(), 0, One.get_object1_z());
-            renderMesh(meshList[GEO_SCREWDRIVER], false);
-            modelStack.PopMatrix();
-        }
-        if (One.SecondObject_taken() == false)
-        {
-            //object 2
-            modelStack.PushMatrix();
-            modelStack.Translate(One.get_object2_x(), 0, One.get_object2_z());
-            renderMesh(meshList[GEO_CONTAINER], false);
-            modelStack.PopMatrix();
-        }
-    }
+
+    //if (One.get_quest_taken())
+    //{
+    //    if (One.Result() == false)
+    //    {
+    //        if (One.FirstObject_taken() == false)
+    //        {
+    //            //object 1
+    //            modelStack.PushMatrix();
+    //            modelStack.Translate(One.get_object1_x(), 0, One.get_object1_z());
+    //            renderMesh(meshList[GEO_SCREWDRIVER], false);
+    //            modelStack.PopMatrix();
+    //        }
+    //        if (One.SecondObject_taken() == false && One.no_of_objects() > 1)
+    //        {
+    //            //object 2
+    //            modelStack.PushMatrix();
+    //            modelStack.Translate(One.get_object2_x(), 0, One.get_object2_z());
+    //            renderMesh(meshList[GEO_CONTAINER], false);
+    //            modelStack.PopMatrix();
+    //        }
+    //    }
+    //    else
+    //    {
+    //        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
+    //    }
+    //}
+
+
+
+    //if (One.Result() == true)
+    //{
+    //    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
+    //}
+    //else//if One.Result() == false
+    //{
+    //    if (One.FirstObject_taken() == false)
+    //    {
+    //        //object 1
+    //        modelStack.PushMatrix();
+    //        modelStack.Translate(One.get_object1_x(), 0, One.get_object1_z());
+    //        renderMesh(meshList[GEO_SCREWDRIVER], false);
+    //        modelStack.PopMatrix();
+    //    }
+    //    if (One.SecondObject_taken() == false && One.no_of_objects() > 1 )
+    //    {
+    //        //object 2
+    //        modelStack.PushMatrix();
+    //        modelStack.Translate(One.get_object2_x(), 0, One.get_object2_z());
+    //        renderMesh(meshList[GEO_CONTAINER], false);
+    //        modelStack.PopMatrix();
+    //    }
+    //}
 }
 
 void sceneSP2::renderingSekHeng() {

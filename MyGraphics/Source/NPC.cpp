@@ -31,6 +31,8 @@ void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camer
     dialogue_reset = false;
     time = 0;
     has_interacted = false;
+    dialogue_finish = false;
+    stage = 0;
 
     //read dialogue from text file
     map<string, string> npc_data;//dialogue is stored in map
@@ -73,7 +75,7 @@ void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camer
 
     
 
-    text_delay = 2.5; // set the delay for text
+    text_delay = 0.3; // set the delay for text
 }
 /*********************************************************/
 //get npc position
@@ -92,7 +94,7 @@ float NPC::NPC_getposition_y()
 }
 
 /*********************************************************/
-//
+//return npc dialogue
 /*********************************************************/
 string NPC::getDialogue(bool reset)
 {
@@ -116,10 +118,44 @@ string NPC::getDialogue(bool reset)
 			{
                 dialogue_switch += 1;
             }
-            if (dialogue_switch == 4) dialogue_switch = 1;
+            if (dialogue_switch == 4)
+            {
+                dialogue_finish = true;
+                dialogue_switch = 1;
+            }
         }
         return Dialogues[dialogue_switch];
     }
+
+    /*if (reset && has_interacted == false)
+    {
+        stage = 0;
+        has_interacted = true;
+        return Dialogues[stage];
+    }
+    else if (reset && has_interacted == true)
+    {
+        if (time > text_delay)
+        {
+            time = 0;
+            stage++;
+            if (stage == 4)
+            {
+                stage = 1;
+            }
+        }
+        return Dialogues[stage];
+    }
+    else if (!reset && has_interacted == false)
+    {
+        stage = 1;
+        return Dialogues[stage];
+    }
+    else
+    {
+        return Dialogues[stage];
+    }*/
+
 }
 
 bool NPC::interaction()
@@ -152,4 +188,9 @@ void NPC::update(double dt)
 {
 
     time += dt;
+}
+
+bool NPC::quest_given()
+{
+    return dialogue_finish;
 }

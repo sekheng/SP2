@@ -42,6 +42,7 @@ class sceneSP2 : public Scene
         //environment**********************************************/
         GEO_SPACE_SKYBOX,
         GEO_SPACE_GROUNDMESH,
+        GEO_SPACE_WALL,
         //environment**********************************************/
 
 		//cryostasis

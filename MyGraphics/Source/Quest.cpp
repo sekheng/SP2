@@ -60,7 +60,7 @@ float Quest::get_object1_z()
 }
 bool Quest::FirstObject_taken()
 {
-    if (Application::IsKeyPressed('E') == true && FirstObject() == true)
+    if (Application::IsKeyPressed('E') == true && FirstObject() == true && stop_change1 == false)
     {
         stop_change1 = true;
         return true;
@@ -134,4 +134,9 @@ bool Quest::pickup( float position_x,  float position_z, float bounds_x, float b
         return true;
     }
     return false;
+}
+
+short Quest::no_of_objects()
+{
+    return number_of_objects;
 }
