@@ -31,6 +31,9 @@
     <Filter Include="scenario1Driven">
       <UniqueIdentifier>{23b7dea5-ba96-4af2-834b-6d3c6d9f9323}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NPC data">
+      <UniqueIdentifier>{fd77163e-f5bc-49f0-a9e2-5d32d5f0aa57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Texture.vertexshader">
@@ -236,6 +239,12 @@
     </Text>
     <Text Include="scenario1Driven\objects.txt">
       <Filter>scenario1Driven</Filter>
+    </Text>
+    <Text Include="NPC data\Najib.txt">
+      <Filter>NPC data</Filter>
+    </Text>
+    <Text Include="NPC data\NPC_1.txt">
+      <Filter>NPC data</Filter>
     </Text>
   </ItemGroup>
 </Project>

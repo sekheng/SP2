@@ -204,7 +204,7 @@ void Application::Run()
     glfwSwapBuffers(m_window);
 
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    //scenario2->Init();
+    scenario2->Init();
 
     scene = scenario3;
 
