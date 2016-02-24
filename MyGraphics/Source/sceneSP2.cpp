@@ -263,6 +263,11 @@ void sceneSP2::Init()
     //Sek Heng's stuff and initialization
 
 	//chunfei's robotnpc
+	//initialise npc3
+	//QUEST3.Init("Chunfei NPChead", Vector3(0, 5.5, 250), 2, 2, camera, "NPC data//NPC_3.txt");
+	QUEST3.Init("Chunfei NPCbody", Vector3(0, 0, 250), 2, 2, camera, "NPC data//NPC_3.txt");
+	//initialise quest3
+	Three.Init("Third quest", camera, 1, Vector3(0, 0, 250), 0, Vector3(0, 0, 0), 5);
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "robotbody") {
 			robotNPC.Init(camera, Vector3(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()));
@@ -820,11 +825,11 @@ void sceneSP2::Render()
 	//render chunfei NPC
 	renderChunFei();
 
-	if (robotNPC.interaction())
+	/*if (robotNPC.interaction())
 	{
 		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hi, I'm Francis", Color(0, 0, 1), 5, 4, 2);
 		
-	}
+	}*/
 	//chunfei stuff
 
 	/*modelStack.PushMatrix();
@@ -1225,6 +1230,16 @@ void sceneSP2::RenderQuestObjects()
        renderDialogueBox("", "Quest Complete!!");
     }
 
+	//third npc
+	if (Three.stage() == 1)
+	{
+			modelStack.PushMatrix();
+			modelStack.Translate(Three.getObject1_X(), 0, Three.getObject1_Z());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_SWORD], true);
+			modelStack.PopMatrix();
+	}
 }
 
 void sceneSP2::renderingSekHeng() {
@@ -1353,43 +1368,45 @@ void sceneSP2::teleport()
 }
 
 void sceneSP2::renderChunFei()
-{
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "robothead") {
+{	
 			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
 			modelStack.Rotate(-90, 0, 1, 0);
 			modelStack.Rotate(headrotating, 1, 0, 0);
 			modelStack.Scale(1.5,1.5,1.5);
 			renderMesh(meshList[GEO_ROBOTHEAD], true);
 			modelStack.PopMatrix();
-			break;
-		}
-	}
+			if (QUEST3.interaction() == true && One.stage() < 4)
+			{
+				if (!Application::IsKeyPressed('E'))
+				{
+					renderDialogueBox("ChunFei", QUEST3.getDialogue(true));
+				}
+				else
+				{
+					renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
+				}
+			}
+			if (QUEST1.interaction() == true && One.stage() == 4)
+			{
+				renderDialogueBox("ChunFei",  QUEST3.quest_complete());
+			}
 
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "robotbody") {
+	
 			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
 			modelStack.Rotate(-90, 0, 1, 0);
 			modelStack.Scale(1.5,1.5,1.5);
 			renderMesh(meshList[GEO_ROBOTBODY], true);
 			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "sword") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Scale(1.5,1.5,1.5);
-			renderMesh(meshList[GEO_SWORD], true);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
+		/*	if (QUEST3.NPC_getposition_x() + 3 > camera.position.x &&
+				QUEST3.NPC_getposition_x() - 3 < camera.position.x &&
+				QUEST3.NPC_getposition_z() + 3 > camera.position.z &&
+				QUEST3.NPC_getposition_z() - 3 < camera.position.z)
+			{
+				renderDialogueBox("ChunFei", "Press E to go to spaceship");
+			}*/
+	
 }
 
 void sceneSP2::headanimation(double dt)

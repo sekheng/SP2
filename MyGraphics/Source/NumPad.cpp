@@ -126,7 +126,13 @@ void NumPad::NumpadProgram(double dt)
 				if (time > time_delay) 
 				{
 					time = 0;
+					//firstrotate += 200 * (int)(dt);
 					firstrotate += 36; //rotate 36degree (change to next number)
+					/*if (firstrotate<firstrotate+36)
+					{
+						firstrotate += 100 * (dt);
+					}
+					static_cast<int>(firstrotate);*/
 					digit1++;
 					if (digit1 > 9) 
 					{
