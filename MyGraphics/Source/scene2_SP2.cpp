@@ -161,7 +161,7 @@ void scene2_SP2::Init()
 
 	//vaultcube
 	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("vaultcube", "OBJ//vaultcube.obj");
-	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//vaultnewest.tga");
+	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//vaultnew_UV.tga");
 
 	//vaultdoor
 	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("vaultdoor", "OBJ//vaultdoor.obj");
