@@ -268,9 +268,9 @@ void sceneSP2::Init()
 	//chunfei's robotnpc
 	//initialise npc3
 	//QUEST3.Init("Chunfei NPChead", Vector3(0, 5.5, 250), 2, 2, camera, "NPC data//NPC_3.txt");
-	QUEST3.Init("Chunfei NPCbody", 4,Vector3(0, 0, 250), 5, 5, camera, "NPC data//NPC_3.txt");
+	QUEST3.Init("Chunfei NPCbody", 5,Vector3(0, 0, 250), 5, 5, camera, "NPC data//NPC_3.txt");
 	//initialise quest3
-	Three.Init("Third quest", camera, 1, Vector3(0, 0, 250), 0, Vector3(0, 0, 0), 5);
+	Three.Init("Third quest", camera, 1, Vector3(-280, 0, 300), 5, Vector3(0, 0, 0), 0);
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "robotbody") {
 			robotNPC.Init(camera, Vector3(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()));
@@ -298,11 +298,15 @@ void sceneSP2::Update(double dt)
     QUEST1.update(dt);
     One.check_quest(QUEST1.quest_given());
     One.Update(dt);
-	headanimation(dt);
 
 	QUEST2.update(dt);
 	Two.check_quest(QUEST2.quest_given());
 	Two.Update(dt);
+
+	QUEST3.update(dt);
+	Three.check_quest(QUEST3.quest_given());
+	Three.Update(dt);
+	headanimation(dt);
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -1287,15 +1291,27 @@ void sceneSP2::RenderQuestObjects()
 		renderDialogueBox("", "Quest Complete!!");
 	}
 
-	//third npc
+	////third npc
+	//if (Three.stage() == 1)
+	//{
+	//	modelStack.PushMatrix();
+	//	modelStack.Translate(Three.getObject1_X(), 0, Three.getObject1_Z());
+	//	modelStack.Rotate(-90, 0, 1, 0);
+	//	modelStack.Scale(1.5, 1.5, 1.5);
+	//	renderMesh(meshList[GEO_SWORD], true);
+	//	modelStack.PopMatrix();
+	//}
+
 	if (Three.stage() == 1)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(Three.getObject1_X(), 0, Three.getObject1_Z());
-		modelStack.Rotate(-90, 0, 1, 0);
-		modelStack.Scale(1.5, 1.5, 1.5);
-		renderMesh(meshList[GEO_SWORD], true);
+		renderMesh(meshList[GEO_CONTAINER], true);
 		modelStack.PopMatrix();
+	}
+	else if (Three.stage() == 3)
+	{
+		renderDialogueBox("", "Quest Complete!!");
 	}
 }
 
@@ -1426,23 +1442,34 @@ void sceneSP2::teleport()
 
 void sceneSP2::renderChunFei()
 {	
-			modelStack.PushMatrix();
+			/*modelStack.PushMatrix();
 			modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
 			modelStack.Rotate(-90, 0, 1, 0);
 			modelStack.Rotate(headrotating, 1, 0, 0);
 			modelStack.Scale(1.5,1.5,1.5);
 			renderMesh(meshList[GEO_ROBOTHEAD], true);
-			modelStack.PopMatrix();
-			
+			modelStack.PopMatrix();*/
 
-	
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "robothead") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(headrotating, 1, 0, 0);
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_ROBOTHEAD], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+		
 			modelStack.PushMatrix();
 			modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
 			modelStack.Rotate(-90, 0, 1, 0);
 			modelStack.Scale(1.5,1.5,1.5);
 			renderMesh(meshList[GEO_ROBOTBODY], true);
-			modelStack.PopMatrix();
-			if (QUEST3.interaction() == true && One.stage() < 4)
+			
+			if (QUEST3.interaction() == true && Three.stage() < 4)
 			{
 				if (!Application::IsKeyPressed('E'))
 				{
@@ -1453,24 +1480,16 @@ void sceneSP2::renderChunFei()
 					renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
 				}
 			}
-			if (QUEST1.interaction() == true && One.stage() == 4)
+			if (QUEST3.interaction() == true && Three.stage() == 4)
 			{
 				renderDialogueBox("ChunFei", QUEST3.quest_complete());
 			}
-
-		/*	if (QUEST3.NPC_getposition_x() + 3 > camera.position.x &&
-				QUEST3.NPC_getposition_x() - 3 < camera.position.x &&
-				QUEST3.NPC_getposition_z() + 3 > camera.position.z &&
-				QUEST3.NPC_getposition_z() - 3 < camera.position.z)
-			{
-				renderDialogueBox("ChunFei", "Press E to go to spaceship");
-			}*/
-	
+			modelStack.PopMatrix();
 }
 
 void sceneSP2::headanimation(double dt)
 {
-	if (robotNPC.interaction())
+	if (QUEST3.interaction() == true)
 	{
 		if (headrotate == false)
 		{

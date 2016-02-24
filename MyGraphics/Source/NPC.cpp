@@ -51,7 +51,7 @@ void NPC::Init(string name, short NumberofDialogue ,Vector3 pos, float boundaryX
         }
         fileStream.close();
     }
-    text_delay = 0.3f; // set the delay for text
+    text_delay = 0.15f; // set the delay for text
 
 }
 /*********************************************************/
