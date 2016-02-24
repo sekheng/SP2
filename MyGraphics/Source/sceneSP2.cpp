@@ -211,6 +211,11 @@ void sceneSP2::Init()
 	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
 	meshList[GEO_SPACESHUTTLE]->material = MaterialBuilder::GenerateBlinn();
 
+	//Teleporter
+	meshList[GEO_TELEPORTER] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Teleporter.obj");
+	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
+	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
+
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
     meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
@@ -1368,7 +1373,8 @@ void sceneSP2::Renderteleporter() {
         if (it.getName() == "TeleporterBox") {
             modelStack.PushMatrix();
             modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-            renderMesh(meshList[GEO_CONTAINER], true);
+			modelStack.Scale(5,5,5);
+            renderMesh(meshList[GEO_TELEPORTER], true);
             modelStack.PopMatrix();
             if (sek_heng_.SekHengSayIsOk() == true &&
                 it.getObjectposX() + 6 > camera.position.x &&
