@@ -147,9 +147,9 @@ boundaryRadiusX,5
 boundaryRadiusZ,110
 
 Name,TeleporterBox
-objectX,10
+objectX,0
 objectY,0
-objectZ,10
+objectZ,0
 boundaryRadiusX,0
 boundaryRadiusZ,0
 
