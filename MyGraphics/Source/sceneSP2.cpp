@@ -341,23 +341,7 @@ void sceneSP2::Update(double dt)
     }
     //just putting the teleport stuff in here
 
-	/*if (headrotate == false)
-	{
-		headrotating += 15 * (float)(dt);
-		if (headrotating > 10)
-		{
-			headrotate = true;
-		}
-	}
-	else if (headrotate == true)
-	{
-		headrotating -= 15 * (float)(dt);
-		if (headrotating < -5)
-		{
-			headrotate = false;
-		}
-	}
-*/
+	
 
 	
 }
