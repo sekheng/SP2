@@ -33,9 +33,9 @@ void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camer
     has_interacted = false;
     dialogue_finish = false;
     stage = 0;
-
+    quest_complete_delay = false;
+    quest_complete_stage = 0;
     //read dialogue from text file
-    map<string, string> npc_data;//dialogue is stored in map
     std::ifstream fileStream(fileLocation, std::ios::binary);
     if (!fileStream.is_open()) {
         std::cout << "Impossible to open " << fileLocation << ". Are you in the right directory ?\n";
@@ -44,38 +44,13 @@ void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camer
         while (!fileStream.eof()) {
             string data = "";
             getline(fileStream, data);
-            char *next_data;
-            char *read_data = strtok_s(const_cast<char*>(data.c_str()), ":", &next_data); // before ':' is key and after ':' is data for map 
-            string taking_the_stuff = "";
-            string values = "";
-            taking_the_stuff.append(read_data);
-            values.append(next_data);
-            values.erase(std::remove(values.begin(), values.end(), '\r'));
-            std::locale loc;
-            for (size_t num = 0; num < taking_the_stuff.size(); ++num) {
-                taking_the_stuff[num] = tolower(taking_the_stuff[num], loc);
-            }
-            npc_data.insert(std::pair<string, string>(taking_the_stuff, values));
+            data.erase(std::remove(data.begin(), data.end(), '\r'));
+            Dialogues.push_back(data);
         }
         fileStream.close();
     }
-    map<string, string>::iterator it;// Map key is sequence of dialog and data is their text
-
-    it = npc_data.find("first");
-    Dialogues.push_back(it->second);
-
-    it = npc_data.find("second");
-    Dialogues.push_back(it->second);
-
-    it = npc_data.find("third");
-    Dialogues.push_back(it->second);
-
-    it = npc_data.find("fourth");
-    Dialogues.push_back(it->second);
-
-    
-
     text_delay = 0.3f; // set the delay for text
+
 }
 /*********************************************************/
 //get npc position
@@ -124,7 +99,7 @@ string NPC::getDialogue(bool reset)
             }
             if (dialogue_switch == 4)
             {
-                dialogue_switch = 1;
+                dialogue_switch = 3;
             }
         }
         return Dialogues[dialogue_switch];
@@ -196,4 +171,22 @@ void NPC::update(double dt)
 bool NPC::quest_given()
 {
     return dialogue_finish;
+}
+
+string NPC::quest_complete()
+{
+    if (!Application::IsKeyPressed('E') && quest_complete_stage == 0)
+    {
+        return Dialogues[0];
+    }
+    if (Application::IsKeyPressed('E') && quest_complete_stage == 0)
+    {
+        quest_complete_stage = 1;
+        return Dialogues[4];
+    }
+    else if (quest_complete_stage == 1)
+    {
+        return Dialogues[4];
+    }
+    return Dialogues[0];
 }
