@@ -183,9 +183,6 @@ void Application::Run()
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
     glfwSwapBuffers(m_window);
-    //Get and organize events, like keyboard and mouse input, window resizing, etc...
-    glfwPollEvents();
-    m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
     //rendering just the loading screen
 
     musics = new BGMDriven();
@@ -194,8 +191,18 @@ void Application::Run()
 
     scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     scenario1->Init();
+
+    loadingScreen->Update(m_timer.getElapsedTime());
+    loadingScreen->Render();
+    glfwSwapBuffers(m_window);
+
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     scenario3->Init();
+
+    loadingScreen->Update(m_timer.getElapsedTime());
+    loadingScreen->Render();
+    glfwSwapBuffers(m_window);
+
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     scenario2->Init();
 

@@ -118,9 +118,12 @@ string NPC::getDialogue(bool reset)
 			{
                 dialogue_switch += 1;
             }
-            if (dialogue_switch == 4)
+            if (dialogue_switch == 3)
             {
                 dialogue_finish = true;
+            }
+            if (dialogue_switch == 4)
+            {
                 dialogue_switch = 1;
             }
         }

@@ -36,15 +36,15 @@ void SekHeng::initDialogues(const char *fileLocation, Camera3& camera) {
             values.append(nextStuff);
             values.erase(std::remove(values.begin(), values.end(), '\r'));
             //If you did Data Struct Assignment 2 carefully, you will understand the following lines.
-            size_t the_stage = static_cast<size_t>(stoi(taking_the_stuff));
-            map<size_t, vector<string>>::iterator it;
+            size_t the_stage = static_cast<short>(stoi(taking_the_stuff));
+            map<short, vector<string>>::iterator it;
             if (dialogues.count(the_stage) == 1) {
                 it = dialogues.find(the_stage);
                 it->second.push_back(values);
                 continue;
             }
             else {
-                dialogues.insert(std::pair<size_t, vector<string>>(the_stage, { values }));
+                dialogues.insert(std::pair<short, vector<string>>(the_stage, { values }));
             }
         }
         fileStream2.close();

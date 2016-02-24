@@ -48,7 +48,7 @@ void scene2_SP2::Init()
     //// Init VBO here
 
     //// Set background color to dark blue
-    glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
     //Enable depth buffer and depth testing
     glEnable(GL_DEPTH_TEST);
@@ -718,7 +718,7 @@ void scene2_SP2::RenderRobot()
     modelStack.PushMatrix();
     modelStack.Translate(Rot_Civ_.getObjectposX(), Rot_Civ_.getObjectposY(), Rot_Civ_.getObjectposZ());
 	modelStack.Scale(7, 7, 7);
-	renderMesh(meshList[GEO_ROBOT], false);
+	renderMesh(meshList[GEO_ROBOT], true);
 	modelStack.PopMatrix();
 
     if (Rot_Civ_.interaction() == false) {
@@ -735,7 +735,7 @@ void scene2_SP2::RenderFlyingVehicle()
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			//modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Scale(10, 10, 10);
+			modelStack.Scale(30, 30, 30);
 			renderMesh(meshList[GEO_FLYINGVEHICLE], true);
 			modelStack.PopMatrix();
 			break;
