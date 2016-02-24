@@ -254,9 +254,10 @@ void sceneSP2::Init()
 
     //initialise npc
     QUEST1.Init("First NPC", Vector3(-270, 0, 194), 5, 5, camera, "NPC data//NPC_1.txt");
-	QUEST2.Init("Sec NPC", Vector3(175, 0, 175), 5, 5, camera, "NPC data//NPC_2.txt");
     //initialise quest
     One.Init("First quest", camera, 1, Vector3(-270, 0, 164),5, Vector3(0, 0, 0), 5);
+
+	QUEST2.Init("Sec NPC", Vector3(175, 0, 175), 5, 5, camera, "NPC data//NPC_2.txt");
 	Two.Init("Sec quest", camera, 1, Vector3(185, 0, 185), 5, Vector3(0, 0, 0), 5);
 
     //Sek Heng's stuff and initialization
@@ -630,15 +631,15 @@ void sceneSP2::RenderStation()
 			renderMesh(meshList[GEO_DOOR], true);
 			if (door.getQuestStage() == 1)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to open door", Color(0, 1, 0), 3, 10, 10);
+				renderDialogueBox("Door","Press E to open door");
 			}
 			else if (door.getQuestStage() == 2)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the key card to open", Color(0, 1, 0), 3, 8, 10);
+				renderDialogueBox("Door", "Find the 2 keycard to open");
 			}
 			else if (door.openSasame() == 1)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to unlock", Color(0, 1, 0), 3, 8, 10);
+				renderDialogueBox("Door", "Press E to unlock");
 			}
 			modelStack.PopMatrix();
 			break;
@@ -660,7 +661,7 @@ void sceneSP2::RenderStation()
 			renderMesh(meshList[GEO_KEYCARD], false);
 			if (door.getCardText() == true)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to get card", Color(0, 1, 0), 3, 8, 10);
+				renderDialogueBox("Door", "Press E to get card");
 			}
 			modelStack.PopMatrix();
 		}
@@ -672,7 +673,7 @@ void sceneSP2::RenderStation()
 			renderMesh(meshList[GEO_KEYCARD], false);
 			if (door.getCardText() == true)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to get card", Color(0, 1, 0), 3, 8, 10);
+				renderDialogueBox("Door", "Press E to get card");
 			}
 			modelStack.PopMatrix();
 		}
@@ -1222,17 +1223,17 @@ void sceneSP2::RenderNPC()
 	{
 		if (!Application::IsKeyPressed('E'))
 		{
-			RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST2.getDialogue(true), Color(0, 1, 0), 3, 10, 10);
+			renderDialogueBox("_|_", QUEST2.getDialogue(true));
 		}
 		else
 		{
-			RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST2.getDialogue(false), Color(0, 1, 0), 3, 10, 10);
+			renderDialogueBox("_|_", QUEST2.getDialogue(false));
 		}
 	}
 	if (QUEST2.interaction() == true && Two.stage() == 4)
 	{
 
-		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST2.quest_complete(), Color(0, 1, 0), 3, 10, 10);
+		renderDialogueBox("_|_", QUEST2.quest_complete());
 	}
 	modelStack.PopMatrix();
     
@@ -1261,7 +1262,7 @@ void sceneSP2::RenderQuestObjects()
 	}
 	else if (Two.stage() == 3)
 	{
-		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
+		renderDialogueBox("", "Quest Complete!!");
 	}
 }
 
