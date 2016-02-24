@@ -20,7 +20,6 @@ Hopefully they don't mess it up
 #include "StationScene.h"
 #include "Quest.h"
 #include "SekHeng.h"
-#include "ChunfeiNPC.h"
 /******************************************************************************/
 /*!
 Class sceneSP2:
@@ -219,7 +218,6 @@ private:
 	bool headrotate;
 	void renderChunFei();
 	void headanimation(double dt);
-	ChunfeiNPC robotNPC;
 	void renderNPC3();
 };
 
