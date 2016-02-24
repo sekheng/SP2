@@ -242,6 +242,7 @@ void scene2_SP2::Init()
     beginEnding = false;
     beginIamYourFather = false;
     endingTime = 0;
+    moveToDeadPoolZ = 0;
     //Beginning cinematic
 }
 
@@ -1066,8 +1067,9 @@ void scene2_SP2::Ending(double& dt) {
         camera.setRotation(0, 220);
     }
     else {
-        camera.setLocation(0, camera.defaultPosition.y, 150);
+        camera.setLocation(0, camera.defaultPosition.y + moveToDeadPoolZ, 150);
         camera.setRotation(0, 180);
+        moveToDeadPoolZ += 20 * (float)(dt);
     }
 
     camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);

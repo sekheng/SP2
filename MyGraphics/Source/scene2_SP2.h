@@ -179,6 +179,7 @@ private:
     bool beginIamYourFather;
     void Ending(double& dt);
     double endingTime;
+    float moveToDeadPoolZ;
     //Beginning cinematic
 };
 
