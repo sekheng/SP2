@@ -194,8 +194,8 @@ private:
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY);
-
-
+    void RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
+    void TextSlowDown(double dt);
     double framePerSecond;
     float screenWidth, screenHeight;
 
@@ -221,6 +221,9 @@ private:
 	void headanimation(double dt);
 	ChunfeiNPC robotNPC;
 	void renderNPC3();
+
+    //text slow down
+    double slowtxt;
 };
 
 
