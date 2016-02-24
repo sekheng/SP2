@@ -32,6 +32,7 @@ public:
     string getDialogue(bool reset);
     bool interaction();
     bool quest_given();
+    string quest_complete();
 private:
     Vector3 NPC_pos;
     vector<string> Dialogues;
@@ -44,6 +45,8 @@ private:
     float text_delay;
     bool dialogue_finish;
     int stage;
+    bool quest_complete_stage;
+    bool quest_complete_delay;
 protected:
 };
 
