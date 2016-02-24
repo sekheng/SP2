@@ -432,11 +432,8 @@ Setting the coordinates of the camera's position
 /******************************************************************************/
 void Camera3::setLocation(float x, float y, float z) {
     position.x = x;
-    defaultPosition.x = x;
     position.y = y;
-    defaultPosition.y = y;
     position.z = z;
-    defaultPosition.z = z;
 }
 
 bool Camera3::boundsCheckXaxis(const float& x, const float& posX) {
@@ -521,4 +518,9 @@ float Camera3::getCrossHairZ() {
 
 void Camera3::setRadiusBetcrosshair_cam(float radius) {
     crossHairRadius = radius;
+}
+
+void Camera3::setRotation(float rotateX, float rotateY) {
+    CameraXrotation = rotateX;
+    CameraYrotation = rotateY;
 }

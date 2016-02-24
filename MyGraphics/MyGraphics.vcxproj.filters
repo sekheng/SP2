@@ -246,5 +246,8 @@
     <Text Include="NPC data\NPC_1.txt">
       <Filter>NPC data</Filter>
     </Text>
+    <Text Include="NPC data\NPC_2.txt">
+      <Filter>NPC data</Filter>
+    </Text>
   </ItemGroup>
 </Project>
