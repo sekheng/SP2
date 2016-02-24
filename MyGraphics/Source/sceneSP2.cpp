@@ -289,6 +289,13 @@ void sceneSP2::Init()
 	//chunfei's stuff
 
     slowtxt = 0;
+
+    quest_stage = 0;
+
+    Quest1_finished = false;
+    Quest2_finished = false;
+    Quest3_finished = false;
+    Quest4_finished = false;
 }
 
 /******************************************************************************/
@@ -318,6 +325,8 @@ void sceneSP2::Update(double dt)
 	Three.check_quest(QUEST3.quest_given());
 	Three.Update(dt);
 	headanimation(dt);
+
+    QuestCompleteCheck();
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -353,7 +362,7 @@ void sceneSP2::Update(double dt)
 	}
 
     //Sek Heng's stuff
-    if (Application::IsKeyPressed('0')) {
+    if (Application::IsKeyPressed('0') || quest_stage == 4) {
         sek_heng_.activateQuest();
     }
     if (Application::IsKeyPressed('9')) {
@@ -1266,50 +1275,58 @@ void sceneSP2::RenderNPC()
     }
     modelStack.PopMatrix();
     */
-    modelStack.PushMatrix();
-    modelStack.Translate(QUEST1.NPC_getposition_x(), QUEST1.NPC_getposition_y(), QUEST1.NPC_getposition_z());
-    renderMesh(meshList[GEO_NPC1], true);
-    if (QUEST1.interaction() == true && One.stage() < 4)
+    if (quest_stage >= 0)
     {
-
-        if (!Application::IsKeyPressed('E'))
+        modelStack.PushMatrix();
+        modelStack.Translate(QUEST1.NPC_getposition_x(), QUEST1.NPC_getposition_y(), QUEST1.NPC_getposition_z());
+        renderMesh(meshList[GEO_NPC1], true);
+        if (QUEST1.interaction() == true && One.stage() < 4)
         {
-            renderDialogueBox("Guan Hui", QUEST1.getDialogue(true));
-            //RenderDelayedTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.getDialogue(true), Color(0, 1, 0), 3, 10, 10);
 
+            if (!Application::IsKeyPressed('E'))
+            {
+                renderDialogueBox("Guan Hui", QUEST1.getDialogue(true));
+                //RenderDelayedTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.getDialogue(true), Color(0, 1, 0), 3, 10, 10);
+
+            }
+            else
+            {
+                renderDialogueBox("Guan Hui", QUEST1.getDialogue(false));
+            }
         }
-        else
+        if (QUEST1.interaction() == true && One.stage() == 4)
         {
-            renderDialogueBox("Guan Hui", QUEST1.getDialogue(false));
+            renderDialogueBox("Guan Hui", QUEST1.quest_complete());
+            Quest1_finished = true;
         }
+        modelStack.PopMatrix();
     }
-    if (QUEST1.interaction() == true && One.stage() == 4)
+   
+    if (quest_stage >= 2)
     {
-        renderDialogueBox("Guan Hui", QUEST1.quest_complete());
+        modelStack.PushMatrix();
+        modelStack.Translate(QUEST2.NPC_getposition_x(), QUEST2.NPC_getposition_y(), QUEST2.NPC_getposition_z());
+        renderMesh(meshList[GEO_NPC1], true);
+        if (QUEST2.interaction() == true && Two.stage() < 4)
+        {
+            if (!Application::IsKeyPressed('E'))
+            {
+                renderDialogueBox("_|_", QUEST2.getDialogue(true));
+            }
+            else
+            {
+                renderDialogueBox("_|_", QUEST2.getDialogue(false));
+            }
+        }
+        if (QUEST2.interaction() == true && Two.stage() == 4)
+        {
+
+            renderDialogueBox("_|_", QUEST2.quest_complete());
+            Quest3_finished = true;
+        }
+        modelStack.PopMatrix();
     }
-    modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(QUEST2.NPC_getposition_x(), QUEST2.NPC_getposition_y(), QUEST2.NPC_getposition_z());
-	renderMesh(meshList[GEO_NPC1], true);
-	if (QUEST2.interaction() == true && Two.stage() < 4)
-	{
-		if (!Application::IsKeyPressed('E'))
-		{
-			renderDialogueBox("_|_", QUEST2.getDialogue(true));
-		}
-		else
-		{
-			renderDialogueBox("_|_", QUEST2.getDialogue(false));
-		}
-	}
-	if (QUEST2.interaction() == true && Two.stage() == 4)
-	{
-
-		renderDialogueBox("_|_", QUEST2.quest_complete());
-	}
-	modelStack.PopMatrix();
-    
+	
 }
 
 void sceneSP2::RenderQuestObjects()
@@ -1496,57 +1513,60 @@ void sceneSP2::teleport()
 
 void sceneSP2::renderChunFei()
 {	
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "robothead") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Rotate(headrotating, 1, 0, 0);
-			modelStack.Scale(1.5, 1.5, 1.5);
-			renderMesh(meshList[GEO_ROBOTHEAD], true);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-		
-			modelStack.PushMatrix();
-			modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
-			modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Scale(1.5,1.5,1.5);
-			renderMesh(meshList[GEO_ROBOTBODY], true);
-			
-			if (QUEST3.interaction() == true && Three.stage() < 4)
-			{
-				if (!Application::IsKeyPressed('E'))
-				{
-					renderDialogueBox("ChunFei", QUEST3.getDialogue(true));
-				}
-				else
-				{
-					renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
-				}
-			}
-			if (QUEST3.interaction() == true && Three.stage() == 4)
-			{
-				renderDialogueBox("ChunFei", QUEST3.quest_complete());
-			}
-			modelStack.PopMatrix();
+    if (quest_stage >= 1)
+    {
+        for (auto it : camera.storage_of_objects) {
+            if (it.getName() == "robothead") {
+                modelStack.PushMatrix();
+                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+                modelStack.Rotate(-90, 0, 1, 0);
+                modelStack.Rotate(headrotating, 1, 0, 0);
+                modelStack.Scale(1.5, 1.5, 1.5);
+                renderMesh(meshList[GEO_ROBOTHEAD], true);
+                modelStack.PopMatrix();
+                break;
+            }
+        }
 
-			if (Three.stage() == 4)
-			{
-				for (auto it : camera.storage_of_objects) {
-					if (it.getName() == "sword") {
-						modelStack.PushMatrix();
-						modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-						modelStack.Rotate(-90, 0, 1, 0);
-						modelStack.Scale(1.5, 1.5, 1.5);
-						renderMesh(meshList[GEO_SWORD], true);
-						modelStack.PopMatrix();
-						break;
-					}
-				}
-			}
-	
+        modelStack.PushMatrix();
+        modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
+        modelStack.Rotate(-90, 0, 1, 0);
+        modelStack.Scale(1.5, 1.5, 1.5);
+        renderMesh(meshList[GEO_ROBOTBODY], true);
+
+        if (QUEST3.interaction() == true && Three.stage() < 4)
+        {
+            if (!Application::IsKeyPressed('E'))
+            {
+                renderDialogueBox("ChunFei", QUEST3.getDialogue(true));
+            }
+            else
+            {
+                renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
+            }
+        }
+        if (QUEST3.interaction() == true && Three.stage() == 4)
+        {
+            renderDialogueBox("ChunFei", QUEST3.quest_complete());
+            Quest2_finished = true;
+        }
+        modelStack.PopMatrix();
+
+        if (Three.stage() == 4)
+        {
+            for (auto it : camera.storage_of_objects) {
+                if (it.getName() == "sword") {
+                    modelStack.PushMatrix();
+                    modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+                    modelStack.Rotate(-90, 0, 1, 0);
+                    modelStack.Scale(1.5, 1.5, 1.5);
+                    renderMesh(meshList[GEO_SWORD], true);
+                    modelStack.PopMatrix();
+                    break;
+                }
+            }
+        }
+    }
 
 }
 
@@ -1575,4 +1595,24 @@ void sceneSP2::headanimation(double dt)
 	{
 		headrotating = 0;
 	}
+}
+
+void sceneSP2::QuestCompleteCheck()
+{
+    if (Quest1_finished && !Quest2_finished && !Quest3_finished)
+    {
+        quest_stage = 1;
+    }
+    if (Quest1_finished && Quest2_finished && !Quest3_finished)
+    {
+        quest_stage = 2;
+    }
+    if (Quest1_finished && Quest2_finished && Quest3_finished)
+    {
+        quest_stage = 3;
+    }
+    if (quest_stage == 3)
+    {
+        quest_stage = 4;
+    }
 }

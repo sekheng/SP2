@@ -196,6 +196,7 @@ private:
     void RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void TextSlowDown(double dt);
+    void QuestCompleteCheck();
     double framePerSecond;
     float screenWidth, screenHeight;
 
@@ -223,6 +224,14 @@ private:
 
     //text slow down
     double slowtxt;
+
+    //quest flow
+    short quest_stage;
+    bool Quest1_finished;
+    bool Quest2_finished;
+    bool Quest3_finished;
+    bool Quest4_finished;
+
 };
 
 
