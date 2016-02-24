@@ -1,4 +1,5 @@
-First:Press E to interact
-Second:Hi
-Third:Could you help me find something?
-Fourth:I just need a screwdriver
+Press E to interact
+Hi
+Could you help me find something?
+I just need a screwdriver
+Thank you! Now I can work...

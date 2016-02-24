@@ -253,15 +253,9 @@ void sceneSP2::Init()
 	camera.InitObjects("scenario1Driven//objects.txt");
 
     //initialise npc
-    //example
-    //npc1.Init("Najib",Vector3(2,2,2),5,5,camera,"NPC data//Najib.txt");
     QUEST1.Init("First NPC", Vector3(-270, 0, 194), 5, 5, camera, "NPC data//NPC_1.txt");
     //initialise quest
-    //example
-    //test_quest.Init("random quest", camera,2,Vector3(20,0,20),5,5,Vector3(30,0,30),5,5);
-    //test_quest.Quest_Taken(true);
     One.Init("First quest", camera, 1, Vector3(-270, 0, 164),5, Vector3(0, 0, 0), 5);
-    //only one object needed to be found
 
     //Sek Heng's stuff and initialization
     sek_heng_.init("sekheng//sek_heng_stuff.txt");
@@ -1214,7 +1208,7 @@ void sceneSP2::RenderNPC()
     modelStack.PushMatrix();
     modelStack.Translate(QUEST1.NPC_getposition_x(), QUEST1.NPC_getposition_y(), QUEST1.NPC_getposition_z());
     renderMesh(meshList[GEO_NPC1], true);
-    if (QUEST1.interaction() == true)
+    if (QUEST1.interaction() == true && One.stage() < 4)
     {
         if (!Application::IsKeyPressed('E'))
         {
@@ -1225,91 +1219,17 @@ void sceneSP2::RenderNPC()
             RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.getDialogue(false), Color(0, 1, 0), 3, 10, 10);
         }
     }
+    if (QUEST1.interaction() == true && One.stage() == 4)
+    {
+        
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.quest_complete(), Color(0, 1, 0), 3, 10, 10);
+    }
     modelStack.PopMatrix();
+    
 }
 
 void sceneSP2::RenderQuestObjects()
 {
-    //example
-    /*
-    if (test_quest.Result() == true)
-    {
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
-    }
-    else
-    {
-        if (test_quest.FirstObject_taken() == false )
-        {
-            //object 1
-            modelStack.PushMatrix();
-            modelStack.Translate(test_quest.get_object1_x(), 0, test_quest.get_object1_z());
-            renderMesh(meshList[GEO_SCREWDRIVER], false);
-            modelStack.PopMatrix();
-        }
-        if (test_quest.SecondObject_taken() == false)
-        {
-            //object 2
-            modelStack.PushMatrix();
-            modelStack.Translate(test_quest.get_object2_x(), 0, test_quest.get_object2_z());
-            renderMesh(meshList[GEO_CONTAINER], false);
-            modelStack.PopMatrix();
-        }
-    }
-    */
-
-    //if (One.get_quest_taken())
-    //{
-    //    if (One.Result() == false)
-    //    {
-    //        if (One.FirstObject_taken() == false)
-    //        {
-    //            //object 1
-    //            modelStack.PushMatrix();
-    //            modelStack.Translate(One.get_object1_x(), 0, One.get_object1_z());
-    //            renderMesh(meshList[GEO_SCREWDRIVER], false);
-    //            modelStack.PopMatrix();
-    //        }
-    //        if (One.SecondObject_taken() == false && One.no_of_objects() > 1)
-    //        {
-    //            //object 2
-    //            modelStack.PushMatrix();
-    //            modelStack.Translate(One.get_object2_x(), 0, One.get_object2_z());
-    //            renderMesh(meshList[GEO_CONTAINER], false);
-    //            modelStack.PopMatrix();
-    //        }
-    //    }
-    //    else
-    //    {
-    //        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
-    //    }
-    //}
-
-
-
-    //if (One.Result() == true)
-    //{
-    //    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
-    //}
-    //else//if One.Result() == false
-    //{
-    //    if (One.FirstObject_taken() == false)
-    //    {
-    //        //object 1
-    //        modelStack.PushMatrix();
-    //        modelStack.Translate(One.get_object1_x(), 0, One.get_object1_z());
-    //        renderMesh(meshList[GEO_SCREWDRIVER], false);
-    //        modelStack.PopMatrix();
-    //    }
-    //    if (One.SecondObject_taken() == false && One.no_of_objects() > 1 )
-    //    {
-    //        //object 2
-    //        modelStack.PushMatrix();
-    //        modelStack.Translate(One.get_object2_x(), 0, One.get_object2_z());
-    //        renderMesh(meshList[GEO_CONTAINER], false);
-    //        modelStack.PopMatrix();
-    //    }
-    //}
-
     if (One.stage() == 1)
     {
         modelStack.PushMatrix();
@@ -1317,13 +1237,6 @@ void sceneSP2::RenderQuestObjects()
         renderMesh(meshList[GEO_CONTAINER], true);
         modelStack.PopMatrix();
     }
-    /*else if (One.stage() == 2)
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
-        renderMesh(meshList[GEO_SCREWDRIVER], false);
-        modelStack.PopMatrix();
-    }*/
     else if (One.stage() == 3)
     {
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
@@ -1439,9 +1352,12 @@ void sceneSP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }
 
-void sceneSP2::teleport() {
-    for (auto it : camera.storage_of_objects) {
-        if (it.getName() == "TeleporterBox") {
+void sceneSP2::teleport() 
+{
+    for (auto it : camera.storage_of_objects) 
+    {
+        if (it.getName() == "TeleporterBox") 
+        {
             if (it.getObjectposX() + 6 > camera.position.x &&
                 it.getObjectposX() - 6 < camera.position.x &&
                 it.getObjectposZ() + 6 > camera.position.z &&

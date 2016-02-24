@@ -80,6 +80,7 @@ public:
     float getObject1_Z();
     void Update(double dt);
     bool questComplete();
+
 private:
     string name;
     Camera3 *camera;
