@@ -115,7 +115,7 @@ bool NumPad::NumpadRenderOnScreen()
 	return false;
 }
 
-void NumPad::NumpadProgram()
+void NumPad::NumpadProgram(double dt)
 {
 	if (interactiontext() == true && interaction()==true && NumpadRenderOnScreen())//make sure player inside the interaction area 
 	{
