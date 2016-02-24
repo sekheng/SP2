@@ -218,6 +218,7 @@ private:
 	void renderChunFei();
 	void headanimation(double dt);
 	ChunfeiNPC robotNPC;
+	void renderNPC3();
 };
 
 

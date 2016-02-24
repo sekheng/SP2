@@ -1014,7 +1014,7 @@ void scene2_SP2::VaultAnimation(double dt)
 		}
 		if (dooropen == true)
 		{
-			if (dooropening > 90) //door rotate 90 degree
+			if (dooropening >= 90) //door rotate 90 degree
 			{
 				dooropening = 90;
 			}

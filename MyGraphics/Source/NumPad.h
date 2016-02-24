@@ -54,6 +54,7 @@ private:
 	int digit2;
 	int digit3;
 	int digit4;
+	int hahaha;
 
 	double time;
 	
