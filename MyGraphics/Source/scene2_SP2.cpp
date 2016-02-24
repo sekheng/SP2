@@ -237,6 +237,12 @@ void scene2_SP2::Init()
     meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
     meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
     //text box
+
+    //Beginning cinematic
+    beginEnding = false;
+    beginIamYourFather = false;
+    endingTime = 0;
+    //Beginning cinematic
 }
 
 /******************************************************************************/
@@ -249,7 +255,6 @@ where the logic of the game is, and update
 /******************************************************************************/
 void scene2_SP2::Update(double dt)
 {
-    camera.Update(dt);
 	VaultAnimation(dt);
 	Numpad.Update(dt);
 	Numpad.NumpadProgram(dt);
@@ -264,46 +269,6 @@ void scene2_SP2::Update(double dt)
     if (Application::IsKeyPressed('4'))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-    if (Application::IsKeyPressed('I'))
-        light[0].position.z -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('K'))
-        light[0].position.z += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('J'))
-        light[0].position.x -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('L'))
-        light[0].position.x += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('O'))
-        light[0].position.y -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('P'))
-        light[0].position.y += (float)(LSPEED * dt);
-
-    if (Application::IsKeyPressed('5'))
-    {
-        on_light = true;
-        light[0].color.Set(1, 1, 1);
-    }
-    if (Application::IsKeyPressed('6'))
-    {
-        on_light = false;
-        light[0].color.Set(0, 0, 0);
-    }
-
-    if (Application::IsKeyPressed('7'))
-    {
-        light[0].type = Light::LIGHT_POINT;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-    if (Application::IsKeyPressed('8'))
-    {
-        light[0].type = Light::LIGHT_DIRECTIONAL;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-    if (Application::IsKeyPressed('9'))
-    {
-        light[0].type = Light::LIGHT_SPOT;
-        glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    }
-
     if (Application::IsKeyPressed(VK_NUMPAD1)) {
         Application::changeIntoScenario1();
     }
@@ -311,6 +276,19 @@ void scene2_SP2::Update(double dt)
         Application::changeIntoScenario2();
     }
 
+    if (Numpad.NumpadVerify() == true) {
+        beginEnding = true;
+    }
+    if (dooropening >= 90) {
+        beginIamYourFather = true;
+    }
+    
+    if (beginEnding) {
+        Ending(dt);
+    }
+    else {
+        camera.Update(dt);
+    }
 }
 
 /******************************************************************************/
@@ -432,12 +410,6 @@ void scene2_SP2::Render()
 
     renderMesh(meshList[GEO_AXES], false);
 
-    modelStack.PushMatrix();
-    //scale, translate, rotate
-    modelStack.Scale(20, 20, 1);
-    RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
-    modelStack.PopMatrix();
-
 	//render UI
 	modelStack.PushMatrix();
 	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
@@ -478,7 +450,7 @@ void scene2_SP2::Render()
     renderDeadPool();
     //rendering DeadPOOL
 
-	if (Numpad.NumpadRenderOnScreen())
+    if (beginIamYourFather == false && Numpad.NumpadRenderOnScreen())
 	{
 		RenderNumPadOnScreen(meshList[GEO_NUMPAD], 16, 40, 30, 0, 0,1,0);
 		RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 40, 30, 2, 0 + Numpad.getfirstrotate(),1, 0);
@@ -501,8 +473,6 @@ void scene2_SP2::Render()
 		RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
 		modelStack.PopMatrix();
 	}
-
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
 	std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
@@ -994,9 +964,9 @@ void scene2_SP2::VaultAnimation(double dt)
 {
 	if (Numpad.NumpadVerify()==true)
 	{
-			camera.position.x = 0;
-			camera.position.y = 20;
-			camera.position.z = 150;
+			//camera.position.x = 0;
+			//camera.position.y = 20;
+			//camera.position.z = 150;
 			wheelturning += 100 * (float)(dt);
 			if (wheelturning > 360)// wheel will rotate 360 degree
 			{
@@ -1014,7 +984,7 @@ void scene2_SP2::VaultAnimation(double dt)
 		}
 		if (dooropen == true)
 		{
-			if (dooropening > 90) //door rotate 90 degree
+			if (dooropening >= 90) //door rotate 90 degree
 			{
 				dooropening = 90;
 			}
@@ -1038,6 +1008,17 @@ void scene2_SP2::renderDeadPool() {
             break;
         }
     }
+
+    //rendering his dialogue
+    if (beginIamYourFather) {
+        if (endingTime < 2) {
+            renderDialogueBox("DeadPool", "Join The Dark Side");
+        }
+        else if (endingTime < 4) {
+            renderDialogueBox("DeadPool", "I am Your Father");
+        }
+    }
+    //rendering his dialogue
 }
 
 
@@ -1069,4 +1050,28 @@ void scene2_SP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 3.5, 5.5);
     RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
+}
+
+void scene2_SP2::Ending(double& dt) {
+    if (!beginIamYourFather) {
+        camera.setLocation(0, camera.defaultPosition.y, 150);
+        camera.setRotation(0, 180);
+    }
+    else {
+        endingTime += dt;
+    }
+
+    if (beginIamYourFather == true && endingTime < 4) {
+        camera.setLocation(10, 30, 10);
+        camera.setRotation(0, 220);
+    }
+    else {
+        camera.setLocation(0, camera.defaultPosition.y, 150);
+        camera.setRotation(0, 180);
+    }
+
+    camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);
+    Vector3 view = (camera.target - camera.position).Normalized();
+    Vector3 right = view.Cross(camera.defaultUp);
+    camera.up = right.Cross(view);
 }

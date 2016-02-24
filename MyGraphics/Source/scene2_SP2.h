@@ -173,6 +173,13 @@ private:
     //rendering dialogue box
     void renderDialogueBox(const string& name, const string& dialogue);
     //rendering dialogue box
+
+    //Beginning cinematic
+    bool beginEnding;
+    bool beginIamYourFather;
+    void Ending(double& dt);
+    double endingTime;
+    //Beginning cinematic
 };
 
 #endif
