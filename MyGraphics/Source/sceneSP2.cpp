@@ -276,7 +276,7 @@ void sceneSP2::Init()
 	//QUEST3.Init("Chunfei NPChead", Vector3(0, 5.5, 250), 2, 2, camera, "NPC data//NPC_3.txt");
 	QUEST3.Init("Chunfei NPCbody", 5,Vector3(0, 0, 250), 5, 5, camera, "NPC data//NPC_3.txt");
 	//initialise quest3
-	Three.Init("Third quest", camera, 1, Vector3(0,0,240), 5, Vector3(0, 0, 0), 0); //-280, 0, 300
+	Three.Init("Third quest", camera, 1, Vector3(-300, 0, 275), 5, Vector3(0, 0, 0), 0); 
 
 	/*for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "robotbody") {
@@ -1462,7 +1462,7 @@ void sceneSP2::renderChunFei()
 			}
 			modelStack.PopMatrix();
 
-			if (Three.stage() == 3)
+			if (Three.stage() == 4)
 			{
 				for (auto it : camera.storage_of_objects) {
 					if (it.getName() == "sword") {
