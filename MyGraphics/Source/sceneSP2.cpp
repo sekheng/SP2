@@ -276,7 +276,7 @@ void sceneSP2::Init()
 	//QUEST3.Init("Chunfei NPChead", Vector3(0, 5.5, 250), 2, 2, camera, "NPC data//NPC_3.txt");
 	QUEST3.Init("Chunfei NPCbody", 5,Vector3(0, 0, 250), 5, 5, camera, "NPC data//NPC_3.txt");
 	//initialise quest3
-	Three.Init("Third quest", camera, 1, Vector3(-280, 0, 300), 5, Vector3(0, 0, 0), 0);
+	Three.Init("Third quest", camera, 1, Vector3(0,0,240), 5, Vector3(0, 0, 0), 0); //-280, 0, 300
 
 	/*for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "robotbody") {
@@ -1284,14 +1284,11 @@ void sceneSP2::RenderQuestObjects()
 		renderDialogueBox("", "Quest Complete!!");
 	}
 
-
-	
-
 	if (Three.stage() == 1)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(Three.getObject1_X(), 0, Three.getObject1_Z());
-		renderMesh(meshList[GEO_CONTAINER], true);
+		renderMesh(meshList[GEO_SWORD], true);
 		modelStack.PopMatrix();
 	}
 	else if (Three.stage() == 3)
@@ -1465,17 +1462,21 @@ void sceneSP2::renderChunFei()
 			}
 			modelStack.PopMatrix();
 
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "sword") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Scale(1.5,1.5,1.5);
-			renderMesh(meshList[GEO_SWORD], true);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
+			if (Three.stage() == 3)
+			{
+				for (auto it : camera.storage_of_objects) {
+					if (it.getName() == "sword") {
+						modelStack.PushMatrix();
+						modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+						modelStack.Rotate(-90, 0, 1, 0);
+						modelStack.Scale(1.5, 1.5, 1.5);
+						renderMesh(meshList[GEO_SWORD], true);
+						modelStack.PopMatrix();
+						break;
+					}
+				}
+			}
+	
 
 }
 
