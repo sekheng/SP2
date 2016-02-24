@@ -278,12 +278,12 @@ void sceneSP2::Init()
 	//initialise quest3
 	Three.Init("Third quest", camera, 1, Vector3(-280, 0, 300), 5, Vector3(0, 0, 0), 0);
 
-	for (auto it : camera.storage_of_objects) {
+	/*for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "robotbody") {
 			robotNPC.Init(camera, Vector3(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()));
 			break;
 		}
-	}
+	}*/
 	headrotate = false;
 	headrotating = 0;
 	//chunfei's stuff
