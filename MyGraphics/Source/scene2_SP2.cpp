@@ -238,11 +238,17 @@ void scene2_SP2::Init()
     meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
     //text box
 
+    //ending screen
+    meshList[GEO_ENDING_SCREEN] = MeshBuilder::GenerateQuad("ending screen", Color(0, 0, 0));
+    meshList[GEO_ENDING_SCREEN]->textureID = LoadTGA("Image//ending_screen.tga");
+    //ending screen
+
     //Beginning cinematic
     beginEnding = false;
     beginIamYourFather = false;
     endingTime = 0;
     moveToDeadPoolZ = 0;
+    sizeofEndingScreen = 1;
     //Beginning cinematic
 }
 
@@ -411,11 +417,6 @@ void scene2_SP2::Render()
 
     renderMesh(meshList[GEO_AXES], false);
 
-	//render UI
-	modelStack.PushMatrix();
-	RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
-	modelStack.PopMatrix();
-
 	//render ground
 	modelStack.PushMatrix();
 	modelStack.Scale(100, 1, 100);
@@ -474,6 +475,9 @@ void scene2_SP2::Render()
 		RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
 		modelStack.PopMatrix();
 	}
+    if (beginIamYourFather == true && moveToDeadPoolZ < -135) {
+        renderEndingScreen();
+    }
 
 	std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
@@ -1066,14 +1070,25 @@ void scene2_SP2::Ending(double& dt) {
         camera.setLocation(10, 30, 10);
         camera.setRotation(0, 220);
     }
-    else {
-        camera.setLocation(0, camera.defaultPosition.y + moveToDeadPoolZ, 150);
+    else if (endingTime > 4 && beginIamYourFather == true) {
+        camera.setLocation(0, camera.defaultPosition.y, 150 + moveToDeadPoolZ);
         camera.setRotation(0, 180);
-        moveToDeadPoolZ += 20 * (float)(dt);
+        if (moveToDeadPoolZ < -135) {
+            sizeofEndingScreen += 200 * (float)(dt);
+        }
+        if (moveToDeadPoolZ > -145) {
+            moveToDeadPoolZ -= 25 * (float)(dt);
+        }
     }
 
     camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);
     Vector3 view = (camera.target - camera.position).Normalized();
     Vector3 right = view.Cross(camera.defaultUp);
     camera.up = right.Cross(view);
+}
+
+void scene2_SP2::renderEndingScreen() {
+    modelStack.PushMatrix();
+    RenderImageOnScreen(meshList[GEO_ENDING_SCREEN], sizeofEndingScreen, 40, 30);
+    modelStack.PopMatrix();
 }
