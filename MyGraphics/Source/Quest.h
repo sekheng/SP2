@@ -78,9 +78,13 @@ public:
     bool renderObject2();*/
     float getObject1_X();
     float getObject1_Z();
+    float getObject2_X();
+    float getObject2_Z();
     void Update(double dt);
     bool questComplete();
-
+    short get_numberof_items();
+    bool Item1collected();
+    bool Item2collected();
 private:
     string name;
     Camera3 *camera;
@@ -88,9 +92,10 @@ private:
     float x_1, y_1, z_1;
     float bounds_1, bounds_2;
     float x_2, y_2, z_2;
-    bool CollectItem;
+    bool CollectItem1, CollectItem2;
     double time;
     bool quest_complete;
+    short number_of_items;
 protected:
 };
 

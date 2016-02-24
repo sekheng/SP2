@@ -1,4 +1,4 @@
-First:Press E to interact
-Second:Hello, it's me!
-Third:I was wondering could you help me find something?
-Fourth:I need back my lost sword, it should be placed at where you spawn! 
+Press E to interact
+Hello, it's me!
+I was wondering could you help me find something?
+I need back my lost sword, it should be placed at where you spawn! 

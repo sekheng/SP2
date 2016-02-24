@@ -23,7 +23,7 @@ public:
     NPC();
     ~NPC();
 
-    void Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camera3 &camera_address, const char *fileLocation);
+    void Init(string name, short NumberofDialogue, Vector3 pos, float boundaryX, float boundaryZ, Camera3 &camera_address, const char *fileLocation);
     float NPC_getposition_x();
     float NPC_getposition_z();
     float NPC_getposition_y();
@@ -47,6 +47,7 @@ private:
     int stage;
     bool quest_complete_stage;
     bool quest_complete_delay;
+    short line_of_dialogue;
 protected:
 };
 

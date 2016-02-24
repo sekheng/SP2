@@ -18,7 +18,7 @@ NPC::~NPC()
 
 }
 
-void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camera3 &camera_address, const char *fileLocation)
+void NPC::Init(string name, short NumberofDialogue ,Vector3 pos, float boundaryX, float boundaryZ, Camera3 &camera_address, const char *fileLocation)
 {
     //initialization of varivables
     Name_ = name;
@@ -35,6 +35,8 @@ void NPC::Init(string name, Vector3 pos, float boundaryX, float boundaryZ, Camer
     stage = 0;
     quest_complete_delay = false;
     quest_complete_stage = 0;
+
+    line_of_dialogue = NumberofDialogue;
     //read dialogue from text file
     std::ifstream fileStream(fileLocation, std::ios::binary);
     if (!fileStream.is_open()) {
@@ -80,7 +82,8 @@ string NPC::getDialogue(bool reset)
         dialogue_switch = 0;
         return Dialogues[dialogue_switch];
     }
-    else if (dialogue_reset == false && has_interacted == false) {
+    else if (dialogue_reset == false && has_interacted == false) 
+    {
         has_interacted = true;
         return Dialogues[dialogue_switch];
     }
@@ -93,13 +96,13 @@ string NPC::getDialogue(bool reset)
 			{
                 dialogue_switch += 1;
             }
-            if (dialogue_switch == 3)
+            if (dialogue_switch == (line_of_dialogue-1))
             {
                 dialogue_finish = true;
             }
-            if (dialogue_switch == 4)
+            if (dialogue_switch == (line_of_dialogue))
             {
-                dialogue_switch = 3;
+                dialogue_switch = (line_of_dialogue - 1);
             }
         }
         return Dialogues[dialogue_switch];
@@ -162,6 +165,8 @@ bool NPC::boundschecking(const float&bounds_x, const float &bounds_z)
     return false;
 }
 
+
+
 void NPC::update(double dt)
 {
 
@@ -182,11 +187,11 @@ string NPC::quest_complete()
     if (Application::IsKeyPressed('E') && quest_complete_stage == 0)
     {
         quest_complete_stage = 1;
-        return Dialogues[4];
+        return Dialogues[line_of_dialogue];
     }
     else if (quest_complete_stage == 1)
     {
-        return Dialogues[4];
+        return Dialogues[line_of_dialogue];
     }
     return Dialogues[0];
 }
