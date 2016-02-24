@@ -347,23 +347,7 @@ void sceneSP2::Update(double dt)
     }
     //just putting the teleport stuff in here
 
-	/*if (headrotate == false)
-	{
-		headrotating += 15 * (float)(dt);
-		if (headrotating > 10)
-		{
-			headrotate = true;
-		}
-	}
-	else if (headrotate == true)
-	{
-		headrotating -= 15 * (float)(dt);
-		if (headrotating < -5)
-		{
-			headrotate = false;
-		}
-	}
-*/
+	
 
 	
 }
@@ -1218,17 +1202,16 @@ void sceneSP2::RenderNPC()
     {
         if (!Application::IsKeyPressed('E'))
         {
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.getDialogue(true), Color(0, 1, 0), 3, 10, 10);
+            renderDialogueBox("Guan Hui", QUEST1.getDialogue(true));
         }
         else
         {
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.getDialogue(false), Color(0, 1, 0), 3, 10, 10);
+            renderDialogueBox("Guan Hui", QUEST1.getDialogue(false));
         }
     }
     if (QUEST1.interaction() == true && One.stage() == 4)
     {
-        
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.quest_complete(), Color(0, 1, 0), 3, 10, 10);
+        renderDialogueBox("Guan Hui", QUEST1.quest_complete());
     }
     modelStack.PopMatrix();
 
@@ -1266,7 +1249,7 @@ void sceneSP2::RenderQuestObjects()
     }
     else if (One.stage() == 3)
     {
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Quest Complete!!", Color(0, 1, 0), 3, 10, 10);
+       renderDialogueBox("", "Quest Complete!!");
     }
 
 	if (Two.stage() == 1)
