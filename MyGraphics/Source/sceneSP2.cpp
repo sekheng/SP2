@@ -302,7 +302,9 @@ void sceneSP2::Update(double dt)
     camera.Update(dt);
     framePerSecond = 1 / dt;
     npc1.update(dt);
+    //update for quest
     QUEST1.update(dt);
+    // update for npc
     One.check_quest(QUEST1.quest_given());
     One.Update(dt);
 
@@ -842,21 +844,6 @@ void sceneSP2::Render()
 
 	//render chunfei NPC
 	renderChunFei();
-
-	if (robotNPC.interaction())
-	{
-		RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hi, I'm Francis", Color(0, 0, 1), 5, 4, 2);
-		
-	}
-	//chunfei stuff
-
-	/*modelStack.PushMatrix();
-	modelStack.Translate(10, 10, 10);
-	modelStack.Scale(10, 10, 10);
-	renderMesh(meshList[GEO_SWORD], false);
-	modelStack.PopMatrix();*/
-
-
 
     //****************************************************************************//
     //On screen objects

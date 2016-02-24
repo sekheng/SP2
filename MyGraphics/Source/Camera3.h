@@ -48,6 +48,7 @@ public:
     void InitObjects(const char *fileLocation);
 
     void setLocation(float x, float y, float z);
+    void setRotation(float rotateX, float rotateY);
 
     float getCameraXcoord();
     float getCameraZcoord();
