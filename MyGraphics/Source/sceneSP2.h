@@ -74,6 +74,8 @@ class sceneSP2 : public Scene
 		GEO_DOOR,
 		//KeyCard
 		GEO_KEYCARD,
+		//Teleporter
+		GEO_TELEPORTER,
 
 		//SpaceShuttle
 		GEO_SPACESHUTTLE,
