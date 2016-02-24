@@ -99,7 +99,7 @@ string NPC::getDialogue(bool reset)
             }
             if (dialogue_switch == 4)
             {
-                dialogue_switch = 1;
+                dialogue_switch = 3;
             }
         }
         return Dialogues[dialogue_switch];
