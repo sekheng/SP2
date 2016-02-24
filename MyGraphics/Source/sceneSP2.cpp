@@ -257,7 +257,7 @@ void sceneSP2::Init()
     //initialise quest
     One.Init("First quest", camera, 2, Vector3(-270, 0, 164),5, Vector3(-270 ,0, 134),5);
 
-	QUEST2.Init("Sec NPC", Vector3(175, 0, 175), 5, 5, camera, "NPC data//NPC_2.txt");
+	QUEST2.Init("Sec NPC",4, Vector3(175, 0, 175), 5, 5, camera, "NPC data//NPC_2.txt");
 	Two.Init("Sec quest", camera, 1, Vector3(185, 0, 185), 5, Vector3(0, 0, 0), 5);
 
     //Sek Heng's stuff and initialization
