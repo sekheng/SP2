@@ -159,10 +159,10 @@ void Quest::Init(string Name_, Camera3 &camera_address, short no_of_items,
     y_2 = Item2_pos.y;
     z_2 = Item2_pos.z;
     bounds_2 = Item2_bounds;
-
     stages = 0;
-
     CollectItem = false;
+    time = 0;
+    quest_complete = false;
 }
 
 bool Quest::check_quest(bool quest_is_taken)
@@ -227,4 +227,19 @@ void Quest::Update(double dt)
             stages = 3;
         }
     }
+    if (stages == 3)
+    {
+        quest_complete = true;
+        time += dt;
+    }
+    if (time > 2.0f)
+    {
+        stages = 4;
+    }
+
+}
+
+bool Quest::questComplete()
+{
+    return quest_complete;
 }
