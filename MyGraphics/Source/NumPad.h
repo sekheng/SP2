@@ -16,7 +16,7 @@ public:
 
 	void Init(Camera3 &cameraDub, const Vector3 &origPos);
 	void Update(double dt);
-	void NumpadProgram();
+	void NumpadProgram(double dt);
 
 	bool NumpadVerify();
 	bool interactiontext();

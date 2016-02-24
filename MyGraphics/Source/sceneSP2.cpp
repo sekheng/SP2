@@ -257,6 +257,9 @@ void sceneSP2::Init()
     //initialise quest
     One.Init("First quest", camera, 2, Vector3(-270, 0, 164),5, Vector3(-270 ,0, 134),5);
 
+	QUEST2.Init("Sec NPC", Vector3(175, 0, 175), 5, 5, camera, "NPC data//NPC_2.txt");
+	Two.Init("Sec quest", camera, 1, Vector3(185, 0, 185), 5, Vector3(0, 0, 0), 5);
+
     //Sek Heng's stuff and initialization
     sek_heng_.init("sekheng//sek_heng_stuff.txt");
     sek_heng_.initDialogues("sekheng//dialogues.txt", camera);
@@ -291,6 +294,10 @@ void sceneSP2::Update(double dt)
     One.check_quest(QUEST1.quest_given());
     One.Update(dt);
 	headanimation(dt);
+
+	QUEST2.update(dt);
+	Two.check_quest(QUEST2.quest_given());
+	Two.Update(dt);
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -341,23 +348,7 @@ void sceneSP2::Update(double dt)
     }
     //just putting the teleport stuff in here
 
-	/*if (headrotate == false)
-	{
-		headrotating += 15 * (float)(dt);
-		if (headrotating > 10)
-		{
-			headrotate = true;
-		}
-	}
-	else if (headrotate == true)
-	{
-		headrotating -= 15 * (float)(dt);
-		if (headrotating < -5)
-		{
-			headrotate = false;
-		}
-	}
-*/
+	
 
 	
 }
@@ -640,15 +631,15 @@ void sceneSP2::RenderStation()
 			renderMesh(meshList[GEO_DOOR], true);
 			if (door.getQuestStage() == 1)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to open door", Color(0, 1, 0), 3, 10, 10);
+				renderDialogueBox("Door","Press E to open door");
 			}
 			else if (door.getQuestStage() == 2)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Find the key card to open", Color(0, 1, 0), 3, 8, 10);
+				renderDialogueBox("Door", "Find the 2 keycard to open");
 			}
 			else if (door.openSasame() == 1)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to unlock", Color(0, 1, 0), 3, 8, 10);
+				renderDialogueBox("Door", "Press E to unlock");
 			}
 			modelStack.PopMatrix();
 			break;
@@ -670,7 +661,7 @@ void sceneSP2::RenderStation()
 			renderMesh(meshList[GEO_KEYCARD], false);
 			if (door.getCardText() == true)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to get card", Color(0, 1, 0), 3, 8, 10);
+				renderDialogueBox("Door", "Press E to get card");
 			}
 			modelStack.PopMatrix();
 		}
@@ -682,7 +673,7 @@ void sceneSP2::RenderStation()
 			renderMesh(meshList[GEO_KEYCARD], false);
 			if (door.getCardText() == true)
 			{
-				RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to get card", Color(0, 1, 0), 3, 8, 10);
+				renderDialogueBox("Door", "Press E to get card");
 			}
 			modelStack.PopMatrix();
 		}
@@ -1224,6 +1215,27 @@ void sceneSP2::RenderNPC()
         renderDialogueBox("Guan Hui", QUEST1.quest_complete());
     }
     modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(QUEST2.NPC_getposition_x(), QUEST2.NPC_getposition_y(), QUEST2.NPC_getposition_z());
+	renderMesh(meshList[GEO_NPC1], true);
+	if (QUEST2.interaction() == true && Two.stage() < 4)
+	{
+		if (!Application::IsKeyPressed('E'))
+		{
+			renderDialogueBox("_|_", QUEST2.getDialogue(true));
+		}
+		else
+		{
+			renderDialogueBox("_|_", QUEST2.getDialogue(false));
+		}
+	}
+	if (QUEST2.interaction() == true && Two.stage() == 4)
+	{
+
+		renderDialogueBox("_|_", QUEST2.quest_complete());
+	}
+	modelStack.PopMatrix();
     
 }
 
@@ -1257,6 +1269,17 @@ void sceneSP2::RenderQuestObjects()
        renderDialogueBox("", "Quest Complete!!");
     }
 
+	if (Two.stage() == 1)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(Two.getObject1_X(), 0, Two.getObject1_Z());
+		renderMesh(meshList[GEO_CONTAINER], true);
+		modelStack.PopMatrix();
+	}
+	else if (Two.stage() == 3)
+	{
+		renderDialogueBox("", "Quest Complete!!");
+	}
 }
 
 void sceneSP2::renderingSekHeng() {

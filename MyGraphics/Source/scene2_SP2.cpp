@@ -252,7 +252,7 @@ void scene2_SP2::Update(double dt)
     camera.Update(dt);
 	VaultAnimation(dt);
 	Numpad.Update(dt);
-	Numpad.NumpadProgram();
+	Numpad.NumpadProgram(dt);
     Rot_Civ_.update(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
@@ -1014,9 +1014,14 @@ void scene2_SP2::VaultAnimation(double dt)
 		}
 		if (dooropen == true)
 		{
-			dooropening += 20 * (float)(dt);
 			if (dooropening > 90) //door rotate 90 degree
+			{
 				dooropening = 90;
+			}
+			else
+			{
+				dooropening += 20 * (float)(dt);
+			}
 		}
 	}
 }
