@@ -160,9 +160,11 @@ void Quest::Init(string Name_, Camera3 &camera_address, short no_of_items,
     z_2 = Item2_pos.z;
     bounds_2 = Item2_bounds;
     stages = 0;
-    CollectItem = false;
+    CollectItem1 = false;
+    CollectItem2 = false;
     time = 0;
     quest_complete = false;
+    number_of_items = no_of_items;
 }
 
 bool Quest::check_quest(bool quest_is_taken)
@@ -213,28 +215,87 @@ float Quest::getObject1_Z()
     return z_1;
 }
 
+float Quest::getObject2_X()
+{
+    if (number_of_items == 1)
+    {
+        return 0;
+    }
+    return x_2;
+}
+
+float Quest::getObject2_Z()
+{
+    if (number_of_items == 1)
+    {
+        return 0;
+    }
+    return z_2;
+}
+
+short Quest::get_numberof_items()
+{
+    return number_of_items;
+}
+
 void Quest::Update(double dt)
 {
-    if (stages == 1)
+    if (number_of_items == 1)
     {
-        if (Application::IsKeyPressed('E') && (boundscheck(x_1, z_1, bounds_1, bounds_1, camera->getCameraXcoord(), camera->getCameraZcoord())))
+        if (stages == 1)
         {
-            CollectItem = true;
-            stages = 3;         
+            if (Application::IsKeyPressed('E') && (boundscheck(x_1, z_1, bounds_1, bounds_1, 
+                camera->getCameraXcoord(), camera->getCameraZcoord())) && CollectItem1 == false)
+            {
+                CollectItem1 = true;
+                stages = 3;
+            }
+            if (CollectItem1 == true)
+            {
+                stages = 3;
+            }
         }
-        else if (CollectItem == true)
+        if (stages == 3)
         {
-            stages = 3;
+            quest_complete = true;
+            time += dt;
+        }
+        if (time > 2.0f)
+        {
+            stages = 4;
         }
     }
-    if (stages == 3)
+    if (number_of_items == 2)
     {
-        quest_complete = true;
-        time += dt;
-    }
-    if (time > 2.0f)
-    {
-        stages = 4;
+        if (stages == 1)
+        {
+            if (Application::IsKeyPressed('E') && (boundscheck(x_1, z_1, bounds_1, bounds_1, 
+                camera->getCameraXcoord(), camera->getCameraZcoord()))
+                && CollectItem1 == false )
+            {
+                CollectItem1 = true;
+                //stages = 3;
+            }
+            if (Application::IsKeyPressed('E') && (boundscheck(x_2, z_2, bounds_2, bounds_2, 
+                camera->getCameraXcoord(), camera->getCameraZcoord()))
+                && CollectItem2 == false)
+            {
+                CollectItem2 = true;
+            }
+            if (CollectItem1 == true && CollectItem2 == true)
+            {
+                stages = 3;
+            }
+        }
+        if (stages == 3)
+        {
+            quest_complete = true;
+            time += dt;
+        }
+        if (time > 2.0f)
+        {
+            stages = 4;
+        }
     }
 
 }
@@ -242,4 +303,20 @@ void Quest::Update(double dt)
 bool Quest::questComplete()
 {
     return quest_complete;
+}
+
+
+bool Quest::Item1collected()
+{
+    return CollectItem1;
+}
+
+
+bool Quest::Item2collected()
+{
+    if (number_of_items == 1)
+    {
+        return true;
+    }
+    return CollectItem2;
 }

@@ -253,9 +253,9 @@ void sceneSP2::Init()
 	camera.InitObjects("scenario1Driven//objects.txt");
 
     //initialise npc
-    QUEST1.Init("First NPC", Vector3(-270, 0, 194), 5, 5, camera, "NPC data//NPC_1.txt");
+    QUEST1.Init("First NPC",4, Vector3(-270, 0, 194), 5, 5, camera, "NPC data//NPC_1.txt");
     //initialise quest
-    One.Init("First quest", camera, 1, Vector3(-270, 0, 164),5, Vector3(0, 0, 0), 5);
+    One.Init("First quest", camera, 2, Vector3(-270, 0, 164),5, Vector3(-270 ,0, 134),5);
 
 	QUEST2.Init("Sec NPC", Vector3(175, 0, 175), 5, 5, camera, "NPC data//NPC_2.txt");
 	Two.Init("Sec quest", camera, 1, Vector3(185, 0, 185), 5, Vector3(0, 0, 0), 5);
@@ -1244,8 +1244,24 @@ void sceneSP2::RenderQuestObjects()
     if (One.stage() == 1)
     {
         modelStack.PushMatrix();
-        modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
-        renderMesh(meshList[GEO_CONTAINER], true);
+        if (One.get_numberof_items() == 1 && One.Item1collected())
+        {
+            modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
+            renderMesh(meshList[GEO_CONTAINER], true);
+            
+        }
+        if (One.get_numberof_items() == 2 && !One.Item1collected())
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
+            renderMesh(meshList[GEO_CONTAINER], true);
+            modelStack.PopMatrix();
+        }
+        if (One.get_numberof_items() == 2 && !One.Item2collected())
+        {
+            modelStack.Translate(One.getObject2_X(), 0, One.getObject2_Z());
+            renderMesh(meshList[GEO_GASOLINE], true);
+        }
         modelStack.PopMatrix();
     }
     else if (One.stage() == 3)
