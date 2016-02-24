@@ -295,9 +295,13 @@ void sceneSP2::Update(double dt)
     camera.Update(dt);
     framePerSecond = 1 / dt;
     npc1.update(dt);
+    //update for quest
     QUEST1.update(dt);
+    // update for npc
     One.check_quest(QUEST1.quest_given());
     One.Update(dt);
+
+
 	headanimation(dt);
 
 	QUEST2.update(dt);
