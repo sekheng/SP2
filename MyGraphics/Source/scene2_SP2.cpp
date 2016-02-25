@@ -254,6 +254,10 @@ void scene2_SP2::Init()
     endingTime = 0;
     moveToDeadPoolZ = 0;
     sizeofEndingScreen = 1;
+
+    //credits
+    creditRolling.initCredit("scenario3Driven//credits.txt");
+    //credits
     //Beginning cinematic
 }
 
@@ -267,9 +271,9 @@ where the logic of the game is, and update
 /******************************************************************************/
 void scene2_SP2::Update(double dt)
 {
-	VaultAnimation(dt);
-	Numpad.Update(dt);
-	Numpad.NumpadProgram(dt);
+    VaultAnimation(dt);
+    Numpad.Update(dt);
+    Numpad.NumpadProgram(dt);
     Rot_Civ_.update(dt);
 	SatelliteAnimation(dt);
 	diamondAnimation(dt);
@@ -296,12 +300,17 @@ void scene2_SP2::Update(double dt)
     if (dooropening >= 90) {
         beginIamYourFather = true;
     }
-    
+
     if (beginEnding) {
         Ending(dt);
     }
     else {
         camera.Update(dt);
+    }
+
+    if (creditRolling.goRollCredit())
+    {
+        creditRolling.updateCredit(dt);
     }
 }
 
@@ -491,6 +500,8 @@ void scene2_SP2::Render()
     if (beginIamYourFather == true && moveToDeadPoolZ < -135) {
         renderEndingScreen();
     }
+
+    rollingCredits();
 
 	std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
@@ -1314,7 +1325,12 @@ void scene2_SP2::Ending(double& dt) {
         camera.setLocation(0, camera.defaultPosition.y, 150 + moveToDeadPoolZ);
         camera.setRotation(0, 180);
         if (moveToDeadPoolZ < -135) {
-            sizeofEndingScreen += 200 * (float)(dt);
+            if (sizeofEndingScreen > 200) {
+                creditRolling.activateCredit();
+            }
+            else {
+                sizeofEndingScreen += 200 * (float)(dt);
+            }
         }
         if (moveToDeadPoolZ > -145) {
             moveToDeadPoolZ -= 25 * (float)(dt);
@@ -1331,4 +1347,24 @@ void scene2_SP2::renderEndingScreen() {
     modelStack.PushMatrix();
     RenderImageOnScreen(meshList[GEO_ENDING_SCREEN], sizeofEndingScreen, 40, 30);
     modelStack.PopMatrix();
+}
+
+void scene2_SP2::rollingCredits() {
+    if (creditRolling.goRollCredit()) {
+        if (creditRolling.getRollingTitle() < 15) {
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Prologue Ended", Color(0, 1, 0), 5, 5, creditRolling.getRollingTitle());
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "To Be Continued", Color(0, 1, 0), 3, 10, -1 + creditRolling.getRollingTitle() + creditRolling.getRollingTitleCaption());
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Plz buy our expansion packs on Steam", Color(0, 1, 0), 3, 5, -2 + creditRolling.getRollingTitle() + creditRolling.getRollingTitleCaption());
+        }
+        else if (creditRolling.getMovePositionY() > (5 * creditRolling.position.size()) + 5) {
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "And You", Color(0, 1, 0), 5, 6.5, 8);
+        }
+        else {
+            float moveY = 0;
+            for (unsigned num = 0; num < creditRolling.position.size(); ++num, moveY -= 4) {
+                RenderTextOnScreen(meshList[GEO_COMIC_TEXT], creditRolling.position[num], Color(0, 1, 0), 3, 3, creditRolling.getMovePositionY() + moveY);
+                RenderTextOnScreen(meshList[GEO_COMIC_TEXT], creditRolling.names[num], Color(0, 1, 0), 3, 3, -1 + creditRolling.getMovePositionY() + moveY);
+            }
+        }
+    }
 }

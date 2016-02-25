@@ -216,6 +216,26 @@ void sceneSP2::Init()
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
 
+	//red building
+	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("BuildingRed", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
+	meshList[GEO_BUILDINGRED]->material = MaterialBuilder::GenerateBlinn();
+
+	//green building
+	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("BuildingBlue", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGGREEN]->textureID = LoadTGA("Image//BuildingGreen.tga");
+	meshList[GEO_BUILDINGGREEN]->material = MaterialBuilder::GenerateBlinn();
+
+	//Blue building
+	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("BuildingGreen", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGBLUE]->textureID = LoadTGA("Image//BuildingBlue.tga");
+	meshList[GEO_BUILDINGBLUE]->material = MaterialBuilder::GenerateBlinn();
+
+	//Barrel
+	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//Barrel.obj");
+	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
+	meshList[GEO_BARREL]->material = MaterialBuilder::GenerateLambert();
+
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
     meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
@@ -476,8 +496,6 @@ void sceneSP2::RenderStation()
 			break;
 		}
 	}
-
-
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "Table1") {
 			modelStack.PushMatrix();
@@ -822,10 +840,16 @@ void sceneSP2::Render()
     renderMesh(meshList[GEO_SPACE_WALL], false);
     modelStack.PopMatrix();
 
-    
 
 	//render Spaceship
 	RenderSpaceShuttle();
+
+	//render Building
+	RenderBuilding();
+
+	//render barrel
+	RenderBarrel();
+
 
     /*
     modelStack.PushMatrix();
@@ -888,6 +912,8 @@ void sceneSP2::Render()
 	RenderEmptyBox();
 
 	RenderStation();
+
+    populateArea();
 
    /* modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
@@ -1514,6 +1540,83 @@ void sceneSP2::teleport()
     }
 }
 
+
+void sceneSP2::RenderBuilding()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Building1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(15, 15, 15);
+			modelStack.Rotate(-90, 0, 1, 0);
+			renderMesh(meshList[GEO_BUILDINGRED], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Building2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(15, 15, 15);
+			modelStack.Rotate(90, 0, 1, 0);
+			renderMesh(meshList[GEO_BUILDINGGREEN], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Building3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(15, 15, 15);
+			modelStack.Rotate(180, 0, 1, 0);
+			renderMesh(meshList[GEO_BUILDINGBLUE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+void sceneSP2::RenderBarrel()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+
 void sceneSP2::renderChunFei()
 {	
     
@@ -1553,24 +1656,22 @@ void sceneSP2::renderChunFei()
             renderDialogueBox("ChunFei", QUEST3.quest_complete());
             Quest2_finished = true;
         }
-        
-
-        if (Three.stage() == 4)
-        {
-            for (auto it : camera.storage_of_objects) {
-                if (it.getName() == "sword") {
-                    modelStack.PushMatrix();
-                    modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-                    modelStack.Rotate(-90, 0, 1, 0);
-                    modelStack.Scale(1.5, 1.5, 1.5);
-                    renderMesh(meshList[GEO_SWORD], true);
-                    modelStack.PopMatrix();
-                    break;
-                }
+    }
+    modelStack.PopMatrix();
+    if (quest_stage >= 2)
+    {
+        for (auto it : camera.storage_of_objects) {
+            if (it.getName() == "sword") {
+                modelStack.PushMatrix();
+                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+                modelStack.Rotate(-90, 0, 1, 0);
+                modelStack.Scale(1.5, 1.5, 1.5);
+                renderMesh(meshList[GEO_SWORD], true);
+                modelStack.PopMatrix();
+                break;
             }
         }
     }
-    modelStack.PopMatrix();
 }
 
 void sceneSP2::headanimation(double dt)
@@ -1618,4 +1719,106 @@ void sceneSP2::QuestCompleteCheck()
     {
         quest_stage = 4;
     }
+}
+
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey, float x, float y, float rotate_X, float rotate_y)
+{
+    //rendergun
+    glDisable(GL_DEPTH_TEST);
+    //Add these code just after glDisable(GL_DEPTH_TEST);
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 170, 0, 90, -70, 70); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 1);
+    if (rotate_X > 0)
+    {
+        modelStack.Rotate(rotate_X, 1, 0, 0);
+    }
+    if (rotate_y > 0)
+    {
+        modelStack.Rotate(rotate_y, 0, 1, 0);
+    }
+
+    modelStack.Scale(sizex, sizey, 1);
+    renderMesh(mesh, true);
+
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
+
+    glEnable(GL_DEPTH_TEST);
+    //rendergun
+}
+
+void sceneSP2::populateArea()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 0, -310);
+    modelStack.Scale(3,3,3);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(35, 0, -307);
+    modelStack.Rotate(-25,0,1,0);
+    modelStack.Scale(2.8f, 2.8f, 2.8f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 0, -305);
+    modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(3.5f, 3.5f, 3.5f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 3.5f, -305.5f);
+    modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(3.5f, 3.5f, 3.5f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+
+
+    modelStack.PushMatrix();
+    modelStack.Translate(20, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(15, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(10, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(5, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(17, 0, -310.5f);
+    modelStack.Rotate(90, 0, 0, 1);
+    modelStack.Rotate(-30, 1, 0, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+
 }

@@ -98,6 +98,8 @@ private:
 
     vector<string> loadingHints;
     void initLoadingHints(const char *fileName);
+
+    float percentage;
 };
 
 

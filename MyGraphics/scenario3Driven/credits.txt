@@ -1,0 +1,13 @@
+Director,Lee Sek Heng
+Co-Director,Lim Guan Hui
+Secretary,Seetoo Victor
+3D Graphics and Lead Animator,Lee Chun Fei
+Lead Artist and Modeller,Lim Guan Hui
+StakeHolder,Victor Wee
+Project Manager,Seetoo Victor
+Lead Programmer,Lee Sek Heng
+Programmer,Seetoo Victor, Lim Guan Hui, Lee Chun Fei
+Carry,Lee Sek Heng
+Ganker,Seetoo Victor
+Modeller Support,Lim Guan Hui
+Solo Mid,Lee Chun Fei

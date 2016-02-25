@@ -321,8 +321,8 @@ void Camera3::cameraMovement(double dt)
     }
     if (Application::IsKeyPressed(VK_LSHIFT))
     {
-        walkingX *= 50;
-        walkingZ *= 50;
+        walkingX *= 3;
+        walkingZ *= 3;
     }
     if (walkingX != 0) {
         walkingX *= cameraSpeed;

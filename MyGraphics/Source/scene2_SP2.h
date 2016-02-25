@@ -18,6 +18,7 @@ This is for landing on the vault
 #include "MatrixStack.h"
 #include "rot_civ.h"
 #include "NumPad.h"
+#include "creditScene.h"
 
 /******************************************************************************/
 /*!
@@ -207,6 +208,11 @@ private:
     float moveToDeadPoolZ;
     float sizeofEndingScreen;
     void renderEndingScreen();
+
+    //credits
+    creditScene creditRolling;
+    void rollingCredits();
+    //credits
     //Beginning cinematic
 };
 

@@ -34,6 +34,9 @@
     <Filter Include="NPC data">
       <UniqueIdentifier>{fd77163e-f5bc-49f0-a9e2-5d32d5f0aa57}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scenario3Driven">
+      <UniqueIdentifier>{b7cfb7db-df03-4161-8216-2fb93f5866b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Texture.vertexshader">
@@ -117,6 +120,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\SekHeng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\creditScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -208,6 +214,9 @@
     <ClInclude Include="Source\SekHeng.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\creditScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="scenario2Driven\objects.txt">
@@ -242,6 +251,15 @@
     </Text>
     <Text Include="NPC data\NPC_2.txt">
       <Filter>NPC data</Filter>
+    </Text>
+    <Text Include="scenario3Driven\all_static_OBJ.txt">
+      <Filter>scenario3Driven</Filter>
+    </Text>
+    <Text Include="scenario3Driven\credits.txt">
+      <Filter>scenario3Driven</Filter>
+    </Text>
+    <Text Include="scenario3Driven\README.txt">
+      <Filter>scenario3Driven</Filter>
     </Text>
   </ItemGroup>
 </Project>

@@ -39,6 +39,8 @@ class sceneSP2 : public Scene
 
 		GEO_LANDVEHICLE,
 		GEO_FLYINGVEHICLE,
+
+
         //environment**********************************************/
         GEO_SPACE_SKYBOX,
         GEO_SPACE_GROUNDMESH,
@@ -75,9 +77,15 @@ class sceneSP2 : public Scene
 		GEO_KEYCARD,
 		//Teleporter
 		GEO_TELEPORTER,
-
+		//building
+		GEO_BUILDINGRED,
+		GEO_BUILDINGGREEN,
+		GEO_BUILDINGBLUE,
 		//SpaceShuttle
 		GEO_SPACESHUTTLE,
+
+		//Barrel
+		GEO_BARREL,
 
         //NPC
         GEO_NPC1,
@@ -160,6 +168,7 @@ private:
     void RenderNPC();
 
     void RenderQuestObjects();
+	void RenderBarrel();
 
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
@@ -197,6 +206,8 @@ private:
     void RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void TextSlowDown(double dt);
     void QuestCompleteCheck();
+    void RenderStuffOnScreen(Mesh* mesh, float sizex, float sizey, float x, float y, float rotate_X, float rotate_y);
+
     double framePerSecond;
     float screenWidth, screenHeight;
 
@@ -221,6 +232,9 @@ private:
 	void renderChunFei();
 	void headanimation(double dt);
 	void renderNPC3();
+	void RenderBuilding();
+
+    void populateArea();
 
     //text slow down
     double slowtxt;
