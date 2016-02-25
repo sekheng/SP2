@@ -362,7 +362,7 @@ void sceneSP2::Update(double dt)
 	}
 
     //Sek Heng's stuff
-    if (Application::IsKeyPressed('0') || quest_stage == 4) {
+    if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false) {
         sek_heng_.activateQuest();
     }
     if (Application::IsKeyPressed('9')) {
@@ -1275,11 +1275,12 @@ void sceneSP2::RenderNPC()
     }
     modelStack.PopMatrix();
     */
+    
+    modelStack.PushMatrix();
+    modelStack.Translate(QUEST1.NPC_getposition_x(), QUEST1.NPC_getposition_y(), QUEST1.NPC_getposition_z());
+    renderMesh(meshList[GEO_NPC1], true);
     if (quest_stage >= 0)
     {
-        modelStack.PushMatrix();
-        modelStack.Translate(QUEST1.NPC_getposition_x(), QUEST1.NPC_getposition_y(), QUEST1.NPC_getposition_z());
-        renderMesh(meshList[GEO_NPC1], true);
         if (QUEST1.interaction() == true && One.stage() < 4)
         {
 
@@ -1299,14 +1300,15 @@ void sceneSP2::RenderNPC()
             renderDialogueBox("Guan Hui", QUEST1.quest_complete());
             Quest1_finished = true;
         }
-        modelStack.PopMatrix();
+        
     }
-   
+    modelStack.PopMatrix();
+    
+    modelStack.PushMatrix();
+    modelStack.Translate(QUEST2.NPC_getposition_x(), QUEST2.NPC_getposition_y(), QUEST2.NPC_getposition_z());
+    renderMesh(meshList[GEO_NPC1], true);
     if (quest_stage >= 2)
     {
-        modelStack.PushMatrix();
-        modelStack.Translate(QUEST2.NPC_getposition_x(), QUEST2.NPC_getposition_y(), QUEST2.NPC_getposition_z());
-        renderMesh(meshList[GEO_NPC1], true);
         if (QUEST2.interaction() == true && Two.stage() < 4)
         {
             if (!Application::IsKeyPressed('E'))
@@ -1324,8 +1326,9 @@ void sceneSP2::RenderNPC()
             renderDialogueBox("_|_", QUEST2.quest_complete());
             Quest3_finished = true;
         }
-        modelStack.PopMatrix();
+        
     }
+    modelStack.PopMatrix();
 	
 }
 
@@ -1513,27 +1516,27 @@ void sceneSP2::teleport()
 
 void sceneSP2::renderChunFei()
 {	
+    
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "robothead") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Rotate(-90, 0, 1, 0);
+            modelStack.Rotate(headrotating, 1, 0, 0);
+            modelStack.Scale(1.5, 1.5, 1.5);
+            renderMesh(meshList[GEO_ROBOTHEAD], true);
+            modelStack.PopMatrix();
+            break;
+        }
+    }
+
+    modelStack.PushMatrix();
+    modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
+    modelStack.Rotate(-90, 0, 1, 0);
+    modelStack.Scale(1.5, 1.5, 1.5);
+    renderMesh(meshList[GEO_ROBOTBODY], true);
     if (quest_stage >= 1)
     {
-        for (auto it : camera.storage_of_objects) {
-            if (it.getName() == "robothead") {
-                modelStack.PushMatrix();
-                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-                modelStack.Rotate(-90, 0, 1, 0);
-                modelStack.Rotate(headrotating, 1, 0, 0);
-                modelStack.Scale(1.5, 1.5, 1.5);
-                renderMesh(meshList[GEO_ROBOTHEAD], true);
-                modelStack.PopMatrix();
-                break;
-            }
-        }
-
-        modelStack.PushMatrix();
-        modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
-        modelStack.Rotate(-90, 0, 1, 0);
-        modelStack.Scale(1.5, 1.5, 1.5);
-        renderMesh(meshList[GEO_ROBOTBODY], true);
-
         if (QUEST3.interaction() == true && Three.stage() < 4)
         {
             if (!Application::IsKeyPressed('E'))
@@ -1550,7 +1553,7 @@ void sceneSP2::renderChunFei()
             renderDialogueBox("ChunFei", QUEST3.quest_complete());
             Quest2_finished = true;
         }
-        modelStack.PopMatrix();
+        
 
         if (Three.stage() == 4)
         {
@@ -1567,7 +1570,7 @@ void sceneSP2::renderChunFei()
             }
         }
     }
-
+    modelStack.PopMatrix();
 }
 
 void sceneSP2::headanimation(double dt)
