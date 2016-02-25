@@ -1346,17 +1346,17 @@ void sceneSP2::RenderNPC()
         {
             if (!Application::IsKeyPressed('E'))
             {
-                renderDialogueBox("_|_", QUEST2.getDialogue(true));
+                renderDialogueBox("Victor", QUEST2.getDialogue(true));
             }
             else
             {
-                renderDialogueBox("_|_", QUEST2.getDialogue(false));
+                renderDialogueBox("Victor", QUEST2.getDialogue(false));
             }
         }
         if (QUEST2.interaction() == true && Two.stage() == 4)
         {
 
-            renderDialogueBox("_|_", QUEST2.quest_complete());
+            renderDialogueBox("Victor", QUEST2.quest_complete());
             Quest3_finished = true;
         }
         
@@ -1473,6 +1473,16 @@ void sceneSP2::RenderEmptyBox()
 		if (it.getName() == "EmptyBox4") {
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			renderMesh(meshList[GEO_HAMMER], true);
 			modelStack.PopMatrix();
 			break;
 		}
