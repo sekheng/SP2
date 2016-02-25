@@ -93,6 +93,8 @@ void objectsForDisplay::init(const char *fileLocation) {
     boundaryRadiusX = strtof(it->second.c_str(), NULL);
     it = object_stuff.find("boundaryradiusz");
     boundaryRadiusZ = strtof(it->second.c_str(), NULL);
+
+    originalPos = objectPos;
 }
 
 /******************************************************************************/

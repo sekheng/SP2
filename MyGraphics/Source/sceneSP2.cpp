@@ -216,6 +216,15 @@ void sceneSP2::Init()
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
 
+    meshList[GEO_PARTICLE_LIGHT] = MeshBuilder::GenerateOBJ("particle light", "OBJ//Barrel.obj");
+    meshList[GEO_PARTICLE_LIGHT]->textureID = LoadTGA("Image//particle_light.tga");
+    meshList[GEO_PARTICLE_LIGHT]->material = MaterialBuilder::GenerateBlinn();
+
+    meshList[GEO_PARTICLE_CUBE] = MeshBuilder::GenerateOBJ("particle cube", "OBJ//Box.obj");
+    meshList[GEO_PARTICLE_CUBE]->textureID = LoadTGA("Image//particle_light.tga");
+    meshList[GEO_PARTICLE_CUBE]->material = MaterialBuilder::GeneratePhong();
+    //Teleporter
+
 	//red building
 	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("BuildingRed", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
@@ -325,6 +334,24 @@ void sceneSP2::Init()
     Quest2_finished = false;
     Quest3_finished = false;
     Quest4_finished = false;
+
+    //animating particle cube
+    for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+        if ((*it).getName() == "ParticleCube1" ||
+            (*it).getName() == "ParticleCube2" ||
+            (*it).getName() == "ParticleCube3" ||
+            (*it).getName() == "ParticleCube4" ||
+            (*it).getName() == "ParticleCube5" ||
+            (*it).getName() == "ParticleCube6" ||
+            (*it).getName() == "ParticleCube7" ||
+            (*it).getName() == "ParticleCube8" ||
+            (*it).getName() == "ParticleCube9" ||
+            (*it).getName() == "ParticleCube10") {
+            (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
+            (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
+        }
+    }
+    //animating particle cube
 }
 
 /******************************************************************************/
@@ -415,6 +442,29 @@ void sceneSP2::Update(double dt)
         slowtxt = 0;
     }
 	
+    //animating particle cube
+    for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+        if ((*it).getName() == "ParticleCube1" ||
+            (*it).getName() == "ParticleCube2" ||
+            (*it).getName() == "ParticleCube3" ||
+            (*it).getName() == "ParticleCube4" || 
+            (*it).getName() == "ParticleCube5" || 
+            (*it).getName() == "ParticleCube6" || 
+            (*it).getName() == "ParticleCube7" || 
+            (*it).getName() == "ParticleCube8" || 
+            (*it).getName() == "ParticleCube9" || 
+            (*it).getName() == "ParticleCube10") {
+            if ((*it).objectPos.y < 40) {
+                (*it).objectPos.y += 3 * (float)(dt);
+            }
+            else {
+                (*it).objectPos.y = (*it).originalPos.y;
+                (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
+                (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
+            }
+        }
+    }
+    //animating particle cube
 }
 
 /******************************************************************************/
@@ -945,7 +995,10 @@ void sceneSP2::Render()
     connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER],3,3,3,0,0,0);
+    std::stringstream connectPosY;
+    connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
+RenderStuffOnScreen(meshList[GEO_CONTAINER],3,3,3,0,0,0);
 
 }
 
@@ -1347,17 +1400,17 @@ void sceneSP2::RenderNPC()
         {
             if (!Application::IsKeyPressed('E'))
             {
-                renderDialogueBox("_|_", QUEST2.getDialogue(true));
+                renderDialogueBox("Victor", QUEST2.getDialogue(true));
             }
             else
             {
-                renderDialogueBox("_|_", QUEST2.getDialogue(false));
+                renderDialogueBox("Victor", QUEST2.getDialogue(false));
             }
         }
         if (QUEST2.interaction() == true && Two.stage() == 4)
         {
 
-            renderDialogueBox("_|_", QUEST2.quest_complete());
+            renderDialogueBox("Victor", QUEST2.quest_complete());
             Quest3_finished = true;
         }
         
@@ -1478,6 +1531,16 @@ void sceneSP2::RenderEmptyBox()
 			break;
 		}
 	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			renderMesh(meshList[GEO_HAMMER], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 }
 
 void sceneSP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
@@ -1519,6 +1582,33 @@ void sceneSP2::Renderteleporter() {
             {
                 renderDialogueBox(it.getName(), "Press E to go to spaceship");
             }
+            break;
+        }
+    }
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "ParticleCube1" ||
+            it.getName() == "ParticleCube2" ||
+            it.getName() == "ParticleCube3" ||
+            it.getName() == "ParticleCube4" || 
+            it.getName() == "ParticleCube5" || 
+            it.getName() == "ParticleCube6" || 
+            it.getName() == "ParticleCube7" || 
+            it.getName() == "ParticleCube8" || 
+            it.getName() == "ParticleCube9" || 
+            it.getName() == "ParticleCube10") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            renderMesh(meshList[GEO_PARTICLE_CUBE], true);
+            modelStack.PopMatrix();
+        }
+    }
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "Particle Light") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Scale(7.2f, 20, 7.2f);
+            renderMesh(meshList[GEO_PARTICLE_LIGHT], true);
+            modelStack.PopMatrix();
             break;
         }
     }
