@@ -181,19 +181,24 @@ void scene2_SP2::Init()
 	//numroll
 	meshList[GEO_NUMROLL] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
 	meshList[GEO_NUMROLL]->textureID = LoadTGA("Image//number2_UV.tga");
-	////numroll
-	//meshList[GEO_NUMROLL2] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
-	//meshList[GEO_NUMROLL2]->textureID = LoadTGA("Image//number2_UV.tga");
-	////numroll
-	//meshList[GEO_NUMROLL3] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
-	//meshList[GEO_NUMROLL3]->textureID = LoadTGA("Image//number2_UV.tga");
-	////numroll
-	//meshList[GEO_NUMROLL4] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
-	//meshList[GEO_NUMROLL4]->textureID = LoadTGA("Image//number2_UV.tga");
 
 	//Menu
 	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//arrow.obj");
 	meshList[GEO_ARROW]->textureID = LoadTGA("Image//arrow_UV.tga");
+
+	//satellite
+	meshList[GEO_SATELLITEHEAD] = MeshBuilder::GenerateOBJ("satellitehead", "OBJ//satelliteHead.obj");
+	meshList[GEO_SATELLITEHEAD]->textureID = LoadTGA("Image//Satellite_UV.tga");
+
+	meshList[GEO_SATELLITEBODY] = MeshBuilder::GenerateOBJ("satellitebody", "OBJ//satellitebody.obj");
+	meshList[GEO_SATELLITEBODY]->textureID = LoadTGA("Image//Satellite_UV.tga");
+
+	//rock
+	meshList[GEO_BIGDIAMOND] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bigdiamond.obj");
+	meshList[GEO_BIGDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
+
+	meshList[GEO_SMALLDIAMOND] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//smalldiamond.obj");
+	meshList[GEO_SMALLDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -223,8 +228,8 @@ void scene2_SP2::Init()
     camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 
 	//vault animation
-	wheelturn = stickpush = dooropen = false;
-	wheelturning = stickpushing = dooropening = 0;
+	wheelturn = stickpush = dooropen = satelliterotate = bigdiamondtranslate = bigdiamondrotate = smalldiamondrotate = smalldiamondtranslate = false;
+	wheelturning = stickpushing = dooropening = satelliterotating = bigdiamondtranslating = bigdiamondrotating = smalldiamondrotating = smalldiamondtranslating=0;
 	
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "numpad") {
@@ -266,6 +271,8 @@ void scene2_SP2::Update(double dt)
 	Numpad.Update(dt);
 	Numpad.NumpadProgram(dt);
     Rot_Civ_.update(dt);
+	SatelliteAnimation(dt);
+	diamondAnimation(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -447,6 +454,12 @@ void scene2_SP2::Render()
 	
 	//render numpad
 	RenderNumpad();
+
+	//render satellite
+	RenderSatellite();
+
+	//render rock
+	RenderDiamond();
 	
     //rendering DeadPOOL
     renderDeadPool();
@@ -954,16 +967,182 @@ void scene2_SP2::RenderArrow()
 	}
 }
 
-//void scene2_SP2::RenderMenu()
-//{
-//	modelStack.PushMatrix();
-//	modelStack.Translate(0, 0, 0);
-//	modelStack.Rotate(90, 1, 0, 0);
-//	modelStack.Scale(10, 10, 10);
-//	renderMesh(meshList[GEO_MENU], false);
-//	RenderImageOnScreen(meshList[GEO_MENU], 50, 40, 30);
-//	modelStack.PopMatrix();
-//}
+void scene2_SP2::RenderSatellite()
+{
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "satellitehead") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-135, 0, 1, 0);
+			modelStack.Rotate(satelliterotating, 0, 1, 0);
+			modelStack.Scale(7, 7, 7);
+			renderMesh(meshList[GEO_SATELLITEHEAD], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "satellitebody") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(7, 7, 7);
+			renderMesh(meshList[GEO_SATELLITEBODY], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "satellitehead2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-60, 0, 1, 0);
+			modelStack.Rotate(satelliterotating, 0, 1, 0);
+			modelStack.Scale(7, 7, 7);
+			renderMesh(meshList[GEO_SATELLITEHEAD], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "satellitebody2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(7, 7, 7);
+			renderMesh(meshList[GEO_SATELLITEBODY], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+void scene2_SP2::RenderDiamond()
+{
+	for (int i = 0; i <= 1599; i += 533)//front diamonds
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "bigdiamond") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX()+i, it.getObjectposY()+bigdiamondtranslating, it.getObjectposZ());
+				modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
+				modelStack.Scale(25, 25, 25);
+				renderMesh(meshList[GEO_BIGDIAMOND], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "smalldiamond") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX()+i, it.getObjectposY()+smalldiamondtranslating, it.getObjectposZ());
+				modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
+				modelStack.Scale(25, 25, 25);
+				renderMesh(meshList[GEO_SMALLDIAMOND], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+	}
+
+	for (int i = 0; i <= 1599; i += 533)//back diamonds
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "bigdiamond") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX() + i, it.getObjectposY() + bigdiamondtranslating, it.getObjectposZ() + 2200);
+				modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
+				modelStack.Scale(25, 25, 25);
+				renderMesh(meshList[GEO_BIGDIAMOND], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "smalldiamond") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX() + i, it.getObjectposY() + smalldiamondtranslating, it.getObjectposZ() + 2200);
+				modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
+				modelStack.Scale(25, 25, 25);
+				renderMesh(meshList[GEO_SMALLDIAMOND], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+	}
+
+	for (int i = 533; i <= 1599; i += 533)//left diamonds
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "bigdiamond") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX()-300, it.getObjectposY() + bigdiamondtranslating, it.getObjectposZ() + i);
+				modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
+				modelStack.Scale(25, 25, 25);
+				renderMesh(meshList[GEO_BIGDIAMOND], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "smalldiamond") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX() - 300, it.getObjectposY() + smalldiamondtranslating, it.getObjectposZ() + i);
+				modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
+				modelStack.Scale(25, 25, 25);
+				renderMesh(meshList[GEO_SMALLDIAMOND], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+	}
+
+	for (int i = 533; i <= 1599; i += 533)//right diamonds
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "bigdiamond") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + bigdiamondtranslating, it.getObjectposZ() + i);
+				modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
+				modelStack.Scale(25, 25, 25);
+				renderMesh(meshList[GEO_BIGDIAMOND], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "smalldiamond") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + smalldiamondtranslating, it.getObjectposZ() + i);
+				modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
+				modelStack.Scale(25, 25, 25);
+				renderMesh(meshList[GEO_SMALLDIAMOND], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+	}
+}
 
 void scene2_SP2::VaultAnimation(double dt)
 {
@@ -999,6 +1178,67 @@ void scene2_SP2::VaultAnimation(double dt)
 			}
 		}
 	}
+}
+
+void scene2_SP2::SatelliteAnimation(double dt)
+{
+	if (satelliterotate == false)
+	{
+		satelliterotating += 15 * (float)(dt);
+		if (satelliterotating > 45)
+		{
+			satelliterotate = true;
+		}
+	}
+	else if (satelliterotate == true)
+	{
+		satelliterotating -= 15 * (float)(dt);
+		if (satelliterotating < -45)
+		{
+			satelliterotate = false;
+		}
+	}
+}
+
+void scene2_SP2::diamondAnimation(double dt)
+{
+	if (bigdiamondtranslate == false) //bigdiamond floating
+	{
+		bigdiamondtranslating += 20 * (float)(dt);
+		if (bigdiamondtranslating > 30)
+		{
+			bigdiamondtranslate = true;
+		}
+	}
+	else if (bigdiamondtranslate == true)
+	{
+		bigdiamondtranslating -= 20 * (float)(dt);
+		if (bigdiamondtranslating < -20)
+		{
+			bigdiamondtranslate = false;
+		}
+	}
+
+	if (smalldiamondtranslate == false) //smalldiamond floating
+	{
+		smalldiamondtranslating += 20 * (float)(dt);
+		if (smalldiamondtranslating > 30)
+		{
+			smalldiamondtranslate = true;
+		}
+	}
+	else if (smalldiamondtranslate == true)
+	{
+		smalldiamondtranslating -= 20 * (float)(dt);
+		if (smalldiamondtranslating < -20)
+		{
+			smalldiamondtranslate = false;
+		}
+	}
+
+		smalldiamondrotating += 50 * (float)(dt);
+		bigdiamondrotating += 10 * (float)(dt);
+
 }
 
 void scene2_SP2::renderDeadPool() {
