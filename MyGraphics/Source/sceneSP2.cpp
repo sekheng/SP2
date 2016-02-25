@@ -216,6 +216,10 @@ void sceneSP2::Init()
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
 
+	meshList[GEO_BUILDING] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDING]->textureID = LoadTGA("Image//Building.tga");
+	meshList[GEO_BUILDING]->material = MaterialBuilder::GenerateBlinn();
+
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
     meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
@@ -822,10 +826,12 @@ void sceneSP2::Render()
     renderMesh(meshList[GEO_SPACE_WALL], false);
     modelStack.PopMatrix();
 
-    
 
 	//render Spaceship
 	RenderSpaceShuttle();
+
+	//render Building
+	RenderBuilding();
 
     /*
     modelStack.PushMatrix();
@@ -1509,6 +1515,22 @@ void sceneSP2::teleport()
             }
         }
     }
+}
+
+
+void sceneSP2::RenderBuilding()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Building1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(15, 15, 15);
+			modelStack.Rotate(-90, 0, 1, 0);
+			renderMesh(meshList[GEO_BUILDING], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 }
 
 void sceneSP2::renderChunFei()
