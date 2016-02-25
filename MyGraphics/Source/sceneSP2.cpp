@@ -219,22 +219,36 @@ void sceneSP2::Init()
     meshList[GEO_PARTICLE_LIGHT] = MeshBuilder::GenerateOBJ("particle light", "OBJ//Barrel.obj");
     meshList[GEO_PARTICLE_LIGHT]->textureID = LoadTGA("Image//particle_light.tga");
     meshList[GEO_PARTICLE_LIGHT]->material = MaterialBuilder::GenerateBlinn();
+
+    meshList[GEO_PARTICLE_CUBE] = MeshBuilder::GenerateOBJ("particle cube", "OBJ//Box.obj");
+    meshList[GEO_PARTICLE_CUBE]->textureID = LoadTGA("Image//particle_light.tga");
+    meshList[GEO_PARTICLE_CUBE]->material = MaterialBuilder::GeneratePhong();
     //Teleporter
 
 	//red building
-	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("BuildingRed", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
 	meshList[GEO_BUILDINGRED]->material = MaterialBuilder::GenerateBlinn();
 
 	//green building
-	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("BuildingBlue", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGGREEN]->textureID = LoadTGA("Image//BuildingGreen.tga");
 	meshList[GEO_BUILDINGGREEN]->material = MaterialBuilder::GenerateBlinn();
 
 	//Blue building
-	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("BuildingGreen", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGBLUE]->textureID = LoadTGA("Image//BuildingBlue.tga");
 	meshList[GEO_BUILDINGBLUE]->material = MaterialBuilder::GenerateBlinn();
+
+	//Barrel
+	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//Barrel.obj");
+	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
+	meshList[GEO_BARREL]->material = MaterialBuilder::GenerateLambert();
+
+	//land vehicle
+	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("Vehicle", "OBJ//LandVehicle.obj");
+	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
+	meshList[GEO_LANDVEHICLE]->material = MaterialBuilder::GenerateLambert();
 
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
@@ -316,6 +330,24 @@ void sceneSP2::Init()
     Quest2_finished = false;
     Quest3_finished = false;
     Quest4_finished = false;
+
+    //animating particle cube
+    for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+        if ((*it).getName() == "ParticleCube1" ||
+            (*it).getName() == "ParticleCube2" ||
+            (*it).getName() == "ParticleCube3" ||
+            (*it).getName() == "ParticleCube4" ||
+            (*it).getName() == "ParticleCube5" ||
+            (*it).getName() == "ParticleCube6" ||
+            (*it).getName() == "ParticleCube7" ||
+            (*it).getName() == "ParticleCube8" ||
+            (*it).getName() == "ParticleCube9" ||
+            (*it).getName() == "ParticleCube10") {
+            (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
+            (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
+        }
+    }
+    //animating particle cube
 }
 
 /******************************************************************************/
@@ -406,6 +438,29 @@ void sceneSP2::Update(double dt)
         slowtxt = 0;
     }
 	
+    //animating particle cube
+    for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+        if ((*it).getName() == "ParticleCube1" ||
+            (*it).getName() == "ParticleCube2" ||
+            (*it).getName() == "ParticleCube3" ||
+            (*it).getName() == "ParticleCube4" || 
+            (*it).getName() == "ParticleCube5" || 
+            (*it).getName() == "ParticleCube6" || 
+            (*it).getName() == "ParticleCube7" || 
+            (*it).getName() == "ParticleCube8" || 
+            (*it).getName() == "ParticleCube9" || 
+            (*it).getName() == "ParticleCube10") {
+            if ((*it).objectPos.y < 40) {
+                (*it).objectPos.y += 3 * (float)(dt);
+            }
+            else {
+                (*it).objectPos.y = (*it).originalPos.y;
+                (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
+                (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
+            }
+        }
+    }
+    //animating particle cube
 }
 
 /******************************************************************************/
@@ -496,8 +551,6 @@ void sceneSP2::RenderStation()
 			break;
 		}
 	}
-
-
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "Table1") {
 			modelStack.PushMatrix();
@@ -849,6 +902,8 @@ void sceneSP2::Render()
 	//render Building
 	RenderBuilding();
 
+
+
     /*
     modelStack.PushMatrix();
     RenderScrewDriver();
@@ -910,6 +965,8 @@ void sceneSP2::Render()
 	RenderEmptyBox();
 
 	RenderStation();
+
+    populateArea();
 
    /* modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
@@ -1514,6 +1571,23 @@ void sceneSP2::Renderteleporter() {
         }
     }
     for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "ParticleCube1" ||
+            it.getName() == "ParticleCube2" ||
+            it.getName() == "ParticleCube3" ||
+            it.getName() == "ParticleCube4" || 
+            it.getName() == "ParticleCube5" || 
+            it.getName() == "ParticleCube6" || 
+            it.getName() == "ParticleCube7" || 
+            it.getName() == "ParticleCube8" || 
+            it.getName() == "ParticleCube9" || 
+            it.getName() == "ParticleCube10") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            renderMesh(meshList[GEO_PARTICLE_CUBE], true);
+            modelStack.PopMatrix();
+        }
+    }
+    for (auto it : camera.storage_of_objects) {
         if (it.getName() == "Particle Light") {
             modelStack.PushMatrix();
             modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
@@ -1587,64 +1661,6 @@ void sceneSP2::RenderBuilding()
 			break;
 		}
 	}
-}
-
-
-void sceneSP2::renderChunFei()
-{	
-    
-    for (auto it : camera.storage_of_objects) {
-        if (it.getName() == "robothead") {
-            modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-            modelStack.Rotate(-90, 0, 1, 0);
-            modelStack.Rotate(headrotating, 1, 0, 0);
-            modelStack.Scale(1.5, 1.5, 1.5);
-            renderMesh(meshList[GEO_ROBOTHEAD], true);
-            modelStack.PopMatrix();
-            break;
-        }
-    }
-
-    modelStack.PushMatrix();
-    modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
-    modelStack.Rotate(-90, 0, 1, 0);
-    modelStack.Scale(1.5, 1.5, 1.5);
-    renderMesh(meshList[GEO_ROBOTBODY], true);
-    if (quest_stage >= 1)
-    {
-        if (QUEST3.interaction() == true && Three.stage() < 4)
-        {
-            if (!Application::IsKeyPressed('E'))
-            {
-                renderDialogueBox("ChunFei", QUEST3.getDialogue(true));
-            }
-            else
-            {
-                renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
-            }
-        }
-        if (QUEST3.interaction() == true && Three.stage() == 4)
-        {
-            renderDialogueBox("ChunFei", QUEST3.quest_complete());
-            Quest2_finished = true;
-        }
-    }
-    modelStack.PopMatrix();
-    if (quest_stage >= 2)
-    {
-        for (auto it : camera.storage_of_objects) {
-            if (it.getName() == "sword") {
-                modelStack.PushMatrix();
-                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-                modelStack.Rotate(-90, 0, 1, 0);
-                modelStack.Scale(1.5, 1.5, 1.5);
-                renderMesh(meshList[GEO_SWORD], true);
-                modelStack.PopMatrix();
-                break;
-            }
-        }
-    }
 }
 
 void sceneSP2::headanimation(double dt)
@@ -1728,4 +1744,451 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey, float x,
 
     glEnable(GL_DEPTH_TEST);
     //rendergun
+}
+
+void sceneSP2::populateArea()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 0, -310);
+    modelStack.Scale(3,3,3);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(35, 0, -307);
+    modelStack.Rotate(-25,0,1,0);
+    modelStack.Scale(2.8f, 2.8f, 2.8f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 0, -305);
+    modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(3.5f, 3.5f, 3.5f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 3.5f, -305.5f);
+    modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(3.5f, 3.5f, 3.5f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+
+
+    modelStack.PushMatrix();
+    modelStack.Translate(20, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(15, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(10, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(5, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(17, 0, -310.5f);
+    modelStack.Rotate(90, 0, 0, 1);
+    modelStack.Rotate(-30, 1, 0, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//victor
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel7") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel8") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel9") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle7") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle8") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+
+void sceneSP2::renderChunFei()
+{
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "robothead") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(headrotating, 1, 0, 0);
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_ROBOTHEAD], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	modelStack.PushMatrix();
+	modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Scale(1.5, 1.5, 1.5);
+	renderMesh(meshList[GEO_ROBOTBODY], true);
+	if (quest_stage >= 1)
+	{
+		if (QUEST3.interaction() == true && Three.stage() < 4)
+		{
+			if (!Application::IsKeyPressed('E'))
+			{
+				renderDialogueBox("ChunFei", QUEST3.getDialogue(true));
+			}
+			else
+			{
+				renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
+			}
+		}
+		if (QUEST3.interaction() == true && Three.stage() == 4)
+		{
+			renderDialogueBox("ChunFei", QUEST3.quest_complete());
+			Quest2_finished = true;
+		}
+	}
+	modelStack.PopMatrix();
+	if (quest_stage >= 2)
+	{
+		for (auto it : camera.storage_of_objects) {
+			if (it.getName() == "sword") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+				modelStack.Rotate(-90, 0, 1, 0);
+				modelStack.Scale(1.5, 1.5, 1.5);
+				renderMesh(meshList[GEO_SWORD], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+	}
 }

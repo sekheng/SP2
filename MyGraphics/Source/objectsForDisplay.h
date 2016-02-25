@@ -34,6 +34,7 @@ public:
     float getObjectposY();
     float getObjectposZ();
 	Vector3 objectPos;
+    Vector3 originalPos;
 
     float getBoundaryRadiusX();
     float getBoundaryRadiusZ();

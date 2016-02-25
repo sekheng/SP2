@@ -39,6 +39,8 @@ class sceneSP2 : public Scene
 
 		GEO_LANDVEHICLE,
 		GEO_FLYINGVEHICLE,
+
+
         //environment**********************************************/
         GEO_SPACE_SKYBOX,
         GEO_SPACE_GROUNDMESH,
@@ -76,6 +78,7 @@ class sceneSP2 : public Scene
 		//Teleporter
 		GEO_TELEPORTER,
         GEO_PARTICLE_LIGHT,
+        GEO_PARTICLE_CUBE,
         //Teleporter
         //building
 		GEO_BUILDINGRED,
@@ -83,6 +86,9 @@ class sceneSP2 : public Scene
 		GEO_BUILDINGBLUE,
 		//SpaceShuttle
 		GEO_SPACESHUTTLE,
+
+		//Barrel
+		GEO_BARREL,
 
         //NPC
         GEO_NPC1,
@@ -231,6 +237,8 @@ private:
 	void renderNPC3();
 	void RenderBuilding();
 
+    void populateArea();
+
     //text slow down
     double slowtxt;
 
@@ -241,6 +249,19 @@ private:
     bool Quest3_finished;
     bool Quest4_finished;
 
+    //animating particle cube
+    float translateParticleCube1Y;
+    float translateParticleCube1X;
+    float translateParticleCube1Z;
+
+    float translateParticleCube2X;
+    float translateParticleCube2Y;
+    float translateParticleCube2Z;
+
+    float translateParticleCube3X;
+    float translateParticleCube3Y;
+    float translateParticleCube3Z;
+    //animating particle cube
 };
 
 
