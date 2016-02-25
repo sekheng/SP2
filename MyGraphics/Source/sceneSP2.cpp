@@ -261,6 +261,8 @@ void sceneSP2::Init()
 
     on_light = true;
 
+    meshList[]
+
     Mtx44 projection;
     projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
@@ -1759,6 +1761,8 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey, float x,
 
 void sceneSP2::populateArea()
 {
+    //guan hui
+    //boxes
     modelStack.PushMatrix();
     modelStack.Translate(38, 0, -310);
     modelStack.Scale(3,3,3);
@@ -1783,7 +1787,7 @@ void sceneSP2::populateArea()
     renderMesh(meshList[GEO_BOX], true);
     modelStack.PopMatrix();
 
-
+    //barrels
     modelStack.PushMatrix();
     modelStack.Translate(20, 0, -305.5f);
     //modelStack.Rotate(45, 0, 1, 0);
@@ -1820,5 +1824,19 @@ void sceneSP2::populateArea()
     renderMesh(meshList[GEO_BARREL], true);
     modelStack.PopMatrix();
 
+    modelStack.PushMatrix();
+    modelStack.Translate(5, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    //tyres
+    modelStack.PushMatrix();
+    modelStack.Translate(20, 0, -295.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_], true);
+    modelStack.PopMatrix();
 
 }
