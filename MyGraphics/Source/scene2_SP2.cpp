@@ -249,6 +249,7 @@ void scene2_SP2::Init()
     endingTime = 0;
     moveToDeadPoolZ = 0;
     sizeofEndingScreen = 1;
+    rollCredits = false;
     //Beginning cinematic
 }
 
@@ -1074,7 +1075,12 @@ void scene2_SP2::Ending(double& dt) {
         camera.setLocation(0, camera.defaultPosition.y, 150 + moveToDeadPoolZ);
         camera.setRotation(0, 180);
         if (moveToDeadPoolZ < -135) {
-            sizeofEndingScreen += 200 * (float)(dt);
+            if (sizeofEndingScreen > 200) {
+                rollCredits = true;
+            }
+            else {
+                sizeofEndingScreen += 200 * (float)(dt);
+            }
         }
         if (moveToDeadPoolZ > -145) {
             moveToDeadPoolZ -= 25 * (float)(dt);
@@ -1091,4 +1097,8 @@ void scene2_SP2::renderEndingScreen() {
     modelStack.PushMatrix();
     RenderImageOnScreen(meshList[GEO_ENDING_SCREEN], sizeofEndingScreen, 40, 30);
     modelStack.PopMatrix();
+}
+
+void scene2_SP2::rollingCredits() {
+
 }
