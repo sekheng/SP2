@@ -75,7 +75,9 @@ class sceneSP2 : public Scene
 		GEO_KEYCARD,
 		//Teleporter
 		GEO_TELEPORTER,
-		//building
+        GEO_PARTICLE_LIGHT,
+        //Teleporter
+        //building
 		GEO_BUILDINGRED,
 		GEO_BUILDINGGREEN,
 		GEO_BUILDINGBLUE,

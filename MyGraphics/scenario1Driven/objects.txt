@@ -194,3 +194,10 @@ objectY,0
 objectZ,-170
 boundaryRadiusX,2
 boundaryRadiusZ,2
+
+Name,Particle Light
+objectX,0
+objectY,0
+objectZ,0
+boundaryRadiusX,0
+boundaryRadiusZ,0

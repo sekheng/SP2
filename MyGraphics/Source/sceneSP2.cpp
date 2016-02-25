@@ -216,6 +216,11 @@ void sceneSP2::Init()
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
 
+    meshList[GEO_PARTICLE_LIGHT] = MeshBuilder::GenerateOBJ("particle light", "OBJ//Barrel.obj");
+    meshList[GEO_PARTICLE_LIGHT]->textureID = LoadTGA("Image//particle_light.tga");
+    meshList[GEO_PARTICLE_LIGHT]->material = MaterialBuilder::GenerateBlinn();
+    //Teleporter
+
 	//red building
 	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
@@ -926,6 +931,9 @@ void sceneSP2::Render()
     connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
 
+    std::stringstream connectPosY;
+    connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
     //****************************************************************************//
     //On screen objects
     //****************************************************************************//
@@ -1502,6 +1510,16 @@ void sceneSP2::Renderteleporter() {
             {
                 renderDialogueBox(it.getName(), "Press E to go to spaceship");
             }
+            break;
+        }
+    }
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "Particle Light") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Scale(7.2f, 20, 7.2f);
+            renderMesh(meshList[GEO_PARTICLE_LIGHT], true);
+            modelStack.PopMatrix();
             break;
         }
     }
