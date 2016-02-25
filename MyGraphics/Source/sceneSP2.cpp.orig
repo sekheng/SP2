@@ -216,6 +216,31 @@ void sceneSP2::Init()
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
 
+	//red building
+	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("BuildingRed", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
+	meshList[GEO_BUILDINGRED]->material = MaterialBuilder::GenerateBlinn();
+
+	//green building
+	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("BuildingBlue", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGGREEN]->textureID = LoadTGA("Image//BuildingGreen.tga");
+	meshList[GEO_BUILDINGGREEN]->material = MaterialBuilder::GenerateBlinn();
+
+	//Blue building
+	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("BuildingGreen", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGBLUE]->textureID = LoadTGA("Image//BuildingBlue.tga");
+	meshList[GEO_BUILDINGBLUE]->material = MaterialBuilder::GenerateBlinn();
+
+	//Barrel
+	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//Barrel.obj");
+	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
+	meshList[GEO_BARREL]->material = MaterialBuilder::GenerateLambert();
+
+	//land vehicle
+	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("Vehicle", "OBJ//LandVehicle.obj");
+	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
+	meshList[GEO_LANDVEHICLE]->material = MaterialBuilder::GenerateLambert();
+
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
     meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
@@ -239,7 +264,12 @@ void sceneSP2::Init()
 	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//sword.obj");
 	meshList[GEO_SWORD]->textureID = LoadTGA("Image//sword.tga");
 
+    meshList[GEO_TYRE] = MeshBuilder::GenerateOBJ("tyre", "OBJ//Tire.obj");
+
+
     on_light = true;
+
+    //meshList[]
 
     Mtx44 projection;
     projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
@@ -276,7 +306,7 @@ void sceneSP2::Init()
 	//QUEST3.Init("Chunfei NPChead", Vector3(0, 5.5, 250), 2, 2, camera, "NPC data//NPC_3.txt");
 	QUEST3.Init("Chunfei NPCbody", 5,Vector3(0, 0, 250), 5, 5, camera, "NPC data//NPC_3.txt");
 	//initialise quest3
-	Three.Init("Third quest", camera, 1, Vector3(0,0,240), 5, Vector3(0, 0, 0), 0); //-280, 0, 300
+	Three.Init("Third quest", camera, 1, Vector3(-300, 0, 275), 5, Vector3(0, 0, 0), 0); 
 
 	/*for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "robotbody") {
@@ -289,6 +319,13 @@ void sceneSP2::Init()
 	//chunfei's stuff
 
     slowtxt = 0;
+
+    quest_stage = 0;
+
+    Quest1_finished = false;
+    Quest2_finished = false;
+    Quest3_finished = false;
+    Quest4_finished = false;
 }
 
 /******************************************************************************/
@@ -310,11 +347,6 @@ void sceneSP2::Update(double dt)
     One.check_quest(QUEST1.quest_given());
     One.Update(dt);
 
-<<<<<<< HEAD
-	headanimation(dt);
-
-=======
->>>>>>> ba2c6517428ac3cbdfcb0b47a9249b698abcf6cb
 	QUEST2.update(dt);
 	Two.check_quest(QUEST2.quest_given());
 	Two.Update(dt);
@@ -323,6 +355,8 @@ void sceneSP2::Update(double dt)
 	Three.check_quest(QUEST3.quest_given());
 	Three.Update(dt);
 	headanimation(dt);
+
+    QuestCompleteCheck();
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -358,7 +392,7 @@ void sceneSP2::Update(double dt)
 	}
 
     //Sek Heng's stuff
-    if (Application::IsKeyPressed('0')) {
+    if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false) {
         sek_heng_.activateQuest();
     }
     if (Application::IsKeyPressed('9')) {
@@ -472,8 +506,6 @@ void sceneSP2::RenderStation()
 			break;
 		}
 	}
-
-
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "Table1") {
 			modelStack.PushMatrix();
@@ -818,10 +850,14 @@ void sceneSP2::Render()
     renderMesh(meshList[GEO_SPACE_WALL], false);
     modelStack.PopMatrix();
 
-    
 
 	//render Spaceship
 	RenderSpaceShuttle();
+
+	//render Building
+	RenderBuilding();
+
+
 
     /*
     modelStack.PushMatrix();
@@ -884,6 +920,8 @@ void sceneSP2::Render()
 	RenderEmptyBox();
 
 	RenderStation();
+
+    populateArea();
 
    /* modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
@@ -1019,8 +1057,6 @@ void sceneSP2::RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color col
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
 
-    double start, end;
-
     glDisable(GL_DEPTH_TEST);
     Mtx44 ortho;
     ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
@@ -1040,29 +1076,41 @@ void sceneSP2::RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color col
     glBindTexture(GL_TEXTURE_2D, mesh->textureID);
     glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
 
-    unsigned num = slowtxt / 0.5;
-    num = Math::Clamp(num, static_cast<size_t>(0), text.length());
-    for (unsigned i = 0; i < num; ++i)
+    for (unsigned i = 0; i < text.length(); ++i)
     {
-        
-        slowtxt = 0;
         Mtx44 characterSpacing;
         characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
         Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
         glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
-        mesh->Render((unsigned)text[i] * 6, 6);
+        //mesh->Render((unsigned)text[i] * 6, 6);
     }
+    for (unsigned i = 0; i < text.length();)
+    {
+        if (slowtxt > 0.9)
+        {
+            slowtxt = 0;
+            mesh->Render((unsigned)text[i] * 6, 6);
+            ++i;
+        }
+        
+    }
+
+
     glBindTexture(GL_TEXTURE_2D, 0);
     glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
     glEnable(GL_DEPTH_TEST);
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();
-}
+}    
 void sceneSP2::TextSlowDown(double dt)
+{    
+   slowtxt += dt;
+}
+void sceneSP2::RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
-    slowtxt += dt;
+
 }
 /******************************************************************************/
 /*!
@@ -1261,50 +1309,61 @@ void sceneSP2::RenderNPC()
     }
     modelStack.PopMatrix();
     */
+    
     modelStack.PushMatrix();
     modelStack.Translate(QUEST1.NPC_getposition_x(), QUEST1.NPC_getposition_y(), QUEST1.NPC_getposition_z());
     renderMesh(meshList[GEO_NPC1], true);
-    if (QUEST1.interaction() == true && One.stage() < 4)
+    if (quest_stage >= 0)
     {
-
-        if (!Application::IsKeyPressed('E'))
+        if (QUEST1.interaction() == true && One.stage() < 4)
         {
-            //renderDialogueBox("Guan Hui", QUEST1.getDialogue(true));
-            RenderDelayedTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.getDialogue(true), Color(0, 1, 0), 3, 10, 10);
 
+            if (!Application::IsKeyPressed('E'))
+            {
+                renderDialogueBox("Guan Hui", QUEST1.getDialogue(true));
+                //RenderDelayedTextOnScreen(meshList[GEO_COMIC_TEXT], QUEST1.getDialogue(true), Color(0, 1, 0), 3, 10, 10);
+
+            }
+            else
+            {
+                renderDialogueBox("Guan Hui", QUEST1.getDialogue(false));
+            }
         }
-        else
+        if (QUEST1.interaction() == true && One.stage() == 4)
         {
-            renderDialogueBox("Guan Hui", QUEST1.getDialogue(false));
+            renderDialogueBox("Guan Hui", QUEST1.quest_complete());
+            Quest1_finished = true;
         }
-    }
-    if (QUEST1.interaction() == true && One.stage() == 4)
-    {
-        renderDialogueBox("Guan Hui", QUEST1.quest_complete());
+        
     }
     modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(QUEST2.NPC_getposition_x(), QUEST2.NPC_getposition_y(), QUEST2.NPC_getposition_z());
-	renderMesh(meshList[GEO_NPC1], true);
-	if (QUEST2.interaction() == true && Two.stage() < 4)
-	{
-		if (!Application::IsKeyPressed('E'))
-		{
-			renderDialogueBox("_|_", QUEST2.getDialogue(true));
-		}
-		else
-		{
-			renderDialogueBox("_|_", QUEST2.getDialogue(false));
-		}
-	}
-	if (QUEST2.interaction() == true && Two.stage() == 4)
-	{
-
-		renderDialogueBox("_|_", QUEST2.quest_complete());
-	}
-	modelStack.PopMatrix();
     
+    modelStack.PushMatrix();
+    modelStack.Translate(QUEST2.NPC_getposition_x(), QUEST2.NPC_getposition_y(), QUEST2.NPC_getposition_z());
+    renderMesh(meshList[GEO_NPC1], true);
+    if (quest_stage >= 2)
+    {
+        if (QUEST2.interaction() == true && Two.stage() < 4)
+        {
+            if (!Application::IsKeyPressed('E'))
+            {
+                renderDialogueBox("_|_", QUEST2.getDialogue(true));
+            }
+            else
+            {
+                renderDialogueBox("_|_", QUEST2.getDialogue(false));
+            }
+        }
+        if (QUEST2.interaction() == true && Two.stage() == 4)
+        {
+
+            renderDialogueBox("_|_", QUEST2.quest_complete());
+            Quest3_finished = true;
+        }
+        
+    }
+    modelStack.PopMatrix();
+	
 }
 
 void sceneSP2::RenderQuestObjects()
@@ -1489,60 +1548,44 @@ void sceneSP2::teleport()
     }
 }
 
-void sceneSP2::renderChunFei()
-{	
+
+void sceneSP2::RenderBuilding()
+{
 	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "robothead") {
+		if (it.getName() == "Building1") {
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(15, 15, 15);
 			modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Rotate(headrotating, 1, 0, 0);
-			modelStack.Scale(1.5, 1.5, 1.5);
-			renderMesh(meshList[GEO_ROBOTHEAD], true);
+			renderMesh(meshList[GEO_BUILDINGRED], true);
 			modelStack.PopMatrix();
 			break;
 		}
 	}
-		
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Building2") {
 			modelStack.PushMatrix();
-			modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
-			modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Scale(1.5,1.5,1.5);
-			renderMesh(meshList[GEO_ROBOTBODY], true);
-			
-			if (QUEST3.interaction() == true && Three.stage() < 4)
-			{
-				if (!Application::IsKeyPressed('E'))
-				{
-					renderDialogueBox("ChunFei", QUEST3.getDialogue(true));
-				}
-				else
-				{
-					renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
-				}
-			}
-			if (QUEST3.interaction() == true && Three.stage() == 4)
-			{
-				renderDialogueBox("ChunFei", QUEST3.quest_complete());
-			}
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(15, 15, 15);
+			modelStack.Rotate(90, 0, 1, 0);
+			renderMesh(meshList[GEO_BUILDINGGREEN], true);
 			modelStack.PopMatrix();
+			break;
+		}
+	}
 
-			if (Three.stage() == 3)
-			{
-				for (auto it : camera.storage_of_objects) {
-					if (it.getName() == "sword") {
-						modelStack.PushMatrix();
-						modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-						modelStack.Rotate(-90, 0, 1, 0);
-						modelStack.Scale(1.5, 1.5, 1.5);
-						renderMesh(meshList[GEO_SWORD], true);
-						modelStack.PopMatrix();
-						break;
-					}
-				}
-			}
-	
-
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Building3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(15, 15, 15);
+			modelStack.Rotate(180, 0, 1, 0);
+			renderMesh(meshList[GEO_BUILDINGBLUE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 }
 
 void sceneSP2::headanimation(double dt)
@@ -1569,5 +1612,515 @@ void sceneSP2::headanimation(double dt)
 	else
 	{
 		headrotating = 0;
+	}
+}
+
+void sceneSP2::QuestCompleteCheck()
+{
+    if (Quest1_finished && !Quest2_finished && !Quest3_finished)
+    {
+        quest_stage = 1;
+    }
+    if (Quest1_finished && Quest2_finished && !Quest3_finished)
+    {
+        quest_stage = 2;
+    }
+    if (Quest1_finished && Quest2_finished && Quest3_finished)
+    {
+        quest_stage = 3;
+    }
+    if (quest_stage == 3)
+    {
+        quest_stage = 4;
+    }
+}
+
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey, float x, float y, float rotate_X, float rotate_y)
+{
+    //rendergun
+    glDisable(GL_DEPTH_TEST);
+    //Add these code just after glDisable(GL_DEPTH_TEST);
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 170, 0, 90, -70, 70); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 1);
+    if (rotate_X > 0)
+    {
+        modelStack.Rotate(rotate_X, 1, 0, 0);
+    }
+    if (rotate_y > 0)
+    {
+        modelStack.Rotate(rotate_y, 0, 1, 0);
+    }
+
+    modelStack.Scale(sizex, sizey, 1);
+    renderMesh(mesh, true);
+
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
+
+    glEnable(GL_DEPTH_TEST);
+    //rendergun
+}
+
+void sceneSP2::populateArea()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 0, -310);
+    modelStack.Scale(3,3,3);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(35, 0, -307);
+    modelStack.Rotate(-25,0,1,0);
+    modelStack.Scale(2.8f, 2.8f, 2.8f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 0, -305);
+    modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(3.5f, 3.5f, 3.5f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 3.5f, -305.5f);
+    modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(3.5f, 3.5f, 3.5f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+
+
+    modelStack.PushMatrix();
+    modelStack.Translate(20, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(15, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(10, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(5, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(17, 0, -310.5f);
+    modelStack.Rotate(90, 0, 0, 1);
+    modelStack.Rotate(-30, 1, 0, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    //tyres
+    modelStack.PushMatrix();
+    modelStack.Translate(20, 0, -295.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_TYRE], true);
+    modelStack.PopMatrix();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//victor
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel7") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel8") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel9") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle7") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle8") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+
+void sceneSP2::renderChunFei()
+{
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "robothead") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(headrotating, 1, 0, 0);
+			modelStack.Scale(1.5, 1.5, 1.5);
+			renderMesh(meshList[GEO_ROBOTHEAD], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	modelStack.PushMatrix();
+	modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Scale(1.5, 1.5, 1.5);
+	renderMesh(meshList[GEO_ROBOTBODY], true);
+	if (quest_stage >= 1)
+	{
+		if (QUEST3.interaction() == true && Three.stage() < 4)
+		{
+			if (!Application::IsKeyPressed('E'))
+			{
+				renderDialogueBox("ChunFei", QUEST3.getDialogue(true));
+			}
+			else
+			{
+				renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
+			}
+		}
+		if (QUEST3.interaction() == true && Three.stage() == 4)
+		{
+			renderDialogueBox("ChunFei", QUEST3.quest_complete());
+			Quest2_finished = true;
+		}
+	}
+	modelStack.PopMatrix();
+	if (quest_stage >= 2)
+	{
+		for (auto it : camera.storage_of_objects) {
+			if (it.getName() == "sword") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+				modelStack.Rotate(-90, 0, 1, 0);
+				modelStack.Scale(1.5, 1.5, 1.5);
+				renderMesh(meshList[GEO_SWORD], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
 	}
 }
