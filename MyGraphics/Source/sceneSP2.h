@@ -84,6 +84,9 @@ class sceneSP2 : public Scene
 		//SpaceShuttle
 		GEO_SPACESHUTTLE,
 
+		//Barrel
+		GEO_BARREL,
+
         //NPC
         GEO_NPC1,
         GEO_NPC_QUEST1,
