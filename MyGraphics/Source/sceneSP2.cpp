@@ -236,6 +236,11 @@ void sceneSP2::Init()
 	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
 	meshList[GEO_BARREL]->material = MaterialBuilder::GenerateLambert();
 
+	//land vehicle
+	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("Vehicle", "OBJ//LandVehicle.obj");
+	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
+	meshList[GEO_LANDVEHICLE]->material = MaterialBuilder::GenerateLambert();
+
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
     meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
@@ -260,8 +265,6 @@ void sceneSP2::Init()
 	meshList[GEO_SWORD]->textureID = LoadTGA("Image//sword.tga");
 
     on_light = true;
-
-    meshList[]
 
     Mtx44 projection;
     projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
@@ -1665,8 +1668,6 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey, float x,
 
 void sceneSP2::populateArea()
 {
-    //guan hui
-    //boxes
     modelStack.PushMatrix();
     modelStack.Translate(38, 0, -310);
     modelStack.Scale(3,3,3);
@@ -1691,7 +1692,7 @@ void sceneSP2::populateArea()
     renderMesh(meshList[GEO_BOX], true);
     modelStack.PopMatrix();
 
-    //barrels
+
     modelStack.PushMatrix();
     modelStack.Translate(20, 0, -305.5f);
     //modelStack.Rotate(45, 0, 1, 0);
@@ -1728,7 +1729,6 @@ void sceneSP2::populateArea()
     renderMesh(meshList[GEO_BARREL], true);
     modelStack.PopMatrix();
 
-<<<<<<< HEAD
 	//victor
 
 	for (auto it : camera.storage_of_objects) {
@@ -1818,22 +1818,6 @@ void sceneSP2::populateArea()
 			break;
 		}
 	}
-=======
-    modelStack.PushMatrix();
-    modelStack.Translate(5, 0, -305.5f);
-    //modelStack.Rotate(45, 0, 1, 0);
-    modelStack.Scale(2, 2, 2);
-    renderMesh(meshList[GEO_BARREL], true);
-    modelStack.PopMatrix();
-
-    //tyres
-    modelStack.PushMatrix();
-    modelStack.Translate(20, 0, -295.5f);
-    //modelStack.Rotate(45, 0, 1, 0);
-    modelStack.Scale(2, 2, 2);
-    renderMesh(meshList[GEO_], true);
-    modelStack.PopMatrix();
->>>>>>> 50baad4b05a3cfcb516cc24630d73e8b2fddf8f5
 
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "Barrel9") {
@@ -1907,6 +1891,105 @@ void sceneSP2::populateArea()
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			modelStack.Scale(5, 5, 5);
 			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "pBox6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(5, 5, 5);
+			renderMesh(meshList[GEO_BOX], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle7") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "vehicle8") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(4, 4, 4);
+			renderMesh(meshList[GEO_LANDVEHICLE], true);
 			modelStack.PopMatrix();
 			break;
 		}
