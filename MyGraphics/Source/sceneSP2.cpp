@@ -259,9 +259,12 @@ void sceneSP2::Init()
 	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//sword.obj");
 	meshList[GEO_SWORD]->textureID = LoadTGA("Image//sword.tga");
 
+    meshList[GEO_TYRE] = MeshBuilder::GenerateOBJ("tyre", "OBJ//Tire.obj");
+
+
     on_light = true;
 
-    meshList[]
+    //meshList[]
 
     Mtx44 projection;
     projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
@@ -1836,7 +1839,7 @@ void sceneSP2::populateArea()
     modelStack.Translate(20, 0, -295.5f);
     //modelStack.Rotate(45, 0, 1, 0);
     modelStack.Scale(2, 2, 2);
-    renderMesh(meshList[GEO_], true);
+    renderMesh(meshList[GEO_TYRE], true);
     modelStack.PopMatrix();
 
 }
