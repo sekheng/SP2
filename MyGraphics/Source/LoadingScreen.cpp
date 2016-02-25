@@ -153,6 +153,8 @@ void LoadingScreen::Init()
     camera.cursorCoordY = screenHeight / 2;
 
     initLoadingHints("loadingScreenDriven//hints.txt");
+
+    percentage = 0;
 }
 
 /******************************************************************************/
@@ -265,6 +267,11 @@ void LoadingScreen::Render()
     srand(static_cast<size_t>(time(NULL)));
     int randomiseTheHint = Math::RandIntMinMax(0, loadingHints.size() - 1);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], loadingHints[randomiseTheHint], Color(0,1,0), 2, 17, 35);
+
+    std::stringstream ss;
+    ss << percentage << "% Completed";
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 5, 28, 27);
+    percentage += 33;
 }
 
 /******************************************************************************/
