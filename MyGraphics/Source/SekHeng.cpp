@@ -75,8 +75,10 @@ string SekHeng::returnDialogue() {
 }
 
 void SekHeng::activateQuest() {
+    if (stage == 0 && hammerInHand == true) {
+        hammerInHand = false;
+    }
     stage = 1;
-    hammerInHand = false;
 }
 
 bool SekHeng::interaction() {
