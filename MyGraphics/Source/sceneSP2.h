@@ -75,7 +75,8 @@ class sceneSP2 : public Scene
 		GEO_KEYCARD,
 		//Teleporter
 		GEO_TELEPORTER,
-
+		//building
+		GEO_BUILDING,
 		//SpaceShuttle
 		GEO_SPACESHUTTLE,
 
@@ -224,6 +225,7 @@ private:
 	void renderChunFei();
 	void headanimation(double dt);
 	void renderNPC3();
+	void RenderBuilding();
 
     //text slow down
     double slowtxt;

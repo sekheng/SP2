@@ -185,6 +185,8 @@ private:
     float moveToDeadPoolZ;
     float sizeofEndingScreen;
     void renderEndingScreen();
+    bool rollCredits;
+    void rollingCredits();
     //Beginning cinematic
 };
 
