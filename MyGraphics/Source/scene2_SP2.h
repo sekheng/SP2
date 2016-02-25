@@ -41,16 +41,23 @@ class scene2_SP2 : public Scene
         GEO_FLYINGVEHICLE,
         GEO_ROBOT,
         GEO_SPACESHUTTLE,
+		//vault
         GEO_VAULTCUBE,
 		GEO_VAULTWHEEL,
 		GEO_VAULTSTICK,
 		GEO_VAULTDOOR,
+		//numpad
 		GEO_NUMPAD,
 		GEO_NUMROLL,
-		/*GEO_NUMROLL2,
-		GEO_NUMROLL3,
-		GEO_NUMROLL4,*/
 		GEO_ARROW,
+
+		//satellite
+		GEO_SATELLITEHEAD,
+		GEO_SATELLITEBODY,
+
+		//rock
+		GEO_BIGDIAMOND,
+		GEO_SMALLDIAMOND,
 
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
@@ -122,11 +129,22 @@ private:
 	bool wheelturn;
 	bool stickpush;
 	bool dooropen;
+	bool satelliterotate;
+	bool bigdiamondtranslate;
+	bool bigdiamondrotate;
+	bool smalldiamondtranslate;
+	bool smalldiamondrotate;
 	
     float LSPEED = 10.f;
 	float wheelturning;
 	float stickpushing;
 	float dooropening;
+	float satelliterotating;
+	float bigdiamondtranslating;
+	float bigdiamondrotating;
+	float smalldiamondtranslating;
+	float smalldiamondrotating;
+	
 
 	//renderobj function
     void renderMesh(Mesh *mesh, bool enableLight);
@@ -140,9 +158,13 @@ private:
 	void RenderNumroll();
 	void RenderMenu();
 	void RenderArrow();
+	void RenderSatellite();
+	void RenderDiamond();
 	
 	//animation function
 	void VaultAnimation(double dt);
+	void SatelliteAnimation(double dt);
+	void diamondAnimation(double dt);
 	
 
     unsigned m_vertexArrayID;
