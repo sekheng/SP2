@@ -197,6 +197,9 @@ private:
     void RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void TextSlowDown(double dt);
     void QuestCompleteCheck();
+    void RenderStuffOnScreen(Mesh* mesh, float size, float x, float y);
+    void RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey,float sizez, float x, float y);
+
     double framePerSecond;
     float screenWidth, screenHeight;
 

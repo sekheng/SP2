@@ -1569,7 +1569,6 @@ void sceneSP2::renderChunFei()
             }
         }
     }
-    
 }
 
 void sceneSP2::headanimation(double dt)
@@ -1617,4 +1616,64 @@ void sceneSP2::QuestCompleteCheck()
     {
         quest_stage = 4;
     }
+}
+
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size, float x, float y)
+{
+    //rendergun
+    glDisable(GL_DEPTH_TEST);
+    //Add these code just after glDisable(GL_DEPTH_TEST);
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 170, 0, 90, -70, 70); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(145, 5, 1);
+    modelStack.Rotate(90 - 68, 0, 1, 0);
+    modelStack.Rotate(10, 1, 0, 0);
+
+    modelStack.Scale(size, size, size);
+    renderMesh(mesh, true);
+
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
+
+    glEnable(GL_DEPTH_TEST);
+    //rendergun
+}
+
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex, float sizey,float sizez, float x, float y)
+{
+    //rendergun
+    glDisable(GL_DEPTH_TEST);
+    //Add these code just after glDisable(GL_DEPTH_TEST);
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 170, 0, 90, -70, 70); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(145, 5, 1);
+    modelStack.Rotate(90 - 68, 0, 1, 0);
+    modelStack.Rotate(10, 1, 0, 0);
+
+    modelStack.Scale(sizex, sizey, sizez);
+    renderMesh(mesh, true);
+
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
+
+    glEnable(GL_DEPTH_TEST);
+    //rendergun
 }
