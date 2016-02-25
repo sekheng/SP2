@@ -491,8 +491,6 @@ void sceneSP2::RenderStation()
 			break;
 		}
 	}
-
-
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "Table1") {
 			modelStack.PushMatrix();
@@ -905,6 +903,8 @@ void sceneSP2::Render()
 	RenderEmptyBox();
 
 	RenderStation();
+
+    populateArea();
 
    /* modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
@@ -1710,4 +1710,32 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey, float x,
 
     glEnable(GL_DEPTH_TEST);
     //rendergun
+}
+
+void sceneSP2::populateArea()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 0, -310);
+    modelStack.Scale(3,3,3);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(35, 0, -307);
+    modelStack.Rotate(-25,0,1,0);
+    modelStack.Scale(2.8f, 2.8f, 2.8f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 0, -305);
+    modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(3.5f, 3.5f, 3.5f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(38, 3.5f, -305.5f);
+    modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(3.5f, 3.5f, 3.5f);
+    renderMesh(meshList[GEO_BOX], true);
+    modelStack.PopMatrix();
+
 }
