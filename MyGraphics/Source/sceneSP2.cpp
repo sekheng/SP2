@@ -998,7 +998,8 @@ void sceneSP2::Render()
     std::stringstream connectPosY;
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
-RenderStuffOnScreen(meshList[GEO_CONTAINER],3,3,3,0,0,0);
+
+    RenderStuffOnScreen(meshList[GEO_CONTAINER],3,3,3,0,0,0);
 
 }
 
@@ -1760,17 +1761,17 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float s
 
     modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(),camera.getCrossHairZ() );
-    if (rotate_X > 0)
+    if (rotate_X != 0)
     {
         modelStack.Rotate(rotate_X, 1, 0, 0);
     }
-    if (rotate_y > 0)
+    if (rotate_y != 0)
     {
         modelStack.Rotate(rotate_y, 0, 1, 0);
     }
-    if (rotate_z > 0)
+    if (rotate_z != 0)
     {
-        modelStack.Rotate(rotate_z, 0, 1, 0);
+        modelStack.Rotate(rotate_z, 0, 0, 1);
     }
     modelStack.Scale(size_x, size_y, size_z);
     renderMesh(meshList[GEO_AXES], false);
