@@ -39,6 +39,8 @@ class sceneSP2 : public Scene
 
 		GEO_LANDVEHICLE,
 		GEO_FLYINGVEHICLE,
+
+
         //environment**********************************************/
         GEO_SPACE_SKYBOX,
         GEO_SPACE_GROUNDMESH,
@@ -231,6 +233,8 @@ private:
 	void headanimation(double dt);
 	void renderNPC3();
 	void RenderBuilding();
+
+    void populateArea();
 
     //text slow down
     double slowtxt;
