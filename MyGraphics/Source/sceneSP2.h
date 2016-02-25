@@ -76,7 +76,9 @@ class sceneSP2 : public Scene
 		//Teleporter
 		GEO_TELEPORTER,
 		//building
-		GEO_BUILDING,
+		GEO_BUILDINGRED,
+		GEO_BUILDINGGREEN,
+		GEO_BUILDINGBLUE,
 		//SpaceShuttle
 		GEO_SPACESHUTTLE,
 
@@ -161,6 +163,7 @@ private:
     void RenderNPC();
 
     void RenderQuestObjects();
+	void RenderBarrel();
 
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
     unsigned m_vertexArrayID;
