@@ -91,6 +91,7 @@
     <ClCompile Include="Source\BGMDriven.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
+    <ClCompile Include="Source\creditScene.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\LoadingScreen.cpp" />
     <ClCompile Include="Source\LoadOBJ.cpp" />
@@ -118,6 +119,7 @@
     <ClInclude Include="Source\BGMDriven.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera3.h" />
+    <ClInclude Include="Source\creditScene.h" />
     <ClInclude Include="Source\DetectMemoryLeak.h" />
     <ClInclude Include="Source\GameObject.h" />
     <ClInclude Include="Source\Light.h" />
@@ -154,6 +156,9 @@
     <Text Include="NPC data\NPC_2.txt" />
     <Text Include="scenario1Driven\objects.txt" />
     <Text Include="scenario2Driven\objects.txt" />
+    <Text Include="scenario3Driven\all_static_OBJ.txt" />
+    <Text Include="scenario3Driven\credits.txt" />
+    <Text Include="scenario3Driven\README.txt" />
     <Text Include="sekheng\dialogues.txt" />
     <Text Include="sekheng\sek_heng_stuff.txt" />
   </ItemGroup>
