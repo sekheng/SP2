@@ -217,19 +217,24 @@ void sceneSP2::Init()
 	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
 
 	//red building
-	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("BuildingRed", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
 	meshList[GEO_BUILDINGRED]->material = MaterialBuilder::GenerateBlinn();
 
 	//green building
-	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("BuildingBlue", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGGREEN]->textureID = LoadTGA("Image//BuildingGreen.tga");
 	meshList[GEO_BUILDINGGREEN]->material = MaterialBuilder::GenerateBlinn();
 
 	//Blue building
-	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("BuildingGreen", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGBLUE]->textureID = LoadTGA("Image//BuildingBlue.tga");
 	meshList[GEO_BUILDINGBLUE]->material = MaterialBuilder::GenerateBlinn();
+
+	//Barrel
+	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//Barrel.obj");
+	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
+	meshList[GEO_BARREL]->material = MaterialBuilder::GenerateLambert();
 
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
@@ -843,6 +848,10 @@ void sceneSP2::Render()
 
 	//render Building
 	RenderBuilding();
+
+	//render barrel
+	RenderBarrel();
+
 
     /*
     modelStack.PushMatrix();
@@ -1565,6 +1574,42 @@ void sceneSP2::RenderBuilding()
 			modelStack.Scale(15, 15, 15);
 			modelStack.Rotate(180, 0, 1, 0);
 			renderMesh(meshList[GEO_BUILDINGBLUE], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+void sceneSP2::RenderBarrel()
+{
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel1") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Barrel3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_BARREL], true);
 			modelStack.PopMatrix();
 			break;
 		}
