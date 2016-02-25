@@ -109,6 +109,8 @@ class sceneSP2 : public Scene
 		GEO_ROBOTBODY,
 		GEO_SWORD,
 
+        GEO_TYRE,
+
         NUM_GEOMETRY,
     };
 

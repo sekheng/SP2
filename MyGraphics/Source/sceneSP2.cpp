@@ -273,8 +273,12 @@ void sceneSP2::Init()
 	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//sword.obj");
 	meshList[GEO_SWORD]->textureID = LoadTGA("Image//sword.tga");
 
+    meshList[GEO_TYRE] = MeshBuilder::GenerateOBJ("tyre", "OBJ//Tire.obj");
+
+
     on_light = true;
 
+    //meshList[]
     Mtx44 projection;
     projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
@@ -1395,17 +1399,17 @@ void sceneSP2::RenderNPC()
         {
             if (!Application::IsKeyPressed('E'))
             {
-                renderDialogueBox("_|_", QUEST2.getDialogue(true));
+                renderDialogueBox("Victor", QUEST2.getDialogue(true));
             }
             else
             {
-                renderDialogueBox("_|_", QUEST2.getDialogue(false));
+                renderDialogueBox("Victor", QUEST2.getDialogue(false));
             }
         }
         if (QUEST2.interaction() == true && Two.stage() == 4)
         {
 
-            renderDialogueBox("_|_", QUEST2.quest_complete());
+            renderDialogueBox("Victor", QUEST2.quest_complete());
             Quest3_finished = true;
         }
         
@@ -1522,6 +1526,16 @@ void sceneSP2::RenderEmptyBox()
 		if (it.getName() == "EmptyBox4") {
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			renderMesh(meshList[GEO_HAMMER], true);
 			modelStack.PopMatrix();
 			break;
 		}
@@ -1746,6 +1760,63 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey, float x,
     //rendergun
 }
 
+void sceneSP2::renderChunFei()
+{
+
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "robothead") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Rotate(-90, 0, 1, 0);
+            modelStack.Rotate(headrotating, 1, 0, 0);
+            modelStack.Scale(1.5, 1.5, 1.5);
+            renderMesh(meshList[GEO_ROBOTHEAD], true);
+            modelStack.PopMatrix();
+            break;
+        }
+    }
+
+    modelStack.PushMatrix();
+    modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
+    modelStack.Rotate(-90, 0, 1, 0);
+    modelStack.Scale(1.5, 1.5, 1.5);
+    renderMesh(meshList[GEO_ROBOTBODY], true);
+    if (quest_stage >= 1)
+    {
+        if (QUEST3.interaction() == true && Three.stage() < 4)
+        {
+            if (!Application::IsKeyPressed('E'))
+            {
+                renderDialogueBox("ChunFei", QUEST3.getDialogue(true));
+            }
+            else
+            {
+                renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
+            }
+        }
+        if (QUEST3.interaction() == true && Three.stage() == 4)
+        {
+            renderDialogueBox("ChunFei", QUEST3.quest_complete());
+            Quest2_finished = true;
+        }
+    }
+    modelStack.PopMatrix();
+    if (quest_stage >= 2)
+    {
+        for (auto it : camera.storage_of_objects) {
+            if (it.getName() == "sword") {
+                modelStack.PushMatrix();
+                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+                modelStack.Rotate(-90, 0, 1, 0);
+                modelStack.Scale(1.5, 1.5, 1.5);
+                renderMesh(meshList[GEO_SWORD], true);
+                modelStack.PopMatrix();
+                break;
+            }
+        }
+    }
+}
+
 void sceneSP2::populateArea()
 {
     modelStack.PushMatrix();
@@ -1810,64 +1881,6 @@ void sceneSP2::populateArea()
     modelStack.PopMatrix();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	//victor
 
 	for (auto it : camera.storage_of_objects) {
@@ -1890,8 +1903,7 @@ void sceneSP2::populateArea()
 			modelStack.PopMatrix();
 			break;
 		}
-	}
-
+		}
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "Barrel3") {
 			modelStack.PushMatrix();
@@ -2136,59 +2148,3 @@ void sceneSP2::populateArea()
 }
 
 
-void sceneSP2::renderChunFei()
-{
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "robothead") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.Rotate(-90, 0, 1, 0);
-			modelStack.Rotate(headrotating, 1, 0, 0);
-			modelStack.Scale(1.5, 1.5, 1.5);
-			renderMesh(meshList[GEO_ROBOTHEAD], true);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	modelStack.PushMatrix();
-	modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(1.5, 1.5, 1.5);
-	renderMesh(meshList[GEO_ROBOTBODY], true);
-	if (quest_stage >= 1)
-	{
-		if (QUEST3.interaction() == true && Three.stage() < 4)
-		{
-			if (!Application::IsKeyPressed('E'))
-			{
-				renderDialogueBox("ChunFei", QUEST3.getDialogue(true));
-			}
-			else
-			{
-				renderDialogueBox("ChunFei", QUEST3.getDialogue(false));
-			}
-		}
-		if (QUEST3.interaction() == true && Three.stage() == 4)
-		{
-			renderDialogueBox("ChunFei", QUEST3.quest_complete());
-			Quest2_finished = true;
-		}
-	}
-	modelStack.PopMatrix();
-	if (quest_stage >= 2)
-	{
-		for (auto it : camera.storage_of_objects) {
-			if (it.getName() == "sword") {
-				modelStack.PushMatrix();
-				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-				modelStack.Rotate(-90, 0, 1, 0);
-				modelStack.Scale(1.5, 1.5, 1.5);
-				renderMesh(meshList[GEO_SWORD], true);
-				modelStack.PopMatrix();
-				break;
-			}
-		}
-	}
-}
