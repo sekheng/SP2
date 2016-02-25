@@ -146,6 +146,13 @@ objectZ,30
 boundaryRadiusX,5
 boundaryRadiusZ,110
 
+Name,EmptyBox5
+objectX,60
+objectY,0
+objectZ,270
+boundaryRadiusX,40
+boundaryRadiusZ,40
+
 Name,TeleporterBox
 objectX,0
 objectY,0
