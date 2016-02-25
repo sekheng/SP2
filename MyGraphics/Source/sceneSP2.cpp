@@ -1783,4 +1783,42 @@ void sceneSP2::populateArea()
     renderMesh(meshList[GEO_BOX], true);
     modelStack.PopMatrix();
 
+
+    modelStack.PushMatrix();
+    modelStack.Translate(20, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(15, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(10, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(5, 0, -305.5f);
+    //modelStack.Rotate(45, 0, 1, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(17, 0, -310.5f);
+    modelStack.Rotate(90, 0, 0, 1);
+    modelStack.Rotate(-30, 1, 0, 0);
+    modelStack.Scale(2, 2, 2);
+    renderMesh(meshList[GEO_BARREL], true);
+    modelStack.PopMatrix();
+
+
 }
