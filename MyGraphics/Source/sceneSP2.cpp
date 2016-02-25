@@ -216,6 +216,15 @@ void sceneSP2::Init()
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
 
+    meshList[GEO_PARTICLE_LIGHT] = MeshBuilder::GenerateOBJ("particle light", "OBJ//Barrel.obj");
+    meshList[GEO_PARTICLE_LIGHT]->textureID = LoadTGA("Image//particle_light.tga");
+    meshList[GEO_PARTICLE_LIGHT]->material = MaterialBuilder::GenerateBlinn();
+
+    meshList[GEO_PARTICLE_CUBE] = MeshBuilder::GenerateOBJ("particle cube", "OBJ//Box.obj");
+    meshList[GEO_PARTICLE_CUBE]->textureID = LoadTGA("Image//particle_light.tga");
+    meshList[GEO_PARTICLE_CUBE]->material = MaterialBuilder::GeneratePhong();
+    //Teleporter
+
 	//red building
 	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("BuildingRed", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
@@ -325,6 +334,24 @@ void sceneSP2::Init()
     Quest2_finished = false;
     Quest3_finished = false;
     Quest4_finished = false;
+
+    //animating particle cube
+    for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+        if ((*it).getName() == "ParticleCube1" ||
+            (*it).getName() == "ParticleCube2" ||
+            (*it).getName() == "ParticleCube3" ||
+            (*it).getName() == "ParticleCube4" ||
+            (*it).getName() == "ParticleCube5" ||
+            (*it).getName() == "ParticleCube6" ||
+            (*it).getName() == "ParticleCube7" ||
+            (*it).getName() == "ParticleCube8" ||
+            (*it).getName() == "ParticleCube9" ||
+            (*it).getName() == "ParticleCube10") {
+            (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
+            (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
+        }
+    }
+    //animating particle cube
 }
 
 /******************************************************************************/
@@ -415,6 +442,29 @@ void sceneSP2::Update(double dt)
         slowtxt = 0;
     }
 	
+    //animating particle cube
+    for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+        if ((*it).getName() == "ParticleCube1" ||
+            (*it).getName() == "ParticleCube2" ||
+            (*it).getName() == "ParticleCube3" ||
+            (*it).getName() == "ParticleCube4" || 
+            (*it).getName() == "ParticleCube5" || 
+            (*it).getName() == "ParticleCube6" || 
+            (*it).getName() == "ParticleCube7" || 
+            (*it).getName() == "ParticleCube8" || 
+            (*it).getName() == "ParticleCube9" || 
+            (*it).getName() == "ParticleCube10") {
+            if ((*it).objectPos.y < 40) {
+                (*it).objectPos.y += 3 * (float)(dt);
+            }
+            else {
+                (*it).objectPos.y = (*it).originalPos.y;
+                (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
+                (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
+            }
+        }
+    }
+    //animating particle cube
 }
 
 /******************************************************************************/
@@ -927,6 +977,9 @@ void sceneSP2::Render()
     renderMesh(meshList[GEO_INVIS_CURSOR], false);
     modelStack.PopMatrix();*/
 
+    //****************************************************************************//
+    //On screen objects
+    //****************************************************************************//
     
    // RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
     std::stringstream ss;
@@ -942,9 +995,10 @@ void sceneSP2::Render()
     connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
 
-    //****************************************************************************//
-    //On screen objects
-    //****************************************************************************//
+    std::stringstream connectPosY;
+    connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
+RenderStuffOnScreen(meshList[GEO_CONTAINER],3,3,3,0,0,0);
 
 }
 
@@ -1531,6 +1585,33 @@ void sceneSP2::Renderteleporter() {
             break;
         }
     }
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "ParticleCube1" ||
+            it.getName() == "ParticleCube2" ||
+            it.getName() == "ParticleCube3" ||
+            it.getName() == "ParticleCube4" || 
+            it.getName() == "ParticleCube5" || 
+            it.getName() == "ParticleCube6" || 
+            it.getName() == "ParticleCube7" || 
+            it.getName() == "ParticleCube8" || 
+            it.getName() == "ParticleCube9" || 
+            it.getName() == "ParticleCube10") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            renderMesh(meshList[GEO_PARTICLE_CUBE], true);
+            modelStack.PopMatrix();
+        }
+    }
+    for (auto it : camera.storage_of_objects) {
+        if (it.getName() == "Particle Light") {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Scale(7.2f, 20, 7.2f);
+            renderMesh(meshList[GEO_PARTICLE_LIGHT], true);
+            modelStack.PopMatrix();
+            break;
+        }
+    }
 }
 
 void sceneSP2::renderDialogueBox(const string& name, const string& dialogue) {
@@ -1644,21 +1725,41 @@ void sceneSP2::QuestCompleteCheck()
     }
 }
 
-void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey, float x, float y, float rotate_X, float rotate_y)
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float size_z, float rotate_X, float rotate_y, float rotate_z)
 {
-    //rendergun
-    glDisable(GL_DEPTH_TEST);
-    //Add these code just after glDisable(GL_DEPTH_TEST);
-    Mtx44 ortho;
-    ortho.SetToOrtho(0, 170, 0, 90, -70, 70); //size of screen UI
-    projectionStack.PushMatrix();
-    projectionStack.LoadMatrix(ortho);
-    viewStack.PushMatrix();
-    viewStack.LoadIdentity(); //No need camera for ortho mode
-    modelStack.PushMatrix();
-    modelStack.LoadIdentity(); //Reset modelStack
+    //glDisable(GL_DEPTH_TEST);
+    ////Add these code just after glDisable(GL_DEPTH_TEST);
+    //Mtx44 ortho;
+    //ortho.SetToOrtho(0, 170, 0, 90, -70, 70); //size of screen UI
+    //projectionStack.PushMatrix();
+    //projectionStack.LoadMatrix(ortho);
+    //viewStack.PushMatrix();
+    //viewStack.LoadIdentity(); //No need camera for ortho mode
+    //modelStack.PushMatrix();
+    //modelStack.LoadIdentity(); //Reset modelStack
 
-    modelStack.Translate(x, y, 1);
+    //modelStack.Translate(x, y, 1);
+    //if (rotate_X > 0)
+    //{
+    //    modelStack.Rotate(rotate_X, 1, 0, 0);
+    //}
+    //if (rotate_y > 0)
+    //{
+    //    modelStack.Rotate(rotate_y, 0, 1, 0);
+    //}
+
+    //modelStack.Scale(sizex, sizey, 1);
+    //renderMesh(mesh, true);
+
+
+    //projectionStack.PopMatrix();
+    //viewStack.PopMatrix();
+    //modelStack.PopMatrix();
+
+    //glEnable(GL_DEPTH_TEST);
+
+    modelStack.PushMatrix();
+    modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(),camera.getCrossHairZ() );
     if (rotate_X > 0)
     {
         modelStack.Rotate(rotate_X, 1, 0, 0);
@@ -1667,17 +1768,14 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float sizex,float sizey, float x,
     {
         modelStack.Rotate(rotate_y, 0, 1, 0);
     }
-
-    modelStack.Scale(sizex, sizey, 1);
-    renderMesh(mesh, true);
-
-
-    projectionStack.PopMatrix();
-    viewStack.PopMatrix();
+    if (rotate_z > 0)
+    {
+        modelStack.Rotate(rotate_z, 0, 1, 0);
+    }
+    modelStack.Scale(size_x, size_y, size_z);
+    renderMesh(meshList[GEO_AXES], false);
+    renderMesh(mesh,true);
     modelStack.PopMatrix();
-
-    glEnable(GL_DEPTH_TEST);
-    //rendergun
 }
 
 void sceneSP2::renderChunFei()

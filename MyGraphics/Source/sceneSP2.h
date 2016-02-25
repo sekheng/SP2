@@ -77,7 +77,10 @@ class sceneSP2 : public Scene
 		GEO_KEYCARD,
 		//Teleporter
 		GEO_TELEPORTER,
-		//building
+        GEO_PARTICLE_LIGHT,
+        GEO_PARTICLE_CUBE,
+        //Teleporter
+        //building
 		GEO_BUILDINGRED,
 		GEO_BUILDINGGREEN,
 		GEO_BUILDINGBLUE,
@@ -208,7 +211,7 @@ private:
     void RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void TextSlowDown(double dt);
     void QuestCompleteCheck();
-    void RenderStuffOnScreen(Mesh* mesh, float sizex, float sizey, float x, float y, float rotate_X, float rotate_y);
+    void RenderStuffOnScreen(Mesh* mesh, float size_x, float size_y,float size_z, float rotate_X, float rotate_y, float rotate_z);
 
     double framePerSecond;
     float screenWidth, screenHeight;
@@ -248,6 +251,19 @@ private:
     bool Quest3_finished;
     bool Quest4_finished;
 
+    //animating particle cube
+    float translateParticleCube1Y;
+    float translateParticleCube1X;
+    float translateParticleCube1Z;
+
+    float translateParticleCube2X;
+    float translateParticleCube2Y;
+    float translateParticleCube2Z;
+
+    float translateParticleCube3X;
+    float translateParticleCube3Y;
+    float translateParticleCube3Z;
+    //animating particle cube
 };
 
 
