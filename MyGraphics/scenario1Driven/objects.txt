@@ -180,3 +180,17 @@ objectY,0
 objectZ,-250
 boundaryRadiusX,2
 boundaryRadiusZ,2
+
+Name,Building2
+objectX,150
+objectY,0
+objectZ,250
+boundaryRadiusX,2
+boundaryRadiusZ,2
+
+Name,Building3
+objectX,250
+objectY,0
+objectZ,-170
+boundaryRadiusX,2
+boundaryRadiusZ,2

@@ -216,9 +216,20 @@ void sceneSP2::Init()
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
 
-	meshList[GEO_BUILDING] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
-	meshList[GEO_BUILDING]->textureID = LoadTGA("Image//Building.tga");
-	meshList[GEO_BUILDING]->material = MaterialBuilder::GenerateBlinn();
+	//red building
+	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
+	meshList[GEO_BUILDINGRED]->material = MaterialBuilder::GenerateBlinn();
+
+	//green building
+	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGGREEN]->textureID = LoadTGA("Image//BuildingGreen.tga");
+	meshList[GEO_BUILDINGGREEN]->material = MaterialBuilder::GenerateBlinn();
+
+	//Blue building
+	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Building.obj");
+	meshList[GEO_BUILDINGBLUE]->textureID = LoadTGA("Image//BuildingBlue.tga");
+	meshList[GEO_BUILDINGBLUE]->material = MaterialBuilder::GenerateBlinn();
 
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
@@ -1529,12 +1540,37 @@ void sceneSP2::RenderBuilding()
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			modelStack.Scale(15, 15, 15);
 			modelStack.Rotate(-90, 0, 1, 0);
-			renderMesh(meshList[GEO_BUILDING], true);
+			renderMesh(meshList[GEO_BUILDINGRED], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Building2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(15, 15, 15);
+			modelStack.Rotate(90, 0, 1, 0);
+			renderMesh(meshList[GEO_BUILDINGGREEN], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Building3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(15, 15, 15);
+			modelStack.Rotate(180, 0, 1, 0);
+			renderMesh(meshList[GEO_BUILDINGBLUE], true);
 			modelStack.PopMatrix();
 			break;
 		}
 	}
 }
+
 
 void sceneSP2::renderChunFei()
 {	
