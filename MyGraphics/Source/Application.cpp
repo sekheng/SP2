@@ -190,7 +190,7 @@ void Application::Run()
     //musics->playBackground();
 
     scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    //scenario1->Init();
+    scenario1->Init();
 
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
@@ -206,7 +206,7 @@ void Application::Run()
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     scenario2->Init();
 
-    scene = scenario3;
+    scene = scenario1;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
