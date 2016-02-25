@@ -1553,24 +1553,23 @@ void sceneSP2::renderChunFei()
             renderDialogueBox("ChunFei", QUEST3.quest_complete());
             Quest2_finished = true;
         }
-        
-
-        if (Three.stage() == 4)
-        {
-            for (auto it : camera.storage_of_objects) {
-                if (it.getName() == "sword") {
-                    modelStack.PushMatrix();
-                    modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-                    modelStack.Rotate(-90, 0, 1, 0);
-                    modelStack.Scale(1.5, 1.5, 1.5);
-                    renderMesh(meshList[GEO_SWORD], true);
-                    modelStack.PopMatrix();
-                    break;
-                }
+    }
+    modelStack.PopMatrix();
+    if (quest_stage >= 2)
+    {
+        for (auto it : camera.storage_of_objects) {
+            if (it.getName() == "sword") {
+                modelStack.PushMatrix();
+                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+                modelStack.Rotate(-90, 0, 1, 0);
+                modelStack.Scale(1.5, 1.5, 1.5);
+                renderMesh(meshList[GEO_SWORD], true);
+                modelStack.PopMatrix();
+                break;
             }
         }
     }
-    modelStack.PopMatrix();
+    
 }
 
 void sceneSP2::headanimation(double dt)
