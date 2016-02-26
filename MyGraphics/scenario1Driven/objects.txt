@@ -189,11 +189,25 @@ boundaryRadiusX,6
 boundaryRadiusZ,6
 
 Name,EmptyBox11
-objectX,62
+objectX,270
 objectY,0
-objectZ,-272
+objectZ,-83
 boundaryRadiusX,43
-boundaryRadiusZ,45
+boundaryRadiusZ,44
+
+Name,EmptyBox12
+objectX,220
+objectY,0
+objectZ,-221
+boundaryRadiusX,77
+boundaryRadiusZ,75
+
+Name,EmptyBox13
+objectX,128
+objectY,0
+objectZ,-168
+boundaryRadiusX,6
+boundaryRadiusZ,6
 
 Name,TeleporterBox
 objectX,0
