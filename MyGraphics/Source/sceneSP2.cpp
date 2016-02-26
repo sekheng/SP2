@@ -881,11 +881,6 @@ void sceneSP2::Render()
     modelStack.PopMatrix();
     //render skybox
 
-
-   /* modelStack.PushMatrix();
-    renderMesh(meshList[GEO_UI],false),
-    modelStack.PopMatrix();*/
-
     //render ground mesh
     modelStack.PushMatrix();
     modelStack.Scale(19.9f, 1, 19.9f);
@@ -899,32 +894,12 @@ void sceneSP2::Render()
     renderMesh(meshList[GEO_SPACE_WALL], false);
     modelStack.PopMatrix();
 
-
+    
 	//render Spaceship
 	RenderSpaceShuttle();
-
 	//render Building
 	RenderBuilding();
 
-
-
-    /*
-    modelStack.PushMatrix();
-    RenderScrewDriver();
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    RenderContainer();
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    RenderGasoline();
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    RenderHammer();
-    modelStack.PopMatrix();
-    */
     modelStack.PushMatrix();
     RenderNPC();
     modelStack.PopMatrix();
@@ -942,16 +917,11 @@ void sceneSP2::Render()
 
 	//render chunfei NPC
 	renderChunFei();
-
+    
     //****************************************************************************//
     //On screen objects
     //****************************************************************************//
-    //modelStack.PushMatrix();
-    ////scale, translate, rotate
-    //modelStack.Scale(20, 20, 1);
-    //RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
-    //modelStack.PopMatrix();
-
+    
 
     modelStack.PushMatrix();
     RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
@@ -971,7 +941,9 @@ void sceneSP2::Render()
 	RenderStation();
 
     populateArea();
-
+    
+    
+    
    /* modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
     renderMesh(meshList[GEO_INVIS_CURSOR], false);
@@ -999,7 +971,8 @@ void sceneSP2::Render()
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER],3,3,3,0,0,0);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER],1,1,1,270,90,0);
+
 
 }
 
@@ -1728,39 +1701,43 @@ void sceneSP2::QuestCompleteCheck()
 
 void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float size_z, float rotate_X, float rotate_y, float rotate_z)
 {
-    //glDisable(GL_DEPTH_TEST);
-    ////Add these code just after glDisable(GL_DEPTH_TEST);
-    //Mtx44 ortho;
-    //ortho.SetToOrtho(0, 170, 0, 90, -70, 70); //size of screen UI
-    //projectionStack.PushMatrix();
-    //projectionStack.LoadMatrix(ortho);
-    //viewStack.PushMatrix();
-    //viewStack.LoadIdentity(); //No need camera for ortho mode
-    //modelStack.PushMatrix();
-    //modelStack.LoadIdentity(); //Reset modelStack
-
-    //modelStack.Translate(x, y, 1);
-    //if (rotate_X > 0)
-    //{
-    //    modelStack.Rotate(rotate_X, 1, 0, 0);
-    //}
-    //if (rotate_y > 0)
-    //{
-    //    modelStack.Rotate(rotate_y, 0, 1, 0);
-    //}
-
-    //modelStack.Scale(sizex, sizey, 1);
-    //renderMesh(mesh, true);
-
-
-    //projectionStack.PopMatrix();
-    //viewStack.PopMatrix();
-    //modelStack.PopMatrix();
-
-    //glEnable(GL_DEPTH_TEST);
-
+    
+    glDisable(GL_DEPTH_TEST);
+    //Add these code just after glDisable(GL_DEPTH_TEST);
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 90, 0, 90, -40, 140); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
     modelStack.PushMatrix();
-    modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(),camera.getCrossHairZ() );
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(10, 10, 0);
+    if (rotate_X > 0)
+    {
+        modelStack.Rotate(rotate_X, 1, 0, 0);
+    }
+    if (rotate_y > 0)
+    {
+        modelStack.Rotate(rotate_y, 0, 1, 0);
+    }
+
+    modelStack.Scale(size_x, size_y, size_z);
+    renderMesh(meshList[GEO_AXES], false);
+    renderMesh(mesh, true);
+
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
+
+    glEnable(GL_DEPTH_TEST);
+    
+
+    /*
+    modelStack.PushMatrix();
+    modelStack.Translate(camera.target.x , camera.target.y, camera.target.z);
     if (rotate_X != 0)
     {
         modelStack.Rotate(rotate_X, 1, 0, 0);
@@ -1775,8 +1752,9 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float s
     }
     modelStack.Scale(size_x, size_y, size_z);
     renderMesh(meshList[GEO_AXES], false);
-    renderMesh(mesh,true);
+    renderMesh(mesh, false);
     modelStack.PopMatrix();
+    */
 }
 
 void sceneSP2::renderChunFei()
