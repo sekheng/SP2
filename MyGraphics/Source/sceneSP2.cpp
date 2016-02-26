@@ -8,7 +8,7 @@
 #include "MeshBuilder.h"
 #include "MaterialBuilder.h"
 #include "Material.h"
-#include "Light.h"
+//#include "Light.h"
 #include "Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
@@ -68,12 +68,11 @@ void sceneSP2::Init()
     glBindVertexArray(m_vertexArrayID);
 
     //Load vertex and fragment shaders
-    m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
+	m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
 
-    m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
-    m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
-    m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
-   
+	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
+	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
+	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
 	m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
 	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
 	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
@@ -115,12 +114,10 @@ void sceneSP2::Init()
 
     glUseProgram(m_programID);
 
-    glUniform1i(m_parameters[U_NUMLIGHTS], 2);
-
 	light[0].type = Light::LIGHT_DIRECTIONAL;
 	light[0].position.Set(0, 20, 0);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 100;
+	light[0].power = 1;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
@@ -130,7 +127,7 @@ void sceneSP2::Init()
 	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
 	light[1].type = Light::LIGHT_SPOT;
-	light[1].position.Set(-280, 35, 300);
+	light[1].position.Set(-280, 40, 300);
 	light[1].color.Set(1, 1, 1);
 	light[1].power = 5;
 	light[1].kC = 1.f;
@@ -141,6 +138,7 @@ void sceneSP2::Init()
 	light[1].exponent = 3.f;
 	light[1].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
+	glUniform1i(m_parameters[U_NUMLIGHTS], 2);
 	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
 	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
 	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
@@ -312,7 +310,7 @@ void sceneSP2::Init()
     meshList[GEO_TYRE] = MeshBuilder::GenerateOBJ("tyre", "OBJ//Tire.obj");
 
 
-    on_light = true;
+    //on_light = true;
 
     //meshList[]
     Mtx44 projection;
@@ -945,6 +943,7 @@ void sceneSP2::Render()
 		modelStack.PopMatrix();
 	}*/
 
+
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -966,10 +965,12 @@ void sceneSP2::Render()
 
 	if (light[1].type == Light::LIGHT_SPOT)
 	{
-		Vector3 lightDir(light[1].position.x, light[1].position.y, light[1].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightDirection_cameraspace.x);
+		Position lightPosition_cameraspace = viewStack.Top() * light[1].position;
+		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightPosition_cameraspace.x);
+		Vector3 spotDirection_cameraspace = viewStack.Top() * light[1].spotDirection;
+		glUniform3fv(m_parameters[U_LIGHT1_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
 	}
+	
 
     renderMesh(meshList[GEO_AXES], false);
 
