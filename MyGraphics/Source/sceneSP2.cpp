@@ -385,6 +385,7 @@ void sceneSP2::Init()
             (*it).getName() == "ParticleCube10") {
             (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
             (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
+            particleHandlers.push_back(*it);
         }
     }
     //animating particle cube
@@ -414,14 +415,14 @@ void sceneSP2::Update(double dt)
     One.check_quest(QUEST1.quest_given());
     One.Update(dt);
 
-	QUEST2.update(dt);
-	Two.check_quest(QUEST2.quest_given());
-	Two.Update(dt);
+    QUEST2.update(dt);
+    Two.check_quest(QUEST2.quest_given());
+    Two.Update(dt);
 
-	QUEST3.update(dt);
-	Three.check_quest(QUEST3.quest_given());
-	Three.Update(dt);
-	headanimation(dt);
+    QUEST3.update(dt);
+    Three.check_quest(QUEST3.quest_given());
+    Three.Update(dt);
+    headanimation(dt);
 
     QuestCompleteCheck();
 
@@ -443,20 +444,20 @@ void sceneSP2::Update(double dt)
     }
     //transit scene
 
-	if (door.openSasame() == 2)
-	{
-		for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
-			if ((*it).getName() == "Door")
-			{
-				(*it).objectPos.x += (float)(LSPEED *dt) * 10;
-				if ((*it).objectPos.x  > -242)
-				{
-					(*it).objectPos.x = -242;
-				}
-				break;
-			}
-		}
-	}
+    if (door.openSasame() == 2)
+    {
+        for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+            if ((*it).getName() == "Door")
+            {
+                (*it).objectPos.x += (float)(LSPEED *dt) * 10;
+                if ((*it).objectPos.x > -242)
+                {
+                    (*it).objectPos.x = -242;
+                }
+                break;
+            }
+        }
+    }
 
     //Sek Heng's stuff
     if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false
@@ -477,28 +478,38 @@ void sceneSP2::Update(double dt)
     {
         slowtxt = 0;
     }
-	
+
     //animating particle cube
-    for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
-        if ((*it).getName() == "ParticleCube1" ||
-            (*it).getName() == "ParticleCube2" ||
-            (*it).getName() == "ParticleCube3" ||
-            (*it).getName() == "ParticleCube4" || 
-            (*it).getName() == "ParticleCube5" || 
-            (*it).getName() == "ParticleCube6" || 
-            (*it).getName() == "ParticleCube7" || 
-            (*it).getName() == "ParticleCube8" || 
-            (*it).getName() == "ParticleCube9" || 
-            (*it).getName() == "ParticleCube10") {
-            if ((*it).objectPos.y < 40) {
-                (*it).objectPos.y += 3 * (float)(dt);
-            }
-            else {
-                (*it).objectPos.y = (*it).originalPos.y;
-                (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
-                (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
-            }
-        }
+    //for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+    //    if ((*it).getName() == "ParticleCube1" ||
+    //        (*it).getName() == "ParticleCube2" ||
+    //        (*it).getName() == "ParticleCube3" ||
+    //        (*it).getName() == "ParticleCube4" || 
+    //        (*it).getName() == "ParticleCube5" || 
+    //        (*it).getName() == "ParticleCube6" || 
+    //        (*it).getName() == "ParticleCube7" || 
+    //        (*it).getName() == "ParticleCube8" || 
+    //        (*it).getName() == "ParticleCube9" || 
+    //        (*it).getName() == "ParticleCube10") {
+    //        if ((*it).objectPos.y < 40) {
+    //            (*it).objectPos.y += 3 * (float)(dt);
+    //        }
+    //        else {
+    //            (*it).objectPos.y = (*it).originalPos.y;
+    //            (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
+    //            (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
+    //        }
+    //    }
+    //}
+    for (vector<objectsForDisplay>::iterator it = particleHandlers.begin(); it != particleHandlers.end(); ++it) {
+                if ((*it).objectPos.y < 40) {
+                    (*it).objectPos.y += 3 * (float)(dt);
+                }
+                else {
+                    (*it).objectPos.y = (*it).originalPos.y;
+                    (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
+                    (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
+                }
     }
     //animating particle cube
     
@@ -1054,9 +1065,9 @@ void sceneSP2::Render()
     
     //testing
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05,1.7,2,-1);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.7,2,-1);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05, -4.3, 2, -3);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -4.3, 2, -3);
     
 }
 
@@ -1750,22 +1761,28 @@ void sceneSP2::Renderteleporter() {
             break;
         }
     }
-    for (auto it : camera.storage_of_objects) {
-        if (it.getName() == "ParticleCube1" ||
-            it.getName() == "ParticleCube2" ||
-            it.getName() == "ParticleCube3" ||
-            it.getName() == "ParticleCube4" || 
-            it.getName() == "ParticleCube5" || 
-            it.getName() == "ParticleCube6" || 
-            it.getName() == "ParticleCube7" || 
-            it.getName() == "ParticleCube8" || 
-            it.getName() == "ParticleCube9" || 
-            it.getName() == "ParticleCube10") {
-            modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-            renderMesh(meshList[GEO_PARTICLE_CUBE], true);
-            modelStack.PopMatrix();
-        }
+    //for (auto it : camera.storage_of_objects) {
+    //    if (it.getName() == "ParticleCube1" ||
+    //        it.getName() == "ParticleCube2" ||
+    //        it.getName() == "ParticleCube3" ||
+    //        it.getName() == "ParticleCube4" || 
+    //        it.getName() == "ParticleCube5" || 
+    //        it.getName() == "ParticleCube6" || 
+    //        it.getName() == "ParticleCube7" || 
+    //        it.getName() == "ParticleCube8" || 
+    //        it.getName() == "ParticleCube9" || 
+    //        it.getName() == "ParticleCube10") {
+    //        modelStack.PushMatrix();
+    //        modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+    //        renderMesh(meshList[GEO_PARTICLE_CUBE], true);
+    //        modelStack.PopMatrix();
+    //    }
+    //}
+    for (auto it : particleHandlers) {
+                modelStack.PushMatrix();
+                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+                renderMesh(meshList[GEO_PARTICLE_CUBE], true);
+                modelStack.PopMatrix();
     }
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "Particle Light") {

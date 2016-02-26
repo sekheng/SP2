@@ -272,7 +272,9 @@ private:
     //logic of teleporter
     //animating teleportation
 
-
+    //particle effect handler
+    vector<objectsForDisplay> particleHandlers;
+    //particle effect handler
 };
 
 
