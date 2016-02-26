@@ -293,6 +293,8 @@ An improved camera movement based on first person
 \param dt - frame time
 */
 /******************************************************************************/
+
+
 void Camera3::cameraMovement(double dt)
 {
     float walkingX = 0;
