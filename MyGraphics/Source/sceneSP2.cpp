@@ -254,7 +254,8 @@ void sceneSP2::Init()
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
     meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
     //NPC
-
+	meshList[GEO_NPC_QUEST2] = MeshBuilder::GenerateOBJ("Victor", "OBJ//android.obj");
+	meshList[GEO_NPC_QUEST2]->textureID = LoadTGA("Image//androidRed.tga");
 
     meshList[GEO_INVIS_CURSOR] = MeshBuilder::GenerateSphere("invisible cursor", Color(0.5, 0.5, 0.5));
 
@@ -300,8 +301,8 @@ void sceneSP2::Init()
     //initialise quest
     One.Init("First quest", camera, 2, Vector3(-270, 0, 164),5, Vector3(-270 ,0, 134),5);
 
-	QUEST2.Init("Sec NPC",4, Vector3(175, 0, 175), 5, 5, camera, "NPC data//NPC_2.txt");
-	Two.Init("Sec quest", camera, 1, Vector3(185, 0, 185), 5, Vector3(0, 0, 0), 5);
+	QUEST2.Init("Sec NPC",7, Vector3(-150, 0, -300), 5, 5, camera, "NPC data//NPC_2.txt");
+	Two.Init("Sec quest", camera, 1, Vector3(-167, 0, 297), 5, Vector3(0, 0, 0), 5);
 
     //Sek Heng's stuff and initialization
     sek_heng_.init("sekheng//sek_heng_stuff.txt");
@@ -1403,7 +1404,8 @@ void sceneSP2::RenderNPC()
     
     modelStack.PushMatrix();
     modelStack.Translate(QUEST2.NPC_getposition_x(), QUEST2.NPC_getposition_y(), QUEST2.NPC_getposition_z());
-    renderMesh(meshList[GEO_NPC1], true);
+	modelStack.Scale(1.5,1.5,1.5);
+	renderMesh(meshList[GEO_NPC_QUEST2], true);
     if (quest_stage >= 2)
     {
         if (QUEST2.interaction() == true && Two.stage() < 4)
@@ -1463,7 +1465,7 @@ void sceneSP2::RenderQuestObjects()
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(Two.getObject1_X(), 0, Two.getObject1_Z());
-		renderMesh(meshList[GEO_CONTAINER], true);
+		renderMesh(meshList[ GEO_GASOLINE], true);
 		modelStack.PopMatrix();
 	}
 	else if (Two.stage() == 3)
