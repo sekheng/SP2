@@ -971,7 +971,7 @@ void sceneSP2::Render()
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER],1,1,1,270,90,0);
+    //RenderStuffOnScreen(meshList[GEO_CONTAINER],1,1,1,270,90,0);
 
 
 }
@@ -1701,7 +1701,7 @@ void sceneSP2::QuestCompleteCheck()
 
 void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float size_z, float rotate_X, float rotate_y, float rotate_z)
 {
-    
+    /*
     glDisable(GL_DEPTH_TEST);
     //Add these code just after glDisable(GL_DEPTH_TEST);
     Mtx44 ortho;
@@ -1733,9 +1733,9 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float s
     modelStack.PopMatrix();
 
     glEnable(GL_DEPTH_TEST);
-    
+    */
 
-    /*
+    
     modelStack.PushMatrix();
     modelStack.Translate(camera.target.x , camera.target.y, camera.target.z);
     if (rotate_X != 0)
@@ -1754,7 +1754,8 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float s
     renderMesh(meshList[GEO_AXES], false);
     renderMesh(mesh, false);
     modelStack.PopMatrix();
-    */
+    
+
 }
 
 void sceneSP2::renderChunFei()

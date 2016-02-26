@@ -13,7 +13,7 @@
 
 
 GLFWwindow* m_window;
-const unsigned char FPS = 62; // FPS of this game
+const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 
 //global variables needed for transition
@@ -204,7 +204,7 @@ void Application::Run()
     glfwSwapBuffers(m_window);
 
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    scenario2->Init();
+    //scenario2->Init();
 
     scene = scenario1;
 
