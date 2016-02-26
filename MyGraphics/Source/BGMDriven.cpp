@@ -4,9 +4,10 @@ BGMDriven::BGMDriven()
 {
     engine = createIrrKlangDevice();
     sound_names = { 
-        "" };
+        "" 
+    };
     background_music = { 
-        "music//Star Wars- The Imperial March (Darth Vader's Theme).mp3" 
+        "music//Star Wars- The Imperial March (Darth Vader's Theme).mp3", " "
     };
 }
 
