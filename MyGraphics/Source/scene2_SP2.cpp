@@ -92,7 +92,7 @@ void scene2_SP2::Init()
     m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
 
 	//deadpool light
-	/*m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
+	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
 	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
 	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
 	m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
@@ -111,7 +111,7 @@ void scene2_SP2::Init()
 	m_parameters[U_LIGHT1_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[1].spotDirection");
 	m_parameters[U_LIGHT1_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[1].cosCutoff");
 	m_parameters[U_LIGHT1_COSINNER] = glGetUniformLocation(m_programID, "lights[1].cosInner");
-	m_parameters[U_LIGHT1_EXPONENT] = glGetUniformLocation(m_programID, "lights[1].exponent");*/
+	m_parameters[U_LIGHT1_EXPONENT] = glGetUniformLocation(m_programID, "lights[1].exponent");
 	//deadpool light
 
     // Get a handle for our "colorTexture" uniform
@@ -132,7 +132,7 @@ void scene2_SP2::Init()
     light[0].power = 1;
     light[0].kC = 1.f;
     light[0].kL = 0.01f;
-    light[0].kQ = 0.01f;
+    light[0].kQ = 0.001f;
     light[0].cosCutoff = cos(Math::DegreeToRadian(45));
     light[0].cosInner = cos(Math::DegreeToRadian(30));
     light[0].exponent = 3.f;
@@ -144,37 +144,33 @@ void scene2_SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
 	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
 	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
-	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
+	//glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
 	glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[0].cosCutoff);
 	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//deadpool light
-	/*light[1].type = Light::LIGHT_SPOT;
+	light[1].type = Light::LIGHT_SPOT;
 	light[1].position.Set(0, 70, 0);
 	light[1].color.Set(1, 1, 1);
-	light[1].power = 1;
+	light[1].power = 10;
 	light[1].kC = 1.f;
-	light[1].kL = 0.01f;
-	light[1].kQ = 0.01f;
-	light[1].cosCutoff = cos(Math::DegreeToRadian(45));
-	light[1].cosInner = cos(Math::DegreeToRadian(30));
+	light[1].kL = 0.001f;
+	light[1].kQ = 0.001f;
+	light[1].cosCutoff = cos(Math::DegreeToRadian(25));
+	light[1].cosInner = cos(Math::DegreeToRadian(25));
 	light[1].exponent = 3.f;
 	light[1].spotDirection.Set(0.f, 1.f, 0.f);
 
-	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[1].type);
-	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[1].color.r);
-	glUniform1f(m_parameters[U_LIGHT0_POWER], light[1].power);
-	glUniform1f(m_parameters[U_LIGHT0_KC], light[1].kC);
-	glUniform1f(m_parameters[U_LIGHT0_KL], light[1].kL);
-	glUniform1f(m_parameters[U_LIGHT0_KQ], light[1].kQ);
-	glUniform1f(m_parameters[U_LIGHT0_KQ], light[1].kQ);
-	glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[1].cosCutoff);
-	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[1].cosInner);
-	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[1].exponent);*/
-	//deadpool light
-
-   
+	glUniform1i(m_parameters[U_LIGHT1_TYPE], light[1].type);
+	glUniform3fv(m_parameters[U_LIGHT1_COLOR], 1, &light[1].color.r);
+	glUniform1f(m_parameters[U_LIGHT1_POWER], light[1].power);
+	glUniform1f(m_parameters[U_LIGHT1_KC], light[1].kC);
+	glUniform1f(m_parameters[U_LIGHT1_KL], light[1].kL);
+	glUniform1f(m_parameters[U_LIGHT1_KQ], light[1].kQ);
+	glUniform1f(m_parameters[U_LIGHT1_COSCUTOFF], light[1].cosCutoff);
+	glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
+	glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene2.txt");
@@ -309,6 +305,8 @@ void scene2_SP2::Init()
     creditRolling.initCredit("scenario3Driven//credits.txt");
     //credits
     //Beginning cinematic
+
+	//dooropening = 89;
 }
 
 /******************************************************************************/
@@ -477,12 +475,12 @@ void scene2_SP2::Render()
         modelStack.PushMatrix();
         modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
         modelStack.Scale(0.5f, 0.5f, 0.5f);
-        renderMesh(meshList[GEO_LIGHTBALL], false);
+        //renderMesh(meshList[GEO_LIGHTBALL], false);
         modelStack.PopMatrix();
     }
 
 	//deadpool light
-	/*if (light[1].type == Light::LIGHT_DIRECTIONAL)
+	if (light[1].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[1].position.x, light[1].position.y, light[1].position.z);
 		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
@@ -507,9 +505,9 @@ void scene2_SP2::Render()
 		modelStack.PushMatrix();
 		modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
 		modelStack.Scale(0.5f, 0.5f, 0.5f);
-		renderMesh(meshList[GEO_LIGHTBALL], false);
+		//renderMesh(meshList[GEO_LIGHTBALL], false);
 		modelStack.PopMatrix();
-	}*/
+	}
 	//deadpool light
 
     renderMesh(meshList[GEO_AXES], false);
@@ -555,11 +553,11 @@ void scene2_SP2::Render()
     renderDeadPool();
     //rendering DeadPOOL
 
-	/*modelStack.PushMatrix();
-	modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
-	modelStack.Scale(3, 3, 3);
-	renderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();*/
+	//modelStack.PushMatrix();
+	//modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
+	//modelStack.Scale(3, 3, 3);
+	//renderMesh(meshList[GEO_LIGHTBALL], false);
+	//modelStack.PopMatrix();
 	
 
     if (beginIamYourFather == false && Numpad.NumpadRenderOnScreen())
