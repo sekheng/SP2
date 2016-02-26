@@ -188,7 +188,7 @@ private:
     unsigned m_programID;
     unsigned m_parameters[U_TOTAL];
 
-	Light light[1];
+	Light light[2];
     Camera3 camera;
 	NumPad Numpad;
 
