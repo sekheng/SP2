@@ -1939,9 +1939,10 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
     
 }
 
+
+
 void sceneSP2::renderChunFei()
 {
-
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "robothead") {
             modelStack.PushMatrix();
@@ -1954,6 +1955,8 @@ void sceneSP2::renderChunFei()
             break;
         }
     }
+
+
 
     modelStack.PushMatrix();
     modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
