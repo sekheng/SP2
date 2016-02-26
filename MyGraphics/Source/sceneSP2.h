@@ -135,7 +135,21 @@ class sceneSP2 : public Scene
         U_LIGHT0_COSCUTOFF,
         U_LIGHT0_COSINNER,
         U_LIGHT0_EXPONENT,
+
+		U_LIGHT1_POSITION,
+		U_LIGHT1_COLOR,
+		U_LIGHT1_POWER,
+		U_LIGHT1_KC,
+		U_LIGHT1_KL,
+		U_LIGHT1_KQ,
+		U_LIGHT1_TYPE,
+		U_LIGHT1_SPOTDIRECTION,
+		U_LIGHT1_COSCUTOFF,
+		U_LIGHT1_COSINNER,
+		U_LIGHT1_EXPONENT,
+
         U_NUMLIGHTS,
+		U_NUMLIGHTS2,
         U_COLOR_TEXTURE_ENABLED,
         U_COLOR_TEXTURE,
         U_TEXT_ENABLED,
@@ -153,7 +167,7 @@ public:
     virtual void Exit();
 private:
     bool on_light;
-    Light light[1];
+    Light light[2];
     float LSPEED = 10.f;
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
@@ -211,7 +225,7 @@ private:
     void RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void TextSlowDown(double dt);
     void QuestCompleteCheck();
-    void RenderStuffOnScreen(Mesh* mesh, float size_x, float size_y,float size_z, float rotate_X, float rotate_y, float rotate_z);
+    void RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z);
 
     double framePerSecond;
     float screenWidth, screenHeight;

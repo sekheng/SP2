@@ -73,23 +73,37 @@ void sceneSP2::Init()
     m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
     m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
     m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
-    m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
-    m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
-    m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
-    m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
-    m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
-    m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
-    m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
-    m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
-    m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
-    m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
-    m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
-    m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
-    m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
-    m_parameters[U_LIGHT0_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[0].spotDirection");
-    m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
-    m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
-    m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
+   
+	m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
+	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
+	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
+	m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
+
+	m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
+	m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
+	m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
+	m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
+	m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
+	m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
+	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
+	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
+	m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
+	m_parameters[U_LIGHT0_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[0].spotDirection");
+	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
+	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
+	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
+
+	m_parameters[U_LIGHT1_POSITION] = glGetUniformLocation(m_programID, "lights[1].position_cameraspace");
+	m_parameters[U_LIGHT1_COLOR] = glGetUniformLocation(m_programID, "lights[1].color");
+	m_parameters[U_LIGHT1_POWER] = glGetUniformLocation(m_programID, "lights[1].power");
+	m_parameters[U_LIGHT1_KC] = glGetUniformLocation(m_programID, "lights[1].kC");
+	m_parameters[U_LIGHT1_KL] = glGetUniformLocation(m_programID, "lights[1].kL");
+	m_parameters[U_LIGHT1_KQ] = glGetUniformLocation(m_programID, "lights[1].kQ");
+	m_parameters[U_LIGHT1_TYPE] = glGetUniformLocation(m_programID, "lights[1].type");
+	m_parameters[U_LIGHT1_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[1].spotDirection");
+	m_parameters[U_LIGHT1_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[1].cosCutoff");
+	m_parameters[U_LIGHT1_COSINNER] = glGetUniformLocation(m_programID, "lights[1].cosInner");
+	m_parameters[U_LIGHT1_EXPONENT] = glGetUniformLocation(m_programID, "lights[1].exponent");
 
     // Get a handle for our "colorTexture" uniform
     m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
@@ -101,30 +115,51 @@ void sceneSP2::Init()
 
     glUseProgram(m_programID);
 
-    glUniform1i(m_parameters[U_NUMLIGHTS], 1);
+    glUniform1i(m_parameters[U_NUMLIGHTS], 2);
 
-    light[0].type = Light::LIGHT_DIRECTIONAL;
-    light[0].position.Set(0, 70, 0);
-    light[0].color.Set(1, 1, 1);
-    light[0].power = 1;
-    light[0].kC = 1.f;
-    light[0].kL = 0.01f;
-    light[0].kQ = 0.01f;
-    light[0].cosCutoff = cos(Math::DegreeToRadian(45));
-    light[0].cosInner = cos(Math::DegreeToRadian(30));
-    light[0].exponent = 3.f;
-    light[0].spotDirection.Set(0.f, 1.f, 0.f);
+	light[0].type = Light::LIGHT_DIRECTIONAL;
+	light[0].position.Set(0, 20, 0);
+	light[0].color.Set(1, 1, 1);
+	light[0].power = 100;
+	light[0].kC = 1.f;
+	light[0].kL = 0.01f;
+	light[0].kQ = 0.001f;
+	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
+	light[0].cosInner = cos(Math::DegreeToRadian(30));
+	light[0].exponent = 3.f;
+	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
-    glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-    glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
-    glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-    glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
-    glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
-    glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
-    glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
-    glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[0].cosCutoff);
-    glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
-    glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
+	light[1].type = Light::LIGHT_SPOT;
+	light[1].position.Set(-280, 35, 300);
+	light[1].color.Set(1, 1, 1);
+	light[1].power = 5;
+	light[1].kC = 1.f;
+	light[1].kL = 0.01f;
+	light[1].kQ = 0.001f;
+	light[1].cosCutoff = cos(Math::DegreeToRadian(45));
+	light[1].cosInner = cos(Math::DegreeToRadian(30));
+	light[1].exponent = 3.f;
+	light[1].spotDirection.Set(0.0f, 1.0f, 0.0f);
+
+	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
+	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
+	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
+	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
+	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
+	glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[0].cosCutoff);
+	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
+	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
+
+	glUniform1i(m_parameters[U_LIGHT1_TYPE], light[1].type);
+	glUniform3fv(m_parameters[U_LIGHT1_COLOR], 1, &light[1].color.r);
+	glUniform1f(m_parameters[U_LIGHT1_POWER], light[1].power);
+	glUniform1f(m_parameters[U_LIGHT1_KC], light[1].kC);
+	glUniform1f(m_parameters[U_LIGHT1_KL], light[1].kL);
+	glUniform1f(m_parameters[U_LIGHT1_KQ], light[1].kQ);
+	glUniform1f(m_parameters[U_LIGHT1_COSCUTOFF], light[1].cosCutoff);
+	glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
+	glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene1.txt");
@@ -254,7 +289,8 @@ void sceneSP2::Init()
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
     meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
     //NPC
-
+	meshList[GEO_NPC_QUEST2] = MeshBuilder::GenerateOBJ("Victor", "OBJ//android.obj");
+	meshList[GEO_NPC_QUEST2]->textureID = LoadTGA("Image//androidRed.tga");
 
     meshList[GEO_INVIS_CURSOR] = MeshBuilder::GenerateSphere("invisible cursor", Color(0.5, 0.5, 0.5));
 
@@ -300,8 +336,8 @@ void sceneSP2::Init()
     //initialise quest
     One.Init("First quest", camera, 2, Vector3(-270, 0, 164),5, Vector3(-270 ,0, 134),5);
 
-	QUEST2.Init("Sec NPC",4, Vector3(175, 0, 175), 5, 5, camera, "NPC data//NPC_2.txt");
-	Two.Init("Sec quest", camera, 1, Vector3(185, 0, 185), 5, Vector3(0, 0, 0), 5);
+	QUEST2.Init("Sec NPC",7, Vector3(-150, 0, -300), 5, 5, camera, "NPC data//NPC_2.txt");
+	Two.Init("Sec quest", camera, 1, Vector3(-167, 0, 297), 5, Vector3(0, 0, 0), 5);
 
     //Sek Heng's stuff and initialization
     sek_heng_.init("sekheng//sek_heng_stuff.txt");
@@ -358,6 +394,7 @@ void sceneSP2::Init()
     teleportCoordY = 0;
     startTeleporting = false;
     //animating teleporting
+
 }
 
 /******************************************************************************/
@@ -724,7 +761,7 @@ void sceneSP2::RenderStation()
 		modelStack.PushMatrix();
 		modelStack.Translate(-310, 0, 310 - i);
 		modelStack.Scale(5, 5, 5);
-		renderMesh(meshList[GEO_BOX], false);
+		renderMesh(meshList[GEO_BOX], true);
 		modelStack.PopMatrix();
 	}
 
@@ -733,7 +770,7 @@ void sceneSP2::RenderStation()
 		modelStack.PushMatrix();
 		modelStack.Translate(-255, 0, 270 + i);
 		modelStack.Scale(5, 5, 5);
-		renderMesh(meshList[GEO_BOX], false);
+		renderMesh(meshList[GEO_BOX], true);
 		modelStack.PopMatrix();
 	}
 
@@ -742,7 +779,7 @@ void sceneSP2::RenderStation()
 		modelStack.PushMatrix();
 		modelStack.Translate(-255, 5, 268 + i);
 		modelStack.Scale(5, 5, 5);
-		renderMesh(meshList[GEO_BOX], false);
+		renderMesh(meshList[GEO_BOX], true);
 		modelStack.PopMatrix();
 	}
 
@@ -751,7 +788,7 @@ void sceneSP2::RenderStation()
 		modelStack.PushMatrix();
 		modelStack.Translate(-250.f, 0.f, 265 + i);
 		modelStack.Scale(5, 5, 5);
-		renderMesh(meshList[GEO_BOX], false);
+		renderMesh(meshList[GEO_BOX], true);
 		modelStack.PopMatrix();
 	}
 
@@ -865,7 +902,7 @@ void sceneSP2::Render()
     projection.SetToPerspective(45.0f, 4.0f / 3.0f, 0.1f, 1000.0f); //FOV, Aspect Ratio, Near plane, Far plane
 
 
-    if (light[0].type == Light::LIGHT_DIRECTIONAL)
+   /* if (light[0].type == Light::LIGHT_DIRECTIONAL)
     {
         Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
         Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
@@ -894,6 +931,46 @@ void sceneSP2::Render()
         modelStack.PopMatrix();
     }
 
+	if (light[1].type == Light::LIGHT_SPOT)
+	{
+		Position lightPosition_cameraspace = viewStack.Top() * light[1].position;
+		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightPosition_cameraspace.x);
+		Vector3 spotDirection_cameraspace = viewStack.Top() * light[1].spotDirection;
+		glUniform3fv(m_parameters[U_LIGHT1_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
+
+		modelStack.PushMatrix();
+		modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
+		modelStack.Scale(0.5f, 0.5f, 0.5f);
+		renderMesh(meshList[GEO_LIGHTBALL], false);
+		modelStack.PopMatrix();
+	}*/
+
+	if (light[0].type == Light::LIGHT_DIRECTIONAL)
+	{
+		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
+		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
+	}
+	else if (light[0].type == Light::LIGHT_SPOT)
+	{
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
+		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
+	}
+	else
+	{
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+	}
+
+	if (light[1].type == Light::LIGHT_SPOT)
+	{
+		Vector3 lightDir(light[1].position.x, light[1].position.y, light[1].position.z);
+		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
+		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightDirection_cameraspace.x);
+	}
+
     renderMesh(meshList[GEO_AXES], false);
 
     //render skybox
@@ -902,11 +979,6 @@ void sceneSP2::Render()
     RenderSkybox();
     modelStack.PopMatrix();
     //render skybox
-
-
-   /* modelStack.PushMatrix();
-    renderMesh(meshList[GEO_UI],false),
-    modelStack.PopMatrix();*/
 
     //render ground mesh
     modelStack.PushMatrix();
@@ -918,35 +990,15 @@ void sceneSP2::Render()
 
     modelStack.PushMatrix();
     modelStack.Scale(19.9f, 19.9f, 19.9f);
-    renderMesh(meshList[GEO_SPACE_WALL], false);
+	renderMesh(meshList[GEO_SPACE_WALL], true);
     modelStack.PopMatrix();
 
-
+    
 	//render Spaceship
 	RenderSpaceShuttle();
-
 	//render Building
 	RenderBuilding();
 
-
-
-    /*
-    modelStack.PushMatrix();
-    RenderScrewDriver();
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    RenderContainer();
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    RenderGasoline();
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    RenderHammer();
-    modelStack.PopMatrix();
-    */
     modelStack.PushMatrix();
     RenderNPC();
     modelStack.PopMatrix();
@@ -964,35 +1016,25 @@ void sceneSP2::Render()
 
 	//render chunfei NPC
 	renderChunFei();
-
+    
     //****************************************************************************//
     //On screen objects
     //****************************************************************************//
+    
+
     //modelStack.PushMatrix();
-    ////scale, translate, rotate
-    //modelStack.Scale(20, 20, 1);
-    //RenderText(meshList[GEO_COMIC_TEXT], "Hello World", Color(0, 1, 0));
+    //RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
     //modelStack.PopMatrix();
 
-
-    modelStack.PushMatrix();
-    RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
-    modelStack.PopMatrix();
-
     //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
-
-    modelStack.PushMatrix();
-    
-    RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
-    
-    
-    modelStack.PopMatrix();
 
 	RenderEmptyBox();
 
 	RenderStation();
 
     populateArea();
+    
+
 
    /* modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
@@ -1020,8 +1062,13 @@ void sceneSP2::Render()
     std::stringstream connectPosY;
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
-RenderStuffOnScreen(meshList[GEO_CONTAINER],3,3,3,0,0,0);
+    
+    //testing
 
+    RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.7,2,-1);
+
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -4.3, 2, -3);
+    
 }
 
 
@@ -1310,7 +1357,7 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 void sceneSP2::Rendergroundmesh()
 {
     modelStack.PushMatrix();
-    renderMesh(meshList[GEO_SPACE_GROUNDMESH], false);
+	renderMesh(meshList[GEO_SPACE_GROUNDMESH], false);
     modelStack.PopMatrix();
 }
 /**********************************************************************************************************/
@@ -1320,28 +1367,28 @@ void sceneSP2::RenderScrewDriver()
 {
     modelStack.PushMatrix();
     modelStack.Translate(0, 0, 0);
-    renderMesh(meshList[GEO_CONTAINER], false);
+	renderMesh(meshList[GEO_CONTAINER], true);
     modelStack.PopMatrix();
 }
 void sceneSP2::RenderHammer()
 {
     modelStack.PushMatrix();
     modelStack.Translate(0, 0, -200);
-    renderMesh(meshList[GEO_GASOLINE], false);
+	renderMesh(meshList[GEO_GASOLINE], true);
     modelStack.PopMatrix();
 }
 void sceneSP2::RenderContainer()
 {
     modelStack.PushMatrix();
     modelStack.Translate(30, 0, 20);
-    renderMesh(meshList[GEO_HAMMER], false);
+	renderMesh(meshList[GEO_HAMMER], true);
     modelStack.PopMatrix();
 }
 void sceneSP2::RenderGasoline()
 {
     modelStack.PushMatrix();
     modelStack.Translate(90, 0, -30);
-    renderMesh(meshList[GEO_SCREWDRIVER], false);
+	renderMesh(meshList[GEO_SCREWDRIVER], true);
     modelStack.PopMatrix();
 }
 /**********************************************************************************************************/
@@ -1357,7 +1404,7 @@ void sceneSP2::RenderSpaceShuttle()
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			modelStack.Scale(30, 30, 30);
-			renderMesh(meshList[GEO_SPACESHUTTLE], false);
+			renderMesh(meshList[GEO_SPACESHUTTLE], true);
 			modelStack.PopMatrix();
 			break;
 		}
@@ -1404,18 +1451,19 @@ void sceneSP2::RenderNPC()
                 renderDialogueBox("Guan Hui", QUEST1.getDialogue(false));
             }
         }
+      
         if (QUEST1.interaction() == true && One.stage() == 4)
         {
             renderDialogueBox("Guan Hui", QUEST1.quest_complete());
             Quest1_finished = true;
         }
-        
     }
     modelStack.PopMatrix();
     
     modelStack.PushMatrix();
     modelStack.Translate(QUEST2.NPC_getposition_x(), QUEST2.NPC_getposition_y(), QUEST2.NPC_getposition_z());
-    renderMesh(meshList[GEO_NPC1], true);
+	modelStack.Scale(1.5,1.5,1.5);
+	renderMesh(meshList[GEO_NPC_QUEST2], true);
     if (quest_stage >= 2)
     {
         if (QUEST2.interaction() == true && Two.stage() < 4)
@@ -1443,15 +1491,17 @@ void sceneSP2::RenderNPC()
 
 void sceneSP2::RenderQuestObjects()
 {
+    //quest 1
     if (One.stage() == 1)
     {
         modelStack.PushMatrix();
-        if (One.get_numberof_items() == 1 && One.Item1collected())
+        if (One.get_numberof_items() == 1 && !One.Item1collected())
         {
             modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
             renderMesh(meshList[GEO_CONTAINER], true);
-            
         }
+
+        
         if (One.get_numberof_items() == 2 && !One.Item1collected())
         {
             modelStack.PushMatrix();
@@ -1468,20 +1518,43 @@ void sceneSP2::RenderQuestObjects()
     }
     else if (One.stage() == 3)
     {
-       renderDialogueBox("", "Quest Complete!!");
+       renderDialogueBox("", "Quest Complete!! Return to Guan Hui");
+    }
+    //render quest object on screen
+    if (One.get_numberof_items() == 1 && One.Item1collected() == true
+        && Quest1_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+    }
+    if (One.get_numberof_items() == 2 && One.Item1collected() == true
+        && Quest1_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+    }
+    if (One.get_numberof_items() == 2 && One.Item2collected() == true
+        && Quest1_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.1f, 15, 15, -7);
     }
 
+    //quest 2
 	if (Two.stage() == 1)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(Two.getObject1_X(), 0, Two.getObject1_Z());
-		renderMesh(meshList[GEO_CONTAINER], true);
+		renderMesh(meshList[ GEO_GASOLINE], true);
 		modelStack.PopMatrix();
 	}
-	else if (Two.stage() == 3)
+    else if (Two.stage() == 3)
 	{
 		renderDialogueBox("", "Quest Complete!!");
 	}
+
+    if (Two.get_numberof_items() == 1 && Two.Item1collected() == true
+        && Quest2_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+    }
 
 	if (Three.stage() == 1)
 	{
@@ -1490,11 +1563,16 @@ void sceneSP2::RenderQuestObjects()
 		renderMesh(meshList[GEO_SWORD], true);
 		modelStack.PopMatrix();
 	}
-	else if (Three.stage() == 3)
+    else if (Three.stage() == 3)
 	{
 		renderDialogueBox("", "Quest Complete!!");
 	}
 
+    if (Three.get_numberof_items() == 1 && Three.Item1collected() == true
+        && Quest3_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.1f, -15, 15, -7);
+    }
 }
 
 void sceneSP2::renderingSekHeng() {
@@ -1507,11 +1585,15 @@ void sceneSP2::renderingSekHeng() {
     }
 
     //rendering of the hammer
-    if (sek_heng_.gottenHammer() == false) {
+    if (sek_heng_.gottenHammer() == false && sek_heng_.getStage() == 1) {
         modelStack.PushMatrix();
         modelStack.Translate(sek_heng_.hammer.getObjectposX(), sek_heng_.hammer.getObjectposY(), sek_heng_.hammer.getObjectposZ());
         renderMesh(meshList[GEO_HAMMER], true);
         modelStack.PopMatrix();
+    }
+    else if (sek_heng_.gottenHammer() == true && sek_heng_.getStage() == 1) {
+        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.1f, -15, 15, -7);
+
     }
     //rendering of the hammer
 }
@@ -1829,57 +1911,49 @@ void sceneSP2::QuestCompleteCheck()
     }
 }
 
-void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float size_z, float rotate_X, float rotate_y, float rotate_z)
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float x, float y,float z)
 {
-    //glDisable(GL_DEPTH_TEST);
-    ////Add these code just after glDisable(GL_DEPTH_TEST);
-    //Mtx44 ortho;
-    //ortho.SetToOrtho(0, 170, 0, 90, -70, 70); //size of screen UI
-    //projectionStack.PushMatrix();
-    //projectionStack.LoadMatrix(ortho);
-    //viewStack.PushMatrix();
-    //viewStack.LoadIdentity(); //No need camera for ortho mode
-    //modelStack.PushMatrix();
-    //modelStack.LoadIdentity(); //Reset modelStack
-
-    //modelStack.Translate(x, y, 1);
-    //if (rotate_X > 0)
-    //{
-    //    modelStack.Rotate(rotate_X, 1, 0, 0);
-    //}
-    //if (rotate_y > 0)
-    //{
-    //    modelStack.Rotate(rotate_y, 0, 1, 0);
-    //}
-
-    //modelStack.Scale(sizex, sizey, 1);
-    //renderMesh(mesh, true);
-
-
-    //projectionStack.PopMatrix();
-    //viewStack.PopMatrix();
-    //modelStack.PopMatrix();
-
-    //glEnable(GL_DEPTH_TEST);
-
-    modelStack.PushMatrix();
-    modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(),camera.getCrossHairZ() );
-    if (rotate_X > 0)
+    if (direction == "left")
     {
-        modelStack.Rotate(rotate_X, 1, 0, 0);
+        modelStack.PushMatrix();
+        modelStack.Translate(camera.getCameraXcoord(), camera.getCameraYcoord(), camera.getCameraZcoord());
+        modelStack.PushMatrix();
+        modelStack.Rotate(camera.getCameraYrotation(), 0, 1, 0);
+        modelStack.Rotate(camera.getCameraXrotation(), 1, 0, 0);
+
+        modelStack.Rotate(90, 1, 0, 0);
+        modelStack.Rotate(-60, 0, 1, 0);
+        modelStack.Translate(x, y, z);
+        modelStack.Scale(size, size, size);
+        //renderMesh(meshList[GEO_AXES], false);
+        renderMesh(mesh, true);
+
+        modelStack.PopMatrix();
+
+        modelStack.PopMatrix();
     }
-    if (rotate_y > 0)
+    if (direction == "right")
     {
-        modelStack.Rotate(rotate_y, 0, 1, 0);
+        modelStack.PushMatrix();
+        modelStack.Translate(camera.getCameraXcoord(), camera.getCameraYcoord(), camera.getCameraZcoord());
+        modelStack.PushMatrix();
+        modelStack.Rotate(camera.getCameraYrotation(), 0, 1, 0);
+        modelStack.Rotate(camera.getCameraXrotation(), 1, 0, 0);
+
+        modelStack.Rotate(90, 1, 0, 0);
+        modelStack.Rotate(60, 0, 1, 0);
+
+        
+        modelStack.Translate(x, y, z);
+        modelStack.Scale(size, size, size);
+        //renderMesh(meshList[GEO_AXES], false);
+        renderMesh(mesh, true);
+
+        modelStack.PopMatrix();
+
+        modelStack.PopMatrix();
     }
-    if (rotate_z > 0)
-    {
-        modelStack.Rotate(rotate_z, 0, 1, 0);
-    }
-    modelStack.Scale(size_x, size_y, size_z);
-    renderMesh(meshList[GEO_AXES], false);
-    renderMesh(mesh,true);
-    modelStack.PopMatrix();
+    
 }
 
 void sceneSP2::renderChunFei()
@@ -1931,7 +2005,7 @@ void sceneSP2::renderChunFei()
                 modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
                 modelStack.Rotate(-90, 0, 1, 0);
                 modelStack.Scale(1.5, 1.5, 1.5);
-                renderMesh(meshList[GEO_SWORD], true);
+				renderMesh(meshList[GEO_SWORD], true);
                 modelStack.PopMatrix();
                 break;
             }

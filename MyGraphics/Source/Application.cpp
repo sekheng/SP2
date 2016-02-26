@@ -134,8 +134,8 @@ void Application::Init()
 
     // get the primary monitor's size
 
-    m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", NULL, NULL);
-    //m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+    //m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", NULL, NULL);
+    m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
 	glfwSetWindowSizeCallback(m_window, resize_callback);
 
 	//If the window couldn't be created
@@ -187,7 +187,7 @@ void Application::Run()
 
     musics = new BGMDriven();
     musics->init();
-    musics->playDarthVaderBackground();
+    //musics->playDarthVaderBackground();
 
     scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     scenario1->Init();
@@ -197,7 +197,7 @@ void Application::Run()
     glfwSwapBuffers(m_window);
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	//scenario3->Init();
+	scenario3->Init();
 
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
@@ -206,7 +206,7 @@ void Application::Run()
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     scenario2->Init();
 
-    scene = scenario1;
+    scene = scenario3;
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))

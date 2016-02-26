@@ -20,6 +20,7 @@ This is for landing on the vault
 #include "NumPad.h"
 #include "creditScene.h"
 
+
 /******************************************************************************/
 /*!
 Class scene2_SP2:
@@ -55,9 +56,13 @@ class scene2_SP2 : public Scene
 		GEO_SATELLITEHEAD,
 		GEO_SATELLITEBODY,
 
-		//rock
+		//diamond
 		GEO_BIGDIAMOND,
 		GEO_SMALLDIAMOND,
+
+		//NPC
+		GEO_NPCUPPER,
+		GEO_NPCLOWER,
 
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
@@ -68,7 +73,8 @@ class scene2_SP2 : public Scene
         GEO_UI,
         //User Interface
 
-        GEO_BOX,
+        GEO_BOXES,
+		GEO_NORMALBOXES,
 
         //DeadPOOL
         GEO_DEADPOOL,
@@ -149,6 +155,13 @@ private:
 	bool bigdiamondrotate;
 	bool smalldiamondtranslate;
 	bool smalldiamondrotate;
+	bool NPCrotate;
+	bool NPCrotate2;
+	bool boxesappear;
+	bool boxesappear2;
+	bool boxestransfer;
+	bool change;
+	bool change2;
 	
     float LSPEED = 10.f;
 	float wheelturning;
@@ -159,6 +172,11 @@ private:
 	float bigdiamondrotating;
 	float smalldiamondtranslating;
 	float smalldiamondrotating;
+	float NPCrotating;
+	float NPCrotating2;
+	float boxesrotating;
+	float boxesrotating2;
+	
 	
 
 	//renderobj function
@@ -175,11 +193,16 @@ private:
 	void RenderArrow();
 	void RenderSatellite();
 	void RenderDiamond();
+	void RenderNPC();
+	void RenderBoxes();
+
 	
 	//animation function
 	void VaultAnimation(double dt);
 	void SatelliteAnimation(double dt);
 	void diamondAnimation(double dt);
+	void NPCAnimation(double dt);
+	void BoxesAnimation(double dt);
 	
 
     unsigned m_vertexArrayID;
@@ -191,6 +214,7 @@ private:
 	Light light[2];
     Camera3 camera;
 	NumPad Numpad;
+	
 
     MS modelStack, viewStack, projectionStack;
 
