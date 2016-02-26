@@ -228,9 +228,6 @@ private:
     //rendering the teleporter
     void Renderteleporter();
     //rendering the teleporter
-    //logic of teleporter
-    void teleport();
-    //logic of teleporter
 
 	float headrotating;
 	bool headrotate;
@@ -251,19 +248,15 @@ private:
     bool Quest3_finished;
     bool Quest4_finished;
 
-    //animating particle cube
-    float translateParticleCube1Y;
-    float translateParticleCube1X;
-    float translateParticleCube1Z;
-
-    float translateParticleCube2X;
-    float translateParticleCube2Y;
-    float translateParticleCube2Z;
-
-    float translateParticleCube3X;
-    float translateParticleCube3Y;
-    float translateParticleCube3Z;
-    //animating particle cube
+    //animating teleportation
+    void animateTeleporting(double& dt);
+    void animateTeleportation(double& dt);
+    //logic of teleporter
+    bool teleport();
+    float teleportCoordY;
+    bool startTeleporting;
+    //logic of teleporter
+    //animating teleportation
 };
 
 
