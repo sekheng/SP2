@@ -422,7 +422,8 @@ void sceneSP2::Update(double dt)
 	}
 
     //Sek Heng's stuff
-    if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false) {
+    if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false
+        || Application::IsKeyPressed('0')) {
         sek_heng_.activateQuest();
     }
     if (Application::IsKeyPressed('9')) {

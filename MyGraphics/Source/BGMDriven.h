@@ -19,10 +19,12 @@ public:
     ~BGMDriven();
 
     void init();
-    void playBackground();
+    void playDarthVaderBackground();
 
 private:
     vector<string> sound_names;
+    vector<string> background_music;
+
     ISoundEngine *engine;
     ISoundSource *backGround;
 };
