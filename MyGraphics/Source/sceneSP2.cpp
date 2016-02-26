@@ -971,7 +971,7 @@ void sceneSP2::Render()
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
 
-    //RenderStuffOnScreen(meshList[GEO_CONTAINER],1,1,1,270,90,0);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER],0.1,15,15,0);
 
 
 }
@@ -1699,7 +1699,7 @@ void sceneSP2::QuestCompleteCheck()
     }
 }
 
-void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float size_z, float rotate_X, float rotate_y, float rotate_z)
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size,float x, float y,float z)
 {
     /*
     glDisable(GL_DEPTH_TEST);
@@ -1737,22 +1737,21 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size_x,float size_y,float s
 
     
     modelStack.PushMatrix();
-    modelStack.Translate(camera.target.x , camera.target.y, camera.target.z);
-    if (rotate_X != 0)
-    {
-        modelStack.Rotate(rotate_X, 1, 0, 0);
-    }
-    if (rotate_y != 0)
-    {
-        modelStack.Rotate(rotate_y, 0, 1, 0);
-    }
-    if (rotate_z != 0)
-    {
-        modelStack.Rotate(rotate_z, 0, 0, 1);
-    }
-    modelStack.Scale(size_x, size_y, size_z);
+    modelStack.Translate(camera.getCameraXcoord() , camera.getCameraYcoord(), camera.getCameraZcoord());
+    modelStack.PushMatrix();
+    modelStack.Rotate(camera.getCameraYrotation(), 0, 1, 0);
+    modelStack.Rotate(camera.getCameraXrotation(), 1, 0, 0);
+
+    modelStack.Rotate(90, 1, 0, 0);
+    modelStack.Rotate(-30,0,1,0);
+
+    modelStack.Scale(size, size, size);
+    modelStack.Translate(x,y,z);
     renderMesh(meshList[GEO_AXES], false);
-    renderMesh(mesh, false);
+    renderMesh(mesh, true);
+
+    modelStack.PopMatrix();
+
     modelStack.PopMatrix();
     
 
