@@ -13,7 +13,7 @@
 #include "Utility.h"
 #include "LoadTGA.h"
 #include <iomanip>
-
+#include "MyPhysics.h"
 
 /******************************************************************************/
 /*!
@@ -216,7 +216,7 @@ void sceneSP2::Init()
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
 	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
 
-    meshList[GEO_PARTICLE_LIGHT] = MeshBuilder::GenerateOBJ("particle light", "OBJ//Barrel.obj");
+    meshList[GEO_PARTICLE_LIGHT] = MeshBuilder::GenerateOBJ("particle light", "OBJ//teleporting_light.obj");
     meshList[GEO_PARTICLE_LIGHT]->textureID = LoadTGA("Image//particle_light.tga");
     meshList[GEO_PARTICLE_LIGHT]->material = MaterialBuilder::GenerateBlinn();
 
@@ -352,6 +352,11 @@ void sceneSP2::Init()
         }
     }
     //animating particle cube
+
+    //animating teleporting
+    teleportCoordY = 0;
+    startTeleporting = false;
+    //animating teleporting
 }
 
 /******************************************************************************/
@@ -364,7 +369,6 @@ where the logic of the game is, and update
 /******************************************************************************/
 void sceneSP2::Update(double dt)
 {
-    camera.Update(dt);
     framePerSecond = 1 / dt;
     npc1.update(dt);
     //update for quest
@@ -418,7 +422,8 @@ void sceneSP2::Update(double dt)
 	}
 
     //Sek Heng's stuff
-    if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false) {
+    if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false
+        || Application::IsKeyPressed('0')) {
         sek_heng_.activateQuest();
     }
     if (Application::IsKeyPressed('9')) {
@@ -426,12 +431,6 @@ void sceneSP2::Update(double dt)
     }
     sek_heng_.Update(dt);
     //Sek Heng's stuff
-
-    //just putting the teleport stuff in here
-    if (Application::IsKeyPressed('E') && sek_heng_.SekHengSayIsOk()) {
-        teleport();
-    }
-    //just putting the teleport stuff in here
 
     if (QUEST1.interaction())
     {
@@ -465,6 +464,18 @@ void sceneSP2::Update(double dt)
         }
     }
     //animating particle cube
+    
+    if (Application::IsKeyPressed('E') && sek_heng_.SekHengSayIsOk()
+        && teleport() == true) {
+        //animateTeleporting(dt);
+        startTeleporting = true;
+    }
+    if (startTeleporting) {
+        animateTeleporting(dt);
+    }
+    else {
+        camera.Update(dt);
+    }
 }
 
 /******************************************************************************/
@@ -1510,6 +1521,78 @@ void sceneSP2::RenderEmptyBox()
 		if (it.getName() == "EmptyBox5") {
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox7") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox8") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox9") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox10") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox11") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox12") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "EmptyBox13") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			renderMesh(meshList[GEO_HAMMER], true);
 			modelStack.PopMatrix();
 			break;
@@ -1595,7 +1678,7 @@ void sceneSP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }
 
-void sceneSP2::teleport() 
+bool sceneSP2::teleport() 
 {
     for (auto it : camera.storage_of_objects) 
     {
@@ -1606,10 +1689,14 @@ void sceneSP2::teleport()
                 it.getObjectposZ() + 6 > camera.position.z &&
                 it.getObjectposZ() - 6 < camera.position.z)
             {
-                Application::changeIntoScenario2();
+                return true;
+            }
+            else {
+                return false;
             }
         }
     }
+    return false;
 }
 
 
@@ -2145,3 +2232,19 @@ void sceneSP2::populateArea()
 }
 
 
+void sceneSP2::animateTeleporting(double& dt) {
+    if (camera.position.z != 0 || camera.position.x != 0) {
+        camera.setLocation(0, camera.position.y, 0);
+    }
+    else {
+        if (camera.position.y > 30) {
+            Application::changeIntoScenario2();
+        }
+        teleportCoordY = Physics::gravitational_pulled(teleportCoordY, dt, 1.f);
+        camera.position.y -= teleportCoordY;
+    }
+    camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);
+    Vector3 view = (camera.target - camera.position).Normalized();
+    Vector3 right = view.Cross(camera.defaultUp);
+    camera.up = right.Cross(view);
+}

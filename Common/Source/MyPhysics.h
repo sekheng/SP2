@@ -36,7 +36,7 @@ namespace Physics
     */
     /******************************************************************************/
     template<typename T>
-    T gravitational_pulled(T pull_speed, double dt, int gravity = earth_gravitational_force)
+    T gravitational_pulled(T pull_speed, double dt, T gravity = earth_gravitational_force)
     {
         pull_speed = pull_speed - (static_cast<T>(dt * (gravity)));
         return pull_speed;

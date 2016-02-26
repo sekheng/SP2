@@ -2,7 +2,6 @@
 #include "Application.h"
 #include "Mtx44.h"
 
-#include "MyPhysics.h"
 #include "MyMath.h"
 #include <fstream>
 #include <locale>
