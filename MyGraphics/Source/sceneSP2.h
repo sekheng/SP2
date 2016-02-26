@@ -211,7 +211,7 @@ private:
     void RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void TextSlowDown(double dt);
     void QuestCompleteCheck();
-    void RenderStuffOnScreen(Mesh* mesh, float size, float x, float y, float z);
+    void RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z);
 
     double framePerSecond;
     float screenWidth, screenHeight;
@@ -257,6 +257,8 @@ private:
     bool startTeleporting;
     //logic of teleporter
     //animating teleportation
+
+
 };
 
 

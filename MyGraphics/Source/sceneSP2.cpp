@@ -357,6 +357,7 @@ void sceneSP2::Init()
     teleportCoordY = 0;
     startTeleporting = false;
     //animating teleporting
+
 }
 
 /******************************************************************************/
@@ -934,18 +935,11 @@ void sceneSP2::Render()
     //****************************************************************************//
     
 
-    modelStack.PushMatrix();
-    RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
-    modelStack.PopMatrix();
+    //modelStack.PushMatrix();
+    //RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
+    //modelStack.PopMatrix();
 
     //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
-
-    modelStack.PushMatrix();
-    
-    RenderUserInterface(meshList[GEO_UI], 1, 40, 40);
-    
-    
-    modelStack.PopMatrix();
 
 	RenderEmptyBox();
 
@@ -981,10 +975,13 @@ void sceneSP2::Render()
     std::stringstream connectPosY;
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
+    /*
+    //testing
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER],0.1,15,15,0);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.1,15,15,-7);
 
-
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1, -15, 15, -7);
+    */
 }
 
 
@@ -1367,12 +1364,12 @@ void sceneSP2::RenderNPC()
                 renderDialogueBox("Guan Hui", QUEST1.getDialogue(false));
             }
         }
+      
         if (QUEST1.interaction() == true && One.stage() == 4)
         {
             renderDialogueBox("Guan Hui", QUEST1.quest_complete());
             Quest1_finished = true;
         }
-        
     }
     modelStack.PopMatrix();
     
@@ -1406,15 +1403,17 @@ void sceneSP2::RenderNPC()
 
 void sceneSP2::RenderQuestObjects()
 {
+    //quest 1
     if (One.stage() == 1)
     {
         modelStack.PushMatrix();
-        if (One.get_numberof_items() == 1 && One.Item1collected())
+        if (One.get_numberof_items() == 1 && !One.Item1collected())
         {
             modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
             renderMesh(meshList[GEO_CONTAINER], true);
-            
         }
+
+        
         if (One.get_numberof_items() == 2 && !One.Item1collected())
         {
             modelStack.PushMatrix();
@@ -1431,9 +1430,26 @@ void sceneSP2::RenderQuestObjects()
     }
     else if (One.stage() == 3)
     {
-       renderDialogueBox("", "Quest Complete!!");
+       renderDialogueBox("", "Quest Complete!! Return to Guan Hui");
+    }
+    //render quest object on screen
+    if (One.get_numberof_items() == 1 && One.Item1collected() == true
+        && Quest1_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+    }
+    if (One.get_numberof_items() == 2 && One.Item1collected() == true
+        && Quest1_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+    }
+    if (One.get_numberof_items() == 2 && One.Item2collected() == true
+        && Quest1_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "left", 0.1, 15, 15, -7);
     }
 
+    //quest 2
 	if (Two.stage() == 1)
 	{
 		modelStack.PushMatrix();
@@ -1786,62 +1802,49 @@ void sceneSP2::QuestCompleteCheck()
     }
 }
 
-void sceneSP2::RenderStuffOnScreen(Mesh* mesh, float size,float x, float y,float z)
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float x, float y,float z)
 {
-    /*
-    glDisable(GL_DEPTH_TEST);
-    //Add these code just after glDisable(GL_DEPTH_TEST);
-    Mtx44 ortho;
-    ortho.SetToOrtho(0, 90, 0, 90, -40, 140); //size of screen UI
-    projectionStack.PushMatrix();
-    projectionStack.LoadMatrix(ortho);
-    viewStack.PushMatrix();
-    viewStack.LoadIdentity(); //No need camera for ortho mode
-    modelStack.PushMatrix();
-    modelStack.LoadIdentity(); //Reset modelStack
-
-    modelStack.Translate(10, 10, 0);
-    if (rotate_X > 0)
+    if (direction == "left")
     {
-        modelStack.Rotate(rotate_X, 1, 0, 0);
+        modelStack.PushMatrix();
+        modelStack.Translate(camera.getCameraXcoord(), camera.getCameraYcoord(), camera.getCameraZcoord());
+        modelStack.PushMatrix();
+        modelStack.Rotate(camera.getCameraYrotation(), 0, 1, 0);
+        modelStack.Rotate(camera.getCameraXrotation(), 1, 0, 0);
+
+        modelStack.Rotate(90, 1, 0, 0);
+        modelStack.Rotate(-60, 0, 1, 0);
+
+        modelStack.Scale(size, size, size);
+        modelStack.Translate(x, y, z);
+        renderMesh(meshList[GEO_AXES], false);
+        renderMesh(mesh, true);
+
+        modelStack.PopMatrix();
+
+        modelStack.PopMatrix();
     }
-    if (rotate_y > 0)
+    if (direction == "right")
     {
-        modelStack.Rotate(rotate_y, 0, 1, 0);
+        modelStack.PushMatrix();
+        modelStack.Translate(camera.getCameraXcoord(), camera.getCameraYcoord(), camera.getCameraZcoord());
+        modelStack.PushMatrix();
+        modelStack.Rotate(camera.getCameraYrotation(), 0, 1, 0);
+        modelStack.Rotate(camera.getCameraXrotation(), 1, 0, 0);
+
+        modelStack.Rotate(90, 1, 0, 0);
+        modelStack.Rotate(60, 0, 1, 0);
+
+        modelStack.Scale(size, size, size);
+        modelStack.Translate(x, y, z);
+        renderMesh(meshList[GEO_AXES], false);
+        renderMesh(mesh, true);
+
+        modelStack.PopMatrix();
+
+        modelStack.PopMatrix();
     }
-
-    modelStack.Scale(size_x, size_y, size_z);
-    renderMesh(meshList[GEO_AXES], false);
-    renderMesh(mesh, true);
-
-
-    projectionStack.PopMatrix();
-    viewStack.PopMatrix();
-    modelStack.PopMatrix();
-
-    glEnable(GL_DEPTH_TEST);
-    */
-
     
-    modelStack.PushMatrix();
-    modelStack.Translate(camera.getCameraXcoord() , camera.getCameraYcoord(), camera.getCameraZcoord());
-    modelStack.PushMatrix();
-    modelStack.Rotate(camera.getCameraYrotation(), 0, 1, 0);
-    modelStack.Rotate(camera.getCameraXrotation(), 1, 0, 0);
-
-    modelStack.Rotate(90, 1, 0, 0);
-    modelStack.Rotate(-30,0,1,0);
-
-    modelStack.Scale(size, size, size);
-    modelStack.Translate(x,y,z);
-    renderMesh(meshList[GEO_AXES], false);
-    renderMesh(mesh, true);
-
-    modelStack.PopMatrix();
-
-    modelStack.PopMatrix();
-    
-
 }
 
 void sceneSP2::renderChunFei()
