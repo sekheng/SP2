@@ -239,12 +239,25 @@ void scene2_SP2::Init()
 	meshList[GEO_SATELLITEBODY] = MeshBuilder::GenerateOBJ("satellitebody", "OBJ//satellitebody.obj");
 	meshList[GEO_SATELLITEBODY]->textureID = LoadTGA("Image//Satellite_UV.tga");
 
-	//rock
+	//rock	
 	meshList[GEO_BIGDIAMOND] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bigdiamond.obj");
 	meshList[GEO_BIGDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
 
 	meshList[GEO_SMALLDIAMOND] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//smalldiamond.obj");
 	meshList[GEO_SMALLDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
+
+	//npc
+	meshList[GEO_NPCUPPER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene3NPCupper.obj");
+	meshList[GEO_NPCUPPER]->textureID = LoadTGA("Image//scene3NPC.tga");
+
+	meshList[GEO_NPCLOWER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene3NPClower.obj");
+	meshList[GEO_NPCLOWER]->textureID = LoadTGA("Image//scene3NPC.tga");
+
+	meshList[GEO_BOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//boxes9.obj");
+	meshList[GEO_BOXES]->textureID = LoadTGA("Image//boxes9.tga");
+
+	meshList[GEO_NORMALBOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//boxes9.obj");
+	meshList[GEO_NORMALBOXES]->textureID = LoadTGA("Image//normalboxes.tga");
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -274,8 +287,12 @@ void scene2_SP2::Init()
     camera.storage_of_objects.push_back(Rot_Civ_);  //This line is just for the camera to recognise its bound.
 
 	//vault animation
-	wheelturn = stickpush = dooropen = satelliterotate = bigdiamondtranslate = bigdiamondrotate = smalldiamondrotate = smalldiamondtranslate = false;
-	wheelturning = stickpushing = dooropening = satelliterotating = bigdiamondtranslating = bigdiamondrotating = smalldiamondrotating = smalldiamondtranslating=0;
+	wheelturn = stickpush = dooropen = satelliterotate = bigdiamondtranslate = bigdiamondrotate 
+	= smalldiamondrotate = smalldiamondtranslate = NPCrotate= NPCrotate2 = boxesappear = boxestransfer
+	= boxesappear2 = change = change2=false;
+	wheelturning = stickpushing = dooropening = satelliterotating = bigdiamondtranslating = bigdiamondrotating 
+	= smalldiamondrotating = smalldiamondtranslating = NPCrotating = NPCrotating2 = boxesrotating 
+	= boxesrotating2 = 0;
 	
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "numpad") {
@@ -325,6 +342,8 @@ void scene2_SP2::Update(double dt)
     Rot_Civ_.update(dt);
 	SatelliteAnimation(dt);
 	diamondAnimation(dt);
+	NPCAnimation(dt);
+	BoxesAnimation(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -552,6 +571,12 @@ void scene2_SP2::Render()
     //rendering DeadPOOL
     renderDeadPool();
     //rendering DeadPOOL
+
+	//render npc
+	RenderNPC();
+
+	//render boxes
+	RenderBoxes();
 
 	//modelStack.PushMatrix();
 	//modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
@@ -1241,6 +1266,160 @@ void scene2_SP2::RenderDiamond()
 	}
 }
 
+void scene2_SP2::RenderNPC()
+{
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "npcupper") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY() , it.getObjectposZ());
+			modelStack.Rotate(-90, 0, 1, 0);
+			modelStack.Rotate(NPCrotating, 0, 1, 0);
+			modelStack.Scale(2,2,2);
+			renderMesh(meshList[GEO_NPCUPPER], true);
+			if (it.getObjectposX() + 30 > camera.position.x && it.getObjectposX() - 30 < camera.position.x
+				&& it.getObjectposZ() + 30 > camera.position.z && it.getObjectposZ() - 30 < camera.position.z)
+			{
+				renderDialogueBox("Worker", "Are you blind?! It's so obvious!");
+			}
+			modelStack.PopMatrix();
+			break;
+		}
+		
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "npclower") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_NPCLOWER], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "npcupper2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(90, 0, 1, 0);
+			modelStack.Rotate(NPCrotating2, 0, 1, 0);
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_NPCUPPER], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "npclower2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_NPCLOWER], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
+void scene2_SP2::RenderBoxes()
+{
+	if (change == true)
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "boxes9") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX() , it.getObjectposY(), it.getObjectposZ());
+				modelStack.Rotate(-90, 0, 1, 0);
+				modelStack.Rotate(boxesrotating, 0, 1, 0);
+				modelStack.Scale(2, 2, 2);
+				renderMesh(meshList[GEO_BOXES], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+	}
+		
+	if (change2 == true)
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "boxes9_2") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+				modelStack.Rotate(90, 0, 1, 0);
+				modelStack.Rotate(boxesrotating2, 0, 1, 0);
+				modelStack.Scale(2, 2, 2);
+				renderMesh(meshList[GEO_BOXES], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+	}
+	for (int i = 0; i > -60; i -= 20)//first row box
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "normalboxes") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()+i);
+				modelStack.Scale(2, 2, 2);
+				renderMesh(meshList[GEO_NORMALBOXES], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+	}
+
+	for (int i = 0; i > -40; i -= 20)//second row box
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "normalboxes") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX(), it.getObjectposY()+11, it.getObjectposZ()-10 + i);
+				modelStack.Scale(2, 2, 2);
+				renderMesh(meshList[GEO_NORMALBOXES], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+	}
+	
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "normalboxes") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY() + 23, it.getObjectposZ() - 20);
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_NORMALBOXES], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (int i = 0; i > -60; i -= 20)//first row box
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "normalboxes2") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ() + i);
+				modelStack.Scale(2, 2, 2);
+				renderMesh(meshList[GEO_NORMALBOXES], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+	}
+}
+
 void scene2_SP2::VaultAnimation(double dt)
 {
 	if (Numpad.NumpadVerify()==true)
@@ -1336,6 +1515,149 @@ void scene2_SP2::diamondAnimation(double dt)
 		smalldiamondrotating += 50 * (float)(dt);
 		bigdiamondrotating += 10 * (float)(dt);
 
+}
+
+void scene2_SP2::NPCAnimation(double dt)
+{
+	if (NPCrotate == false)
+	{
+		NPCrotating -= 150 * (float)(dt);
+		if (NPCrotating < 0)
+		{
+			NPCrotate = true;
+		}
+	}
+	else if (NPCrotate == true)
+	{
+		NPCrotating += 150 * (float)(dt);
+		if (NPCrotating > 180)
+		{
+			NPCrotate = false;
+		}
+	}
+
+	if (change == false && NPCrotating < 1)
+	{
+		change = true;
+	}
+	else if (change == true && NPCrotating > 178)
+	{
+		change = false;
+	}
+
+	if (NPCrotate2 == false)
+	{
+		NPCrotating2 -= 150 * (float)(dt);
+		if (NPCrotating2 < -180)
+		{
+			NPCrotate2 = true;
+		}
+	}
+	else if (NPCrotate2 == true)
+	{
+		NPCrotating2 += 150 * (float)(dt);
+		if (NPCrotating2 >0)
+		{
+			NPCrotate2 = false;
+		}
+	}
+
+	if (change2 == false && NPCrotating2 < -178)
+	{
+		change2 = true;
+	}
+	else if (change == true && NPCrotating2 > -2)
+	{
+		change2 = false;
+	}
+}
+
+void scene2_SP2::BoxesAnimation(double dt)
+{
+	/*if (boxesstart == false)
+	{
+		if (boxesappear == false)
+		{
+			boxesrotating -= 150 * (float)(dt);
+			if (boxesrotating  < -90)
+			{
+				boxesappear = true;
+
+			}
+		}
+		if (boxesappear == true)
+		{
+			boxesrotating += 150 * (float)(dt);
+			if (boxesrotating  > 90)
+			{
+				boxesappear = false;
+				boxestransfer = true;
+			}
+		}
+	}
+	
+	if (boxesrotating >80 && boxestransfer == true)
+	{
+		boxesX = 10;
+		boxesstart = true;
+	}
+
+	if (boxesstart == true)
+	{
+		if (boxesappear2 == false)
+		{
+			boxesrotating2 += 150 * (float)(dt);
+			if (boxesrotating2  > 180)
+			{
+				boxesappear2 = true;
+
+			}
+		}
+		if (boxesappear2 == true)
+		{
+			boxesrotating2 -= 150 * (float)(dt);
+			if (boxesrotating2  < 0)
+			{
+				boxesappear2 = false;
+				boxestransfer = true;
+			}
+		}
+	}*/
+	//box1
+	if (boxesappear == false)
+	{
+		boxesrotating -= 150 * (float)(dt);
+		if (boxesrotating < 0)
+		{
+			boxesappear = true;
+		}
+	}
+	else if (boxesappear == true)
+	{
+		boxesrotating += 150 * (float)(dt);
+		if (boxesrotating > 180)
+		{
+			boxesappear = false;
+		}
+	}
+
+	//box2
+	if (boxesappear2 == false)
+	{
+		boxesrotating2 -= 150 * (float)(dt);
+		if (boxesrotating2 <-180)
+		{
+			boxesappear2 = true;
+		}
+	}
+	else if (boxesappear2 == true)
+	{
+		boxesrotating2 += 150 * (float)(dt);
+		if (boxesrotating2 >0)
+		{
+			boxesappear2 = false;
+		}
+	}
 }
 
 void scene2_SP2::renderDeadPool() {
@@ -1454,3 +1776,4 @@ void scene2_SP2::rollingCredits() {
         }
     }
 }
+
