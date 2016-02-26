@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "LoadingScreen.h"
-
+//#include "vld.h"
 
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
@@ -246,7 +246,7 @@ Calls for the destroying of windows and cleaning up GLFW
 /******************************************************************************/
 void Application::Exit()
 {
-    _CrtDumpMemoryLeaks();
+    //_CrtDumpMemoryLeaks();
     //Close OpenGL window and terminate GLFW
 	glfwDestroyWindow(m_window);
 	//Finalize and clean up GLFW
