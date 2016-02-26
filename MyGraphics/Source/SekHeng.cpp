@@ -141,3 +141,7 @@ bool SekHeng::gottenHammer() {
     }
     return false;
 }
+
+short SekHeng::getStage() {
+    return stage;
+}

@@ -26,6 +26,7 @@ public:
 
     objectsForDisplay hammer;
     bool gottenHammer();
+    short getStage();
 
 private:
     Camera3 *dub_camera;

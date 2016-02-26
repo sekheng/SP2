@@ -975,13 +975,13 @@ void sceneSP2::Render()
     std::stringstream connectPosY;
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
-    /*
+    
     //testing
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.1,15,15,-7);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05,1.7,2,-1);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1, -15, 15, -7);
-    */
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05, -4.3, 2, -3);
+    
 }
 
 
@@ -1446,7 +1446,7 @@ void sceneSP2::RenderQuestObjects()
     if (One.get_numberof_items() == 2 && One.Item2collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "left", 0.1, 15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.1f, 15, 15, -7);
     }
 
     //quest 2
@@ -1457,10 +1457,16 @@ void sceneSP2::RenderQuestObjects()
 		renderMesh(meshList[GEO_CONTAINER], true);
 		modelStack.PopMatrix();
 	}
-	else if (Two.stage() == 3)
+    else if (Two.stage() == 3)
 	{
 		renderDialogueBox("", "Quest Complete!!");
 	}
+
+    if (Two.get_numberof_items() == 1 && Two.Item1collected() == true
+        && Quest2_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+    }
 
 	if (Three.stage() == 1)
 	{
@@ -1469,11 +1475,16 @@ void sceneSP2::RenderQuestObjects()
 		renderMesh(meshList[GEO_SWORD], true);
 		modelStack.PopMatrix();
 	}
-	else if (Three.stage() == 3)
+    else if (Three.stage() == 3)
 	{
 		renderDialogueBox("", "Quest Complete!!");
 	}
 
+    if (Three.get_numberof_items() == 1 && Three.Item1collected() == true
+        && Quest3_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.1f, -15, 15, -7);
+    }
 }
 
 void sceneSP2::renderingSekHeng() {
@@ -1486,11 +1497,15 @@ void sceneSP2::renderingSekHeng() {
     }
 
     //rendering of the hammer
-    if (sek_heng_.gottenHammer() == false) {
+    if (sek_heng_.gottenHammer() == false && sek_heng_.getStage() == 1) {
         modelStack.PushMatrix();
         modelStack.Translate(sek_heng_.hammer.getObjectposX(), sek_heng_.hammer.getObjectposY(), sek_heng_.hammer.getObjectposZ());
         renderMesh(meshList[GEO_HAMMER], true);
         modelStack.PopMatrix();
+    }
+    else if (sek_heng_.gottenHammer() == true && sek_heng_.getStage() == 1) {
+        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.1f, -15, 15, -7);
+
     }
     //rendering of the hammer
 }
@@ -1814,10 +1829,9 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
 
         modelStack.Rotate(90, 1, 0, 0);
         modelStack.Rotate(-60, 0, 1, 0);
-
-        modelStack.Scale(size, size, size);
         modelStack.Translate(x, y, z);
-        renderMesh(meshList[GEO_AXES], false);
+        modelStack.Scale(size, size, size);
+        //renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
@@ -1835,9 +1849,10 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
         modelStack.Rotate(90, 1, 0, 0);
         modelStack.Rotate(60, 0, 1, 0);
 
-        modelStack.Scale(size, size, size);
+        
         modelStack.Translate(x, y, z);
-        renderMesh(meshList[GEO_AXES], false);
+        modelStack.Scale(size, size, size);
+        //renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
