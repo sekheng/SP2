@@ -14,10 +14,9 @@ BGMDriven::~BGMDriven()
 void BGMDriven::init() {
     backGround = 
         engine->addSoundSourceFromFile(sound_names[0].c_str());
-
 }
 
 void BGMDriven::playBackground() {
+    backGround->setDefaultVolume(0.3f);
     engine->play2D(backGround, true);
-    backGround->setDefaultVolume(0.5f);
 }
