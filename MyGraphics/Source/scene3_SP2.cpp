@@ -89,7 +89,7 @@ void scene3_SP2::Init()
     m_parameters[U_LIGHT1_KC] = glGetUniformLocation(m_programID, "lights[1].kC");
     m_parameters[U_LIGHT1_KL] = glGetUniformLocation(m_programID, "lights[1].kL");
     m_parameters[U_LIGHT1_KQ] = glGetUniformLocation(m_programID, "lights[1].kQ");
-    //2nd light bulb
+    //first light bulb
     m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
     m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
     m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
