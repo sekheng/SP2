@@ -1068,7 +1068,7 @@ void sceneSP2::Render()
 
     RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.7,2,-1);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -4.3, 2, -3);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.7, 2, -1);
     
 }
 
@@ -1925,6 +1925,8 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
         modelStack.Rotate(90, 1, 0, 0);
         modelStack.Rotate(-60, 0, 1, 0);
         modelStack.Translate(x, y, z);
+        modelStack.Rotate(180, 1, 0, 0);
+
         modelStack.Scale(size, size, size);
         //renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
@@ -1944,8 +1946,9 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
         modelStack.Rotate(90, 1, 0, 0);
         modelStack.Rotate(60, 0, 1, 0);
 
-        
         modelStack.Translate(x, y, z);
+        modelStack.Rotate(180, 1, 0, 0);
+
         modelStack.Scale(size, size, size);
         //renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
