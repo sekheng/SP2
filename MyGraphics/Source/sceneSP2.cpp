@@ -2254,7 +2254,7 @@ void sceneSP2::populateArea()
 
 void sceneSP2::animateTeleporting(double& dt) {
     if (camera.position.z != 0 || camera.position.x != 0) {
-        camera.setLocation(0, 0, 0);
+        camera.setLocation(0, camera.position.y, 0);
     }
     else {
         if (camera.position.y > 30) {
