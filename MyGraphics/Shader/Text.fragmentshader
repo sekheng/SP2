@@ -76,9 +76,9 @@ void main(){
 		vec3 E = normalize(eyeDirection_cameraspace);
 		vec3 N = normalize( vertexNormal_cameraspace );
 		
-		color = 
-		//Ambient : simulates indirect lighting;
-		materialColor * vec4(material.kAmbient, 1);
+		color =
+				// Ambient : simulates indirect lighting
+				materialColor * vec4(material.kAmbient, 1);
 		
 		for(int i = 0; i < numLights; ++i)
 		{
@@ -108,6 +108,7 @@ void main(){
 			float cosAlpha = clamp( dot( E, R ), 0, 1 );
 			
 			color += 
+
 				
 				// Diffuse : "color" of the object
 				materialColor * vec4(material.kDiffuse, 1) * vec4(lights[i].color, 1) * lights[i].power * cosTheta * attenuationFactor * spotlightEffect +

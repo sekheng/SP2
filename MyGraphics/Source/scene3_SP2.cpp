@@ -89,7 +89,7 @@ void scene3_SP2::Init()
     m_parameters[U_LIGHT1_KC] = glGetUniformLocation(m_programID, "lights[1].kC");
     m_parameters[U_LIGHT1_KL] = glGetUniformLocation(m_programID, "lights[1].kL");
     m_parameters[U_LIGHT1_KQ] = glGetUniformLocation(m_programID, "lights[1].kQ");
-    //2nd light bulb
+    //first light bulb
     m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
     m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
     m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
@@ -245,7 +245,6 @@ void scene3_SP2::Update(double dt)
 {
      animateWarp(dt);
     animateSpaceShip(dt);
-    camera.Update(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -294,6 +293,11 @@ void scene3_SP2::Update(double dt)
         }
     }
     //transition to the 3rd scenario
+
+    camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);
+    Vector3 view = (camera.target - camera.position).Normalized();
+    Vector3 right = view.Cross(camera.defaultUp);
+    camera.up = right.Cross(view);
 }
 
 /******************************************************************************/
