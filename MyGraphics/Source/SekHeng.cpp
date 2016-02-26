@@ -6,7 +6,7 @@
 SekHeng::SekHeng()
     : order_of_text(0), stage(0), interatingRadius(4), time(0), isOkay(false), hammerInHand(true)
 {
-    hammer.init(Vector3(86, 0, -82), 2, 2, "hammer");
+    hammer.init(Vector3(92, 0, -76), 2, 2, "hammer");
 }
 
 SekHeng::~SekHeng()
