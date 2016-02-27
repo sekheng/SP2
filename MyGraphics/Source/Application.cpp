@@ -199,7 +199,7 @@ void Application::Run()
     glfwSwapBuffers(m_window);
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	//scenario3->Init();
+	scenario3->Init();
 
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
