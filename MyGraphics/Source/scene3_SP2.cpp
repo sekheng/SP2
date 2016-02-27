@@ -13,6 +13,8 @@
 #include "Utility.h"
 #include "LoadTGA.h"
 #include <iomanip>
+#include <fstream>
+#include <algorithm>
 
 /******************************************************************************/
 /*!
@@ -209,7 +211,6 @@ void scene3_SP2::Init()
     toggleUp = false;
     scaleShipZ = 0;
     warppingOn = true;
-    flyToZ = 0;
     //animating the spaceShip
 
     //animating the SkyBox
@@ -229,6 +230,13 @@ void scene3_SP2::Init()
     //animating the light ending
     scaleLightEnd = 1;
     //animating the light ending
+
+    //for QTE
+    initQuickTimeEvent("scenario2Driven//quicktimeevent.txt");
+    quickTimeEventFlag = false;
+    quickTimer = 10;
+    makingSureNoDoubleTap = 0;
+    //for QTE
 
     std::cout << "Number of objects in Scenario 2: " << camera.storage_of_objects.size() << std::endl;
 }
@@ -293,6 +301,46 @@ void scene3_SP2::Update(double dt)
         }
     }
     //transition to the 3rd scenario
+
+    //for QTE
+    if ((Application::IsKeyPressed('W') || Application::IsKeyPressed('D')
+        || Application::IsKeyPressed('S') || Application::IsKeyPressed('A'))
+        && quickTimeEventFlag == false) {
+
+    }
+    if (quickTimeEventFlag == true) {
+        makingSureNoDoubleTap += dt;
+        if (quickTimeEvent.empty() == true) {
+
+        }
+        else {
+            activateQTE(dt);
+            if (makingSureNoDoubleTap > 0.2) {
+                if (Application::IsKeyPressed('W')) {
+                    if (quickTimeEventFlag == true && quickTimeEvent.front() == 'W') {
+                        quickTimeEvent.pop();
+                    }
+                }
+                if (Application::IsKeyPressed('A')) {
+                    if (quickTimeEventFlag == true && quickTimeEvent.front() == 'A') {
+                        quickTimeEvent.pop();
+                    }
+                }
+                if (Application::IsKeyPressed('S')) {
+                    if (quickTimeEventFlag == true && quickTimeEvent.front() == 'S') {
+                        quickTimeEvent.pop();
+                    }
+                }
+                if (Application::IsKeyPressed('D')) {
+                    if (quickTimeEventFlag == true && quickTimeEvent.front() == 'D') {
+                        quickTimeEvent.pop();
+                    }
+                }
+                makingSureNoDoubleTap = 0;
+            }
+        }
+    }
+    //for QTE
 
     camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);
     Vector3 view = (camera.target - camera.position).Normalized();
@@ -449,6 +497,8 @@ void scene3_SP2::Render()
     if (start_white_screen) {
         RenderImageOnScreen(meshList[GEO_LIGHT_END], scaleLightEnd, 40, 30);
     }
+
+    renderQTE();
 
     std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
@@ -626,7 +676,7 @@ void scene3_SP2::renderSpaceShip() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "spaceship") {
             modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY() + jitteringShipY, it.getObjectposZ() + flyToZ);
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY() + jitteringShipY, it.getObjectposZ());
             modelStack.Scale(10, 10, 10 + scaleShipZ);
             renderMesh(meshList[GEO_FLYINGVEHICLE], true);
             modelStack.PopMatrix();
@@ -672,15 +722,17 @@ void scene3_SP2::animateSpaceShip(double dt) {
         }
     }
     //after some time, distorting stopped and spaceship seems to be travelling
-    else if (scaleShipZ > 5 && warppingOn == false)
+    else if (scaleShipZ > 0 && warppingOn == false)
 	{
-        if (scaleShipZ < 15) {  //animating the light warp end
-            start_white_screen = true;
-            scaleLightEnd +=  500 * (float)(dt);
+        //if (scaleShipZ < 15) {  //animating the light warp end
+        //    start_white_screen = true;
+        //    scaleLightEnd +=  500 * (float)(dt);
+        //}
+        scaleShipZ -= 30 * (float)(dt);
+        scaleSkyBoxZ_ -= 3000 * (float)(dt);
+        if (scaleShipZ <= 0 && quickTimeEventFlag == false) {
+            quickTimeEventFlag = true;
         }
-        scaleShipZ -= 10 * (float)(dt);
-        flyToZ -= 1000 * (float)(dt);
-        camera.position.z -= 1000 * (float)(dt);
     }
 }   
 
@@ -690,45 +742,47 @@ void scene3_SP2::animateSpaceShip(double dt) {
 */
 /******************************************************************************/
 void scene3_SP2::renderWarp() {
-    for (auto it : camera.storage_of_objects) {
-        if (it.getName() == "Light Warp1" || 
-            it.getName() == "Light Warp2" ||
-            it.getName() == "Light Warp3" || 
-            it.getName() == "Light Warp4" ||
-            it.getName() == "Light Warp5" ||
-            it.getName() == "Light Warp6" ||
-            it.getName() == "Light Warp7" ||
-            it.getName() == "Light Warp8" ||
-            it.getName() == "Light Warp9" ||
-            it.getName() == "Light Warp10" ||
-            it.getName() == "Light Warp11" ||
-            it.getName() == "Light Warp12" ||
-            it.getName() == "Light Warp13" ||
-            it.getName() == "Light Warp14" ||
-            it.getName() == "Light Warp15" ||
-            it.getName() == "Light Warp16" ||
-            it.getName() == "Light Warp17" ||
-            it.getName() == "Light Warp18" ||
-            it.getName() == "Light Warp19" ||
-            it.getName() == "Light Warp20" ||
-            it.getName() == "Light Warp21" ||
-            it.getName() == "Light Warp22" ||
-            it.getName() == "Light Warp23" ||
-            it.getName() == "Light Warp24" ||
-            it.getName() == "Light Warp25" ||
-            it.getName() == "Light Warp26" ||
-            it.getName() == "Light Warp27" ||
-            it.getName() == "Light Warp28" ||
-            it.getName() == "Light Warp29" ||
-            it.getName() == "Light Warp30" ||
-            it.getName() == "Light Warp31" ||
-            it.getName() == "Light Warp32" ||
-            it.getName() == "Light Warp33") {
-            modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()); 
-            modelStack.Scale(1, 1, 1 + warp_lightZ);
-            renderMesh(meshList[GEO_LIGHT_WRAP], true);
-            modelStack.PopMatrix();
+    if (quickTimeEventFlag == false) {
+        for (auto it : camera.storage_of_objects) {
+            if (it.getName() == "Light Warp1" ||
+                it.getName() == "Light Warp2" ||
+                it.getName() == "Light Warp3" ||
+                it.getName() == "Light Warp4" ||
+                it.getName() == "Light Warp5" ||
+                it.getName() == "Light Warp6" ||
+                it.getName() == "Light Warp7" ||
+                it.getName() == "Light Warp8" ||
+                it.getName() == "Light Warp9" ||
+                it.getName() == "Light Warp10" ||
+                it.getName() == "Light Warp11" ||
+                it.getName() == "Light Warp12" ||
+                it.getName() == "Light Warp13" ||
+                it.getName() == "Light Warp14" ||
+                it.getName() == "Light Warp15" ||
+                it.getName() == "Light Warp16" ||
+                it.getName() == "Light Warp17" ||
+                it.getName() == "Light Warp18" ||
+                it.getName() == "Light Warp19" ||
+                it.getName() == "Light Warp20" ||
+                it.getName() == "Light Warp21" ||
+                it.getName() == "Light Warp22" ||
+                it.getName() == "Light Warp23" ||
+                it.getName() == "Light Warp24" ||
+                it.getName() == "Light Warp25" ||
+                it.getName() == "Light Warp26" ||
+                it.getName() == "Light Warp27" ||
+                it.getName() == "Light Warp28" ||
+                it.getName() == "Light Warp29" ||
+                it.getName() == "Light Warp30" ||
+                it.getName() == "Light Warp31" ||
+                it.getName() == "Light Warp32" ||
+                it.getName() == "Light Warp33") {
+                modelStack.PushMatrix();
+                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+                modelStack.Scale(1, 1, 1 + warp_lightZ);
+                renderMesh(meshList[GEO_LIGHT_WRAP], true);
+                modelStack.PopMatrix();
+            }
         }
     }
 }
@@ -741,5 +795,48 @@ void scene3_SP2::renderWarp() {
 */
 /******************************************************************************/
 void scene3_SP2::animateWarp(double dt) {
-    warp_lightZ += 700 * (float)(dt);
+    if (warppingOn) {
+        warp_lightZ += 700 * (float)(dt);
+    }
+    else if (warppingOn == false && scaleShipZ > 0) {
+        warp_lightZ -= 700 * (float)(dt);
+    }
+}
+
+void scene3_SP2::initQuickTimeEvent(const char* fileLocation) {
+    std::ifstream fileStream2(fileLocation, std::ios::binary);
+    if (!fileStream2.is_open()) {
+        std::cout << "Impossible to open " << fileLocation << ". Are you in the right directory ?\n";
+    }
+    else {
+        while (!fileStream2.eof()) {
+            string data = "";
+            getline(fileStream2, data);
+            if (data == "" || data == "\r") {
+                continue;
+            }
+            data.erase(std::remove(data.begin(), data.end(), '\r'));
+            data[0] = toupper(data[0]);
+            quickTimeEvent.push(data[0]);
+        }
+        fileStream2.close();
+    }
+}
+
+void scene3_SP2::activateQTE(double& dt) {
+    if (quickTimeEventFlag == true) {
+        quickTimer -= dt;
+    }
+}
+
+void scene3_SP2::renderQTE() {
+    if (quickTimeEventFlag == true && quickTimeEvent.empty() == false) {
+        std::stringstream ss;
+        ss << "Time Left: " << quickTimer;
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 7, 14);
+
+        std::stringstream ss2;
+        ss2 << quickTimeEvent.front();
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss2.str(), Color(0, 1, 0), 4, 7, 5);
+    }
 }
