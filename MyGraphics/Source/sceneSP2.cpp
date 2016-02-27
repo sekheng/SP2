@@ -480,27 +480,6 @@ void sceneSP2::Update(double dt)
     }
 
     //animating particle cube
-    //for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
-    //    if ((*it).getName() == "ParticleCube1" ||
-    //        (*it).getName() == "ParticleCube2" ||
-    //        (*it).getName() == "ParticleCube3" ||
-    //        (*it).getName() == "ParticleCube4" || 
-    //        (*it).getName() == "ParticleCube5" || 
-    //        (*it).getName() == "ParticleCube6" || 
-    //        (*it).getName() == "ParticleCube7" || 
-    //        (*it).getName() == "ParticleCube8" || 
-    //        (*it).getName() == "ParticleCube9" || 
-    //        (*it).getName() == "ParticleCube10") {
-    //        if ((*it).objectPos.y < 40) {
-    //            (*it).objectPos.y += 3 * (float)(dt);
-    //        }
-    //        else {
-    //            (*it).objectPos.y = (*it).originalPos.y;
-    //            (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
-    //            (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
-    //        }
-    //    }
-    //}
     for (vector<objectsForDisplay>::iterator it = particleHandlers.begin(); it != particleHandlers.end(); ++it) {
                 if ((*it).objectPos.y < 40) {
                     (*it).objectPos.y += 3 * (float)(dt);
@@ -1065,9 +1044,9 @@ void sceneSP2::Render()
     
     //testing
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.7,2,-1);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "left", 0.05f, 1.7f, 2, -1);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -4.3, 2, -3);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -4.3f, 2, -3);
     
 }
 
@@ -1591,10 +1570,9 @@ void sceneSP2::renderingSekHeng() {
         renderMesh(meshList[GEO_HAMMER], true);
         modelStack.PopMatrix();
     }
-    else if (sek_heng_.gottenHammer() == true && sek_heng_.getStage() == 1) {
-        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.1f, -15, 15, -7);
-
-    }
+    //else if (sek_heng_.gottenHammer() == true && sek_heng_.getStage() == 1) {
+    //    RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.1f, -15, 15, -7);
+    //}
     //rendering of the hammer
 }
 
