@@ -104,20 +104,27 @@ void sceneSP2::Init()
 	m_parameters[U_LIGHT1_COSINNER] = glGetUniformLocation(m_programID, "lights[1].cosInner");
 	m_parameters[U_LIGHT1_EXPONENT] = glGetUniformLocation(m_programID, "lights[1].exponent");
 
-    // Get a handle for our "colorTexture" uniform
-    m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
-    m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
 
-    // Get a handle for our "textColor" uniform
-    m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
-    m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
+	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
+	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
 
-    glUseProgram(m_programID);
+	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
+	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
-	light[0].type = Light::LIGHT_DIRECTIONAL;
-	light[0].position.Set(0, 20, 0);
+	// Get a handle for our "colorTexture" uniform
+	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
+	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
+
+	// Get a handle for our "textColor" uniform
+	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
+	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
+
+	glUseProgram(m_programID);
+
+	light[0].type = Light::LIGHT_SPOT;
+	light[0].position.Set(-280, 40, 290);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 1;
+	light[0].power = 2.5;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
@@ -126,10 +133,10 @@ void sceneSP2::Init()
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
-	light[1].type = Light::LIGHT_SPOT;
-	light[1].position.Set(-280, 40, 300);
+	light[1].type = Light::LIGHT_DIRECTIONAL;
+	light[1].position.Set(0, 20, 0);
 	light[1].color.Set(1, 1, 1);
-	light[1].power = 5;
+	light[1].power = 0.5;
 	light[1].kC = 1.f;
 	light[1].kL = 0.01f;
 	light[1].kQ = 0.001f;
@@ -158,6 +165,7 @@ void sceneSP2::Init()
 	glUniform1f(m_parameters[U_LIGHT1_COSCUTOFF], light[1].cosCutoff);
 	glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
 	glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
+
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene1.txt");
@@ -963,12 +971,11 @@ void sceneSP2::Render()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	if (light[1].type == Light::LIGHT_SPOT)
+	if (light[1].type == Light::LIGHT_DIRECTIONAL)
 	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[1].position;
-		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[1].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT1_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
+		Vector3 lightDir(light[1].position.x, light[1].position.y, light[1].position.z);
+		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
+		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightDirection_cameraspace.x);
 	}
 	
 
