@@ -15,7 +15,7 @@
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
-
+HWND hwnd; //get handle to program's window
 //global variables needed for transition
 Scene* Application::scenario1;
 Scene* Application::scene;
@@ -165,7 +165,7 @@ void Application::Init()
 
     glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 
-    
+     hwnd = GetActiveWindow();
 }
 
 /******************************************************************************/
@@ -199,18 +199,18 @@ void Application::Run()
     glfwSwapBuffers(m_window);
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	//scenario3->Init();
+	scenario3->Init();
 
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
     glfwSwapBuffers(m_window);
 
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    //scenario2->Init();
+    scenario2->Init();
 
     scene = scenario1;
 
-    HWND hwnd = GetActiveWindow();
+    
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 
@@ -221,6 +221,7 @@ void Application::Run()
         {
             scene->Update(m_timer.getElapsedTime());
         }
+        
         scene->Render();
         //Swap buffers
         glfwSwapBuffers(m_window);

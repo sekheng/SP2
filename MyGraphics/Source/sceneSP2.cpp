@@ -1066,10 +1066,15 @@ void sceneSP2::Render()
     
     //testing
 
+    /*
     RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.7,2,-1);
 
     RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.7, 2, -1);
-    
+    */
+
+    RenderStuffOnScreen(meshList[GEO_SWORD], "left", 0.05f, 1.7, 2, -1);
+
+    RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.5f, -1.7, 2, -1);
 }
 
 
@@ -1928,7 +1933,7 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
         modelStack.Rotate(180, 1, 0, 0);
 
         modelStack.Scale(size, size, size);
-        //renderMesh(meshList[GEO_AXES], false);
+        renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
@@ -1950,7 +1955,7 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
         modelStack.Rotate(180, 1, 0, 0);
 
         modelStack.Scale(size, size, size);
-        //renderMesh(meshList[GEO_AXES], false);
+        renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
