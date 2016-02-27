@@ -227,7 +227,7 @@ void scene3_SP2::Init()
     //animating the warp
 
     //for the 2nd light bulb
-    turn_on_2nd = true;
+    turn_on_2nd = false;
     //for the 2nd light bulb
 
     //animating the light ending
@@ -244,6 +244,7 @@ void scene3_SP2::Init()
     moveShipZ = 0;
     moveBack = false;
     quickTimeEventOver = false;
+    youLost = false;
     //for QTE
 
     std::cout << "Number of objects in Scenario 2: " << camera.storage_of_objects.size() << std::endl;
@@ -312,10 +313,11 @@ void scene3_SP2::Update(double dt)
 
     //for QTE
     if ((Application::IsKeyPressed('W') || Application::IsKeyPressed('D')
-        || Application::IsKeyPressed('S') || Application::IsKeyPressed('A'))
+        || Application::IsKeyPressed('S') || Application::IsKeyPressed('A') ||
+        Application::IsKeyPressed('E'))
         && quickTimeEventFlag == false) {
     }
-    else if (quickTimeEventFlag == true && quickTimeEventOver == false) {
+    else if (quickTimeEventFlag == true && quickTimeEventOver == false && youLost == false) {
         makingSureNoDoubleTap += dt;
         //when the mini-game finished, an animation of the ship escaping the asteroid will be played
         if (quickTimeEvent.empty() == true) {
@@ -370,6 +372,14 @@ void scene3_SP2::Update(double dt)
             }
         }
     }
+    //reset the whole scenario
+    else if (youLost == true) {
+        if (Application::IsKeyPressed('E')) {
+            reset();
+        }
+    }
+    //reset the whole scenario
+
     //when the animation of space ship flying over the asteroid is over
     if (quickTimeEventOver) {
         quickTimeEventFlag = false;
@@ -515,37 +525,43 @@ void scene3_SP2::Render()
         renderMesh(meshList[GEO_LIGHTBALL], false);
         modelStack.PopMatrix();
     }
+    
+    if (youLost == false) {
+        renderMesh(meshList[GEO_AXES], false);
 
-    renderMesh(meshList[GEO_AXES], false);
+        modelStack.PushMatrix();
+        modelStack.Scale(300, 300, 300 + scaleSkyBoxZ_);
+        RenderSkybox();
+        modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    modelStack.Scale(300, 300, 300 + scaleSkyBoxZ_);
-    RenderSkybox();
-    modelStack.PopMatrix();
+        modelStack.PushMatrix();
+        renderSpaceShip();
+        modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    renderSpaceShip();
-    modelStack.PopMatrix();
+        renderWarp();
 
-    renderWarp();
-
-    if ((warppingOn == false || quickTimeEventFlag == true) && quickTimeEventOver == false) {
-        for (auto it : camera.storage_of_objects) {
-            if (it.getName() == "Asteroid") {
-                modelStack.PushMatrix();
-                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ() + moveAsteroidZ);
-                modelStack.Scale(50, 50, 50);
-                renderMesh(meshList[GEO_ASTEROID], true);
-                modelStack.PopMatrix();
+        if ((warppingOn == false || quickTimeEventFlag == true) && quickTimeEventOver == false) {
+            for (auto it : camera.storage_of_objects) {
+                if (it.getName() == "Asteroid") {
+                    modelStack.PushMatrix();
+                    modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ() + moveAsteroidZ);
+                    modelStack.Scale(50, 50, 50);
+                    renderMesh(meshList[GEO_ASTEROID], true);
+                    modelStack.PopMatrix();
+                }
             }
         }
-    }
 
-    if (start_white_screen) {
-        RenderImageOnScreen(meshList[GEO_LIGHT_END], scaleLightEnd, 40, 30);
-    }
+        if (start_white_screen) {
+            RenderImageOnScreen(meshList[GEO_LIGHT_END], scaleLightEnd, 40, 30);
+        }
 
-    renderQTE();
+        renderQTE();
+    }
+    else {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "You Got Hit By An Asteroid", Color(0, 1, 0), 4, 4, 14);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to Retry", Color(0, 1, 0), 4, 6, 12);
+    }
 
     std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
@@ -559,9 +575,9 @@ void scene3_SP2::Render()
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 18.f);
 
-    std::stringstream asteroidPosZ;
-    asteroidPosZ << moveAsteroidZ;
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], asteroidPosZ.str(), Color(0, 1, 0), 1.8f, 5, 5);
+    //std::stringstream asteroidPosZ;
+    //asteroidPosZ << moveAsteroidZ;
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], asteroidPosZ.str(), Color(0, 1, 0), 1.8f, 5, 5);
 
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
@@ -885,6 +901,9 @@ void scene3_SP2::initQuickTimeEvent(const char* fileLocation) {
 void scene3_SP2::activateQTE(double& dt) {
     if (quickTimeEventFlag == true) {
         quickTimer -= dt;
+        if (quickTimer < 0) {
+            youLost = true;
+        }
     }
 }
 
@@ -898,4 +917,36 @@ void scene3_SP2::renderQTE() {
         ss2 << quickTimeEvent.front();
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss2.str(), Color(0, 1, 0), 4, 7, 5);
     }
+}
+
+void scene3_SP2::reset() {
+    camera.Reset();
+    quickTimeEventFlag = false;
+    quickTimer = 10;
+    makingSureNoDoubleTap = 0;
+    moveAsteroidZ = 0;
+    moveShipX = 0;
+    moveShipZ = 0;
+    moveBack = false;
+    quickTimeEventOver = false;
+    youLost = false;
+    //animating the spaceShip
+    jitteringShipY = 0;
+    toggleUp = false;
+    scaleShipZ = 0;
+    warppingOn = true;
+    //animating the spaceShip
+
+    //animating the SkyBox
+    scaleSkyBoxZ_ = 0;
+    //animating the SkyBox
+
+    //animating the warp
+    warp_lightZ = 0;
+    wait_on_white_screen = 0;
+    start_white_screen = false;
+    //animating the warp
+    //animating the light ending
+    scaleLightEnd = 1;
+    //animating the light ending
 }

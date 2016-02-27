@@ -162,7 +162,11 @@ private:
     float moveShipX, moveShipZ;
     bool moveBack;
     bool quickTimeEventOver;
+    bool youLost;
     //for the QTE
+    //reset the scenario
+    void reset();
+    //reset the scenario
 };
 
 
