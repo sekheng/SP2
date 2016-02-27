@@ -134,8 +134,8 @@ void Application::Init()
 
     // get the primary monitor's size
 
-    m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", NULL, NULL);
-    //m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+    //m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", NULL, NULL);
+    m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
 	glfwSetWindowSizeCallback(m_window, resize_callback);
 
 	//If the window couldn't be created
@@ -192,7 +192,7 @@ void Application::Run()
     //musics->playDarthVaderBackground();
 
     scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    scenario1->Init();
+    //scenario1->Init();
 
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
@@ -206,9 +206,9 @@ void Application::Run()
     glfwSwapBuffers(m_window);
 
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    //scenario2->Init();
+    scenario2->Init();
 
-    scene = scenario1;
+    scene = scenario2;
 
     HWND hwnd = GetActiveWindow();
 

@@ -16,6 +16,9 @@ Hopefully they don't mess it up
 #include "Light.h"
 #include "Camera3.h"
 #include "MatrixStack.h"
+#include <queue>
+
+using std::queue;
 
 /******************************************************************************/
 /*!
@@ -123,7 +126,6 @@ private:
     bool toggleUp;
     float scaleShipZ;
     bool warppingOn;
-    float flyToZ;
     //animating the spaceShip
 
     //animating the SkyBox
@@ -146,6 +148,15 @@ private:
     bool turn_on_2nd;
     //logic for 2nd light bulb
 
+    //for the QTE
+    queue<char> quickTimeEvent;
+    void initQuickTimeEvent(const char* fileLocation);
+    bool quickTimeEventFlag;
+    void activateQTE(double& dt);
+    void renderQTE();
+    double quickTimer;
+    double makingSureNoDoubleTap;
+    //for the QTE
 };
 
 

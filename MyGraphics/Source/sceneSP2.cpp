@@ -1066,9 +1066,9 @@ void sceneSP2::Render()
     
     //testing
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.7,2,-1);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "left", 0.05f, 1.7f, 2, -1);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.7, 2, -1);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.7f, 2, -1);
     
 }
 
