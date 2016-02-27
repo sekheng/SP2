@@ -26,7 +26,8 @@ private:
     vector<string> background_music;
 
     ISoundEngine *engine;
-    ISoundSource *backGround;
+    ISoundSource *DarthVaderbackGround;
+    ISound *ZeBackgroundMusic;
 };
 
 #endif

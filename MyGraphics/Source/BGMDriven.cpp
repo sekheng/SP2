@@ -13,18 +13,23 @@ BGMDriven::BGMDriven()
 
 BGMDriven::~BGMDriven()
 {
+    //ZeBackgroundMusic->drop();
+    DarthVaderbackGround->drop();
     engine->drop();
 }
 
 void BGMDriven::init() {
-    backGround = 
+    DarthVaderbackGround = 
         engine->addSoundSourceFromFile(background_music[0].c_str());
-    backGround->setDefaultVolume(0.3f);
+    ZeBackgroundMusic = engine->play2D(DarthVaderbackGround, false, false, true);
 }
 
 void BGMDriven::playDarthVaderBackground() {
-    if (engine->isCurrentlyPlaying(backGround)) {
-        backGround->drop();
+    if (!engine->isCurrentlyPlaying(DarthVaderbackGround)) {
+        ZeBackgroundMusic->stop();
     }
-    engine->play2D(backGround, true);
+    if (ZeBackgroundMusic->isFinished()) {
+        ZeBackgroundMusic =
+            engine->play2D(DarthVaderbackGround, false, false, true);
+    }
 }
