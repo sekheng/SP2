@@ -202,7 +202,7 @@ void scene3_SP2::Init()
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 200000.f);
+    projection.SetToPerspective(45.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 200000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
@@ -240,6 +240,10 @@ void scene3_SP2::Init()
     quickTimer = 10;
     makingSureNoDoubleTap = 0;
     moveAsteroidZ = 0;
+    moveShipX = 0;
+    moveShipZ = 0;
+    moveBack = false;
+    quickTimeEventOver = false;
     //for QTE
 
     std::cout << "Number of objects in Scenario 2: " << camera.storage_of_objects.size() << std::endl;
@@ -255,7 +259,7 @@ where the logic of the game is, and update
 /******************************************************************************/
 void scene3_SP2::Update(double dt)
 {
-     animateWarp(dt);
+    animateWarp(dt);
     animateSpaceShip(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
@@ -311,14 +315,37 @@ void scene3_SP2::Update(double dt)
         || Application::IsKeyPressed('S') || Application::IsKeyPressed('A'))
         && quickTimeEventFlag == false) {
     }
-    else if (quickTimeEventFlag == true) {
+    else if (quickTimeEventFlag == true && quickTimeEventOver == false) {
         makingSureNoDoubleTap += dt;
+        //when the mini-game finished, an animation of the ship escaping the asteroid will be played
         if (quickTimeEvent.empty() == true) {
-
+            moveShipZ -= 55 * (float)(dt);
+            camera.position.z -= 55 * (float)(dt);
+            moveAsteroidZ += 22 * (float)(dt);
+            if (moveBack == false) {
+                moveShipX += 45 * (float)(dt);
+                camera.position.x += 40 * (float)(dt);
+                if (camera.position.x > 280) {
+                    moveBack = true;
+                }
+            }
+            else if (moveBack == true && camera.position.x > 0) {
+                moveShipX -= 45 * (float)(dt);
+                camera.position.x -= 40 * (float)(dt);
+                if (camera.position.x <= 0) {
+                    quickTimeEventOver = true;
+                    warppingOn = true;
+                    moveShipZ = 0;
+                    camera.position.z = camera.defaultPosition.z;
+                    camera.position.x = camera.defaultPosition.x;
+                }
+            }
         }
+        //when the mini-game finished, an animation of the ship escaping the asteroid will be played
+
         else {
             activateQTE(dt);
-            if (makingSureNoDoubleTap > 0.15) {
+            if (makingSureNoDoubleTap > 0.1) {
                 if (Application::IsKeyPressed('W')) {
                     if (quickTimeEventFlag == true && quickTimeEvent.front() == 'W') {
                         quickTimeEvent.pop();
@@ -343,6 +370,11 @@ void scene3_SP2::Update(double dt)
             }
         }
     }
+    //when the animation of space ship flying over the asteroid is over
+    if (quickTimeEventOver) {
+        quickTimeEventFlag = false;
+    }
+    //when the animation of space ship flying over the asteroid is over
     //for QTE
 
     camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);
@@ -497,7 +529,7 @@ void scene3_SP2::Render()
 
     renderWarp();
 
-    if (warppingOn == false || quickTimeEventFlag == true) {
+    if ((warppingOn == false || quickTimeEventFlag == true) && quickTimeEventOver == false) {
         for (auto it : camera.storage_of_objects) {
             if (it.getName() == "Asteroid") {
                 modelStack.PushMatrix();
@@ -526,6 +558,10 @@ void scene3_SP2::Render()
     std::stringstream connectPosY;
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 18.f);
+
+    std::stringstream asteroidPosZ;
+    asteroidPosZ << moveAsteroidZ;
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], asteroidPosZ.str(), Color(0, 1, 0), 1.8f, 5, 5);
 
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
@@ -691,7 +727,7 @@ void scene3_SP2::renderSpaceShip() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "spaceship") {
             modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY() + jitteringShipY, it.getObjectposZ());
+            modelStack.Translate(it.getObjectposX() + moveShipX, it.getObjectposY() + jitteringShipY, it.getObjectposZ() + moveShipZ);
             modelStack.Scale(10, 10, 10 + scaleShipZ);
             renderMesh(meshList[GEO_FLYINGVEHICLE], true);
             modelStack.PopMatrix();
@@ -742,14 +778,18 @@ void scene3_SP2::animateSpaceShip(double dt) {
     //after some time, distorting stopped and spaceship seems to be travelling
     else if (scaleShipZ > 0 && warppingOn == false)
 	{
-        //if (scaleShipZ < 15) {  //animating the light warp end
-        //    start_white_screen = true;
-        //    scaleLightEnd +=  500 * (float)(dt);
-        //}
+        if (quickTimeEventOver == true && scaleShipZ < 10) {  //animating the light warp end
+            start_white_screen = true;
+            scaleLightEnd +=  500 * (float)(dt);
+        }
         scaleShipZ -= 30 * (float)(dt);
         scaleSkyBoxZ_ -= 20000 * (float)(dt);
         moveAsteroidZ += 30000 * (float)(dt);
-        if (scaleShipZ <= 0 && quickTimeEventFlag == false) {
+        if (scaleShipZ <= 0 && quickTimeEventFlag == false && quickTimeEventOver == false) {
+            moveAsteroidZ = 420;
+            scaleSkyBoxZ_ = 0;
+            warp_lightZ = 0;
+            scaleShipZ = 0;
             quickTimeEventFlag = true;
         }
     }

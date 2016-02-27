@@ -159,6 +159,9 @@ private:
     double makingSureNoDoubleTap;
     void renderMeteorite();
     float moveAsteroidZ;
+    float moveShipX, moveShipZ;
+    bool moveBack;
+    bool quickTimeEventOver;
     //for the QTE
 };
 

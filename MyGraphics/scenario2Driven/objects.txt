@@ -239,6 +239,6 @@ boundaryRadiusZ,0
 Name,Asteroid
 objectX,0
 objectY,-100
-objectZ,1000
+objectZ,900
 boundaryRadiusX,0
 boundaryRadiusZ,0
