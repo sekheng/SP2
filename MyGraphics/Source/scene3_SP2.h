@@ -42,6 +42,7 @@ class scene3_SP2 : public Scene
         GEO_FLYINGVEHICLE,
         GEO_LIGHT_WRAP,
         GEO_LIGHT_END,
+        GEO_ASTEROID,
         NUM_GEOMETRY,
     };
 
@@ -156,6 +157,8 @@ private:
     void renderQTE();
     double quickTimer;
     double makingSureNoDoubleTap;
+    void renderMeteorite();
+    float moveAsteroidZ;
     //for the QTE
 };
 

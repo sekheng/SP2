@@ -196,6 +196,9 @@ void scene3_SP2::Init()
     meshList[GEO_LIGHT_END] = MeshBuilder::GenerateQuad("light end", Color(1, 1, 1));
     meshList[GEO_LIGHT_END]->textureID = LoadTGA("Image//white_warp.tga");
 
+    meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("asteroid", "OBJ//asteroid.obj");
+    meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//asteroid.tga");
+
     on_light = true;
 
     Mtx44 projection;
@@ -236,6 +239,7 @@ void scene3_SP2::Init()
     quickTimeEventFlag = false;
     quickTimer = 10;
     makingSureNoDoubleTap = 0;
+    moveAsteroidZ = 0;
     //for QTE
 
     std::cout << "Number of objects in Scenario 2: " << camera.storage_of_objects.size() << std::endl;
@@ -306,32 +310,31 @@ void scene3_SP2::Update(double dt)
     if ((Application::IsKeyPressed('W') || Application::IsKeyPressed('D')
         || Application::IsKeyPressed('S') || Application::IsKeyPressed('A'))
         && quickTimeEventFlag == false) {
-
     }
-    if (quickTimeEventFlag == true) {
+    else if (quickTimeEventFlag == true) {
         makingSureNoDoubleTap += dt;
         if (quickTimeEvent.empty() == true) {
 
         }
         else {
             activateQTE(dt);
-            if (makingSureNoDoubleTap > 0.2) {
+            if (makingSureNoDoubleTap > 0.15) {
                 if (Application::IsKeyPressed('W')) {
                     if (quickTimeEventFlag == true && quickTimeEvent.front() == 'W') {
                         quickTimeEvent.pop();
                     }
                 }
-                if (Application::IsKeyPressed('A')) {
+                else if (Application::IsKeyPressed('A')) {
                     if (quickTimeEventFlag == true && quickTimeEvent.front() == 'A') {
                         quickTimeEvent.pop();
                     }
                 }
-                if (Application::IsKeyPressed('S')) {
+                else if (Application::IsKeyPressed('S')) {
                     if (quickTimeEventFlag == true && quickTimeEvent.front() == 'S') {
                         quickTimeEvent.pop();
                     }
                 }
-                if (Application::IsKeyPressed('D')) {
+                else if (Application::IsKeyPressed('D')) {
                     if (quickTimeEventFlag == true && quickTimeEvent.front() == 'D') {
                         quickTimeEvent.pop();
                     }
@@ -493,6 +496,18 @@ void scene3_SP2::Render()
     modelStack.PopMatrix();
 
     renderWarp();
+
+    if (warppingOn == false || quickTimeEventFlag == true) {
+        for (auto it : camera.storage_of_objects) {
+            if (it.getName() == "Asteroid") {
+                modelStack.PushMatrix();
+                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ() + moveAsteroidZ);
+                modelStack.Scale(50, 50, 50);
+                renderMesh(meshList[GEO_ASTEROID], true);
+                modelStack.PopMatrix();
+            }
+        }
+    }
 
     if (start_white_screen) {
         RenderImageOnScreen(meshList[GEO_LIGHT_END], scaleLightEnd, 40, 30);
@@ -694,20 +709,22 @@ void scene3_SP2::renderSpaceShip() {
 /******************************************************************************/
 void scene3_SP2::animateSpaceShip(double dt) {
     //this is to make the spaceship looks jittering
-    if (toggleUp == false)  
-	{
-        jitteringShipY -= 15 * (float)(dt);
-        if (jitteringShipY < -1) 
-		{
-            toggleUp = true;
+    if (quickTimeEventFlag == false) {
+        if (toggleUp == false)
+        {
+            jitteringShipY -= 15 * (float)(dt);
+            if (jitteringShipY < -1)
+            {
+                toggleUp = true;
+            }
         }
-    }
-    else
-	{
-        jitteringShipY += 15 * (float)(dt);
-        if (jitteringShipY > 1) 
-		{
-            toggleUp = false;
+        else
+        {
+            jitteringShipY += 15 * (float)(dt);
+            if (jitteringShipY > 1)
+            {
+                toggleUp = false;
+            }
         }
     }
     //this is to make the spaceship looks jittering
@@ -715,7 +732,8 @@ void scene3_SP2::animateSpaceShip(double dt) {
     if (warppingOn == true) 
 	{
         scaleShipZ += 30 * (float)(dt);
-        scaleSkyBoxZ_ += 3000 * (float)(dt);
+        scaleSkyBoxZ_ += 20000 * (float)(dt);
+        moveAsteroidZ -= 30000 * (float)(dt);
         if (scaleShipZ > 100) 
 		{
             warppingOn = false;
@@ -729,7 +747,8 @@ void scene3_SP2::animateSpaceShip(double dt) {
         //    scaleLightEnd +=  500 * (float)(dt);
         //}
         scaleShipZ -= 30 * (float)(dt);
-        scaleSkyBoxZ_ -= 3000 * (float)(dt);
+        scaleSkyBoxZ_ -= 20000 * (float)(dt);
+        moveAsteroidZ += 30000 * (float)(dt);
         if (scaleShipZ <= 0 && quickTimeEventFlag == false) {
             quickTimeEventFlag = true;
         }
