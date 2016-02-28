@@ -1088,9 +1088,7 @@ void sceneSP2::Render()
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
     
-    //testing
-
-    
+    //testing(DO NOT DELETE THIS)
    /* RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.3,2,-0.8,0,0,0);
 
     RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8,0,0,0);*/
@@ -1575,7 +1573,7 @@ void sceneSP2::RenderQuestObjects()
     if (One.get_numberof_items() == 2 && One.Item2collected() == true
         && Quest1_finished == false)
     {
-        //RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.1f, 15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.7f, 1.4, 2, -1, 90, 90, 90);
     }
 
     //quest 2
@@ -1613,7 +1611,7 @@ void sceneSP2::RenderQuestObjects()
     if (Three.get_numberof_items() == 1 && Three.Item1collected() == true
         && Quest3_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75, 2, -0.65,0,0,0);
+        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75, 2, -0.65, 0, 0, 0);
     }
 }
 
@@ -1635,7 +1633,7 @@ void sceneSP2::renderingSekHeng() {
     }
     else if (sek_heng_.gottenHammer() == true && sek_heng_.getStage() == 1) {
 
-        //RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.1f, -15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4, 2, -0.7, 0, 0, -90);
     }
     //rendering of the hammer
 }
