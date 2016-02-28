@@ -1100,10 +1100,15 @@ void sceneSP2::Render()
 
     RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75, 2, -0.65,0,0,0);
     */
-
+    /*
     RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.7f, 1.4, 2, -1,90,90,90);
-
+    
     RenderStuffOnScreen(meshList[GEO_GASOLINE], "right", 0.7f, -1.4, 2, -1,90,90,90);
+    */
+
+    //RenderStuffOnScreen(meshList[GEO_HAMMER], "left", 0.2f, 1.4, 2, -0.7, 0, 0, 90);
+
+    //RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4, 2, -0.7, 0, 0, -90);
 
 }
 
