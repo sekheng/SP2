@@ -315,7 +315,7 @@ void scene3_SP2::Update(double dt)
         }
         else {
             activateQTE(dt);
-            if (makingSureNoDoubleTap > 0.2) {
+            if (makingSureNoDoubleTap > 0.1) {
                 if (Application::IsKeyPressed('W')) {
                     if (quickTimeEventFlag == true && quickTimeEvent.front() == 'W') {
                         quickTimeEvent.pop();
