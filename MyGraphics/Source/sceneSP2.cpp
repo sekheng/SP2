@@ -322,7 +322,7 @@ void sceneSP2::Init()
 
     //meshList[]
     Mtx44 projection;
-    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
+    projection.SetToPerspective(45.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
 
     //initialise camera_position_x and z;
@@ -401,6 +401,9 @@ void sceneSP2::Init()
     startTeleporting = false;
     //animating teleporting
 
+    //music updates
+    musicTimeDelay = 0.5;
+    //music updates
 }
 
 /******************************************************************************/
@@ -460,6 +463,9 @@ void sceneSP2::Update(double dt)
                 {
                     (*it).objectPos.x = -242;
                 }
+                else {
+                    Application::musics->playGateEffect(vec3df((*it).getObjectposX(), (*it).getObjectposY(), (*it).getObjectposZ()));
+                }
                 break;
             }
         }
@@ -518,7 +524,18 @@ void sceneSP2::Update(double dt)
                 }
     }
     //animating particle cube
-    
+
+    //music updates
+    musicTimeDelay += dt;
+    if (musicTimeDelay > 0.5) {
+        Application::musics->updatePlayerPos(
+            vec3df(camera.getCameraXcoord(), camera.getCameraYcoord(), camera.getCameraZcoord()),   //camera's position
+            vec3df(camera.target.x, camera.target.y, camera.target.z),  //camera's target
+            vec3df(camera.up.x, camera.up.y, camera.up.z)
+            );
+    }
+    //music updates
+
     if (Application::IsKeyPressed('E') && sek_heng_.SekHengSayIsOk()
         && teleport() == true) {
         //animateTeleporting(dt);

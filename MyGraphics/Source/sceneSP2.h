@@ -276,6 +276,10 @@ private:
     //particle effect handler
     vector<objectsForDisplay> particleHandlers;
     //particle effect handler
+
+    //music updates
+    double musicTimeDelay;
+    //music updates
 };
 
 

@@ -189,11 +189,7 @@ void Application::Run()
 
     musics = new BGMDriven();
     musics->init();
-    musics->playDarthVaderBackground();
-
-    loadingScreen->Update(m_timer.getElapsedTime());
-    loadingScreen->Render();
-    glfwSwapBuffers(m_window);
+    //musics->playDarthVaderBackground();
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
 	scenario3->Init();
