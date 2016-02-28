@@ -1,6 +1,7 @@
 #include "BGMDriven.h"
 
 BGMDriven::BGMDriven() 
+    : DarthVaderbackGround(0), GateEffectSource(0), GateEffect(0)
 {
     engine = createIrrKlangDevice();
 }
@@ -17,31 +18,35 @@ void BGMDriven::init() {
         engine->addSoundSourceFromFile("music//electric_door_opening_2.ogg");
 
     ZeBackgroundMusic = engine->play2D(DarthVaderbackGround, true, false, true);
-    ZeBackgroundMusic->setVolume(0.5f);
+    ZeBackgroundMusic->setVolume(0.3f);
 
     GateEffect = engine->play3D(GateEffectSource, vec3df(0, 0, 0), false, true, true);
 }
 
 void BGMDriven::playDarthVaderBackground() {
-    if (!engine->isCurrentlyPlaying(DarthVaderbackGround)) {
-        ZeBackgroundMusic->stop();
-    }
-    if (ZeBackgroundMusic->isFinished()) {
-        ZeBackgroundMusic =
-            engine->play2D(DarthVaderbackGround, true, false, true);
+    if (DarthVaderbackGround) {
+        if (!engine->isCurrentlyPlaying(DarthVaderbackGround)) {
+            ZeBackgroundMusic->stop();
+        }
+        if (ZeBackgroundMusic->isFinished()) {
+            ZeBackgroundMusic =
+                engine->play2D(DarthVaderbackGround, true, false, true);
+        }
     }
 }
 
 void BGMDriven::playGateEffect(vec3df pos) 
 {
-    if (GateEffect->getIsPaused() == true) {
-        GateEffect->setIsPaused(false);
-        GateEffect->setPosition(pos);
-        return;
-    }
-    if (GateEffect->isFinished() == true) {
-        GateEffect =
-            engine->play3D(GateEffectSource, pos, false, false, true);
+    if (GateEffectSource) {
+        if (GateEffect->getIsPaused() == true) {
+            GateEffect->setIsPaused(false);
+            GateEffect->setPosition(pos);
+            return;
+        }
+        if (GateEffect->isFinished() == true) {
+            GateEffect =
+                engine->play3D(GateEffectSource, pos, false, false, true);
+        }
     }
 }
 
