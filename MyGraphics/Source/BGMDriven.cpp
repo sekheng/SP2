@@ -14,10 +14,10 @@ void BGMDriven::init() {
     DarthVaderbackGround = 
         engine->addSoundSourceFromFile("music//Star Wars- The Imperial March (Darth Vader's Theme).ogg");
     GateEffectSource =
-        engine->addSoundSourceFromFile("music//electric_door_opening_2.wav");
+        engine->addSoundSourceFromFile("music//electric_door_opening_2.ogg");
 
-    //ZeBackgroundMusic = engine->play2D(DarthVaderbackGround, true, false, true);
-    //ZeBackgroundMusic->setVolume(0.5f);
+    ZeBackgroundMusic = engine->play2D(DarthVaderbackGround, true, false, true);
+    ZeBackgroundMusic->setVolume(0.5f);
 
     GateEffect = engine->play3D(GateEffectSource, vec3df(0, 0, 0), false, true, true);
 }
@@ -36,9 +36,10 @@ void BGMDriven::playGateEffect(vec3df pos)
 {
     if (GateEffect->getIsPaused() == true) {
         GateEffect->setIsPaused(false);
+        GateEffect->setPosition(pos);
         return;
     }
-    else {
+    if (GateEffect->isFinished() == true) {
         GateEffect =
             engine->play3D(GateEffectSource, pos, false, false, true);
     }
