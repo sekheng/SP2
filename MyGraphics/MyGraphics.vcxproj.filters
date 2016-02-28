@@ -261,5 +261,8 @@
     <Text Include="scenario3Driven\README.txt">
       <Filter>scenario3Driven</Filter>
     </Text>
+    <Text Include="scenario2Driven\quicktimeevent.txt">
+      <Filter>scenario2Driven</Filter>
+    </Text>
   </ItemGroup>
 </Project>

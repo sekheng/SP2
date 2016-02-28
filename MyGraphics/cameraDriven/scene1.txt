@@ -1,5 +1,5 @@
-positionx,-230
-positiony,5
+positionx,-280
+positiony,8
 positionz,300
 upx,0
 upy,1

@@ -1,12 +1,6 @@
 #ifndef BGM_DRIVEN_H_
 #define BGM_DRIVEN_H_
 
-#include <vector>
-#include<string>
-
-using std::vector;
-using std::string;
-
 //IrrKlang Stuff
 #include "../irrKlang-1.5.0/include/irrKlang.h"
 using namespace irrklang;
@@ -19,14 +13,22 @@ public:
     ~BGMDriven();
 
     void init();
+
+    void updatePlayerPos(vec3df pos, vec3df target, vec3df up);
+
     void playDarthVaderBackground();
+    void playGateEffect(vec3df pos);
 
 private:
-    vector<string> sound_names;
-    vector<string> background_music;
-
+    //these stuff will have the music source files and 
+    //ensure engine won't have to keep on going to external files and play music
     ISoundEngine *engine;
-    ISoundSource *backGround;
+    ISoundSource *DarthVaderbackGround;
+    ISoundSource *GateEffectSource;
+
+    //these pointers make it clear which music is currently being played
+    ISound *ZeBackgroundMusic;
+    ISound *GateEffect;
 };
 
 #endif

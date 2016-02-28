@@ -119,11 +119,11 @@ class sceneSP2 : public Scene
         U_MVP = 0,
         U_MODELVIEW,
         U_MODELVIEW_INVERSE_TRANSPOSE,
-        U_MATERIAL_AMBIENT,
-        U_MATERIAL_DIFFUSE,
-        U_MATERIAL_SPECULAR,
-        U_MATERIAL_SHININESS,
-       
+		U_MATERIAL_AMBIENT,
+		U_MATERIAL_DIFFUSE,
+		U_MATERIAL_SPECULAR,
+		U_MATERIAL_SHININESS,
+
 		U_LIGHT0_POSITION,
 		U_LIGHT0_COLOR,
 		U_LIGHT0_POWER,
@@ -149,7 +149,7 @@ class sceneSP2 : public Scene
 		U_LIGHT1_COSINNER,
 		U_LIGHT1_EXPONENT,
 
-        U_NUMLIGHTS,
+		U_NUMLIGHTS,
 		U_NUMLIGHTS2,
         U_COLOR_TEXTURE_ENABLED,
         U_COLOR_TEXTURE,
@@ -276,6 +276,10 @@ private:
     //particle effect handler
     vector<objectsForDisplay> particleHandlers;
     //particle effect handler
+
+    //music updates
+    double musicTimeDelay;
+    //music updates
 };
 
 
