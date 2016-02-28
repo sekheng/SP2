@@ -20,14 +20,20 @@ public:
 
     void init();
     void playDarthVaderBackground();
+    void playGateEffect(vec3df pos);
 
 private:
     vector<string> sound_names;
-    vector<string> background_music;
 
+    //these stuff will have the music source files and 
+    //ensure engine won't have to keep on going to external files and play music
     ISoundEngine *engine;
     ISoundSource *DarthVaderbackGround;
+    ISoundSource *GateEffectSource;
+
+    //these pointers make it clear which music is currently being played
     ISound *ZeBackgroundMusic;
+    ISound *GateEffect;
 };
 
 #endif

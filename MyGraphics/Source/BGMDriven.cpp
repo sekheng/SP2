@@ -4,10 +4,8 @@ BGMDriven::BGMDriven()
 {
     engine = createIrrKlangDevice();
     sound_names = { 
-        "" 
-    };
-    background_music = { 
-        "music//Star Wars- The Imperial March (Darth Vader's Theme).mp3", " "
+        "music//Star Wars- The Imperial March (Darth Vader's Theme).ogg", 
+        ""
     };
 }
 
@@ -20,8 +18,10 @@ BGMDriven::~BGMDriven()
 
 void BGMDriven::init() {
     DarthVaderbackGround = 
-        engine->addSoundSourceFromFile(background_music[0].c_str());
+        engine->addSoundSourceFromFile(sound_names[0].c_str());
+
     ZeBackgroundMusic = engine->play2D(DarthVaderbackGround, false, false, true);
+    ZeBackgroundMusic->setVolume(0.5f);
 }
 
 void BGMDriven::playDarthVaderBackground() {
