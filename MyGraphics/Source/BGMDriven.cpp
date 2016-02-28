@@ -1,6 +1,7 @@
 #include "BGMDriven.h"
 
 BGMDriven::BGMDriven() 
+    : DarthVaderbackGround(0), GateEffectSource(0), GateEffect(0)
 {
     engine = createIrrKlangDevice();
 }
@@ -23,25 +24,29 @@ void BGMDriven::init() {
 }
 
 void BGMDriven::playDarthVaderBackground() {
-    if (!engine->isCurrentlyPlaying(DarthVaderbackGround)) {
-        ZeBackgroundMusic->stop();
-    }
-    if (ZeBackgroundMusic->isFinished()) {
-        ZeBackgroundMusic =
-            engine->play2D(DarthVaderbackGround, true, false, true);
+    if (DarthVaderbackGround) {
+        if (!engine->isCurrentlyPlaying(DarthVaderbackGround)) {
+            ZeBackgroundMusic->stop();
+        }
+        if (ZeBackgroundMusic->isFinished()) {
+            ZeBackgroundMusic =
+                engine->play2D(DarthVaderbackGround, true, false, true);
+        }
     }
 }
 
 void BGMDriven::playGateEffect(vec3df pos) 
 {
-    if (GateEffect->getIsPaused() == true) {
-        GateEffect->setIsPaused(false);
-        GateEffect->setPosition(pos);
-        return;
-    }
-    if (GateEffect->isFinished() == true) {
-        GateEffect =
-            engine->play3D(GateEffectSource, pos, false, false, true);
+    if (GateEffectSource) {
+        if (GateEffect->getIsPaused() == true) {
+            GateEffect->setIsPaused(false);
+            GateEffect->setPosition(pos);
+            return;
+        }
+        if (GateEffect->isFinished() == true) {
+            GateEffect =
+                engine->play3D(GateEffectSource, pos, false, false, true);
+        }
     }
 }
 
