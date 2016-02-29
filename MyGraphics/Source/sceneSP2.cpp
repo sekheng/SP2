@@ -409,6 +409,8 @@ void sceneSP2::Init()
     //music updates
     musicTimeDelay = 0.5;
     //music updates
+
+    tutorialscreen = true;
 }
 
 /******************************************************************************/
@@ -507,27 +509,6 @@ void sceneSP2::Update(double dt)
     }
 
     //animating particle cube
-    //for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
-    //    if ((*it).getName() == "ParticleCube1" ||
-    //        (*it).getName() == "ParticleCube2" ||
-    //        (*it).getName() == "ParticleCube3" ||
-    //        (*it).getName() == "ParticleCube4" || 
-    //        (*it).getName() == "ParticleCube5" || 
-    //        (*it).getName() == "ParticleCube6" || 
-    //        (*it).getName() == "ParticleCube7" || 
-    //        (*it).getName() == "ParticleCube8" || 
-    //        (*it).getName() == "ParticleCube9" || 
-    //        (*it).getName() == "ParticleCube10") {
-    //        if ((*it).objectPos.y < 40) {
-    //            (*it).objectPos.y += 3 * (float)(dt);
-    //        }
-    //        else {
-    //            (*it).objectPos.y = (*it).originalPos.y;
-    //            (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
-    //            (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
-    //        }
-    //    }
-    //}
     for (vector<objectsForDisplay>::iterator it = particleHandlers.begin(); it != particleHandlers.end(); ++it) {
                 if ((*it).objectPos.y < 40) {
                     (*it).objectPos.y += 3 * (float)(dt);
@@ -546,7 +527,7 @@ void sceneSP2::Update(double dt)
         Application::musics->updatePlayerPos(
             vec3df(camera.getCameraXcoord(), camera.getCameraYcoord(), camera.getCameraZcoord()),   //camera's position
             vec3df(camera.target.x, camera.target.y, camera.target.z),  //camera's target
-            vec3df(camera.up.x, camera.up.y, camera.up.z)
+            vec3df(camera.up.x, camera.up.y, camera.up.z)   //camera's up
             );
     }
     //music updates
@@ -563,6 +544,19 @@ void sceneSP2::Update(double dt)
         camera.Update(dt);
     }
 	door.update(dt);
+    //check for tutorial screen
+    if (Application::IsKeyPressed('W') ||
+        Application::IsKeyPressed('A') ||
+        Application::IsKeyPressed('S') ||
+        Application::IsKeyPressed('D')
+        )
+    {
+        tutorialscreen = false;
+    }
+    if (Application::IsKeyPressed('T'))
+    {
+        tutorialscreen = true;
+    }
 }
 
 /******************************************************************************/
@@ -1142,6 +1136,8 @@ void sceneSP2::Render()
 
     //RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4, 2, -0.7, 0, 0, -90);
 
+    RenderTutorialScreen();
+
 }
 
 
@@ -1528,6 +1524,7 @@ void sceneSP2::RenderNPC()
         if (QUEST1.interaction() == true && One.stage() == 4)
         {
             renderDialogueBox("Guan Hui", QUEST1.quest_complete());
+
             Quest1_finished = true;
         }
     }
@@ -1597,17 +1594,17 @@ void sceneSP2::RenderQuestObjects()
     if (One.get_numberof_items() == 1 && One.Item1collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8, 0, 0, 0);
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3f, 2, -0.8f, 0, 0, 0);
     }
     if (One.get_numberof_items() == 2 && One.Item1collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8, 0, 0, 0);
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3f, 2, -0.8f, 0, 0, 0);
     }
     if (One.get_numberof_items() == 2 && One.Item2collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.7f, 1.4, 2, -1, 90, 90, 90);
+        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.7f, 1.4f, 2, -1, 90, 90, 90);
     }
 
     //quest 2
@@ -1624,12 +1621,13 @@ void sceneSP2::RenderQuestObjects()
 	}
 
     if (Two.get_numberof_items() == 1 && Two.Item1collected() == true
-        && Quest2_finished == false)
+        && Quest3_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8, 0, 0, 0);
+        RenderStuffOnScreen(meshList[GEO_GASOLINE], "right", 0.7f, -1.4f, 2, -1, 90, 90, 90);
     }
 
     //quest 3
+    /*
 	if (Three.stage() == 1)
 	{
 		modelStack.PushMatrix();
@@ -1645,8 +1643,9 @@ void sceneSP2::RenderQuestObjects()
     if (Three.get_numberof_items() == 1 && Three.Item1collected() == true
         && Quest3_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75, 2, -0.65, 0, 0, 0);
+        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75f, 2, -0.65f, 0, 0, 0);
     }
+    */
 }
 
 void sceneSP2::renderingSekHeng() {
@@ -1667,7 +1666,7 @@ void sceneSP2::renderingSekHeng() {
     }
     else if (sek_heng_.gottenHammer() == true && sek_heng_.getStage() == 1) {
 
-        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4, 2, -0.7, 0, 0, -90);
+        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4f, 2, -0.7f, 0, 0, -90);
     }
     //rendering of the hammer
 }
@@ -2013,7 +2012,7 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, string direction, float size, flo
         }
         
         modelStack.Scale(size, size, size);
-        renderMesh(meshList[GEO_AXES], false);
+        //renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
@@ -2046,7 +2045,7 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, string direction, float size, flo
             modelStack.Rotate(rotate_z, 0, 0, 1);
         }
         modelStack.Scale(size, size, size);
-        renderMesh(meshList[GEO_AXES], false);
+        //renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
@@ -2113,6 +2112,23 @@ void sceneSP2::renderChunFei()
                 break;
             }
         }
+    }
+
+    if (Three.stage() == 1)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(Three.getObject1_X(), 0, Three.getObject1_Z());
+        renderMesh(meshList[GEO_SWORD], true);
+        modelStack.PopMatrix();
+    }
+    else if (Three.stage() == 3)
+    {
+        renderDialogueBox("", "Quest Complete!!");
+    }
+
+    if ( Three.Item1collected() == true && Quest2_finished == false)
+    {
+        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75f, 2, -0.65f, 0, 0, 0);
     }
 }
 
@@ -2462,4 +2478,18 @@ void sceneSP2::animateTeleporting(double& dt) {
     Vector3 view = (camera.target - camera.position).Normalized();
     Vector3 right = view.Cross(camera.defaultUp);
     camera.up = right.Cross(view);
+}
+
+void sceneSP2::RenderTutorialScreen()
+{
+    
+    if (tutorialscreen == true)
+    {
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 43, 31, 30, 16);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "WASD for movement", Color(0.039f, 0.937f, 0.702f), 2, 15, 19);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Use the mouse to look around", Color(0.039f, 0.937f, 0.702f), 2, 15, 17);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hold Shift to run", Color(0.039f, 0.937f, 0.702f), 2, 15, 15);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press T to view this again", Color(0.039f, 0.937f, 0.702f), 2, 15, 13);
+
+    }
 }

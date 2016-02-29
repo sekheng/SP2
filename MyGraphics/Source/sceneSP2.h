@@ -228,7 +228,7 @@ private:
     void TextSlowDown(double dt);
     void QuestCompleteCheck();
     void RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z, float rotate_x, float rotate_y, float rotate_z);
-
+    void RenderTutorialScreen();
     double framePerSecond;
     float screenWidth, screenHeight;
 
@@ -281,6 +281,9 @@ private:
     //music updates
     double musicTimeDelay;
     //music updates
+
+    //show tutorial screen
+    bool tutorialscreen;
 };
 
 

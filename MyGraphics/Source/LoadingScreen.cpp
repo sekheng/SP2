@@ -100,7 +100,7 @@ void LoadingScreen::Init()
 
     glUseProgram(m_programID);
 
-    glUniform1i(m_parameters[U_NUMLIGHTS], 2);
+    glUniform1i(m_parameters[U_NUMLIGHTS], 1);
 
     light[0].type = Light::LIGHT_DIRECTIONAL;
     light[0].position.Set(0, 1200, 0);
