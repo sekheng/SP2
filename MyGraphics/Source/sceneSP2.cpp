@@ -136,7 +136,7 @@ void sceneSP2::Init()
 	light[1].type = Light::LIGHT_DIRECTIONAL;
 	light[1].position.Set(0, 20, 0);
 	light[1].color.Set(1, 1, 1);
-	light[1].power = 0.8;
+	light[1].power = 1;
 	light[1].kC = 1.f;
 	light[1].kL = 0.01f;
 	light[1].kQ = 0.001f;
