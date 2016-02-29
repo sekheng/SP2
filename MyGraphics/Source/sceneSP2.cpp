@@ -122,9 +122,9 @@ void sceneSP2::Init()
 	glUseProgram(m_programID);
 
 	light[0].type = Light::LIGHT_SPOT;
-	light[0].position.Set(-280, 40, 290);
+	light[0].position.Set(-280, 70, 290);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 2.5;
+	light[0].power = 3;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
@@ -136,7 +136,7 @@ void sceneSP2::Init()
 	light[1].type = Light::LIGHT_DIRECTIONAL;
 	light[1].position.Set(0, 20, 0);
 	light[1].color.Set(1, 1, 1);
-	light[1].power = 0.5;
+	light[1].power = 0.8;
 	light[1].kC = 1.f;
 	light[1].kL = 0.01f;
 	light[1].kQ = 0.001f;
@@ -188,11 +188,19 @@ void sceneSP2::Init()
     //Space ground mesh
     meshList[GEO_SPACE_GROUNDMESH] = MeshBuilder::GenerateOBJ("Space ground mesh", "OBJ//Space_groundmesh.obj");
     meshList[GEO_SPACE_GROUNDMESH]->textureID = LoadTGA("Image//Space_groundmesh.tga");
+	meshList[GEO_SPACE_GROUNDMESH]->material.kAmbient.Set(0.2f, 0.2f, 0.2f);
+	meshList[GEO_SPACE_GROUNDMESH]->material.kDiffuse.Set(0.2f, 0.2f, 0.2f);
+	meshList[GEO_SPACE_GROUNDMESH]->material.kSpecular.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_SPACE_GROUNDMESH]->material.kShininess = 1.0f;
     // meshList[GEO_SPACE_GROUNDMESH]->material = MaterialBuilder::GenerateBlinn();
 
     //space walls
     meshList[GEO_SPACE_WALL] = MeshBuilder::GenerateOBJ("Space wall", "OBJ//space_walls.obj");
     meshList[GEO_SPACE_WALL]->textureID = LoadTGA("Image//space_station_wall.tga");
+	meshList[GEO_SPACE_WALL]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_SPACE_WALL]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_SPACE_WALL]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);;
+	meshList[GEO_SPACE_WALL]->material.kShininess = 2.0f;
 
 
 
@@ -220,76 +228,123 @@ void sceneSP2::Init()
 	//SpaceStation
 	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("Station", "OBJ//Station.obj");
 	meshList[GEO_STATION]->textureID = LoadTGA("Image//Station.tga");
-	meshList[GEO_STATION]->material = MaterialBuilder::GenerateLambert();
+	meshList[GEO_STATION]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_STATION]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_STATION]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+	meshList[GEO_STATION]->material.kShininess = 3.0f;
 	//SpaceStationChair
 	meshList[GEO_CHAIR] = MeshBuilder::GenerateOBJ("Chair", "OBJ//Chair.obj");
 	meshList[GEO_CHAIR]->textureID = LoadTGA("Image//Chair.tga");
-	meshList[GEO_CHAIR]->material = MaterialBuilder::GenerateBlinn();
+	meshList[GEO_CHAIR]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_CHAIR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_CHAIR]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_CHAIR]->material.kShininess = 3.0f;
 	//SpaceStationTable
 	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("Table", "OBJ//Table.obj");
 	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
-	meshList[GEO_TABLE]->material = MaterialBuilder::GenerateBlinn();
+	meshList[GEO_TABLE]->material.kAmbient.Set(0.2f, 0.2f, 0.2f);
+	meshList[GEO_TABLE]->material.kDiffuse.Set(0.2f, 0.2f, 0.2f);
+	meshList[GEO_TABLE]->material.kSpecular.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_TABLE]->material.kShininess = 1.0f;
 
 	//SpaceStationBox
 	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("Box", "OBJ//Box.obj");
 	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
-	meshList[GEO_BOX]->material = MaterialBuilder::GenerateBlinn();
+	meshList[GEO_BOX]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_BOX]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_BOX]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+	meshList[GEO_BOX]->material.kShininess = 1.0f;
 
 	//SpaceStationBox
 	meshList[GEO_DOOR] = MeshBuilder::GenerateOBJ("Door", "OBJ//Door.obj");
 	meshList[GEO_DOOR]->textureID = LoadTGA("Image//Door.tga");
-	meshList[GEO_DOOR]->material = MaterialBuilder::GenerateLambert();
+	meshList[GEO_DOOR]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_DOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_DOOR]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_DOOR]->material.kShininess = 3.0f;
 
 	//SpaceStationCryostasis
 	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("Cryostasis", "OBJ//cryostasis.obj");
 	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryostasis.tga");
-	meshList[GEO_CRYOSTASIS]->material = MaterialBuilder::GenerateLambert();
+	meshList[GEO_CRYOSTASIS]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_CRYOSTASIS]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_CRYOSTASIS]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+	meshList[GEO_CRYOSTASIS]->material.kShininess = 2.0f;
+
 	//SpaceStationKeyCard
 	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("KeyCard", "OBJ//KeyCard.obj");
 	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
 	//SpaceShuttle
 	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("SpaceShuttle", "OBJ//FlyingVehicle.obj");
 	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
-	meshList[GEO_SPACESHUTTLE]->material = MaterialBuilder::GenerateBlinn();
+	meshList[GEO_SPACESHUTTLE]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_SPACESHUTTLE]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_SPACESHUTTLE]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+	meshList[GEO_SPACESHUTTLE]->material.kShininess = 5.0f;
 
 	//Teleporter
 	meshList[GEO_TELEPORTER] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Teleporter.obj");
 	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
-	meshList[GEO_TELEPORTER]->material = MaterialBuilder::GenerateBlinn();
+	meshList[GEO_TELEPORTER]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_TELEPORTER]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_TELEPORTER]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+	meshList[GEO_TELEPORTER]->material.kShininess = 1.0f;
 
     meshList[GEO_PARTICLE_LIGHT] = MeshBuilder::GenerateOBJ("particle light", "OBJ//teleporting_light.obj");
     meshList[GEO_PARTICLE_LIGHT]->textureID = LoadTGA("Image//particle_light.tga");
-    meshList[GEO_PARTICLE_LIGHT]->material = MaterialBuilder::GenerateBlinn();
+	meshList[GEO_PARTICLE_LIGHT]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_PARTICLE_LIGHT]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_PARTICLE_LIGHT]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+	meshList[GEO_PARTICLE_LIGHT]->material.kShininess = 1.0f;
 
     meshList[GEO_PARTICLE_CUBE] = MeshBuilder::GenerateOBJ("particle cube", "OBJ//Box.obj");
     meshList[GEO_PARTICLE_CUBE]->textureID = LoadTGA("Image//particle_light.tga");
-    meshList[GEO_PARTICLE_CUBE]->material = MaterialBuilder::GeneratePhong();
+	meshList[GEO_PARTICLE_CUBE]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_PARTICLE_CUBE]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_PARTICLE_CUBE]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+	meshList[GEO_PARTICLE_CUBE]->material.kShininess = 1.0f;
     //Teleporter
 
 	//red building
 	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("BuildingRed", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
-	meshList[GEO_BUILDINGRED]->material = MaterialBuilder::GenerateBlinn();
+	meshList[GEO_BUILDINGRED]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_BUILDINGRED]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_BUILDINGRED]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);;
+	meshList[GEO_BUILDINGRED]->material.kShininess = 1.0f;
 
 	//green building
 	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("BuildingBlue", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGGREEN]->textureID = LoadTGA("Image//BuildingGreen.tga");
-	meshList[GEO_BUILDINGGREEN]->material = MaterialBuilder::GenerateBlinn();
+	meshList[GEO_BUILDINGGREEN]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_BUILDINGGREEN]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_BUILDINGGREEN]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_BUILDINGGREEN]->material.kShininess = 1.0f;
 
 	//Blue building
 	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("BuildingGreen", "OBJ//Building.obj");
 	meshList[GEO_BUILDINGBLUE]->textureID = LoadTGA("Image//BuildingBlue.tga");
-	meshList[GEO_BUILDINGBLUE]->material = MaterialBuilder::GenerateBlinn();
+	meshList[GEO_BUILDINGBLUE]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_BUILDINGBLUE]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_BUILDINGBLUE]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_BUILDINGBLUE]->material.kShininess = 1.0f;
 
 	//Barrel
 	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//Barrel.obj");
 	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
 	meshList[GEO_BARREL]->material = MaterialBuilder::GenerateLambert();
+	meshList[GEO_BARREL]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_BARREL]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_BARREL]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+	meshList[GEO_BARREL]->material.kShininess = 1.0f;
 
 	//land vehicle
 	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("Vehicle", "OBJ//LandVehicle.obj");
 	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
-	meshList[GEO_LANDVEHICLE]->material = MaterialBuilder::GenerateLambert();
+	meshList[GEO_LANDVEHICLE]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_LANDVEHICLE]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_LANDVEHICLE]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_LANDVEHICLE]->material.kShininess = 1.0f;
 
 	//land vehicle
 	meshList[GEO_BUTTON] = MeshBuilder::GenerateOBJ("Button", "OBJ//Button.obj");
@@ -299,9 +354,15 @@ void sceneSP2::Init()
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
     meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
+	meshList[GEO_NPC1]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_NPC1]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+	meshList[GEO_NPC1]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+	meshList[GEO_NPC1]->material.kShininess = 1.0f;
+
     //NPC
 	meshList[GEO_NPC_QUEST2] = MeshBuilder::GenerateOBJ("Victor", "OBJ//android.obj");
 	meshList[GEO_NPC_QUEST2]->textureID = LoadTGA("Image//androidRed.tga");
+
 
     meshList[GEO_INVIS_CURSOR] = MeshBuilder::GenerateSphere("invisible cursor", Color(0.5, 0.5, 0.5));
 
@@ -481,11 +542,11 @@ void sceneSP2::Update(double dt)
 
 	if (door.roomLight() == true)
 	{
-		light[0].position.Set(-280, 40, 290);
+		light[0].position.Set(-280, 60, 290);
 	}
 	else if (door.roomLight() == false)
 	{
-		light[0].position.Set(-500, 40, 290);
+		light[0].position.Set(-500, 60, 290);
 	}
 
     //Sek Heng's stuff
@@ -1426,7 +1487,7 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 void sceneSP2::Rendergroundmesh()
 {
     modelStack.PushMatrix();
-	renderMesh(meshList[GEO_SPACE_GROUNDMESH], false);
+	renderMesh(meshList[GEO_SPACE_GROUNDMESH], true);
     modelStack.PopMatrix();
 }
 /**********************************************************************************************************/
