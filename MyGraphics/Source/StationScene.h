@@ -21,19 +21,24 @@ public:
 	short getCard2();
 	bool getCardText();
 	short openSasame();
+	bool roomLight();
+	bool switchText();
 
 private:
 	Vector3 Door_pos;
 	vector<string> Dialogues;
 	Camera3 *cam_pointer;
 	float bound_x, bound_z;
-	double time;
+	float time;
 	bool questActive;
 	bool questComplete;
 	bool card1;
 	bool card2;
 	short count;
 	bool doorOpened;
+	bool switchLightOn;
+	bool switchLightOff;
+	float delay;
 
 protected:
 };

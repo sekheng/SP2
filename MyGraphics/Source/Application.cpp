@@ -188,15 +188,11 @@ void Application::Run()
     //rendering just the loading screen
 
     musics = new BGMDriven();
-    //musics->init();
-    //musics->playDarthVaderBackground();
-
-
-    scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	scenario1->Init();
+    musics->init();
+    musics->playDarthVaderBackground();
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	//scenario3->Init();
+	scenario3->Init();
 
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
@@ -205,14 +201,14 @@ void Application::Run()
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
     //scenario2->Init();
 
+	scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
+	//scenario1->Init();
+
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
     glfwSwapBuffers(m_window);
 
-    scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	//scenario1->Init();
-
-    scene = scenario1;
+    scene = scenario3;
 
     HWND hwnd = GetActiveWindow();
 

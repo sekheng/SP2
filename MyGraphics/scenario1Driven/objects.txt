@@ -107,7 +107,14 @@ Name,Cryostasis
 objectX,-275
 objectY,0
 objectZ,315
-boundaryRadiusX,30
+boundaryRadiusX,4
+boundaryRadiusZ,4
+
+Name,Button
+objectX,-265
+objectY,5
+objectZ,318
+boundaryRadiusX,4
 boundaryRadiusZ,4
 
 Name,Spaceshuttle
@@ -218,7 +225,7 @@ boundaryRadiusZ,0
 
 Name,robothead
 objectX,0
-objectY,5.5
+objectY,9.2
 objectZ,250
 boundaryRadiusX,2
 boundaryRadiusZ,2
@@ -231,8 +238,8 @@ boundaryRadiusX,2
 boundaryRadiusZ,2
 
 Name,sword
-objectX,0
-objectY,0
+objectX,0.2
+objectY,2
 objectZ,250
 boundaryRadiusX,0
 boundaryRadiusZ,0
