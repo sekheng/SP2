@@ -402,14 +402,14 @@ void sceneSP2::Init()
 	camera.InitObjects("scenario1Driven//objects.txt");
 
     //initialise npc
-    QUEST1.Init("First NPC",4, Vector3(-270, 0, 194), 5, 5, camera, "NPC data//NPC_1.txt");
+    QUEST1.Init("First NPC",19, Vector3(-270, 0, 194), 5, 5, camera, "NPC data//NPC_1.txt");
     //initialise quest
     One.Init("First quest", camera, 2, Vector3(-270, 0, 164),5, Vector3(-270 ,0, 134),5);
 
 	QUEST2.Init("Sec NPC",7, Vector3(-150, 0, -300), 5, 5, camera, "NPC data//NPC_2.txt");
 	Two.Init("Sec quest", camera, 1, Vector3(-167, 0, 297), 5, Vector3(0, 0, 0), 5);
 
-    //Sek Heng's stuff and initialization
+    //Sek Heng sucks 's stuff and initialization
     sek_heng_.init("sekheng//sek_heng_stuff.txt");
     sek_heng_.initDialogues("sekheng//dialogues.txt", camera);
     //Sek Heng's stuff and initialization
