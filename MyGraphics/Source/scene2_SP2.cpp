@@ -381,6 +381,8 @@ void scene2_SP2::Init()
     //For 3D effects of the music
     update3DPos = 0.5;
     //For 3D effects of the music
+
+    minigame.init();
 }
 
 /******************************************************************************/
@@ -404,6 +406,23 @@ void scene2_SP2::Update(double dt)
 	robotNPC1.update(dt);
 	robotNPC2.update(dt);
 	//diamondNPC.update(dt);
+
+    //minigame update
+    if (Application::IsKeyPressed('Y') && minigame.minigame_started() == false)
+    {
+        minigame.update(dt, true);
+    }
+    else if (minigame.minigame_started() == true)
+    {
+        minigame.update(dt, true);
+    }
+    else
+    {
+        minigame.update(dt, false);
+    }
+
+    
+
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -2296,12 +2315,7 @@ void scene2_SP2::rollingCredits() {
 void scene2_SP2::RenderMinigamePieces()
 {
     modelStack.PushMatrix();
-    //modelStack.Translate(-3, 2, 111);
-    //renderMesh(meshList[GEO_MINIGAME_PIECE_1], false);
-    //modelStack.Rotate(90, 0, 0, 1);
-    modelStack.PushMatrix();
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35,90);
-    modelStack.PopMatrix();
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35,0);
     RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_2], 5, 40, 35,0);
     RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_3], 5, 45, 35,0);
     RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_4], 5, 35, 30,0);
@@ -2331,7 +2345,7 @@ void scene2_SP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y
     modelStack.Scale(size, size, size);
     modelStack.Rotate(90, 0, -1, 0);
     modelStack.Rotate(rotate_x, -1, 0, 0);
-    renderMesh(meshList[GEO_AXES], false);
+    //renderMesh(meshList[GEO_AXES], false);
     renderMesh(mesh, false);
 
     projectionStack.PopMatrix();

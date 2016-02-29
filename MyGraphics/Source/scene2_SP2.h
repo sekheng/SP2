@@ -20,7 +20,7 @@ This is for landing on the vault
 #include "NumPad.h"
 #include "creditScene.h"
 #include "NPC.h"
-
+#include "scene2_minigame.h"
 
 /******************************************************************************/
 /*!
@@ -290,6 +290,9 @@ private:
     //For 3D effects of the music
     double update3DPos;
     //For 3D effects of the music
+
+    //minigame object
+    minigame minigame;
 };
 
 #endif

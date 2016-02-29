@@ -31,6 +31,11 @@ void minigame::init()
     piece7_rotate = 0;
     piece8_rotate = 0;
     piece9_rotate = 0;
+
+    start = false;
+
+    time = 0;
+    input_delay = 0.2;
 }
 float minigame::piece1()
 {
@@ -83,20 +88,24 @@ void minigame::updatePieceState()
 void minigame::selection_pointer()
 {
     //controlling the selector
-    if (Application::IsKeyPressed(VK_LEFT))
+    if (Application::IsKeyPressed(VK_LEFT) && time > input_delay)
     {
+        time = 0;
         piece_state += 1;
     }
-    if (Application::IsKeyPressed(VK_RIGHT))
+    if (Application::IsKeyPressed(VK_RIGHT) && time > input_delay)
     {
+        time = 0;
         piece_state -= 1;
     }
-    if (Application::IsKeyPressed(VK_UP))
+    if (Application::IsKeyPressed(VK_UP) && time > input_delay)
     {
+        time = 0;
         piece_state -= 3;
     }
-    if (Application::IsKeyPressed(VK_DOWN))
+    if (Application::IsKeyPressed(VK_DOWN) && time > input_delay)
     {
+        time = 0;
         piece_state += 3;
     }
     //if the selector reaches the edges of the puzzle
@@ -111,72 +120,81 @@ void minigame::selection_pointer()
 }
 void minigame::changePieceRotation()
 {
-    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 1)
+    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 1 && time > input_delay)
     {
+        time = 0;
         piece1_state += 1;
         if (piece1_state > 3)
         {
             piece1_state = 0;
         }
     }
-    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 2)
+    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 2 && time > input_delay)
     {
+        time = 0;
         piece2_state += 1;
         if (piece2_state > 3)
         {
             piece2_state = 0;
         }
     }
-    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 3)
+    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 3 && time > input_delay)
     {
+        time = 0;
         piece3_state += 1;
         if (piece3_state > 3)
         {
             piece3_state = 0;
         }
     }
-    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 4)
+    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 4 && time > input_delay)
     {
+        time = 0;
         piece4_state += 1;
         if (piece4_state > 3)
         {
             piece4_state = 0;
         }
     }
-    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 5)
+    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 5 && time > input_delay)
     {
+        time = 0;
         piece5_state += 1;
         if (piece5_state > 3)
         {
             piece5_state = 0;
         }
     }
-    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 6)
+    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 6 && time > input_delay)
     {
+        time = 0;
         piece6_state += 1;
         if (piece6_state > 3)
         {
             piece6_state = 0;
         }
     }
-    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 7)
+    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 7 && time > input_delay)
     {
+        time = 0;
         piece7_state += 1;
         if (piece7_state > 3)
         {
             piece7_state = 0;
         }
     }
-    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 8)
+    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 8 && time > input_delay)
     {
+        time = 0;
         piece8_state += 1;
         if (piece8_state > 3)
         {
             piece8_state = 0;
         }
     }
-    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 9)
+    if (Application::IsKeyPressed(VK_RETURN) && piece_state == 9 && time > input_delay)
     {
+        time = 0;
         piece9_state += 1;
         if (piece9_state > 3)
         {
@@ -204,10 +222,16 @@ bool minigame::result()
     }
     else return false;
 }
-void minigame::update(double dt)
+void minigame::update(double dt, bool start_game)
 {
+    time += dt;
+    start = start_game;
     selection_pointer();
     changePieceRotation();
     updatePieceState();
     result();
+}
+bool minigame::minigame_started()
+{
+    return start;
 }

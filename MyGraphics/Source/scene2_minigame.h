@@ -20,9 +20,11 @@ public:
     float piece9();
     void selection_pointer();
     void changePieceRotation();
-    void update(double dt);
+    void update(double dt, bool start_game);
     bool result();
     void updatePieceState();
+    void minigame_started(bool started);
+    bool minigame_started();
 private:
     short piece_state;
     float piece1_rotate;
@@ -43,6 +45,9 @@ private:
     short piece7_state;
     short piece8_state;
     short piece9_state;
+    bool start;
+    double time;
+    double input_delay;
 protected:
 
 };
