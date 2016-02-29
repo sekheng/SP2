@@ -196,20 +196,20 @@ void Application::Run()
 	scenario1->Init();
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	scenario3->Init();
+	//scenario3->Init();
 
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
     glfwSwapBuffers(m_window);
 
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    scenario2->Init();
+    //scenario2->Init();
 
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
     glfwSwapBuffers(m_window);
 
-    scene = scenario3;
+    scene = scenario1;
 
     HWND hwnd = GetActiveWindow();
 
