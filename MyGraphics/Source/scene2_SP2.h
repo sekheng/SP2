@@ -231,6 +231,9 @@ private:
 	void NPCAnimation(double dt);
 	void BoxesAnimation(double dt);
 	
+    //minigame functions
+    void RenderMinigamePieces();
+    void RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x);
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

@@ -708,6 +708,10 @@ void scene2_SP2::Render()
 	//input << "FPS : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
 	//RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);
 
+    modelStack.PushMatrix();
+    //modelStack.Rotate(180,0,1,0);
+    RenderMinigamePieces();
+    modelStack.PopMatrix();
 }
 
 /******************************************************************************/
@@ -840,7 +844,8 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
 
     modelStack.Translate(x, y, 0);
     modelStack.Scale(size, size, size);
-    modelStack.Rotate(90, 1, 0, 0);
+    modelStack.Rotate(90, 1, 0, 0); 
+    renderMesh(meshList[GEO_AXES], false);
     renderMesh(mesh, false);
 
     projectionStack.PopMatrix();
@@ -2288,3 +2293,48 @@ void scene2_SP2::rollingCredits() {
     }
 }
 
+void scene2_SP2::RenderMinigamePieces()
+{
+    modelStack.PushMatrix();
+    //modelStack.Translate(-3, 2, 111);
+    //renderMesh(meshList[GEO_MINIGAME_PIECE_1], false);
+    //modelStack.Rotate(90, 0, 0, 1);
+    modelStack.PushMatrix();
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35,90);
+    modelStack.PopMatrix();
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_2], 5, 40, 35,0);
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_3], 5, 45, 35,0);
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_4], 5, 35, 30,0);
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_5], 5, 40, 30,0);
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_6], 5, 45, 30,0);
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_7], 5, 35, 25,0);
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_8], 5, 40, 25,0);
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_9], 5, 45, 25,0);
+    modelStack.PopMatrix();
+}
+
+void scene2_SP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x) 
+{
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 60, -7, 5); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 0);
+    modelStack.Scale(size, size, size);
+    modelStack.Rotate(90, 0, -1, 0);
+    modelStack.Rotate(rotate_x, -1, 0, 0);
+    renderMesh(meshList[GEO_AXES], false);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
+}
