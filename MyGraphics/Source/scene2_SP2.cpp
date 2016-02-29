@@ -394,11 +394,10 @@ void scene2_SP2::Update(double dt)
     }
     else {
         camera.Update(dt);
+        Application::musics->playLovelyLullaby();
     }
 
     //For 3D effects of the music
- 
-    
     update3DPos += dt;
     if (update3DPos >= 0.5) {
         Application::musics->updatePlayerPos(
@@ -1659,6 +1658,7 @@ void scene2_SP2::VaultAnimation(double dt)
 			{
 				wheelturning = 360;//wheel will stop at 360 degree
 				stickpush = true;
+                Application::musics->playJohnCenaBackground();
 			}
 		if (stickpush == true) //stick start pushing after wheel stop turning
 		{
@@ -1962,9 +1962,11 @@ void scene2_SP2::renderDeadPool() {
     if (beginIamYourFather) {
         if (endingTime < 2) {
             renderDialogueBox("DeadPool", "Join The Dark Side");
+            Application::musics->playJoinDarkSideEffect(vec3df(camera.position.x, camera.position.y, camera.position.z));
         }
         else if (endingTime < 4) {
             renderDialogueBox("DeadPool", "I am Your Father");
+            Application::musics->playIamYourFatherEffect(vec3df(camera.position.x, camera.position.y, camera.position.z));
         }
     }
     //rendering his dialogue
@@ -2026,6 +2028,7 @@ void scene2_SP2::Ending(double& dt) {
             }
         }
         if (moveToDeadPoolZ > -145) {
+            Application::musics->playDarthVaderBackground();
             moveToDeadPoolZ -= 25 * (float)(dt);
         }
     }
@@ -2053,6 +2056,7 @@ void scene2_SP2::rollingCredits() {
             RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "And You", Color(0, 1, 0), 5, 6.5, 8);
         }
         else {
+            Application::musics->playStarWarsThemeBackground();
             float moveY = 0;
             for (unsigned num = 0; num < creditRolling.position.size(); ++num, moveY -= 4) {
                 RenderTextOnScreen(meshList[GEO_COMIC_TEXT], creditRolling.position[num], Color(0, 1, 0), 3, 3, creditRolling.getMovePositionY() + moveY);

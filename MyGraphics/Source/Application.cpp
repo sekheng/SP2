@@ -189,7 +189,6 @@ void Application::Run()
 
     musics = new BGMDriven();
     musics->init();
-    musics->playDarthVaderBackground();
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
 	scenario3->Init();

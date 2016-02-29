@@ -522,6 +522,7 @@ void sceneSP2::Update(double dt)
     //animating particle cube
 
     //music updates
+    Application::musics->playDarthVaderBackground();
     musicTimeDelay += dt;
     if (musicTimeDelay > 0.5) {
         Application::musics->updatePlayerPos(
