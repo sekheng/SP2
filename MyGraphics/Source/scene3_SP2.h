@@ -179,6 +179,10 @@ private:
     short order_of_text_;
     //gives instruction regarding about the QTE
     void renderDialogueBox(const string& name, const string& dialogue);
+
+    //rotating the spaceShip to make it looks realistic
+    float rotationShipY;
+    //rotating the spaceShip to make it looks realistic
 };
 
 

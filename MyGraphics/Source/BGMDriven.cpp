@@ -18,7 +18,7 @@ void BGMDriven::init() {
         engine->addSoundSourceFromFile("music//electric_door_opening_2.ogg");
 
     ZeBackgroundMusic = engine->play2D(DarthVaderbackGround, true, false, true);
-    ZeBackgroundMusic->setVolume(0.3f);
+    ZeBackgroundMusic->setVolume(0.1f);
 
     GateEffect = engine->play3D(GateEffectSource, vec3df(0, 0, 0), false, true, true);
 }

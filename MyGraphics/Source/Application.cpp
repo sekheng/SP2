@@ -209,6 +209,9 @@ void Application::Run()
     loadingScreen->Render();
     glfwSwapBuffers(m_window);
 
+    scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
+	//scenario1->Init();
+
     scene = scenario3;
 
     HWND hwnd = GetActiveWindow();
