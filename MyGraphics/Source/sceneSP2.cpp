@@ -404,6 +404,8 @@ void sceneSP2::Init()
     //music updates
     musicTimeDelay = 0.5;
     //music updates
+
+    tutorialscreen = true;
 }
 
 /******************************************************************************/
@@ -492,27 +494,6 @@ void sceneSP2::Update(double dt)
     }
 
     //animating particle cube
-    //for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
-    //    if ((*it).getName() == "ParticleCube1" ||
-    //        (*it).getName() == "ParticleCube2" ||
-    //        (*it).getName() == "ParticleCube3" ||
-    //        (*it).getName() == "ParticleCube4" || 
-    //        (*it).getName() == "ParticleCube5" || 
-    //        (*it).getName() == "ParticleCube6" || 
-    //        (*it).getName() == "ParticleCube7" || 
-    //        (*it).getName() == "ParticleCube8" || 
-    //        (*it).getName() == "ParticleCube9" || 
-    //        (*it).getName() == "ParticleCube10") {
-    //        if ((*it).objectPos.y < 40) {
-    //            (*it).objectPos.y += 3 * (float)(dt);
-    //        }
-    //        else {
-    //            (*it).objectPos.y = (*it).originalPos.y;
-    //            (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
-    //            (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
-    //        }
-    //    }
-    //}
     for (vector<objectsForDisplay>::iterator it = particleHandlers.begin(); it != particleHandlers.end(); ++it) {
                 if ((*it).objectPos.y < 40) {
                     (*it).objectPos.y += 3 * (float)(dt);
@@ -531,7 +512,7 @@ void sceneSP2::Update(double dt)
         Application::musics->updatePlayerPos(
             vec3df(camera.getCameraXcoord(), camera.getCameraYcoord(), camera.getCameraZcoord()),   //camera's position
             vec3df(camera.target.x, camera.target.y, camera.target.z),  //camera's target
-            vec3df(camera.up.x, camera.up.y, camera.up.z)
+            vec3df(camera.up.x, camera.up.y, camera.up.z)   //camera's up
             );
     }
     //music updates
@@ -546,6 +527,19 @@ void sceneSP2::Update(double dt)
     }
     else {
         camera.Update(dt);
+    }
+    //check for tutorial screen
+    if (Application::IsKeyPressed('W') ||
+        Application::IsKeyPressed('A') ||
+        Application::IsKeyPressed('S') ||
+        Application::IsKeyPressed('D')
+        )
+    {
+        tutorialscreen = false;
+    }
+    if (Application::IsKeyPressed('T'))
+    {
+        tutorialscreen = true;
     }
 }
 
@@ -1594,7 +1588,7 @@ void sceneSP2::RenderQuestObjects()
     if (Two.get_numberof_items() == 1 && Two.Item1collected() == true
         && Quest3_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_GASOLINE], "right", 0.7f, -1.4, 2, -1, 90, 90, 90);
+        RenderStuffOnScreen(meshList[GEO_GASOLINE], "right", 0.7f, -1.4f, 2, -1, 90, 90, 90);
     }
 
     //quest 3
@@ -2453,8 +2447,13 @@ void sceneSP2::animateTeleporting(double& dt) {
 
 void sceneSP2::RenderTutorialScreen()
 {
-    RenderImageOnScreen(meshList[GEO_TEXT_BOX],43,34,30,15);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "WASD for movement", Color(0.039f, 0.937f, 0.702f), 2, 15, 19);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Use the mouse to look around", Color(0.039f, 0.937f, 0.702f), 2, 15, 17);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hold Shift to run", Color(0.039f, 0.937f, 0.702f), 2, 15, 15);
+    
+    if (tutorialscreen == true)
+    {
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 43, 34, 30, 15);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "WASD for movement", Color(0.039f, 0.937f, 0.702f), 2, 15, 19);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Use the mouse to look around", Color(0.039f, 0.937f, 0.702f), 2, 15, 17);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hold Shift to run", Color(0.039f, 0.937f, 0.702f), 2, 15, 15);
+
+    }
 }

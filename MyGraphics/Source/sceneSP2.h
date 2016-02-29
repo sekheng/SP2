@@ -280,6 +280,9 @@ private:
     //music updates
     double musicTimeDelay;
     //music updates
+
+    //show tutorial screen
+    bool tutorialscreen;
 };
 
 

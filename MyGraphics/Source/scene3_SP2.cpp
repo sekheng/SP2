@@ -147,7 +147,7 @@ void scene3_SP2::Init()
     light[1].type = Light::LIGHT_DIRECTIONAL;
     light[1].position.Set(0, 1200, -10000);
     light[1].color.Set(1, 1, 1);
-    light[1].power = 1.5f;
+    light[1].power = 1.f;
     light[1].kC = 1.f;
     light[1].kL = 0.01f;
     light[1].kQ = 0.01f;
@@ -261,6 +261,10 @@ void scene3_SP2::Init()
     order_of_text_ = 0;
     //gives instruction regarding about the QTE
 
+    //rotating the spaceShip to make it looks realistic
+    rotationShipY = 0;
+    //rotating the spaceShip to make it looks realistic
+
     std::cout << "Number of objects in Scenario 2: " << camera.storage_of_objects.size() << std::endl;
 }
 
@@ -342,9 +346,13 @@ void scene3_SP2::Update(double dt)
             moveAsteroidZ += 22 * (float)(dt);
             //the ship will move towards the right to avoid
             if (moveBack == false) {
-                moveShipX += 45 * (float)(dt);
-                camera.position.x += 40 * (float)(dt);
-
+                moveShipX += 46 * (float)(dt);
+                camera.position.x += 41 * (float)(dt);
+                //animating the rotation of spaceship
+                if (rotationShipY > -20) {
+                    rotationShipY -= 4 * (float)(dt);
+                }
+                //animating the rotation of spaceship
                 //the ship will move towards the left when it safely avoids the asteroid and return back to it's normal route
                 if (camera.position.x > 280) {
                     moveBack = true;
@@ -354,8 +362,16 @@ void scene3_SP2::Update(double dt)
             }
             //the ship will move towards the left when it safely avoids the asteroid and return back to it's normal route
             else if (moveBack == true && camera.position.x > 0) {
-                moveShipX -= 45 * (float)(dt);
-                camera.position.x -= 40 * (float)(dt);
+                moveShipX -= 46 * (float)(dt);
+                camera.position.x -= 41 * (float)(dt);
+                //animating the rotation of spaceship
+                if (rotationShipY < 20 && camera.position.x > 100) {
+                    rotationShipY += 4 * (float)(dt);
+                }
+                else if (camera.position.x < 100 && rotationShipY > 0) {
+                    rotationShipY -= 4 * (float)(dt);
+                }
+                //animating the rotation of spaceship
                 //if the spaceship went back to it's normal route, it will being warpping
                 if (camera.position.x <= 0) {
                     quickTimeEventOver = true;
@@ -363,6 +379,7 @@ void scene3_SP2::Update(double dt)
                     moveShipZ = 0;
                     camera.position.z = camera.defaultPosition.z;
                     camera.position.x = camera.defaultPosition.x;
+                    rotationShipY = 0;
                 }
                 //if the spaceship went back to it's normal route, it will being warpping
                 //the ship will move towards the left when it safely avoids the asteroid and return back to it's normal route
@@ -781,6 +798,7 @@ void scene3_SP2::renderSpaceShip() {
         if (it.getName() == "spaceship") {
             modelStack.PushMatrix();
             modelStack.Translate(it.getObjectposX() + moveShipX, it.getObjectposY() + jitteringShipY, it.getObjectposZ() + moveShipZ);
+            modelStack.Rotate(rotationShipY, 0, 1, 0);
             modelStack.Scale(10, 10, 10 + scaleShipZ);
             renderMesh(meshList[GEO_FLYINGVEHICLE], true);
             modelStack.PopMatrix();
@@ -987,6 +1005,8 @@ void scene3_SP2::reset() {
     scaleLightEnd = 1;
     //animating the light ending
     quickTimeEvent = DefaultquickTimeEvent;
+
+    rotationShipY = 0;
 }
 
 void scene3_SP2::renderInstructions() {
