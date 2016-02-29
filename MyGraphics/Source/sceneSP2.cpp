@@ -1067,12 +1067,26 @@ void sceneSP2::Render()
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
     
-    //testing
+    //testing(DO NOT DELETE THIS)
+   /* RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.3,2,-0.8,0,0,0);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER], "left", 0.05f, 1.7f, 2, -1);
-
-    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.7f, 2, -1);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8,0,0,0);*/
     
+    /*
+    RenderStuffOnScreen(meshList[GEO_SWORD], "left", 0.3f, 0.75, 2, -0.6,0,0,0);
+
+    RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75, 2, -0.65,0,0,0);
+    */
+    /*
+    RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.7f, 1.4, 2, -1,90,90,90);
+    
+    RenderStuffOnScreen(meshList[GEO_GASOLINE], "right", 0.7f, -1.4, 2, -1,90,90,90);
+    */
+
+    //RenderStuffOnScreen(meshList[GEO_HAMMER], "left", 0.2f, 1.4, 2, -0.7, 0, 0, 90);
+
+    //RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4, 2, -0.7, 0, 0, -90);
+
 }
 
 
@@ -1528,17 +1542,17 @@ void sceneSP2::RenderQuestObjects()
     if (One.get_numberof_items() == 1 && One.Item1collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8, 0, 0, 0);
     }
     if (One.get_numberof_items() == 2 && One.Item1collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8, 0, 0, 0);
     }
     if (One.get_numberof_items() == 2 && One.Item2collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.1f, 15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.7f, 1.4, 2, -1, 90, 90, 90);
     }
 
     //quest 2
@@ -1557,9 +1571,10 @@ void sceneSP2::RenderQuestObjects()
     if (Two.get_numberof_items() == 1 && Two.Item1collected() == true
         && Quest2_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8, 0, 0, 0);
     }
 
+    //quest 3
 	if (Three.stage() == 1)
 	{
 		modelStack.PushMatrix();
@@ -1575,7 +1590,7 @@ void sceneSP2::RenderQuestObjects()
     if (Three.get_numberof_items() == 1 && Three.Item1collected() == true
         && Quest3_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.1f, -15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75, 2, -0.65, 0, 0, 0);
     }
 }
 
@@ -1596,8 +1611,8 @@ void sceneSP2::renderingSekHeng() {
         modelStack.PopMatrix();
     }
     else if (sek_heng_.gottenHammer() == true && sek_heng_.getStage() == 1) {
-        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.1f, -15, 15, -7);
 
+        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4, 2, -0.7, 0, 0, -90);
     }
     //rendering of the hammer
 }
@@ -1915,7 +1930,7 @@ void sceneSP2::QuestCompleteCheck()
     }
 }
 
-void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float x, float y,float z)
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z, float rotate_x, float rotate_y, float rotate_z)
 {
     if (direction == "left")
     {
@@ -1929,9 +1944,21 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
         modelStack.Rotate(-60, 0, 1, 0);
         modelStack.Translate(x, y, z);
         modelStack.Rotate(180, 1, 0, 0);
-
+        if (rotate_x != 0)
+        {
+            modelStack.Rotate(rotate_x, 1, 0, 0);
+        }
+        if (rotate_y != 0)
+        {
+            modelStack.Rotate(rotate_y, 0, 1, 0);
+        }
+        if (rotate_z != 0)
+        {
+            modelStack.Rotate(rotate_z, 0, 0, 1);
+        }
+        
         modelStack.Scale(size, size, size);
-        //renderMesh(meshList[GEO_AXES], false);
+        renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
@@ -1951,9 +1978,20 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
 
         modelStack.Translate(x, y, z);
         modelStack.Rotate(180, 1, 0, 0);
-
+        if (rotate_x != 0)
+        {
+            modelStack.Rotate(rotate_x, 1, 0, 0);
+        }
+        if (rotate_y != 0)
+        {
+            modelStack.Rotate(rotate_y, 0, 1, 0);
+        }
+        if (rotate_z != 0)
+        {
+            modelStack.Rotate(rotate_z, 0, 0, 1);
+        }
         modelStack.Scale(size, size, size);
-        //renderMesh(meshList[GEO_AXES], false);
+        renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
