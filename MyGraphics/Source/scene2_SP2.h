@@ -19,6 +19,7 @@ This is for landing on the vault
 #include "rot_civ.h"
 #include "NumPad.h"
 #include "creditScene.h"
+#include "NPC.h"
 
 
 /******************************************************************************/
@@ -60,9 +61,15 @@ class scene2_SP2 : public Scene
 		GEO_BIGDIAMOND,
 		GEO_SMALLDIAMOND,
 
+		GEO_BIGDIAMOND2,
+		GEO_SMALLDIAMOND2,
+
 		//NPC
 		GEO_NPCUPPER,
 		GEO_NPCLOWER,
+
+		//plane
+		GEO_PLANE,
 
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
@@ -195,7 +202,7 @@ private:
 	void RenderDiamond();
 	void RenderNPC();
 	void RenderBoxes();
-
+	void RenderPlane();
 	
 	//animation function
 	void VaultAnimation(double dt);
@@ -214,6 +221,8 @@ private:
 	Light light[2];
     Camera3 camera;
 	NumPad Numpad;
+	NPC robotNPC1;
+	NPC diamondNPC;
 	
 
     MS modelStack, viewStack, projectionStack;
