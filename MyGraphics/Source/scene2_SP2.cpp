@@ -273,6 +273,9 @@ void scene2_SP2::Init()
 	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("npc", "OBJ//rock.obj");
 	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//asteroid6.tga");
 
+	meshList[GEO_NPCROBOT] = MeshBuilder::GenerateOBJ("npcrobot", "OBJ//scene3NPC2.obj");
+	meshList[GEO_NPCROBOT]->textureID = LoadTGA("Image//scene3NPC.tga");
+
 	//plane
 	//meshList[GEO_PLANE] = MeshBuilder::GenerateOBJ("plane", "OBJ//plane.obj");
 	//meshList[GEO_PLANE]->textureID = LoadTGA("Image//plane.tga");
@@ -319,8 +322,9 @@ void scene2_SP2::Init()
 		}
 	}
 
-	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 40, 40, camera, "NPC data//NPC_4.txt");
+	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 10, 40, camera, "NPC data//NPC_4.txt");
 	robotNPC2.Init("robotNPC2", 6, Vector3(800, 0, 800), 40, 40, camera, "NPC data//NPC_5.txt");
+	robotNPC3.Init("robotNPC3", 6, Vector3(-700, 0, 100), 40, 40, camera, "NPC data//NPC_6.txt");
 	//NumpadNPC.Init("numpad", 1, Vector3(22, 25, 40), 40, 40, camera, "NPC data//NPC_6.txt");
 	//diamondNPC.Init("diamondNPC", 6, Vector3(900,200,800), 80, 80, camera, "NPC data//NPC_5.txt");
 
@@ -369,6 +373,7 @@ void scene2_SP2::Update(double dt)
 	BoxesAnimation(dt);
 	robotNPC1.update(dt);
 	robotNPC2.update(dt);
+	robotNPC3.update(dt);
 	//diamondNPC.update(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
@@ -1528,6 +1533,31 @@ void scene2_SP2::RenderNPC()
 		}
 	}
 
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "npc3") {
+			modelStack.PushMatrix();
+			//modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Translate(robotNPC3.NPC_getposition_x(), robotNPC3.NPC_getposition_y(), robotNPC3.NPC_getposition_z());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_NPCROBOT], true);
+			if (robotNPC3.interaction() == true)
+			{
+				if (!Application::IsKeyPressed('E'))
+				{
+					renderDialogueBox("Prankster", robotNPC3.getDialogue(true));
+				}
+				else
+				{
+					renderDialogueBox("Prankster", robotNPC3.getDialogue(false));
+				}
+
+			}
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
 	
 }
 
@@ -2019,7 +2049,7 @@ void scene2_SP2::NPCAnimation(double dt)
 		{
 			change2 = true;
 		}
-		else if (change == true && NPCrotating2 > -2)
+		else if (change2 == true && NPCrotating2 > -2)
 		{
 			change2 = false;
 		}

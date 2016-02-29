@@ -72,6 +72,9 @@ class scene2_SP2 : public Scene
 		GEO_ASTEROID,
 		GEO_ASTEROID2,
 
+		//npcrobot
+		GEO_NPCROBOT,
+
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
         GEO_PLANET_GROUND,
@@ -230,6 +233,7 @@ private:
 	NumPad Numpad;
 	NPC robotNPC1;
 	NPC robotNPC2;
+	NPC robotNPC3;
 	//NPC NumpadNPC;
 	
 
