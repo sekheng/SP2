@@ -86,7 +86,8 @@ class sceneSP2 : public Scene
 		GEO_BUILDINGBLUE,
 		//SpaceShuttle
 		GEO_SPACESHUTTLE,
-
+		//light button
+		GEO_BUTTON,
 		//Barrel
 		GEO_BARREL,
 
@@ -216,7 +217,7 @@ private:
     Quest Four;
 
 	StationScene door;
-	float doorSpeed;
+	float lightSwitch;
 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
@@ -226,8 +227,8 @@ private:
     void RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void TextSlowDown(double dt);
     void QuestCompleteCheck();
-    void RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z);
-
+    void RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z, float rotate_x, float rotate_y, float rotate_z);
+    void RenderTutorialScreen();
     double framePerSecond;
     float screenWidth, screenHeight;
 
@@ -280,6 +281,9 @@ private:
     //music updates
     double musicTimeDelay;
     //music updates
+
+    //show tutorial screen
+    bool tutorialscreen;
 };
 
 

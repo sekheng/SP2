@@ -189,7 +189,6 @@ void Application::Run()
 
     musics = new BGMDriven();
     musics->init();
-    //musics->playDarthVaderBackground();
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
 	scenario3->Init();
@@ -205,8 +204,9 @@ void Application::Run()
     loadingScreen->Render();
     glfwSwapBuffers(m_window);
 
-    scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
+	scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
 	scenario1->Init();
+
 
     scene = scenario1;
 

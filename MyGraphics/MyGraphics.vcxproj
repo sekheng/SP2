@@ -154,6 +154,8 @@
     <Text Include="NPC data\Najib.txt" />
     <Text Include="NPC data\NPC_1.txt" />
     <Text Include="NPC data\NPC_2.txt" />
+    <Text Include="rot_civ\rot_civ_dialogues.txt" />
+    <Text Include="rot_civ\rot_civ_stuff.txt" />
     <Text Include="scenario1Driven\objects.txt" />
     <Text Include="scenario2Driven\objects.txt" />
     <Text Include="scenario2Driven\quicktimeevent.txt" />

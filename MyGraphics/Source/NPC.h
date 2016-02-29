@@ -33,6 +33,7 @@ public:
     bool interaction();
     bool quest_given();
     string quest_complete();
+    short get_LineOfDialogue();
 private:
     Vector3 NPC_pos;
     vector<string> Dialogues;

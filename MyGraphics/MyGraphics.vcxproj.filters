@@ -37,6 +37,9 @@
     <Filter Include="scenario3Driven">
       <UniqueIdentifier>{b7cfb7db-df03-4161-8216-2fb93f5866b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="rot_civ">
+      <UniqueIdentifier>{45823145-7a69-43bf-8e1d-e307a04d9747}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\Texture.vertexshader">
@@ -263,6 +266,12 @@
     </Text>
     <Text Include="scenario2Driven\quicktimeevent.txt">
       <Filter>scenario2Driven</Filter>
+    </Text>
+    <Text Include="rot_civ\rot_civ_dialogues.txt">
+      <Filter>rot_civ</Filter>
+    </Text>
+    <Text Include="rot_civ\rot_civ_stuff.txt">
+      <Filter>rot_civ</Filter>
     </Text>
   </ItemGroup>
 </Project>

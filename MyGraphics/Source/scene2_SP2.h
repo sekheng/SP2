@@ -19,6 +19,7 @@ This is for landing on the vault
 #include "rot_civ.h"
 #include "NumPad.h"
 #include "creditScene.h"
+#include "NPC.h"
 
 
 /******************************************************************************/
@@ -60,9 +61,16 @@ class scene2_SP2 : public Scene
 		GEO_BIGDIAMOND,
 		GEO_SMALLDIAMOND,
 
+		GEO_BIGDIAMOND2,
+		GEO_SMALLDIAMOND2,
+
 		//NPC
 		GEO_NPCUPPER,
 		GEO_NPCLOWER,
+
+		//asteroid
+		GEO_ASTEROID,
+		GEO_ASTEROID2,
 
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
@@ -157,11 +165,14 @@ private:
 	bool smalldiamondrotate;
 	bool NPCrotate;
 	bool NPCrotate2;
+	bool NPCrotate3;
 	bool boxesappear;
 	bool boxesappear2;
+	bool boxesappear3;
 	bool boxestransfer;
 	bool change;
 	bool change2;
+	bool change3;	
 	
     float LSPEED = 10.f;
 	float wheelturning;
@@ -174,8 +185,10 @@ private:
 	float smalldiamondrotating;
 	float NPCrotating;
 	float NPCrotating2;
+	float NPCrotating3;
 	float boxesrotating;
 	float boxesrotating2;
+	float boxesrotating3;
 	
 	
 
@@ -195,7 +208,8 @@ private:
 	void RenderDiamond();
 	void RenderNPC();
 	void RenderBoxes();
-
+	void RenderPlane();
+	void RenderAsteroid();
 	
 	//animation function
 	void VaultAnimation(double dt);
@@ -214,6 +228,9 @@ private:
 	Light light[2];
     Camera3 camera;
 	NumPad Numpad;
+	NPC robotNPC1;
+	NPC robotNPC2;
+	//NPC NumpadNPC;
 	
 
     MS modelStack, viewStack, projectionStack;
@@ -253,6 +270,10 @@ private:
     void rollingCredits();
     //credits
     //Beginning cinematic
+
+    //For 3D effects of the music
+    double update3DPos;
+    //For 3D effects of the music
 };
 
 #endif
