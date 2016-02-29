@@ -164,11 +164,14 @@ private:
 	bool smalldiamondrotate;
 	bool NPCrotate;
 	bool NPCrotate2;
+	bool NPCrotate3;
 	bool boxesappear;
 	bool boxesappear2;
+	bool boxesappear3;
 	bool boxestransfer;
 	bool change;
 	bool change2;
+	bool change3;
 	
     float LSPEED = 10.f;
 	float wheelturning;
@@ -181,8 +184,10 @@ private:
 	float smalldiamondrotating;
 	float NPCrotating;
 	float NPCrotating2;
+	float NPCrotating3;
 	float boxesrotating;
 	float boxesrotating2;
+	float boxesrotating3;
 	
 	
 
@@ -222,7 +227,7 @@ private:
     Camera3 camera;
 	NumPad Numpad;
 	NPC robotNPC1;
-	NPC diamondNPC;
+	NPC robotNPC2;
 	
 
     MS modelStack, viewStack, projectionStack;

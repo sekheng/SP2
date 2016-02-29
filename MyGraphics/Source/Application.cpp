@@ -193,7 +193,7 @@ void Application::Run()
 
 
     scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	scenario1->Init();
+	//scenario1->Init();
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
 	scenario3->Init();

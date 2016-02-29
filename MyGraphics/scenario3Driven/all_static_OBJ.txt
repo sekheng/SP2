@@ -167,16 +167,16 @@ boundaryRadiusX,20
 boundaryRadiusZ,20
 
 Name,npcupper3
-objectX,-530
+objectX,800
 objectY,0
-objectZ,50
+objectZ,800
 boundaryRadiusX,0
 boundaryRadiusZ,0
 
 Name,npclower3
-objectX,-530
+objectX,800
 objectY,0
-objectZ,50
+objectZ,800
 boundaryRadiusX,20
 boundaryRadiusZ,20
 
@@ -191,6 +191,13 @@ Name,boxes9_2
 objectX,35
 objectY,0
 objectZ,-300
+boundaryRadiusX,0
+boundaryRadiusZ,0
+
+Name,boxes9_3
+objectX,800
+objectY,0
+objectZ,800
 boundaryRadiusX,0
 boundaryRadiusZ,0
 
