@@ -352,8 +352,8 @@ void sceneSP2::Init()
 	meshList[GEO_BUTTON]->material = MaterialBuilder::GenerateLambert();
 
     //NPC
-    meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
-    meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
+    meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android_2.obj");
+    meshList[GEO_NPC1]->textureID = LoadTGA("Image//android_2_blue.tga");
 	meshList[GEO_NPC1]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_NPC1]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_NPC1]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
@@ -362,6 +362,14 @@ void sceneSP2::Init()
     //NPC
 	meshList[GEO_NPC_QUEST2] = MeshBuilder::GenerateOBJ("Victor", "OBJ//android.obj");
 	meshList[GEO_NPC_QUEST2]->textureID = LoadTGA("Image//androidRed.tga");
+
+    //Sek Heng NPC
+    meshList[GEO_NPC_QUEST1] = MeshBuilder::GenerateOBJ("Sek Heng", "OBJ//android_2.obj");
+    meshList[GEO_NPC_QUEST1]->textureID = LoadTGA("Image//android_2_green.tga");
+    meshList[GEO_NPC_QUEST1]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+    meshList[GEO_NPC_QUEST1]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+    meshList[GEO_NPC_QUEST1]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+    meshList[GEO_NPC_QUEST1]->material.kShininess = 1.0f;
 
 
     meshList[GEO_INVIS_CURSOR] = MeshBuilder::GenerateSphere("invisible cursor", Color(0.5, 0.5, 0.5));
@@ -1713,7 +1721,7 @@ void sceneSP2::RenderQuestObjects()
 void sceneSP2::renderingSekHeng() {
     modelStack.PushMatrix();
     modelStack.Translate(sek_heng_.getObjectposX(), sek_heng_.getObjectposY(), sek_heng_.getObjectposZ());
-    renderMesh(meshList[GEO_NPC1], true);
+    renderMesh(meshList[GEO_NPC_QUEST1], true);
     modelStack.PopMatrix();
     if (sek_heng_.interaction() == false) {
         renderDialogueBox(sek_heng_.getName(), sek_heng_.returnDialogue());
