@@ -16,9 +16,14 @@ void BGMDriven::init() {
         engine->addSoundSourceFromFile("music//Star Wars- The Imperial March (Darth Vader's Theme).ogg");
     GateEffectSource =
         engine->addSoundSourceFromFile("music//electric_door_opening_2.ogg");
+    StarWarsTheme =
+        engine->addSoundSourceFromFile("music//John Williams - Star Wars Main Theme (FULL).ogg");
+
+    //setting volumes for each of the sounds source
+    DarthVaderbackGround->setDefaultVolume(0.3f);
+    StarWarsTheme->setDefaultVolume(0.5f);
 
     ZeBackgroundMusic = engine->play2D(DarthVaderbackGround, true, false, true);
-    ZeBackgroundMusic->setVolume(0.1f);
 
     GateEffect = engine->play3D(GateEffectSource, vec3df(0, 0, 0), false, true, true);
 }

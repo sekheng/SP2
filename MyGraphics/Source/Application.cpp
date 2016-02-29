@@ -188,7 +188,7 @@ void Application::Run()
     //rendering just the loading screen
 
     musics = new BGMDriven();
-    //musics->init();
+    musics->init();
     //musics->playDarthVaderBackground();
 
 

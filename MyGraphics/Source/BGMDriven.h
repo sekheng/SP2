@@ -15,8 +15,11 @@ public:
     void init();
 
     void updatePlayerPos(vec3df pos, vec3df target, vec3df up);
-
+    
+    //background musics
     void playDarthVaderBackground();
+
+    //the sound effects
     void playGateEffect(vec3df pos);
 
 private:
@@ -25,6 +28,7 @@ private:
     ISoundEngine *engine;
     ISoundSource *DarthVaderbackGround;
     ISoundSource *GateEffectSource;
+    ISoundSource *StarWarsTheme;
 
     //these pointers make it clear which music is currently being played
     ISound *ZeBackgroundMusic;
