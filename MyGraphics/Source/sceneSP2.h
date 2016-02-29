@@ -86,7 +86,8 @@ class sceneSP2 : public Scene
 		GEO_BUILDINGBLUE,
 		//SpaceShuttle
 		GEO_SPACESHUTTLE,
-
+		//light button
+		GEO_BUTTON,
 		//Barrel
 		GEO_BARREL,
 
@@ -216,7 +217,7 @@ private:
     Quest Four;
 
 	StationScene door;
-	float doorSpeed;
+	float lightSwitch;
 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);

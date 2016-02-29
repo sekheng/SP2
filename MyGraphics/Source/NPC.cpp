@@ -26,7 +26,6 @@ void NPC::Init(string name, short NumberofDialogue ,Vector3 pos, float boundaryX
     cam_pointer = &camera_address;
     bound_x = boundaryX;
     bound_z = boundaryZ;
-    time = 0;
     dialogue_switch = 0;
     dialogue_reset = false;
     time = 0;
@@ -51,7 +50,7 @@ void NPC::Init(string name, short NumberofDialogue ,Vector3 pos, float boundaryX
         }
         fileStream.close();
     }
-    text_delay = 0.15f; // set the delay for text
+    text_delay = 0.5f; // set the delay for text
 
 }
 /*********************************************************/
