@@ -72,6 +72,9 @@ class scene2_SP2 : public Scene
 		GEO_ASTEROID,
 		GEO_ASTEROID2,
 
+		//npcrobot
+		GEO_NPCROBOT,
+
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
         GEO_PLANET_GROUND,
@@ -246,6 +249,7 @@ private:
 	NumPad Numpad;
 	NPC robotNPC1;
 	NPC robotNPC2;
+	NPC robotNPC3;
 	//NPC NumpadNPC;
 	
 
@@ -256,6 +260,7 @@ private:
 	void RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate, float rotatex, float rotatey);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY);
+    void RenderImageOnScreen(Mesh* mesh, float x, float y, float z, float sizeX, float sizeY);
     void RenderUserInterface(Mesh* mesh, float size, float x, float y);
 
     double framePerSecond;
@@ -293,6 +298,12 @@ private:
 
     //minigame object
     minigame minigame;
+    
+    //displaying instructions
+    void renderIntruction();
+    double PreventSpammingInstruction;
+    bool displayInstruction;
+    //displaying instructions
 };
 
 #endif

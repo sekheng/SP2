@@ -273,6 +273,9 @@ void scene2_SP2::Init()
 	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("npc", "OBJ//rock.obj");
 	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//asteroid6.tga");
 
+	meshList[GEO_NPCROBOT] = MeshBuilder::GenerateOBJ("npcrobot", "OBJ//scene3NPC2.obj");
+	meshList[GEO_NPCROBOT]->textureID = LoadTGA("Image//scene3NPC.tga");
+
 	//plane
 	//meshList[GEO_PLANE] = MeshBuilder::GenerateOBJ("plane", "OBJ//plane.obj");
 	//meshList[GEO_PLANE]->textureID = LoadTGA("Image//plane.tga");
@@ -350,8 +353,9 @@ void scene2_SP2::Init()
 		}
 	}
 
-	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 40, 40, camera, "NPC data//NPC_4.txt");
+	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 10, 40, camera, "NPC data//NPC_4.txt");
 	robotNPC2.Init("robotNPC2", 6, Vector3(800, 0, 800), 40, 40, camera, "NPC data//NPC_5.txt");
+	robotNPC3.Init("robotNPC3", 6, Vector3(-700, 0, 100), 40, 40, camera, "NPC data//NPC_6.txt");
 	//NumpadNPC.Init("numpad", 1, Vector3(22, 25, 40), 40, 40, camera, "NPC data//NPC_6.txt");
 	//diamondNPC.Init("diamondNPC", 6, Vector3(900,200,800), 80, 80, camera, "NPC data//NPC_5.txt");
 
@@ -383,6 +387,9 @@ void scene2_SP2::Init()
     //For 3D effects of the music
 
     minigame.init();
+    PreventSpammingInstruction = 0;
+    displayInstruction = true;
+    //displaying instructions
 }
 
 /******************************************************************************/
@@ -405,9 +412,10 @@ void scene2_SP2::Update(double dt)
 	BoxesAnimation(dt);
 	robotNPC1.update(dt);
 	robotNPC2.update(dt);
+	robotNPC3.update(dt);
 	//diamondNPC.update(dt);
 
-    //minigame update
+	//minigame update
     if (Application::IsKeyPressed('Y') && minigame.minigame_started() == false)
     {
         minigame.update(dt, true);
@@ -420,8 +428,22 @@ void scene2_SP2::Update(double dt)
     {
         minigame.update(dt, false);
     }
+	
+    //displaying instructions
+    PreventSpammingInstruction += dt;
+    if (Numpad.NumpadRenderOnScreen()) {
+        if (Application::IsKeyPressed('T') && PreventSpammingInstruction > 0.4) {
+            if (displayInstruction) {
+                displayInstruction = false;
+            }
+            else {
+                displayInstruction = true;
+            }
+            PreventSpammingInstruction = 0;
+        }
+    }
+    //displaying instructions
 
-    
 
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
@@ -683,27 +705,38 @@ void scene2_SP2::Render()
 	
 
     if (beginIamYourFather == false && Numpad.NumpadRenderOnScreen())
-	{
-		RenderNumPadOnScreen(meshList[GEO_NUMPAD], 16, 40, 30, 0, 0,1,0);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 40, 30, 2, 0 + Numpad.getfirstrotate(),1, 0);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 55, 30, 2, 0 + Numpad.getsecondrotate(), 1, 0);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 70, 30, 2, 0 + Numpad.getthirdrotate(), 1, 0);
-		RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 85, 30, 2, 0 + Numpad.getfourthrotate(), 1, 0);
-		RenderNumPadOnScreen(meshList[GEO_ARROW], 3, Numpad.getarrowposition(), 3, 7, -90, 0, 1); //19.5 34.5 49.5 64.5
-	}
+    {
+        if (displayInstruction == true) {
+            RenderImageOnScreen(meshList[GEO_TEXT_BOX], 30, 40, 30);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Arrow Keys to move the arrow", Color(0, 1, 0), 3, 5, 10);
+        }
+        RenderNumPadOnScreen(meshList[GEO_NUMPAD], 16, 40, 30, 0, 0, 1, 0);
+        RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 40, 30, 2, 0 + Numpad.getfirstrotate(), 1, 0);
+        RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 55, 30, 2, 0 + Numpad.getsecondrotate(), 1, 0);
+        RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 70, 30, 2, 0 + Numpad.getthirdrotate(), 1, 0);
+        RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 85, 30, 2, 0 + Numpad.getfourthrotate(), 1, 0);
+        RenderNumPadOnScreen(meshList[GEO_ARROW], 3, Numpad.getarrowposition(), 3, 7, -90, 0, 1); //19.5 34.5 49.5 64.5
+        if (displayInstruction == true) {
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Arrow Keys to move the arrow and turn the wheels", Color(0, 1, 0), 3, 3, 16);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press Enter to check for the result", Color(0, 1, 0), 3, 3, 14.5);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Move Away to exit from this view", Color(0, 1, 0), 3, 3, 13);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press 'T' to open/close this instruction", Color(0, 1, 0), 3, 3, 11.5);
+        }
+    }
 
 	if (Numpad.displayerror()) // if input wrong, display "Try Again!"
 	{
 			RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Try Again!", Color(1, 0, 0), 5, 6, 8);
 	}
 	//interaction text
-	if (Numpad.interactiontext()) // "Press 'C' to interact" appear
+    if (Numpad.NumpadRenderOnScreen() == false && Numpad.interactiontext()) // "Press 'C' to interact" appear
 	{
-		modelStack.PushMatrix();
-		modelStack.Translate(5, 10, 40);
-		modelStack.Scale(3, 3, 3);
-		RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
-		modelStack.PopMatrix();
+        renderDialogueBox("Numpad", "Press 'C' to interact");
+		//modelStack.PushMatrix();
+		//modelStack.Translate(5, 10, 40);
+		//modelStack.Scale(3, 3, 3);
+		//RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
+		//modelStack.PopMatrix();
 	}
     if (beginIamYourFather == true && moveToDeadPoolZ < -135) {
         renderEndingScreen();
@@ -713,11 +746,11 @@ void scene2_SP2::Render()
 
 	std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 19.f);
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.f);
 
     std::stringstream connectPosZ;
     connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 14.f);
 
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
@@ -1598,6 +1631,31 @@ void scene2_SP2::RenderNPC()
 		}
 	}
 
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "npc3") {
+			modelStack.PushMatrix();
+			//modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Translate(robotNPC3.NPC_getposition_x(), robotNPC3.NPC_getposition_y(), robotNPC3.NPC_getposition_z());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_NPCROBOT], true);
+			if (robotNPC3.interaction() == true)
+			{
+				if (!Application::IsKeyPressed('E'))
+				{
+					renderDialogueBox("Prankster", robotNPC3.getDialogue(true));
+				}
+				else
+				{
+					renderDialogueBox("Prankster", robotNPC3.getDialogue(false));
+				}
+
+			}
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
 	
 }
 
@@ -2090,7 +2148,7 @@ void scene2_SP2::NPCAnimation(double dt)
 		{
 			change2 = true;
 		}
-		else if (change == true && NPCrotating2 > -2)
+		else if (change2 == true && NPCrotating2 > -2)
 		{
 			change2 = false;
 		}
@@ -2233,6 +2291,29 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, 
     modelStack.LoadIdentity(); //Reset modelStack
 
     modelStack.Translate(x, y, 0);
+    modelStack.Scale(sizeX, sizeY, 1);
+    modelStack.Rotate(90, 1, 0, 0);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
+}
+
+void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float z, float sizeX, float sizeY) {
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, z);
     modelStack.Scale(sizeX, sizeY, 1);
     modelStack.Rotate(90, 1, 0, 0);
     renderMesh(mesh, false);

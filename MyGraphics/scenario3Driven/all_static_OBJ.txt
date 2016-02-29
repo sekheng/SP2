@@ -206,14 +206,14 @@ objectX,-35
 objectY,-13
 objectZ,-280
 boundaryRadiusX,10
-boundaryRadiusZ,10
+boundaryRadiusZ,30
 
 Name,normalboxes2
 objectX,70
 objectY,-13
 objectZ,-280
 boundaryRadiusX,10
-boundaryRadiusZ,10
+boundaryRadiusZ,30
 
 Name,asteroid
 objectX,400
@@ -334,3 +334,9 @@ objectZ,-200
 boundaryRadiusX,25
 boundaryRadiusZ,25
 
+Name,npc3
+objectX,-700
+objectY,0
+objectZ,100
+boundaryRadiusX,20
+boundaryRadiusZ,20

@@ -54,9 +54,6 @@ void BGMDriven::playDarthVaderBackground() {
         if (!engine->isCurrentlyPlaying(DarthVaderbackGround)) {
             ZeBackgroundMusic->stop();
             ZeBackgroundMusic = engine->play2D(DarthVaderbackGround, true, false, true);
-            if (ZeBackgroundMusic->getVolume() != 0.3f && soundEffectArePlaying() == false) {
-                ZeBackgroundMusic->setVolume(0.3f);
-            }
         }
     }
 }
@@ -85,9 +82,6 @@ void BGMDriven::playJohnCenaBackground() {
         if (!engine->isCurrentlyPlaying(john_cenaSource)) {
             ZeBackgroundMusic->stop();
             ZeBackgroundMusic = engine->play2D(john_cenaSource, true, false, true);
-            if (ZeBackgroundMusic->getVolume() != 0.3f && soundEffectArePlaying() == false) {
-                ZeBackgroundMusic->setVolume(0.3f);
-            }
         }
     }
 }
@@ -97,9 +91,6 @@ void BGMDriven::playPokemonBattleBackground() {
         if (!engine->isCurrentlyPlaying(PokemonGymBattleSource)) {
             ZeBackgroundMusic->stop();
             ZeBackgroundMusic = engine->play2D(PokemonGymBattleSource, true, false, true);
-            if (ZeBackgroundMusic->getVolume() != 0.3f && soundEffectArePlaying() == false) {
-                ZeBackgroundMusic->setVolume(0.3f);
-            }
         }
     }
 }
@@ -109,9 +100,6 @@ void BGMDriven::playStarWarsThemeBackground() {
         if (!engine->isCurrentlyPlaying(StarWarsTheme)) {
             ZeBackgroundMusic->stop();
             ZeBackgroundMusic = engine->play2D(StarWarsTheme, true, false, true);
-            if (ZeBackgroundMusic->getVolume() != 0.3f && soundEffectArePlaying() == false) {
-                ZeBackgroundMusic->setVolume(0.3f);
-            }
         }
     }
 }
@@ -121,9 +109,6 @@ void BGMDriven::playWarpBackground() {
         if (!engine->isCurrentlyPlaying(SpaceWarpSource)) {
             ZeBackgroundMusic->stop();
             ZeBackgroundMusic = engine->play2D(SpaceWarpSource, true, false, true);
-            if (ZeBackgroundMusic->getVolume() != 0.3f && soundEffectArePlaying() == false) {
-                ZeBackgroundMusic->setVolume(0.3f);
-            }
         }
     }
 }
@@ -176,9 +161,6 @@ void BGMDriven::playLovelyLullaby() {
         if (!engine->isCurrentlyPlaying(LovelyLullabySource)) {
             ZeBackgroundMusic->stop();
             ZeBackgroundMusic = engine->play2D(LovelyLullabySource, true, false, true);
-            if (ZeBackgroundMusic->getVolume() != 0.5f && soundEffectArePlaying() == false) {
-                ZeBackgroundMusic->setVolume(0.5f);
-            }
         }
     }
 }

@@ -352,8 +352,8 @@ void sceneSP2::Init()
 	meshList[GEO_BUTTON]->material = MaterialBuilder::GenerateLambert();
 
     //NPC
-    meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
-    meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
+    meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Guan Hui", "OBJ//android_2.obj");
+    meshList[GEO_NPC1]->textureID = LoadTGA("Image//android_2_blue.tga");
 	meshList[GEO_NPC1]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_NPC1]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_NPC1]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
@@ -363,6 +363,13 @@ void sceneSP2::Init()
 	meshList[GEO_NPC_QUEST2] = MeshBuilder::GenerateOBJ("Victor", "OBJ//android.obj");
 	meshList[GEO_NPC_QUEST2]->textureID = LoadTGA("Image//androidRed.tga");
 
+    //sek heng NPC
+    meshList[GEO_NPC_QUEST1] = MeshBuilder::GenerateOBJ("Sek Heng", "OBJ//android_2.obj");
+    meshList[GEO_NPC_QUEST1]->textureID = LoadTGA("Image//android_2_green.tga");
+    meshList[GEO_NPC_QUEST1]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
+    meshList[GEO_NPC_QUEST1]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
+    meshList[GEO_NPC_QUEST1]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
+    meshList[GEO_NPC_QUEST1]->material.kShininess = 1.0f;
 
     meshList[GEO_INVIS_CURSOR] = MeshBuilder::GenerateSphere("invisible cursor", Color(0.5, 0.5, 0.5));
 
@@ -402,11 +409,11 @@ void sceneSP2::Init()
 	camera.InitObjects("scenario1Driven//objects.txt");
 
     //initialise npc
-    QUEST1.Init("First NPC",19, Vector3(-270, 0, 194), 5, 5, camera, "NPC data//NPC_1.txt");
+    QUEST1.Init("First NPC",20, Vector3(-270, 0, 194), 5, 5, camera, "NPC data//NPC_1.txt");
     //initialise quest
-    One.Init("First quest", camera, 2, Vector3(-270, 0, 164),5, Vector3(-270 ,0, 134),5);
+	One.Init("First quest", camera, 2, Vector3(314, 0, 314), 5, Vector3(135, 0, 304), 5);
 
-	QUEST2.Init("Sec NPC",7, Vector3(-150, 0, -300), 5, 5, camera, "NPC data//NPC_2.txt");
+	QUEST2.Init("Sec NPC",16, Vector3(-150, 0, -300), 5, 5, camera, "NPC data//NPC_2.txt");
 	Two.Init("Sec quest", camera, 1, Vector3(-167, 0, 297), 5, Vector3(0, 0, 0), 5);
 
     //Sek Heng sucks 's stuff and initialization
@@ -418,7 +425,7 @@ void sceneSP2::Init()
 
 	//initialise npc3
 	//QUEST3.Init("Chunfei NPChead", Vector3(0, 5.5, 250), 2, 2, camera, "NPC data//NPC_3.txt");
-	QUEST3.Init("Chunfei NPCbody", 5,Vector3(0, 0, 250), 10, 10, camera, "NPC data//NPC_3.txt");
+	QUEST3.Init("Chunfei NPCbody", 12,Vector3(0, 0, 250), 10, 10, camera, "NPC data//NPC_3.txt");
 	//initialise quest3
 	Three.Init("Third quest", camera, 1, Vector3(300, 0, -140), 5, Vector3(0, 0, 0), 0); 
 
@@ -1014,51 +1021,6 @@ void sceneSP2::Render()
     //Set projection matrix to perspective mode
     projection.SetToPerspective(45.0f, 4.0f / 3.0f, 0.1f, 1000.0f); //FOV, Aspect Ratio, Near plane, Far plane
 
-
-   /* if (light[0].type == Light::LIGHT_DIRECTIONAL)
-    {
-        Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
-        Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
-    }
-    else if (light[0].type == Light::LIGHT_SPOT)
-    {
-        Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-        Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
-        glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-    }
-    else
-    {
-        Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-    }
-
-    if (on_light) {
-        Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-        modelStack.PushMatrix();
-        modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
-        modelStack.Scale(0.5f, 0.5f, 0.5f);
-        renderMesh(meshList[GEO_LIGHTBALL], false);
-        modelStack.PopMatrix();
-    }
-
-	if (light[1].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[1].position;
-		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[1].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT1_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-
-		modelStack.PushMatrix();
-		modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
-		modelStack.Scale(0.5f, 0.5f, 0.5f);
-		renderMesh(meshList[GEO_LIGHTBALL], false);
-		modelStack.PopMatrix();
-	}*/
-
-
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -1077,7 +1039,7 @@ void sceneSP2::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
-
+	
 	if (light[1].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[1].position.x, light[1].position.y, light[1].position.z);
@@ -1565,6 +1527,7 @@ void sceneSP2::RenderNPC()
     
     modelStack.PushMatrix();
     modelStack.Translate(QUEST1.NPC_getposition_x(), QUEST1.NPC_getposition_y(), QUEST1.NPC_getposition_z());
+	modelStack.Scale(1.5, 1.5, 1.5);
     renderMesh(meshList[GEO_NPC1], true);
     if (quest_stage >= 0)
     {
@@ -1638,13 +1601,15 @@ void sceneSP2::RenderQuestObjects()
         {
             modelStack.PushMatrix();
             modelStack.Translate(One.getObject1_X(), 0, One.getObject1_Z());
+			modelStack.Scale(0.2f, 0.2f, 0.2f);
             renderMesh(meshList[GEO_CONTAINER], true);
             modelStack.PopMatrix();
         }
         if (One.get_numberof_items() == 2 && !One.Item2collected())
         {
             modelStack.Translate(One.getObject2_X(), 0, One.getObject2_Z());
-            renderMesh(meshList[GEO_GASOLINE], true);
+			modelStack.Scale(0.2f, 0.2f, 0.2f);
+			renderMesh(meshList[GEO_CONTAINER], true);
         }
         modelStack.PopMatrix();
     }
@@ -1666,7 +1631,7 @@ void sceneSP2::RenderQuestObjects()
     if (One.get_numberof_items() == 2 && One.Item2collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.7f, 1.4f, 2, -1, 90, 90, 90);
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "left", 0.05f, 1.3f, 2, -0.8f, 0, 0, 0);
     }
 
     //quest 2
@@ -1674,6 +1639,7 @@ void sceneSP2::RenderQuestObjects()
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(Two.getObject1_X(), 0, Two.getObject1_Z());
+		modelStack.Scale(2, 2, 2);
 		renderMesh(meshList[ GEO_GASOLINE], true);
 		modelStack.PopMatrix();
 	}
@@ -1713,7 +1679,8 @@ void sceneSP2::RenderQuestObjects()
 void sceneSP2::renderingSekHeng() {
     modelStack.PushMatrix();
     modelStack.Translate(sek_heng_.getObjectposX(), sek_heng_.getObjectposY(), sek_heng_.getObjectposZ());
-    renderMesh(meshList[GEO_NPC1], true);
+	modelStack.Scale(1.5, 1.5, 1.5);
+    renderMesh(meshList[GEO_NPC_QUEST1], true);
     modelStack.PopMatrix();
     if (sek_heng_.interaction() == false) {
         renderDialogueBox(sek_heng_.getName(), sek_heng_.returnDialogue());

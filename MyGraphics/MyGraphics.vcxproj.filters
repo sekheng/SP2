@@ -279,5 +279,8 @@
     <Text Include="rot_civ\rot_civ_stuff.txt">
       <Filter>rot_civ</Filter>
     </Text>
+    <Text Include="NPC data\NPC_3.txt">
+      <Filter>NPC data</Filter>
+    </Text>
   </ItemGroup>
 </Project>
