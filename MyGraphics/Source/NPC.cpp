@@ -198,5 +198,6 @@ string NPC::quest_complete()
 
 short NPC::get_LineOfDialogue()
 {
-    return line_of_dialogue;
+    return dialogue_switch;
 }
+

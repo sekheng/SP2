@@ -2451,11 +2451,11 @@ void sceneSP2::RenderTutorialScreen()
     
     if (tutorialscreen == true)
     {
-        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 43, 34, 30, 15);
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 43, 31, 30, 16);
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "WASD for movement", Color(0.039f, 0.937f, 0.702f), 2, 15, 19);
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Use the mouse to look around", Color(0.039f, 0.937f, 0.702f), 2, 15, 17);
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hold Shift to run", Color(0.039f, 0.937f, 0.702f), 2, 15, 15);
-        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press T to view this again", Color(0.039f, 0.937f, 0.702f), 2, 15, 15);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press T to view this again", Color(0.039f, 0.937f, 0.702f), 2, 15, 13);
 
     }
 }
