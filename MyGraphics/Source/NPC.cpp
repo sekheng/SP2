@@ -200,4 +200,3 @@ short NPC::get_LineOfDialogue()
 {
     return dialogue_switch;
 }
-
