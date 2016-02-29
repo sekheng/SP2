@@ -68,6 +68,18 @@ float minigame::piece9()
 {
     piece9_rotate = 90 * piece9_state;
 }
+void minigame::updatePieceState()
+{
+    piece1();
+    piece2();
+    piece3();
+    piece4();
+    piece5();
+    piece6();
+    piece7();
+    piece8();
+    piece9();
+}
 void minigame::selection_pointer()
 {
     //controlling the selector
@@ -173,7 +185,29 @@ void minigame::changePieceRotation()
     }
 }
 
+
+
+bool minigame::result()
+{
+    if (piece1_state == 0 &&
+        piece2_state == 0 &&
+        piece3_state == 0 &&
+        piece4_state == 0 &&
+        piece5_state == 0 &&
+        piece6_state == 0 &&
+        piece7_state == 0 &&
+        piece8_state == 0 &&
+        piece9_state == 0
+        )
+    {
+        return true;
+    }
+    else return false;
+}
 void minigame::update(double dt)
 {
     selection_pointer();
+    changePieceRotation();
+    updatePieceState();
+    result();
 }

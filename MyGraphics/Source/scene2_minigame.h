@@ -21,6 +21,8 @@ public:
     void selection_pointer();
     void changePieceRotation();
     void update(double dt);
+    bool result();
+    void updatePieceState();
 private:
     short piece_state;
     float piece1_rotate;
