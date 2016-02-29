@@ -95,6 +95,19 @@ class scene2_SP2 : public Scene
         //ending screen
         GEO_ENDING_SCREEN,
         //ending screen
+
+        //minigame
+        GEO_MINIGAME_PIECE_1,
+        GEO_MINIGAME_PIECE_2,
+        GEO_MINIGAME_PIECE_3,
+        GEO_MINIGAME_PIECE_4,
+        GEO_MINIGAME_PIECE_5,
+        GEO_MINIGAME_PIECE_6,
+        GEO_MINIGAME_PIECE_7,
+        GEO_MINIGAME_PIECE_8,
+        GEO_MINIGAME_PIECE_9,
+
+
         NUM_GEOMETRY,
     };
 

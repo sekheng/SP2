@@ -290,6 +290,37 @@ void scene2_SP2::Init()
     //DeadPOOL
     meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("Dead Pool", "OBJ//DeadPool.obj");
     meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//DeadPool.tga");
+
+    //minigame pieces
+    meshList[GEO_MINIGAME_PIECE_1] = MeshBuilder::GenerateOBJ("Minigame Piece 1", "OBJ//minigame//minigame_piece1.obj");
+    meshList[GEO_MINIGAME_PIECE_1]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    
+    meshList[GEO_MINIGAME_PIECE_2] = MeshBuilder::GenerateOBJ("Minigame Piece 2", "OBJ//minigame//minigame_piece2.obj");
+    meshList[GEO_MINIGAME_PIECE_2]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    
+    meshList[GEO_MINIGAME_PIECE_3] = MeshBuilder::GenerateOBJ("Minigame Piece 3", "OBJ//minigame//minigame_piece3.obj");
+    meshList[GEO_MINIGAME_PIECE_3]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    
+    meshList[GEO_MINIGAME_PIECE_4] = MeshBuilder::GenerateOBJ("Minigame Piece 4", "OBJ//minigame//minigame_piece4.obj");
+    meshList[GEO_MINIGAME_PIECE_4]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    
+    meshList[GEO_MINIGAME_PIECE_5] = MeshBuilder::GenerateOBJ("Minigame Piece 5", "OBJ//minigame//minigame_piece5.obj");
+    meshList[GEO_MINIGAME_PIECE_5]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    
+    meshList[GEO_MINIGAME_PIECE_6] = MeshBuilder::GenerateOBJ("Minigame Piece 6", "OBJ//minigame//minigame_piece6.obj");
+    meshList[GEO_MINIGAME_PIECE_6]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    
+    meshList[GEO_MINIGAME_PIECE_7] = MeshBuilder::GenerateOBJ("Minigame Piece 7", "OBJ//minigame//minigame_piece7.obj");
+    meshList[GEO_MINIGAME_PIECE_7]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    
+    meshList[GEO_MINIGAME_PIECE_8] = MeshBuilder::GenerateOBJ("Minigame Piece 8", "OBJ//minigame//minigame_piece8.obj");
+    meshList[GEO_MINIGAME_PIECE_8]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    
+    meshList[GEO_MINIGAME_PIECE_9] = MeshBuilder::GenerateOBJ("Minigame Piece 9", "OBJ//minigame//minigame_piece9.obj");
+    meshList[GEO_MINIGAME_PIECE_9]->textureID = LoadTGA("Image//minigame//minigame.tga");
+
+
+
     on_light = true;
 
     Mtx44 projection;
