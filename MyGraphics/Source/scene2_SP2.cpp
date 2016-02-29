@@ -1811,7 +1811,7 @@ void scene2_SP2::NPCAnimation(double dt)
 		change = change2 = false;
 	}*/
 		//npc3 animation
-		if (robotNPC2.interaction() == true)
+		if (robotNPC2.interaction() && robotNPC2.get_LineOfDialogue() == 5)
 		{
 			//NPCrotating3 += 50 * (float)(dt);
 			if (NPCrotate3 == false)
@@ -1885,7 +1885,7 @@ void scene2_SP2::BoxesAnimation(double dt)
 		}
 
 		//box3
-		if (robotNPC2.interaction())
+		if (robotNPC2.interaction() && robotNPC2.get_LineOfDialogue()==5)
 		{
 			if (boxesappear3 == false)
 			{
