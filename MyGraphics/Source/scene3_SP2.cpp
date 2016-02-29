@@ -123,7 +123,7 @@ void scene3_SP2::Init()
     light[0].type = Light::LIGHT_DIRECTIONAL;
     light[0].position.Set(0, 1200, 0);
     light[0].color.Set(1, 1, 1);
-    light[0].power = 0.5f;
+    light[0].power = 1.f;
     light[0].kC = 1.f;
     light[0].kL = 0.01f;
     light[0].kQ = 0.01f;

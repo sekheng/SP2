@@ -492,27 +492,6 @@ void sceneSP2::Update(double dt)
     }
 
     //animating particle cube
-    //for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
-    //    if ((*it).getName() == "ParticleCube1" ||
-    //        (*it).getName() == "ParticleCube2" ||
-    //        (*it).getName() == "ParticleCube3" ||
-    //        (*it).getName() == "ParticleCube4" || 
-    //        (*it).getName() == "ParticleCube5" || 
-    //        (*it).getName() == "ParticleCube6" || 
-    //        (*it).getName() == "ParticleCube7" || 
-    //        (*it).getName() == "ParticleCube8" || 
-    //        (*it).getName() == "ParticleCube9" || 
-    //        (*it).getName() == "ParticleCube10") {
-    //        if ((*it).objectPos.y < 40) {
-    //            (*it).objectPos.y += 3 * (float)(dt);
-    //        }
-    //        else {
-    //            (*it).objectPos.y = (*it).originalPos.y;
-    //            (*it).objectPos.x = Math::RandFloatMinMax(-3, 3);
-    //            (*it).objectPos.z = Math::RandFloatMinMax(-3, 3);
-    //        }
-    //    }
-    //}
     for (vector<objectsForDisplay>::iterator it = particleHandlers.begin(); it != particleHandlers.end(); ++it) {
                 if ((*it).objectPos.y < 40) {
                     (*it).objectPos.y += 3 * (float)(dt);
@@ -531,7 +510,7 @@ void sceneSP2::Update(double dt)
         Application::musics->updatePlayerPos(
             vec3df(camera.getCameraXcoord(), camera.getCameraYcoord(), camera.getCameraZcoord()),   //camera's position
             vec3df(camera.target.x, camera.target.y, camera.target.z),  //camera's target
-            vec3df(camera.up.x, camera.up.y, camera.up.z)
+            vec3df(camera.up.x, camera.up.y, camera.up.z)   //camera's up
             );
     }
     //music updates
