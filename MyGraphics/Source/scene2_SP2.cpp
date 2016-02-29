@@ -266,6 +266,13 @@ void scene2_SP2::Init()
 	meshList[GEO_NORMALBOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//boxes9.obj");
 	meshList[GEO_NORMALBOXES]->textureID = LoadTGA("Image//normalboxes.tga");
 
+	//asteroid
+	meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("npc", "OBJ//rock.obj");
+	meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//rock.tga");
+
+	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("npc", "OBJ//rock.obj");
+	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//asteroid6.tga");
+
 	//plane
 	//meshList[GEO_PLANE] = MeshBuilder::GenerateOBJ("plane", "OBJ//plane.obj");
 	//meshList[GEO_PLANE]->textureID = LoadTGA("Image//plane.tga");
@@ -314,6 +321,7 @@ void scene2_SP2::Init()
 
 	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 40, 40, camera, "NPC data//NPC_4.txt");
 	robotNPC2.Init("robotNPC2", 6, Vector3(800, 0, 800), 40, 40, camera, "NPC data//NPC_5.txt");
+	//NumpadNPC.Init("numpad", 1, Vector3(22, 25, 40), 40, 40, camera, "NPC data//NPC_6.txt");
 	//diamondNPC.Init("diamondNPC", 6, Vector3(900,200,800), 80, 80, camera, "NPC data//NPC_5.txt");
 
     //text box
@@ -598,7 +606,7 @@ void scene2_SP2::Render()
 	//render satellite
 	RenderSatellite();
 
-	//render rock
+	//render diamond
 	RenderDiamond();
 	
     //rendering DeadPOOL
@@ -610,6 +618,9 @@ void scene2_SP2::Render()
 
 	//render boxes
 	RenderBoxes();
+
+	//render asteroid
+	RenderAsteroid();
 	
 	//render plane
 	//RenderPlane();
@@ -662,9 +673,9 @@ void scene2_SP2::Render()
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 
-	std::stringstream input;
-	input << "FPS : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);
+	//std::stringstream input;
+	//input << "FPS : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
+	//RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);
 
 }
 
@@ -1018,6 +1029,7 @@ void scene2_SP2::RenderNumpad()
 		if (it.getName() == "numpad") {
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX()+23, it.getObjectposY(), it.getObjectposZ()-5);
+			//modelStack.Translate(NumpadNPC.NPC_getposition_x()+23, NumpadNPC.NPC_getposition_y(), NumpadNPC.NPC_getposition_z()-5);
 			modelStack.Rotate(dooropening, 0, 1, 0);
 
 			modelStack.PushMatrix();
@@ -1646,6 +1658,213 @@ void scene2_SP2::RenderBoxes()
 	
 }
 
+void scene2_SP2::RenderAsteroid()
+{
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25,0.25,0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid2") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid4") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid5") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid6") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid7") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid8") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid9") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid10") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid11") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid12") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid13") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid14") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid15") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "asteroid16") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "hintasteroid") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(0.25, 0.25, 0.25);
+			renderMesh(meshList[GEO_ASTEROID2], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+}
+
 void scene2_SP2::VaultAnimation(double dt)
 {
 	if (Numpad.NumpadVerify()==true)
@@ -1847,19 +2066,14 @@ void scene2_SP2::NPCAnimation(double dt)
 				}
 			}
 		}
-		else
-		{
-			NPCrotate3 = false;
-		}
-		
 		if (change3== false && NPCrotating3 >72)
 		{
 			change3 = true;
 		}
-		/*else if (change == true && NPCrotating3)
+		if (change3 == true && NPCrotating3 > 73)
 		{
-			change2 = false;
-		}*/
+			renderDialogueBox("Disaster", "I'm a Good Boy!");
+		}
 }
 
 void scene2_SP2::BoxesAnimation(double dt)
@@ -1919,30 +2133,7 @@ void scene2_SP2::BoxesAnimation(double dt)
 					boxesrotating3 = 0;
 				}
 			}
-		}
-		else
-		{
-			boxesappear3 = false;
-		}
-		
-
-		/*if (NPCrotate3 == false)
-		{
-			NPCrotating3 += 50 * (float)(dt);
-			if (NPCrotating3 >75)
-			{
-				NPCrotate3 = true;
-			}
-		}
-		else if (NPCrotate3 == true)
-		{
-			NPCrotating3 -= 50 * (float)(dt);
-			if (NPCrotating3 <= 0)
-			{
-				NPCrotating3 = 0;
-			}
-		}*/
-	
+		}	
 }
 
 void scene2_SP2::renderDeadPool() {

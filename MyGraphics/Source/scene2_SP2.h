@@ -68,8 +68,9 @@ class scene2_SP2 : public Scene
 		GEO_NPCUPPER,
 		GEO_NPCLOWER,
 
-		//plane
-		GEO_PLANE,
+		//asteroid
+		GEO_ASTEROID,
+		GEO_ASTEROID2,
 
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
@@ -171,7 +172,7 @@ private:
 	bool boxestransfer;
 	bool change;
 	bool change2;
-	bool change3;
+	bool change3;	
 	
     float LSPEED = 10.f;
 	float wheelturning;
@@ -208,6 +209,7 @@ private:
 	void RenderNPC();
 	void RenderBoxes();
 	void RenderPlane();
+	void RenderAsteroid();
 	
 	//animation function
 	void VaultAnimation(double dt);
@@ -228,6 +230,7 @@ private:
 	NumPad Numpad;
 	NPC robotNPC1;
 	NPC robotNPC2;
+	//NPC NumpadNPC;
 	
 
     MS modelStack, viewStack, projectionStack;
