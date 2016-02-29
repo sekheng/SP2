@@ -208,7 +208,7 @@ void Application::Run()
 	scenario1->Init();
 
 
-    scene = scenario1;
+    scene = scenario3;
 
     HWND hwnd = GetActiveWindow();
 
