@@ -107,7 +107,14 @@ Name,Cryostasis
 objectX,-275
 objectY,0
 objectZ,315
-boundaryRadiusX,30
+boundaryRadiusX,4
+boundaryRadiusZ,4
+
+Name,Button
+objectX,-265
+objectY,5
+objectZ,318
+boundaryRadiusX,4
 boundaryRadiusZ,4
 
 Name,Spaceshuttle

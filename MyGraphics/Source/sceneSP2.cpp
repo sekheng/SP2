@@ -291,6 +291,11 @@ void sceneSP2::Init()
 	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
 	meshList[GEO_LANDVEHICLE]->material = MaterialBuilder::GenerateLambert();
 
+	//land vehicle
+	meshList[GEO_BUTTON] = MeshBuilder::GenerateOBJ("Button", "OBJ//Button.obj");
+	meshList[GEO_BUTTON]->textureID = LoadTGA("Image//Button.tga");
+	meshList[GEO_BUTTON]->material = MaterialBuilder::GenerateLambert();
+
     //NPC
     meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Najib", "OBJ//android.obj");
     meshList[GEO_NPC1]->textureID = LoadTGA("Image//android.tga");
@@ -332,8 +337,6 @@ void sceneSP2::Init()
 
 	door.Init("Sek heng", Vector3(-30, 0, 40), camera, 5, 5);
 	door.getQuestStage();
-	doorSpeed = 0;
-	
 
 	camera.InitObjects("scenario1Driven//objects.txt");
 
@@ -371,6 +374,8 @@ void sceneSP2::Init()
     slowtxt = 0;
 
     quest_stage = 0;
+
+	lightSwitch = true;
 
     Quest1_finished = false;
     Quest2_finished = false;
@@ -473,6 +478,16 @@ void sceneSP2::Update(double dt)
         }
     }
 
+
+	if (door.roomLight() == true)
+	{
+		light[0].position.Set(-280, 40, 290);
+	}
+	else if (door.roomLight() == false)
+	{
+		light[0].position.Set(-500, 40, 290);
+	}
+
     //Sek Heng's stuff
     if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false
         || Application::IsKeyPressed('0')) {
@@ -528,6 +543,7 @@ void sceneSP2::Update(double dt)
     else {
         camera.Update(dt);
     }
+	door.update(dt);
     //check for tutorial screen
     if (Application::IsKeyPressed('W') ||
         Application::IsKeyPressed('A') ||
@@ -867,6 +883,8 @@ void sceneSP2::RenderStation()
 		}
 	}
 
+
+
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "Cryostasis") {
 			modelStack.PushMatrix();
@@ -877,6 +895,22 @@ void sceneSP2::RenderStation()
 			modelStack.PopMatrix();
 			break;
 		}
+	}
+	for (auto it : camera.storage_of_objects) {
+		if (it.getName() == "Button") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Rotate(90, 0, 1, 0);
+			modelStack.Scale(0.5, 0.5, 0.5);
+			renderMesh(meshList[GEO_BUTTON], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	if (door.switchText() == true)
+	{
+		renderDialogueBox("Light", "Press E to toggle light");
 	}
 
 }

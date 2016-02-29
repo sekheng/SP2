@@ -7,5 +7,5 @@ upz,0
 cameraRotationX,0
 cameraRotationY,180
 cameraSpeed,30
-boundsCheckX,300
-boundsCheckZ,360
+boundsCheckX,315
+boundsCheckZ,315

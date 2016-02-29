@@ -25,6 +25,9 @@ void StationScene::Init(string name, Vector3 pos, Camera3 &camera_address, float
 	card2 = false;
 	questComplete = false;
 	doorOpened = false;
+	switchLightOn = true;
+	switchLightOff = false;
+	delay = 0.5f;
 }
 
 
@@ -144,8 +147,40 @@ short StationScene::openSasame()
 	return 0;
 }
 
+bool StationScene::roomLight()
+{
+
+	if (cam_pointer->position.x > -266 && cam_pointer->position.x < -263 && cam_pointer->position.z > 312 && cam_pointer->position.z < 316 && Application::IsKeyPressed('E') && switchLightOn == true && time > delay)
+	{
+
+		time = 0;
+			switchLightOn = false;
+	}
+	else if (cam_pointer->position.x > -266 && cam_pointer->position.x < -263 && cam_pointer->position.z > 312 && cam_pointer->position.z < 316 && Application::IsKeyPressed('E') && switchLightOn == false && time > delay)
+	{
+			time = 0;
+			switchLightOn = true;
+	}
+	return switchLightOn;
+}
+
+bool StationScene::switchText()
+{
+	if (cam_pointer->position.x > -266 && cam_pointer->position.x < -263 && cam_pointer->position.z > 312 && cam_pointer->position.z < 316 && switchLightOn == true)
+	{
+		return true;
+	}
+	else if (cam_pointer->position.x > -266 && cam_pointer->position.x < -263 && cam_pointer->position.z > 312 && cam_pointer->position.z < 316 && switchLightOn == false)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 void StationScene::update(double dt)
 {
-	time += dt;
+	time += (float)(dt);
 }
