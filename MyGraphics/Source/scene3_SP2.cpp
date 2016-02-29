@@ -13,6 +13,8 @@
 #include "Utility.h"
 #include "LoadTGA.h"
 #include <iomanip>
+#include <fstream>
+#include <algorithm>
 
 /******************************************************************************/
 /*!
@@ -194,10 +196,18 @@ void scene3_SP2::Init()
     meshList[GEO_LIGHT_END] = MeshBuilder::GenerateQuad("light end", Color(1, 1, 1));
     meshList[GEO_LIGHT_END]->textureID = LoadTGA("Image//white_warp.tga");
 
+    meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("asteroid", "OBJ//asteroid.obj");
+    meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//asteroid.tga");
+
+    //text box
+    meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
+    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
+    //text box
+
     on_light = true;
 
     Mtx44 projection;
-    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 200000.f);
+    projection.SetToPerspective(45.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 200000.f);
     projectionStack.LoadMatrix(projection);
 
     framePerSecond = 0;
@@ -209,7 +219,6 @@ void scene3_SP2::Init()
     toggleUp = false;
     scaleShipZ = 0;
     warppingOn = true;
-    flyToZ = 0;
     //animating the spaceShip
 
     //animating the SkyBox
@@ -223,12 +232,34 @@ void scene3_SP2::Init()
     //animating the warp
 
     //for the 2nd light bulb
-    turn_on_2nd = true;
+    turn_on_2nd = false;
     //for the 2nd light bulb
 
     //animating the light ending
     scaleLightEnd = 1;
     //animating the light ending
+
+    //for QTE
+    initQuickTimeEvent("scenario2Driven//quicktimeevent.txt");
+    DefaultquickTimeEvent = quickTimeEvent;
+    quickTimeEventFlag = false;
+    quickTimer = 10;
+    makingSureNoDoubleTap = 0;
+    moveAsteroidZ = 0;
+    moveShipX = 0;
+    moveShipZ = 0;
+    moveBack = false;
+    quickTimeEventOver = false;
+    youLost = false;
+    //for QTE
+
+    //gives instruction regarding about the QTE
+    instructionIsOver = false;
+    intructions = {"Avoid the asteroid", 
+    "Press according to the keys displayed",
+    "You only have 10 Seconds. Good Luck!"};
+    order_of_text_ = 0;
+    //gives instruction regarding about the QTE
 
     std::cout << "Number of objects in Scenario 2: " << camera.storage_of_objects.size() << std::endl;
 }
@@ -243,7 +274,7 @@ where the logic of the game is, and update
 /******************************************************************************/
 void scene3_SP2::Update(double dt)
 {
-     animateWarp(dt);
+    animateWarp(dt);
     animateSpaceShip(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
@@ -293,6 +324,99 @@ void scene3_SP2::Update(double dt)
         }
     }
     //transition to the 3rd scenario
+
+    //for QTE
+    if ((Application::IsKeyPressed('W') || Application::IsKeyPressed('D')
+        || Application::IsKeyPressed('S') || Application::IsKeyPressed('A') ||
+        Application::IsKeyPressed('E'))
+        && quickTimeEventFlag == false) {
+        //This is to prevent the keys from being pressed beforehand
+    }
+    else if (quickTimeEventFlag == true && quickTimeEventOver == false && youLost == false) {
+        makingSureNoDoubleTap += dt;
+        //when the mini-game finished, an animation of the ship escaping the asteroid will be played
+        if (quickTimeEvent.empty() == true) {
+            //the ship and asteroid will start to move
+            moveShipZ -= 55 * (float)(dt);
+            camera.position.z -= 55 * (float)(dt);
+            moveAsteroidZ += 22 * (float)(dt);
+            //the ship will move towards the right to avoid
+            if (moveBack == false) {
+                moveShipX += 45 * (float)(dt);
+                camera.position.x += 40 * (float)(dt);
+
+                //the ship will move towards the left when it safely avoids the asteroid and return back to it's normal route
+                if (camera.position.x > 280) {
+                    moveBack = true;
+                }
+                //the ship will move towards the left when it safely avoids the asteroid and return back to it's normal route
+                //the ship and asteroid will start to move
+            }
+            //the ship will move towards the left when it safely avoids the asteroid and return back to it's normal route
+            else if (moveBack == true && camera.position.x > 0) {
+                moveShipX -= 45 * (float)(dt);
+                camera.position.x -= 40 * (float)(dt);
+                //if the spaceship went back to it's normal route, it will being warpping
+                if (camera.position.x <= 0) {
+                    quickTimeEventOver = true;
+                    warppingOn = true;
+                    moveShipZ = 0;
+                    camera.position.z = camera.defaultPosition.z;
+                    camera.position.x = camera.defaultPosition.x;
+                }
+                //if the spaceship went back to it's normal route, it will being warpping
+                //the ship will move towards the left when it safely avoids the asteroid and return back to it's normal route
+            }
+        }
+        //when the mini-game finished, an animation of the ship escaping the asteroid will be played
+        else if (instructionIsOver == false) {
+            updateIntructions(dt);
+        }
+        //when the mini-game starts
+        else {
+            activateQTE(dt);
+            //is to prevent the key spamming
+            if (makingSureNoDoubleTap > 0.1) {
+                if (Application::IsKeyPressed('W')) {
+                    if (quickTimeEventFlag == true && quickTimeEvent.front() == 'W') {
+                        quickTimeEvent.pop();
+                    }
+                }
+                else if (Application::IsKeyPressed('A')) {
+                    if (quickTimeEventFlag == true && quickTimeEvent.front() == 'A') {
+                        quickTimeEvent.pop();
+                    }
+                }
+                else if (Application::IsKeyPressed('S')) {
+                    if (quickTimeEventFlag == true && quickTimeEvent.front() == 'S') {
+                        quickTimeEvent.pop();
+                    }
+                }
+                else if (Application::IsKeyPressed('D')) {
+                    if (quickTimeEventFlag == true && quickTimeEvent.front() == 'D') {
+                        quickTimeEvent.pop();
+                    }
+                }
+                makingSureNoDoubleTap = 0;
+                //is to prevent the key spamming
+                //when the mini-game starts
+            }
+        }
+    }
+    //reset the whole scenario
+    else if (youLost == true) {
+        if (Application::IsKeyPressed('E')) {
+            reset();
+        }
+    }
+    //reset the whole scenario
+
+    //when the animation of space ship flying over the asteroid is over
+    if (quickTimeEventOver) {
+        quickTimeEventFlag = false;
+    }
+    //when the animation of space ship flying over the asteroid is over
+    //for QTE
 
     camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);
     Vector3 view = (camera.target - camera.position).Normalized();
@@ -432,22 +556,48 @@ void scene3_SP2::Render()
         renderMesh(meshList[GEO_LIGHTBALL], false);
         modelStack.PopMatrix();
     }
+    
+    if (youLost == false) {
+        renderMesh(meshList[GEO_AXES], false);
 
-    renderMesh(meshList[GEO_AXES], false);
+        modelStack.PushMatrix();
+        modelStack.Scale(300, 300, 300 + scaleSkyBoxZ_);
+        RenderSkybox();
+        modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    modelStack.Scale(300, 300, 300 + scaleSkyBoxZ_);
-    RenderSkybox();
-    modelStack.PopMatrix();
+        modelStack.PushMatrix();
+        renderSpaceShip();
+        modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    renderSpaceShip();
-    modelStack.PopMatrix();
+        renderWarp();
 
-    renderWarp();
-
-    if (start_white_screen) {
-        RenderImageOnScreen(meshList[GEO_LIGHT_END], scaleLightEnd, 40, 30);
+        //asteroid will only appear when the spaceship suddenly stopped moving
+        //thus it's originally being placed in front of the spaceship and move very far away and back
+        if ((warppingOn == false || quickTimeEventFlag == true) && quickTimeEventOver == false) {
+            for (auto it : camera.storage_of_objects) {
+                if (it.getName() == "Asteroid") {
+                    modelStack.PushMatrix();
+                    modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ() + moveAsteroidZ);
+                    modelStack.Scale(50, 50, 50);
+                    renderMesh(meshList[GEO_ASTEROID], true);
+                    modelStack.PopMatrix();
+                }
+            }
+        }
+        //asteroid will only appear when the spaceship suddenly stopped moving
+        if (start_white_screen) {
+            RenderImageOnScreen(meshList[GEO_LIGHT_END], scaleLightEnd, 40, 30);
+        }
+        if (moveAsteroidZ == 420 && instructionIsOver == false) {
+            renderInstructions();
+        }
+        else {
+            renderQTE();
+        }
+    }
+    else {
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "You Got Hit By An Asteroid", Color(0, 1, 0), 4, 4, 14);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to Retry", Color(0, 1, 0), 4, 6, 12);
     }
 
     std::stringstream connectPosX;
@@ -461,6 +611,10 @@ void scene3_SP2::Render()
     std::stringstream connectPosY;
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 18.f);
+
+    //std::stringstream asteroidPosZ;
+    //asteroidPosZ << moveAsteroidZ;
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], asteroidPosZ.str(), Color(0, 1, 0), 1.8f, 5, 5);
 
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
@@ -626,7 +780,7 @@ void scene3_SP2::renderSpaceShip() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "spaceship") {
             modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY() + jitteringShipY, it.getObjectposZ() + flyToZ);
+            modelStack.Translate(it.getObjectposX() + moveShipX, it.getObjectposY() + jitteringShipY, it.getObjectposZ() + moveShipZ);
             modelStack.Scale(10, 10, 10 + scaleShipZ);
             renderMesh(meshList[GEO_FLYINGVEHICLE], true);
             modelStack.PopMatrix();
@@ -644,20 +798,22 @@ void scene3_SP2::renderSpaceShip() {
 /******************************************************************************/
 void scene3_SP2::animateSpaceShip(double dt) {
     //this is to make the spaceship looks jittering
-    if (toggleUp == false)  
-	{
-        jitteringShipY -= 15 * (float)(dt);
-        if (jitteringShipY < -1) 
-		{
-            toggleUp = true;
+    if (quickTimeEventFlag == false) {
+        if (toggleUp == false)
+        {
+            jitteringShipY -= 15 * (float)(dt);
+            if (jitteringShipY < -1)
+            {
+                toggleUp = true;
+            }
         }
-    }
-    else
-	{
-        jitteringShipY += 15 * (float)(dt);
-        if (jitteringShipY > 1) 
-		{
-            toggleUp = false;
+        else
+        {
+            jitteringShipY += 15 * (float)(dt);
+            if (jitteringShipY > 1)
+            {
+                toggleUp = false;
+            }
         }
     }
     //this is to make the spaceship looks jittering
@@ -665,22 +821,30 @@ void scene3_SP2::animateSpaceShip(double dt) {
     if (warppingOn == true) 
 	{
         scaleShipZ += 30 * (float)(dt);
-        scaleSkyBoxZ_ += 3000 * (float)(dt);
+        scaleSkyBoxZ_ += 20000 * (float)(dt);
+        moveAsteroidZ -= 30000 * (float)(dt);
         if (scaleShipZ > 100) 
 		{
             warppingOn = false;
         }
     }
     //after some time, distorting stopped and spaceship seems to be travelling
-    else if (scaleShipZ > 5 && warppingOn == false)
+    else if (scaleShipZ > 0 && warppingOn == false)
 	{
-        if (scaleShipZ < 15) {  //animating the light warp end
-            start_white_screen = true;
-            scaleLightEnd +=  500 * (float)(dt);
+        scaleShipZ -= 30 * (float)(dt);
+        scaleSkyBoxZ_ -= 20000 * (float)(dt);
+        moveAsteroidZ += 30000 * (float)(dt);
+        if (scaleShipZ <= 0 && quickTimeEventFlag == false && quickTimeEventOver == false) {
+            moveAsteroidZ = 420;
+            scaleSkyBoxZ_ = 0;
+            warp_lightZ = 0;
+            scaleShipZ = 0;
+            quickTimeEventFlag = true;
         }
-        scaleShipZ -= 10 * (float)(dt);
-        flyToZ -= 1000 * (float)(dt);
-        camera.position.z -= 1000 * (float)(dt);
+    }
+    if (quickTimeEventOver == true && warppingOn == false && scaleShipZ < 2) {  //animating the light warp end
+        start_white_screen = true;
+        scaleLightEnd += 500 * (float)(dt);
     }
 }   
 
@@ -690,45 +854,47 @@ void scene3_SP2::animateSpaceShip(double dt) {
 */
 /******************************************************************************/
 void scene3_SP2::renderWarp() {
-    for (auto it : camera.storage_of_objects) {
-        if (it.getName() == "Light Warp1" || 
-            it.getName() == "Light Warp2" ||
-            it.getName() == "Light Warp3" || 
-            it.getName() == "Light Warp4" ||
-            it.getName() == "Light Warp5" ||
-            it.getName() == "Light Warp6" ||
-            it.getName() == "Light Warp7" ||
-            it.getName() == "Light Warp8" ||
-            it.getName() == "Light Warp9" ||
-            it.getName() == "Light Warp10" ||
-            it.getName() == "Light Warp11" ||
-            it.getName() == "Light Warp12" ||
-            it.getName() == "Light Warp13" ||
-            it.getName() == "Light Warp14" ||
-            it.getName() == "Light Warp15" ||
-            it.getName() == "Light Warp16" ||
-            it.getName() == "Light Warp17" ||
-            it.getName() == "Light Warp18" ||
-            it.getName() == "Light Warp19" ||
-            it.getName() == "Light Warp20" ||
-            it.getName() == "Light Warp21" ||
-            it.getName() == "Light Warp22" ||
-            it.getName() == "Light Warp23" ||
-            it.getName() == "Light Warp24" ||
-            it.getName() == "Light Warp25" ||
-            it.getName() == "Light Warp26" ||
-            it.getName() == "Light Warp27" ||
-            it.getName() == "Light Warp28" ||
-            it.getName() == "Light Warp29" ||
-            it.getName() == "Light Warp30" ||
-            it.getName() == "Light Warp31" ||
-            it.getName() == "Light Warp32" ||
-            it.getName() == "Light Warp33") {
-            modelStack.PushMatrix();
-            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ()); 
-            modelStack.Scale(1, 1, 1 + warp_lightZ);
-            renderMesh(meshList[GEO_LIGHT_WRAP], true);
-            modelStack.PopMatrix();
+    if (quickTimeEventFlag == false) {
+        for (auto it : camera.storage_of_objects) {
+            if (it.getName() == "Light Warp1" ||
+                it.getName() == "Light Warp2" ||
+                it.getName() == "Light Warp3" ||
+                it.getName() == "Light Warp4" ||
+                it.getName() == "Light Warp5" ||
+                it.getName() == "Light Warp6" ||
+                it.getName() == "Light Warp7" ||
+                it.getName() == "Light Warp8" ||
+                it.getName() == "Light Warp9" ||
+                it.getName() == "Light Warp10" ||
+                it.getName() == "Light Warp11" ||
+                it.getName() == "Light Warp12" ||
+                it.getName() == "Light Warp13" ||
+                it.getName() == "Light Warp14" ||
+                it.getName() == "Light Warp15" ||
+                it.getName() == "Light Warp16" ||
+                it.getName() == "Light Warp17" ||
+                it.getName() == "Light Warp18" ||
+                it.getName() == "Light Warp19" ||
+                it.getName() == "Light Warp20" ||
+                it.getName() == "Light Warp21" ||
+                it.getName() == "Light Warp22" ||
+                it.getName() == "Light Warp23" ||
+                it.getName() == "Light Warp24" ||
+                it.getName() == "Light Warp25" ||
+                it.getName() == "Light Warp26" ||
+                it.getName() == "Light Warp27" ||
+                it.getName() == "Light Warp28" ||
+                it.getName() == "Light Warp29" ||
+                it.getName() == "Light Warp30" ||
+                it.getName() == "Light Warp31" ||
+                it.getName() == "Light Warp32" ||
+                it.getName() == "Light Warp33") {
+                modelStack.PushMatrix();
+                modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+                modelStack.Scale(1, 1, 1 + warp_lightZ);
+                renderMesh(meshList[GEO_LIGHT_WRAP], true);
+                modelStack.PopMatrix();
+            }
         }
     }
 }
@@ -741,5 +907,131 @@ void scene3_SP2::renderWarp() {
 */
 /******************************************************************************/
 void scene3_SP2::animateWarp(double dt) {
-    warp_lightZ += 700 * (float)(dt);
+    if (warppingOn) {
+        warp_lightZ += 700 * (float)(dt);
+    }
+    else if (warppingOn == false && scaleShipZ > 0) {
+        warp_lightZ -= 700 * (float)(dt);
+    }
+}
+
+void scene3_SP2::initQuickTimeEvent(const char* fileLocation) {
+    std::ifstream fileStream2(fileLocation, std::ios::binary);
+    if (!fileStream2.is_open()) {
+        std::cout << "Impossible to open " << fileLocation << ". Are you in the right directory ?\n";
+    }
+    else {
+        while (!fileStream2.eof()) {
+            string data = "";
+            getline(fileStream2, data);
+            if (data == "" || data == "\r") {
+                continue;
+            }
+            data.erase(std::remove(data.begin(), data.end(), '\r'));
+            data[0] = toupper(data[0]);
+            quickTimeEvent.push(data[0]);
+        }
+        fileStream2.close();
+    }
+}
+
+void scene3_SP2::activateQTE(double& dt) {
+    if (quickTimeEventFlag == true) {
+        quickTimer -= dt;
+        if (quickTimer < 0) {
+            youLost = true;
+        }
+    }
+}
+
+void scene3_SP2::renderQTE() {
+    if (quickTimeEventFlag == true && quickTimeEvent.empty() == false) {
+        std::stringstream ss;
+        ss << "Time Left: " << quickTimer;
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 7, 14);
+
+        std::string ss2;
+        ss2.append(1, quickTimeEvent.front());
+        renderDialogueBox("Key Pressed", ss2);
+    }
+}
+
+void scene3_SP2::reset() {
+    camera.Reset();
+    quickTimeEventFlag = false;
+    quickTimer = 10;
+    makingSureNoDoubleTap = 0;
+    moveAsteroidZ = 0;
+    moveShipX = 0;
+    moveShipZ = 0;
+    moveBack = false;
+    quickTimeEventOver = false;
+    youLost = false;
+    //animating the spaceShip
+    jitteringShipY = 0;
+    toggleUp = false;
+    scaleShipZ = 0;
+    warppingOn = true;
+    //animating the spaceShip
+
+    //animating the SkyBox
+    scaleSkyBoxZ_ = 0;
+    //animating the SkyBox
+
+    //animating the warp
+    warp_lightZ = 0;
+    wait_on_white_screen = 0;
+    start_white_screen = false;
+    //animating the warp
+    //animating the light ending
+    scaleLightEnd = 1;
+    //animating the light ending
+    quickTimeEvent = DefaultquickTimeEvent;
+}
+
+void scene3_SP2::renderInstructions() {
+    renderDialogueBox("Instructions", intructions[order_of_text_]);
+}
+
+void scene3_SP2::updateIntructions(double& dt) {
+    if (Application::IsKeyPressed('E')) {
+        if (makingSureNoDoubleTap > 0.2) {
+            order_of_text_ += 1;
+            makingSureNoDoubleTap = 0;
+        }
+        if (order_of_text_ == intructions.size()) {
+            instructionIsOver = true;
+        }
+    }
+}
+
+void scene3_SP2::renderDialogueBox(const string& name, const string& dialogue)
+{
+    RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 23, 5);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 2.5, 5.5);
+    RenderImageOnScreen(meshList[GEO_TEXT_BOX], 70, 40, -20);
+    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
+}
+
+void scene3_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 0);
+    modelStack.Scale(sizeX, sizeY, 1);
+    modelStack.Rotate(90, 1, 0, 0);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
 }

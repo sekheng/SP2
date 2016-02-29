@@ -156,6 +156,7 @@
     <Text Include="NPC data\NPC_2.txt" />
     <Text Include="scenario1Driven\objects.txt" />
     <Text Include="scenario2Driven\objects.txt" />
+    <Text Include="scenario2Driven\quicktimeevent.txt" />
     <Text Include="scenario3Driven\all_static_OBJ.txt" />
     <Text Include="scenario3Driven\credits.txt" />
     <Text Include="scenario3Driven\README.txt" />

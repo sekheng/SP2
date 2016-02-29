@@ -8,7 +8,7 @@
 #include "MeshBuilder.h"
 #include "MaterialBuilder.h"
 #include "Material.h"
-#include "Light.h"
+//#include "Light.h"
 #include "Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
@@ -68,12 +68,11 @@ void sceneSP2::Init()
     glBindVertexArray(m_vertexArrayID);
 
     //Load vertex and fragment shaders
-    m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
+	m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
 
-    m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
-    m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
-    m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
-   
+	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
+	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
+	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
 	m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
 	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
 	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
@@ -105,22 +104,27 @@ void sceneSP2::Init()
 	m_parameters[U_LIGHT1_COSINNER] = glGetUniformLocation(m_programID, "lights[1].cosInner");
 	m_parameters[U_LIGHT1_EXPONENT] = glGetUniformLocation(m_programID, "lights[1].exponent");
 
-    // Get a handle for our "colorTexture" uniform
-    m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
-    m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
 
-    // Get a handle for our "textColor" uniform
-    m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
-    m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
+	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
+	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
 
-    glUseProgram(m_programID);
+	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
+	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
-    glUniform1i(m_parameters[U_NUMLIGHTS], 2);
+	// Get a handle for our "colorTexture" uniform
+	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
+	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
 
-	light[0].type = Light::LIGHT_DIRECTIONAL;
-	light[0].position.Set(0, 20, 0);
+	// Get a handle for our "textColor" uniform
+	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
+	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
+
+	glUseProgram(m_programID);
+
+	light[0].type = Light::LIGHT_SPOT;
+	light[0].position.Set(-280, 40, 290);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 100;
+	light[0].power = 2.5;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
@@ -129,10 +133,10 @@ void sceneSP2::Init()
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
-	light[1].type = Light::LIGHT_SPOT;
-	light[1].position.Set(-280, 35, 300);
+	light[1].type = Light::LIGHT_DIRECTIONAL;
+	light[1].position.Set(0, 20, 0);
 	light[1].color.Set(1, 1, 1);
-	light[1].power = 5;
+	light[1].power = 0.5;
 	light[1].kC = 1.f;
 	light[1].kL = 0.01f;
 	light[1].kQ = 0.001f;
@@ -141,6 +145,7 @@ void sceneSP2::Init()
 	light[1].exponent = 3.f;
 	light[1].spotDirection.Set(0.0f, 1.0f, 0.0f);
 
+	glUniform1i(m_parameters[U_NUMLIGHTS], 2);
 	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
 	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
 	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
@@ -160,6 +165,7 @@ void sceneSP2::Init()
 	glUniform1f(m_parameters[U_LIGHT1_COSCUTOFF], light[1].cosCutoff);
 	glUniform1f(m_parameters[U_LIGHT1_COSINNER], light[1].cosInner);
 	glUniform1f(m_parameters[U_LIGHT1_EXPONENT], light[1].exponent);
+
 
     //Initialize camera settings
     camera.Init("cameraDriven//scene1.txt");
@@ -312,11 +318,11 @@ void sceneSP2::Init()
     meshList[GEO_TYRE] = MeshBuilder::GenerateOBJ("tyre", "OBJ//Tire.obj");
 
 
-    on_light = true;
+    //on_light = true;
 
     //meshList[]
     Mtx44 projection;
-    projection.SetToPerspective(60.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
+    projection.SetToPerspective(45.f, static_cast<float>(screenWidth / screenHeight), 0.1f, 20000.f);
     projectionStack.LoadMatrix(projection);
 
     //initialise camera_position_x and z;
@@ -395,6 +401,9 @@ void sceneSP2::Init()
     startTeleporting = false;
     //animating teleporting
 
+    //music updates
+    musicTimeDelay = 0.5;
+    //music updates
 }
 
 /******************************************************************************/
@@ -454,6 +463,9 @@ void sceneSP2::Update(double dt)
                 {
                     (*it).objectPos.x = -242;
                 }
+                else {
+                    Application::musics->playGateEffect(vec3df((*it).getObjectposX(), (*it).getObjectposY(), (*it).getObjectposZ()));
+                }
                 break;
             }
         }
@@ -512,7 +524,18 @@ void sceneSP2::Update(double dt)
                 }
     }
     //animating particle cube
-    
+
+    //music updates
+    musicTimeDelay += dt;
+    if (musicTimeDelay > 0.5) {
+        Application::musics->updatePlayerPos(
+            vec3df(camera.getCameraXcoord(), camera.getCameraYcoord(), camera.getCameraZcoord()),   //camera's position
+            vec3df(camera.target.x, camera.target.y, camera.target.z),  //camera's target
+            vec3df(camera.up.x, camera.up.y, camera.up.z)
+            );
+    }
+    //music updates
+
     if (Application::IsKeyPressed('E') && sek_heng_.SekHengSayIsOk()
         && teleport() == true) {
         //animateTeleporting(dt);
@@ -945,6 +968,7 @@ void sceneSP2::Render()
 		modelStack.PopMatrix();
 	}*/
 
+
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -964,12 +988,13 @@ void sceneSP2::Render()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	if (light[1].type == Light::LIGHT_SPOT)
+	if (light[1].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[1].position.x, light[1].position.y, light[1].position.z);
 		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
 		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightDirection_cameraspace.x);
 	}
+	
 
     renderMesh(meshList[GEO_AXES], false);
 
@@ -1063,12 +1088,26 @@ void sceneSP2::Render()
     connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
     
-    //testing
+    //testing(DO NOT DELETE THIS)
+   /* RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.3,2,-0.8,0,0,0);
 
-    RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.7,2,-1);
-
-    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -4.3, 2, -3);
+    RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8,0,0,0);*/
     
+    /*
+    RenderStuffOnScreen(meshList[GEO_SWORD], "left", 0.3f, 0.75, 2, -0.6,0,0,0);
+
+    RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75, 2, -0.65,0,0,0);
+    */
+    /*
+    RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.7f, 1.4, 2, -1,90,90,90);
+    
+    RenderStuffOnScreen(meshList[GEO_GASOLINE], "right", 0.7f, -1.4, 2, -1,90,90,90);
+    */
+
+    //RenderStuffOnScreen(meshList[GEO_HAMMER], "left", 0.2f, 1.4, 2, -0.7, 0, 0, 90);
+
+    //RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4, 2, -0.7, 0, 0, -90);
+
 }
 
 
@@ -1524,17 +1563,17 @@ void sceneSP2::RenderQuestObjects()
     if (One.get_numberof_items() == 1 && One.Item1collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8, 0, 0, 0);
     }
     if (One.get_numberof_items() == 2 && One.Item1collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8, 0, 0, 0);
     }
     if (One.get_numberof_items() == 2 && One.Item2collected() == true
         && Quest1_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.1f, 15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_GASOLINE], "left", 0.7f, 1.4, 2, -1, 90, 90, 90);
     }
 
     //quest 2
@@ -1553,9 +1592,10 @@ void sceneSP2::RenderQuestObjects()
     if (Two.get_numberof_items() == 1 && Two.Item1collected() == true
         && Quest2_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.1f, -15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_CONTAINER], "right", 0.05f, -1.3, 2, -0.8, 0, 0, 0);
     }
 
+    //quest 3
 	if (Three.stage() == 1)
 	{
 		modelStack.PushMatrix();
@@ -1571,7 +1611,7 @@ void sceneSP2::RenderQuestObjects()
     if (Three.get_numberof_items() == 1 && Three.Item1collected() == true
         && Quest3_finished == false)
     {
-        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.1f, -15, 15, -7);
+        RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75, 2, -0.65, 0, 0, 0);
     }
 }
 
@@ -1592,8 +1632,8 @@ void sceneSP2::renderingSekHeng() {
         modelStack.PopMatrix();
     }
     else if (sek_heng_.gottenHammer() == true && sek_heng_.getStage() == 1) {
-        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.1f, -15, 15, -7);
 
+        RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4, 2, -0.7, 0, 0, -90);
     }
     //rendering of the hammer
 }
@@ -1911,7 +1951,7 @@ void sceneSP2::QuestCompleteCheck()
     }
 }
 
-void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float x, float y,float z)
+void sceneSP2::RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z, float rotate_x, float rotate_y, float rotate_z)
 {
     if (direction == "left")
     {
@@ -1924,8 +1964,22 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
         modelStack.Rotate(90, 1, 0, 0);
         modelStack.Rotate(-60, 0, 1, 0);
         modelStack.Translate(x, y, z);
+        modelStack.Rotate(180, 1, 0, 0);
+        if (rotate_x != 0)
+        {
+            modelStack.Rotate(rotate_x, 1, 0, 0);
+        }
+        if (rotate_y != 0)
+        {
+            modelStack.Rotate(rotate_y, 0, 1, 0);
+        }
+        if (rotate_z != 0)
+        {
+            modelStack.Rotate(rotate_z, 0, 0, 1);
+        }
+        
         modelStack.Scale(size, size, size);
-        //renderMesh(meshList[GEO_AXES], false);
+        renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
@@ -1943,10 +1997,22 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
         modelStack.Rotate(90, 1, 0, 0);
         modelStack.Rotate(60, 0, 1, 0);
 
-        
         modelStack.Translate(x, y, z);
+        modelStack.Rotate(180, 1, 0, 0);
+        if (rotate_x != 0)
+        {
+            modelStack.Rotate(rotate_x, 1, 0, 0);
+        }
+        if (rotate_y != 0)
+        {
+            modelStack.Rotate(rotate_y, 0, 1, 0);
+        }
+        if (rotate_z != 0)
+        {
+            modelStack.Rotate(rotate_z, 0, 0, 1);
+        }
         modelStack.Scale(size, size, size);
-        //renderMesh(meshList[GEO_AXES], false);
+        renderMesh(meshList[GEO_AXES], false);
         renderMesh(mesh, true);
 
         modelStack.PopMatrix();
@@ -1956,9 +2022,10 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh,string direction, float size,float
     
 }
 
+
+
 void sceneSP2::renderChunFei()
 {
-
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "robothead") {
             modelStack.PushMatrix();
@@ -1971,6 +2038,8 @@ void sceneSP2::renderChunFei()
             break;
         }
     }
+
+
 
     modelStack.PushMatrix();
     modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());

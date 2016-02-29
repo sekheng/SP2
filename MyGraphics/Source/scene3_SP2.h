@@ -16,6 +16,9 @@ Hopefully they don't mess it up
 #include "Light.h"
 #include "Camera3.h"
 #include "MatrixStack.h"
+#include <queue>
+
+using std::queue;
 
 /******************************************************************************/
 /*!
@@ -39,6 +42,8 @@ class scene3_SP2 : public Scene
         GEO_FLYINGVEHICLE,
         GEO_LIGHT_WRAP,
         GEO_LIGHT_END,
+        GEO_ASTEROID,
+        GEO_TEXT_BOX,
         NUM_GEOMETRY,
     };
 
@@ -110,6 +115,7 @@ private:
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
+    void RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY);
 
     double framePerSecond;
     float screenWidth, screenHeight;
@@ -123,7 +129,6 @@ private:
     bool toggleUp;
     float scaleShipZ;
     bool warppingOn;
-    float flyToZ;
     //animating the spaceShip
 
     //animating the SkyBox
@@ -146,6 +151,34 @@ private:
     bool turn_on_2nd;
     //logic for 2nd light bulb
 
+    //for the QTE
+    queue<char> quickTimeEvent;
+    queue<char> DefaultquickTimeEvent;
+    void initQuickTimeEvent(const char* fileLocation);
+    bool quickTimeEventFlag;
+    void activateQTE(double& dt);
+    void renderQTE();
+    double quickTimer;
+    double makingSureNoDoubleTap;
+    void renderMeteorite();
+    float moveAsteroidZ;
+    float moveShipX, moveShipZ;
+    bool moveBack;
+    bool quickTimeEventOver;
+    bool youLost;
+    //for the QTE
+    //reset the scenario
+    void reset();
+    //reset the scenario
+
+    //gives instruction regarding about the QTE
+    void renderInstructions();
+    void updateIntructions(double& dt);
+    bool instructionIsOver;
+    vector<string> intructions;
+    short order_of_text_;
+    //gives instruction regarding about the QTE
+    void renderDialogueBox(const string& name, const string& dialogue);
 };
 
 

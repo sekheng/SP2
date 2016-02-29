@@ -1,14 +1,9 @@
 #include "BGMDriven.h"
 
 BGMDriven::BGMDriven() 
+    : DarthVaderbackGround(0), GateEffectSource(0), GateEffect(0)
 {
     engine = createIrrKlangDevice();
-    sound_names = { 
-        "" 
-    };
-    background_music = { 
-        "music//Star Wars- The Imperial March (Darth Vader's Theme).mp3", " "
-    };
 }
 
 BGMDriven::~BGMDriven()
@@ -17,14 +12,44 @@ BGMDriven::~BGMDriven()
 }
 
 void BGMDriven::init() {
-    backGround = 
-        engine->addSoundSourceFromFile(background_music[0].c_str());
-    backGround->setDefaultVolume(0.3f);
+    DarthVaderbackGround = 
+        engine->addSoundSourceFromFile("music//Star Wars- The Imperial March (Darth Vader's Theme).ogg");
+    GateEffectSource =
+        engine->addSoundSourceFromFile("music//electric_door_opening_2.ogg");
+
+    ZeBackgroundMusic = engine->play2D(DarthVaderbackGround, true, false, true);
+    ZeBackgroundMusic->setVolume(0.3f);
+
+    GateEffect = engine->play3D(GateEffectSource, vec3df(0, 0, 0), false, true, true);
 }
 
 void BGMDriven::playDarthVaderBackground() {
-    if (engine->isCurrentlyPlaying(backGround)) {
-        backGround->drop();
+    if (DarthVaderbackGround) {
+        if (!engine->isCurrentlyPlaying(DarthVaderbackGround)) {
+            ZeBackgroundMusic->stop();
+        }
+        if (ZeBackgroundMusic->isFinished()) {
+            ZeBackgroundMusic =
+                engine->play2D(DarthVaderbackGround, true, false, true);
+        }
     }
-    engine->play2D(backGround, true);
+}
+
+void BGMDriven::playGateEffect(vec3df pos) 
+{
+    if (GateEffectSource) {
+        if (GateEffect->getIsPaused() == true) {
+            GateEffect->setIsPaused(false);
+            GateEffect->setPosition(pos);
+            return;
+        }
+        if (GateEffect->isFinished() == true) {
+            GateEffect =
+                engine->play3D(GateEffectSource, pos, false, false, true);
+        }
+    }
+}
+
+void BGMDriven::updatePlayerPos(vec3df pos, vec3df target, vec3df up) {
+    engine->setListenerPosition(pos, target, vec3df(0, 0, 0), up);
 }

@@ -119,22 +119,23 @@ class sceneSP2 : public Scene
         U_MVP = 0,
         U_MODELVIEW,
         U_MODELVIEW_INVERSE_TRANSPOSE,
-        U_MATERIAL_AMBIENT,
-        U_MATERIAL_DIFFUSE,
-        U_MATERIAL_SPECULAR,
-        U_MATERIAL_SHININESS,
-        U_LIGHT0_POSITION,
-        U_LIGHT0_COLOR,
-        U_LIGHT0_POWER,
-        U_LIGHT0_KC,
-        U_LIGHT0_KL,
-        U_LIGHT0_KQ,
-        U_LIGHTENABLED,
-        U_LIGHT0_TYPE,
-        U_LIGHT0_SPOTDIRECTION,
-        U_LIGHT0_COSCUTOFF,
-        U_LIGHT0_COSINNER,
-        U_LIGHT0_EXPONENT,
+		U_MATERIAL_AMBIENT,
+		U_MATERIAL_DIFFUSE,
+		U_MATERIAL_SPECULAR,
+		U_MATERIAL_SHININESS,
+
+		U_LIGHT0_POSITION,
+		U_LIGHT0_COLOR,
+		U_LIGHT0_POWER,
+		U_LIGHT0_KC,
+		U_LIGHT0_KL,
+		U_LIGHT0_KQ,
+		U_LIGHTENABLED,
+		U_LIGHT0_TYPE,
+		U_LIGHT0_SPOTDIRECTION,
+		U_LIGHT0_COSCUTOFF,
+		U_LIGHT0_COSINNER,
+		U_LIGHT0_EXPONENT,
 
 		U_LIGHT1_POSITION,
 		U_LIGHT1_COLOR,
@@ -148,7 +149,7 @@ class sceneSP2 : public Scene
 		U_LIGHT1_COSINNER,
 		U_LIGHT1_EXPONENT,
 
-        U_NUMLIGHTS,
+		U_NUMLIGHTS,
 		U_NUMLIGHTS2,
         U_COLOR_TEXTURE_ENABLED,
         U_COLOR_TEXTURE,
@@ -225,7 +226,7 @@ private:
     void RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void TextSlowDown(double dt);
     void QuestCompleteCheck();
-    void RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z);
+    void RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z, float rotate_x, float rotate_y, float rotate_z);
 
     double framePerSecond;
     float screenWidth, screenHeight;
@@ -275,6 +276,10 @@ private:
     //particle effect handler
     vector<objectsForDisplay> particleHandlers;
     //particle effect handler
+
+    //music updates
+    double musicTimeDelay;
+    //music updates
 };
 
 
