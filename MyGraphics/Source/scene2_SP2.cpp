@@ -647,9 +647,9 @@ void scene2_SP2::Render()
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 
-	/*std::stringstream input;
-	input << "FPS : " << Numpad.getdigit1() << Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);*/
+	std::stringstream input;
+	input << "FPS : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
+	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);
 
 }
 
