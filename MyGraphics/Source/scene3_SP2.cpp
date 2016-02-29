@@ -337,6 +337,7 @@ void scene3_SP2::Update(double dt)
         //This is to prevent the keys from being pressed beforehand
     }
     else if (quickTimeEventFlag == true && quickTimeEventOver == false && youLost == false) {
+        Application::musics->playPokemonBattleBackground();
         makingSureNoDoubleTap += dt;
         //when the mini-game finished, an animation of the ship escaping the asteroid will be played
         if (quickTimeEvent.empty() == true) {
@@ -927,9 +928,11 @@ void scene3_SP2::renderWarp() {
 void scene3_SP2::animateWarp(double dt) {
     if (warppingOn) {
         warp_lightZ += 700 * (float)(dt);
+        Application::musics->playWarpBackground();
     }
     else if (warppingOn == false && scaleShipZ > 0) {
         warp_lightZ -= 700 * (float)(dt);
+        Application::musics->playWarpBackground();
     }
 }
 

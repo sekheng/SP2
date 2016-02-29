@@ -244,6 +244,7 @@ private:
 	void RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate, float rotatex, float rotatey);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY);
+    void RenderImageOnScreen(Mesh* mesh, float x, float y, float z, float sizeX, float sizeY);
     void RenderUserInterface(Mesh* mesh, float size, float x, float y);
 
     double framePerSecond;
@@ -274,6 +275,16 @@ private:
     void rollingCredits();
     //credits
     //Beginning cinematic
+
+    //For 3D effects of the music
+    double update3DPos;
+    //For 3D effects of the music
+
+    //displaying instructions
+    void renderIntruction();
+    double PreventSpammingInstruction;
+    bool displayInstruction;
+    //displaying instructions
 };
 
 #endif

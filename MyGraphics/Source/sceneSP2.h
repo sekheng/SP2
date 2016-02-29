@@ -95,8 +95,9 @@ class sceneSP2 : public Scene
         GEO_NPC1,
         GEO_NPC_QUEST1,
         GEO_NPC_QUEST2,
-        GEO_NPC_QUEST3,
-        GEO_NPC_QUEST4,
+        //no one is using it!!!
+        //GEO_NPC_QUEST3,
+        //GEO_NPC_QUEST4,
         //NPC
 
         GEO_INVIS_CURSOR,

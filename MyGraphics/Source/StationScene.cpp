@@ -182,5 +182,5 @@ bool StationScene::switchText()
 
 void StationScene::update(double dt)
 {
-	time += dt;
+	time += (float)(dt);
 }
