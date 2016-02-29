@@ -239,12 +239,19 @@ void scene2_SP2::Init()
 	meshList[GEO_SATELLITEBODY] = MeshBuilder::GenerateOBJ("satellitebody", "OBJ//satellitebody.obj");
 	meshList[GEO_SATELLITEBODY]->textureID = LoadTGA("Image//Satellite_UV.tga");
 
-	//rock	
+	//diamond
 	meshList[GEO_BIGDIAMOND] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bigdiamond.obj");
 	meshList[GEO_BIGDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
 
 	meshList[GEO_SMALLDIAMOND] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//smalldiamond.obj");
 	meshList[GEO_SMALLDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
+
+	//interaction diamond
+	meshList[GEO_BIGDIAMOND2] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bigdiamond.obj");
+	meshList[GEO_BIGDIAMOND2]->textureID = LoadTGA("Image//diamond.tga");
+
+	meshList[GEO_SMALLDIAMOND2] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//smalldiamond.obj");
+	meshList[GEO_SMALLDIAMOND2]->textureID = LoadTGA("Image//diamond.tga");
 
 	//npc
 	meshList[GEO_NPCUPPER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene3NPCupper.obj");
@@ -258,6 +265,10 @@ void scene2_SP2::Init()
 
 	meshList[GEO_NORMALBOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//boxes9.obj");
 	meshList[GEO_NORMALBOXES]->textureID = LoadTGA("Image//normalboxes.tga");
+
+	//plane
+	//meshList[GEO_PLANE] = MeshBuilder::GenerateOBJ("plane", "OBJ//plane.obj");
+	//meshList[GEO_PLANE]->textureID = LoadTGA("Image//plane.tga");
 
 	//User Interface
 	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
@@ -300,6 +311,9 @@ void scene2_SP2::Init()
 			break;
 		}
 	}
+
+	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 40, 40, camera, "NPC data//NPC_4.txt");
+	diamondNPC.Init("diamondNPC", 6, Vector3(900,200,800), 80, 80, camera, "NPC data//NPC_5.txt");
 
     //text box
     meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
@@ -344,6 +358,8 @@ void scene2_SP2::Update(double dt)
 	diamondAnimation(dt);
 	NPCAnimation(dt);
 	BoxesAnimation(dt);
+	robotNPC1.update(dt);
+	diamondNPC.update(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -577,6 +593,9 @@ void scene2_SP2::Render()
 
 	//render boxes
 	RenderBoxes();
+	
+	//render plane
+	//RenderPlane();
 
 	//modelStack.PushMatrix();
 	//modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
@@ -1236,51 +1255,179 @@ void scene2_SP2::RenderDiamond()
 		}
 	}
 
-	for (int i = 533; i <= 1599; i += 533)//right diamonds
-	{
-		for (auto it : camera.storage_of_objects) {
+	//for (int i = 533; i <= 1599; i += 533)//right diamonds
+	//{
+	//	for (auto it : camera.storage_of_objects) {
 
-			if (it.getName() == "bigdiamond") {
-				modelStack.PushMatrix();
-				modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + bigdiamondtranslating, it.getObjectposZ() + i);
-				modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
-				modelStack.Scale(25, 25, 25);
-				renderMesh(meshList[GEO_BIGDIAMOND], true);
-				modelStack.PopMatrix();
-				break;
-			}
-		}
+	//		if (it.getName() == "bigdiamond") {
+	//			modelStack.PushMatrix();
+	//			modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + bigdiamondtranslating, it.getObjectposZ() + i);
+	//			modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
+	//			modelStack.Scale(25, 25, 25);
+	//			renderMesh(meshList[GEO_BIGDIAMOND], true);
+	//			modelStack.PopMatrix();
+	//			break;
+	//		}
+	//	}
 
-		for (auto it : camera.storage_of_objects) {
+	//	for (auto it : camera.storage_of_objects) {
 
-			if (it.getName() == "smalldiamond") {
-				modelStack.PushMatrix();
-				modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + smalldiamondtranslating, it.getObjectposZ() + i);
-				modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
-				modelStack.Scale(25, 25, 25);
-				renderMesh(meshList[GEO_SMALLDIAMOND], true);
-				modelStack.PopMatrix();
-				break;
-			}
+	//		if (it.getName() == "smalldiamond") {
+	//			modelStack.PushMatrix();
+	//			modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + smalldiamondtranslating, it.getObjectposZ() + i);
+	//			modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
+	//			modelStack.Scale(25, 25, 25);
+	//			renderMesh(meshList[GEO_SMALLDIAMOND], true);
+	//			modelStack.PopMatrix();
+	//			break;
+	//		}
+	//	}
+	//}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "bigdiamond") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + bigdiamondtranslating, it.getObjectposZ() + 533);
+			modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
+			modelStack.Scale(25, 25, 25);
+			renderMesh(meshList[GEO_BIGDIAMOND], true);
+			modelStack.PopMatrix();
+			break;
 		}
 	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "smalldiamond") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + smalldiamondtranslating, it.getObjectposZ() + 533);
+			modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
+			modelStack.Scale(25, 25, 25);
+			renderMesh(meshList[GEO_SMALLDIAMOND], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "bigdiamond") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + bigdiamondtranslating, it.getObjectposZ() + 1066);
+			modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
+			modelStack.Scale(25, 25, 25);
+			renderMesh(meshList[GEO_BIGDIAMOND2], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "smalldiamond") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + smalldiamondtranslating, it.getObjectposZ() + 1066);
+			modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
+			modelStack.Scale(25, 25, 25);
+			renderMesh(meshList[GEO_SMALLDIAMOND2], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "bigdiamond") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + bigdiamondtranslating, it.getObjectposZ() + 1599);
+			modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
+			modelStack.Scale(25, 25, 25);
+			renderMesh(meshList[GEO_BIGDIAMOND], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "smalldiamond") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX() + 1900, it.getObjectposY() + smalldiamondtranslating, it.getObjectposZ() + 1599);
+			modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
+			modelStack.Scale(25, 25, 25);
+			renderMesh(meshList[GEO_SMALLDIAMOND], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	////interactable diamonds
+	//for (auto it : camera.storage_of_objects) {
+
+	//	if (it.getName() == "bigdiamond2") {
+	//		modelStack.PushMatrix();
+	//		modelStack.Translate(diamondNPC.NPC_getposition_x(), diamondNPC.NPC_getposition_y() + bigdiamondtranslating, diamondNPC.NPC_getposition_z());
+	//		modelStack.Rotate(bigdiamondrotating, 0, 1, 0);
+	//		modelStack.Scale(25,25,25);
+	//		renderMesh(meshList[GEO_BIGDIAMOND], true);
+	//		if (diamondNPC.interaction() == true)
+	//		{
+	//			if (!Application::IsKeyPressed('E'))
+	//			{
+	//				renderDialogueBox("Cursed Diamond", diamondNPC.getDialogue(true));
+	//			}
+	//			else
+	//			{
+	//				renderDialogueBox("Cursed Diamond", diamondNPC.getDialogue(false));
+	//			}
+
+	//		}
+	//		modelStack.PopMatrix();
+	//		break;
+	//	}
+	//}
+
+	//for (auto it : camera.storage_of_objects) {
+
+	//	if (it.getName() == "smalldiamond2") {
+	//		modelStack.PushMatrix();
+	//		modelStack.Translate(it.getObjectposX(), it.getObjectposY() + smalldiamondtranslating, it.getObjectposZ());
+	//		modelStack.Rotate(smalldiamondrotating, 0, 1, 0);
+	//		modelStack.Scale(25,25,25);
+	//		renderMesh(meshList[GEO_SMALLDIAMOND], true);
+	//		modelStack.PopMatrix();
+	//		break;
+	//	}
+	//}
 }
 
 void scene2_SP2::RenderNPC()
 {
+	//npc1
 	for (auto it : camera.storage_of_objects) {
 
 		if (it.getName() == "npcupper") {
 			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY() , it.getObjectposZ());
+			//modelStack.Translate(it.getObjectposX(), it.getObjectposY() , it.getObjectposZ());
+			modelStack.Translate(robotNPC1.NPC_getposition_x(), robotNPC1.NPC_getposition_y(), robotNPC1.NPC_getposition_z());
 			modelStack.Rotate(-90, 0, 1, 0);
 			modelStack.Rotate(NPCrotating, 0, 1, 0);
 			modelStack.Scale(2,2,2);
 			renderMesh(meshList[GEO_NPCUPPER], true);
-			if (it.getObjectposX() + 30 > camera.position.x && it.getObjectposX() - 30 < camera.position.x
-				&& it.getObjectposZ() + 30 > camera.position.z && it.getObjectposZ() - 30 < camera.position.z)
+			/*if (it.getObjectposX() + 30 > camera.position.x && it.getObjectposX() - 30 < camera.position.x
+				&& it.getObjectposZ() + 30 > camera.position.z && it.getObjectposZ() - 30 < camera.position.z)*/
+			if (robotNPC1.interaction() == true)
 			{
-				renderDialogueBox("Worker", "Are you blind?! It's so obvious!");
+				if (!Application::IsKeyPressed('E'))
+				{
+					renderDialogueBox("Worker", robotNPC1.getDialogue(true));
+				}
+				else
+				{
+					renderDialogueBox("Worker", robotNPC1.getDialogue(false));
+				}
+				
 			}
 			modelStack.PopMatrix();
 			break;
@@ -1325,6 +1472,9 @@ void scene2_SP2::RenderNPC()
 			break;
 		}
 	}
+	//npc1
+
+	
 }
 
 void scene2_SP2::RenderBoxes()
@@ -1456,6 +1606,22 @@ void scene2_SP2::VaultAnimation(double dt)
 	}
 }
 
+//void scene2_SP2::RenderPlane()
+//{
+//	for (auto it : camera.storage_of_objects) {
+//
+//		if (it.getName() == "plane") {
+//			modelStack.PushMatrix();
+//			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+//			modelStack.Rotate(-90, 0, 1, 0);
+//			modelStack.Scale(20, 20, 20);
+//			renderMesh(meshList[GEO_PLANE], true);
+//			modelStack.PopMatrix();
+//			break;
+//		}
+//	}
+//}
+
 void scene2_SP2::SatelliteAnimation(double dt)
 {
 	if (satelliterotate == false)
@@ -1519,145 +1685,119 @@ void scene2_SP2::diamondAnimation(double dt)
 
 void scene2_SP2::NPCAnimation(double dt)
 {
-	if (NPCrotate == false)
-	{
-		NPCrotating -= 150 * (float)(dt);
-		if (NPCrotating < 0)
+	/*if (robotNPC1.interaction())
+	{*/
+		//npc1 animation
+		if (NPCrotate == false)
 		{
-			NPCrotate = true;
+			NPCrotating -= 150 * (float)(dt);
+			if (NPCrotating < 0)
+			{
+				NPCrotate = true;
+			}
 		}
-	}
-	else if (NPCrotate == true)
-	{
-		NPCrotating += 150 * (float)(dt);
-		if (NPCrotating > 180)
+		else if (NPCrotate == true)
 		{
-			NPCrotate = false;
+			NPCrotating += 150 * (float)(dt);
+			if (NPCrotating > 180)
+			{
+				NPCrotate = false;
+			}
 		}
-	}
 
-	if (change == false && NPCrotating < 1)
-	{
-		change = true;
-	}
-	else if (change == true && NPCrotating > 178)
-	{
-		change = false;
-	}
-
-	if (NPCrotate2 == false)
-	{
-		NPCrotating2 -= 150 * (float)(dt);
-		if (NPCrotating2 < -180)
+		//npc1 passing boxes
+		if (change == false && NPCrotating < 1)
 		{
-			NPCrotate2 = true;
+			change = true;
 		}
-	}
-	else if (NPCrotate2 == true)
-	{
-		NPCrotating2 += 150 * (float)(dt);
-		if (NPCrotating2 >0)
+		else if (change == true && NPCrotating > 178)
 		{
-			NPCrotate2 = false;
+			change = false;
 		}
-	}
 
-	if (change2 == false && NPCrotating2 < -178)
+
+		//npc2 animation
+		if (NPCrotate2 == false)
+		{
+			NPCrotating2 -= 150 * (float)(dt);
+			if (NPCrotating2 < -180)
+			{
+				NPCrotate2 = true;
+			}
+		}
+		else if (NPCrotate2 == true)
+		{
+			NPCrotating2 += 150 * (float)(dt);
+			if (NPCrotating2 >0)
+			{
+				NPCrotate2 = false;
+			}
+		}
+
+		//npc2 passing boxes
+		if (change2 == false && NPCrotating2 < -178)
+		{
+			change2 = true;
+		}
+		else if (change == true && NPCrotating2 > -2)
+		{
+			change2 = false;
+		}
+	
+	/*else
 	{
-		change2 = true;
-	}
-	else if (change == true && NPCrotating2 > -2)
-	{
-		change2 = false;
-	}
+		NPCrotating = NPCrotating2 = 0;
+		change = change2 = false;
+	}*/
+
+	
 }
 
 void scene2_SP2::BoxesAnimation(double dt)
 {
-	/*if (boxesstart == false)
-	{
+	/*if (robotNPC1.interaction())
+	{*/
+		//box1
 		if (boxesappear == false)
 		{
 			boxesrotating -= 150 * (float)(dt);
-			if (boxesrotating  < -90)
+			if (boxesrotating < 0)
 			{
 				boxesappear = true;
-
 			}
 		}
-		if (boxesappear == true)
+		else if (boxesappear == true)
 		{
 			boxesrotating += 150 * (float)(dt);
-			if (boxesrotating  > 90)
+			if (boxesrotating > 180)
 			{
 				boxesappear = false;
-				boxestransfer = true;
 			}
 		}
-	}
-	
-	if (boxesrotating >80 && boxestransfer == true)
-	{
-		boxesX = 10;
-		boxesstart = true;
-	}
 
-	if (boxesstart == true)
-	{
+		//box2
 		if (boxesappear2 == false)
 		{
-			boxesrotating2 += 150 * (float)(dt);
-			if (boxesrotating2  > 180)
+			boxesrotating2 -= 150 * (float)(dt);
+			if (boxesrotating2 <-180)
 			{
 				boxesappear2 = true;
-
 			}
 		}
-		if (boxesappear2 == true)
+		else if (boxesappear2 == true)
 		{
-			boxesrotating2 -= 150 * (float)(dt);
-			if (boxesrotating2  < 0)
+			boxesrotating2 += 150 * (float)(dt);
+			if (boxesrotating2 >0)
 			{
 				boxesappear2 = false;
-				boxestransfer = true;
 			}
 		}
-	}*/
-	//box1
-	if (boxesappear == false)
+	/*}
+	else
 	{
-		boxesrotating -= 150 * (float)(dt);
-		if (boxesrotating < 0)
-		{
-			boxesappear = true;
-		}
+		boxesrotating = boxesrotating2 = 0;
 	}
-	else if (boxesappear == true)
-	{
-		boxesrotating += 150 * (float)(dt);
-		if (boxesrotating > 180)
-		{
-			boxesappear = false;
-		}
-	}
-
-	//box2
-	if (boxesappear2 == false)
-	{
-		boxesrotating2 -= 150 * (float)(dt);
-		if (boxesrotating2 <-180)
-		{
-			boxesappear2 = true;
-		}
-	}
-	else if (boxesappear2 == true)
-	{
-		boxesrotating2 += 150 * (float)(dt);
-		if (boxesrotating2 >0)
-		{
-			boxesappear2 = false;
-		}
-	}
+	*/
 }
 
 void scene2_SP2::renderDeadPool() {
