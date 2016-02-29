@@ -1,6 +1,13 @@
-Press E to interact
-Hello, it's me!
-Could you help me find something?
-I need back my lost sword now! 
-It should be placed around the blue building!
-Nice la!! Thank you so much!
+﻿Press E to interact
+Chun fei: Hi I'm the 
+Chun fei: Legendary space swordman
+Chun fei: how can i help you 
+You: Do you know me?
+Chun fei: Who the hell are you?
+You: i want to know it too 
+Chun fei: i know a way to help you 
+Chun fei: but you must help me 
+Chun fei: find my sword first
+Chun fei: Is located at blue building
+You: ok
+Chun fei: now find victor and fix the ship

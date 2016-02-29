@@ -188,7 +188,7 @@ void Application::Run()
     //rendering just the loading screen
 
     musics = new BGMDriven();
-    musics->init();
+    //musics->init();
 
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
 	scenario3->Init();
