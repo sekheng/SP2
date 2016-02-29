@@ -191,8 +191,6 @@ void Application::Run()
     musics->init();
     musics->playDarthVaderBackground();
 
-
-
     scenario3 = new scene2_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
 	scenario3->Init();
 
@@ -201,16 +199,16 @@ void Application::Run()
     glfwSwapBuffers(m_window);
 
     scenario2 = new scene3_SP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-    scenario2->Init();
+    //scenario2->Init();
 
 	scenario1 = new sceneSP2(static_cast<float>(mode->width), static_cast<float>(mode->height));
-	scenario1->Init();
+	//scenario1->Init();
 
     loadingScreen->Update(m_timer.getElapsedTime());
     loadingScreen->Render();
     glfwSwapBuffers(m_window);
 
-    scene = scenario1;
+    scene = scenario3;
 
     HWND hwnd = GetActiveWindow();
 

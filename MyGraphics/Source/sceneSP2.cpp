@@ -418,9 +418,9 @@ void sceneSP2::Init()
 
 	//initialise npc3
 	//QUEST3.Init("Chunfei NPChead", Vector3(0, 5.5, 250), 2, 2, camera, "NPC data//NPC_3.txt");
-	QUEST3.Init("Chunfei NPCbody", 5,Vector3(0, 0, 250), 5, 5, camera, "NPC data//NPC_3.txt");
+	QUEST3.Init("Chunfei NPCbody", 5,Vector3(0, 0, 250), 10, 10, camera, "NPC data//NPC_3.txt");
 	//initialise quest3
-	Three.Init("Third quest", camera, 1, Vector3(-300, 0, 275), 5, Vector3(0, 0, 0), 0); 
+	Three.Init("Third quest", camera, 1, Vector3(300, 0, -140), 5, Vector3(0, 0, 0), 0); 
 
 	/*for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "robotbody") {
@@ -2126,7 +2126,7 @@ void sceneSP2::renderChunFei()
             modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
             modelStack.Rotate(-90, 0, 1, 0);
             modelStack.Rotate(headrotating, 1, 0, 0);
-            modelStack.Scale(1.5, 1.5, 1.5);
+            modelStack.Scale(3,3,3);
             renderMesh(meshList[GEO_ROBOTHEAD], true);
             modelStack.PopMatrix();
             break;
@@ -2138,7 +2138,7 @@ void sceneSP2::renderChunFei()
     modelStack.PushMatrix();
     modelStack.Translate(QUEST3.NPC_getposition_x(), QUEST3.NPC_getposition_y(), QUEST3.NPC_getposition_z());
     modelStack.Rotate(-90, 0, 1, 0);
-    modelStack.Scale(1.5, 1.5, 1.5);
+    modelStack.Scale(2.5,2.5,2.5);
     renderMesh(meshList[GEO_ROBOTBODY], true);
     if (quest_stage >= 1)
     {
@@ -2167,7 +2167,7 @@ void sceneSP2::renderChunFei()
                 modelStack.PushMatrix();
                 modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
                 modelStack.Rotate(-90, 0, 1, 0);
-                modelStack.Scale(1.5, 1.5, 1.5);
+                modelStack.Scale(2,2,2);
 				renderMesh(meshList[GEO_SWORD], true);
                 modelStack.PopMatrix();
                 break;

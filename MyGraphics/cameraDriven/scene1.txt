@@ -1,4 +1,4 @@
-positionx,-280
+positionx,-230
 positiony,8
 positionz,300
 upx,0
