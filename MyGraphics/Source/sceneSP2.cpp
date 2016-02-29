@@ -2163,68 +2163,94 @@ void sceneSP2::renderChunFei()
 
 void sceneSP2::populateArea()
 {
-    modelStack.PushMatrix();
-    modelStack.Translate(38, 0, -310);
-    modelStack.Scale(3,3,3);
-    renderMesh(meshList[GEO_BOX], true);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-    modelStack.Translate(35, 0, -307);
-    modelStack.Rotate(-25,0,1,0);
-    modelStack.Scale(2.8f, 2.8f, 2.8f);
-    renderMesh(meshList[GEO_BOX], true);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-    modelStack.Translate(38, 0, -305);
-    modelStack.Rotate(45, 0, 1, 0);
-    modelStack.Scale(3.5f, 3.5f, 3.5f);
-    renderMesh(meshList[GEO_BOX], true);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-    modelStack.Translate(38, 3.5f, -305.5f);
-    modelStack.Rotate(45, 0, 1, 0);
-    modelStack.Scale(3.5f, 3.5f, 3.5f);
-    renderMesh(meshList[GEO_BOX], true);
-    modelStack.PopMatrix();
-
-
-    modelStack.PushMatrix();
-    modelStack.Translate(20, 0, -305.5f);
-    //modelStack.Rotate(45, 0, 1, 0);
-    modelStack.Scale(2, 2, 2);
-    renderMesh(meshList[GEO_BARREL], true);
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    modelStack.Translate(15, 0, -305.5f);
-    //modelStack.Rotate(45, 0, 1, 0);
-    modelStack.Scale(2, 2, 2);
-    renderMesh(meshList[GEO_BARREL], true);
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    modelStack.Translate(10, 0, -305.5f);
-    //modelStack.Rotate(45, 0, 1, 0);
-    modelStack.Scale(2, 2, 2);
-    renderMesh(meshList[GEO_BARREL], true);
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    modelStack.Translate(5, 0, -305.5f);
-    //modelStack.Rotate(45, 0, 1, 0);
-    modelStack.Scale(2, 2, 2);
-    renderMesh(meshList[GEO_BARREL], true);
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    modelStack.Translate(17, 0, -310.5f);
-    modelStack.Rotate(90, 0, 0, 1);
-    modelStack.Rotate(-30, 1, 0, 0);
-    modelStack.Scale(2, 2, 2);
-    renderMesh(meshList[GEO_BARREL], true);
-    modelStack.PopMatrix();
-
-
+    //guan hui
+    for (auto it : camera.storage_of_objects)
+    {
+        if (it.getName() == "RandomBox1")
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Scale(3, 3, 3);
+            renderMesh(meshList[GEO_BOX], true);
+            modelStack.PopMatrix();
+        }
+        if (it.getName() == "RandomBox2")
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Rotate(-25, 0, 1, 0);
+            modelStack.Scale(2.8f, 2.8f, 2.8f);
+            renderMesh(meshList[GEO_BOX], true);
+            modelStack.PopMatrix();
+        }
+        if (it.getName() == "RandomBox3")
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Rotate(45, 0, 1, 0);
+            modelStack.Scale(3.5f, 3.5f, 3.5f);
+            renderMesh(meshList[GEO_BOX], true);
+            modelStack.PopMatrix();
+        }
+        if (it.getName() == "RandomBox4")
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Rotate(45, 0, 1, 0);
+            modelStack.Scale(3.5f, 3.5f, 3.5f);
+            renderMesh(meshList[GEO_BOX], true);
+            modelStack.PopMatrix();
+        }
+        if (it.getName() == "RandomBarrel1")
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            //modelStack.Rotate(45, 0, 1, 0);
+            modelStack.Scale(2, 2, 2);
+            renderMesh(meshList[GEO_BARREL], true);
+            modelStack.PopMatrix();
+        }
+        if (it.getName() == "RandomBarrel2")
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            //modelStack.Rotate(45, 0, 1, 0);
+            modelStack.Scale(2, 2, 2);
+            renderMesh(meshList[GEO_BARREL], true);
+            modelStack.PopMatrix();
+        }
+        if (it.getName() == "RandomBarrel3")
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            //modelStack.Rotate(45, 0, 1, 0);
+            modelStack.Scale(2, 2, 2);
+            renderMesh(meshList[GEO_BARREL], true);
+            modelStack.PopMatrix();
+        }
+        if (it.getName() == "RandomBarrel4")
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            //modelStack.Rotate(45, 0, 1, 0);
+            modelStack.Scale(2, 2, 2);
+            renderMesh(meshList[GEO_BARREL], true);
+            modelStack.PopMatrix();
+        }
+        if (it.getName() == "RandomBarrel5")
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+            modelStack.Rotate(90, 0, 0, 1);
+            modelStack.Rotate(-30, 1, 0, 0);
+            modelStack.Scale(2, 2, 2);
+            renderMesh(meshList[GEO_BARREL], true);
+            modelStack.PopMatrix();
+            break;
+        }
+        
+    }
+    
 	//victor
 
 	for (auto it : camera.storage_of_objects) {
@@ -2514,7 +2540,7 @@ void sceneSP2::RenderTutorialScreen()
     
     if (tutorialscreen == true)
     {
-        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 43, 31, 30, 16);
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 43, 32, 30, 16);
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "WASD for movement", Color(0.039f, 0.937f, 0.702f), 2, 15, 19);
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Use the mouse to look around", Color(0.039f, 0.937f, 0.702f), 2, 15, 17);
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hold Shift to run", Color(0.039f, 0.937f, 0.702f), 2, 15, 15);

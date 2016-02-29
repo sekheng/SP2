@@ -20,7 +20,7 @@ This is for landing on the vault
 #include "NumPad.h"
 #include "creditScene.h"
 #include "NPC.h"
-
+#include "scene2_minigame.h"
 
 /******************************************************************************/
 /*!
@@ -72,6 +72,9 @@ class scene2_SP2 : public Scene
 		GEO_ASTEROID,
 		GEO_ASTEROID2,
 
+		//npcrobot
+		GEO_NPCROBOT,
+
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
         GEO_PLANET_GROUND,
@@ -95,6 +98,19 @@ class scene2_SP2 : public Scene
         //ending screen
         GEO_ENDING_SCREEN,
         //ending screen
+
+        //minigame
+        GEO_MINIGAME_PIECE_1,
+        GEO_MINIGAME_PIECE_2,
+        GEO_MINIGAME_PIECE_3,
+        GEO_MINIGAME_PIECE_4,
+        GEO_MINIGAME_PIECE_5,
+        GEO_MINIGAME_PIECE_6,
+        GEO_MINIGAME_PIECE_7,
+        GEO_MINIGAME_PIECE_8,
+        GEO_MINIGAME_PIECE_9,
+
+
         NUM_GEOMETRY,
     };
 
@@ -218,6 +234,9 @@ private:
 	void NPCAnimation(double dt);
 	void BoxesAnimation(double dt);
 	
+    //minigame functions
+    void RenderMinigamePieces();
+    void RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x);
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -230,6 +249,7 @@ private:
 	NumPad Numpad;
 	NPC robotNPC1;
 	NPC robotNPC2;
+	NPC robotNPC3;
 	//NPC NumpadNPC;
 	
 
@@ -276,6 +296,9 @@ private:
     double update3DPos;
     //For 3D effects of the music
 
+    //minigame object
+    minigame minigame;
+    
     //displaying instructions
     void renderIntruction();
     double PreventSpammingInstruction;
