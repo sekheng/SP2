@@ -924,51 +924,6 @@ void sceneSP2::Render()
     //Set projection matrix to perspective mode
     projection.SetToPerspective(45.0f, 4.0f / 3.0f, 0.1f, 1000.0f); //FOV, Aspect Ratio, Near plane, Far plane
 
-
-   /* if (light[0].type == Light::LIGHT_DIRECTIONAL)
-    {
-        Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
-        Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
-    }
-    else if (light[0].type == Light::LIGHT_SPOT)
-    {
-        Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-        Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
-        glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-    }
-    else
-    {
-        Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-    }
-
-    if (on_light) {
-        Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-        modelStack.PushMatrix();
-        modelStack.Translate(light[0].position.x, light[0].position.y, light[0].position.z);
-        modelStack.Scale(0.5f, 0.5f, 0.5f);
-        renderMesh(meshList[GEO_LIGHTBALL], false);
-        modelStack.PopMatrix();
-    }
-
-	if (light[1].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[1].position;
-		glUniform3fv(m_parameters[U_LIGHT1_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[1].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT1_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-
-		modelStack.PushMatrix();
-		modelStack.Translate(light[1].position.x, light[1].position.y, light[1].position.z);
-		modelStack.Scale(0.5f, 0.5f, 0.5f);
-		renderMesh(meshList[GEO_LIGHTBALL], false);
-		modelStack.PopMatrix();
-	}*/
-
-
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
@@ -987,7 +942,7 @@ void sceneSP2::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
-
+	
 	if (light[1].type == Light::LIGHT_DIRECTIONAL)
 	{
 		Vector3 lightDir(light[1].position.x, light[1].position.y, light[1].position.z);
