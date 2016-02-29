@@ -18,9 +18,15 @@ public:
     
     //background musics
     void playDarthVaderBackground();
+    void playJohnCenaBackground();
+    void playStarWarsThemeBackground();
+    void playWarpBackground();
+    void playPokemonBattleBackground();
 
     //the sound effects
     void playGateEffect(vec3df pos);
+    void playIamYourFatherEffect(vec3df pos);
+    void playJoinDarkSideEffect(vec3df pos);
 
 private:
     //these stuff will have the music source files and 
@@ -29,10 +35,17 @@ private:
     ISoundSource *DarthVaderbackGround;
     ISoundSource *GateEffectSource;
     ISoundSource *StarWarsTheme;
+    ISoundSource *PokemonGymBattleSource;
+    ISoundSource *SpaceWarpSource;
+    ISoundSource *john_cenaSource;
+    ISoundSource *i_amYourFather;
+    ISoundSource *join_DarkSide;
 
     //these pointers make it clear which music is currently being played
     ISound *ZeBackgroundMusic;
     ISound *GateEffect;
+    ISound *iamYourFatherEffect;
+    ISound *join_DarkSideEffect;
 };
 
 #endif

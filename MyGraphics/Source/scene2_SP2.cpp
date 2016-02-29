@@ -339,6 +339,9 @@ void scene2_SP2::Init()
     //Beginning cinematic
 
 	//dooropening = 89;
+    //For 3D effects of the music
+    update3DPos = 0.5;
+    //For 3D effects of the music
 }
 
 /******************************************************************************/
@@ -392,6 +395,19 @@ void scene2_SP2::Update(double dt)
     else {
         camera.Update(dt);
     }
+
+    //For 3D effects of the music
+ 
+    
+    update3DPos += dt;
+    if (update3DPos >= 0.5) {
+        Application::musics->updatePlayerPos(
+            vec3df(camera.position.x, camera.position.y, camera.position.z),
+            vec3df(camera.target.x, camera.target.y, camera.target.z),
+            vec3df(camera.up.x, camera.up.y, camera.up.z)
+            );
+    }
+    //For 3D effects of the music
 
     if (creditRolling.goRollCredit())
     {

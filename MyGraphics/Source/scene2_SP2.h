@@ -267,6 +267,10 @@ private:
     void rollingCredits();
     //credits
     //Beginning cinematic
+
+    //For 3D effects of the music
+    double update3DPos;
+    //For 3D effects of the music
 };
 
 #endif
