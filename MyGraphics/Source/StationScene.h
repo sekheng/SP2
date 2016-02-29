@@ -21,6 +21,7 @@ public:
 	short getCard2();
 	bool getCardText();
 	short openSasame();
+	bool roomLight();
 
 private:
 	Vector3 Door_pos;
@@ -34,6 +35,7 @@ private:
 	bool card2;
 	short count;
 	bool doorOpened;
+	bool switchLight;
 
 protected:
 };
