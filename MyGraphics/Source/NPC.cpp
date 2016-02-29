@@ -195,3 +195,8 @@ string NPC::quest_complete()
     }
     return Dialogues[0];
 }
+
+short NPC::get_LineOfDialogue()
+{
+    return line_of_dialogue;
+}

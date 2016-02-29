@@ -1490,6 +1490,7 @@ void sceneSP2::RenderNPC()
         if (QUEST1.interaction() == true && One.stage() == 4)
         {
             renderDialogueBox("Guan Hui", QUEST1.quest_complete());
+
             Quest1_finished = true;
         }
     }
@@ -2454,6 +2455,7 @@ void sceneSP2::RenderTutorialScreen()
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "WASD for movement", Color(0.039f, 0.937f, 0.702f), 2, 15, 19);
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Use the mouse to look around", Color(0.039f, 0.937f, 0.702f), 2, 15, 17);
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hold Shift to run", Color(0.039f, 0.937f, 0.702f), 2, 15, 15);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press T to view this again", Color(0.039f, 0.937f, 0.702f), 2, 15, 15);
 
     }
 }
