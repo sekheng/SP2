@@ -235,3 +235,8 @@ bool minigame::minigame_started()
 {
     return start;
 }
+
+short minigame::get_selector_state()
+{
+    return piece_state;
+}

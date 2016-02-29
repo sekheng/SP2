@@ -25,6 +25,7 @@ public:
     void updatePieceState();
     void minigame_started(bool started);
     bool minigame_started();
+    short get_selector_state();
 private:
     short piece_state;
     float piece1_rotate;
