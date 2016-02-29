@@ -247,10 +247,10 @@ void scene2_SP2::Init()
 	meshList[GEO_SMALLDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
 
 	//interaction diamond
-	meshList[GEO_BIGDIAMOND2] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bigdiamond.obj");
+	meshList[GEO_BIGDIAMOND2] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bdiamond.obj");
 	meshList[GEO_BIGDIAMOND2]->textureID = LoadTGA("Image//diamond.tga");
 
-	meshList[GEO_SMALLDIAMOND2] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//smalldiamond.obj");
+	meshList[GEO_SMALLDIAMOND2] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//sdiamond.obj");
 	meshList[GEO_SMALLDIAMOND2]->textureID = LoadTGA("Image//diamond.tga");
 
 	//npc
@@ -300,10 +300,10 @@ void scene2_SP2::Init()
 	//vault animation
 	wheelturn = stickpush = dooropen = satelliterotate = bigdiamondtranslate = bigdiamondrotate 
 	= smalldiamondrotate = smalldiamondtranslate = NPCrotate= NPCrotate2 = boxesappear = boxestransfer
-	= boxesappear2 = change = change2=false;
+	= boxesappear2 = change = change2= NPCrotate3= boxesappear3= change3=false;
 	wheelturning = stickpushing = dooropening = satelliterotating = bigdiamondtranslating = bigdiamondrotating 
 	= smalldiamondrotating = smalldiamondtranslating = NPCrotating = NPCrotating2 = boxesrotating 
-	= boxesrotating2 = 0;
+	= boxesrotating2 = NPCrotating3= boxesrotating3=0;
 	
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "numpad") {
@@ -313,7 +313,8 @@ void scene2_SP2::Init()
 	}
 
 	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 40, 40, camera, "NPC data//NPC_4.txt");
-	diamondNPC.Init("diamondNPC", 6, Vector3(900,200,800), 80, 80, camera, "NPC data//NPC_5.txt");
+	robotNPC2.Init("robotNPC2", 6, Vector3(800, 0, 800), 40, 40, camera, "NPC data//NPC_5.txt");
+	//diamondNPC.Init("diamondNPC", 6, Vector3(900,200,800), 80, 80, camera, "NPC data//NPC_5.txt");
 
     //text box
     meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
@@ -359,7 +360,8 @@ void scene2_SP2::Update(double dt)
 	NPCAnimation(dt);
 	BoxesAnimation(dt);
 	robotNPC1.update(dt);
-	diamondNPC.update(dt);
+	robotNPC2.update(dt);
+	//diamondNPC.update(dt);
     framePerSecond = 1 / dt;
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -894,7 +896,7 @@ void scene2_SP2::RenderSpaceShuttle()
 			modelStack.PushMatrix();
 			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
 			modelStack.Rotate(180, 0, 1, 0);
-			modelStack.Scale(50, 50, 50);
+			modelStack.Scale(50, 60, 50);
 			renderMesh(meshList[GEO_SPACESHUTTLE], true);
 			modelStack.PopMatrix();
 			break;
@@ -1404,7 +1406,7 @@ void scene2_SP2::RenderDiamond()
 
 void scene2_SP2::RenderNPC()
 {
-	//npc1
+	//npc1,2
 	for (auto it : camera.storage_of_objects) {
 
 		if (it.getName() == "npcupper") {
@@ -1472,7 +1474,47 @@ void scene2_SP2::RenderNPC()
 			break;
 		}
 	}
-	//npc1
+	//npc1,2
+
+	//npc3
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "npcupper3") {
+			modelStack.PushMatrix();
+			/*modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());*/
+			modelStack.Translate(robotNPC2.NPC_getposition_x(), robotNPC2.NPC_getposition_y(), robotNPC2.NPC_getposition_z());
+			modelStack.Rotate(180, 0, 1, 0);
+			modelStack.Rotate(NPCrotating3, 1, 0, 0);
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_NPCUPPER], true);
+			if (robotNPC2.interaction() == true)
+			{
+				if (!Application::IsKeyPressed('E'))
+				{
+					renderDialogueBox("Disaster", robotNPC2.getDialogue(true));
+				}
+				else
+				{
+					renderDialogueBox("Disaster", robotNPC2.getDialogue(false));
+				}
+
+			}
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "npclower3") {
+			modelStack.PushMatrix();
+			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_NPCLOWER], true);
+			modelStack.PopMatrix();
+			break;
+		}
+	}
 
 	
 }
@@ -1568,6 +1610,25 @@ void scene2_SP2::RenderBoxes()
 			}
 		}
 	}
+
+	//npc3 box
+	if (change3 == true)
+	{
+		for (auto it : camera.storage_of_objects) {
+
+			if (it.getName() == "boxes9_3") {
+				modelStack.PushMatrix();
+				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+				modelStack.Rotate(180, 0, 1, 0);
+				modelStack.Rotate(boxesrotating3, 1, 0, 0);
+				modelStack.Scale(2, 2, 2);
+				renderMesh(meshList[GEO_BOXES], true);
+				modelStack.PopMatrix();
+				break;
+			}
+		}
+	}
+	
 }
 
 void scene2_SP2::VaultAnimation(double dt)
@@ -1749,14 +1810,44 @@ void scene2_SP2::NPCAnimation(double dt)
 		NPCrotating = NPCrotating2 = 0;
 		change = change2 = false;
 	}*/
-
-	
+		//npc3 animation
+		if (robotNPC2.interaction() == true)
+		{
+			//NPCrotating3 += 50 * (float)(dt);
+			if (NPCrotate3 == false)
+			{
+				NPCrotating3 += 50 * (float)(dt);
+				if (NPCrotating3 >75)
+				{
+					NPCrotate3 = true;
+				}
+			}
+			else if (NPCrotate3 == true)
+			{
+				NPCrotating3 -= 50 * (float)(dt);
+				if (NPCrotating3 <= 0)
+				{
+					NPCrotating3 = 0;
+				}
+			}
+		}
+		else
+		{
+			NPCrotate3 = false;
+		}
+		
+		if (change3== false && NPCrotating3 >72)
+		{
+			change3 = true;
+		}
+		/*else if (change == true && NPCrotating3)
+		{
+			change2 = false;
+		}*/
 }
 
 void scene2_SP2::BoxesAnimation(double dt)
 {
-	/*if (robotNPC1.interaction())
-	{*/
 		//box1
 		if (boxesappear == false)
 		{
@@ -1792,12 +1883,50 @@ void scene2_SP2::BoxesAnimation(double dt)
 				boxesappear2 = false;
 			}
 		}
-	/*}
-	else
-	{
-		boxesrotating = boxesrotating2 = 0;
-	}
-	*/
+
+		//box3
+		if (robotNPC2.interaction())
+		{
+			if (boxesappear3 == false)
+			{
+				boxesrotating3 += 50 * (float)(dt);
+				if (boxesrotating3 >75)
+				{
+					boxesappear3 = true;
+				}
+			}
+			else if (boxesappear3 == true)
+			{
+				boxesrotating3 -= 50 * (float)(dt);
+				if (boxesrotating3 <= 0)
+				{
+					boxesrotating3 = 0;
+				}
+			}
+		}
+		else
+		{
+			boxesappear3 = false;
+		}
+		
+
+		/*if (NPCrotate3 == false)
+		{
+			NPCrotating3 += 50 * (float)(dt);
+			if (NPCrotating3 >75)
+			{
+				NPCrotate3 = true;
+			}
+		}
+		else if (NPCrotate3 == true)
+		{
+			NPCrotating3 -= 50 * (float)(dt);
+			if (NPCrotating3 <= 0)
+			{
+				NPCrotating3 = 0;
+			}
+		}*/
+	
 }
 
 void scene2_SP2::renderDeadPool() {
