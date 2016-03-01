@@ -90,12 +90,12 @@ void minigame::updatePieceState()
 void minigame::selection_pointer()
 {
     //controlling the selector
-    if (Application::IsKeyPressed(VK_LEFT) && time > input_delay)
+    if (Application::IsKeyPressed(VK_RIGHT) && time > input_delay)
     {
         time = 0;
         piece_state += 1;
     }
-    if (Application::IsKeyPressed(VK_RIGHT) && time > input_delay)
+    if (Application::IsKeyPressed(VK_LEFT) && time > input_delay)
     {
         time = 0;
         piece_state -= 1;
@@ -226,12 +226,15 @@ bool minigame::result()
 }
 void minigame::update(double dt, bool start_game)
 {
-    time += dt;
-    start = start_game;
-    selection_pointer();
-    changePieceRotation();
-    updatePieceState();
-    result();
+    /*if (start)
+    {*/
+        time += dt;
+        start = start_game;
+        selection_pointer();
+        changePieceRotation();
+        updatePieceState();
+        result();
+    //}
 }
 bool minigame::minigame_started()
 {

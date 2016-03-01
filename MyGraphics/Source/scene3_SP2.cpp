@@ -553,7 +553,7 @@ void scene3_SP2::Render()
     }
     
     if (youLost == false) {
-        renderMesh(meshList[GEO_AXES], false);
+        //renderMesh(meshList[GEO_AXES], false);
 
         modelStack.PushMatrix();
         modelStack.Scale(300, 300, 300 + scaleSkyBoxZ_);
