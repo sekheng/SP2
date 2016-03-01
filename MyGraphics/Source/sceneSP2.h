@@ -113,6 +113,18 @@ class sceneSP2 : public Scene
 
         GEO_TYRE,
 
+        //minigame
+        GEO_MINIGAME_PIECE_1,
+        GEO_MINIGAME_PIECE_2,
+        GEO_MINIGAME_PIECE_3,
+        GEO_MINIGAME_PIECE_4,
+        GEO_MINIGAME_PIECE_5,
+        GEO_MINIGAME_PIECE_6,
+        GEO_MINIGAME_PIECE_7,
+        GEO_MINIGAME_PIECE_8,
+        GEO_MINIGAME_PIECE_9,
+        GEO_MINIGAME_SELECTOR,
+
         NUM_GEOMETRY,
     };
 
@@ -193,6 +205,13 @@ private:
 	void RenderBarrel();
 
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
+
+    //minigame functions
+    void RenderMinigamePieces();
+    void RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x);
+    void RenderMinigameSelectorOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x);
+
+
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 
@@ -285,6 +304,9 @@ private:
 
     //show tutorial screen
     bool tutorialscreen;
+
+    //minigame object
+    minigame MiniGame;
 };
 
 

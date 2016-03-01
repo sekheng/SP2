@@ -99,17 +99,7 @@ class scene2_SP2 : public Scene
         GEO_ENDING_SCREEN,
         //ending screen
 
-        //minigame
-        GEO_MINIGAME_PIECE_1,
-        GEO_MINIGAME_PIECE_2,
-        GEO_MINIGAME_PIECE_3,
-        GEO_MINIGAME_PIECE_4,
-        GEO_MINIGAME_PIECE_5,
-        GEO_MINIGAME_PIECE_6,
-        GEO_MINIGAME_PIECE_7,
-        GEO_MINIGAME_PIECE_8,
-        GEO_MINIGAME_PIECE_9,
-        GEO_MINIGAME_SELECTOR,
+       
 
         NUM_GEOMETRY,
     };
@@ -234,10 +224,6 @@ private:
 	void NPCAnimation(double dt);
 	void BoxesAnimation(double dt);
 	
-    //minigame functions
-    void RenderMinigamePieces();
-    void RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x);
-    void RenderMinigameSelectorOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 
@@ -296,8 +282,7 @@ private:
     double update3DPos;
     //For 3D effects of the music
 
-    //minigame object
-    minigame MiniGame;
+
     
     //displaying instructions
     void renderIntruction();
