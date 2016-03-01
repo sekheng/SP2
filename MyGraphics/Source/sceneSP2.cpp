@@ -1047,7 +1047,7 @@ void sceneSP2::Render()
 	}
 	
 
-    renderMesh(meshList[GEO_AXES], false);
+    //renderMesh(meshList[GEO_AXES], false);
 
     //render skybox
     modelStack.PushMatrix();
@@ -1121,7 +1121,6 @@ void sceneSP2::Render()
     //On screen objects
     //****************************************************************************//
     
-   // RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5f, 1.5f);
     std::stringstream ss;
     ss << "FPS : " << static_cast<int>(framePerSecond);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
@@ -1135,10 +1134,6 @@ void sceneSP2::Render()
     connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
 
-    std::stringstream connectPosY;
-    connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 15.f);
-    
     //testing(DO NOT DELETE THIS)
    /* RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.3,2,-0.8,0,0,0);
 

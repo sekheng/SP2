@@ -642,7 +642,7 @@ void scene2_SP2::Render()
 	}
 	//deadpool light
 
-    renderMesh(meshList[GEO_AXES], false);
+    //renderMesh(meshList[GEO_AXES], false);
 
 	//render ground
 	modelStack.PushMatrix();
@@ -657,9 +657,6 @@ void scene2_SP2::Render()
 	RenderSkybox();
 	modelStack.PopMatrix();
 
-	//render robot
-	RenderRobot();
-
 	//render flyingvehicle
 	RenderFlyingVehicle();
 
@@ -669,7 +666,10 @@ void scene2_SP2::Render()
 	//render spaceshuttle
 	RenderSpaceShuttle();
 
-	//render vault
+    //render robot
+    RenderRobot();
+    
+    //render vault
 	RenderVault();
 	
 	//render numpad
@@ -744,7 +744,12 @@ void scene2_SP2::Render()
 
     rollingCredits();
 
-	std::stringstream connectPosX;
+    modelStack.PushMatrix();
+    //modelStack.Rotate(180,0,1,0);
+    RenderMinigamePieces();
+    modelStack.PopMatrix();
+    
+    std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
 	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.f);
 
@@ -759,11 +764,6 @@ void scene2_SP2::Render()
 	//std::stringstream input;
 	//input << "FPS : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
 	//RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);
-
-    modelStack.PushMatrix();
-    //modelStack.Rotate(180,0,1,0);
-    RenderMinigamePieces();
-    modelStack.PopMatrix();
 }
 
 /******************************************************************************/
