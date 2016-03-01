@@ -109,7 +109,7 @@ class scene2_SP2 : public Scene
         GEO_MINIGAME_PIECE_7,
         GEO_MINIGAME_PIECE_8,
         GEO_MINIGAME_PIECE_9,
-
+        GEO_MINIGAME_SELECTOR,
 
         NUM_GEOMETRY,
     };
@@ -237,7 +237,7 @@ private:
     //minigame functions
     void RenderMinigamePieces();
     void RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x);
-
+    void RenderMinigameSelectorOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x);
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 

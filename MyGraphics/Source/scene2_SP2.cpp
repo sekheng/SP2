@@ -322,6 +322,9 @@ void scene2_SP2::Init()
     meshList[GEO_MINIGAME_PIECE_9] = MeshBuilder::GenerateOBJ("Minigame Piece 9", "OBJ//MiniGame//minigame_piece9.obj");
     meshList[GEO_MINIGAME_PIECE_9]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
 
+    meshList[GEO_MINIGAME_SELECTOR] = MeshBuilder::GenerateOBJ("Minigame Selector", "OBJ//MiniGame//minigame_selector.obj");
+    meshList[GEO_MINIGAME_SELECTOR]->textureID = LoadTGA("Image//MiniGame//selector.tga");
+
 
 
     on_light = true;
@@ -744,10 +747,10 @@ void scene2_SP2::Render()
 
     rollingCredits();
 
-    modelStack.PushMatrix();
-    //modelStack.Rotate(180,0,1,0);
-    RenderMinigamePieces();
-    modelStack.PopMatrix();
+    //modelStack.PushMatrix();
+    ////modelStack.Rotate(180,0,1,0);
+    //RenderMinigamePieces();
+    //modelStack.PopMatrix();
     
     std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
@@ -897,7 +900,7 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     modelStack.Translate(x, y, 0);
     modelStack.Scale(size, size, size);
     modelStack.Rotate(90, 1, 0, 0); 
-    renderMesh(meshList[GEO_AXES], false);
+    //renderMesh(meshList[GEO_AXES], false);
     renderMesh(mesh, false);
 
     projectionStack.PopMatrix();
@@ -2406,9 +2409,74 @@ void scene2_SP2::RenderMinigamePieces()
     RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_8], 5, 40, 25,0);
     RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_9], 5, 45, 25,0);
     modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    if (MiniGame.get_selector_state() == 1)
+    {
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 35, 0);
+    }
+    else if (MiniGame.get_selector_state() == 2)
+    {
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 35, 0);
+    }
+    else if (MiniGame.get_selector_state() == 3)
+    {
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 35, 0);
+    }
+    else if (MiniGame.get_selector_state() == 4)
+    {
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 30, 0);
+    }
+    else if (MiniGame.get_selector_state() == 5)
+    {
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 30, 0);
+    }
+    else if (MiniGame.get_selector_state() == 6)
+    {
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 30, 0);
+    }
+    else if (MiniGame.get_selector_state() == 7)
+    {
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 25, 0);
+    }
+    else if (MiniGame.get_selector_state() == 8)
+    {
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 25, 0);
+    }
+    else if (MiniGame.get_selector_state() == 9)
+    {
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 25, 0);
+    }
+    modelStack.PopMatrix();
 }
 
 void scene2_SP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x) 
+{
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 60, -7, 5); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 0);
+    modelStack.Scale(size, size, size);
+    modelStack.Rotate(90, 0, -1, 0);
+    modelStack.Rotate(rotate_x, -1, 0, 0);
+    //renderMesh(meshList[GEO_AXES], false);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
+}
+
+void scene2_SP2::RenderMinigameSelectorOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
