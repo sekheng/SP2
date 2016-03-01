@@ -233,14 +233,14 @@ void Camera3::Update(double dt)
             Reset();
         }
         cameraMovement(dt);
-        if (Application::IsKeyPressed(VK_SPACE))
-        {
-            position.y += 100 * (float)(dt);
-        }
-        if (Application::IsKeyPressed(VK_LCONTROL))
-        {
-            position.y -= 100 * (float)(dt);
-        }
+        //if (Application::IsKeyPressed(VK_SPACE))
+        //{
+        //    position.y += 100 * (float)(dt);
+        //}
+        //if (Application::IsKeyPressed(VK_LCONTROL))
+        //{
+        //    position.y -= 100 * (float)(dt);
+        //}
         rotateCamera(3 * dt);
         break;
     }

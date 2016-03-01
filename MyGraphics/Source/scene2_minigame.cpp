@@ -1,5 +1,7 @@
 #include "scene2_minigame.h"
 #include "MyMath.h"
+#include "Application.h"
+
 minigame::minigame()
 {
 
@@ -39,39 +41,39 @@ void minigame::init()
 }
 float minigame::piece1()
 {
-    piece1_rotate = static_cast<float>(90 * piece1_state);
+    return piece1_rotate = static_cast<float>(90 * piece1_state);
 }
 float minigame::piece2()
 {
-    piece2_rotate = static_cast<float>(90 * piece2_state);
+    return piece2_rotate = static_cast<float>(90 * piece2_state);
 }
 float minigame::piece3()
 {
-    piece3_rotate = static_cast<float>(90 * piece3_state);
+    return piece3_rotate = static_cast<float>(90 * piece3_state);
 }
 float minigame::piece4()
 {
-    piece4_rotate = static_cast<float>(90 * piece4_state);
+    return piece4_rotate = static_cast<float>(90 * piece4_state);
 }
 float minigame::piece5()
 {
-    piece5_rotate = static_cast<float>(90 * piece5_state);
+    return piece5_rotate = static_cast<float>(90 * piece5_state);
 }
 float minigame::piece6()
 {
-    piece6_rotate = static_cast<float>(90 * piece6_state);
+    return piece6_rotate = static_cast<float>(90 * piece6_state);
 }
 float minigame::piece7()
 {
-    piece7_rotate = static_cast<float>(90 * piece7_state);
+    return piece7_rotate = static_cast<float>(90 * piece7_state);
 }
 float minigame::piece8()
 {
-    piece8_rotate = static_cast<float>(90 * piece8_state);
+    return piece8_rotate = static_cast<float>(90 * piece8_state);
 }
 float minigame::piece9()
 {
-    piece9_rotate = static_cast<float>(90 * piece9_state);
+    return piece9_rotate = static_cast<float>(90 * piece9_state);
 }
 void minigame::updatePieceState()
 {

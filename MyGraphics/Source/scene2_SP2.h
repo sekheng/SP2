@@ -297,7 +297,7 @@ private:
     //For 3D effects of the music
 
     //minigame object
-    minigame minigame;
+    minigame MiniGame;
     
     //displaying instructions
     void renderIntruction();

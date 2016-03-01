@@ -1,7 +1,8 @@
 #ifndef SCENE2_MINIGAME_H_
 #define SCENE2_MINIGAME_H_
 
-#include "Application.h"
+//next time, Don't ANYHOW include!
+//#include "Application.h"
 
 class minigame
 {

@@ -281,38 +281,15 @@ void scene3_SP2::Update(double dt)
     animateWarp(dt);
     animateSpaceShip(dt);
     framePerSecond = 1 / dt;
-    if (Application::IsKeyPressed('1')) //enable back face culling
-        glEnable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('2')) //disable back face culling
-        glDisable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('3'))
+    //if (Application::IsKeyPressed('1')) //enable back face culling
+    //    glEnable(GL_CULL_FACE);
+    //if (Application::IsKeyPressed('2')) //disable back face culling
+    //    glDisable(GL_CULL_FACE);
+    if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-    if (Application::IsKeyPressed('4'))
+    if (Application::IsKeyPressed(VK_NUMPAD5))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-    if (Application::IsKeyPressed('I'))
-        light[0].position.z -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('K'))
-        light[0].position.z += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('J'))
-        light[0].position.x -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('L'))
-        light[0].position.x += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('O'))
-        light[0].position.y -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('P'))
-        light[0].position.y += (float)(LSPEED * dt);
-
-    if (Application::IsKeyPressed('5'))
-    {
-        on_light = true;
-        light[0].color.Set(1, 1, 1);
-    }
-    if (Application::IsKeyPressed('6'))
-    {
-        on_light = false;
-        light[0].color.Set(0, 0, 0);
-    }
 
     if (Application::IsKeyPressed(VK_NUMPAD1)) {
         Application::changeIntoScenario1();

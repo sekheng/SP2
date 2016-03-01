@@ -294,33 +294,33 @@ void scene2_SP2::Init()
     meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("Dead Pool", "OBJ//DeadPool.obj");
     meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//DeadPool.tga");
 
-    //minigame pieces
-    meshList[GEO_MINIGAME_PIECE_1] = MeshBuilder::GenerateOBJ("Minigame Piece 1", "OBJ//minigame//minigame_piece1.obj");
-    meshList[GEO_MINIGAME_PIECE_1]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    //MiniGame pieces
+    meshList[GEO_MINIGAME_PIECE_1] = MeshBuilder::GenerateOBJ("Minigame Piece 1", "OBJ//MiniGame//minigame_piece1.obj");
+    meshList[GEO_MINIGAME_PIECE_1]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
     
-    meshList[GEO_MINIGAME_PIECE_2] = MeshBuilder::GenerateOBJ("Minigame Piece 2", "OBJ//minigame//minigame_piece2.obj");
-    meshList[GEO_MINIGAME_PIECE_2]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    meshList[GEO_MINIGAME_PIECE_2] = MeshBuilder::GenerateOBJ("Minigame Piece 2", "OBJ//MiniGame//minigame_piece2.obj");
+    meshList[GEO_MINIGAME_PIECE_2]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
     
-    meshList[GEO_MINIGAME_PIECE_3] = MeshBuilder::GenerateOBJ("Minigame Piece 3", "OBJ//minigame//minigame_piece3.obj");
-    meshList[GEO_MINIGAME_PIECE_3]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    meshList[GEO_MINIGAME_PIECE_3] = MeshBuilder::GenerateOBJ("Minigame Piece 3", "OBJ//MiniGame//minigame_piece3.obj");
+    meshList[GEO_MINIGAME_PIECE_3]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
     
-    meshList[GEO_MINIGAME_PIECE_4] = MeshBuilder::GenerateOBJ("Minigame Piece 4", "OBJ//minigame//minigame_piece4.obj");
-    meshList[GEO_MINIGAME_PIECE_4]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    meshList[GEO_MINIGAME_PIECE_4] = MeshBuilder::GenerateOBJ("Minigame Piece 4", "OBJ//MiniGame//minigame_piece4.obj");
+    meshList[GEO_MINIGAME_PIECE_4]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
     
-    meshList[GEO_MINIGAME_PIECE_5] = MeshBuilder::GenerateOBJ("Minigame Piece 5", "OBJ//minigame//minigame_piece5.obj");
-    meshList[GEO_MINIGAME_PIECE_5]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    meshList[GEO_MINIGAME_PIECE_5] = MeshBuilder::GenerateOBJ("Minigame Piece 5", "OBJ//MiniGame//minigame_piece5.obj");
+    meshList[GEO_MINIGAME_PIECE_5]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
     
-    meshList[GEO_MINIGAME_PIECE_6] = MeshBuilder::GenerateOBJ("Minigame Piece 6", "OBJ//minigame//minigame_piece6.obj");
-    meshList[GEO_MINIGAME_PIECE_6]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    meshList[GEO_MINIGAME_PIECE_6] = MeshBuilder::GenerateOBJ("Minigame Piece 6", "OBJ//MiniGame//minigame_piece6.obj");
+    meshList[GEO_MINIGAME_PIECE_6]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
     
-    meshList[GEO_MINIGAME_PIECE_7] = MeshBuilder::GenerateOBJ("Minigame Piece 7", "OBJ//minigame//minigame_piece7.obj");
-    meshList[GEO_MINIGAME_PIECE_7]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    meshList[GEO_MINIGAME_PIECE_7] = MeshBuilder::GenerateOBJ("Minigame Piece 7", "OBJ//MiniGame//minigame_piece7.obj");
+    meshList[GEO_MINIGAME_PIECE_7]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
     
-    meshList[GEO_MINIGAME_PIECE_8] = MeshBuilder::GenerateOBJ("Minigame Piece 8", "OBJ//minigame//minigame_piece8.obj");
-    meshList[GEO_MINIGAME_PIECE_8]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    meshList[GEO_MINIGAME_PIECE_8] = MeshBuilder::GenerateOBJ("Minigame Piece 8", "OBJ//MiniGame//minigame_piece8.obj");
+    meshList[GEO_MINIGAME_PIECE_8]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
     
-    meshList[GEO_MINIGAME_PIECE_9] = MeshBuilder::GenerateOBJ("Minigame Piece 9", "OBJ//minigame//minigame_piece9.obj");
-    meshList[GEO_MINIGAME_PIECE_9]->textureID = LoadTGA("Image//minigame//minigame.tga");
+    meshList[GEO_MINIGAME_PIECE_9] = MeshBuilder::GenerateOBJ("Minigame Piece 9", "OBJ//MiniGame//minigame_piece9.obj");
+    meshList[GEO_MINIGAME_PIECE_9]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
 
 
 
@@ -386,7 +386,7 @@ void scene2_SP2::Init()
     update3DPos = 0.5;
     //For 3D effects of the music
 
-    minigame.init();
+    MiniGame.init();
     PreventSpammingInstruction = 0;
     displayInstruction = true;
     //displaying instructions
@@ -415,18 +415,18 @@ void scene2_SP2::Update(double dt)
 	robotNPC3.update(dt);
 	//diamondNPC.update(dt);
 
-	//minigame update
-    if (Application::IsKeyPressed('Y') && minigame.minigame_started() == false)
+	//MiniGame update
+    if (Application::IsKeyPressed('Y') && MiniGame.minigame_started() == false)
     {
-        minigame.update(dt, true);
+        MiniGame.update(dt, true);
     }
-    else if (minigame.minigame_started() == true)
+    else if (MiniGame.minigame_started() == true)
     {
-        minigame.update(dt, true);
+        MiniGame.update(dt, true);
     }
     else
     {
-        minigame.update(dt, false);
+        MiniGame.update(dt, false);
     }
 	
     //displaying instructions
@@ -446,13 +446,13 @@ void scene2_SP2::Update(double dt)
 
 
     framePerSecond = 1 / dt;
-    if (Application::IsKeyPressed('1')) //enable back face culling
-        glEnable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('2')) //disable back face culling
-        glDisable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('3'))
+    //if (Application::IsKeyPressed('1')) //enable back face culling
+    //    glEnable(GL_CULL_FACE);
+    //if (Application::IsKeyPressed('2')) //disable back face culling
+    //    glDisable(GL_CULL_FACE);
+    if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-    if (Application::IsKeyPressed('4'))
+    if (Application::IsKeyPressed(VK_NUMPAD5))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     if (Application::IsKeyPressed(VK_NUMPAD1)) {

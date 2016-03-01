@@ -510,13 +510,13 @@ void sceneSP2::Update(double dt)
 
     QuestCompleteCheck();
 
-    if (Application::IsKeyPressed('1')) //enable back face culling
-        glEnable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('2')) //disable back face culling
-        glDisable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('3'))
+    //if (Application::IsKeyPressed('1')) //enable back face culling
+    //    glEnable(GL_CULL_FACE);
+    //if (Application::IsKeyPressed('2')) //disable back face culling
+    //    glDisable(GL_CULL_FACE);
+    if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-    if (Application::IsKeyPressed('4'))
+    if (Application::IsKeyPressed(VK_NUMPAD5))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     //transit scene
@@ -557,13 +557,12 @@ void sceneSP2::Update(double dt)
 	}
 
     //Sek Heng's stuff
-    if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false
-        || Application::IsKeyPressed('0')) {
+    if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false) {
         sek_heng_.activateQuest();
     }
-    if (Application::IsKeyPressed('9')) {
-        sek_heng_.FinishedQuest();
-    }
+    //if (Application::IsKeyPressed('9')) {
+    //    sek_heng_.FinishedQuest();
+    //}
     sek_heng_.Update(dt);
     //Sek Heng's stuff
 

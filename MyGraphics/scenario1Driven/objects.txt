@@ -565,3 +565,24 @@ objectY,0
 objectZ,-310.5
 boundaryRadiusX,5
 boundaryRadiusZ,5
+
+Name,Sek Heng
+objectX,0
+objectY,0
+objectZ,140
+boundaryRadiusX,3
+boundaryRadiusZ,3
+
+Name,Guan Hui
+objectX,-270
+objectY,0
+objectZ,194
+boundaryRadiusX,3
+boundaryRadiusZ,3
+
+Name,Seetoo Victor
+objectX,-150
+objectY,0
+objectZ,-300
+boundaryRadiusX,3
+boundaryRadiusZ,3

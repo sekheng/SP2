@@ -4,7 +4,7 @@
 #include "Application.h"
 
 SekHeng::SekHeng()
-    : order_of_text(0), stage(0), interatingRadius(4), time(0), isOkay(false), hammerInHand(true)
+    : order_of_text(0), stage(0), interatingRadius(6), time(0), isOkay(false), hammerInHand(true)
 {
     hammer.init(Vector3(92, 0, -78), 3, 3, "hammer");
 }
