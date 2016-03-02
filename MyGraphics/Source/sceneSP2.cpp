@@ -405,6 +405,12 @@ void sceneSP2::Init()
 
 	door.Init("Sek heng", Vector3(-30, 0, 40), camera, 5, 5);
 	door.getQuestStage();
+	door.getCard1();
+	door.getCard2();
+	door.openSasame();
+	door.roomLight();
+	door.switchText();
+	door.getCardText();
 
 	camera.InitObjects("scenario1Driven//objects.txt");
 
@@ -545,7 +551,19 @@ void sceneSP2::Update(double dt)
             }
         }
     }
-
+	if (door.openSasame() == 0)
+	{
+		for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
+			if ((*it).getName() == "Door")
+			{
+				if (Application::IsKeyPressed('R'))
+				{
+					(*it).objectPos.x = -275;
+				}
+				break;
+			}
+		}
+	}
 
 	if (door.roomLight() == true)
 	{
@@ -611,7 +629,9 @@ void sceneSP2::Update(double dt)
     else {
         camera.Update(dt);
     }
+
 	door.update(dt);
+
     //check for tutorial screen
     if (Application::IsKeyPressed('W') ||
         Application::IsKeyPressed('A') ||
@@ -625,6 +645,15 @@ void sceneSP2::Update(double dt)
     {
         tutorialscreen = true;
     }
+	if (Application::IsKeyPressed('R'))
+	{
+		quest_stage = 0;
+		camera.Reset();
+		Quest1_finished = false;
+		Quest2_finished = false;
+		Quest3_finished = false;
+		Quest4_finished = false;
+	}
 }
 
 /******************************************************************************/

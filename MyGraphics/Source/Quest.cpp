@@ -298,6 +298,14 @@ void Quest::Update(double dt)
         }
     }
 
+	if (Application::IsKeyPressed('R'))
+	{
+		stages = 0;
+		CollectItem1 = false;
+		CollectItem2 = false;
+		time = 0;
+		quest_complete = false;
+	}
 }
 
 bool Quest::questComplete()

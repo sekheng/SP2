@@ -68,6 +68,14 @@ void SekHeng::Update(double dt) {
         interactingWithItem() == false && stage == 1) {
         hammerInHand = true;
     }
+
+	if (Application::IsKeyPressed('R'))
+	{
+		hammerInHand = true;
+		stage = 0;
+		isOkay = false;
+		hammer.init(Vector3(92, 0, -78), 3, 3, "hammer");
+	}
 }
 
 string SekHeng::returnDialogue() {
