@@ -8,16 +8,46 @@
 #include <algorithm>
 
 using std::map;
-
+/******************************************************************************/
+/*!
+\brief -
+Default Constructor
+*/
+/******************************************************************************/
 NPC::NPC() : GameObject("NPC")
 {
     
 }
+/******************************************************************************/
+/*!
+\brief -
+Destructor
+*/
+/******************************************************************************/
 NPC::~NPC()
 {
 
 }
+/******************************************************************************/
+/*!
+\brief - initialised it's values through text file reader as well as some 
+other variables initialised through function parameters needed for NPC class to work
 
+\param name - name of object
+
+\param NumberofDialogue - number of lines of dialogue the NPC has
+
+\param pos - Coodinates of object
+
+\param boundaryX - X axis bounds for object
+
+\param boundaryZ - Z axis bounds for object
+
+\param camera_address - camera object
+
+\param fileLocation - the path name to the text file
+*/
+/******************************************************************************/
 void NPC::Init(string name, short NumberofDialogue ,Vector3 pos, float boundaryX, float boundaryZ, Camera3 &camera_address, const char *fileLocation)
 {
     //initialization of varivables
@@ -43,9 +73,11 @@ void NPC::Init(string name, short NumberofDialogue ,Vector3 pos, float boundaryX
     }
     else {
         while (!fileStream.eof()) {
+            //string tp store the dialogues for npc object
             string data = "";
             getline(fileStream, data);
             data.erase(std::remove(data.begin(), data.end(), '\r'));
+            //push back all the data into vector of string
             Dialogues.push_back(data);
         }
         fileStream.close();
@@ -53,25 +85,49 @@ void NPC::Init(string name, short NumberofDialogue ,Vector3 pos, float boundaryX
     text_delay = 0.5f; // set the delay for text
 
 }
-/*********************************************************/
-//get npc position
-/*********************************************************/
+/******************************************************************************/
+/*!
+\brief - get this object's X coordinate
+
+\return - X coordinate of the object
+*/
+/******************************************************************************/
 float NPC::NPC_getposition_x()
 {
     return NPC_pos.x;
 }
+/******************************************************************************/
+/*!
+\brief - get this object's y coordinate
+
+\return - y coordinate of the object
+*/
+/******************************************************************************/
 float NPC::NPC_getposition_z()
 {
     return NPC_pos.z;
 }
+/******************************************************************************/
+/*!
+\brief - get this object's y coordinate
+
+\return - y coordinate of the object
+*/
+/******************************************************************************/
 float NPC::NPC_getposition_y()
 {
     return NPC_pos.y;
 }
 
-/*********************************************************/
-//return npc dialogue
-/*********************************************************/
+/******************************************************************************/
+/*!
+\brief - get this object's dialogue
+
+
+
+\return - dialogue for object in the form of a string
+*/
+/******************************************************************************/
 string NPC::getDialogue(bool reset)
 {
     dialogue_reset = reset;
@@ -106,35 +162,6 @@ string NPC::getDialogue(bool reset)
         }
         return Dialogues[dialogue_switch];
     }
-
-    /*if (reset && has_interacted == false)
-    {
-        stage = 0;
-        has_interacted = true;
-        return Dialogues[stage];
-    }
-    else if (reset && has_interacted == true)
-    {
-        if (time > text_delay)
-        {
-            time = 0;
-            stage++;
-            if (stage == 4)
-            {
-                stage = 1;
-            }
-        }
-        return Dialogues[stage];
-    }
-    else if (!reset && has_interacted == false)
-    {
-        stage = 1;
-        return Dialogues[stage];
-    }
-    else
-    {
-        return Dialogues[stage];
-    }*/
 
 }
 

@@ -14,9 +14,14 @@ The npc class
 #include "Vector3.h"
 #include <vector>
 #include "Camera3.h"
-
-using std::vector;
-
+/******************************************************************************/
+/*!
+Class NPC:
+\brief -
+Inheirited from GameObject
+It has a text reader file to input it's dialogue
+*/
+/******************************************************************************/
 class NPC : public GameObject
 {
 public:
