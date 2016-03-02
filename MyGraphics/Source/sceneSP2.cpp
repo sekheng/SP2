@@ -662,21 +662,12 @@ void sceneSP2::Update(double dt)
         //animateTeleporting(dt);
         //startTeleporting = true;
         MiniGame.update(dt, true);
+
     }
-    else {
-        //MiniGame update
-        if (Application::IsKeyPressed('Y') && MiniGame.minigame_started() == false)
-        {
-            MiniGame.update(dt, true);
-        }
-        else if (MiniGame.minigame_started() == true)
-        {
-            MiniGame.update(dt, true);
-        }
-        else
-        {
-            MiniGame.update(dt, false);
-        }
+    //MiniGame update
+    if (MiniGame.minigame_started())
+    {
+        MiniGame.update(dt, true);
     }
     if (MiniGame.result())
     {
