@@ -97,10 +97,7 @@ void SekHeng::Update(double dt) {
 
 	if (Application::IsKeyPressed('R'))
 	{
-		hammerInHand = true;
-		stage = 0;
-		isOkay = false;
-		hammer.init(Vector3(92, 0, -78), 3, 3, "hammer");
+		reset();
 	}
 }
 
@@ -248,7 +245,8 @@ short SekHeng::getStage() {
 \brief - a method to completely reset the Sek Heng's variable to it's default state
 */
 /******************************************************************************/
-void SekHeng::reset() {
+void SekHeng::reset()
+{
     stage = 0;
     order_of_text = 0;
     time = 0;
