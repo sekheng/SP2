@@ -14,7 +14,7 @@ public:
 	StationScene();
 	~StationScene();
 
-	void Init(string name, Vector3 pos, Camera3 &camera_address, float boundaryX, float boundaryZ);
+	void Init(Camera3 &camera_address);
 	void update(double dt);
 	short getQuestStage();
 	short getCard1();
@@ -26,10 +26,8 @@ public:
 	void reset();
 
 private:
-	Vector3 Door_pos;
-	vector<string> Dialogues;
+
 	Camera3 *cam_pointer;
-	float bound_x, bound_z;
 	float time;
 	bool questActive;
 	bool questComplete;
@@ -38,7 +36,6 @@ private:
 	short count;
 	bool doorOpened;
 	bool switchLightOn;
-	bool switchLightOff;
 	float delay;
 
 protected:

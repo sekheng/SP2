@@ -433,7 +433,7 @@ void sceneSP2::Init()
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
 
-	door.Init("Sek heng", Vector3(-30, 0, 40), camera, 5, 5);
+	door.Init(camera);
 	door.getQuestStage();
 	door.getCard1();
 	door.getCard2();
@@ -653,10 +653,6 @@ void sceneSP2::Update(double dt)
     }
     //music updates
 
-    
-
-
-
     if (Application::IsKeyPressed('E') && sek_heng_.SekHengSayIsOk()
         && teleport() == true) {
         //animateTeleporting(dt);
@@ -697,13 +693,39 @@ void sceneSP2::Update(double dt)
     }
 	if (Application::IsKeyPressed('R'))
 	{
-		quest_stage = 0;
-		camera.Reset();
-		Quest1_finished = false;
-		Quest2_finished = false;
-		Quest3_finished = false;
-		Quest4_finished = false;
+		reset();
 	}
+}
+
+/******************************************************************************/
+/*!
+\brief - reset the entire scene 1
+/******************************************************************************/
+
+void sceneSP2::reset()
+{
+	quest_stage = 0;
+	camera.Reset();
+	npc1.reset();
+	door.reset();
+	sek_heng_.reset();
+	Quest1_finished = false;
+	Quest2_finished = false;
+	Quest3_finished = false;
+	Quest4_finished = false;
+	tutorialscreen = true;
+	teleportCoordY = 0;
+	startTeleporting = false;
+	musicTimeDelay = 0.5;
+	test_quest.reset();
+
+	//initialise quest
+	One.Init("First quest", camera, 2, Vector3(314, 0, 314), 5, Vector3(135, 0, 304), 5);
+	Two.Init("Sec quest", camera, 1, Vector3(-167, 0, 297), 5, Vector3(0, 0, 0), 5);
+	//initialise quest3
+	Three.Init("Third quest", camera, 1, Vector3(300, 0, -140), 5, Vector3(0, 0, 0), 0);
+
+	MiniGame.init();
 }
 
 /******************************************************************************/
@@ -756,10 +778,14 @@ void sceneSP2::renderMesh(Mesh *mesh, bool enableLight)
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - render everything in the room
+*/
+/******************************************************************************/
 
 void sceneSP2::RenderStation()
 {
-
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "Station") {
 			modelStack.PushMatrix();
@@ -1183,8 +1209,6 @@ void sceneSP2::Render()
 
     //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
-	RenderEmptyBox();
-
 	RenderStation();
 
     populateArea();
@@ -1346,6 +1370,21 @@ void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
+
+/******************************************************************************/
+/*!
+\brief -
+delay rendering of the texts using quads on screen
+
+\param mesh - a pointer to the specific mesh
+\param text - the text that needs to be rendered
+\param color - the color of the text
+\param size - size of the text
+\param x - x coordinate of the text
+\param y - y coordinate of the text
+*/
+/******************************************************************************/
+
 void sceneSP2::RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -1398,6 +1437,15 @@ void sceneSP2::RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color col
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }    
+
+/******************************************************************************/
+/*!
+\brief -
+update the time for slowig text
+
+\param - frame time 
+*/
+/******************************************************************************/
 void sceneSP2::TextSlowDown(double dt)
 {    
    slowtxt += dt;
@@ -1441,7 +1489,13 @@ void sceneSP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering of skybox
 
+*/
+/******************************************************************************/
 void sceneSP2::RenderSkybox()
 {
     modelStack.PushMatrix();
@@ -1501,6 +1555,17 @@ void sceneSP2::RenderSkybox()
     //modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering of user interface
+
+\param mesh - a pointer to the specific mesh
+\param size - size of the text
+\param x - x coordinate of the text
+\param y - y coordinate of the text
+*/
+/******************************************************************************/
 void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -1526,6 +1591,13 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering of ground texture
+
+*/
+/******************************************************************************/
 void sceneSP2::Rendergroundmesh()
 {
     modelStack.PushMatrix();
@@ -1567,7 +1639,12 @@ void sceneSP2::RenderGasoline()
 //render quest items
 /**********************************************************************************************************/
 
-
+/******************************************************************************/
+/*!
+\brief -
+rendering of space shuttle
+*/
+/******************************************************************************/
 
 void sceneSP2::RenderSpaceShuttle()
 {
@@ -1582,6 +1659,12 @@ void sceneSP2::RenderSpaceShuttle()
 		}
 	}
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering of NPC and quest
+*/
+/******************************************************************************/
 void sceneSP2::RenderNPC()
 {
     /*
@@ -1784,127 +1867,6 @@ void sceneSP2::renderingSekHeng() {
     //rendering of the hammer
 }
 
-void sceneSP2::RenderEmptyBox()
-{
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox2") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox3") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox4") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox5") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox6") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox7") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox8") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox9") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox10") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox11") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox12") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox13") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			renderMesh(meshList[GEO_HAMMER], true);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-}
-
 /******************************************************************************/
 /*!
 \brief - to allow non-uniform scaling of image
@@ -2048,7 +2010,12 @@ bool sceneSP2::teleport()
     return false;
 }
 
-
+/******************************************************************************/
+/*!
+\brief -
+rendering of building
+*/
+/******************************************************************************/
 void sceneSP2::RenderBuilding()
 {
 	for (auto it : camera.storage_of_objects) {
@@ -2087,7 +2054,12 @@ void sceneSP2::RenderBuilding()
 		}
 	}
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering of chun fei head animation
+*/
+/******************************************************************************/
 void sceneSP2::headanimation(double dt)
 {
 	if (QUEST3.interaction() == true)
@@ -2115,6 +2087,12 @@ void sceneSP2::headanimation(double dt)
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+check if quest is completed
+*/
+/******************************************************************************/
 void sceneSP2::QuestCompleteCheck()
 {
     if (Quest1_finished && !Quest2_finished && !Quest3_finished)
@@ -2135,6 +2113,12 @@ void sceneSP2::QuestCompleteCheck()
     }
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering of item taken on screen
+*/
+/******************************************************************************/
 void sceneSP2::RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z, float rotate_x, float rotate_y, float rotate_z)
 {
     if (direction == "left")
@@ -2287,6 +2271,13 @@ void sceneSP2::renderChunFei()
         RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75f, 2, -0.65f, 0, 0, 0);
     }
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering of environment object
+*/
+/******************************************************************************/
 
 void sceneSP2::populateArea()
 {
@@ -2669,6 +2660,12 @@ void sceneSP2::animateTeleporting(double& dt) {
     camera.up = right.Cross(view);
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering of tutorial
+*/
+/******************************************************************************/
 void sceneSP2::RenderTutorialScreen()
 {
     
@@ -2682,7 +2679,12 @@ void sceneSP2::RenderTutorialScreen()
 
     }
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering minigame pieces
+*/
+/******************************************************************************/
 void sceneSP2::RenderMinigamePieces()
 {
     if (MiniGame.minigame_started() == true && 
@@ -2745,7 +2747,12 @@ void sceneSP2::RenderMinigamePieces()
     }
     
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering of the minigame 
+*/
+/******************************************************************************/
 void sceneSP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -2771,7 +2778,12 @@ void sceneSP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, 
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering selector on screen
+*/
+/******************************************************************************/
 void sceneSP2::RenderMinigameSelectorOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
