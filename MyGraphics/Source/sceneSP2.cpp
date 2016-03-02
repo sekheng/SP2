@@ -390,6 +390,37 @@ void sceneSP2::Init()
 
     meshList[GEO_TYRE] = MeshBuilder::GenerateOBJ("tyre", "OBJ//Tire.obj");
 
+    //MiniGame pieces
+    meshList[GEO_MINIGAME_PIECE_1] = MeshBuilder::GenerateOBJ("Minigame Piece 1", "OBJ//MiniGame//minigame_piece1.obj");
+    meshList[GEO_MINIGAME_PIECE_1]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+
+    meshList[GEO_MINIGAME_PIECE_2] = MeshBuilder::GenerateOBJ("Minigame Piece 2", "OBJ//MiniGame//minigame_piece2.obj");
+    meshList[GEO_MINIGAME_PIECE_2]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+
+    meshList[GEO_MINIGAME_PIECE_3] = MeshBuilder::GenerateOBJ("Minigame Piece 3", "OBJ//MiniGame//minigame_piece3.obj");
+    meshList[GEO_MINIGAME_PIECE_3]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+
+    meshList[GEO_MINIGAME_PIECE_4] = MeshBuilder::GenerateOBJ("Minigame Piece 4", "OBJ//MiniGame//minigame_piece4.obj");
+    meshList[GEO_MINIGAME_PIECE_4]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+
+    meshList[GEO_MINIGAME_PIECE_5] = MeshBuilder::GenerateOBJ("Minigame Piece 5", "OBJ//MiniGame//minigame_piece5.obj");
+    meshList[GEO_MINIGAME_PIECE_5]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+
+    meshList[GEO_MINIGAME_PIECE_6] = MeshBuilder::GenerateOBJ("Minigame Piece 6", "OBJ//MiniGame//minigame_piece6.obj");
+    meshList[GEO_MINIGAME_PIECE_6]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+
+    meshList[GEO_MINIGAME_PIECE_7] = MeshBuilder::GenerateOBJ("Minigame Piece 7", "OBJ//MiniGame//minigame_piece7.obj");
+    meshList[GEO_MINIGAME_PIECE_7]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+
+    meshList[GEO_MINIGAME_PIECE_8] = MeshBuilder::GenerateOBJ("Minigame Piece 8", "OBJ//MiniGame//minigame_piece8.obj");
+    meshList[GEO_MINIGAME_PIECE_8]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+
+    meshList[GEO_MINIGAME_PIECE_9] = MeshBuilder::GenerateOBJ("Minigame Piece 9", "OBJ//MiniGame//minigame_piece9.obj");
+    meshList[GEO_MINIGAME_PIECE_9]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+
+    meshList[GEO_MINIGAME_SELECTOR] = MeshBuilder::GenerateOBJ("Minigame Selector", "OBJ//MiniGame//minigame_selector.obj");
+    meshList[GEO_MINIGAME_SELECTOR]->textureID = LoadTGA("Image//MiniGame//selector.tga");
+
 
     //on_light = true;
 
@@ -479,6 +510,9 @@ void sceneSP2::Init()
     //music updates
 
     tutorialscreen = true;
+
+    //for minigame
+    MiniGame.init();
 }
 
 /******************************************************************************/
@@ -509,6 +543,20 @@ void sceneSP2::Update(double dt)
     headanimation(dt);
 
     QuestCompleteCheck();
+
+    //MiniGame update
+    if (Application::IsKeyPressed('Y') && MiniGame.minigame_started() == false)
+    {
+        MiniGame.update(dt, true);
+    }
+    else if (MiniGame.minigame_started() == true)
+    {
+        MiniGame.update(dt, true);
+    }
+    else
+    {
+        MiniGame.update(dt, false);
+    }
 
     //if (Application::IsKeyPressed('1')) //enable back face culling
     //    glEnable(GL_CULL_FACE);
@@ -1110,7 +1158,10 @@ void sceneSP2::Render()
 
     populateArea();
     
-
+    modelStack.PushMatrix();
+    //modelStack.Rotate(180,0,1,0);
+    RenderMinigamePieces();
+    modelStack.PopMatrix();
 
    /* modelStack.PushMatrix();
     modelStack.Translate(camera.getCrossHairX(), camera.getCrossHairY(), camera.getCrossHairZ());
@@ -1154,7 +1205,10 @@ void sceneSP2::Render()
 
     //RenderStuffOnScreen(meshList[GEO_HAMMER], "right", 0.2f, -1.4, 2, -0.7, 0, 0, -90);
 
+
+
     RenderTutorialScreen();
+
 
 }
 
@@ -2541,4 +2595,111 @@ void sceneSP2::RenderTutorialScreen()
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press T to view this again", Color(0.039f, 0.937f, 0.702f), 2, 15, 13);
 
     }
+}
+
+void sceneSP2::RenderMinigamePieces()
+{
+    
+    modelStack.PushMatrix();
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35, MiniGame.piece1());
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_2], 5, 40, 35, MiniGame.piece2());
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_3], 5, 45, 35, MiniGame.piece3());
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_4], 5, 35, 30, MiniGame.piece4());
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_5], 5, 40, 30, MiniGame.piece5());
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_6], 5, 45, 30, MiniGame.piece6());
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_7], 5, 35, 25, MiniGame.piece7());
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_8], 5, 40, 25, MiniGame.piece8());
+    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_9], 5, 45, 25, MiniGame.piece9());
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    if (MiniGame.get_selector_state() == 1)
+    {
+        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 35, 0);
+    }
+    else if (MiniGame.get_selector_state() == 2)
+    {
+        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 35, 0);
+    }
+    else if (MiniGame.get_selector_state() == 3)
+    {
+        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 35, 0);
+    }
+    else if (MiniGame.get_selector_state() == 4)
+    {
+        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 30, 0);
+    }
+    else if (MiniGame.get_selector_state() == 5)
+    {
+        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 30, 0);
+    }
+    else if (MiniGame.get_selector_state() == 6)
+    {
+        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 30, 0);
+    }
+    else if (MiniGame.get_selector_state() == 7)
+    {
+        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 25, 0);
+    }
+    else if (MiniGame.get_selector_state() == 8)
+    {
+        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 25, 0);
+    }
+    else if (MiniGame.get_selector_state() == 9)
+    {
+        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 25, 0);
+    }
+    modelStack.PopMatrix();
+}
+
+void sceneSP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
+{
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 60, -7, 5); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 0);
+    modelStack.Scale(size, size, size);
+    modelStack.Rotate(90, 0, -1, 0);
+    modelStack.Rotate(rotate_x, -1, 0, 0);
+    //renderMesh(meshList[GEO_AXES], false);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
+}
+
+void sceneSP2::RenderMinigameSelectorOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
+{
+    if (!mesh || mesh->textureID <= 0) //Proper error check
+        return;
+
+    Mtx44 ortho;
+    ortho.SetToOrtho(0, 80, 0, 60, -7, 5); //size of screen UI
+    projectionStack.PushMatrix();
+    projectionStack.LoadMatrix(ortho);
+    viewStack.PushMatrix();
+    viewStack.LoadIdentity(); //No need camera for ortho mode
+    modelStack.PushMatrix();
+    modelStack.LoadIdentity(); //Reset modelStack
+
+    modelStack.Translate(x, y, 3);
+    modelStack.Scale(size, size, size);
+    modelStack.Rotate(90, 0, -1, 0);
+    modelStack.Rotate(rotate_x, -1, 0, 0);
+    //renderMesh(meshList[GEO_AXES], false);
+    renderMesh(mesh, false);
+
+    projectionStack.PopMatrix();
+    viewStack.PopMatrix();
+    modelStack.PopMatrix();
 }
