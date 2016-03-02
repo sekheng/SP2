@@ -17,10 +17,10 @@ const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 
 //global variables needed for transition
-sceneSP2* Application::scenario1;
+Scene* Application::scenario1;
 Scene* Application::scene;
-scene2_SP2* Application::scenario3;
-scene3_SP2* Application::scenario2;
+Scene* Application::scenario3;
+Scene* Application::scenario2;
 
 //Sound effects
 BGMDriven* Application::musics;
@@ -258,12 +258,10 @@ void Application::changeIntoScenario3(){
 }
 
 void Application::changeIntoScenario1() {
-	scenario1->reset();
     scene = scenario1;
     
 }
 
 void Application::changeIntoScenario2() {
-    scenario2->reset();
     scene = scenario2;
 }

@@ -717,6 +717,13 @@ void sceneSP2::reset()
 	startTeleporting = false;
 	musicTimeDelay = 0.5;
 	test_quest.reset();
+
+	//initialise quest
+	One.Init("First quest", camera, 2, Vector3(314, 0, 314), 5, Vector3(135, 0, 304), 5);
+	Two.Init("Sec quest", camera, 1, Vector3(-167, 0, 297), 5, Vector3(0, 0, 0), 5);
+	//initialise quest3
+	Three.Init("Third quest", camera, 1, Vector3(300, 0, -140), 5, Vector3(0, 0, 0), 0);
+
 	MiniGame.init();
 }
 /******************************************************************************/
@@ -2665,10 +2672,9 @@ void sceneSP2::animateTeleporting(double& dt) {
 	{
         camera.setLocation(0, camera.position.y, 0);
     }
-    else
-	{
-        if (camera.position.y > 30) 
-		{
+    else {
+        if (camera.position.y > 30) {
+			test_quest.reset();
             Application::changeIntoScenario2();
         }
         teleportCoordY = Physics::gravitational_pulled(teleportCoordY, dt, 1.f);
