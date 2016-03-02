@@ -180,119 +180,119 @@ void scene2_SP2::Init()
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
-    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
+    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//scene3//comicSans.tga");
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
 	//skybox
-	meshList[GEO_PLANET_SKYBOX] = MeshBuilder::GenerateOBJ("planet skybox", "OBJ//Planet_skybox.obj");
-	meshList[GEO_PLANET_SKYBOX]->textureID = LoadTGA("Image//skybox//Planet_skybox_UV.tga");
+	meshList[GEO_PLANET_SKYBOX] = MeshBuilder::GenerateOBJ("planet skybox", "OBJ//scene2//Planet_skybox.obj");
+	meshList[GEO_PLANET_SKYBOX]->textureID = LoadTGA("Image//scene2//Planet_skybox_UV.tga");
 	//skybox
 
 	//LandVehicle
-	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//LandVehicle.obj");
-	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
+	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//scene1//LandVehicle.obj");
+	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//scene1//LandVehicle.tga");
 
 	//FlyingVehicle
-	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("flyingvehicle", "OBJ//FlyingVehicle.obj");
-	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
+	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("flyingvehicle", "OBJ//scene1//FlyingVehicle.obj");
+	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//scene1//FlyingVehicle.tga");
 	
 	//Robot
-	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("robot", "OBJ//Robocop_Black.obj");
-	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//Robocop_Black_D.tga");
+	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("robot", "OBJ//scene2//Robocop_Black.obj");
+	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//scene2//Robocop_Black_D.tga");
 
 	//spaceship
-	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("spaceshuttle", "OBJ//SpaceShuttle.obj");
-	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//Shuttle_UV.tga");
+	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("spaceshuttle", "OBJ//scene2//SpaceShuttle.obj");
+	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//scene2//Shuttle_UV.tga");
 
 	//vaultcube
-	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("vaultcube", "OBJ//vaultcube.obj");
-	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//vaultnew_UV.tga");
+	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("vaultcube", "OBJ//scene2//vaultcube.obj");
+	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//scene2//vaultnew_UV.tga");
 
 	//vaultdoor
-	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("vaultdoor", "OBJ//vaultdoor.obj");
-	meshList[GEO_VAULTDOOR]->textureID = LoadTGA("Image//vaultnewest.tga");
+	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("vaultdoor", "OBJ//scene2//vaultdoor.obj");
+	meshList[GEO_VAULTDOOR]->textureID = LoadTGA("Image//scene2//vaultnewest.tga");
 
 	//vaultwheel
-	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("vaultwheel", "OBJ//vaultwheel.obj");
-	meshList[GEO_VAULTWHEEL]->textureID = LoadTGA("Image//vaultnewest.tga");
+	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("vaultwheel", "OBJ//scene2//vaultwheel.obj");
+	meshList[GEO_VAULTWHEEL]->textureID = LoadTGA("Image//scene2//vaultnewest.tga");
 
 	//vaultstick
-	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("vaultstick", "OBJ//vaultstick.obj");
-	meshList[GEO_VAULTSTICK]->textureID = LoadTGA("Image//vaultnewest.tga");
+	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("vaultstick", "OBJ//scene2//vaultstick.obj");
+	meshList[GEO_VAULTSTICK]->textureID = LoadTGA("Image//scene2//vaultnewest.tga");
 
 	//numpad
-	meshList[GEO_NUMPAD] = MeshBuilder::GenerateOBJ("numpad", "OBJ//numberpad.obj");
-	meshList[GEO_NUMPAD]->textureID = LoadTGA("Image//number2_UV.tga");
+	meshList[GEO_NUMPAD] = MeshBuilder::GenerateOBJ("numpad", "OBJ//scene2//numberpad.obj");
+	meshList[GEO_NUMPAD]->textureID = LoadTGA("Image//scene2//number2_UV.tga");
 	//numroll
-	meshList[GEO_NUMROLL] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
-	meshList[GEO_NUMROLL]->textureID = LoadTGA("Image//number2_UV.tga");
+	meshList[GEO_NUMROLL] = MeshBuilder::GenerateOBJ("numroll", "OBJ//scene2//numberroll.obj");
+	meshList[GEO_NUMROLL]->textureID = LoadTGA("Image//scene2//number2_UV.tga");
 
 	//Menu
-	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//arrow.obj");
-	meshList[GEO_ARROW]->textureID = LoadTGA("Image//arrow_UV.tga");
+	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//scene2//arrow.obj");
+	meshList[GEO_ARROW]->textureID = LoadTGA("Image//scene2//arrow_UV.tga");
 
 	//satellite
-	meshList[GEO_SATELLITEHEAD] = MeshBuilder::GenerateOBJ("satellitehead", "OBJ//satelliteHead.obj");
-	meshList[GEO_SATELLITEHEAD]->textureID = LoadTGA("Image//Satellite_UV.tga");
+	meshList[GEO_SATELLITEHEAD] = MeshBuilder::GenerateOBJ("satellitehead", "OBJ//scene2//satelliteHead.obj");
+	meshList[GEO_SATELLITEHEAD]->textureID = LoadTGA("Image//scene2//Satellite_UV.tga");
 
-	meshList[GEO_SATELLITEBODY] = MeshBuilder::GenerateOBJ("satellitebody", "OBJ//satellitebody.obj");
-	meshList[GEO_SATELLITEBODY]->textureID = LoadTGA("Image//Satellite_UV.tga");
+	meshList[GEO_SATELLITEBODY] = MeshBuilder::GenerateOBJ("satellitebody", "OBJ//scene2//satellitebody.obj");
+	meshList[GEO_SATELLITEBODY]->textureID = LoadTGA("Image//scene2//Satellite_UV.tga");
 
 	//diamond
-	meshList[GEO_BIGDIAMOND] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bigdiamond.obj");
-	meshList[GEO_BIGDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
+	meshList[GEO_BIGDIAMOND] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//scene2//bigdiamond.obj");
+	meshList[GEO_BIGDIAMOND]->textureID = LoadTGA("Image//scene2//diamond.tga");
 
-	meshList[GEO_SMALLDIAMOND] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//smalldiamond.obj");
-	meshList[GEO_SMALLDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
+	meshList[GEO_SMALLDIAMOND] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//scene2//smalldiamond.obj");
+	meshList[GEO_SMALLDIAMOND]->textureID = LoadTGA("Image//scene2//diamond.tga");
 
 	//interaction diamond
-	meshList[GEO_BIGDIAMOND2] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bdiamond.obj");
-	meshList[GEO_BIGDIAMOND2]->textureID = LoadTGA("Image//diamond.tga");
+	meshList[GEO_BIGDIAMOND2] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//scene2//bdiamond.obj");
+	meshList[GEO_BIGDIAMOND2]->textureID = LoadTGA("Image//scene2//diamond.tga");
 
-	meshList[GEO_SMALLDIAMOND2] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//sdiamond.obj");
-	meshList[GEO_SMALLDIAMOND2]->textureID = LoadTGA("Image//diamond.tga");
+	meshList[GEO_SMALLDIAMOND2] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//scene2//sdiamond.obj");
+	meshList[GEO_SMALLDIAMOND2]->textureID = LoadTGA("Image//scene2//diamond.tga");
 
 	//npc
-	meshList[GEO_NPCUPPER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene3NPCupper.obj");
-	meshList[GEO_NPCUPPER]->textureID = LoadTGA("Image//scene3NPC.tga");
+	meshList[GEO_NPCUPPER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//scene3NPCupper.obj");
+	meshList[GEO_NPCUPPER]->textureID = LoadTGA("Image//scene2//scene3NPC.tga");
 
-	meshList[GEO_NPCLOWER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene3NPClower.obj");
-	meshList[GEO_NPCLOWER]->textureID = LoadTGA("Image//scene3NPC.tga");
+	meshList[GEO_NPCLOWER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//scene3NPClower.obj");
+	meshList[GEO_NPCLOWER]->textureID = LoadTGA("Image//scene2//scene3NPC.tga");
 
-	meshList[GEO_BOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//boxes9.obj");
-	meshList[GEO_BOXES]->textureID = LoadTGA("Image//boxes9.tga");
+	meshList[GEO_BOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//boxes9.obj");
+	meshList[GEO_BOXES]->textureID = LoadTGA("Image//scene2//boxes9.tga");
 
-	meshList[GEO_NORMALBOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//boxes9.obj");
-	meshList[GEO_NORMALBOXES]->textureID = LoadTGA("Image//normalboxes.tga");
+	meshList[GEO_NORMALBOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//boxes9.obj");
+	meshList[GEO_NORMALBOXES]->textureID = LoadTGA("Image//scene2//normalboxes.tga");
 
 	//asteroid
-	meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("npc", "OBJ//rock.obj");
-	meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//rock.tga");
+	meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//rock.obj");
+	meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//scene2//rock.tga");
 
-	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("npc", "OBJ//rock.obj");
-	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//asteroid6.tga");
+	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//rock.obj");
+	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//scene2//asteroid6.tga");
 
-	meshList[GEO_NPCROBOT] = MeshBuilder::GenerateOBJ("npcrobot", "OBJ//scene3NPC2.obj");
-	meshList[GEO_NPCROBOT]->textureID = LoadTGA("Image//scene3NPC.tga");
+	meshList[GEO_NPCROBOT] = MeshBuilder::GenerateOBJ("npcrobot", "OBJ//scene2//scene3NPC2.obj");
+	meshList[GEO_NPCROBOT]->textureID = LoadTGA("Image//scene2//scene3NPC.tga");
 
 	//plane
 	//meshList[GEO_PLANE] = MeshBuilder::GenerateOBJ("plane", "OBJ//plane.obj");
 	//meshList[GEO_PLANE]->textureID = LoadTGA("Image//plane.tga");
 
 	//User Interface
-	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
-	meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
+	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//scene1//User_Interface.obj");
+	meshList[GEO_UI]->textureID = LoadTGA("Image//scene1//UI_UV.tga");
 	//User Interface
 
 	//GroundMesh
-    meshList[GEO_PLANET_GROUND] = MeshBuilder::GenerateOBJ("Planet ground mesh", "OBJ//planet_ground_mesh.obj");
-    meshList[GEO_PLANET_GROUND]->textureID = LoadTGA("Image//planet_ground_mesh.tga");
+    meshList[GEO_PLANET_GROUND] = MeshBuilder::GenerateOBJ("Planet ground mesh", "OBJ//scene2//planet_ground_mesh.obj");
+    meshList[GEO_PLANET_GROUND]->textureID = LoadTGA("Image//scene2//planet_ground_mesh.tga");
     //GroundMesh
     
     //DeadPOOL
-    meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("Dead Pool", "OBJ//DeadPool.obj");
-    meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//DeadPool.tga");
+    meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("Dead Pool", "OBJ//scene2//DeadPool.obj");
+    meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//scene2//DeadPool.tga");
 
 
 
@@ -334,7 +334,7 @@ void scene2_SP2::Init()
 
     //text box
     meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
-    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
+    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//scene1//textbox.tga");
     //text box
 
     //ending screen
@@ -388,8 +388,6 @@ void scene2_SP2::Update(double dt)
 	robotNPC2.update(dt);
 	robotNPC3.update(dt);
 	//diamondNPC.update(dt);
-
-	
 	
     //displaying instructions
     PreventSpammingInstruction += dt;
@@ -2303,7 +2301,7 @@ boxes animation
 */
 /******************************************************************************/
 
-void scene2_SP2::BoxesAnimation(double dt)
+void scene2_SP2::BoxesAnimation(double dt)	
 {
 		//box1
 		if (boxesappear == false)

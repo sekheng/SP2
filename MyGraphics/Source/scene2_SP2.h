@@ -195,8 +195,6 @@ private:
 	float boxesrotating2;
 	float boxesrotating3;
 	
-	
-
 	//renderobj function
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
@@ -237,7 +235,6 @@ private:
 	NPC robotNPC3;
 	//NPC NumpadNPC;
 	
-
     MS modelStack, viewStack, projectionStack;
 
     void RenderText(Mesh* mesh, std::string text, Color color);
