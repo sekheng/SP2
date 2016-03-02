@@ -10,6 +10,7 @@
 /*!
 \brief
 Constructor
+*/
 /****************************************************************************/
 NumPad::NumPad() : GameObject("NumPad")
 {
@@ -19,6 +20,7 @@ NumPad::NumPad() : GameObject("NumPad")
 /*!
 \brief
 Destrucotr
+*/
 /****************************************************************************/
 NumPad::~NumPad()
 {
@@ -121,7 +123,7 @@ void NumPad::Update(double dt)
 /****************************************************************************/
 /*!
 \brief
-Check whether player's position is inside interaction area
+"Press 'C' to interact" will appear if player's position is inside interaction area 
 
 return
 Return true if the player inside interaction area, else false
@@ -301,7 +303,7 @@ void NumPad::NumpadProgram(double dt)
 /****************************************************************************/
 /*!
 \brief
-To check the player's input and the correct password
+To check the player's input with the correct password
 
 \return
 Return true if the input match with the correct password, else return false

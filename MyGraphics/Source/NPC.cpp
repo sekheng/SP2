@@ -170,6 +170,18 @@ void NPC::update(double dt)
 {
 
     time += dt;
+
+	if (Application::IsKeyPressed('R'))
+	{
+		dialogue_switch = 0;
+		dialogue_reset = false;
+		time = 0;
+		has_interacted = false;
+		dialogue_finish = false;
+		stage = 0;
+		quest_complete_delay = false;
+		quest_complete_stage = 0;
+	}
 }
 
 bool NPC::quest_given()
