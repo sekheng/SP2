@@ -40,6 +40,8 @@ public:
     vector<string> position;
     vector<string> names;
 
+    void reset();
+
 private:
     float rollingTitle;
     float rollingTitleCaption;
