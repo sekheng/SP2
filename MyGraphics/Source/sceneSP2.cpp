@@ -608,9 +608,9 @@ void sceneSP2::Update(double dt)
     if (quest_stage == 4 && sek_heng_.SekHengSayIsOk() == false) {
         sek_heng_.activateQuest();
     }
-    //if (Application::IsKeyPressed('9')) {
-    //    sek_heng_.FinishedQuest();
-    //}
+    if (Application::IsKeyPressed('9')) {
+        sek_heng_.FinishedQuest();
+    }
     sek_heng_.Update(dt);
     //Sek Heng's stuff
 
