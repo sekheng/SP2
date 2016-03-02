@@ -575,6 +575,7 @@ void sceneSP2::Update(double dt)
 
     //transit scene
     if (Application::IsKeyPressed(VK_NUMPAD2)) {
+		reset();
         Application::changeIntoScenario2();
     }
     if (Application::IsKeyPressed(VK_NUMPAD3)) {
@@ -604,10 +605,9 @@ void sceneSP2::Update(double dt)
 		for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
 			if ((*it).getName() == "Door")
 			{
-				if (Application::IsKeyPressed('R'))
-				{
-					(*it).objectPos.x = -275;
-				}
+				
+				(*it).objectPos.x = -275;
+
 				break;
 			}
 		}
@@ -695,15 +695,23 @@ void sceneSP2::Update(double dt)
     }
 	if (Application::IsKeyPressed('R'))
 	{
-		quest_stage = 0;
-		camera.Reset();
-		Quest1_finished = false;
-		Quest2_finished = false;
-		Quest3_finished = false;
-		Quest4_finished = false;
+		reset();
 	}
 }
 
+void sceneSP2::reset()
+{
+	quest_stage = 0;
+	camera.Reset();
+	npc1.reset();
+	door.reset();
+	sek_heng_.reset();
+	Quest1_finished = false;
+	Quest2_finished = false;
+	Quest3_finished = false;
+	Quest4_finished = false;
+	tutorialscreen = true;
+}
 /******************************************************************************/
 /*!
 \brief - rendering of the meshes

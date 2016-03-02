@@ -94,11 +94,6 @@ void SekHeng::Update(double dt) {
         interactingWithItem() == false && stage == 1) {
         hammerInHand = true;
     }
-
-	if (Application::IsKeyPressed('R'))
-	{
-		reset();
-	}
 }
 
 /******************************************************************************/

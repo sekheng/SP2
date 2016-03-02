@@ -205,6 +205,7 @@ private:
 
     void RenderQuestObjects();
 	void RenderBarrel();
+	void reset();
 
     void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y);
 
