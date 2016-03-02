@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file       SekHeng.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+To create a unique Data Driven Sek Heng NPC
+*/
+/******************************************************************************/
 #ifndef SEKHENG_H_
 #define SEKHENG_H_
 
@@ -7,6 +16,17 @@
 
 using std::map;
 
+/******************************************************************************/
+/*!
+\file       creditScene.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+Inheirited from objectsForDisplay
+It will have the collisiont check and position.
+And it's own dialogues and interactions boundary
+*/
+/******************************************************************************/
 class SekHeng : public objectsForDisplay
 {
 public:
@@ -27,6 +47,8 @@ public:
     objectsForDisplay hammer;
     bool gottenHammer();
     short getStage();
+
+    void reset();
 
 private:
     Camera3 *dub_camera;
