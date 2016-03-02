@@ -921,6 +921,13 @@ void scene3_SP2::animateWarp(double dt) {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - A Data Driven method that will initialised and determin what are the key press needed to pass this stage
+
+\param fileLocation - the path name to the text file's location
+*/
+/******************************************************************************/
 void scene3_SP2::initQuickTimeEvent(const char* fileLocation) {
     std::ifstream fileStream2(fileLocation, std::ios::binary);
     if (!fileStream2.is_open()) {
@@ -941,6 +948,13 @@ void scene3_SP2::initQuickTimeEvent(const char* fileLocation) {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to update the logic of QTE
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene3_SP2::activateQTE(double& dt) {
     if (quickTimeEventFlag == true) {
         quickTimer -= dt;
@@ -950,6 +964,11 @@ void scene3_SP2::activateQTE(double& dt) {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render QTE's stuff
+*/
+/******************************************************************************/
 void scene3_SP2::renderQTE() {
     if (quickTimeEventFlag == true && quickTimeEvent.empty() == false) {
         std::stringstream ss;
@@ -962,6 +981,11 @@ void scene3_SP2::renderQTE() {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to reset everything inside scenario 2
+*/
+/******************************************************************************/
 void scene3_SP2::reset() {
     camera.Reset();
     quickTimeEventFlag = false;
@@ -997,10 +1021,23 @@ void scene3_SP2::reset() {
     rotationShipY = 0;
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the instructions needed for QTE
+*/
+/******************************************************************************/
 void scene3_SP2::renderInstructions() {
     renderDialogueBox("Instructions", intructions[order_of_text_]);
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to update the logic behind rendering of the instruction and 
+prevent the text from going to fast
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene3_SP2::updateIntructions(double& dt) {
     if (Application::IsKeyPressed('E')) {
         if (makingSureNoDoubleTap > 0.2) {
@@ -1013,6 +1050,15 @@ void scene3_SP2::updateIntructions(double& dt) {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the dialogue box in a much simpler way
+
+\param name - the name of the interacted object
+
+\param dialogue - what will be said by that object
+*/
+/******************************************************************************/
 void scene3_SP2::renderDialogueBox(const string& name, const string& dialogue)
 {
     RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 23, 5);
