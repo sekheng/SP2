@@ -36,6 +36,8 @@ public:
     bool interaction();
     void preventSpamming();
 
+    void reset();
+
 private:
     Camera3 *dub_camera;
     float interatingRadius;

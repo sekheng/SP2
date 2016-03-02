@@ -124,3 +124,13 @@ void rot_civ::preventSpamming() {
         }
     }
 }
+
+/******************************************************************************/
+/*!
+\brief - a method function that will reset the rot_civ's variables to it's default state
+*/
+/******************************************************************************/
+void rot_civ::reset() {
+    time = 0;
+    order_of_text = 0;
+}
