@@ -11,7 +11,7 @@
 SekHeng::SekHeng()
     : order_of_text(0), stage(0), interatingRadius(6), time(0), isOkay(false), hammerInHand(true)
 {
-    hammer.init(Vector3(92, 0, -78), 3, 3, "hammer");
+    hammer.init(Vector3(87, 0, -9), 3, 3, "hammer");
 }
 
 /******************************************************************************/
@@ -248,5 +248,5 @@ void SekHeng::reset()
     isOkay = false;
     hammerInHand = true;
     hammer.objectPos = hammer.originalPos;
-	hammer.init(Vector3(92, 0, -78), 3, 3, "hammer");
+    hammer.init(Vector3(87, 0, -9), 3, 3, "hammer");
 }
