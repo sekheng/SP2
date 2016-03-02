@@ -413,6 +413,14 @@ void scene3_SP2::Update(double dt)
     //when the animation of space ship flying over the asteroid is over
     //for QTE
 
+    //reset button
+    if (Application::IsKeyPressed('R')) {
+        instructionIsOver = false;
+        order_of_text_ = 0;
+        reset();
+    }
+    //reset button
+
     camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);
     Vector3 view = (camera.target - camera.position).Normalized();
     Vector3 right = view.Cross(camera.defaultUp);
