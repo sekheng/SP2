@@ -549,12 +549,6 @@ void sceneSP2::Update(double dt)
 
     QuestCompleteCheck();
 
-    
-
-    //if (Application::IsKeyPressed('1')) //enable back face culling
-    //    glEnable(GL_CULL_FACE);
-    //if (Application::IsKeyPressed('2')) //disable back face culling
-    //    glDisable(GL_CULL_FACE);
     if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
     if (Application::IsKeyPressed(VK_NUMPAD5))
@@ -562,6 +556,7 @@ void sceneSP2::Update(double dt)
 
     //transit scene
     if (Application::IsKeyPressed(VK_NUMPAD2)) {
+		reset();
         Application::changeIntoScenario2();
     }
     if (Application::IsKeyPressed(VK_NUMPAD3)) {
@@ -591,10 +586,9 @@ void sceneSP2::Update(double dt)
 		for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
 			if ((*it).getName() == "Door")
 			{
-				if (Application::IsKeyPressed('R'))
-				{
-					(*it).objectPos.x = -275;
-				}
+				
+				(*it).objectPos.x = -275;
+
 				break;
 			}
 		}
@@ -697,15 +691,35 @@ void sceneSP2::Update(double dt)
     }
 	if (Application::IsKeyPressed('R'))
 	{
-		quest_stage = 0;
-		camera.Reset();
-		Quest1_finished = false;
-		Quest2_finished = false;
-		Quest3_finished = false;
-		Quest4_finished = false;
+		reset();
 	}
 }
 
+void sceneSP2::reset()
+{
+	quest_stage = 0;
+	camera.Reset();
+	npc1.reset();
+	door.reset();
+	sek_heng_.reset();
+	Quest1_finished = false;
+	Quest2_finished = false;
+	Quest3_finished = false;
+	Quest4_finished = false;
+	tutorialscreen = true;
+	teleportCoordY = 0;
+	startTeleporting = false;
+	musicTimeDelay = 0.5;
+	test_quest.reset();
+
+	//initialise quest
+	One.Init("First quest", camera, 2, Vector3(314, 0, 314), 5, Vector3(135, 0, 304), 5);
+	Two.Init("Sec quest", camera, 1, Vector3(-167, 0, 297), 5, Vector3(0, 0, 0), 5);
+	//initialise quest3
+	Three.Init("Third quest", camera, 1, Vector3(300, 0, -140), 5, Vector3(0, 0, 0), 0);
+
+	MiniGame.init();
+}
 /******************************************************************************/
 /*!
 \brief - rendering of the meshes
@@ -1967,23 +1981,6 @@ void sceneSP2::Renderteleporter() {
             break;
         }
     }
-    //for (auto it : camera.storage_of_objects) {
-    //    if (it.getName() == "ParticleCube1" ||
-    //        it.getName() == "ParticleCube2" ||
-    //        it.getName() == "ParticleCube3" ||
-    //        it.getName() == "ParticleCube4" || 
-    //        it.getName() == "ParticleCube5" || 
-    //        it.getName() == "ParticleCube6" || 
-    //        it.getName() == "ParticleCube7" || 
-    //        it.getName() == "ParticleCube8" || 
-    //        it.getName() == "ParticleCube9" || 
-    //        it.getName() == "ParticleCube10") {
-    //        modelStack.PushMatrix();
-    //        modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-    //        renderMesh(meshList[GEO_PARTICLE_CUBE], true);
-    //        modelStack.PopMatrix();
-    //    }
-    //}
     for (auto it : particleHandlers) {
                 modelStack.PushMatrix();
                 modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
@@ -2648,11 +2645,13 @@ void sceneSP2::populateArea()
 */
 /******************************************************************************/
 void sceneSP2::animateTeleporting(double& dt) {
-    if (camera.position.z != 0 || camera.position.x != 0) {
+    if (camera.position.z != 0 || camera.position.x != 0) 
+	{
         camera.setLocation(0, camera.position.y, 0);
     }
     else {
         if (camera.position.y > 30) {
+			test_quest.reset();
             Application::changeIntoScenario2();
         }
         teleportCoordY = Physics::gravitational_pulled(teleportCoordY, dt, 1.f);

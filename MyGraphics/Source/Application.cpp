@@ -134,8 +134,8 @@ void Application::Init()
 
     // get the primary monitor's size
 
-    //m_window = glfwCreateWindow(mode->width, mode->height, "Space Watcher", NULL, NULL);
-    m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+    m_window = glfwCreateWindow(mode->width, mode->height, "Space Watcher", NULL, NULL);
+    //m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
 	glfwSetWindowSizeCallback(m_window, resize_callback);
 
 	//If the window couldn't be created
@@ -259,6 +259,7 @@ void Application::changeIntoScenario3(){
 
 void Application::changeIntoScenario1() {
     scene = scenario1;
+    
 }
 
 void Application::changeIntoScenario2() {

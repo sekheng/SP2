@@ -85,6 +85,7 @@ public:
     short get_numberof_items();
     bool Item1collected();
     bool Item2collected();
+	void reset();
 private:
     string name;
     Camera3 *camera;

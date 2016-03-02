@@ -39,6 +39,7 @@ public:
     bool quest_given();
     string quest_complete();
     short get_LineOfDialogue();
+	void reset();
 private:
     Vector3 NPC_pos;
     vector<string> Dialogues;
