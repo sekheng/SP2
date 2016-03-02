@@ -660,6 +660,10 @@ void sceneSP2::Update(double dt)
             MiniGame.update(dt, false);
         }
     }
+    if (MiniGame.result())
+    {
+        startTeleporting = true;
+    }
     if (startTeleporting) {
         animateTeleporting(dt);
     }
@@ -2606,11 +2610,14 @@ void sceneSP2::RenderTutorialScreen()
 
 void sceneSP2::RenderMinigamePieces()
 {
-    if (//MiniGame.minigame_started() == true && 
+    if (MiniGame.minigame_started() == true && 
         MiniGame.result() == false)
     {
         modelStack.PushMatrix();
-
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 5, 5, 4, 4);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Arrow keys to navigate the circuit", Color(0.039f, 0.937f, 0.702f), 2, 15, 23);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press Enter to rotate the selected part", Color(0.039f, 0.937f, 0.702f), 2, 15, 22);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Complete the circuit to move on", Color(0.039f, 0.937f, 0.702f), 2, 15, 21);
         RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35, MiniGame.piece1());
         RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_2], 5, 40, 35, MiniGame.piece2());
         RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_3], 5, 45, 35, MiniGame.piece3());
