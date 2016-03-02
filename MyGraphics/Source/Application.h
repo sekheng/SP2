@@ -43,9 +43,9 @@ public:
     static BGMDriven *musics;
 private:
     static Scene *scene;
-    static Scene * scenario1;
-    static Scene *scenario3;
-    static Scene *scenario2;
+    static sceneSP2 * scenario1;
+    static scene2_SP2 *scenario3;
+    static scene3_SP2 *scenario2;
 	//Declare a window object
 	StopWatch m_timer;
 };
