@@ -248,4 +248,5 @@ void SekHeng::reset()
     isOkay = false;
     hammerInHand = true;
     hammer.objectPos = hammer.originalPos;
+	hammer.init(Vector3(92, 0, -78), 3, 3, "hammer");
 }
