@@ -198,12 +198,8 @@ private:
     void RenderGasoline();
     //render quest items
 	void RenderSpaceShuttle();
-
 	void RenderStation();
-	void RenderEmptyBox();
-
     void RenderNPC();
-
     void RenderQuestObjects();
 	void RenderBarrel();
 
@@ -239,6 +235,7 @@ private:
     Quest Three;
     Quest Four;
 
+	//room interaction
 	StationScene door;
 	float lightSwitch;
 
@@ -273,6 +270,7 @@ private:
 	void renderChunFei();
 	void headanimation(double dt);
 	void renderNPC3();
+	//render building
 	void RenderBuilding();
 
     void populateArea();
