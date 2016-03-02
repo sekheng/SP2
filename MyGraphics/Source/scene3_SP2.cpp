@@ -292,9 +292,11 @@ void scene3_SP2::Update(double dt)
 
 
     if (Application::IsKeyPressed(VK_NUMPAD1)) {
+        reset();
         Application::changeIntoScenario1();
     }
     if (Application::IsKeyPressed(VK_NUMPAD3)) {
+        reset();
         Application::changeIntoScenario3();
     }
     //transition to the 3rd scenario
@@ -1067,6 +1069,21 @@ void scene3_SP2::renderDialogueBox(const string& name, const string& dialogue)
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the image on screen which offers non-uniform scalling
+
+\param mesh - the Shape that will be rendered
+
+\param x - the x coordinate of the image
+
+\param y - the y coordinate of the image
+
+\param sizeX - the scalling of image based on X-axis
+
+\param sizeY - the scalling of image based on Y-axis
+*/
+/******************************************************************************/
 void scene3_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;

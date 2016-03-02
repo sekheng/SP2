@@ -133,3 +133,15 @@ position and their names.
 float creditScene::getMovePositionY() {
     return movePositionY;
 }
+
+/******************************************************************************/
+/*!
+\brief - a method that all the variables inside this class to it's default values
+*/
+/******************************************************************************/
+void creditScene::reset() {
+    rollingTitle = 0;
+    rollingTitleCaption = 0;
+    rollCredits = false;
+    movePositionY = 0;
+}

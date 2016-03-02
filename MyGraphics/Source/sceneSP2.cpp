@@ -8,7 +8,6 @@
 #include "MeshBuilder.h"
 #include "MaterialBuilder.h"
 #include "Material.h"
-//#include "Light.h"
 #include "Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
@@ -550,19 +549,7 @@ void sceneSP2::Update(double dt)
 
     QuestCompleteCheck();
 
-    //MiniGame update
-    if (Application::IsKeyPressed('Y') && MiniGame.minigame_started() == false)
-    {
-        MiniGame.update(dt, true);
-    }
-    else if (MiniGame.minigame_started() == true)
-    {
-        MiniGame.update(dt, true);
-    }
-    else
-    {
-        MiniGame.update(dt, false);
-    }
+    
 
     //if (Application::IsKeyPressed('1')) //enable back face culling
     //    glEnable(GL_CULL_FACE);
@@ -666,9 +653,24 @@ void sceneSP2::Update(double dt)
     }
     //music updates
 
+    
+
+
+
     if (Application::IsKeyPressed('E') && sek_heng_.SekHengSayIsOk()
         && teleport() == true) {
         //animateTeleporting(dt);
+        //startTeleporting = true;
+        MiniGame.update(dt, true);
+
+    }
+    //MiniGame update
+    if (MiniGame.minigame_started())
+    {
+        MiniGame.update(dt, true);
+    }
+    if (MiniGame.result())
+    {
         startTeleporting = true;
     }
     if (startTeleporting) {
@@ -1761,6 +1763,11 @@ void sceneSP2::RenderQuestObjects()
     */
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render Sek Heng and his quest
+*/
+/******************************************************************************/
 void sceneSP2::renderingSekHeng() {
     modelStack.PushMatrix();
     modelStack.Translate(sek_heng_.getObjectposX(), sek_heng_.getObjectposY(), sek_heng_.getObjectposZ());
@@ -1906,6 +1913,21 @@ void sceneSP2::RenderEmptyBox()
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief - to allow non-uniform scaling of image
+
+\param mesh - a pointer to the specific mesh
+\param text - the text that needs to be rendered
+\param color - the color of the text
+\param x - x coordinate of the text
+\param y - y coordinate of the text
+
+\param sizeX - size of the text based on the X-axis
+
+\param sizeY - size of the text based on the Y-axis
+*/
+/******************************************************************************/
 void sceneSP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
@@ -1929,6 +1951,11 @@ void sceneSP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, fl
     modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief - Teleporter and it's particle effect
+*/
+/******************************************************************************/
 void sceneSP2::Renderteleporter() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "TeleporterBox") {
@@ -1983,6 +2010,15 @@ void sceneSP2::Renderteleporter() {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - create a dialogue box easily
+
+\param name - the name of the interacted object
+
+\param dialogue - the words said by that interacted object
+*/
+/******************************************************************************/
 void sceneSP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 23, 5);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 2.5, 5.5);
@@ -1990,7 +2026,16 @@ void sceneSP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }
 
-bool sceneSP2::teleport() 
+/******************************************************************************/
+/*!
+\brief - the logic of interaction between the teleporter and player
+
+\return - true if player is inisde it's interacting boundary
+
+\return - false if the player is outside it's interacting boundary
+*/
+/******************************************************************************/
+bool sceneSP2::teleport()
 {
     for (auto it : camera.storage_of_objects) 
     {
@@ -2603,6 +2648,13 @@ void sceneSP2::populateArea()
 }
 
 
+/******************************************************************************/
+/*!
+\brief - the logic behind animating of teleporting
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void sceneSP2::animateTeleporting(double& dt) {
     if (camera.position.z != 0 || camera.position.x != 0) {
         camera.setLocation(0, camera.position.y, 0);
@@ -2636,57 +2688,65 @@ void sceneSP2::RenderTutorialScreen()
 
 void sceneSP2::RenderMinigamePieces()
 {
-    
-    modelStack.PushMatrix();
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35, MiniGame.piece1());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_2], 5, 40, 35, MiniGame.piece2());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_3], 5, 45, 35, MiniGame.piece3());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_4], 5, 35, 30, MiniGame.piece4());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_5], 5, 40, 30, MiniGame.piece5());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_6], 5, 45, 30, MiniGame.piece6());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_7], 5, 35, 25, MiniGame.piece7());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_8], 5, 40, 25, MiniGame.piece8());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_9], 5, 45, 25, MiniGame.piece9());
-    modelStack.PopMatrix();
+    if (MiniGame.minigame_started() == true && 
+        MiniGame.result() == false)
+    {
+        modelStack.PushMatrix();
+        RenderImageOnScreen(meshList[GEO_TEXT_BOX], 5, 5, 4, 4);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Arrow keys to navigate the circuit", Color(0.039f, 0.937f, 0.702f), 2, 15, 23);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press Enter to rotate the selected part", Color(0.039f, 0.937f, 0.702f), 2, 15, 22);
+        RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Complete the circuit to move on", Color(0.039f, 0.937f, 0.702f), 2, 15, 21);
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35, MiniGame.piece1());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_2], 5, 40, 35, MiniGame.piece2());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_3], 5, 45, 35, MiniGame.piece3());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_4], 5, 35, 30, MiniGame.piece4());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_5], 5, 40, 30, MiniGame.piece5());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_6], 5, 45, 30, MiniGame.piece6());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_7], 5, 35, 25, MiniGame.piece7());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_8], 5, 40, 25, MiniGame.piece8());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_9], 5, 45, 25, MiniGame.piece9());
+        modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    if (MiniGame.get_selector_state() == 1)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 35, 0);
+        modelStack.PushMatrix();
+        if (MiniGame.get_selector_state() == 1)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 35, 0);
+        }
+        else if (MiniGame.get_selector_state() == 2)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 35, 0);
+        }
+        else if (MiniGame.get_selector_state() == 3)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 35, 0);
+        }
+        else if (MiniGame.get_selector_state() == 4)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 30, 0);
+        }
+        else if (MiniGame.get_selector_state() == 5)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 30, 0);
+        }
+        else if (MiniGame.get_selector_state() == 6)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 30, 0);
+        }
+        else if (MiniGame.get_selector_state() == 7)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 25, 0);
+        }
+        else if (MiniGame.get_selector_state() == 8)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 25, 0);
+        }
+        else if (MiniGame.get_selector_state() == 9)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 25, 0);
+        }
+        modelStack.PopMatrix();
     }
-    else if (MiniGame.get_selector_state() == 2)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 35, 0);
-    }
-    else if (MiniGame.get_selector_state() == 3)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 35, 0);
-    }
-    else if (MiniGame.get_selector_state() == 4)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 30, 0);
-    }
-    else if (MiniGame.get_selector_state() == 5)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 30, 0);
-    }
-    else if (MiniGame.get_selector_state() == 6)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 30, 0);
-    }
-    else if (MiniGame.get_selector_state() == 7)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 25, 0);
-    }
-    else if (MiniGame.get_selector_state() == 8)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 25, 0);
-    }
-    else if (MiniGame.get_selector_state() == 9)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 25, 0);
-    }
-    modelStack.PopMatrix();
+    
 }
 
 void sceneSP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
