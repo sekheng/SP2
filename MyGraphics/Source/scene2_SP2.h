@@ -20,7 +20,6 @@ This is for landing on the vault
 #include "NumPad.h"
 #include "creditScene.h"
 #include "NPC.h"
-#include "scene2_minigame.h"
 
 /******************************************************************************/
 /*!

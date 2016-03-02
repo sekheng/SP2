@@ -20,6 +20,8 @@ Hopefully they don't mess it up
 #include "StationScene.h"
 #include "Quest.h"
 #include "SekHeng.h"
+#include "scene2_minigame.h"
+
 /******************************************************************************/
 /*!
 Class sceneSP2:

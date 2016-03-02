@@ -2599,6 +2599,7 @@ void sceneSP2::RenderTutorialScreen()
 
 void sceneSP2::RenderMinigamePieces()
 {
+    
     modelStack.PushMatrix();
     RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35, MiniGame.piece1());
     RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_2], 5, 40, 35, MiniGame.piece2());
