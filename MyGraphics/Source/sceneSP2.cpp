@@ -8,7 +8,6 @@
 #include "MeshBuilder.h"
 #include "MaterialBuilder.h"
 #include "Material.h"
-//#include "Light.h"
 #include "Material.h"
 #include "Utility.h"
 #include "LoadTGA.h"
@@ -544,19 +543,7 @@ void sceneSP2::Update(double dt)
 
     QuestCompleteCheck();
 
-    //MiniGame update
-    if (Application::IsKeyPressed('Y') && MiniGame.minigame_started() == false)
-    {
-        MiniGame.update(dt, true);
-    }
-    else if (MiniGame.minigame_started() == true)
-    {
-        MiniGame.update(dt, true);
-    }
-    else
-    {
-        MiniGame.update(dt, false);
-    }
+    
 
     //if (Application::IsKeyPressed('1')) //enable back face culling
     //    glEnable(GL_CULL_FACE);
@@ -648,10 +635,30 @@ void sceneSP2::Update(double dt)
     }
     //music updates
 
+    
+
+
+
     if (Application::IsKeyPressed('E') && sek_heng_.SekHengSayIsOk()
         && teleport() == true) {
         //animateTeleporting(dt);
-        startTeleporting = true;
+        //startTeleporting = true;
+        MiniGame.update(dt, true);
+    }
+    else {
+        //MiniGame update
+        if (Application::IsKeyPressed('Y') && MiniGame.minigame_started() == false)
+        {
+            MiniGame.update(dt, true);
+        }
+        else if (MiniGame.minigame_started() == true)
+        {
+            MiniGame.update(dt, true);
+        }
+        else
+        {
+            MiniGame.update(dt, false);
+        }
     }
     if (startTeleporting) {
         animateTeleporting(dt);
@@ -2599,57 +2606,62 @@ void sceneSP2::RenderTutorialScreen()
 
 void sceneSP2::RenderMinigamePieces()
 {
-    
-    modelStack.PushMatrix();
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35, MiniGame.piece1());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_2], 5, 40, 35, MiniGame.piece2());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_3], 5, 45, 35, MiniGame.piece3());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_4], 5, 35, 30, MiniGame.piece4());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_5], 5, 40, 30, MiniGame.piece5());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_6], 5, 45, 30, MiniGame.piece6());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_7], 5, 35, 25, MiniGame.piece7());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_8], 5, 40, 25, MiniGame.piece8());
-    RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_9], 5, 45, 25, MiniGame.piece9());
-    modelStack.PopMatrix();
+    if (//MiniGame.minigame_started() == true && 
+        MiniGame.result() == false)
+    {
+        modelStack.PushMatrix();
 
-    modelStack.PushMatrix();
-    if (MiniGame.get_selector_state() == 1)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 35, 0);
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_1], 5, 35, 35, MiniGame.piece1());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_2], 5, 40, 35, MiniGame.piece2());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_3], 5, 45, 35, MiniGame.piece3());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_4], 5, 35, 30, MiniGame.piece4());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_5], 5, 40, 30, MiniGame.piece5());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_6], 5, 45, 30, MiniGame.piece6());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_7], 5, 35, 25, MiniGame.piece7());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_8], 5, 40, 25, MiniGame.piece8());
+        RenderMinigameOnScreen(meshList[GEO_MINIGAME_PIECE_9], 5, 45, 25, MiniGame.piece9());
+        modelStack.PopMatrix();
+
+        modelStack.PushMatrix();
+        if (MiniGame.get_selector_state() == 1)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 35, 0);
+        }
+        else if (MiniGame.get_selector_state() == 2)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 35, 0);
+        }
+        else if (MiniGame.get_selector_state() == 3)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 35, 0);
+        }
+        else if (MiniGame.get_selector_state() == 4)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 30, 0);
+        }
+        else if (MiniGame.get_selector_state() == 5)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 30, 0);
+        }
+        else if (MiniGame.get_selector_state() == 6)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 30, 0);
+        }
+        else if (MiniGame.get_selector_state() == 7)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 25, 0);
+        }
+        else if (MiniGame.get_selector_state() == 8)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 25, 0);
+        }
+        else if (MiniGame.get_selector_state() == 9)
+        {
+            RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 25, 0);
+        }
+        modelStack.PopMatrix();
     }
-    else if (MiniGame.get_selector_state() == 2)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 35, 0);
-    }
-    else if (MiniGame.get_selector_state() == 3)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 35, 0);
-    }
-    else if (MiniGame.get_selector_state() == 4)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 30, 0);
-    }
-    else if (MiniGame.get_selector_state() == 5)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 30, 0);
-    }
-    else if (MiniGame.get_selector_state() == 6)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 30, 0);
-    }
-    else if (MiniGame.get_selector_state() == 7)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 35, 25, 0);
-    }
-    else if (MiniGame.get_selector_state() == 8)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 40, 25, 0);
-    }
-    else if (MiniGame.get_selector_state() == 9)
-    {
-        RenderMinigameSelectorOnScreen(meshList[GEO_MINIGAME_SELECTOR], 5, 45, 25, 0);
-    }
-    modelStack.PopMatrix();
+    
 }
 
 void sceneSP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
