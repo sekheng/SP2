@@ -438,6 +438,14 @@ void scene2_SP2::Update(double dt)
         camera.Update(dt);
         Application::musics->playLovelyLullaby();
     }
+	if (Application::IsKeyPressed('R'))
+	{
+		change3 = false;
+		NPCrotate3 = false;
+		NPCrotating3 = 0;
+		boxesappear3 = false;
+
+	}
 
     //For 3D effects of the music
     update3DPos += dt;
@@ -679,10 +687,10 @@ void scene2_SP2::Render()
         RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 85, 30, 2, 0 + Numpad.getfourthrotate(), 1, 0);
         RenderNumPadOnScreen(meshList[GEO_ARROW], 3, Numpad.getarrowposition(), 3, 7, -90, 0, 1); //19.5 34.5 49.5 64.5
         if (displayInstruction == true) {
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Arrow Keys to move the arrow and turn the wheels", Color(0, 1, 0), 3, 3, 16);
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press Enter to check for the result", Color(0, 1, 0), 3, 3, 14.5);
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Move Away to exit from this view", Color(0, 1, 0), 3, 3, 13);
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press 'T' to open/close this instruction", Color(0, 1, 0), 3, 3, 11.5);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Arrow Keys to move the arrow and turn the wheels", Color(0, 1, 0), 3, 3, 17.5);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press Enter to check for the result", Color(0, 1, 0), 3, 3, 16);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Move Away to exit from this view", Color(0, 1, 0), 3, 3, 14.5);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press 'T' to open/close this instruction", Color(0, 1, 0), 3, 3, 13);
         }
     }
 
@@ -694,11 +702,6 @@ void scene2_SP2::Render()
     if (Numpad.NumpadRenderOnScreen() == false && Numpad.interactiontext()) // "Press 'C' to interact" appear
 	{
         renderDialogueBox("Numpad", "Press 'C' to interact");
-		//modelStack.PushMatrix();
-		//modelStack.Translate(5, 10, 40);
-		//modelStack.Scale(3, 3, 3);
-		//RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
-		//modelStack.PopMatrix();
 	}
     if (beginIamYourFather == true && moveToDeadPoolZ < -135) {
         renderEndingScreen();
@@ -721,7 +724,7 @@ void scene2_SP2::Render()
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 
 	//std::stringstream input;
-	//input << "FPS : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
+	//input << "text : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
 	//RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);
 }
 
@@ -863,7 +866,21 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering numpad on screen
 
+\param mesh - a pointer to the specific mesh
+\param size - size of the numroll
+\param x - x coordinate of the numroll
+\param y - y coordinate of the numroll
+\param z - z coordinate of the numroll
+\param rotate - rotate angle of the numroll
+\param rotatex - rotate x coordinate of the numroll
+\param rotatey - rotate y coordinate of the numroll
+*/
+/******************************************************************************/
 void scene2_SP2::RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate, float rotatex, float rotatey) {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -886,13 +903,29 @@ void scene2_SP2::RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, 
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering sky box
+*/
+/******************************************************************************/
 void scene2_SP2::RenderSkybox()
 {
 	modelStack.PushMatrix();
 	renderMesh(meshList[GEO_PLANET_SKYBOX], false);
 	modelStack.PopMatrix();
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering user interface
+\param mesh - a pointer to the specific mesh
+\param size - size of the interface
+\param x - x coordinate of the interface
+\param y - y coordinate of the interface
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 {
@@ -917,6 +950,12 @@ void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering rot_civ
+*/
+/******************************************************************************/
 void scene2_SP2::RenderRobot()
 {
     modelStack.PushMatrix();
@@ -929,6 +968,13 @@ void scene2_SP2::RenderRobot()
         renderDialogueBox(Rot_Civ_.getName(), Rot_Civ_.returnDialogue());
     }
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering flying vehicle
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderFlyingVehicle()
 {
@@ -947,6 +993,13 @@ void scene2_SP2::RenderFlyingVehicle()
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering landing vehicle
+*/
+/******************************************************************************/
+
 void scene2_SP2::RenderLandingVehicle()
 {
 	for (auto it : camera.storage_of_objects) {
@@ -962,6 +1015,13 @@ void scene2_SP2::RenderLandingVehicle()
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering space shuttle
+*/
+/******************************************************************************/
+
 void scene2_SP2::RenderSpaceShuttle()
 {
 	for (auto it : camera.storage_of_objects) {
@@ -976,6 +1036,13 @@ void scene2_SP2::RenderSpaceShuttle()
 		}
 	}
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering vault
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderVault()
 {
@@ -1069,6 +1136,13 @@ void scene2_SP2::RenderVault()
 			}
 		}
 	}
+
+/******************************************************************************/
+/*!
+\brief -
+rendering numpad
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderNumpad()
 {
@@ -1168,6 +1242,13 @@ void scene2_SP2::RenderNumpad()
 
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering numpad's pointing arrow
+*/
+/******************************************************************************/
+
 void scene2_SP2::RenderArrow()
 {
 	for (auto it : camera.storage_of_objects) {
@@ -1183,6 +1264,13 @@ void scene2_SP2::RenderArrow()
 		}
 	}
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering satellite
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderSatellite()
 {
@@ -1239,6 +1327,12 @@ void scene2_SP2::RenderSatellite()
 		}
 	}
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering diamonds
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderDiamond()
 {
@@ -1478,6 +1572,12 @@ void scene2_SP2::RenderDiamond()
 	//}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering robot npcs
+*/
+/******************************************************************************/
 void scene2_SP2::RenderNPC()
 {
 	//npc1,2
@@ -1618,6 +1718,13 @@ void scene2_SP2::RenderNPC()
 	
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering blue boxes
+*/
+/******************************************************************************/
+
 void scene2_SP2::RenderBoxes()
 {
 	if (change == true)
@@ -1729,6 +1836,13 @@ void scene2_SP2::RenderBoxes()
 	}
 	
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering asteroids
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderAsteroid()
 {
@@ -1937,6 +2051,15 @@ void scene2_SP2::RenderAsteroid()
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+vault animation 
+
+\param dt - time frame
+*/
+/******************************************************************************/
+
 void scene2_SP2::VaultAnimation(double dt)
 {
 	if (Numpad.NumpadVerify()==true)
@@ -1990,6 +2113,15 @@ void scene2_SP2::VaultAnimation(double dt)
 //	}
 //}
 
+/******************************************************************************/
+/*!
+\brief -
+satellite animation
+
+\param dt - time frame
+*/
+/******************************************************************************/
+
 void scene2_SP2::SatelliteAnimation(double dt)
 {
 	if (satelliterotate == false)
@@ -2009,6 +2141,15 @@ void scene2_SP2::SatelliteAnimation(double dt)
 		}
 	}
 }
+
+/******************************************************************************/
+/*!
+\brief -
+diamond animation
+
+\param dt - time frame
+*/
+/******************************************************************************/
 
 void scene2_SP2::diamondAnimation(double dt)
 {
@@ -2050,6 +2191,15 @@ void scene2_SP2::diamondAnimation(double dt)
 		bigdiamondrotating += 10 * (float)(dt);
 
 }
+
+/******************************************************************************/
+/*!
+\brief -
+robot NPCs animation
+
+\param dt - time frame
+*/
+/******************************************************************************/
 
 void scene2_SP2::NPCAnimation(double dt)
 {
@@ -2142,11 +2292,16 @@ void scene2_SP2::NPCAnimation(double dt)
 		{
 			change3 = true;
 		}
-		if (change3 == true && NPCrotating3 > 73)
-		{
-			renderDialogueBox("Disaster", "I'm a Good Boy!");
-		}
 }
+
+/******************************************************************************/
+/*!
+\brief -
+boxes animation
+
+\param dt - time frame
+*/
+/******************************************************************************/
 
 void scene2_SP2::BoxesAnimation(double dt)
 {
@@ -2207,7 +2362,12 @@ void scene2_SP2::BoxesAnimation(double dt)
 			}
 		}	
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering deadpool
+*/
+/******************************************************************************/
 void scene2_SP2::renderDeadPool() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "DeadPool") {

@@ -6,17 +6,34 @@
 #include <map>
 #include <locale>
 #include <algorithm>
-
+/****************************************************************************/
+/*!
+\brief
+Constructor
+/****************************************************************************/
 NumPad::NumPad() : GameObject("NumPad")
 {
 
 }
-
+/****************************************************************************/
+/*!
+\brief
+Destrucotr
+/****************************************************************************/
 NumPad::~NumPad()
 {
 
 }
+/****************************************************************************/
+/*!
+\brief
+initializing the thing needed for the scene
 
+\param &cameraDub - get the camera's position
+\param &origPos - get the Numpad's position
+
+*/
+/****************************************************************************/
 void NumPad::Init(Camera3 &cameraDub, const Vector3 &origPos)
 {
 	check = open = close = render = false;
@@ -29,6 +46,14 @@ void NumPad::Init(Camera3 &cameraDub, const Vector3 &origPos)
 	pos = origPos;
 }
 
+/******************************************************************************/
+/*!
+\brief -
+updating the numpad interaction
+
+\param dt - time frame
+*/
+/******************************************************************************/
 void NumPad::Update(double dt)
 {
 
@@ -40,7 +65,7 @@ void NumPad::Update(double dt)
 			{
 				time = 0;
 				changearrow += 15; //arrow position move to first digit 
-				if (changearrow > 64.5)//arrow position more than fourth digit, move back to first digit
+				if (changearrow > 64.5)//arrow position move over fourth digit, move back to first digit
 				{
 					changearrow = 19.5;
 				}
@@ -93,6 +118,15 @@ void NumPad::Update(double dt)
 	time += dt;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Check whether player's position is inside interaction area
+
+return
+Return true if the player inside interaction area, else false
+*/
+/****************************************************************************/
 bool NumPad::interactiontext() // if player inside interaction area, "Press 'C' to interact" text will appear
 {
 	if (interaction() == true )
@@ -101,7 +135,15 @@ bool NumPad::interactiontext() // if player inside interaction area, "Press 'C' 
 	}
 	return false;
 }
+/****************************************************************************/
+/*!
+\brief
+Check whether player's position is inside interaction area and 'C' button is pressed to open numpad on screen
 
+return
+Return true if the player inside interaction area and 'C' button is pressed, else false
+*/
+/****************************************************************************/
 bool NumPad::NumpadRenderOnScreen()
 {
 	if (interaction() && open == true)
@@ -114,6 +156,15 @@ bool NumPad::NumpadRenderOnScreen()
 	}
 	return false;
 }
+
+/****************************************************************************/
+/*!
+\brief
+Numpad interaction
+
+\param dt - time frame
+*/
+/****************************************************************************/
 
 void NumPad::NumpadProgram(double dt)
 {
@@ -247,7 +298,15 @@ void NumPad::NumpadProgram(double dt)
 		}
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+To check the player's input and the correct password
 
+\return
+Return true if the input match with the correct password, else return false
+*/
+/****************************************************************************/
 bool NumPad::NumpadVerify()
 {
 	if (check==true)
@@ -259,7 +318,15 @@ bool NumPad::NumpadVerify()
 	}
 	return false;
 }
+/****************************************************************************/
+/*!
+\brief
+Display text "Try Again!" if the input does not match with the correct password
 
+\return
+Return true if input does not match with the correct password, else return false;
+*/
+/****************************************************************************/
 bool NumPad::displayerror()
 {
 	if (interaction() && check==true) 
@@ -277,6 +344,16 @@ bool NumPad::displayerror()
 	
 }
 
+/****************************************************************************/
+/*!
+\brief
+Check whether player's position is inside interaction area
+
+\return
+Return true if player's position is inside interaction area
+*/
+/****************************************************************************/
+
 bool NumPad::interaction() // interaction area 
 {
 	if ((pos.x + 23) > camera->getCameraXcoord() &&
@@ -291,46 +368,135 @@ bool NumPad::interaction() // interaction area
 		return false;
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+First digit rotate
 
+\return
+Return firstrotate value
+*/
+/****************************************************************************/
 float NumPad::getfirstrotate()
 {
 	return firstrotate;
 }
+
+/****************************************************************************/
+/*!
+\brief
+Second digit rotate
+
+\return
+Return secondrotate value
+*/
+/****************************************************************************/
 
 float NumPad::getsecondrotate()
 {
 	return secondrotate;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Third digit rotate
+
+\return
+Return thirdrotate value
+*/
+/****************************************************************************/
+
 float NumPad::getthirdrotate()
 {
 	return thirdrotate;
 }
+
+/****************************************************************************/
+/*!
+\brief
+Fourth digit rotate
+
+\return
+Return fourthrotate value
+*/
+/****************************************************************************/
+
 
 float NumPad::getfourthrotate()
 {
 	return fourthrotate;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Get arrow position
+
+\return
+Return arrow position
+*/
+/****************************************************************************/
+
 float NumPad::getarrowposition()
 {
 	return changearrow;
 }
+
+/****************************************************************************/
+/*!
+\brief
+Get the first digit
+
+\return
+Return first digit value
+*/
+/****************************************************************************/
 
 int NumPad::getdigit1()
 {
 	return digit1;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Get the second digit
+
+\return
+Return second digit value
+*/
+/****************************************************************************/
+
 int NumPad::getdigit2()
 {
 	return digit2;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Get the third digit
+
+\return
+Return third digit value
+*/
+/****************************************************************************/
+
 int NumPad::getdigit3()
 {
 	return digit3;
 }
+
+/****************************************************************************/
+/*!
+\brief
+Get the fourth digit
+
+\return
+Return fourth digit value
+*/
+/****************************************************************************/
 
 int NumPad::getdigit4()
 {
