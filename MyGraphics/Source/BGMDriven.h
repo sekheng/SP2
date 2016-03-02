@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file       BGMDriven.h
+\author  Lee Sek Heng
+\par        email: 150629Z@mymail.nyp.edu.sg
+\brief -
+This is where the music logic is being handled
+*/
+/******************************************************************************/
 #ifndef BGM_DRIVEN_H_
 #define BGM_DRIVEN_H_
 
@@ -7,6 +16,13 @@ using namespace irrklang;
 #pragma comment(lib, "../irrKlang-1.5.0/lib/Win32-visualStudio/irrKlang.lib") // link with irrklang.dll
 //IrrKlang Stuff
 
+/******************************************************************************/
+/*!
+Class BGMDriven:
+\brief
+A class to handle the music, and allows the use of its function when other scenes are using it.
+*/
+/******************************************************************************/
 class BGMDriven {
 public:
     BGMDriven();
