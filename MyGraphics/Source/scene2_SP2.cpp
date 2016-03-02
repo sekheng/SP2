@@ -387,10 +387,7 @@ void scene2_SP2::Update(double dt)
 	robotNPC1.update(dt);
 	robotNPC2.update(dt);
 	robotNPC3.update(dt);
-	//diamondNPC.update(dt);
 
-	
-	
     //displaying instructions
     PreventSpammingInstruction += dt;
     if (Numpad.NumpadRenderOnScreen()) {
@@ -408,10 +405,7 @@ void scene2_SP2::Update(double dt)
 
 
     framePerSecond = 1 / dt;
-    //if (Application::IsKeyPressed('1')) //enable back face culling
-    //    glEnable(GL_CULL_FACE);
-    //if (Application::IsKeyPressed('2')) //disable back face culling
-    //    glDisable(GL_CULL_FACE);
+
     if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
     if (Application::IsKeyPressed(VK_NUMPAD5))
@@ -2302,7 +2296,6 @@ boxes animation
 \param dt - time frame
 */
 /******************************************************************************/
-
 void scene2_SP2::BoxesAnimation(double dt)
 {
 		//box1

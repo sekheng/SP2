@@ -549,12 +549,6 @@ void sceneSP2::Update(double dt)
 
     QuestCompleteCheck();
 
-    
-
-    //if (Application::IsKeyPressed('1')) //enable back face culling
-    //    glEnable(GL_CULL_FACE);
-    //if (Application::IsKeyPressed('2')) //disable back face culling
-    //    glDisable(GL_CULL_FACE);
     if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
     if (Application::IsKeyPressed(VK_NUMPAD5))
@@ -1987,23 +1981,6 @@ void sceneSP2::Renderteleporter() {
             break;
         }
     }
-    //for (auto it : camera.storage_of_objects) {
-    //    if (it.getName() == "ParticleCube1" ||
-    //        it.getName() == "ParticleCube2" ||
-    //        it.getName() == "ParticleCube3" ||
-    //        it.getName() == "ParticleCube4" || 
-    //        it.getName() == "ParticleCube5" || 
-    //        it.getName() == "ParticleCube6" || 
-    //        it.getName() == "ParticleCube7" || 
-    //        it.getName() == "ParticleCube8" || 
-    //        it.getName() == "ParticleCube9" || 
-    //        it.getName() == "ParticleCube10") {
-    //        modelStack.PushMatrix();
-    //        modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-    //        renderMesh(meshList[GEO_PARTICLE_CUBE], true);
-    //        modelStack.PopMatrix();
-    //    }
-    //}
     for (auto it : particleHandlers) {
                 modelStack.PushMatrix();
                 modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
