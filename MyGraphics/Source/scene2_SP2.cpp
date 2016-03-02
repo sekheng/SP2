@@ -917,6 +917,12 @@ void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+
+/******************************************************************************/
+/*!
+\brief - a method to render Rot Civ and it's dialogue
+*/
+/******************************************************************************/
 void scene2_SP2::RenderRobot()
 {
     modelStack.PushMatrix();
@@ -2208,6 +2214,11 @@ void scene2_SP2::BoxesAnimation(double dt)
 		}	
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render Deadpool and his dialogues
+*/
+/******************************************************************************/
 void scene2_SP2::renderDeadPool() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "DeadPool") {
@@ -2236,6 +2247,21 @@ void scene2_SP2::renderDeadPool() {
 }
 
 
+/******************************************************************************/
+/*!
+\brief - a method to render a non-uniform scalling image on screen
+
+\param mesh - the shape that will be rendered
+
+\param x - x coordinate of image
+
+\param y - y coordinate of image
+
+\param sizeX - scalling of image based on the X-axis
+
+\param sizeY - scalling of image based on the Y-axis
+*/
+/******************************************************************************/
 void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
@@ -2259,29 +2285,15 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, 
     modelStack.PopMatrix();
 }
 
-void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float z, float sizeX, float sizeY) {
-    if (!mesh || mesh->textureID <= 0) //Proper error check
-        return;
+/******************************************************************************/
+/*!
+\brief - a method to render dialogue box with the object's name and dialogue
 
-    Mtx44 ortho;
-    ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
-    projectionStack.PushMatrix();
-    projectionStack.LoadMatrix(ortho);
-    viewStack.PushMatrix();
-    viewStack.LoadIdentity(); //No need camera for ortho mode
-    modelStack.PushMatrix();
-    modelStack.LoadIdentity(); //Reset modelStack
+\param name - name of the interacted object
 
-    modelStack.Translate(x, y, z);
-    modelStack.Scale(sizeX, sizeY, 1);
-    modelStack.Rotate(90, 1, 0, 0);
-    renderMesh(mesh, false);
-
-    projectionStack.PopMatrix();
-    viewStack.PopMatrix();
-    modelStack.PopMatrix();
-}
-
+\param dialogue - dialogue return by the interacted object
+*/
+/******************************************************************************/
 void scene2_SP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 18, 5);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 3.5, 5.5);
@@ -2289,6 +2301,13 @@ void scene2_SP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }
 
+/******************************************************************************/
+/*!
+\brief - the logic behind animating the ending
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene2_SP2::Ending(double& dt) {
     if (!beginIamYourFather) {
         camera.setLocation(0, camera.defaultPosition.y, 150);
@@ -2325,12 +2344,22 @@ void scene2_SP2::Ending(double& dt) {
     camera.up = right.Cross(view);
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the ending screen
+*/
+/******************************************************************************/
 void scene2_SP2::renderEndingScreen() {
     modelStack.PushMatrix();
     RenderImageOnScreen(meshList[GEO_ENDING_SCREEN], sizeofEndingScreen, 40, 30);
     modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the credits
+*/
+/******************************************************************************/
 void scene2_SP2::rollingCredits() {
     if (creditRolling.goRollCredit()) {
         if (creditRolling.getRollingTitle() < 15) {
@@ -2351,4 +2380,3 @@ void scene2_SP2::rollingCredits() {
         }
     }
 }
-

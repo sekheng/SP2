@@ -1753,6 +1753,11 @@ void sceneSP2::RenderQuestObjects()
     */
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render Sek Heng and his quest
+*/
+/******************************************************************************/
 void sceneSP2::renderingSekHeng() {
     modelStack.PushMatrix();
     modelStack.Translate(sek_heng_.getObjectposX(), sek_heng_.getObjectposY(), sek_heng_.getObjectposZ());
@@ -1898,6 +1903,21 @@ void sceneSP2::RenderEmptyBox()
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief - to allow non-uniform scaling of image
+
+\param mesh - a pointer to the specific mesh
+\param text - the text that needs to be rendered
+\param color - the color of the text
+\param x - x coordinate of the text
+\param y - y coordinate of the text
+
+\param sizeX - size of the text based on the X-axis
+
+\param sizeY - size of the text based on the Y-axis
+*/
+/******************************************************************************/
 void sceneSP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
@@ -1921,6 +1941,11 @@ void sceneSP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, fl
     modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief - Teleporter and it's particle effect
+*/
+/******************************************************************************/
 void sceneSP2::Renderteleporter() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "TeleporterBox") {
@@ -1975,6 +2000,15 @@ void sceneSP2::Renderteleporter() {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - create a dialogue box easily
+
+\param name - the name of the interacted object
+
+\param dialogue - the words said by that interacted object
+*/
+/******************************************************************************/
 void sceneSP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 23, 5);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 2.5, 5.5);
@@ -1982,7 +2016,16 @@ void sceneSP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }
 
-bool sceneSP2::teleport() 
+/******************************************************************************/
+/*!
+\brief - the logic of interaction between the teleporter and player
+
+\return - true if player is inisde it's interacting boundary
+
+\return - false if the player is outside it's interacting boundary
+*/
+/******************************************************************************/
+bool sceneSP2::teleport()
 {
     for (auto it : camera.storage_of_objects) 
     {
@@ -2595,6 +2638,13 @@ void sceneSP2::populateArea()
 }
 
 
+/******************************************************************************/
+/*!
+\brief - the logic behind animating of teleporting
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void sceneSP2::animateTeleporting(double& dt) {
     if (camera.position.z != 0 || camera.position.x != 0) {
         camera.setLocation(0, camera.position.y, 0);
