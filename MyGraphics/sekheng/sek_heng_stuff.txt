@@ -2,5 +2,5 @@ Name,SekHeng
 objectX,0
 objectY,0
 objectZ,140
-boundaryRadiusX,0
-boundaryRadiusZ,0
+boundaryRadiusX,3
+boundaryRadiusZ,3

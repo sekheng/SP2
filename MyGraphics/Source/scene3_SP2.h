@@ -97,6 +97,10 @@ public:
     virtual void Update(double dt);
     virtual void Render();
     virtual void Exit();
+
+    //reset the scenario
+    void reset();
+    //reset the scenario
 private:
     bool on_light;
     Light light[2];
@@ -167,9 +171,6 @@ private:
     bool quickTimeEventOver;
     bool youLost;
     //for the QTE
-    //reset the scenario
-    void reset();
-    //reset the scenario
 
     //gives instruction regarding about the QTE
     void renderInstructions();

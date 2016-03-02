@@ -1,0 +1,20 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib minigame_selector.mtl
+g minigame_piece9:default1
+v 0.000000 -0.500000 -0.500000
+v 0.000000 -0.500000 0.500000
+v 0.000000 0.500000 0.500000
+v 0.000000 0.500000 -0.500000
+vt 0.990778 0.009222
+vt 0.990778 0.990778
+vt 0.009222 0.990778
+vt 0.009222 0.009222
+vn 1.000000 0.000000 0.000000
+vn 1.000000 0.000000 0.000000
+vn 1.000000 0.000000 0.000000
+vn 1.000000 0.000000 0.000000
+s off
+g minigame_piece9:polySurface5 minigame_piece9:polySurface17 minigame_piece9:polySurface1
+usemtl minigame_piece9:initialShadingGroup
+f 1/1/1 4/2/2 3/3/3 2/4/4

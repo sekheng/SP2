@@ -180,116 +180,123 @@ void scene2_SP2::Init()
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
-    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
+    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//scene3//comicSans.tga");
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
 	//skybox
-	meshList[GEO_PLANET_SKYBOX] = MeshBuilder::GenerateOBJ("planet skybox", "OBJ//Planet_skybox.obj");
-	meshList[GEO_PLANET_SKYBOX]->textureID = LoadTGA("Image//skybox//Planet_skybox_UV.tga");
+	meshList[GEO_PLANET_SKYBOX] = MeshBuilder::GenerateOBJ("planet skybox", "OBJ//scene2//Planet_skybox.obj");
+	meshList[GEO_PLANET_SKYBOX]->textureID = LoadTGA("Image//scene2//Planet_skybox_UV.tga");
 	//skybox
 
 	//LandVehicle
-	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//LandVehicle.obj");
-	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
+	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//scene1//LandVehicle.obj");
+	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//scene1//LandVehicle.tga");
 
 	//FlyingVehicle
-	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("flyingvehicle", "OBJ//FlyingVehicle.obj");
-	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
+	meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("flyingvehicle", "OBJ//scene1//FlyingVehicle.obj");
+	meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//scene1//FlyingVehicle.tga");
 	
 	//Robot
-	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("robot", "OBJ//Robocop_Black.obj");
-	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//Robocop_Black_D.tga");
+	meshList[GEO_ROBOT] = MeshBuilder::GenerateOBJ("robot", "OBJ//scene2//Robocop_Black.obj");
+	meshList[GEO_ROBOT]->textureID = LoadTGA("Image//scene2//Robocop_Black_D.tga");
 
 	//spaceship
-	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("spaceshuttle", "OBJ//SpaceShuttle.obj");
-	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//Shuttle_UV.tga");
+	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("spaceshuttle", "OBJ//scene2//SpaceShuttle.obj");
+	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//scene2//Shuttle_UV.tga");
 
 	//vaultcube
-	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("vaultcube", "OBJ//vaultcube.obj");
-	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//vaultnew_UV.tga");
+	meshList[GEO_VAULTCUBE] = MeshBuilder::GenerateOBJ("vaultcube", "OBJ//scene2//vaultcube.obj");
+	meshList[GEO_VAULTCUBE]->textureID = LoadTGA("Image//scene2//vaultnew_UV.tga");
 
 	//vaultdoor
-	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("vaultdoor", "OBJ//vaultdoor.obj");
-	meshList[GEO_VAULTDOOR]->textureID = LoadTGA("Image//vaultnewest.tga");
+	meshList[GEO_VAULTDOOR] = MeshBuilder::GenerateOBJ("vaultdoor", "OBJ//scene2//vaultdoor.obj");
+	meshList[GEO_VAULTDOOR]->textureID = LoadTGA("Image//scene2//vaultnewest.tga");
 
 	//vaultwheel
-	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("vaultwheel", "OBJ//vaultwheel.obj");
-	meshList[GEO_VAULTWHEEL]->textureID = LoadTGA("Image//vaultnewest.tga");
+	meshList[GEO_VAULTWHEEL] = MeshBuilder::GenerateOBJ("vaultwheel", "OBJ//scene2//vaultwheel.obj");
+	meshList[GEO_VAULTWHEEL]->textureID = LoadTGA("Image//scene2//vaultnewest.tga");
 
 	//vaultstick
-	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("vaultstick", "OBJ//vaultstick.obj");
-	meshList[GEO_VAULTSTICK]->textureID = LoadTGA("Image//vaultnewest.tga");
+	meshList[GEO_VAULTSTICK] = MeshBuilder::GenerateOBJ("vaultstick", "OBJ//scene2//vaultstick.obj");
+	meshList[GEO_VAULTSTICK]->textureID = LoadTGA("Image//scene2//vaultnewest.tga");
 
 	//numpad
-	meshList[GEO_NUMPAD] = MeshBuilder::GenerateOBJ("numpad", "OBJ//numberpad.obj");
-	meshList[GEO_NUMPAD]->textureID = LoadTGA("Image//number2_UV.tga");
+	meshList[GEO_NUMPAD] = MeshBuilder::GenerateOBJ("numpad", "OBJ//scene2//numberpad.obj");
+	meshList[GEO_NUMPAD]->textureID = LoadTGA("Image//scene2//number2_UV.tga");
 	//numroll
-	meshList[GEO_NUMROLL] = MeshBuilder::GenerateOBJ("numroll", "OBJ//numberroll.obj");
-	meshList[GEO_NUMROLL]->textureID = LoadTGA("Image//number2_UV.tga");
+	meshList[GEO_NUMROLL] = MeshBuilder::GenerateOBJ("numroll", "OBJ//scene2//numberroll.obj");
+	meshList[GEO_NUMROLL]->textureID = LoadTGA("Image//scene2//number2_UV.tga");
 
 	//Menu
-	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//arrow.obj");
-	meshList[GEO_ARROW]->textureID = LoadTGA("Image//arrow_UV.tga");
+	meshList[GEO_ARROW] = MeshBuilder::GenerateOBJ("arrow", "OBJ//scene2//arrow.obj");
+	meshList[GEO_ARROW]->textureID = LoadTGA("Image//scene2//arrow_UV.tga");
 
 	//satellite
-	meshList[GEO_SATELLITEHEAD] = MeshBuilder::GenerateOBJ("satellitehead", "OBJ//satelliteHead.obj");
-	meshList[GEO_SATELLITEHEAD]->textureID = LoadTGA("Image//Satellite_UV.tga");
+	meshList[GEO_SATELLITEHEAD] = MeshBuilder::GenerateOBJ("satellitehead", "OBJ//scene2//satelliteHead.obj");
+	meshList[GEO_SATELLITEHEAD]->textureID = LoadTGA("Image//scene2//Satellite_UV.tga");
 
-	meshList[GEO_SATELLITEBODY] = MeshBuilder::GenerateOBJ("satellitebody", "OBJ//satellitebody.obj");
-	meshList[GEO_SATELLITEBODY]->textureID = LoadTGA("Image//Satellite_UV.tga");
+	meshList[GEO_SATELLITEBODY] = MeshBuilder::GenerateOBJ("satellitebody", "OBJ//scene2//satellitebody.obj");
+	meshList[GEO_SATELLITEBODY]->textureID = LoadTGA("Image//scene2//Satellite_UV.tga");
 
 	//diamond
-	meshList[GEO_BIGDIAMOND] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bigdiamond.obj");
-	meshList[GEO_BIGDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
+	meshList[GEO_BIGDIAMOND] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//scene2//bigdiamond.obj");
+	meshList[GEO_BIGDIAMOND]->textureID = LoadTGA("Image//scene2//diamond.tga");
 
-	meshList[GEO_SMALLDIAMOND] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//smalldiamond.obj");
-	meshList[GEO_SMALLDIAMOND]->textureID = LoadTGA("Image//diamond.tga");
+	meshList[GEO_SMALLDIAMOND] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//scene2//smalldiamond.obj");
+	meshList[GEO_SMALLDIAMOND]->textureID = LoadTGA("Image//scene2//diamond.tga");
 
 	//interaction diamond
-	meshList[GEO_BIGDIAMOND2] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//bdiamond.obj");
-	meshList[GEO_BIGDIAMOND2]->textureID = LoadTGA("Image//diamond.tga");
+	meshList[GEO_BIGDIAMOND2] = MeshBuilder::GenerateOBJ("bigdiamond", "OBJ//scene2//bdiamond.obj");
+	meshList[GEO_BIGDIAMOND2]->textureID = LoadTGA("Image//scene2//diamond.tga");
 
-	meshList[GEO_SMALLDIAMOND2] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//sdiamond.obj");
-	meshList[GEO_SMALLDIAMOND2]->textureID = LoadTGA("Image//diamond.tga");
+	meshList[GEO_SMALLDIAMOND2] = MeshBuilder::GenerateOBJ("smalldiamond", "OBJ//scene2//sdiamond.obj");
+	meshList[GEO_SMALLDIAMOND2]->textureID = LoadTGA("Image//scene2//diamond.tga");
 
 	//npc
-	meshList[GEO_NPCUPPER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene3NPCupper.obj");
-	meshList[GEO_NPCUPPER]->textureID = LoadTGA("Image//scene3NPC.tga");
+	meshList[GEO_NPCUPPER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//scene3NPCupper.obj");
+	meshList[GEO_NPCUPPER]->textureID = LoadTGA("Image//scene2//scene3NPC.tga");
 
-	meshList[GEO_NPCLOWER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene3NPClower.obj");
-	meshList[GEO_NPCLOWER]->textureID = LoadTGA("Image//scene3NPC.tga");
+	meshList[GEO_NPCLOWER] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//scene3NPClower.obj");
+	meshList[GEO_NPCLOWER]->textureID = LoadTGA("Image//scene2//scene3NPC.tga");
 
-	meshList[GEO_BOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//boxes9.obj");
-	meshList[GEO_BOXES]->textureID = LoadTGA("Image//boxes9.tga");
+	meshList[GEO_BOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//boxes9.obj");
+	meshList[GEO_BOXES]->textureID = LoadTGA("Image//scene2//boxes9.tga");
 
-	meshList[GEO_NORMALBOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//boxes9.obj");
-	meshList[GEO_NORMALBOXES]->textureID = LoadTGA("Image//normalboxes.tga");
+	meshList[GEO_NORMALBOXES] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//boxes9.obj");
+	meshList[GEO_NORMALBOXES]->textureID = LoadTGA("Image//scene2//normalboxes.tga");
 
 	//asteroid
-	meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("npc", "OBJ//rock.obj");
-	meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//rock.tga");
+	meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//rock.obj");
+	meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//scene2//rock.tga");
 
-	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("npc", "OBJ//rock.obj");
-	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//asteroid6.tga");
+	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("npc", "OBJ//scene2//rock.obj");
+	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//scene2//asteroid6.tga");
+
+	meshList[GEO_NPCROBOT] = MeshBuilder::GenerateOBJ("npcrobot", "OBJ//scene2//scene3NPC2.obj");
+	meshList[GEO_NPCROBOT]->textureID = LoadTGA("Image//scene2//scene3NPC.tga");
 
 	//plane
 	//meshList[GEO_PLANE] = MeshBuilder::GenerateOBJ("plane", "OBJ//plane.obj");
 	//meshList[GEO_PLANE]->textureID = LoadTGA("Image//plane.tga");
 
 	//User Interface
-	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
-	meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
+	meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//scene1//User_Interface.obj");
+	meshList[GEO_UI]->textureID = LoadTGA("Image//scene1//UI_UV.tga");
 	//User Interface
 
 	//GroundMesh
-    meshList[GEO_PLANET_GROUND] = MeshBuilder::GenerateOBJ("Planet ground mesh", "OBJ//planet_ground_mesh.obj");
-    meshList[GEO_PLANET_GROUND]->textureID = LoadTGA("Image//planet_ground_mesh.tga");
+    meshList[GEO_PLANET_GROUND] = MeshBuilder::GenerateOBJ("Planet ground mesh", "OBJ//scene2//planet_ground_mesh.obj");
+    meshList[GEO_PLANET_GROUND]->textureID = LoadTGA("Image//scene2//planet_ground_mesh.tga");
     //GroundMesh
     
     //DeadPOOL
-    meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("Dead Pool", "OBJ//DeadPool.obj");
-    meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//DeadPool.tga");
+    meshList[GEO_DEADPOOL] = MeshBuilder::GenerateOBJ("Dead Pool", "OBJ//scene2//DeadPool.obj");
+    meshList[GEO_DEADPOOL]->textureID = LoadTGA("Image//scene2//DeadPool.tga");
+
+
+
+
     on_light = true;
 
     Mtx44 projection;
@@ -319,14 +326,15 @@ void scene2_SP2::Init()
 		}
 	}
 
-	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 40, 40, camera, "NPC data//NPC_4.txt");
+	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 10, 40, camera, "NPC data//NPC_4.txt");
 	robotNPC2.Init("robotNPC2", 6, Vector3(800, 0, 800), 40, 40, camera, "NPC data//NPC_5.txt");
+	robotNPC3.Init("robotNPC3", 6, Vector3(-700, 0, 100), 40, 40, camera, "NPC data//NPC_6.txt");
 	//NumpadNPC.Init("numpad", 1, Vector3(22, 25, 40), 40, 40, camera, "NPC data//NPC_6.txt");
 	//diamondNPC.Init("diamondNPC", 6, Vector3(900,200,800), 80, 80, camera, "NPC data//NPC_5.txt");
 
     //text box
     meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
-    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
+    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//scene1//textbox.tga");
     //text box
 
     //ending screen
@@ -351,7 +359,8 @@ void scene2_SP2::Init()
     update3DPos = 0.5;
     //For 3D effects of the music
 
-    //displaying instructions
+
+
     PreventSpammingInstruction = 0;
     displayInstruction = true;
     //displaying instructions
@@ -377,8 +386,9 @@ void scene2_SP2::Update(double dt)
 	BoxesAnimation(dt);
 	robotNPC1.update(dt);
 	robotNPC2.update(dt);
+	robotNPC3.update(dt);
 	//diamondNPC.update(dt);
-
+	
     //displaying instructions
     PreventSpammingInstruction += dt;
     if (Numpad.NumpadRenderOnScreen()) {
@@ -394,14 +404,15 @@ void scene2_SP2::Update(double dt)
     }
     //displaying instructions
 
+
     framePerSecond = 1 / dt;
-    if (Application::IsKeyPressed('1')) //enable back face culling
-        glEnable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('2')) //disable back face culling
-        glDisable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('3'))
+    //if (Application::IsKeyPressed('1')) //enable back face culling
+    //    glEnable(GL_CULL_FACE);
+    //if (Application::IsKeyPressed('2')) //disable back face culling
+    //    glDisable(GL_CULL_FACE);
+    if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-    if (Application::IsKeyPressed('4'))
+    if (Application::IsKeyPressed(VK_NUMPAD5))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     if (Application::IsKeyPressed(VK_NUMPAD1)) {
@@ -425,6 +436,14 @@ void scene2_SP2::Update(double dt)
         camera.Update(dt);
         Application::musics->playLovelyLullaby();
     }
+	if (Application::IsKeyPressed('R'))
+	{
+		change3 = false;
+		NPCrotate3 = false;
+		NPCrotating3 = 0;
+		boxesappear3 = false;
+
+	}
 
     //For 3D effects of the music
     update3DPos += dt;
@@ -591,7 +610,7 @@ void scene2_SP2::Render()
 	}
 	//deadpool light
 
-    renderMesh(meshList[GEO_AXES], false);
+    //renderMesh(meshList[GEO_AXES], false);
 
 	//render ground
 	modelStack.PushMatrix();
@@ -606,9 +625,6 @@ void scene2_SP2::Render()
 	RenderSkybox();
 	modelStack.PopMatrix();
 
-	//render robot
-	RenderRobot();
-
 	//render flyingvehicle
 	RenderFlyingVehicle();
 
@@ -618,7 +634,10 @@ void scene2_SP2::Render()
 	//render spaceshuttle
 	RenderSpaceShuttle();
 
-	//render vault
+    //render robot
+    RenderRobot();
+    
+    //render vault
 	RenderVault();
 	
 	//render numpad
@@ -666,10 +685,10 @@ void scene2_SP2::Render()
         RenderNumPadOnScreen(meshList[GEO_NUMROLL], 15, 85, 30, 2, 0 + Numpad.getfourthrotate(), 1, 0);
         RenderNumPadOnScreen(meshList[GEO_ARROW], 3, Numpad.getarrowposition(), 3, 7, -90, 0, 1); //19.5 34.5 49.5 64.5
         if (displayInstruction == true) {
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Arrow Keys to move the arrow and turn the wheels", Color(0, 1, 0), 3, 3, 16);
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press Enter to check for the result", Color(0, 1, 0), 3, 3, 14.5);
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Move Away to exit from this view", Color(0, 1, 0), 3, 3, 13);
-            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press 'T' to open/close this instruction", Color(0, 1, 0), 3, 3, 11.5);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Arrow Keys to move the arrow and turn the wheels", Color(0, 1, 0), 3, 3, 17.5);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press Enter to check for the result", Color(0, 1, 0), 3, 3, 16);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Move Away to exit from this view", Color(0, 1, 0), 3, 3, 14.5);
+            RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press 'T' to open/close this instruction", Color(0, 1, 0), 3, 3, 13);
         }
     }
 
@@ -681,11 +700,6 @@ void scene2_SP2::Render()
     if (Numpad.NumpadRenderOnScreen() == false && Numpad.interactiontext()) // "Press 'C' to interact" appear
 	{
         renderDialogueBox("Numpad", "Press 'C' to interact");
-		//modelStack.PushMatrix();
-		//modelStack.Translate(5, 10, 40);
-		//modelStack.Scale(3, 3, 3);
-		//RenderText(meshList[GEO_COMIC_TEXT], "Press 'C' to interact", Color(0, 1, 0));
-		//modelStack.PopMatrix();
 	}
     if (beginIamYourFather == true && moveToDeadPoolZ < -135) {
         renderEndingScreen();
@@ -693,7 +707,9 @@ void scene2_SP2::Render()
 
     rollingCredits();
 
-	std::stringstream connectPosX;
+
+    
+    std::stringstream connectPosX;
     connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
 	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.f);
 
@@ -706,9 +722,8 @@ void scene2_SP2::Render()
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 
 	//std::stringstream input;
-	//input << "FPS : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
+	//input << "text : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
 	//RenderTextOnScreen(meshList[GEO_COMIC_TEXT], input.str(), Color(0, 1, 0), 15, 0.5, 0.5);
-
 }
 
 /******************************************************************************/
@@ -841,14 +856,29 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
 
     modelStack.Translate(x, y, 0);
     modelStack.Scale(size, size, size);
-    modelStack.Rotate(90, 1, 0, 0);
+    modelStack.Rotate(90, 1, 0, 0); 
+    //renderMesh(meshList[GEO_AXES], false);
     renderMesh(mesh, false);
 
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering numpad on screen
 
+\param mesh - a pointer to the specific mesh
+\param size - size of the numroll
+\param x - x coordinate of the numroll
+\param y - y coordinate of the numroll
+\param z - z coordinate of the numroll
+\param rotate - rotate angle of the numroll
+\param rotatex - rotate x coordinate of the numroll
+\param rotatey - rotate y coordinate of the numroll
+*/
+/******************************************************************************/
 void scene2_SP2::RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate, float rotatex, float rotatey) {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -871,13 +901,29 @@ void scene2_SP2::RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, 
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering sky box
+*/
+/******************************************************************************/
 void scene2_SP2::RenderSkybox()
 {
 	modelStack.PushMatrix();
 	renderMesh(meshList[GEO_PLANET_SKYBOX], false);
 	modelStack.PopMatrix();
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering user interface
+\param mesh - a pointer to the specific mesh
+\param size - size of the interface
+\param x - x coordinate of the interface
+\param y - y coordinate of the interface
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 {
@@ -902,6 +948,12 @@ void scene2_SP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+
+/******************************************************************************/
+/*!
+\brief - a method to render Rot Civ and it's dialogue
+*/
+/******************************************************************************/
 void scene2_SP2::RenderRobot()
 {
     modelStack.PushMatrix();
@@ -914,6 +966,13 @@ void scene2_SP2::RenderRobot()
         renderDialogueBox(Rot_Civ_.getName(), Rot_Civ_.returnDialogue());
     }
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering flying vehicle
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderFlyingVehicle()
 {
@@ -932,6 +991,13 @@ void scene2_SP2::RenderFlyingVehicle()
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering landing vehicle
+*/
+/******************************************************************************/
+
 void scene2_SP2::RenderLandingVehicle()
 {
 	for (auto it : camera.storage_of_objects) {
@@ -947,6 +1013,13 @@ void scene2_SP2::RenderLandingVehicle()
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering space shuttle
+*/
+/******************************************************************************/
+
 void scene2_SP2::RenderSpaceShuttle()
 {
 	for (auto it : camera.storage_of_objects) {
@@ -961,6 +1034,13 @@ void scene2_SP2::RenderSpaceShuttle()
 		}
 	}
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering vault
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderVault()
 {
@@ -1054,6 +1134,13 @@ void scene2_SP2::RenderVault()
 			}
 		}
 	}
+
+/******************************************************************************/
+/*!
+\brief -
+rendering numpad
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderNumpad()
 {
@@ -1153,6 +1240,13 @@ void scene2_SP2::RenderNumpad()
 
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering numpad's pointing arrow
+*/
+/******************************************************************************/
+
 void scene2_SP2::RenderArrow()
 {
 	for (auto it : camera.storage_of_objects) {
@@ -1168,6 +1262,13 @@ void scene2_SP2::RenderArrow()
 		}
 	}
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering satellite
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderSatellite()
 {
@@ -1224,6 +1325,12 @@ void scene2_SP2::RenderSatellite()
 		}
 	}
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering diamonds
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderDiamond()
 {
@@ -1463,6 +1570,12 @@ void scene2_SP2::RenderDiamond()
 	//}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering robot npcs
+*/
+/******************************************************************************/
 void scene2_SP2::RenderNPC()
 {
 	//npc1,2
@@ -1575,8 +1688,40 @@ void scene2_SP2::RenderNPC()
 		}
 	}
 
+	for (auto it : camera.storage_of_objects) {
+
+		if (it.getName() == "npc3") {
+			modelStack.PushMatrix();
+			//modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+			modelStack.Translate(robotNPC3.NPC_getposition_x(), robotNPC3.NPC_getposition_y(), robotNPC3.NPC_getposition_z());
+			modelStack.Scale(2, 2, 2);
+			renderMesh(meshList[GEO_NPCROBOT], true);
+			if (robotNPC3.interaction() == true)
+			{
+				if (!Application::IsKeyPressed('E'))
+				{
+					renderDialogueBox("Prankster", robotNPC3.getDialogue(true));
+				}
+				else
+				{
+					renderDialogueBox("Prankster", robotNPC3.getDialogue(false));
+				}
+
+			}
+			modelStack.PopMatrix();
+			break;
+		}
+	}
+
 	
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering blue boxes
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderBoxes()
 {
@@ -1689,6 +1834,13 @@ void scene2_SP2::RenderBoxes()
 	}
 	
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering asteroids
+*/
+/******************************************************************************/
 
 void scene2_SP2::RenderAsteroid()
 {
@@ -1897,6 +2049,15 @@ void scene2_SP2::RenderAsteroid()
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+vault animation 
+
+\param dt - time frame
+*/
+/******************************************************************************/
+
 void scene2_SP2::VaultAnimation(double dt)
 {
 	if (Numpad.NumpadVerify()==true)
@@ -1950,6 +2111,15 @@ void scene2_SP2::VaultAnimation(double dt)
 //	}
 //}
 
+/******************************************************************************/
+/*!
+\brief -
+satellite animation
+
+\param dt - time frame
+*/
+/******************************************************************************/
+
 void scene2_SP2::SatelliteAnimation(double dt)
 {
 	if (satelliterotate == false)
@@ -1969,6 +2139,15 @@ void scene2_SP2::SatelliteAnimation(double dt)
 		}
 	}
 }
+
+/******************************************************************************/
+/*!
+\brief -
+diamond animation
+
+\param dt - time frame
+*/
+/******************************************************************************/
 
 void scene2_SP2::diamondAnimation(double dt)
 {
@@ -2010,6 +2189,15 @@ void scene2_SP2::diamondAnimation(double dt)
 		bigdiamondrotating += 10 * (float)(dt);
 
 }
+
+/******************************************************************************/
+/*!
+\brief -
+robot NPCs animation
+
+\param dt - time frame
+*/
+/******************************************************************************/
 
 void scene2_SP2::NPCAnimation(double dt)
 {
@@ -2067,7 +2255,7 @@ void scene2_SP2::NPCAnimation(double dt)
 		{
 			change2 = true;
 		}
-		else if (change == true && NPCrotating2 > -2)
+		else if (change2 == true && NPCrotating2 > -2)
 		{
 			change2 = false;
 		}
@@ -2102,13 +2290,18 @@ void scene2_SP2::NPCAnimation(double dt)
 		{
 			change3 = true;
 		}
-		if (change3 == true && NPCrotating3 > 73)
-		{
-			renderDialogueBox("Disaster", "I'm a Good Boy!");
-		}
 }
 
-void scene2_SP2::BoxesAnimation(double dt)
+/******************************************************************************/
+/*!
+\brief -
+boxes animation
+
+\param dt - time frame
+*/
+/******************************************************************************/
+
+void scene2_SP2::BoxesAnimation(double dt)	
 {
 		//box1
 		if (boxesappear == false)
@@ -2168,6 +2361,11 @@ void scene2_SP2::BoxesAnimation(double dt)
 		}	
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render Deadpool and his dialogues
+*/
+/******************************************************************************/
 void scene2_SP2::renderDeadPool() {
     for (auto it : camera.storage_of_objects) {
         if (it.getName() == "DeadPool") {
@@ -2196,6 +2394,21 @@ void scene2_SP2::renderDeadPool() {
 }
 
 
+/******************************************************************************/
+/*!
+\brief - a method to render a non-uniform scalling image on screen
+
+\param mesh - the shape that will be rendered
+
+\param x - x coordinate of image
+
+\param y - y coordinate of image
+
+\param sizeX - scalling of image based on the X-axis
+
+\param sizeY - scalling of image based on the Y-axis
+*/
+/******************************************************************************/
 void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
@@ -2219,29 +2432,15 @@ void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, 
     modelStack.PopMatrix();
 }
 
-void scene2_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float z, float sizeX, float sizeY) {
-    if (!mesh || mesh->textureID <= 0) //Proper error check
-        return;
+/******************************************************************************/
+/*!
+\brief - a method to render dialogue box with the object's name and dialogue
 
-    Mtx44 ortho;
-    ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
-    projectionStack.PushMatrix();
-    projectionStack.LoadMatrix(ortho);
-    viewStack.PushMatrix();
-    viewStack.LoadIdentity(); //No need camera for ortho mode
-    modelStack.PushMatrix();
-    modelStack.LoadIdentity(); //Reset modelStack
+\param name - name of the interacted object
 
-    modelStack.Translate(x, y, z);
-    modelStack.Scale(sizeX, sizeY, 1);
-    modelStack.Rotate(90, 1, 0, 0);
-    renderMesh(mesh, false);
-
-    projectionStack.PopMatrix();
-    viewStack.PopMatrix();
-    modelStack.PopMatrix();
-}
-
+\param dialogue - dialogue return by the interacted object
+*/
+/******************************************************************************/
 void scene2_SP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 18, 5);
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], name, Color(0, 1, 0), 3, 3.5, 5.5);
@@ -2249,6 +2448,13 @@ void scene2_SP2::renderDialogueBox(const string& name, const string& dialogue) {
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }
 
+/******************************************************************************/
+/*!
+\brief - the logic behind animating the ending
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene2_SP2::Ending(double& dt) {
     if (!beginIamYourFather) {
         camera.setLocation(0, camera.defaultPosition.y, 150);
@@ -2285,12 +2491,22 @@ void scene2_SP2::Ending(double& dt) {
     camera.up = right.Cross(view);
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the ending screen
+*/
+/******************************************************************************/
 void scene2_SP2::renderEndingScreen() {
     modelStack.PushMatrix();
     RenderImageOnScreen(meshList[GEO_ENDING_SCREEN], sizeofEndingScreen, 40, 30);
     modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the credits
+*/
+/******************************************************************************/
 void scene2_SP2::rollingCredits() {
     if (creditRolling.goRollCredit()) {
         if (creditRolling.getRollingTitle() < 15) {
@@ -2311,4 +2527,3 @@ void scene2_SP2::rollingCredits() {
         }
     }
 }
-

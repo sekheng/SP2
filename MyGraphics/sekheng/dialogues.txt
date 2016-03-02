@@ -1,6 +1,7 @@
 0,Go and help others first!
 1,Can you help me get a hammer?
-1,So I can repair the spaceShip
+1,So I can repair the SpaceShip
+1,Is somewhere near the SpaceShip
 2,Thank you so much!
 2,We have successfully build the spaceship
 2,Because you help to bring me the hammer

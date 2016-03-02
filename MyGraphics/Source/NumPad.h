@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file    NumPad.h
+\author  Lee Chun Fei
+\par        email: 150678G@mymail.nyp.edu.sg
+\brief -
+Numpad's interaction
+*/
+/******************************************************************************/
 #ifndef NUMPAD_H
 #define NUMPAD_H
 
@@ -7,6 +16,14 @@
 #include "Camera3.h"
 
 using std::vector;
+
+/****************************************************************************/
+/*!
+Class NumPad:
+\brief 
+inheirited from GameObject
+*/
+/****************************************************************************/
 
 class NumPad : public GameObject
 {

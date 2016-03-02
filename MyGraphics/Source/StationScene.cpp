@@ -183,4 +183,19 @@ bool StationScene::switchText()
 void StationScene::update(double dt)
 {
 	time += (float)(dt);
+	if (Application::IsKeyPressed('R'))
+	{
+		reset();
+	}
+}
+
+void StationScene::reset()
+{
+	questActive = false;
+	card1 = false;
+	card2 = false;
+	questComplete = false;
+	doorOpened = false;
+	switchLightOn = true;
+	switchLightOff = false;
 }

@@ -259,6 +259,7 @@ void Application::changeIntoScenario3(){
 
 void Application::changeIntoScenario1() {
     scene = scenario1;
+    
 }
 
 void Application::changeIntoScenario2() {

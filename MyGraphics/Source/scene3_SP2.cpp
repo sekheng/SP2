@@ -176,32 +176,32 @@ void scene3_SP2::Init()
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
-    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
+    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//scene3//comicSans.tga");
 
     //skybox
-    meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
-    meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
+    meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//scene1//Space_Skybox.obj");
+    meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//scene1//skybox//Space_Skybox_UV.tga");
 
     //spaceship
-    meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
-    meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
+    meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//scene1//FlyingVehicle.obj");
+    meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//scene1//FlyingVehicle.tga");
     meshList[GEO_FLYINGVEHICLE]->material = MaterialBuilder::GenerateBlinn();
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
-    meshList[GEO_LIGHT_WRAP] = MeshBuilder::GenerateOBJ("light warp", "OBJ//light_warpping.obj");
-    meshList[GEO_LIGHT_WRAP]->textureID = LoadTGA("Image//light_warpping.tga");
+    meshList[GEO_LIGHT_WRAP] = MeshBuilder::GenerateOBJ("light warp", "OBJ//scene3//light_warpping.obj");
+    meshList[GEO_LIGHT_WRAP]->textureID = LoadTGA("Image//scene3//light_warpping.tga");
     meshList[GEO_LIGHT_WRAP]->material = MaterialBuilder::GenerateBlinn();
 
     meshList[GEO_LIGHT_END] = MeshBuilder::GenerateQuad("light end", Color(1, 1, 1));
-    meshList[GEO_LIGHT_END]->textureID = LoadTGA("Image//white_warp.tga");
+    meshList[GEO_LIGHT_END]->textureID = LoadTGA("Image//scene3//white_warp.tga");
 
-    meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("asteroid", "OBJ//asteroid.obj");
-    meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//asteroid.tga");
+    meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("asteroid", "OBJ//scene3//asteroid.obj");
+    meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//scene3//asteroid.tga");
 
     //text box
     meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
-    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
+    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//scene1//textbox.tga");
     //text box
 
     on_light = true;
@@ -281,43 +281,19 @@ void scene3_SP2::Update(double dt)
     animateWarp(dt);
     animateSpaceShip(dt);
     framePerSecond = 1 / dt;
-    if (Application::IsKeyPressed('1')) //enable back face culling
-        glEnable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('2')) //disable back face culling
-        glDisable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('3'))
+
+    if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-    if (Application::IsKeyPressed('4'))
+    if (Application::IsKeyPressed(VK_NUMPAD5))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-    if (Application::IsKeyPressed('I'))
-        light[0].position.z -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('K'))
-        light[0].position.z += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('J'))
-        light[0].position.x -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('L'))
-        light[0].position.x += (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('O'))
-        light[0].position.y -= (float)(LSPEED * dt);
-    if (Application::IsKeyPressed('P'))
-        light[0].position.y += (float)(LSPEED * dt);
-
-    if (Application::IsKeyPressed('5'))
-    {
-        on_light = true;
-        light[0].color.Set(1, 1, 1);
-    }
-    if (Application::IsKeyPressed('6'))
-    {
-        on_light = false;
-        light[0].color.Set(0, 0, 0);
-    }
 
     if (Application::IsKeyPressed(VK_NUMPAD1)) {
+        reset();
         Application::changeIntoScenario1();
     }
     if (Application::IsKeyPressed(VK_NUMPAD3)) {
+        reset();
         Application::changeIntoScenario3();
     }
     //transition to the 3rd scenario
@@ -435,6 +411,14 @@ void scene3_SP2::Update(double dt)
     }
     //when the animation of space ship flying over the asteroid is over
     //for QTE
+
+    //reset button
+    if (Application::IsKeyPressed('R')) {
+        instructionIsOver = false;
+        order_of_text_ = 0;
+        reset();
+    }
+    //reset button
 
     camera.target = Vector3(sin(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.x, -sin(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.y, cos(Math::DegreeToRadian(camera.getCameraYrotation())) * cos(Math::DegreeToRadian(camera.getCameraXrotation())) + camera.position.z);
     Vector3 view = (camera.target - camera.position).Normalized();
@@ -576,7 +560,7 @@ void scene3_SP2::Render()
     }
     
     if (youLost == false) {
-        renderMesh(meshList[GEO_AXES], false);
+        //renderMesh(meshList[GEO_AXES], false);
 
         modelStack.PushMatrix();
         modelStack.Scale(300, 300, 300 + scaleSkyBoxZ_);
@@ -936,6 +920,13 @@ void scene3_SP2::animateWarp(double dt) {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - A Data Driven method that will initialised and determin what are the key press needed to pass this stage
+
+\param fileLocation - the path name to the text file's location
+*/
+/******************************************************************************/
 void scene3_SP2::initQuickTimeEvent(const char* fileLocation) {
     std::ifstream fileStream2(fileLocation, std::ios::binary);
     if (!fileStream2.is_open()) {
@@ -956,6 +947,13 @@ void scene3_SP2::initQuickTimeEvent(const char* fileLocation) {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to update the logic of QTE
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene3_SP2::activateQTE(double& dt) {
     if (quickTimeEventFlag == true) {
         quickTimer -= dt;
@@ -965,6 +963,11 @@ void scene3_SP2::activateQTE(double& dt) {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render QTE's stuff
+*/
+/******************************************************************************/
 void scene3_SP2::renderQTE() {
     if (quickTimeEventFlag == true && quickTimeEvent.empty() == false) {
         std::stringstream ss;
@@ -977,6 +980,11 @@ void scene3_SP2::renderQTE() {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to reset everything inside scenario 2
+*/
+/******************************************************************************/
 void scene3_SP2::reset() {
     camera.Reset();
     quickTimeEventFlag = false;
@@ -1012,10 +1020,23 @@ void scene3_SP2::reset() {
     rotationShipY = 0;
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the instructions needed for QTE
+*/
+/******************************************************************************/
 void scene3_SP2::renderInstructions() {
     renderDialogueBox("Instructions", intructions[order_of_text_]);
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to update the logic behind rendering of the instruction and 
+prevent the text from going to fast
+
+\param dt - frame time
+*/
+/******************************************************************************/
 void scene3_SP2::updateIntructions(double& dt) {
     if (Application::IsKeyPressed('E')) {
         if (makingSureNoDoubleTap > 0.2) {
@@ -1028,6 +1049,15 @@ void scene3_SP2::updateIntructions(double& dt) {
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the dialogue box in a much simpler way
+
+\param name - the name of the interacted object
+
+\param dialogue - what will be said by that object
+*/
+/******************************************************************************/
 void scene3_SP2::renderDialogueBox(const string& name, const string& dialogue)
 {
     RenderImageOnScreen(meshList[GEO_TEXT_BOX], 17, 16, 23, 5);
@@ -1036,6 +1066,21 @@ void scene3_SP2::renderDialogueBox(const string& name, const string& dialogue)
     RenderTextOnScreen(meshList[GEO_COMIC_TEXT], dialogue, Color(0, 1, 0), 3, 3.5, 4);
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to render the image on screen which offers non-uniform scalling
+
+\param mesh - the Shape that will be rendered
+
+\param x - the x coordinate of the image
+
+\param y - the y coordinate of the image
+
+\param sizeX - the scalling of image based on X-axis
+
+\param sizeY - the scalling of image based on Y-axis
+*/
+/******************************************************************************/
 void scene3_SP2::RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY) {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;

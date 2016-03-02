@@ -23,6 +23,7 @@ public:
 	short openSasame();
 	bool roomLight();
 	bool switchText();
+	void reset();
 
 private:
 	Vector3 Door_pos;

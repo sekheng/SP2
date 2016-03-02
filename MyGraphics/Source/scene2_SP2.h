@@ -21,7 +21,6 @@ This is for landing on the vault
 #include "creditScene.h"
 #include "NPC.h"
 
-
 /******************************************************************************/
 /*!
 Class scene2_SP2:
@@ -72,6 +71,9 @@ class scene2_SP2 : public Scene
 		GEO_ASTEROID,
 		GEO_ASTEROID2,
 
+		//npcrobot
+		GEO_NPCROBOT,
+
         //environment************************************************************//
         GEO_PLANET_SKYBOX,
         GEO_PLANET_GROUND,
@@ -95,6 +97,9 @@ class scene2_SP2 : public Scene
         //ending screen
         GEO_ENDING_SCREEN,
         //ending screen
+
+       
+
         NUM_GEOMETRY,
     };
 
@@ -190,8 +195,6 @@ private:
 	float boxesrotating2;
 	float boxesrotating3;
 	
-	
-
 	//renderobj function
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
@@ -218,7 +221,6 @@ private:
 	void NPCAnimation(double dt);
 	void BoxesAnimation(double dt);
 	
-
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 
@@ -230,9 +232,9 @@ private:
 	NumPad Numpad;
 	NPC robotNPC1;
 	NPC robotNPC2;
+	NPC robotNPC3;
 	//NPC NumpadNPC;
 	
-
     MS modelStack, viewStack, projectionStack;
 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -240,7 +242,6 @@ private:
 	void RenderNumPadOnScreen(Mesh* mesh, float size, float x, float y, float z, float rotate, float rotatex, float rotatey);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY);
-    void RenderImageOnScreen(Mesh* mesh, float x, float y, float z, float sizeX, float sizeY);
     void RenderUserInterface(Mesh* mesh, float size, float x, float y);
 
     double framePerSecond;
@@ -276,6 +277,8 @@ private:
     double update3DPos;
     //For 3D effects of the music
 
+
+    
     //displaying instructions
     void renderIntruction();
     double PreventSpammingInstruction;
