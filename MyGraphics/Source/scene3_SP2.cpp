@@ -281,10 +281,7 @@ void scene3_SP2::Update(double dt)
     animateWarp(dt);
     animateSpaceShip(dt);
     framePerSecond = 1 / dt;
-    //if (Application::IsKeyPressed('1')) //enable back face culling
-    //    glEnable(GL_CULL_FACE);
-    //if (Application::IsKeyPressed('2')) //disable back face culling
-    //    glDisable(GL_CULL_FACE);
+
     if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
     if (Application::IsKeyPressed(VK_NUMPAD5))

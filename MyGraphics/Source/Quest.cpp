@@ -297,15 +297,6 @@ void Quest::Update(double dt)
             stages = 4;
         }
     }
-
-	if (Application::IsKeyPressed('R'))
-	{
-		stages = 0;
-		CollectItem1 = false;
-		CollectItem2 = false;
-		time = 0;
-		quest_complete = false;
-	}
 }
 
 bool Quest::questComplete()
@@ -327,4 +318,13 @@ bool Quest::Item2collected()
         return true;
     }
     return CollectItem2;
+}
+
+void Quest::reset()
+{
+	stages = 0;
+	CollectItem1 = false;
+	CollectItem2 = false;
+	time = 0;
+	quest_complete = false;
 }

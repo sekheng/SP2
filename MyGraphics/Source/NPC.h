@@ -14,9 +14,14 @@ The npc class
 #include "Vector3.h"
 #include <vector>
 #include "Camera3.h"
-
-using std::vector;
-
+/******************************************************************************/
+/*!
+Class NPC:
+\brief -
+Inheirited from GameObject
+It has a text reader file to input it's dialogue
+*/
+/******************************************************************************/
 class NPC : public GameObject
 {
 public:
@@ -34,6 +39,7 @@ public:
     bool quest_given();
     string quest_complete();
     short get_LineOfDialogue();
+	void reset();
 private:
     Vector3 NPC_pos;
     vector<string> Dialogues;
