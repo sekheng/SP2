@@ -713,6 +713,10 @@ void sceneSP2::reset()
 	Quest3_finished = false;
 	Quest4_finished = false;
 	tutorialscreen = true;
+	teleportCoordY = 0;
+	startTeleporting = false;
+	musicTimeDelay = 0.5;
+	test_quest.reset();
 	MiniGame.init();
 }
 /******************************************************************************/
@@ -2657,12 +2661,14 @@ void sceneSP2::populateArea()
 */
 /******************************************************************************/
 void sceneSP2::animateTeleporting(double& dt) {
-    if (camera.position.z != 0 || camera.position.x != 0) {
+    if (camera.position.z != 0 || camera.position.x != 0) 
+	{
         camera.setLocation(0, camera.position.y, 0);
     }
-    else {
-        if (camera.position.y > 30) {
-			reset();
+    else
+	{
+        if (camera.position.y > 30) 
+		{
             Application::changeIntoScenario2();
         }
         teleportCoordY = Physics::gravitational_pulled(teleportCoordY, dt, 1.f);
