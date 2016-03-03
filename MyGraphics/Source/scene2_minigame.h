@@ -1,8 +1,15 @@
+/******************************************************************************/
+/*!
+\file       scene2_minigame.h
+\author  Lim Guan Hui
+\par        email: 150623L@mymail.nyp.edu.sg
+\brief - 
+minigame class
+*/
+/******************************************************************************/
+
 #ifndef SCENE2_MINIGAME_H_
 #define SCENE2_MINIGAME_H_
-
-//next time, Don't ANYHOW include!
-//#include "Application.h"
 
 class minigame
 {

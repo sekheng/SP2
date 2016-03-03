@@ -1,6 +1,6 @@
 /******************************************************************************/
 /*!
-\file    NPC.h
+\file    Quest.h
 \author  Lim Guan Hui
 \par     email: 150623L@mymail.nyp.edu.sg
 \brief -
@@ -16,7 +16,12 @@ The quest class
 #include "Camera3.h"
 
 using std::vector;
-
+/******************************************************************************/
+/*!
+Class Quest
+\brief - Quest system used to help create a flow of quests easily in the game
+*/
+/******************************************************************************/
 class Quest
 {
 public:
