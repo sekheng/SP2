@@ -1044,9 +1044,9 @@ void scene2_SP2::RenderVault()
 				modelStack.Rotate(180, 0, 1, 0);
 				modelStack.Scale(7, 3, 3);
 				renderMesh(meshList[GEO_VAULTCUBE], true);
-				if (vault.interaction() == true && !Numpad.interactiontext())
+				if (vault.interaction() == true && !Numpad.interactiontext() && beginEnding == false)
 				{
-					if (!Application::IsKeyPressed('E') && beginEnding == false)
+					if (!Application::IsKeyPressed('E') )
 					{
 						renderDialogueBox("Vault", vault.getDialogue(true));
 					}
