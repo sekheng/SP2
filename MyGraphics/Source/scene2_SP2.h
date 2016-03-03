@@ -94,12 +94,6 @@ class scene2_SP2 : public Scene
         GEO_TEXT_BOX,
         //text box
 
-        //ending screen
-        GEO_ENDING_SCREEN,
-        //ending screen
-
-       
-
         NUM_GEOMETRY,
     };
 
@@ -266,8 +260,6 @@ private:
     void Ending(double& dt);
     double endingTime;
     float moveToDeadPoolZ;
-    float sizeofEndingScreen;
-    void renderEndingScreen();
 
     //credits
     creditScene creditRolling;

@@ -338,17 +338,12 @@ void scene2_SP2::Init()
     meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//scene1//textbox.tga");
     //text box
 
-    //ending screen
-    meshList[GEO_ENDING_SCREEN] = MeshBuilder::GenerateQuad("ending screen", Color(0, 0, 0));
-    meshList[GEO_ENDING_SCREEN]->textureID = LoadTGA("Image//ending_screen.tga");
-    //ending screen
 
     //Beginning cinematic
     beginEnding = false;
     beginIamYourFather = false;
     endingTime = 0;
     moveToDeadPoolZ = 0;
-    sizeofEndingScreen = 1;
 
     //credits
     creditRolling.initCredit("scenario3Driven//credits.txt");
@@ -700,9 +695,6 @@ void scene2_SP2::Render()
 	{
         renderDialogueBox("Numpad", "Press C to interact");
 	}
-    if (beginIamYourFather == true && moveToDeadPoolZ < -135) {
-        renderEndingScreen();
-    }
 
     rollingCredits();
 
@@ -2484,12 +2476,7 @@ void scene2_SP2::Ending(double& dt) {
         camera.setLocation(0, camera.defaultPosition.y, 150 + moveToDeadPoolZ);
         camera.setRotation(0, 180);
         if (moveToDeadPoolZ < -135) {
-            if (sizeofEndingScreen > 200) {
-                creditRolling.activateCredit();
-            }
-            else {
-                sizeofEndingScreen += 200 * (float)(dt);
-            }
+            creditRolling.activateCredit();
         }
         if (moveToDeadPoolZ > -145) {
             Application::musics->playDarthVaderBackground();
@@ -2501,17 +2488,6 @@ void scene2_SP2::Ending(double& dt) {
     Vector3 view = (camera.target - camera.position).Normalized();
     Vector3 right = view.Cross(camera.defaultUp);
     camera.up = right.Cross(view);
-}
-
-/******************************************************************************/
-/*!
-\brief - a method to render the ending screen
-*/
-/******************************************************************************/
-void scene2_SP2::renderEndingScreen() {
-    modelStack.PushMatrix();
-    RenderImageOnScreen(meshList[GEO_ENDING_SCREEN], sizeofEndingScreen, 40, 30);
-    modelStack.PopMatrix();
 }
 
 /******************************************************************************/
@@ -2561,6 +2537,5 @@ void scene2_SP2::Reset()
 	beginIamYourFather = false;
 	endingTime = 0;
 	moveToDeadPoolZ = 0;
-	sizeofEndingScreen = 1;
     Application::musics->reset();
 }
