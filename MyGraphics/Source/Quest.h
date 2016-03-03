@@ -1,6 +1,6 @@
 /******************************************************************************/
 /*!
-\file    NPC.h
+\file    Quest.h
 \author  Lim Guan Hui
 \par     email: 150623L@mymail.nyp.edu.sg
 \brief -
@@ -19,8 +19,7 @@ using std::vector;
 /******************************************************************************/
 /*!
 Class Quest
-\brief -
-Inheirited from GameObject
+\brief - Quest system used to help create a flow of quests easily in the game
 */
 /******************************************************************************/
 class Quest

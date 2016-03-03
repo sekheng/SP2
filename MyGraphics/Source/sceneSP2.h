@@ -243,9 +243,6 @@ private:
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float size, float x, float y);
     void RenderImageOnScreen(Mesh* mesh, float x, float y, float sizeX, float sizeY);
-    void RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-    void RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-    void TextSlowDown(double dt);
     void QuestCompleteCheck();
     void RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z, float rotate_x, float rotate_y, float rotate_z);
     void RenderTutorialScreen();
@@ -274,9 +271,6 @@ private:
 	void RenderBuilding();
 
     void populateArea();
-
-    //text slow down
-    double slowtxt;
 
     //quest flow
     short quest_stage;

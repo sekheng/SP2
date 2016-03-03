@@ -619,15 +619,6 @@ void sceneSP2::Update(double dt)
     sek_heng_.Update(dt);
     //Sek Heng's stuff
 
-    if (QUEST1.interaction())
-    {
-        TextSlowDown(dt);
-    }
-    else
-    {
-        slowtxt = 0;
-    }
-
     //animating particle cube
     for (vector<objectsForDisplay>::iterator it = particleHandlers.begin(); it != particleHandlers.end(); ++it) {
                 if ((*it).objectPos.y < 40) {
@@ -1369,90 +1360,6 @@ void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
     projectionStack.PopMatrix();
     viewStack.PopMatrix();
     modelStack.PopMatrix();
-}
-
-/******************************************************************************/
-/*!
-\brief -
-delay rendering of the texts using quads on screen
-
-\param mesh - a pointer to the specific mesh
-\param text - the text that needs to be rendered
-\param color - the color of the text
-\param size - size of the text
-\param x - x coordinate of the text
-\param y - y coordinate of the text
-*/
-/******************************************************************************/
-
-void sceneSP2::RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
-{
-    if (!mesh || mesh->textureID <= 0) //Proper error check
-        return;
-
-    glDisable(GL_DEPTH_TEST);
-    Mtx44 ortho;
-    ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
-    projectionStack.PushMatrix();
-    projectionStack.LoadMatrix(ortho);
-    viewStack.PushMatrix();
-    viewStack.LoadIdentity(); //No need camera for ortho mode
-    modelStack.PushMatrix();
-    modelStack.LoadIdentity(); //Reset modelStack
-    modelStack.Scale(size, size, size);
-    modelStack.Translate(x, y, 0);
-    glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
-    glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-    glUniform1i(m_parameters[U_LIGHTENABLED], 0);
-    glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, mesh->textureID);
-    glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-
-    for (unsigned i = 0; i < text.length(); ++i)
-    {
-        Mtx44 characterSpacing;
-        characterSpacing.SetToTranslation(i * 0.5f, 0, 0); //1.0f is the spacing of each character, you may change this value
-        Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
-        glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
-
-        //mesh->Render((unsigned)text[i] * 6, 6);
-    }
-    for (unsigned i = 0; i < text.length();)
-    {
-        if (slowtxt > 0.9)
-        {
-            slowtxt = 0;
-            mesh->Render((unsigned)text[i] * 6, 6);
-            ++i;
-        }
-        
-    }
-
-
-    glBindTexture(GL_TEXTURE_2D, 0);
-    glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
-    glEnable(GL_DEPTH_TEST);
-    projectionStack.PopMatrix();
-    viewStack.PopMatrix();
-    modelStack.PopMatrix();
-}    
-
-/******************************************************************************/
-/*!
-\brief -
-update the time for slowig text
-
-\param - frame time 
-*/
-/******************************************************************************/
-void sceneSP2::TextSlowDown(double dt)
-{    
-   slowtxt += dt;
-}
-void sceneSP2::RenderTheSlowTexT(Mesh* mesh, std::string text, Color color, float size, float x, float y)
-{
-
 }
 /******************************************************************************/
 /*!
@@ -2682,7 +2589,7 @@ void sceneSP2::RenderTutorialScreen()
 /******************************************************************************/
 /*!
 \brief -
-rendering minigame pieces
+rendering minigame pieces & minigame selector
 */
 /******************************************************************************/
 void sceneSP2::RenderMinigamePieces()
@@ -2750,7 +2657,7 @@ void sceneSP2::RenderMinigamePieces()
 /******************************************************************************/
 /*!
 \brief -
-rendering of the minigame 
+rendering of the minigame pieces on screen
 */
 /******************************************************************************/
 void sceneSP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
@@ -2781,7 +2688,7 @@ void sceneSP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, 
 /******************************************************************************/
 /*!
 \brief -
-rendering selector on screen
+rendering minigame selector on screen
 */
 /******************************************************************************/
 void sceneSP2::RenderMinigameSelectorOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)

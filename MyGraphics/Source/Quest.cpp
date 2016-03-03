@@ -1,148 +1,44 @@
 #include "Quest.h"
 #include "Application.h"
+/******************************************************************************/
+/*!
+\brief -
+Default Constructor
+*/
+/******************************************************************************/
 Quest::Quest()
 {
 
 }
+/******************************************************************************/
+/*!
+\brief -
+Destructor
+*/
+/******************************************************************************/
 Quest::~Quest()
 {
 
 }
-//
-//void Quest::Init(string Name_, Camera3 &camera_address,short no_of_objects,
-//    Vector3 Object_1_pos, float Object_1_bounds_x, float Object_1_bounds_z,
-//    Vector3 Object_2_pos, float Object_2_bound_x, float Object_2_bound_z)
-//{
-//    name = Name_;
-//    camera = &camera_address;
-//    //object 1
-//    x_1 = Object_1_pos.x;
-//    y_1 = Object_1_pos.y;
-//    z_1 = Object_1_pos.z;
-//    bounds_1_x = Object_1_bounds_x;
-//    bounds_1_z = Object_1_bounds_z;
-//    //object 2
-//    x_2 = Object_2_pos.x;
-//    y_2 = Object_2_pos.y;
-//    z_2 = Object_2_pos.z;
-//    bounds_2_x = Object_2_bound_x;
-//    bounds_2_z = Object_2_bound_z;
-//
-//    Quest_accept = false;
-//
-//    stop_change1 = false;
-//    stop_change2 = false;
-//
-//    number_of_objects = no_of_objects;
-//}
-//
-//void Quest::Quest_Taken(bool taken)
-//{
-//    Quest_accept = true;
-//}
-//
-//bool Quest::get_quest_taken()
-//{
-//    return Quest_accept;
-//}
-//
-//bool Quest::FirstObject()
-//{
-//    return pickup(x_1,z_1,bounds_1_x,bounds_1_z, camera->getCameraXcoord(), camera->getCameraZcoord());
-//}
-//float Quest::get_object1_x()
-//{
-//    return x_1;
-//}
-//float Quest::get_object1_z()
-//{
-//    return z_1;
-//}
-//bool Quest::FirstObject_taken()
-//{
-//    if (Application::IsKeyPressed('E') == true && FirstObject() == true && stop_change1 == false)
-//    {
-//        stop_change1 = true;
-//        return true;
-//    }
-//    else
-//    {
-//        if ( stop_change1 == false)
-//        return false;
-//    }
-//    return false;
-//}
-//
-//bool Quest::SecondObject()
-//{
-//    return pickup(x_2, z_2, bounds_2_x, bounds_2_z, camera->getCameraXcoord(), camera->getCameraZcoord());
-//}
-//bool Quest::SecondObject_taken()
-//{
-//    if (number_of_objects == 1) return true;
-//    if (Application::IsKeyPressed('E') && SecondObject() && stop_change2 == false )
-//    {
-//        stop_change2 = true;
-//        return true;
-//    }
-//    else
-//    {
-//        if (stop_change2 == false)
-//        return false;
-//    }
-//    return false;
-//}
-//float Quest::get_object2_x()
-//{
-//    return x_2;
-//}
-//float Quest::get_object2_z()
-//{
-//    return z_2;
-//}
-//bool Quest::QuestinProgress()
-//{
-//    if (FirstObject_taken() && SecondObject_taken())
-//        return false;
-//    else
-//        return true;
-//}
-///**************************************************************************/
-////put this in update of scene to check if quest is complete
-///**************************************************************************/
-//bool Quest::Result()
-//{
-//    if (get_quest_taken())
-//    {
-//        if (QuestinProgress() == false)
-//            return true;
-//        else
-//            return false;
-//    }
-//    else return false;
-//}
-///********************************************************************************/
-////basically bounds check and to check if object has been picked up or not
-///********************************************************************************/
-//bool Quest::pickup( float position_x,  float position_z, float bounds_x, float bounds_z, float cameraposition_x, float cameraposition_z)
-//{
-//    if ((position_x + bounds_x) > cameraposition_x &&
-//        (position_x - bounds_x) < cameraposition_x &&
-//        (position_z + bounds_z) > cameraposition_z &&
-//        (position_z - bounds_z) < cameraposition_z)
-//    {
-//        return true;
-//    }
-//    return false;
-//}
-//
-//short Quest::no_of_objects()
-//{
-//    return number_of_objects;
-//}
-//
-//
+/******************************************************************************/
+/*!
+\brief - initialised it's values through parameters
 
+\param Name_ - Name of the quest
+
+\param camera_address - 
+
+\param no_of_items - number of items required to complete the quest
+
+\param Item1_pos - position of first quest item
+
+\param Item1_bounds - bounds of first quest item
+
+\param Item2_pos - position of second quest item
+
+\param Item2_bounds - bounds of second quest item
+*/
+/******************************************************************************/
 void Quest::Init(string Name_, Camera3 &camera_address, short no_of_items,
     Vector3 Item1_pos, short Item1_bounds, Vector3 Item2_pos, short Item2_bounds)
 {
@@ -166,7 +62,17 @@ void Quest::Init(string Name_, Camera3 &camera_address, short no_of_items,
     quest_complete = false;
     number_of_items = no_of_items;
 }
+/******************************************************************************/
+/*!
+\brief - check if quest has been taken or should be started
 
+\param quest_is_taken - if true, quest is taken, if false, quest is not taken
+
+\return true - quest is taken
+
+\return false - quest is not taken
+*/
+/******************************************************************************/
 bool Quest::check_quest(bool quest_is_taken)
 {
     if (quest_is_taken)
@@ -175,13 +81,27 @@ bool Quest::check_quest(bool quest_is_taken)
     }
     return quest_is_taken;
 }
+/******************************************************************************/
+/*!
+\brief - get the current progress of the quest
 
+\return - which stage of the quest is the player currently at
+*/
+/******************************************************************************/
 short Quest::stage()
 {
     return stages;
    
 }
+/******************************************************************************/
+/*!
+\brief -  bounds check if player is within range to pick up item
 
+\return true - player is within the bounds
+
+\return false - player is not within the bounds
+*/
+/******************************************************************************/
 bool Quest::boundscheck(float position_x, float position_z, float bounds_x, float bounds_z, float cameraposition_x, float cameraposition_z)
 {
     if ((position_x + bounds_x) > cameraposition_x &&
@@ -194,26 +114,35 @@ bool Quest::boundscheck(float position_x, float position_z, float bounds_x, floa
     return false;
 }
 
-//bool Quest::renderObject1()
-//{
-//    if (stages == 1)  return true;
-//    else return false;
-//}
-//
-//bool Quest::renderObject2()
-//{
-//    return false;
-//}
+/******************************************************************************/
+/*!
+\brief - get first item's x coordinate
 
+\return x coordinate of first item
+*/
+/******************************************************************************/
 float Quest::getObject1_X()
 {
     return x_1;
 }
+/******************************************************************************/
+/*!
+\brief - get first item's z coordinate
 
+\return z coordinate of first item
+*/
+/******************************************************************************/
 float Quest::getObject1_Z()
 {
     return z_1;
 }
+/******************************************************************************/
+/*!
+\brief - get second item's x coordinate
+
+\return x coordinate of second item
+*/
+/******************************************************************************/
 
 float Quest::getObject2_X()
 {
@@ -223,6 +152,13 @@ float Quest::getObject2_X()
     }
     return x_2;
 }
+/******************************************************************************/
+/*!
+\brief - get second item's z coordinate
+
+\return z coordinate of second item
+*/
+/******************************************************************************/
 
 float Quest::getObject2_Z()
 {
@@ -232,12 +168,24 @@ float Quest::getObject2_Z()
     }
     return z_2;
 }
+/******************************************************************************/
+/*!
+\brief - get number of items the quest requires
 
+\return the number of items required in the quest
+*/
+/******************************************************************************/
 short Quest::get_numberof_items()
 {
     return number_of_items;
 }
+/******************************************************************************/
+/*!
+\brief - update's the quest progress
 
+\param dt - delta time 
+*/
+/******************************************************************************/
 void Quest::Update(double dt)
 {
     if (number_of_items == 1)
@@ -298,19 +246,38 @@ void Quest::Update(double dt)
         }
     }
 }
+/******************************************************************************/
+/*!
+\brief - check if quest completed
 
+\return true - quest is complete
+\return false - quest is not complete
+*/
+/******************************************************************************/
 bool Quest::questComplete()
 {
     return quest_complete;
 }
+/******************************************************************************/
+/*!
+\brief - check if first item has been picked up
 
-
+\return true - first item has been picked up
+\return false - first item has not been picked up
+*/
+/******************************************************************************/
 bool Quest::Item1collected()
 {
     return CollectItem1;
 }
+/******************************************************************************/
+/*!
+\brief - check if second item has been picked up
 
-
+\return true - second item has been picked up
+\return false - second item has not been picked up
+*/
+/******************************************************************************/
 bool Quest::Item2collected()
 {
     if (number_of_items == 1)
@@ -319,7 +286,11 @@ bool Quest::Item2collected()
     }
     return CollectItem2;
 }
-
+/******************************************************************************/
+/*!
+\brief - reset the quest
+*/
+/******************************************************************************/
 void Quest::reset()
 {
 	stages = 0;
