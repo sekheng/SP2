@@ -475,8 +475,6 @@ void sceneSP2::Init()
 	headrotating = 0;
 	//chunfei's stuff
 
-    slowtxt = 0;
-
     quest_stage = 0;
 
 	lightSwitch = true;
