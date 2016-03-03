@@ -1215,19 +1215,19 @@ void sceneSP2::Render()
     //****************************************************************************//
     //On screen objects
     //****************************************************************************//
-    
-    std::stringstream ss;
-    ss << "FPS : " << static_cast<int>(framePerSecond);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
-    
-    std::stringstream connectPosX;
+    //
+    //std::stringstream ss;
+    //ss << "FPS : " << static_cast<int>(framePerSecond);
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.5f);
+    //
+    //std::stringstream connectPosX;
 
-    connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
+    //connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
 
-    std::stringstream connectPosZ;
-    connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
+    //std::stringstream connectPosZ;
+    //connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
 
     //testing(DO NOT DELETE THIS)
    /* RenderStuffOnScreen(meshList[GEO_CONTAINER],"left",0.05f,1.3,2,-0.8,0,0,0);

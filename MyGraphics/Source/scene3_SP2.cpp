@@ -602,25 +602,25 @@ void scene3_SP2::Render()
         RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Press E to Retry", Color(0, 1, 0), 4, 6, 12);
     }
 
-    std::stringstream connectPosX;
-    connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
+    //std::stringstream connectPosX;
+    //connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.5f, 21.2f);
 
-    std::stringstream connectPosZ;
-    connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
-    
-    std::stringstream connectPosY;
-    connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 18.f);
+    //std::stringstream connectPosZ;
+    //connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.5f, 19.f);
+    //
+    //std::stringstream connectPosY;
+    //connectPosY << std::fixed << std::setprecision(2) << "Y : " << camera.getCameraYcoord();
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosY.str(), Color(0, 1, 0), 1.8f, 1.5f, 18.f);
 
     //std::stringstream asteroidPosZ;
     //asteroidPosZ << moveAsteroidZ;
     //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], asteroidPosZ.str(), Color(0, 1, 0), 1.8f, 5, 5);
 
-    std::stringstream ss;
-    ss << "FPS : " << static_cast<int>(framePerSecond);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
+    //std::stringstream ss;
+    //ss << "FPS : " << static_cast<int>(framePerSecond);
+    //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 }
 
 /******************************************************************************/
