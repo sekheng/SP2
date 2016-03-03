@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file       StationScene.h
+\author  SEETOO WEI JIE VICTOR
+\par        email: 150452J@mymail.nyp.edu.sg
+\brief -
+Creating room interaction
+*/
+/******************************************************************************/
 #ifndef STATIONSCENE_H
 #define STATIONSCENE_H
 
@@ -5,8 +14,18 @@
 #include "Vector3.h"
 #include <vector>
 #include "Camera3.h"
-
 using std::vector;
+
+/******************************************************************************/
+/*!
+\author  SEETOO WEI JIE VICTOR
+\par        email: 150452J@mymail.nyp.edu.sg
+\brief -
+Inheirited from GameObject
+It will have the collisiont check and position.
+And it's own dialogues and interactions boundary
+*/
+/******************************************************************************/
 
 class StationScene : public GameObject
 {
