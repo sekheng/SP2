@@ -123,7 +123,7 @@ float NPC::NPC_getposition_y()
 /*!
 \brief - get this object's dialogue
 
-
+\param reset - to reset the dialogue if player moves out of range
 
 \return - dialogue for object in the form of a string
 */
@@ -164,7 +164,15 @@ string NPC::getDialogue(bool reset)
     }
 
 }
+/******************************************************************************/
+/*!
+\brief - to check if player is within range to interact with this object
 
+\return true player is in range of interacting with this object
+
+\return false player is not in range of interacting with this object
+*/
+/******************************************************************************/
 bool NPC::interaction()
 {
     
@@ -178,7 +186,15 @@ bool NPC::interaction()
         }
         return false;
 }
+/******************************************************************************/
+/*!
+\brief - bounds checking for interaction
 
+\return true player is in range of interaction
+
+\return false player is not in range of interaction
+*/
+/******************************************************************************/
 bool NPC::boundschecking(const float&bounds_x, const float &bounds_z)
 {
     if ((NPC_getposition_x() + bound_x) > bounds_x &&
@@ -190,9 +206,13 @@ bool NPC::boundschecking(const float&bounds_x, const float &bounds_z)
     }
     return false;
 }
+/******************************************************************************/
+/*!
+\brief - update some variables at every frame 
 
-
-
+\param dt - delta time
+*/
+/******************************************************************************/
 void NPC::update(double dt)
 {
 
@@ -203,7 +223,11 @@ void NPC::update(double dt)
 		reset();
 	}
 }
-
+/******************************************************************************/
+/*!
+\brief - to reset all npc dialogue when scene resets
+*/
+/******************************************************************************/
 void NPC::reset()
 {
 	dialogue_switch = 0;
@@ -215,12 +239,26 @@ void NPC::reset()
 	quest_complete_delay = false;
 	quest_complete_stage = 0;
 }
+/******************************************************************************/
+/*!
+\brief - to check if player has been given a quest from this npc object
 
+\return true quest has been given
+
+\return false quest has not been given
+*/
+/******************************************************************************/
 bool NPC::quest_given()
 {
     return dialogue_finish;
 }
+/******************************************************************************/
+/*!
+\brief - returns dialogue for the npc when quest is complete
 
+\return dialogue for the npc when quest is complete
+*/
+/******************************************************************************/
 string NPC::quest_complete()
 {
     if (!Application::IsKeyPressed('E') && quest_complete_stage == 0)
@@ -238,7 +276,13 @@ string NPC::quest_complete()
     }
     return Dialogues[0];
 }
+/******************************************************************************/
+/*!
+\brief - to get which line of dialogue the npc object should be currently displaying
 
+\return the line number of the dialogue as a short 
+*/
+/******************************************************************************/
 short NPC::get_LineOfDialogue()
 {
     return dialogue_switch;
