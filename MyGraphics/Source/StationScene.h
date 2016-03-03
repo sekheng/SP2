@@ -1,3 +1,12 @@
+/******************************************************************************/
+/*!
+\file       StationScene.h
+\author  SEETOO WEI JIE VICTOR
+\par        email: 150452J@mymail.nyp.edu.sg
+\brief -
+Creating room interaction
+*/
+/******************************************************************************/
 #ifndef STATIONSCENE_H
 #define STATIONSCENE_H
 
@@ -5,8 +14,18 @@
 #include "Vector3.h"
 #include <vector>
 #include "Camera3.h"
-
 using std::vector;
+
+/******************************************************************************/
+/*!
+\author  SEETOO WEI JIE VICTOR
+\par        email: 150452J@mymail.nyp.edu.sg
+\brief -
+Inheirited from GameObject
+It will have the collisiont check and position.
+And it's own dialogues and interactions boundary
+*/
+/******************************************************************************/
 
 class StationScene : public GameObject
 {
@@ -14,7 +33,7 @@ public:
 	StationScene();
 	~StationScene();
 
-	void Init(string name, Vector3 pos, Camera3 &camera_address, float boundaryX, float boundaryZ);
+	void Init(Camera3 &camera_address);
 	void update(double dt);
 	short getQuestStage();
 	short getCard1();
@@ -26,10 +45,8 @@ public:
 	void reset();
 
 private:
-	Vector3 Door_pos;
-	vector<string> Dialogues;
+
 	Camera3 *cam_pointer;
-	float bound_x, bound_z;
 	float time;
 	bool questActive;
 	bool questComplete;
@@ -38,7 +55,6 @@ private:
 	short count;
 	bool doorOpened;
 	bool switchLightOn;
-	bool switchLightOff;
 	float delay;
 
 protected:

@@ -174,7 +174,7 @@ void sceneSP2::Init()
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
-    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
+    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//scene3//comicSans.tga");
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1,1,1));
 
@@ -182,11 +182,11 @@ void sceneSP2::Init()
     //environment
     /***************************************************************************/
     //skybox
-    meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
-    meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
+    meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//scene1//Space_Skybox.obj");
+    meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//scene1//skybox//Space_Skybox_UV.tga");
     //Space ground mesh
-    meshList[GEO_SPACE_GROUNDMESH] = MeshBuilder::GenerateOBJ("Space ground mesh", "OBJ//Space_groundmesh.obj");
-    meshList[GEO_SPACE_GROUNDMESH]->textureID = LoadTGA("Image//Space_groundmesh.tga");
+    meshList[GEO_SPACE_GROUNDMESH] = MeshBuilder::GenerateOBJ("Space ground mesh", "OBJ//scene1//Space_groundmesh.obj");
+    meshList[GEO_SPACE_GROUNDMESH]->textureID = LoadTGA("Image//scene1//Space_groundmesh.tga");
 	meshList[GEO_SPACE_GROUNDMESH]->material.kAmbient.Set(0.2f, 0.2f, 0.2f);
 	meshList[GEO_SPACE_GROUNDMESH]->material.kDiffuse.Set(0.2f, 0.2f, 0.2f);
 	meshList[GEO_SPACE_GROUNDMESH]->material.kSpecular.Set(0.5f, 0.5f, 0.5f);
@@ -194,8 +194,8 @@ void sceneSP2::Init()
     // meshList[GEO_SPACE_GROUNDMESH]->material = MaterialBuilder::GenerateBlinn();
 
     //space walls
-    meshList[GEO_SPACE_WALL] = MeshBuilder::GenerateOBJ("Space wall", "OBJ//space_walls.obj");
-    meshList[GEO_SPACE_WALL]->textureID = LoadTGA("Image//space_station_wall.tga");
+    meshList[GEO_SPACE_WALL] = MeshBuilder::GenerateOBJ("Space wall", "OBJ//scene1//space_walls.obj");
+    meshList[GEO_SPACE_WALL]->textureID = LoadTGA("Image//scene1//space_station_wall.tga");
 	meshList[GEO_SPACE_WALL]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_SPACE_WALL]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_SPACE_WALL]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);;
@@ -204,100 +204,100 @@ void sceneSP2::Init()
 
 
     //User Interface
-    meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//User_Interface.obj");
-    meshList[GEO_UI]->textureID = LoadTGA("Image//UI_UV.tga");
+    meshList[GEO_UI] = MeshBuilder::GenerateOBJ("User Interface", "OBJ//scene1//User_Interface.obj");
+    meshList[GEO_UI]->textureID = LoadTGA("Image//scene1//UI_UV.tga");
     //User Interface
     
     //quest items
-    meshList[GEO_SCREWDRIVER] = MeshBuilder::GenerateOBJ("screw driver", "OBJ//ScrewDriver.obj");
-    meshList[GEO_SCREWDRIVER]->textureID = LoadTGA("Image//Screwdriver.tga");
+    meshList[GEO_SCREWDRIVER] = MeshBuilder::GenerateOBJ("screw driver", "OBJ//scene1//ScrewDriver.obj");
+    meshList[GEO_SCREWDRIVER]->textureID = LoadTGA("Image//scene1//Screwdriver.tga");
     
-    meshList[GEO_CONTAINER] = MeshBuilder::GenerateOBJ("container", "OBJ//Container.obj");
-    meshList[GEO_CONTAINER]->textureID = LoadTGA("Image//Container.tga");
+    meshList[GEO_CONTAINER] = MeshBuilder::GenerateOBJ("container", "OBJ//scene1//Container.obj");
+    meshList[GEO_CONTAINER]->textureID = LoadTGA("Image//scene1//Container.tga");
    
-    meshList[GEO_GASOLINE] = MeshBuilder::GenerateOBJ("gasoline", "OBJ//Gasoline.obj");
-    meshList[GEO_GASOLINE]->textureID = LoadTGA("Image//Gasoline.tga");
+    meshList[GEO_GASOLINE] = MeshBuilder::GenerateOBJ("gasoline", "OBJ//scene1//Gasoline.obj");
+    meshList[GEO_GASOLINE]->textureID = LoadTGA("Image//scene1//Gasoline.tga");
    
-    meshList[GEO_HAMMER] = MeshBuilder::GenerateOBJ("hammer", "OBJ//Hammer.obj");
-    meshList[GEO_HAMMER]->textureID = LoadTGA("Image//Hammer.tga");
+    meshList[GEO_HAMMER] = MeshBuilder::GenerateOBJ("hammer", "OBJ//scene1//Hammer.obj");
+    meshList[GEO_HAMMER]->textureID = LoadTGA("Image//scene1//Hammer.tga");
 
     //quest items
 
 	
 	//SpaceStation
-	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("Station", "OBJ//Station.obj");
-	meshList[GEO_STATION]->textureID = LoadTGA("Image//Station.tga");
+	meshList[GEO_STATION] = MeshBuilder::GenerateOBJ("Station", "OBJ//scene1//Station.obj");
+	meshList[GEO_STATION]->textureID = LoadTGA("Image//scene1//Station.tga");
 	meshList[GEO_STATION]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_STATION]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_STATION]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
 	meshList[GEO_STATION]->material.kShininess = 3.0f;
 	//SpaceStationChair
-	meshList[GEO_CHAIR] = MeshBuilder::GenerateOBJ("Chair", "OBJ//Chair.obj");
-	meshList[GEO_CHAIR]->textureID = LoadTGA("Image//Chair.tga");
+	meshList[GEO_CHAIR] = MeshBuilder::GenerateOBJ("Chair", "OBJ//scene1//Chair.obj");
+	meshList[GEO_CHAIR]->textureID = LoadTGA("Image//scene1//Chair.tga");
 	meshList[GEO_CHAIR]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_CHAIR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_CHAIR]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_CHAIR]->material.kShininess = 3.0f;
 	//SpaceStationTable
-	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("Table", "OBJ//Table.obj");
-	meshList[GEO_TABLE]->textureID = LoadTGA("Image//Table.tga");
+	meshList[GEO_TABLE] = MeshBuilder::GenerateOBJ("Table", "OBJ//scene1//Table.obj");
+	meshList[GEO_TABLE]->textureID = LoadTGA("Image//scene1//Table.tga");
 	meshList[GEO_TABLE]->material.kAmbient.Set(0.2f, 0.2f, 0.2f);
 	meshList[GEO_TABLE]->material.kDiffuse.Set(0.2f, 0.2f, 0.2f);
 	meshList[GEO_TABLE]->material.kSpecular.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_TABLE]->material.kShininess = 1.0f;
 
 	//SpaceStationBox
-	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("Box", "OBJ//Box.obj");
-	meshList[GEO_BOX]->textureID = LoadTGA("Image//Box.tga");
+	meshList[GEO_BOX] = MeshBuilder::GenerateOBJ("Box", "OBJ//scene1//Box.obj");
+	meshList[GEO_BOX]->textureID = LoadTGA("Image//scene1//Box.tga");
 	meshList[GEO_BOX]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_BOX]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_BOX]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
 	meshList[GEO_BOX]->material.kShininess = 1.0f;
 
 	//SpaceStationBox
-	meshList[GEO_DOOR] = MeshBuilder::GenerateOBJ("Door", "OBJ//Door.obj");
-	meshList[GEO_DOOR]->textureID = LoadTGA("Image//Door.tga");
+	meshList[GEO_DOOR] = MeshBuilder::GenerateOBJ("Door", "OBJ//scene1//Door.obj");
+	meshList[GEO_DOOR]->textureID = LoadTGA("Image//scene1//Door.tga");
 	meshList[GEO_DOOR]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_DOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_DOOR]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_DOOR]->material.kShininess = 3.0f;
 
 	//SpaceStationCryostasis
-	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("Cryostasis", "OBJ//cryostasis.obj");
-	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//cryostasis.tga");
+	meshList[GEO_CRYOSTASIS] = MeshBuilder::GenerateOBJ("Cryostasis", "OBJ//scene1//cryostasis.obj");
+	meshList[GEO_CRYOSTASIS]->textureID = LoadTGA("Image//scene1//cryostasis.tga");
 	meshList[GEO_CRYOSTASIS]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_CRYOSTASIS]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_CRYOSTASIS]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
 	meshList[GEO_CRYOSTASIS]->material.kShininess = 2.0f;
 
 	//SpaceStationKeyCard
-	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("KeyCard", "OBJ//KeyCard.obj");
-	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//KeyCard.tga");
+	meshList[GEO_KEYCARD] = MeshBuilder::GenerateOBJ("KeyCard", "OBJ//scene1//KeyCard.obj");
+	meshList[GEO_KEYCARD]->textureID = LoadTGA("Image//scene1//KeyCard.tga");
 	//SpaceShuttle
-	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("SpaceShuttle", "OBJ//FlyingVehicle.obj");
-	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
+	meshList[GEO_SPACESHUTTLE] = MeshBuilder::GenerateOBJ("SpaceShuttle", "OBJ//scene1//FlyingVehicle.obj");
+	meshList[GEO_SPACESHUTTLE]->textureID = LoadTGA("Image//scene1//FlyingVehicle.tga");
 	meshList[GEO_SPACESHUTTLE]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_SPACESHUTTLE]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_SPACESHUTTLE]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
 	meshList[GEO_SPACESHUTTLE]->material.kShininess = 5.0f;
 
 	//Teleporter
-	meshList[GEO_TELEPORTER] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//Teleporter.obj");
-	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//Teleporter.tga");
+	meshList[GEO_TELEPORTER] = MeshBuilder::GenerateOBJ("Teleport", "OBJ//scene1//Teleporter.obj");
+	meshList[GEO_TELEPORTER]->textureID = LoadTGA("Image//scene1//Teleporter.tga");
 	meshList[GEO_TELEPORTER]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_TELEPORTER]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_TELEPORTER]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
 	meshList[GEO_TELEPORTER]->material.kShininess = 1.0f;
 
-    meshList[GEO_PARTICLE_LIGHT] = MeshBuilder::GenerateOBJ("particle light", "OBJ//teleporting_light.obj");
-    meshList[GEO_PARTICLE_LIGHT]->textureID = LoadTGA("Image//particle_light.tga");
+    meshList[GEO_PARTICLE_LIGHT] = MeshBuilder::GenerateOBJ("particle light", "OBJ//scene1//teleporting_light.obj");
+    meshList[GEO_PARTICLE_LIGHT]->textureID = LoadTGA("Image//scene1//particle_light.tga");
 	meshList[GEO_PARTICLE_LIGHT]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_PARTICLE_LIGHT]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_PARTICLE_LIGHT]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
 	meshList[GEO_PARTICLE_LIGHT]->material.kShininess = 1.0f;
 
-    meshList[GEO_PARTICLE_CUBE] = MeshBuilder::GenerateOBJ("particle cube", "OBJ//Box.obj");
-    meshList[GEO_PARTICLE_CUBE]->textureID = LoadTGA("Image//particle_light.tga");
+    meshList[GEO_PARTICLE_CUBE] = MeshBuilder::GenerateOBJ("particle cube", "OBJ//scene1//Box.obj");
+    meshList[GEO_PARTICLE_CUBE]->textureID = LoadTGA("Image//scene1//particle_light.tga");
 	meshList[GEO_PARTICLE_CUBE]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_PARTICLE_CUBE]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_PARTICLE_CUBE]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
@@ -305,32 +305,32 @@ void sceneSP2::Init()
     //Teleporter
 
 	//red building
-	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("BuildingRed", "OBJ//Building.obj");
-	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//BuildingRed.tga");
+	meshList[GEO_BUILDINGRED] = MeshBuilder::GenerateOBJ("BuildingRed", "OBJ//scene1//Building.obj");
+	meshList[GEO_BUILDINGRED]->textureID = LoadTGA("Image//scene1//BuildingRed.tga");
 	meshList[GEO_BUILDINGRED]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_BUILDINGRED]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_BUILDINGRED]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);;
 	meshList[GEO_BUILDINGRED]->material.kShininess = 1.0f;
 
 	//green building
-	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("BuildingBlue", "OBJ//Building.obj");
-	meshList[GEO_BUILDINGGREEN]->textureID = LoadTGA("Image//BuildingGreen.tga");
+	meshList[GEO_BUILDINGGREEN] = MeshBuilder::GenerateOBJ("BuildingBlue", "OBJ//scene1//Building.obj");
+	meshList[GEO_BUILDINGGREEN]->textureID = LoadTGA("Image//scene1//BuildingGreen.tga");
 	meshList[GEO_BUILDINGGREEN]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_BUILDINGGREEN]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_BUILDINGGREEN]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_BUILDINGGREEN]->material.kShininess = 1.0f;
 
 	//Blue building
-	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("BuildingGreen", "OBJ//Building.obj");
-	meshList[GEO_BUILDINGBLUE]->textureID = LoadTGA("Image//BuildingBlue.tga");
+	meshList[GEO_BUILDINGBLUE] = MeshBuilder::GenerateOBJ("BuildingGreen", "OBJ//scene1//Building.obj");
+	meshList[GEO_BUILDINGBLUE]->textureID = LoadTGA("Image//scene1//BuildingBlue.tga");
 	meshList[GEO_BUILDINGBLUE]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_BUILDINGBLUE]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_BUILDINGBLUE]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_BUILDINGBLUE]->material.kShininess = 1.0f;
 
 	//Barrel
-	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//Barrel.obj");
-	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
+	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//scene1//Barrel.obj");
+	meshList[GEO_BARREL]->textureID = LoadTGA("Image//scene1//Barrel.tga");
 	meshList[GEO_BARREL]->material = MaterialBuilder::GenerateLambert();
 	meshList[GEO_BARREL]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_BARREL]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
@@ -338,33 +338,33 @@ void sceneSP2::Init()
 	meshList[GEO_BARREL]->material.kShininess = 1.0f;
 
 	//land vehicle
-	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("Vehicle", "OBJ//LandVehicle.obj");
-	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//LandVehicle.tga");
+	meshList[GEO_LANDVEHICLE] = MeshBuilder::GenerateOBJ("Vehicle", "OBJ//scene1//LandVehicle.obj");
+	meshList[GEO_LANDVEHICLE]->textureID = LoadTGA("Image//scene1//LandVehicle.tga");
 	meshList[GEO_LANDVEHICLE]->material.kAmbient.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_LANDVEHICLE]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
 	meshList[GEO_LANDVEHICLE]->material.kSpecular.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_LANDVEHICLE]->material.kShininess = 1.0f;
 
 	//land vehicle
-	meshList[GEO_BUTTON] = MeshBuilder::GenerateOBJ("Button", "OBJ//Button.obj");
-	meshList[GEO_BUTTON]->textureID = LoadTGA("Image//Button.tga");
+	meshList[GEO_BUTTON] = MeshBuilder::GenerateOBJ("Button", "OBJ//scene1//Button.obj");
+	meshList[GEO_BUTTON]->textureID = LoadTGA("Image//scene1//Button.tga");
 	meshList[GEO_BUTTON]->material = MaterialBuilder::GenerateLambert();
 
     //NPC
-    meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Guan Hui", "OBJ//android_2.obj");
-    meshList[GEO_NPC1]->textureID = LoadTGA("Image//android_2_blue.tga");
+    meshList[GEO_NPC1] = MeshBuilder::GenerateOBJ("Guan Hui", "OBJ//scene1//android_2.obj");
+    meshList[GEO_NPC1]->textureID = LoadTGA("Image//scene1//android_2_blue.tga");
 	meshList[GEO_NPC1]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_NPC1]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
 	meshList[GEO_NPC1]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
 	meshList[GEO_NPC1]->material.kShininess = 1.0f;
 
     //NPC
-	meshList[GEO_NPC_QUEST2] = MeshBuilder::GenerateOBJ("Victor", "OBJ//android.obj");
-	meshList[GEO_NPC_QUEST2]->textureID = LoadTGA("Image//androidRed.tga");
+	meshList[GEO_NPC_QUEST2] = MeshBuilder::GenerateOBJ("Victor", "OBJ//scene1//android.obj");
+	meshList[GEO_NPC_QUEST2]->textureID = LoadTGA("Image//scene1//androidRed.tga");
 
     //sek heng NPC
-    meshList[GEO_NPC_QUEST1] = MeshBuilder::GenerateOBJ("Sek Heng", "OBJ//android_2.obj");
-    meshList[GEO_NPC_QUEST1]->textureID = LoadTGA("Image//android_2_green.tga");
+    meshList[GEO_NPC_QUEST1] = MeshBuilder::GenerateOBJ("Sek Heng", "OBJ//scene1//android_2.obj");
+    meshList[GEO_NPC_QUEST1]->textureID = LoadTGA("Image//scene1//android_2_green.tga");
     meshList[GEO_NPC_QUEST1]->material.kAmbient.Set(0.8f, 0.8f, 0.8f);
     meshList[GEO_NPC_QUEST1]->material.kDiffuse.Set(0.8f, 0.8f, 0.8f);
     meshList[GEO_NPC_QUEST1]->material.kSpecular.Set(1.0f, 1.0f, 1.0f);
@@ -374,51 +374,51 @@ void sceneSP2::Init()
 
     //text box
     meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
-    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
+    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//scene1//textbox.tga");
     //text box
 
 	//chunfei npc
-	meshList[GEO_ROBOTHEAD] = MeshBuilder::GenerateOBJ("robothead", "OBJ//robothead.obj");
-	meshList[GEO_ROBOTHEAD]->textureID = LoadTGA("Image//robot.tga");
+	meshList[GEO_ROBOTHEAD] = MeshBuilder::GenerateOBJ("robothead", "OBJ//scene1//robothead.obj");
+	meshList[GEO_ROBOTHEAD]->textureID = LoadTGA("Image//scene1//robot.tga");
 
-	meshList[GEO_ROBOTBODY] = MeshBuilder::GenerateOBJ("robotbody", "OBJ//robotbody.obj");
-	meshList[GEO_ROBOTBODY]->textureID = LoadTGA("Image//robot.tga");
+	meshList[GEO_ROBOTBODY] = MeshBuilder::GenerateOBJ("robotbody", "OBJ//scene1//robotbody.obj");
+	meshList[GEO_ROBOTBODY]->textureID = LoadTGA("Image//scene1//robot.tga");
 
-	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//sword.obj");
-	meshList[GEO_SWORD]->textureID = LoadTGA("Image//sword.tga");
+	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("sword", "OBJ//scene1//sword.obj");
+	meshList[GEO_SWORD]->textureID = LoadTGA("Image//scene1//sword.tga");
 
-    meshList[GEO_TYRE] = MeshBuilder::GenerateOBJ("tyre", "OBJ//Tire.obj");
+    meshList[GEO_TYRE] = MeshBuilder::GenerateOBJ("tyre", "OBJ//scene1//Tire.obj");
 
     //MiniGame pieces
-    meshList[GEO_MINIGAME_PIECE_1] = MeshBuilder::GenerateOBJ("Minigame Piece 1", "OBJ//MiniGame//minigame_piece1.obj");
-    meshList[GEO_MINIGAME_PIECE_1]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+    meshList[GEO_MINIGAME_PIECE_1] = MeshBuilder::GenerateOBJ("Minigame Piece 1", "OBJ//scene1//MiniGame//minigame_piece1.obj");
+    meshList[GEO_MINIGAME_PIECE_1]->textureID = LoadTGA("Image//scene1//MiniGame//MiniGame.tga");
 
-    meshList[GEO_MINIGAME_PIECE_2] = MeshBuilder::GenerateOBJ("Minigame Piece 2", "OBJ//MiniGame//minigame_piece2.obj");
-    meshList[GEO_MINIGAME_PIECE_2]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+    meshList[GEO_MINIGAME_PIECE_2] = MeshBuilder::GenerateOBJ("Minigame Piece 2", "OBJ//scene1//MiniGame//minigame_piece2.obj");
+    meshList[GEO_MINIGAME_PIECE_2]->textureID = LoadTGA("Image//scene1//MiniGame//MiniGame.tga");
 
-    meshList[GEO_MINIGAME_PIECE_3] = MeshBuilder::GenerateOBJ("Minigame Piece 3", "OBJ//MiniGame//minigame_piece3.obj");
-    meshList[GEO_MINIGAME_PIECE_3]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+    meshList[GEO_MINIGAME_PIECE_3] = MeshBuilder::GenerateOBJ("Minigame Piece 3", "OBJ//scene1//MiniGame//minigame_piece3.obj");
+    meshList[GEO_MINIGAME_PIECE_3]->textureID = LoadTGA("Image//scene1//MiniGame//MiniGame.tga");
 
-    meshList[GEO_MINIGAME_PIECE_4] = MeshBuilder::GenerateOBJ("Minigame Piece 4", "OBJ//MiniGame//minigame_piece4.obj");
-    meshList[GEO_MINIGAME_PIECE_4]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+    meshList[GEO_MINIGAME_PIECE_4] = MeshBuilder::GenerateOBJ("Minigame Piece 4", "OBJ//scene1//MiniGame//minigame_piece4.obj");
+    meshList[GEO_MINIGAME_PIECE_4]->textureID = LoadTGA("Image//scene1//MiniGame//MiniGame.tga");
 
-    meshList[GEO_MINIGAME_PIECE_5] = MeshBuilder::GenerateOBJ("Minigame Piece 5", "OBJ//MiniGame//minigame_piece5.obj");
-    meshList[GEO_MINIGAME_PIECE_5]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+    meshList[GEO_MINIGAME_PIECE_5] = MeshBuilder::GenerateOBJ("Minigame Piece 5", "OBJ//scene1//MiniGame//minigame_piece5.obj");
+    meshList[GEO_MINIGAME_PIECE_5]->textureID = LoadTGA("Image//scene1//MiniGame//MiniGame.tga");
 
-    meshList[GEO_MINIGAME_PIECE_6] = MeshBuilder::GenerateOBJ("Minigame Piece 6", "OBJ//MiniGame//minigame_piece6.obj");
-    meshList[GEO_MINIGAME_PIECE_6]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+    meshList[GEO_MINIGAME_PIECE_6] = MeshBuilder::GenerateOBJ("Minigame Piece 6", "OBJ//scene1//MiniGame//minigame_piece6.obj");
+    meshList[GEO_MINIGAME_PIECE_6]->textureID = LoadTGA("Image//scene1//MiniGame//MiniGame.tga");
 
-    meshList[GEO_MINIGAME_PIECE_7] = MeshBuilder::GenerateOBJ("Minigame Piece 7", "OBJ//MiniGame//minigame_piece7.obj");
-    meshList[GEO_MINIGAME_PIECE_7]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+    meshList[GEO_MINIGAME_PIECE_7] = MeshBuilder::GenerateOBJ("Minigame Piece 7", "OBJ//scene1//MiniGame//minigame_piece7.obj");
+    meshList[GEO_MINIGAME_PIECE_7]->textureID = LoadTGA("Image//scene1//MiniGame//MiniGame.tga");
 
-    meshList[GEO_MINIGAME_PIECE_8] = MeshBuilder::GenerateOBJ("Minigame Piece 8", "OBJ//MiniGame//minigame_piece8.obj");
-    meshList[GEO_MINIGAME_PIECE_8]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+    meshList[GEO_MINIGAME_PIECE_8] = MeshBuilder::GenerateOBJ("Minigame Piece 8", "OBJ//scene1//MiniGame//minigame_piece8.obj");
+    meshList[GEO_MINIGAME_PIECE_8]->textureID = LoadTGA("Image//scene1//MiniGame//MiniGame.tga");
 
-    meshList[GEO_MINIGAME_PIECE_9] = MeshBuilder::GenerateOBJ("Minigame Piece 9", "OBJ//MiniGame//minigame_piece9.obj");
-    meshList[GEO_MINIGAME_PIECE_9]->textureID = LoadTGA("Image//MiniGame//MiniGame.tga");
+    meshList[GEO_MINIGAME_PIECE_9] = MeshBuilder::GenerateOBJ("Minigame Piece 9", "OBJ//scene1//MiniGame//minigame_piece9.obj");
+    meshList[GEO_MINIGAME_PIECE_9]->textureID = LoadTGA("Image//scene1//MiniGame//MiniGame.tga");
 
-    meshList[GEO_MINIGAME_SELECTOR] = MeshBuilder::GenerateOBJ("Minigame Selector", "OBJ//MiniGame//minigame_selector.obj");
-    meshList[GEO_MINIGAME_SELECTOR]->textureID = LoadTGA("Image//MiniGame//selector.tga");
+    meshList[GEO_MINIGAME_SELECTOR] = MeshBuilder::GenerateOBJ("Minigame Selector", "OBJ//scene1//MiniGame//minigame_selector.obj");
+    meshList[GEO_MINIGAME_SELECTOR]->textureID = LoadTGA("Image//scene1//MiniGame//selector.tga");
 
 
     //on_light = true;
@@ -433,7 +433,7 @@ void sceneSP2::Init()
     camera.cursorCoordX = screenWidth / 2;
     camera.cursorCoordY = screenHeight / 2;
 
-	door.Init("Sek heng", Vector3(-30, 0, 40), camera, 5, 5);
+	door.Init(camera);
 	door.getQuestStage();
 	door.getCard1();
 	door.getCard2();
@@ -549,6 +549,12 @@ void sceneSP2::Update(double dt)
 
     QuestCompleteCheck();
 
+    
+
+    //if (Application::IsKeyPressed('1')) //enable back face culling
+    //    glEnable(GL_CULL_FACE);
+    //if (Application::IsKeyPressed('2')) //disable back face culling
+    //    glDisable(GL_CULL_FACE);
     if (Application::IsKeyPressed(VK_NUMPAD4))
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
     if (Application::IsKeyPressed(VK_NUMPAD5))
@@ -556,7 +562,6 @@ void sceneSP2::Update(double dt)
 
     //transit scene
     if (Application::IsKeyPressed(VK_NUMPAD2)) {
-		reset();
         Application::changeIntoScenario2();
     }
     if (Application::IsKeyPressed(VK_NUMPAD3)) {
@@ -586,9 +591,10 @@ void sceneSP2::Update(double dt)
 		for (vector<objectsForDisplay>::iterator it = camera.storage_of_objects.begin(); it != camera.storage_of_objects.end(); ++it) {
 			if ((*it).getName() == "Door")
 			{
-				
-				(*it).objectPos.x = -275;
-
+				if (Application::IsKeyPressed('R'))
+				{
+					(*it).objectPos.x = -275;
+				}
 				break;
 			}
 		}
@@ -647,10 +653,6 @@ void sceneSP2::Update(double dt)
     }
     //music updates
 
-    
-
-
-
     if (Application::IsKeyPressed('E') && sek_heng_.SekHengSayIsOk()
         && teleport() == true) {
         //animateTeleporting(dt);
@@ -695,6 +697,11 @@ void sceneSP2::Update(double dt)
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief - reset the entire scene 1
+/******************************************************************************/
+
 void sceneSP2::reset()
 {
 	quest_stage = 0;
@@ -720,6 +727,7 @@ void sceneSP2::reset()
 
 	MiniGame.init();
 }
+
 /******************************************************************************/
 /*!
 \brief - rendering of the meshes
@@ -770,10 +778,14 @@ void sceneSP2::renderMesh(Mesh *mesh, bool enableLight)
     }
 }
 
+/******************************************************************************/
+/*!
+\brief - render everything in the room
+*/
+/******************************************************************************/
 
 void sceneSP2::RenderStation()
 {
-
 	for (auto it : camera.storage_of_objects) {
 		if (it.getName() == "Station") {
 			modelStack.PushMatrix();
@@ -1197,8 +1209,6 @@ void sceneSP2::Render()
 
     //RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Hello Screen", Color(0, 1, 0), 4, 0.5, 1.5);
 
-	RenderEmptyBox();
-
 	RenderStation();
 
     populateArea();
@@ -1360,6 +1370,21 @@ void sceneSP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
+
+/******************************************************************************/
+/*!
+\brief -
+delay rendering of the texts using quads on screen
+
+\param mesh - a pointer to the specific mesh
+\param text - the text that needs to be rendered
+\param color - the color of the text
+\param size - size of the text
+\param x - x coordinate of the text
+\param y - y coordinate of the text
+*/
+/******************************************************************************/
+
 void sceneSP2::RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -1412,6 +1437,15 @@ void sceneSP2::RenderDelayedTextOnScreen(Mesh* mesh, std::string text, Color col
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }    
+
+/******************************************************************************/
+/*!
+\brief -
+update the time for slowig text
+
+\param - frame time 
+*/
+/******************************************************************************/
 void sceneSP2::TextSlowDown(double dt)
 {    
    slowtxt += dt;
@@ -1455,7 +1489,13 @@ void sceneSP2::RenderImageOnScreen(Mesh* mesh, float size, float x, float y) {
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering of skybox
 
+*/
+/******************************************************************************/
 void sceneSP2::RenderSkybox()
 {
     modelStack.PushMatrix();
@@ -1515,6 +1555,17 @@ void sceneSP2::RenderSkybox()
     //modelStack.PopMatrix();
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering of user interface
+
+\param mesh - a pointer to the specific mesh
+\param size - size of the text
+\param x - x coordinate of the text
+\param y - y coordinate of the text
+*/
+/******************************************************************************/
 void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -1540,6 +1591,13 @@ void sceneSP2::RenderUserInterface(Mesh* mesh, float size, float x, float y)
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering of ground texture
+
+*/
+/******************************************************************************/
 void sceneSP2::Rendergroundmesh()
 {
     modelStack.PushMatrix();
@@ -1581,7 +1639,12 @@ void sceneSP2::RenderGasoline()
 //render quest items
 /**********************************************************************************************************/
 
-
+/******************************************************************************/
+/*!
+\brief -
+rendering of space shuttle
+*/
+/******************************************************************************/
 
 void sceneSP2::RenderSpaceShuttle()
 {
@@ -1596,6 +1659,12 @@ void sceneSP2::RenderSpaceShuttle()
 		}
 	}
 }
+/******************************************************************************/
+/*!
+\brief -
+rendering of NPC and quest
+*/
+/******************************************************************************/
 void sceneSP2::RenderNPC()
 {
     /*
@@ -1798,127 +1867,6 @@ void sceneSP2::renderingSekHeng() {
     //rendering of the hammer
 }
 
-void sceneSP2::RenderEmptyBox()
-{
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox2") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox3") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox4") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox5") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox6") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox7") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox8") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox9") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox10") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox11") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox12") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-
-	for (auto it : camera.storage_of_objects) {
-		if (it.getName() == "EmptyBox13") {
-			modelStack.PushMatrix();
-			modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
-			renderMesh(meshList[GEO_HAMMER], true);
-			modelStack.PopMatrix();
-			break;
-		}
-	}
-}
-
 /******************************************************************************/
 /*!
 \brief - to allow non-uniform scaling of image
@@ -1981,6 +1929,23 @@ void sceneSP2::Renderteleporter() {
             break;
         }
     }
+    //for (auto it : camera.storage_of_objects) {
+    //    if (it.getName() == "ParticleCube1" ||
+    //        it.getName() == "ParticleCube2" ||
+    //        it.getName() == "ParticleCube3" ||
+    //        it.getName() == "ParticleCube4" || 
+    //        it.getName() == "ParticleCube5" || 
+    //        it.getName() == "ParticleCube6" || 
+    //        it.getName() == "ParticleCube7" || 
+    //        it.getName() == "ParticleCube8" || 
+    //        it.getName() == "ParticleCube9" || 
+    //        it.getName() == "ParticleCube10") {
+    //        modelStack.PushMatrix();
+    //        modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+    //        renderMesh(meshList[GEO_PARTICLE_CUBE], true);
+    //        modelStack.PopMatrix();
+    //    }
+    //}
     for (auto it : particleHandlers) {
                 modelStack.PushMatrix();
                 modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
@@ -2045,7 +2010,12 @@ bool sceneSP2::teleport()
     return false;
 }
 
-
+/******************************************************************************/
+/*!
+\brief -
+rendering of building
+*/
+/******************************************************************************/
 void sceneSP2::RenderBuilding()
 {
 	for (auto it : camera.storage_of_objects) {
@@ -2084,7 +2054,12 @@ void sceneSP2::RenderBuilding()
 		}
 	}
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering of chun fei head animation
+*/
+/******************************************************************************/
 void sceneSP2::headanimation(double dt)
 {
 	if (QUEST3.interaction() == true)
@@ -2112,6 +2087,12 @@ void sceneSP2::headanimation(double dt)
 	}
 }
 
+/******************************************************************************/
+/*!
+\brief -
+check if quest is completed
+*/
+/******************************************************************************/
 void sceneSP2::QuestCompleteCheck()
 {
     if (Quest1_finished && !Quest2_finished && !Quest3_finished)
@@ -2132,6 +2113,12 @@ void sceneSP2::QuestCompleteCheck()
     }
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering of item taken on screen
+*/
+/******************************************************************************/
 void sceneSP2::RenderStuffOnScreen(Mesh* mesh, string direction, float size, float x, float y, float z, float rotate_x, float rotate_y, float rotate_z)
 {
     if (direction == "left")
@@ -2203,7 +2190,12 @@ void sceneSP2::RenderStuffOnScreen(Mesh* mesh, string direction, float size, flo
     
 }
 
-
+/****************************************************************************/
+/*!
+\brief
+render chunfei npc
+*/
+/****************************************************************************/
 
 void sceneSP2::renderChunFei()
 {
@@ -2279,6 +2271,13 @@ void sceneSP2::renderChunFei()
         RenderStuffOnScreen(meshList[GEO_SWORD], "right", 0.3f, -0.75f, 2, -0.65f, 0, 0, 0);
     }
 }
+
+/******************************************************************************/
+/*!
+\brief -
+rendering of environment object
+*/
+/******************************************************************************/
 
 void sceneSP2::populateArea()
 {
@@ -2645,13 +2644,11 @@ void sceneSP2::populateArea()
 */
 /******************************************************************************/
 void sceneSP2::animateTeleporting(double& dt) {
-    if (camera.position.z != 0 || camera.position.x != 0) 
-	{
+    if (camera.position.z != 0 || camera.position.x != 0) {
         camera.setLocation(0, camera.position.y, 0);
     }
     else {
         if (camera.position.y > 30) {
-			test_quest.reset();
             Application::changeIntoScenario2();
         }
         teleportCoordY = Physics::gravitational_pulled(teleportCoordY, dt, 1.f);
@@ -2663,6 +2660,12 @@ void sceneSP2::animateTeleporting(double& dt) {
     camera.up = right.Cross(view);
 }
 
+/******************************************************************************/
+/*!
+\brief -
+rendering of tutorial
+*/
+/******************************************************************************/
 void sceneSP2::RenderTutorialScreen()
 {
     
@@ -2676,7 +2679,12 @@ void sceneSP2::RenderTutorialScreen()
 
     }
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering minigame pieces
+*/
+/******************************************************************************/
 void sceneSP2::RenderMinigamePieces()
 {
     if (MiniGame.minigame_started() == true && 
@@ -2739,7 +2747,12 @@ void sceneSP2::RenderMinigamePieces()
     }
     
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering of the minigame 
+*/
+/******************************************************************************/
 void sceneSP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -2765,7 +2778,12 @@ void sceneSP2::RenderMinigameOnScreen(Mesh* mesh, float size, float x, float y, 
     viewStack.PopMatrix();
     modelStack.PopMatrix();
 }
-
+/******************************************************************************/
+/*!
+\brief -
+rendering selector on screen
+*/
+/******************************************************************************/
 void sceneSP2::RenderMinigameSelectorOnScreen(Mesh* mesh, float size, float x, float y, float rotate_x)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check

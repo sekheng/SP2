@@ -1,7 +1,7 @@
 /******************************************************************************/
 /*!
 \file       sceneSP2.h
-\author  Lee Sek Heng
+\author  Lee Sek Heng, Seetoo Victor, Lim Guan Hui, Li Chun Fei
 \par        email: 150629Z@mymail.nyp.edu.sg
 \brief -
 Creating a clean scene so that my teammates can code in ease
@@ -198,12 +198,8 @@ private:
     void RenderGasoline();
     //render quest items
 	void RenderSpaceShuttle();
-
 	void RenderStation();
-	void RenderEmptyBox();
-
     void RenderNPC();
-
     void RenderQuestObjects();
 	void RenderBarrel();
 
@@ -239,6 +235,7 @@ private:
     Quest Three;
     Quest Four;
 
+	//room interaction
 	StationScene door;
 	float lightSwitch;
 
@@ -273,6 +270,7 @@ private:
 	void renderChunFei();
 	void headanimation(double dt);
 	void renderNPC3();
+	//render building
 	void RenderBuilding();
 
     void populateArea();

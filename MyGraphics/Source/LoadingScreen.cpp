@@ -131,16 +131,16 @@ void LoadingScreen::Init()
     camera.camType = Camera3::FIRST_PERSON;
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
-    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
+    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//scene3//comicSans.tga");
 
     meshList[GEO_LOADING_SCREEN_TITLE] = MeshBuilder::GenerateQuad("Screen Title", Color(1, 1, 1));
-    meshList[GEO_LOADING_SCREEN_TITLE]->textureID = LoadTGA("Image//loadingTitle.tga");
+    meshList[GEO_LOADING_SCREEN_TITLE]->textureID = LoadTGA("Image//loadingscreen//loadingTitle.tga");
 
     meshList[GEO_LOADING_DOGE] = MeshBuilder::GenerateQuad("Loading Doge", Color(1, 1, 1));
-    meshList[GEO_LOADING_DOGE]->textureID = LoadTGA("Image//loading_doge.tga");
+    meshList[GEO_LOADING_DOGE]->textureID = LoadTGA("Image//loadingscreen//loading_doge.tga");
 
     meshList[GEO_LOADING_BREATHING_CAT] = MeshBuilder::GenerateQuad("Loading breathing cat", Color(1, 1, 1));
-    meshList[GEO_LOADING_BREATHING_CAT]->textureID = LoadTGA("Image//loading_breathingCats.tga");
+    meshList[GEO_LOADING_BREATHING_CAT]->textureID = LoadTGA("Image//loadingscreen//loading_breathingCats.tga");
 
     on_light = true;
 

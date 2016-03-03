@@ -1,7 +1,25 @@
+/******************************************************************************/
+/*!
+\file       Light.h
+\author  SEETOO WEI JIE VICTOR
+\par        email: 150452J@mymail.nyp.edu.sg
+\brief -
+Creating light for the scene
+*/
+/******************************************************************************/
 #ifndef LIGHT_H
 #define LIGHT_H
 
 #include "Vertex.h"
+
+/******************************************************************************/
+/*!
+Light:
+\brief
+set the Light, position, color, light type, and light properties
+*/
+/******************************************************************************/
+
 struct Light
 {
 	Position position;

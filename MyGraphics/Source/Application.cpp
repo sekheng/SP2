@@ -22,9 +22,9 @@ Scene* Application::scene;
 Scene* Application::scenario3;
 Scene* Application::scenario2;
 
-//Sound effects
+//Sound effects global variable
 BGMDriven* Application::musics;
-//Sound effects
+//Sound effects global variable
 /******************************************************************************/
 /*!
 \brief
@@ -134,8 +134,8 @@ void Application::Init()
 
     // get the primary monitor's size
 
-    m_window = glfwCreateWindow(mode->width, mode->height, "Space Watcher", NULL, NULL);
-    //m_window = glfwCreateWindow(mode->width, mode->height, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+    //m_window = glfwCreateWindow(mode->width, mode->height, "Space Watch", NULL, NULL);
+    m_window = glfwCreateWindow(mode->width, mode->height, "Space Watch", glfwGetPrimaryMonitor(), NULL);
 	glfwSetWindowSizeCallback(m_window, resize_callback);
 
 	//If the window couldn't be created
@@ -253,15 +253,30 @@ void Application::Exit()
 	glfwTerminate();
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to transit to scenario 3
+*/
+/******************************************************************************/
 void Application::changeIntoScenario3(){
     scene = scenario3;
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to transit to scenario 1
+*/
+/******************************************************************************/
 void Application::changeIntoScenario1() {
     scene = scenario1;
     
 }
 
+/******************************************************************************/
+/*!
+\brief - a method to transit to scenario 2
+*/
+/******************************************************************************/
 void Application::changeIntoScenario2() {
     scene = scenario2;
 }

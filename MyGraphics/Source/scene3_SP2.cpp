@@ -176,32 +176,32 @@ void scene3_SP2::Init()
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_COMIC_TEXT] = MeshBuilder::GenerateText("comic sans text", 16, 16);
-    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//comicSans.tga");
+    meshList[GEO_COMIC_TEXT]->textureID = LoadTGA("Image//scene3//comicSans.tga");
 
     //skybox
-    meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//Space_Skybox.obj");
-    meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//skybox//Space_Skybox_UV.tga");
+    meshList[GEO_SPACE_SKYBOX] = MeshBuilder::GenerateOBJ("space skybox", "OBJ//scene1//Space_Skybox.obj");
+    meshList[GEO_SPACE_SKYBOX]->textureID = LoadTGA("Image//scene1//skybox//Space_Skybox_UV.tga");
 
     //spaceship
-    meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//FlyingVehicle.obj");
-    meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//FlyingVehicle.tga");
+    meshList[GEO_FLYINGVEHICLE] = MeshBuilder::GenerateOBJ("landvehicle", "OBJ//scene1//FlyingVehicle.obj");
+    meshList[GEO_FLYINGVEHICLE]->textureID = LoadTGA("Image//scene1//FlyingVehicle.tga");
     meshList[GEO_FLYINGVEHICLE]->material = MaterialBuilder::GenerateBlinn();
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("light_ball", Color(1, 1, 1));
 
-    meshList[GEO_LIGHT_WRAP] = MeshBuilder::GenerateOBJ("light warp", "OBJ//light_warpping.obj");
-    meshList[GEO_LIGHT_WRAP]->textureID = LoadTGA("Image//light_warpping.tga");
+    meshList[GEO_LIGHT_WRAP] = MeshBuilder::GenerateOBJ("light warp", "OBJ//scene3//light_warpping.obj");
+    meshList[GEO_LIGHT_WRAP]->textureID = LoadTGA("Image//scene3//light_warpping.tga");
     meshList[GEO_LIGHT_WRAP]->material = MaterialBuilder::GenerateBlinn();
 
     meshList[GEO_LIGHT_END] = MeshBuilder::GenerateQuad("light end", Color(1, 1, 1));
-    meshList[GEO_LIGHT_END]->textureID = LoadTGA("Image//white_warp.tga");
+    meshList[GEO_LIGHT_END]->textureID = LoadTGA("Image//scene3//white_warp.tga");
 
-    meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("asteroid", "OBJ//asteroid.obj");
-    meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//asteroid.tga");
+    meshList[GEO_ASTEROID] = MeshBuilder::GenerateOBJ("asteroid", "OBJ//scene3//asteroid.obj");
+    meshList[GEO_ASTEROID]->textureID = LoadTGA("Image//scene3//asteroid.tga");
 
     //text box
     meshList[GEO_TEXT_BOX] = MeshBuilder::GenerateQuad("text box", Color(1, 1, 1));
-    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//textbox.tga");
+    meshList[GEO_TEXT_BOX]->textureID = LoadTGA("Image//scene1//textbox.tga");
     //text box
 
     on_light = true;

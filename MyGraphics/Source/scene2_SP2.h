@@ -1,7 +1,7 @@
 /******************************************************************************/
 /*!
 \file       scene2_SP2.h
-\author  Lee Sek Heng
+\author  Lee Sek Heng, Seetoo Victor, Lim Guan Hui, Li Chun Fei
 \par        email: 150629Z@mymail.nyp.edu.sg
 \brief -
 Creating a clean scene so that my teammates can code in ease
@@ -195,8 +195,6 @@ private:
 	float boxesrotating2;
 	float boxesrotating3;
 	
-	
-
 	//renderobj function
     void renderMesh(Mesh *mesh, bool enableLight);
     void RenderSkybox();
@@ -237,7 +235,6 @@ private:
 	NPC robotNPC3;
 	//NPC NumpadNPC;
 	
-
     MS modelStack, viewStack, projectionStack;
 
     void RenderText(Mesh* mesh, std::string text, Color color);
