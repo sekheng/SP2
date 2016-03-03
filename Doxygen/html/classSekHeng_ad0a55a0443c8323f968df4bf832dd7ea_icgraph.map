@@ -1,0 +1,6 @@
+<map id="SekHeng::interaction" name="SekHeng::interaction">
+<area shape="rect" id="node2" href="$classsceneSP2.html#a6523e8cf564e7f88ae94958fd9c08d1a" title="a method to render Sek Heng and his quest " alt="" coords="196,5,392,32"/>
+<area shape="rect" id="node4" href="$classSekHeng.html#ae3bb8042c61652bd6c325fe105fd2c17" title="a method function which will update the logic behind the interaction with Sek Heng ..." alt="" coords="232,56,356,83"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="440,5,571,32"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="440,56,571,83"/>
+</map>

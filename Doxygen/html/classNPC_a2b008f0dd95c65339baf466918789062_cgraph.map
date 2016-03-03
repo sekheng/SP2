@@ -1,0 +1,7 @@
+<map id="NPC::interaction" name="NPC::interaction">
+<area shape="rect" id="node2" href="$classNPC.html#aa43e897253da76ea31e903407361cd92" title="bounds checking for interaction " alt="" coords="187,31,338,57"/>
+<area shape="rect" id="node5" href="$classCamera3.html#a4c484a400a9c2e64f3334fc62330368a" title="getting camera&#39;s position of x coordinate " alt="" coords="171,81,355,108"/>
+<area shape="rect" id="node6" href="$classCamera3.html#aae412d5efa2bae38cc9d5f38fb289f3a" title="getting camera&#39;s position of z coordinate " alt="" coords="171,132,355,159"/>
+<area shape="rect" id="node3" href="$classNPC.html#a306047126b65a7f67ad6331a632b8071" title="get this object&#39;s X coordinate " alt="" coords="403,5,571,32"/>
+<area shape="rect" id="node4" href="$classNPC.html#a4f760c4731c0beb5e9d6096e666414bf" title="get this object&#39;s y coordinate " alt="" coords="403,56,571,83"/>
+</map>

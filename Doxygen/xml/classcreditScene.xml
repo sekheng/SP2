@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classcreditScene" kind="class" language="C++" prot="public">
+    <compoundname>creditScene</compoundname>
+    <includes refid="creditScene_8h" local="no">creditScene.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcreditScene_1a276047dcd7424682f2a9b97cc152e02a" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; creditScene::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="40" column="1" bodyfile="MyGraphics/Source/creditScene.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classcreditScene_1a99f80c03d00c1c674b10c60a21aed968" compoundref="creditScene_8cpp" startline="32" endline="58">initCredit</referencedby>
+        <referencedby refid="classscene2__SP2_1a2933944c895d9437b2364e18747df1ce" compoundref="scene2__SP2_8cpp" startline="2522" endline="2541">scene2_SP2::rollingCredits</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcreditScene_1a7e8560244a6dacd30673dd47ee258f61" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; creditScene::names</definition>
+        <argsstring></argsstring>
+        <name>names</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="41" column="1" bodyfile="MyGraphics/Source/creditScene.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classcreditScene_1a99f80c03d00c1c674b10c60a21aed968" compoundref="creditScene_8cpp" startline="32" endline="58">initCredit</referencedby>
+        <referencedby refid="classscene2__SP2_1a2933944c895d9437b2364e18747df1ce" compoundref="scene2__SP2_8cpp" startline="2522" endline="2541">scene2_SP2::rollingCredits</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcreditScene_1ab30cda193392ce7f0ebea2d2247dedc1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float creditScene::rollingTitle</definition>
+        <argsstring></argsstring>
+        <name>rollingTitle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="46" column="1" bodyfile="MyGraphics/Source/creditScene.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classcreditScene_1aa0643596ac4fe2dc922daafccf6d340c" compoundref="creditScene_8cpp" startline="101" endline="103">getRollingTitle</referencedby>
+        <referencedby refid="classcreditScene_1a219d255a482631ef94b1164f2bddb643" compoundref="creditScene_8cpp" startline="142" endline="147">reset</referencedby>
+        <referencedby refid="classcreditScene_1aa0f494c1d3648860e2544f991404c095" compoundref="creditScene_8cpp" startline="67" endline="75">updateCredit</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcreditScene_1af910a55a30cb06fd82f3572f264e2e53" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float creditScene::rollingTitleCaption</definition>
+        <argsstring></argsstring>
+        <name>rollingTitleCaption</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="47" column="1" bodyfile="MyGraphics/Source/creditScene.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classcreditScene_1a472d7d2b46334fa44204db41175b716c" compoundref="creditScene_8cpp" startline="113" endline="115">getRollingTitleCaption</referencedby>
+        <referencedby refid="classcreditScene_1a219d255a482631ef94b1164f2bddb643" compoundref="creditScene_8cpp" startline="142" endline="147">reset</referencedby>
+        <referencedby refid="classcreditScene_1aa0f494c1d3648860e2544f991404c095" compoundref="creditScene_8cpp" startline="67" endline="75">updateCredit</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcreditScene_1a5f85f7fd46b36e06b237ecfda551f50a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool creditScene::rollCredits</definition>
+        <argsstring></argsstring>
+        <name>rollCredits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="48" column="1" bodyfile="MyGraphics/Source/creditScene.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classcreditScene_1a7b72cdfc51d8870ef4dd1f7dafbb51ba" compoundref="creditScene_8cpp" startline="123" endline="125">activateCredit</referencedby>
+        <referencedby refid="classcreditScene_1a9b3f7cf33be6973ccd7647ddebff4da8" compoundref="creditScene_8cpp" startline="86" endline="91">goRollCredit</referencedby>
+        <referencedby refid="classcreditScene_1a219d255a482631ef94b1164f2bddb643" compoundref="creditScene_8cpp" startline="142" endline="147">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcreditScene_1a37097d76dfea9e19c059540b76d91b1a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float creditScene::movePositionY</definition>
+        <argsstring></argsstring>
+        <name>movePositionY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="49" column="1" bodyfile="MyGraphics/Source/creditScene.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classcreditScene_1a374321a7b9f32c3d792d654de0f5edd5" compoundref="creditScene_8cpp" startline="133" endline="135">getMovePositionY</referencedby>
+        <referencedby refid="classcreditScene_1a219d255a482631ef94b1164f2bddb643" compoundref="creditScene_8cpp" startline="142" endline="147">reset</referencedby>
+        <referencedby refid="classcreditScene_1aa0f494c1d3648860e2544f991404c095" compoundref="creditScene_8cpp" startline="67" endline="75">updateCredit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcreditScene_1a43bc6249b18b16824e124f76a160f61c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>creditScene::creditScene</definition>
+        <argsstring>()</argsstring>
+        <name>creditScene</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a default constructor, with all variables becoming default value </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="28" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classcreditScene_1ad98da066b8c3db7c050cf41a1b7f7f04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>creditScene::~creditScene</definition>
+        <argsstring>()</argsstring>
+        <name>~creditScene</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a destructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="29" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classcreditScene_1a99f80c03d00c1c674b10c60a21aed968" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void creditScene::initCredit</definition>
+        <argsstring>(char *fileLocation)</argsstring>
+        <name>initCredit</name>
+        <param>
+          <type>char *</type>
+          <declname>fileLocation</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a Data Driven method which will load the position of the people and their names </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileLocation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the path name to the text file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="31" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="32" bodyend="58"/>
+        <references refid="classcreditScene_1a7e8560244a6dacd30673dd47ee258f61" compoundref="creditScene_8h" startline="41">names</references>
+        <references refid="classcreditScene_1a276047dcd7424682f2a9b97cc152e02a" compoundref="creditScene_8h" startline="40">position</references>
+        <referencedby refid="classscene2__SP2_1a6d5705b83a23421a1f5aa0fec8c28329" compoundref="scene2__SP2_8cpp" startline="45" endline="368">scene2_SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcreditScene_1aa0f494c1d3648860e2544f991404c095" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void creditScene::updateCredit</definition>
+        <argsstring>(double &amp;dt)</argsstring>
+        <name>updateCredit</name>
+        <param>
+          <type>double &amp;</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>the method to update the logic of the credit scene </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- frame time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="32" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="67" bodyend="75"/>
+        <references refid="classcreditScene_1a37097d76dfea9e19c059540b76d91b1a" compoundref="creditScene_8h" startline="49">movePositionY</references>
+        <references refid="classcreditScene_1ab30cda193392ce7f0ebea2d2247dedc1" compoundref="creditScene_8h" startline="46">rollingTitle</references>
+        <references refid="classcreditScene_1af910a55a30cb06fd82f3572f264e2e53" compoundref="creditScene_8h" startline="47">rollingTitleCaption</references>
+        <referencedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a" compoundref="scene2__SP2_8cpp" startline="378" endline="462">scene2_SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcreditScene_1a7b72cdfc51d8870ef4dd1f7dafbb51ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void creditScene::activateCredit</definition>
+        <argsstring>()</argsstring>
+        <name>activateCredit</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a method function which will activate the credits which are the people&apos;s position and their names. </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="33" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="123" bodyend="125"/>
+        <references refid="classcreditScene_1a5f85f7fd46b36e06b237ecfda551f50a" compoundref="creditScene_8h" startline="48">rollCredits</references>
+        <referencedby refid="classscene2__SP2_1ae2e72ac92088b319c9e6dbd74fcd3236" compoundref="scene2__SP2_8cpp" startline="2470" endline="2504">scene2_SP2::Ending</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcreditScene_1a9b3f7cf33be6973ccd7647ddebff4da8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool creditScene::goRollCredit</definition>
+        <argsstring>()</argsstring>
+        <name>goRollCredit</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>return whether to roll the credits or not </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true - if rollCredits is true</para></simplesect>
+<simplesect kind="return"><para>false - if rollCredits is false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="34" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="86" bodyend="91"/>
+        <references refid="classcreditScene_1a5f85f7fd46b36e06b237ecfda551f50a" compoundref="creditScene_8h" startline="48">rollCredits</references>
+        <referencedby refid="classscene2__SP2_1a2933944c895d9437b2364e18747df1ce" compoundref="scene2__SP2_8cpp" startline="2522" endline="2541">scene2_SP2::rollingCredits</referencedby>
+        <referencedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a" compoundref="scene2__SP2_8cpp" startline="378" endline="462">scene2_SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcreditScene_1aa0643596ac4fe2dc922daafccf6d340c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float creditScene::getRollingTitle</definition>
+        <argsstring>()</argsstring>
+        <name>getRollingTitle</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a getter function that allows user to get the position y of the credit title in this case &apos;Prologue Ended&apos; </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- the float values of coord Y of rolling title </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="36" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="101" bodyend="103"/>
+        <references refid="classcreditScene_1ab30cda193392ce7f0ebea2d2247dedc1" compoundref="creditScene_8h" startline="46">rollingTitle</references>
+        <referencedby refid="classscene2__SP2_1a2933944c895d9437b2364e18747df1ce" compoundref="scene2__SP2_8cpp" startline="2522" endline="2541">scene2_SP2::rollingCredits</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcreditScene_1a472d7d2b46334fa44204db41175b716c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float creditScene::getRollingTitleCaption</definition>
+        <argsstring>()</argsstring>
+        <name>getRollingTitleCaption</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a getter function that allows user to get the position y of the credit title captions in this case &apos;To Be Continued&apos; and &apos;Plz buy our expansion pack in the future&apos; </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- the float values of coord Y of rolling title captions </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="37" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="113" bodyend="115"/>
+        <references refid="classcreditScene_1af910a55a30cb06fd82f3572f264e2e53" compoundref="creditScene_8h" startline="47">rollingTitleCaption</references>
+        <referencedby refid="classscene2__SP2_1a2933944c895d9437b2364e18747df1ce" compoundref="scene2__SP2_8cpp" startline="2522" endline="2541">scene2_SP2::rollingCredits</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcreditScene_1a374321a7b9f32c3d792d654de0f5edd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float creditScene::getMovePositionY</definition>
+        <argsstring>()</argsstring>
+        <name>getMovePositionY</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a getter function that will get the credit&apos;s position y in this case the people&apos;s position and their names. </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="38" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="133" bodyend="135"/>
+        <references refid="classcreditScene_1a37097d76dfea9e19c059540b76d91b1a" compoundref="creditScene_8h" startline="49">movePositionY</references>
+        <referencedby refid="classscene2__SP2_1a2933944c895d9437b2364e18747df1ce" compoundref="scene2__SP2_8cpp" startline="2522" endline="2541">scene2_SP2::rollingCredits</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcreditScene_1a219d255a482631ef94b1164f2bddb643" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void creditScene::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a method that all the variables inside this class to it&apos;s default values </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/creditScene.h" line="43" column="1" bodyfile="MyGraphics/Source/creditScene.cpp" bodystart="142" bodyend="147"/>
+        <references refid="classcreditScene_1a37097d76dfea9e19c059540b76d91b1a" compoundref="creditScene_8h" startline="49">movePositionY</references>
+        <references refid="classcreditScene_1a5f85f7fd46b36e06b237ecfda551f50a" compoundref="creditScene_8h" startline="48">rollCredits</references>
+        <references refid="classcreditScene_1ab30cda193392ce7f0ebea2d2247dedc1" compoundref="creditScene_8h" startline="46">rollingTitle</references>
+        <references refid="classcreditScene_1af910a55a30cb06fd82f3572f264e2e53" compoundref="creditScene_8h" startline="47">rollingTitleCaption</references>
+        <referencedby refid="classscene2__SP2_1ad113ede4cb02198a21720f2d932aaefa" compoundref="scene2__SP2_8cpp" startline="2548" endline="2565">scene2_SP2::Reset</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The logic class of credit scene. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classcreditScene" kindref="compound">creditScene</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="589">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="587">
+        <label>float</label>
+      </node>
+      <node id="586">
+        <label>creditScene</label>
+        <link refid="classcreditScene"/>
+        <childnode refid="587" relation="usage">
+          <edgelabel>movePositionY</edgelabel>
+          <edgelabel>rollingTitle</edgelabel>
+          <edgelabel>rollingTitleCaption</edgelabel>
+        </childnode>
+        <childnode refid="588" relation="usage">
+          <edgelabel>rollCredits</edgelabel>
+        </childnode>
+        <childnode refid="589" relation="usage">
+          <edgelabel>names</edgelabel>
+          <edgelabel>position</edgelabel>
+        </childnode>
+      </node>
+      <node id="588">
+        <label>bool</label>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/creditScene.h" line="26" column="1" bodyfile="MyGraphics/Source/creditScene.h" bodystart="26" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classcreditScene_1a7b72cdfc51d8870ef4dd1f7dafbb51ba" prot="public" virt="non-virtual"><scope>creditScene</scope><name>activateCredit</name></member>
+      <member refid="classcreditScene_1a43bc6249b18b16824e124f76a160f61c" prot="public" virt="non-virtual"><scope>creditScene</scope><name>creditScene</name></member>
+      <member refid="classcreditScene_1a374321a7b9f32c3d792d654de0f5edd5" prot="public" virt="non-virtual"><scope>creditScene</scope><name>getMovePositionY</name></member>
+      <member refid="classcreditScene_1aa0643596ac4fe2dc922daafccf6d340c" prot="public" virt="non-virtual"><scope>creditScene</scope><name>getRollingTitle</name></member>
+      <member refid="classcreditScene_1a472d7d2b46334fa44204db41175b716c" prot="public" virt="non-virtual"><scope>creditScene</scope><name>getRollingTitleCaption</name></member>
+      <member refid="classcreditScene_1a9b3f7cf33be6973ccd7647ddebff4da8" prot="public" virt="non-virtual"><scope>creditScene</scope><name>goRollCredit</name></member>
+      <member refid="classcreditScene_1a99f80c03d00c1c674b10c60a21aed968" prot="public" virt="non-virtual"><scope>creditScene</scope><name>initCredit</name></member>
+      <member refid="classcreditScene_1a37097d76dfea9e19c059540b76d91b1a" prot="private" virt="non-virtual"><scope>creditScene</scope><name>movePositionY</name></member>
+      <member refid="classcreditScene_1a7e8560244a6dacd30673dd47ee258f61" prot="public" virt="non-virtual"><scope>creditScene</scope><name>names</name></member>
+      <member refid="classcreditScene_1a276047dcd7424682f2a9b97cc152e02a" prot="public" virt="non-virtual"><scope>creditScene</scope><name>position</name></member>
+      <member refid="classcreditScene_1a219d255a482631ef94b1164f2bddb643" prot="public" virt="non-virtual"><scope>creditScene</scope><name>reset</name></member>
+      <member refid="classcreditScene_1a5f85f7fd46b36e06b237ecfda551f50a" prot="private" virt="non-virtual"><scope>creditScene</scope><name>rollCredits</name></member>
+      <member refid="classcreditScene_1ab30cda193392ce7f0ebea2d2247dedc1" prot="private" virt="non-virtual"><scope>creditScene</scope><name>rollingTitle</name></member>
+      <member refid="classcreditScene_1af910a55a30cb06fd82f3572f264e2e53" prot="private" virt="non-virtual"><scope>creditScene</scope><name>rollingTitleCaption</name></member>
+      <member refid="classcreditScene_1aa0f494c1d3648860e2544f991404c095" prot="public" virt="non-virtual"><scope>creditScene</scope><name>updateCredit</name></member>
+      <member refid="classcreditScene_1ad98da066b8c3db7c050cf41a1b7f7f04" prot="public" virt="non-virtual"><scope>creditScene</scope><name>~creditScene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

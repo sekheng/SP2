@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="MyPhysics_8h" kind="file" language="C++">
+    <compoundname>MyPhysics.h</compoundname>
+    <includedby refid="sceneSP2_8cpp" local="yes">MyGraphics/Source/sceneSP2.cpp</includedby>
+    <invincdepgraph>
+      <node id="3410">
+        <label>Common/Source/MyPhysics.h</label>
+        <link refid="MyPhysics.h"/>
+        <childnode refid="3411" relation="include">
+        </childnode>
+      </node>
+      <node id="3411">
+        <label>MyGraphics/Source/sceneSP2.cpp</label>
+        <link refid="sceneSP2_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacePhysics">Physics</innernamespace>
+    <briefdescription>
+<para>header file for physics helper function </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Sek Heng </para></simplesect>
+<simplesect kind="par"><title>email: 150629Z.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MY_PHYSICS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MY_PHYSICS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="namespacePhysics" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacePhysics" kindref="compound">Physics</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Earth&apos;s<sp/>gravitional<sp/>force<sp/>is<sp/>not<sp/>this<sp/>value!<sp/>and<sp/>realism<sp/>sucks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="namespacePhysics_1af65a1bf10a9492d9a35cfc8b7ccb89d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacePhysics_1af65a1bf10a9492d9a35cfc8b7ccb89d5" kindref="member">earth_gravitational_force</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="39" refid="namespacePhysics_1add4adb5f16486f8a22f65106a6084524" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespacePhysics_1add4adb5f16486f8a22f65106a6084524" kindref="member">gravitational_pulled</ref>(T<sp/>pull_speed,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/>T<sp/>gravity<sp/>=<sp/>earth_gravitational_force)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pull_speed<sp/>=<sp/>pull_speed<sp/>-<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(dt<sp/>*<sp/>(gravity)));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pull_speed;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="59" refid="namespacePhysics_1a7786dbf0eb40d778b6e33315d85e5631" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/><ref refid="namespacePhysics_1a7786dbf0eb40d778b6e33315d85e5631" kindref="member">getAcceleration</ref>(T<sp/>force,<sp/>T<sp/>mass)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(force<sp/>/<sp/>mass);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Common/Source/MyPhysics.h"/>
+  </compounddef>
+</doxygen>

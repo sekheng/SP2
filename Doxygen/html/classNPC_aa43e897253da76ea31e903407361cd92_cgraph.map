@@ -1,0 +1,4 @@
+<map id="NPC::boundschecking" name="NPC::boundschecking">
+<area shape="rect" id="node2" href="$classNPC.html#a306047126b65a7f67ad6331a632b8071" title="get this object&#39;s X coordinate " alt="" coords="204,5,372,32"/>
+<area shape="rect" id="node3" href="$classNPC.html#a4f760c4731c0beb5e9d6096e666414bf" title="get this object&#39;s y coordinate " alt="" coords="204,56,372,83"/>
+</map>

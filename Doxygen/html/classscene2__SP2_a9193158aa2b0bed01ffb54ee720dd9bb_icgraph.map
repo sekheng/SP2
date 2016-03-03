@@ -1,0 +1,22 @@
+<map id="scene2_SP2::renderMesh" name="scene2_SP2::renderMesh">
+<area shape="rect" id="node2" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="1001,472,1147,499"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a57f2ebb6b3ed353203b2ed8ecb8c7143" title="rendering numpad&#39;s pointing arrow " alt="" coords="247,969,426,996"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#a70deb418246d8ed16d4d6847b287d3c6" title="rendering asteroids " alt="" coords="506,76,699,103"/>
+<area shape="rect" id="node5" href="$classscene2__SP2.html#a37282bea05c3a24ef6373816729bc848" title="rendering blue boxes " alt="" coords="511,127,694,153"/>
+<area shape="rect" id="node6" href="$classscene2__SP2.html#a602d4b84d1e8bc11c35060ef0c49a6da" title="a method to render Deadpool and his dialogues " alt="" coords="757,295,953,321"/>
+<area shape="rect" id="node7" href="$classscene2__SP2.html#a1a972432405bd72a5ba7804c738ab535" title="rendering diamonds " alt="" coords="505,177,701,204"/>
+<area shape="rect" id="node8" href="$classscene2__SP2.html#abc95a3006aead494582b5f1622c326fe" title="rendering flying vehicle " alt="" coords="765,229,945,270"/>
+<area shape="rect" id="node9" href="$classscene2__SP2.html#a3d90f91b8fdea7521e6fd4cae57a3307" title="rendering of image using quad on screen " alt="" coords="238,402,435,443"/>
+<area shape="rect" id="node11" href="$classscene2__SP2.html#a510022db1526266df5582f1e1eb19f27" title="rendering robot npcs " alt="" coords="769,447,941,473"/>
+<area shape="rect" id="node12" href="$classscene2__SP2.html#a6541bbd7f340ece91e91bec2b77bac4a" title="a method to render Rot Civ and it&#39;s dialogue " alt="" coords="766,497,945,524"/>
+<area shape="rect" id="node13" href="$classscene2__SP2.html#a6d4a4cbe109bbdcf8b901375a4e9b4b7" title="rendering vault " alt="" coords="768,548,943,575"/>
+<area shape="rect" id="node15" href="$classscene2__SP2.html#a5ded8f5a2aa75bb0b8104d782e1a6970" title="rendering landing vehicle " alt="" coords="507,650,698,691"/>
+<area shape="rect" id="node16" href="$classscene2__SP2.html#a3348064a9b395cb0a56f6dca71afd280" title="rendering numpad " alt="" coords="759,708,952,735"/>
+<area shape="rect" id="node17" href="$classscene2__SP2.html#a3a682aa9ecb9b63813f31aa666461a44" title="rendering numpad on screen " alt="" coords="505,767,700,809"/>
+<area shape="rect" id="node18" href="$classscene2__SP2.html#a0918495227e0fd17eb8d46f32fe41e8e" title="rendering satellite " alt="" coords="241,817,433,844"/>
+<area shape="rect" id="node19" href="$classscene2__SP2.html#a859dff9b7106eb2dc873437c8450b42b" title="rendering sky box " alt="" coords="242,868,431,895"/>
+<area shape="rect" id="node20" href="$classscene2__SP2.html#ace71dabc759be27e9091b70211084d08" title="rendering space shuttle " alt="" coords="225,919,448,945"/>
+<area shape="rect" id="node21" href="$classscene2__SP2.html#aaafa887ab77865b060ca27085a6de1f2" title="rendering user interface " alt="" coords="226,1020,447,1047"/>
+<area shape="rect" id="node10" href="$classscene2__SP2.html#a466b1dec58240bf09a88a0db06da81f1" title="a method to render dialogue box with the object&#39;s name and dialogue " alt="" coords="496,380,709,407"/>
+<area shape="rect" id="node14" href="$classscene2__SP2.html#a36c071a0d5d5dd96e0df9867aafef5cf" title="a method to render the ending screen " alt="" coords="513,431,693,473"/>
+</map>

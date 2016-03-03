@@ -1,0 +1,4 @@
+<map id="minigame::selection_pointer" name="minigame::selection_pointer">
+<area shape="rect" id="node2" href="$classminigame.html#aea6576f016f1c9944aa5ea699b412446" title="update the minigame&#39;s progress " alt="" coords="192,13,317,39"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="365,13,496,39"/>
+</map>

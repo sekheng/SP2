@@ -1,0 +1,6 @@
+<map id="NumPad::interactiontext" name="NumPad::interactiontext">
+<area shape="rect" id="node2" href="$classNumPad.html#a9f705cb43de4fd79ebed968e1e67c315" title="Numpad interaction. " alt="" coords="216,5,393,32"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="441,81,587,108"/>
+<area shape="rect" id="node5" href="$classscene2__SP2.html#a6d4a4cbe109bbdcf8b901375a4e9b4b7" title="rendering vault " alt="" coords="217,107,392,133"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="441,5,587,32"/>
+</map>

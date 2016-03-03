@@ -1,0 +1,21 @@
+<map id="scene3_SP2::Update" name="scene3_SP2::Update">
+<area shape="rect" id="node2" href="$classscene3__SP2.html#a32ef92630e53d984abd97b0296472984" title="a method to update the logic of QTE " alt="" coords="219,5,393,32"/>
+<area shape="rect" id="node3" href="$classscene3__SP2.html#a56c7029d1b5bc135f1a77dc34d631179" title="a method to animate the spaceship and it&#39;s logic " alt="" coords="199,56,413,83"/>
+<area shape="rect" id="node4" href="$classscene3__SP2.html#a1a4ac1aaba2909eff05348201fa29885" title="a method to animate the warp and it&#39;s logic " alt="" coords="215,157,397,184"/>
+<area shape="rect" id="node9" href="$classApplication.html#a85300b4a96745f6cc7ecd6c5f21fcee4" title="a method to transit to scenario 1 " alt="" coords="199,208,413,235"/>
+<area shape="rect" id="node10" href="$classApplication.html#a7a6554e7cd225dad8c85551c059a25d9" title="a method to transit to scenario 3 " alt="" coords="199,259,413,285"/>
+<area shape="rect" id="node11" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="251,309,361,336"/>
+<area shape="rect" id="node13" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="229,360,383,387"/>
+<area shape="rect" id="node14" href="$classCamera3.html#a6f1aeea87c779705decd4204db9370c4" title="getting camera&#39;s rotation based on the x axis " alt="" coords="209,411,403,437"/>
+<area shape="rect" id="node15" href="$classCamera3.html#a99d7d55bafd4d073c828cbbf1d21ece6" title="getting camera&#39;s rotation based on the y axis " alt="" coords="207,461,405,488"/>
+<area shape="rect" id="node16" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="483,537,658,564"/>
+<area shape="rect" id="node17" href="$classBGMDriven.html#a1106212f0ed32a27cf05f488f8709402" title="A method functions dedicated to just play Pokemon Battle theme as a background music ..." alt="" coords="467,95,675,137"/>
+<area shape="rect" id="node18" href="$classscene3__SP2.html#a5a82a47613e885739cb37186d9ce6e53" title="a method to reset everything inside scenario 2 " alt="" coords="239,613,373,640"/>
+<area shape="rect" id="node20" href="$classscene3__SP2.html#afbf3a66c76d63a1cb0ee0663b809cd60" title="a method to update the logic behind rendering of the instruction and prevent the text from going to f..." alt="" coords="205,512,407,539"/>
+<area shape="rect" id="node5" href="$classBGMDriven.html#ab77835bb55208467e77fa117a70fe624" title="A method functions dedicated to just play Space Warp as a background music " alt="" coords="461,161,680,188"/>
+<area shape="rect" id="node6" href="$classirrklang_1_1ISoundEngine.html#a1084577f9f43cb12e86cea43c323b12c" title="Returns if a sound with the specified name is currently playing. " alt="" coords="728,59,880,101"/>
+<area shape="rect" id="node7" href="$classirrklang_1_1ISoundEngine.html#a25f612fe6479d3b22dc5bab2a2eaa927" title="loads a sound source (if not loaded already) from a file and plays it. " alt="" coords="728,125,880,166"/>
+<area shape="rect" id="node8" href="$classirrklang_1_1ISound.html#a108485fe64658441cecd70917782961f" title="Will stop the sound and free its resources. " alt="" coords="731,191,877,217"/>
+<area shape="rect" id="node12" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="511,309,631,336"/>
+<area shape="rect" id="node19" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Reset the camera settings " alt="" coords="513,613,629,640"/>
+</map>

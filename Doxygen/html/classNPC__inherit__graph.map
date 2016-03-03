@@ -1,0 +1,3 @@
+<map id="NPC" name="NPC">
+<area shape="rect" id="node2" href="$classGameObject.html" title="Defines GameObject, get the name of the GameObject and count how many gameobjects there are..." alt="" coords="5,5,100,32"/>
+</map>

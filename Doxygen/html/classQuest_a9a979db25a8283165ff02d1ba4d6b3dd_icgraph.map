@@ -1,0 +1,5 @@
+<map id="Quest::getObject1_X" name="Quest::getObject1_X">
+<area shape="rect" id="node2" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="214,5,389,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#a9cfd40b303b8fbd4a67e4d6eedecdc25" title="sceneSP2::RenderQuestObjects" alt="" coords="196,56,407,83"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="455,31,585,57"/>
+</map>

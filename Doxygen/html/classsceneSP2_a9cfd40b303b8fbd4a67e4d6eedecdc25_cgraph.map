@@ -1,0 +1,41 @@
+<map id="sceneSP2::RenderQuestObjects" name="sceneSP2::RenderQuestObjects">
+<area shape="rect" id="node2" href="$classQuest.html#a7f5229fff4c4b0f793e18411e018e517" title="get number of items the quest requires " alt="" coords="292,5,435,47"/>
+<area shape="rect" id="node3" href="$classQuest.html#a9a979db25a8283165ff02d1ba4d6b3dd" title="get first item&#39;s x coordinate " alt="" coords="292,71,435,98"/>
+<area shape="rect" id="node4" href="$classQuest.html#a04c65bf66e2ac951311f56c720385c21" title="get first item&#39;s z coordinate " alt="" coords="292,122,435,149"/>
+<area shape="rect" id="node5" href="$classQuest.html#a4a28652632605e99da750b48b2c85a9a" title="get second item&#39;s x coordinate " alt="" coords="292,173,435,199"/>
+<area shape="rect" id="node6" href="$classQuest.html#a89a7782b9f2c26c35463e2977882d9b5" title="get second item&#39;s z coordinate " alt="" coords="292,223,435,250"/>
+<area shape="rect" id="node7" href="$classQuest.html#a54559418f758e8190d29f5f7b37fc553" title="check if first item has been picked up " alt="" coords="289,274,438,301"/>
+<area shape="rect" id="node8" href="$classQuest.html#a8ea74d521a17cbbdd8ac9ede6cba4207" title="check if second item has been picked up " alt="" coords="289,325,438,351"/>
+<area shape="rect" id="node9" href="$classMS.html#aac22e39d0ac437fcb85403a9f0a7a25f" title="Pop the top matrix on the matrix stack. " alt="" coords="827,527,936,554"/>
+<area shape="rect" id="node10" href="$classMS.html#a9fb4fff5036f3f197b893f9a579c97b2" title="Make a copy of the top matrix on the matrix stack and push it on top. " alt="" coords="823,477,939,503"/>
+<area shape="rect" id="node11" href="$classsceneSP2.html#ae123d615a0922d326c4c5088e47b9b23" title="create a dialogue box easily " alt="" coords="264,426,463,453"/>
+<area shape="rect" id="node17" href="$classsceneSP2.html#a629009d3d968165925af64a07cb83847" title="rendering of the meshes " alt="" coords="802,629,961,655"/>
+<area shape="rect" id="node27" href="$classMS.html#a52109795de960e24663b315e9128533f" title="Multiply the top matrix with a scale matrix based on the following parameters. " alt="" coords="840,578,923,605"/>
+<area shape="rect" id="node31" href="$classMS.html#a7e94a35ce566fe3ec49c92b6c4bb663a" title="Multiply the top matrix with a translation matrix based on the following parameters. " alt="" coords="830,223,933,250"/>
+<area shape="rect" id="node34" href="$classsceneSP2.html#aef464b9b4f04ad8cc893ba2bdea01011" title="rendering of item taken on screen " alt="" coords="515,679,730,706"/>
+<area shape="rect" id="node40" href="$classQuest.html#ac23cf044c29e28f4181a7def7b09e75e" title="get the current progress of the quest " alt="" coords="315,730,412,757"/>
+<area shape="rect" id="node12" href="$classsceneSP2.html#ac987b33f8bb07f2078d856dfc9f3ba73" title="rendering of image using quad on screen " alt="" coords="511,426,735,453"/>
+<area shape="rect" id="node33" href="$classsceneSP2.html#a554b644c097af6a01809690d032cec0b" title="rendering of the texts using quads on screen " alt="" coords="515,375,730,402"/>
+<area shape="rect" id="node13" href="$classMS.html#a77c5f7e4a21ea48dcf902a7ff6824a11" title="Replace the top matrix with an identity matrix. " alt="" coords="821,325,941,351"/>
+<area shape="rect" id="node16" href="$classMS.html#a86606fe9f575ccb747d77195c8aefdaf" title="Return the top matrix with a new matrix. " alt="" coords="824,426,939,453"/>
+<area shape="rect" id="node25" href="$classMS.html#a6ce592114042b920b648bca5519690cd" title="Multiply the top matrix with a rotation matrix based on the following parameters. ..." alt="" coords="837,679,925,706"/>
+<area shape="rect" id="node29" href="$classMtx44.html#a0a4c7818be7c1aeb0601ad069c1a591d" title="Setup orthogonal matrix. " alt="" coords="815,274,947,301"/>
+<area shape="rect" id="node14" href="$classMtx44.html#a3ac8a0afd66412e15e4246474b893da2" title="Set the matrix to an identity matrix (1&#39;s along the diagonal) " alt="" coords="1239,325,1381,351"/>
+<area shape="rect" id="node15" href="$classMtx44.html#a3aea63c08759ac98b8a4f23fdc0d6a28" title="Set this matrix to zero. " alt="" coords="1429,325,1555,351"/>
+<area shape="rect" id="node18" href="$classMtx44.html#aac1ba21ddfc5f3c24baa4f58d9c5c256" title="Return a new matrix that is an inverse. " alt="" coords="1046,629,1173,655"/>
+<area shape="rect" id="node20" href="$classMtx44.html#aebb16a0329c5237e314af0d75d8081fd" title="Return a new matrix that is a transpose of this matrix. " alt="" coords="1036,578,1183,605"/>
+<area shape="rect" id="node23" href="$classMesh.html#a75e66bcd90c09492676a4cfe5b23c3af" title="OpenGL render code. " alt="" coords="1058,521,1161,547"/>
+<area shape="rect" id="node24" href="$classMS.html#a21291d7fb488f63c589bdc9bd620ba58" title="Return the top matrix on the matrix stack. " alt="" coords="1074,445,1145,471"/>
+<area shape="rect" id="node19" href="$namespaceMath.html#ac91173ab2efdf7313fe7aaeb6cb44cf6" title="Math::FAbs" alt="" coords="1265,654,1355,681"/>
+<area shape="rect" id="node21" href="$classMtx44.html#a6c95e149e42cba381918782a93f8a68b" title="Set this matrix to its Transpose. " alt="" coords="1247,578,1373,605"/>
+<area shape="rect" id="node22" href="$Mtx44_8cpp.html#a1ef521a2e5e5ae2ef55d1bc0c3b0c437" title="Helper function swap. " alt="" coords="1466,578,1518,605"/>
+<area shape="rect" id="node26" href="$classMtx44.html#ac0587ffb5ff9fd58ad5768d28fc06574" title="Set Matrix to a rotation matrix about arbitrary axis. " alt="" coords="1035,679,1183,706"/>
+<area shape="rect" id="node28" href="$classMtx44.html#a04c49a922f8e8ffcb57a90c6ce955600" title="Set this matrix to a scaling matrix with scale factors sx, sy and sz. " alt="" coords="1043,382,1176,409"/>
+<area shape="rect" id="node30" href="$classMtx44.html#a1b985913080679da29ff94217935b3c7" title="Default Constructor. Default values are zero. " alt="" coords="1058,274,1161,301"/>
+<area shape="rect" id="node32" href="$classMtx44.html#a0cc88cc5c648da14effba480c4d2ac70" title="Set this matrix to a translation matrix with translation of (x, y, z) " alt="" coords="1028,223,1191,250"/>
+<area shape="rect" id="node35" href="$classCamera3.html#a4c484a400a9c2e64f3334fc62330368a" title="getting camera&#39;s position of x coordinate " alt="" coords="789,933,973,959"/>
+<area shape="rect" id="node36" href="$classCamera3.html#a209c40f89cb065cb56edba03b4dd9491" title="getting camera&#39;s position of y coordinate " alt="" coords="788,730,975,757"/>
+<area shape="rect" id="node37" href="$classCamera3.html#aae412d5efa2bae38cc9d5f38fb289f3a" title="getting camera&#39;s position of z coordinate " alt="" coords="789,781,973,807"/>
+<area shape="rect" id="node38" href="$classCamera3.html#a99d7d55bafd4d073c828cbbf1d21ece6" title="getting camera&#39;s rotation based on the y axis " alt="" coords="783,831,980,858"/>
+<area shape="rect" id="node39" href="$classCamera3.html#a6f1aeea87c779705decd4204db9370c4" title="getting camera&#39;s rotation based on the x axis " alt="" coords="784,882,979,909"/>
+</map>

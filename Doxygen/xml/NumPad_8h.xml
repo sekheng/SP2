@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="NumPad_8h" kind="file" language="C++">
+    <compoundname>NumPad.h</compoundname>
+    <includes refid="GameObject_8h" local="yes">GameObject.h</includes>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includes local="no">vector</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includedby refid="scene2__SP2_8h" local="yes">MyGraphics/Source/scene2_SP2.h</includedby>
+    <includedby refid="NumPad_8cpp" local="yes">MyGraphics/Source/NumPad.cpp</includedby>
+    <incdepgraph>
+      <node id="5347">
+        <label>DetectMemoryLeak.h</label>
+        <link refid="DetectMemoryLeak_8h"/>
+        <childnode refid="5348" relation="include">
+        </childnode>
+        <childnode refid="5349" relation="include">
+        </childnode>
+      </node>
+      <node id="5350">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5351" relation="include">
+        </childnode>
+        <childnode refid="5356" relation="include">
+        </childnode>
+      </node>
+      <node id="5351">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5352" relation="include">
+        </childnode>
+        <childnode refid="5353" relation="include">
+        </childnode>
+        <childnode refid="5354" relation="include">
+        </childnode>
+        <childnode refid="5355" relation="include">
+        </childnode>
+      </node>
+      <node id="5348">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5352">
+        <label>cmath</label>
+      </node>
+      <node id="5344">
+        <label>MyGraphics/Source/NumPad.h</label>
+        <link refid="NumPad.h"/>
+        <childnode refid="5345" relation="include">
+        </childnode>
+        <childnode refid="5350" relation="include">
+        </childnode>
+        <childnode refid="5357" relation="include">
+        </childnode>
+        <childnode refid="5358" relation="include">
+        </childnode>
+      </node>
+      <node id="5346">
+        <label>string</label>
+      </node>
+      <node id="5353">
+        <label>exception</label>
+      </node>
+      <node id="5360">
+        <label>objectsForDisplay.h</label>
+        <link refid="objectsForDisplay_8h"/>
+        <childnode refid="5345" relation="include">
+        </childnode>
+        <childnode refid="5350" relation="include">
+        </childnode>
+      </node>
+      <node id="5354">
+        <label>ctime</label>
+      </node>
+      <node id="5357">
+        <label>vector</label>
+      </node>
+      <node id="5349">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="5359">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5350" relation="include">
+        </childnode>
+      </node>
+      <node id="5355">
+        <label>cstdlib</label>
+      </node>
+      <node id="5356">
+        <label>iostream</label>
+      </node>
+      <node id="5358">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5359" relation="include">
+        </childnode>
+        <childnode refid="5360" relation="include">
+        </childnode>
+        <childnode refid="5357" relation="include">
+        </childnode>
+      </node>
+      <node id="5345">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="5346" relation="include">
+        </childnode>
+        <childnode refid="5347" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5374">
+        <label>MyGraphics/Source/scene3_SP2.cpp</label>
+        <link refid="scene3__SP2_8cpp"/>
+      </node>
+      <node id="5375">
+        <label>MyGraphics/Source/Scene3SP2.cpp</label>
+        <link refid="Scene3SP2_8cpp"/>
+      </node>
+      <node id="5365">
+        <label>MyGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="5362">
+        <label>MyGraphics/Source/scene2_SP2.h</label>
+        <link refid="scene2__SP2_8h"/>
+        <childnode refid="5363" relation="include">
+        </childnode>
+      </node>
+      <node id="5369">
+        <label>MyGraphics/Source/NumPad.cpp</label>
+        <link refid="NumPad_8cpp"/>
+      </node>
+      <node id="5372">
+        <label>MyGraphics/Source/scene2_minigame.cpp</label>
+        <link refid="scene2__minigame_8cpp"/>
+      </node>
+      <node id="5361">
+        <label>MyGraphics/Source/NumPad.h</label>
+        <link refid="NumPad.h"/>
+        <childnode refid="5362" relation="include">
+        </childnode>
+        <childnode refid="5369" relation="include">
+        </childnode>
+      </node>
+      <node id="5366">
+        <label>MyGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="5367">
+        <label>MyGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5373">
+        <label>MyGraphics/Source/scene2_SP2.cpp</label>
+        <link refid="scene2__SP2_8cpp"/>
+      </node>
+      <node id="5370">
+        <label>MyGraphics/Source/Quest.cpp</label>
+        <link refid="Quest_8cpp"/>
+      </node>
+      <node id="5377">
+        <label>MyGraphics/Source/SekHeng.cpp</label>
+        <link refid="SekHeng_8cpp"/>
+      </node>
+      <node id="5371">
+        <label>MyGraphics/Source/rot_civ.cpp</label>
+        <link refid="rot__civ_8cpp"/>
+      </node>
+      <node id="5376">
+        <label>MyGraphics/Source/sceneSP2.cpp</label>
+        <link refid="sceneSP2_8cpp"/>
+      </node>
+      <node id="5364">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5363">
+        <label>MyGraphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="5364" relation="include">
+        </childnode>
+        <childnode refid="5365" relation="include">
+        </childnode>
+        <childnode refid="5366" relation="include">
+        </childnode>
+        <childnode refid="5367" relation="include">
+        </childnode>
+        <childnode refid="5368" relation="include">
+        </childnode>
+        <childnode refid="5369" relation="include">
+        </childnode>
+        <childnode refid="5370" relation="include">
+        </childnode>
+        <childnode refid="5371" relation="include">
+        </childnode>
+        <childnode refid="5372" relation="include">
+        </childnode>
+        <childnode refid="5373" relation="include">
+        </childnode>
+        <childnode refid="5374" relation="include">
+        </childnode>
+        <childnode refid="5375" relation="include">
+        </childnode>
+        <childnode refid="5376" relation="include">
+        </childnode>
+        <childnode refid="5377" relation="include">
+        </childnode>
+        <childnode refid="5378" relation="include">
+        </childnode>
+      </node>
+      <node id="5368">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="5378">
+        <label>MyGraphics/Source/StationScene.cpp</label>
+        <link refid="StationScene_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classNumPad" prot="public">NumPad</innerclass>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>Numpad&apos;s interaction </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Chun Fei </para></simplesect>
+<simplesect kind="par"><title>email: 150678G.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>NUMPAD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUMPAD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameObject_8h" kindref="compound">GameObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classNumPad" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classNumPad" kindref="compound">NumPad</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classGameObject" kindref="compound">GameObject</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classNumPad_1a4f89a8b04836699dd8814b4c7f7c1964" kindref="member">NumPad</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classNumPad_1a81a4648cef8193ef2b929f9ec189ed44" kindref="member">~NumPad</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a8ba78520cade31bed590b1ef02c3db97" kindref="member">Init</ref>(<ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>&amp;cameraDub,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>&amp;origPos);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a679075331806098ed06549e002c0cac2" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a9f705cb43de4fd79ebed968e1e67c315" kindref="member">NumpadProgram</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a748faa3aea7b780ba4e13a49909bbe53" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a8576528643096bf66cf98847886e22b9" kindref="member">NumpadVerify</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a27fbbd8747f455d3f3f95c17feb098b2" kindref="member">interactiontext</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a5e056d35eee91dbab3ade47fc7d4f938" kindref="member">interaction</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a681b438ce719ac377a7a6dd1ea69223e" kindref="member">displayerror</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1ad464c4cfa4a962a060c2aef648047a67" kindref="member">NumpadRenderOnScreen</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a6c2373ec8bc93cb3a1aa5dccd51abd2b" kindref="member">getfirstrotate</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1afd8b19d927e92248bed4e64e920fbf67" kindref="member">getsecondrotate</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a1c9aa6e5cff97ae3fb86de95aa160885" kindref="member">getthirdrotate</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a2a3b17a4760b6e3ee799c93520c447f0" kindref="member">getfourthrotate</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1aa3012feb81692889c02ee858a1ed71c0" kindref="member">getarrowposition</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1acec4b2994041801bf630051effb99d66" kindref="member">getdigit1</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a2aee31991985119be31455b94e48284b" kindref="member">getdigit2</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a3148ed2ee10326a6d3402f4d1a63d4e4" kindref="member">getdigit3</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1abcc0e7a424e09f166b9f1cc9332348c0" kindref="member">getdigit4</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classNumPad_1ab70a8660086c4cfb8d23cda3ad410818" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1ab70a8660086c4cfb8d23cda3ad410818" kindref="member">check</ref>;</highlight></codeline>
+<codeline lineno="59" refid="classNumPad_1a0732be1017c233c0ecaab86ff86a669d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a0732be1017c233c0ecaab86ff86a669d" kindref="member">open</ref>;</highlight></codeline>
+<codeline lineno="60" refid="classNumPad_1ac2e6d0efa0904d40c13ddf6f52678b17" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1ac2e6d0efa0904d40c13ddf6f52678b17" kindref="member">close</ref>;</highlight></codeline>
+<codeline lineno="61" refid="classNumPad_1aa13ae80800f6c1bab1f0e9cefe7cc9c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1aa13ae80800f6c1bab1f0e9cefe7cc9c9" kindref="member">render</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classNumPad_1adda17a95e00c3d219b4c0e46fa1888ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1adda17a95e00c3d219b4c0e46fa1888ef" kindref="member">firstrotate</ref>;</highlight></codeline>
+<codeline lineno="64" refid="classNumPad_1a0a4416ae76a8d9cf2fbd7878f348c328" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a0a4416ae76a8d9cf2fbd7878f348c328" kindref="member">secondrotate</ref>;</highlight></codeline>
+<codeline lineno="65" refid="classNumPad_1abf207ab1edd14ae84ec9f6697a6ae8f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1abf207ab1edd14ae84ec9f6697a6ae8f2" kindref="member">thirdrotate</ref>;</highlight></codeline>
+<codeline lineno="66" refid="classNumPad_1a9124494783725cae031d1d5b9ecf7093" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a9124494783725cae031d1d5b9ecf7093" kindref="member">fourthrotate</ref>;</highlight></codeline>
+<codeline lineno="67" refid="classNumPad_1ac4a0dd0e223f765527220534a9a36192" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1ac4a0dd0e223f765527220534a9a36192" kindref="member">time_delay</ref>;</highlight></codeline>
+<codeline lineno="68" refid="classNumPad_1a4a26f2366add5c0456f5996ab0228ee0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a4a26f2366add5c0456f5996ab0228ee0" kindref="member">changearrow</ref>;</highlight></codeline>
+<codeline lineno="69" refid="classNumPad_1ac94ee222bc64219655ed595c3e88f9c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1ac94ee222bc64219655ed595c3e88f9c0" kindref="member">arrow</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classNumPad_1a5a46aff3d5e62f7bde45196329b30fca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a5a46aff3d5e62f7bde45196329b30fca" kindref="member">digit1</ref>;</highlight></codeline>
+<codeline lineno="72" refid="classNumPad_1a342ba7379feb0441e1ce02de87e3f692" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a342ba7379feb0441e1ce02de87e3f692" kindref="member">digit2</ref>;</highlight></codeline>
+<codeline lineno="73" refid="classNumPad_1a637f38d66c590ed6c3fcea58934b290b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a637f38d66c590ed6c3fcea58934b290b" kindref="member">digit3</ref>;</highlight></codeline>
+<codeline lineno="74" refid="classNumPad_1a999c52c2318aeecdaadee6c83641f5fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a999c52c2318aeecdaadee6c83641f5fc" kindref="member">digit4</ref>;</highlight></codeline>
+<codeline lineno="75" refid="classNumPad_1ac3971589e78a85cbeb18ac2a39321600" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1ac3971589e78a85cbeb18ac2a39321600" kindref="member">hahaha</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classNumPad_1a300a01c34b8f4a934ff24d6ac254cfc1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classNumPad_1a300a01c34b8f4a934ff24d6ac254cfc1" kindref="member">time</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79" refid="classNumPad_1a8b5bfa5481c2a521ec267d7b98be4238" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>*<ref refid="classNumPad_1a8b5bfa5481c2a521ec267d7b98be4238" kindref="member">camera</ref>;</highlight></codeline>
+<codeline lineno="80" refid="classNumPad_1a73e2cfaeb9370feec56ad9ccd53cb09b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classNumPad_1a73e2cfaeb9370feec56ad9ccd53cb09b" kindref="member">pos</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/NumPad.h"/>
+  </compounddef>
+</doxygen>

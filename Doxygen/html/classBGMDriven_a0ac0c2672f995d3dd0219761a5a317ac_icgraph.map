@@ -1,0 +1,4 @@
+<map id="BGMDriven::playJohnCenaBackground" name="BGMDriven::playJohnCenaBackground">
+<area shape="rect" id="node2" href="$classscene2__SP2.html#a5b4e109f6780971770ff3b74d120ad03" title="vault animation " alt="" coords="299,5,491,32"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="539,5,684,32"/>
+</map>

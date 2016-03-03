@@ -1,0 +1,39 @@
+<map id="scene2_SP2::RenderVault" name="scene2_SP2::RenderVault">
+<area shape="rect" id="node2" href="$classNPC.html#ab1173e9ee734824a964d5f050d9689b9" title="get this object&#39;s dialogue " alt="" coords="272,5,397,32"/>
+<area shape="rect" id="node4" href="$classNPC.html#a2b008f0dd95c65339baf466918789062" title="to check if player is within range to interact with this object " alt="" coords="276,208,393,235"/>
+<area shape="rect" id="node6" href="$classNPC.html#a306047126b65a7f67ad6331a632b8071" title="get this object&#39;s X coordinate " alt="" coords="743,81,911,108"/>
+<area shape="rect" id="node7" href="$classNPC.html#a4f760c4731c0beb5e9d6096e666414bf" title="get this object&#39;s y coordinate " alt="" coords="743,157,911,184"/>
+<area shape="rect" id="node10" href="$classNumPad.html#a27fbbd8747f455d3f3f95c17feb098b2" title="&quot;Press &#39;C&#39; to interact&quot; will appear if player&#39;s position is inside interaction area ..." alt="" coords="253,259,416,285"/>
+<area shape="rect" id="node12" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="247,309,422,336"/>
+<area shape="rect" id="node13" href="$classNPC.html#aaa3161cae562c19d0725723861d0acf7" title="get this object&#39;s y coordinate " alt="" coords="251,360,419,387"/>
+<area shape="rect" id="node14" href="$classMS.html#aac22e39d0ac437fcb85403a9f0a7a25f" title="Pop the top matrix on the matrix stack. " alt="" coords="772,512,881,539"/>
+<area shape="rect" id="node15" href="$classMS.html#a9fb4fff5036f3f197b893f9a579c97b2" title="Make a copy of the top matrix on the matrix stack and push it on top. " alt="" coords="769,563,885,589"/>
+<area shape="rect" id="node16" href="$classscene2__SP2.html#a466b1dec58240bf09a88a0db06da81f1" title="a method to render dialogue box with the object&#39;s name and dialogue " alt="" coords="228,621,441,648"/>
+<area shape="rect" id="node22" href="$classscene2__SP2.html#a9193158aa2b0bed01ffb54ee720dd9bb" title="rendering of the meshes " alt="" coords="741,461,913,488"/>
+<area shape="rect" id="node30" href="$classMS.html#a6ce592114042b920b648bca5519690cd" title="Multiply the top matrix with a rotation matrix based on the following parameters. ..." alt="" coords="783,411,871,437"/>
+<area shape="rect" id="node32" href="$classMS.html#a52109795de960e24663b315e9128533f" title="Multiply the top matrix with a scale matrix based on the following parameters. " alt="" coords="785,968,868,995"/>
+<area shape="rect" id="node36" href="$classMS.html#a7e94a35ce566fe3ec49c92b6c4bb663a" title="Multiply the top matrix with a translation matrix based on the following parameters. " alt="" coords="775,867,878,893"/>
+<area shape="rect" id="node3" href="$classNPC.html#ab6bac3d151a9ff29bebab73604bfdadb" title="to reset all npc dialogue when scene resets " alt="" coords="545,5,631,32"/>
+<area shape="rect" id="node5" href="$classNPC.html#aa43e897253da76ea31e903407361cd92" title="bounds checking for interaction " alt="" coords="513,107,663,133"/>
+<area shape="rect" id="node8" href="$classCamera3.html#a4c484a400a9c2e64f3334fc62330368a" title="getting camera&#39;s position of x coordinate " alt="" coords="735,220,919,247"/>
+<area shape="rect" id="node9" href="$classCamera3.html#aae412d5efa2bae38cc9d5f38fb289f3a" title="getting camera&#39;s position of z coordinate " alt="" coords="735,296,919,323"/>
+<area shape="rect" id="node11" href="$classNumPad.html#a5e056d35eee91dbab3ade47fc7d4f938" title="Check whether player&#39;s position is inside interaction area. " alt="" coords="518,259,658,285"/>
+<area shape="rect" id="node17" href="$classscene2__SP2.html#a3d90f91b8fdea7521e6fd4cae57a3307" title="rendering of image using quad on screen " alt="" coords="489,614,687,655"/>
+<area shape="rect" id="node38" href="$classscene2__SP2.html#a4cd06fa3bd5223e0fd36ba84fc9c6d01" title="rendering of the texts using quads on screen " alt="" coords="495,707,681,749"/>
+<area shape="rect" id="node18" href="$classMS.html#a77c5f7e4a21ea48dcf902a7ff6824a11" title="Replace the top matrix with an identity matrix. " alt="" coords="767,765,887,792"/>
+<area shape="rect" id="node21" href="$classMS.html#a86606fe9f575ccb747d77195c8aefdaf" title="Return the top matrix with a new matrix. " alt="" coords="769,613,884,640"/>
+<area shape="rect" id="node34" href="$classMtx44.html#a0a4c7818be7c1aeb0601ad069c1a591d" title="Setup orthogonal matrix. " alt="" coords="761,664,893,691"/>
+<area shape="rect" id="node19" href="$classMtx44.html#a3ac8a0afd66412e15e4246474b893da2" title="Set the matrix to an identity matrix (1&#39;s along the diagonal) " alt="" coords="1177,892,1320,919"/>
+<area shape="rect" id="node20" href="$classMtx44.html#a3aea63c08759ac98b8a4f23fdc0d6a28" title="Set this matrix to zero. " alt="" coords="1368,892,1493,919"/>
+<area shape="rect" id="node23" href="$classMtx44.html#aac1ba21ddfc5f3c24baa4f58d9c5c256" title="Return a new matrix that is an inverse. " alt="" coords="985,461,1111,488"/>
+<area shape="rect" id="node25" href="$classMtx44.html#aebb16a0329c5237e314af0d75d8081fd" title="Return a new matrix that is a transpose of this matrix. " alt="" coords="975,512,1121,539"/>
+<area shape="rect" id="node28" href="$classMesh.html#a75e66bcd90c09492676a4cfe5b23c3af" title="OpenGL render code. " alt="" coords="997,715,1099,741"/>
+<area shape="rect" id="node29" href="$classMS.html#a21291d7fb488f63c589bdc9bd620ba58" title="Return the top matrix on the matrix stack. " alt="" coords="1013,816,1083,843"/>
+<area shape="rect" id="node24" href="$namespaceMath.html#ac91173ab2efdf7313fe7aaeb6cb44cf6" title="Math::FAbs" alt="" coords="1203,436,1294,463"/>
+<area shape="rect" id="node26" href="$classMtx44.html#a6c95e149e42cba381918782a93f8a68b" title="Set this matrix to its Transpose. " alt="" coords="1185,512,1312,539"/>
+<area shape="rect" id="node27" href="$Mtx44_8cpp.html#a1ef521a2e5e5ae2ef55d1bc0c3b0c437" title="Helper function swap. " alt="" coords="1405,512,1457,539"/>
+<area shape="rect" id="node31" href="$classMtx44.html#ac0587ffb5ff9fd58ad5768d28fc06574" title="Set Matrix to a rotation matrix about arbitrary axis. " alt="" coords="974,411,1122,437"/>
+<area shape="rect" id="node33" href="$classMtx44.html#a04c49a922f8e8ffcb57a90c6ce955600" title="Set this matrix to a scaling matrix with scale factors sx, sy and sz. " alt="" coords="981,955,1115,981"/>
+<area shape="rect" id="node35" href="$classMtx44.html#a1b985913080679da29ff94217935b3c7" title="Default Constructor. Default values are zero. " alt="" coords="997,664,1099,691"/>
+<area shape="rect" id="node37" href="$classMtx44.html#a0cc88cc5c648da14effba480c4d2ac70" title="Set this matrix to a translation matrix with translation of (x, y, z) " alt="" coords="967,892,1129,919"/>
+</map>

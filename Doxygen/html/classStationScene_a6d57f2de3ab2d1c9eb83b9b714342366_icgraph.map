@@ -1,0 +1,4 @@
+<map id="StationScene::reset" name="StationScene::reset">
+<area shape="rect" id="node2" href="$classsceneSP2.html#ad70fc6c47c485a14285257c1414729d1" title="reset the entire scene 1 /* " alt="" coords="191,5,309,32"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="357,5,488,32"/>
+</map>

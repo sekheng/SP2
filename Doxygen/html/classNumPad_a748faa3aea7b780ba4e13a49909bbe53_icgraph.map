@@ -1,0 +1,4 @@
+<map id="NumPad::Reset" name="NumPad::Reset">
+<area shape="rect" id="node2" href="$classscene2__SP2.html#ad113ede4cb02198a21720f2d932aaefa" title="Reset whole scene2 to default. " alt="" coords="168,5,307,32"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="355,5,500,32"/>
+</map>

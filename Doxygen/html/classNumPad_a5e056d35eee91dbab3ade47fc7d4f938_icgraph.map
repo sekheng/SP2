@@ -1,0 +1,10 @@
+<map id="NumPad::interaction" name="NumPad::interaction">
+<area shape="rect" id="node2" href="$classNumPad.html#a681b438ce719ac377a7a6dd1ea69223e" title="Display text &quot;Try Again!&quot; if the input does not match with the correct password. " alt="" coords="483,5,630,32"/>
+<area shape="rect" id="node4" href="$classNumPad.html#a27fbbd8747f455d3f3f95c17feb098b2" title="&quot;Press &#39;C&#39; to interact&quot; will appear if player&#39;s position is inside interaction area ..." alt="" coords="225,107,388,133"/>
+<area shape="rect" id="node5" href="$classNumPad.html#a9f705cb43de4fd79ebed968e1e67c315" title="Numpad interaction. " alt="" coords="468,157,645,184"/>
+<area shape="rect" id="node8" href="$classNumPad.html#ad464c4cfa4a962a060c2aef648047a67" title="Check whether player&#39;s position is inside interaction area and &#39;C&#39; button is pressed to open numpad o..." alt="" coords="193,208,420,235"/>
+<area shape="rect" id="node9" href="$classNumPad.html#a679075331806098ed06549e002c0cac2" title="updating the numpad interaction " alt="" coords="246,284,367,311"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="693,81,839,108"/>
+<area shape="rect" id="node7" href="$classscene2__SP2.html#a6d4a4cbe109bbdcf8b901375a4e9b4b7" title="rendering vault " alt="" coords="469,107,644,133"/>
+<area shape="rect" id="node6" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="693,259,839,285"/>
+</map>

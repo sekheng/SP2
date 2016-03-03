@@ -1,0 +1,61 @@
+<map id="scene2_SP2::Update" name="scene2_SP2::Update">
+<area shape="rect" id="node2" href="$classscene2__SP2.html#a0e589f588d92247371ee86443306080f" title="boxes animation " alt="" coords="207,63,405,89"/>
+<area shape="rect" id="node10" href="$classApplication.html#a85300b4a96745f6cc7ecd6c5f21fcee4" title="a method to transit to scenario 1 " alt="" coords="199,1367,413,1393"/>
+<area shape="rect" id="node11" href="$classApplication.html#aa009765c90eeec95e353b86f926d4c65" title="a method to transit to scenario 2 " alt="" coords="199,1417,413,1444"/>
+<area shape="rect" id="node12" href="$classscene2__SP2.html#ad3da41f8bafe1c9ad47b4b06a9ab016c" title="diamond animation " alt="" coords="201,1468,411,1495"/>
+<area shape="rect" id="node13" href="$classscene2__SP2.html#ae2e72ac92088b319c9e6dbd74fcd3236" title="the logic behind animating the ending " alt="" coords="234,1113,378,1140"/>
+<area shape="rect" id="node26" href="$classcreditScene.html#a9b3f7cf33be6973ccd7647ddebff4da8" title="return whether to roll the credits or not " alt="" coords="221,1519,391,1545"/>
+<area shape="rect" id="node27" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="763,455,938,481"/>
+<area shape="rect" id="node28" href="$classscene2__SP2.html#a8979b2d27bd016bbbacfe13b350cc055" title="robot NPCs animation " alt="" coords="211,113,401,140"/>
+<area shape="rect" id="node29" href="$classNumPad.html#a9f705cb43de4fd79ebed968e1e67c315" title="Numpad interaction. " alt="" coords="217,252,395,279"/>
+<area shape="rect" id="node32" href="$classNumPad.html#ad464c4cfa4a962a060c2aef648047a67" title="Check whether player&#39;s position is inside interaction area and &#39;C&#39; button is pressed to open numpad o..." alt="" coords="471,151,697,177"/>
+<area shape="rect" id="node33" href="$classNumPad.html#a8576528643096bf66cf98847886e22b9" title="To check the player&#39;s input with the correct password. " alt="" coords="503,1585,665,1612"/>
+<area shape="rect" id="node34" href="$classBGMDriven.html#aabfe59db224a3faf27bc58833df35da8" title="A method functions dedicated to play a Lullaby as a background music " alt="" coords="486,1484,682,1511"/>
+<area shape="rect" id="node35" href="$classscene2__SP2.html#ad113ede4cb02198a21720f2d932aaefa" title="Reset whole scene2 to default. " alt="" coords="237,1316,375,1343"/>
+<area shape="rect" id="node39" href="$classscene2__SP2.html#a47ce46bc858508f689e7157969a11cdc" title="satellite animation " alt="" coords="201,1569,411,1596"/>
+<area shape="rect" id="node40" href="$classrot__civ.html#a3553e2c63769482b789b42f148d16f24" title="update the interaction logic " alt="" coords="253,480,359,507"/>
+<area shape="rect" id="node42" href="$classNumPad.html#a679075331806098ed06549e002c0cac2" title="updating the numpad interaction " alt="" coords="523,353,645,380"/>
+<area shape="rect" id="node43" href="$classNPC.html#a61399424a1ddeaa1f127a9480fcb95ca" title="update some variables at every frame " alt="" coords="258,556,354,583"/>
+<area shape="rect" id="node45" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="To be called every frame. Camera will get user inputs and update its position and orientation..." alt="" coords="245,835,367,861"/>
+<area shape="rect" id="node56" href="$classcreditScene.html#aa0f494c1d3648860e2544f991404c095" title="the method to update the logic of the credit scene " alt="" coords="220,1620,392,1647"/>
+<area shape="rect" id="node57" href="$classBGMDriven.html#a63403095fd55386147f777ca6c618df1" title="An update function to update the player&#39;s position, target and up. Be warn that if this function is b..." alt="" coords="209,1708,403,1735"/>
+<area shape="rect" id="node59" href="$classscene2__SP2.html#a5b4e109f6780971770ff3b74d120ad03" title="vault animation " alt="" coords="210,1215,402,1241"/>
+<area shape="rect" id="node3" href="$classNPC.html#a1e4f47ff8787d1a3094b6ef13e445b19" title="to get which line of dialogue the npc object should be currently displaying " alt="" coords="499,49,669,76"/>
+<area shape="rect" id="node4" href="$classNPC.html#a2b008f0dd95c65339baf466918789062" title="to check if player is within range to interact with this object " alt="" coords="525,100,643,127"/>
+<area shape="rect" id="node5" href="$classNPC.html#aa43e897253da76ea31e903407361cd92" title="bounds checking for interaction " alt="" coords="775,49,926,76"/>
+<area shape="rect" id="node8" href="$classCamera3.html#a4c484a400a9c2e64f3334fc62330368a" title="getting camera&#39;s position of x coordinate " alt="" coords="995,119,1179,145"/>
+<area shape="rect" id="node9" href="$classCamera3.html#aae412d5efa2bae38cc9d5f38fb289f3a" title="getting camera&#39;s position of z coordinate " alt="" coords="995,195,1179,221"/>
+<area shape="rect" id="node6" href="$classNPC.html#a306047126b65a7f67ad6331a632b8071" title="get this object&#39;s X coordinate " alt="" coords="1003,5,1171,32"/>
+<area shape="rect" id="node7" href="$classNPC.html#a4f760c4731c0beb5e9d6096e666414bf" title="get this object&#39;s y coordinate " alt="" coords="1003,56,1171,83"/>
+<area shape="rect" id="node14" href="$classcreditScene.html#a7b72cdfc51d8870ef4dd1f7dafbb51ba" title="a method function which will activate the credits which are the people&#39;s position and their names..." alt="" coords="495,1433,673,1460"/>
+<area shape="rect" id="node15" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="796,1037,905,1064"/>
+<area shape="rect" id="node17" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="773,936,928,963"/>
+<area shape="rect" id="node18" href="$classCamera3.html#a6f1aeea87c779705decd4204db9370c4" title="getting camera&#39;s rotation based on the x axis " alt="" coords="487,1063,681,1089"/>
+<area shape="rect" id="node19" href="$classCamera3.html#a99d7d55bafd4d073c828cbbf1d21ece6" title="getting camera&#39;s rotation based on the y axis " alt="" coords="485,1113,683,1140"/>
+<area shape="rect" id="node20" href="$classBGMDriven.html#adba6be682af223e347b708a1bb29d177" title="A method functions dedicated to just play Darth Vader theme as a background music ..." alt="" coords="492,1317,676,1358"/>
+<area shape="rect" id="node24" href="$classCamera3.html#ae5525123816e5022e6b3636e93040df7" title="Setting the coordinates of the camera&#39;s position. " alt="" coords="509,1383,659,1409"/>
+<area shape="rect" id="node25" href="$classCamera3.html#a946f39246e48f465b701e7a7fd77516a" title="a method to set the rotation / target of the camera " alt="" coords="510,1265,658,1292"/>
+<area shape="rect" id="node16" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="1027,885,1147,912"/>
+<area shape="rect" id="node21" href="$classirrklang_1_1ISoundEngine.html#a1084577f9f43cb12e86cea43c323b12c" title="Returns if a sound with the specified name is currently playing. " alt="" coords="775,1527,927,1569"/>
+<area shape="rect" id="node22" href="$classirrklang_1_1ISoundEngine.html#a25f612fe6479d3b22dc5bab2a2eaa927" title="loads a sound source (if not loaded already) from a file and plays it. " alt="" coords="775,1410,927,1451"/>
+<area shape="rect" id="node23" href="$classirrklang_1_1ISound.html#a108485fe64658441cecd70917782961f" title="Will stop the sound and free its resources. " alt="" coords="778,1476,923,1503"/>
+<area shape="rect" id="node30" href="$classNumPad.html#a5e056d35eee91dbab3ade47fc7d4f938" title="Check whether player&#39;s position is inside interaction area. " alt="" coords="781,201,921,228"/>
+<area shape="rect" id="node31" href="$classNumPad.html#a27fbbd8747f455d3f3f95c17feb098b2" title="&quot;Press &#39;C&#39; to interact&quot; will appear if player&#39;s position is inside interaction area ..." alt="" coords="503,201,665,228"/>
+<area shape="rect" id="node36" href="$classNumPad.html#a748faa3aea7b780ba4e13a49909bbe53" title="Reset all animations &amp; values to default. " alt="" coords="527,1636,641,1663"/>
+<area shape="rect" id="node37" href="$classcreditScene.html#a219d255a482631ef94b1164f2bddb643" title="a method that all the variables inside this class to it&#39;s default values " alt="" coords="520,1687,648,1713"/>
+<area shape="rect" id="node38" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Reset the camera settings " alt="" coords="526,1164,642,1191"/>
+<area shape="rect" id="node41" href="$classrot__civ.html#a2a5d74ff194dc7d120ade7f343aadf38" title="Prevention of the dialogue from running to fast if player is holding &#39;E&#39; " alt="" coords="499,455,669,481"/>
+<area shape="rect" id="node44" href="$classNPC.html#ab6bac3d151a9ff29bebab73604bfdadb" title="to reset all npc dialogue when scene resets " alt="" coords="541,556,627,583"/>
+<area shape="rect" id="node46" href="$classCamera3.html#a72d040ce3726a7d6439efa15734105a5" title="An improved camera movement based on first person " alt="" coords="492,860,676,887"/>
+<area shape="rect" id="node49" href="$structVector3.html#a200024a8442329de9a625ed58ffe7075" title="Return length of vector. " alt="" coords="793,683,908,709"/>
+<area shape="rect" id="node50" href="$structVector3.html#aaef4f25a38878a640ab4a48002a7eff8" title="Normalize this vector and return a reference to it. " alt="" coords="517,708,651,735"/>
+<area shape="rect" id="node51" href="$structVector3.html#a2da0f00c5529bced69763320dac9c414" title="Return a copy of this vector, normalized. " alt="" coords="514,759,654,785"/>
+<area shape="rect" id="node52" href="$classCamera3.html#a81897b566fc3a2142c40276eb7c6a57b" title="rotation of the camera based on the mouse movement " alt="" coords="504,961,664,988"/>
+<area shape="rect" id="node54" href="$classMtx44.html#ac0587ffb5ff9fd58ad5768d28fc06574" title="Set Matrix to a rotation matrix about arbitrary axis. " alt="" coords="510,809,658,836"/>
+<area shape="rect" id="node47" href="$classCamera3.html#a6bc11ea1b579be216761ff19709d14c2" title="boundary check with the player based on the X&#45;axis, cheaper to compute and determines where the playe..." alt="" coords="755,835,947,861"/>
+<area shape="rect" id="node48" href="$classCamera3.html#afcc4be9968845278c0ee38ce465dac4c" title="boundary check with the player based on the Z&#45;axis, cheaper to compute and determines where the playe..." alt="" coords="755,885,947,912"/>
+<area shape="rect" id="node53" href="$namespaceMath.html#af8dc69787ee8df1ea409e97f53fce3cb" title="Keeps a value between a min and max point. If it goes to low, it will become the min. If the value gets too high, it will become the max. " alt="" coords="803,987,899,1013"/>
+<area shape="rect" id="node55" href="$namespaceMath.html#ac91173ab2efdf7313fe7aaeb6cb44cf6" title="Math::FAbs" alt="" coords="805,784,896,811"/>
+<area shape="rect" id="node58" href="$classirrklang_1_1ISoundEngine.html#af3e6223435969159ef3b22d0c83d2b84" title="Sets the current listener 3d position. " alt="" coords="508,1738,660,1779"/>
+<area shape="rect" id="node60" href="$classBGMDriven.html#a0ac0c2672f995d3dd0219761a5a317ac" title="A method functions dedicated to just play John Cena theme as a background music " alt="" coords="461,1535,707,1561"/>
+</map>

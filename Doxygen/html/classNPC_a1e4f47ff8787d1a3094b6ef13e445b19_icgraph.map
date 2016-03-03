@@ -1,0 +1,5 @@
+<map id="NPC::get_LineOfDialogue" name="NPC::get_LineOfDialogue">
+<area shape="rect" id="node2" href="$classscene2__SP2.html#a0e589f588d92247371ee86443306080f" title="boxes animation " alt="" coords="223,5,421,32"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#a8979b2d27bd016bbbacfe13b350cc055" title="robot NPCs animation " alt="" coords="227,56,417,83"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="469,31,615,57"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="NPC::update" name="NPC::update">
+<area shape="rect" id="node2" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="149,5,324,32"/>
+<area shape="rect" id="node3" href="$classNPC.html#ab6bac3d151a9ff29bebab73604bfdadb" title="to reset all npc dialogue when scene resets " alt="" coords="193,56,280,83"/>
+</map>

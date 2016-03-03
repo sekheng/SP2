@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classStationScene" kind="class" language="C++" prot="public">
+    <compoundname>StationScene</compoundname>
+    <basecompoundref refid="classGameObject" prot="public" virt="non-virtual">GameObject</basecompoundref>
+    <includes refid="StationScene_8h" local="no">StationScene.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref> *</type>
+        <definition>Camera3* StationScene::cam_pointer</definition>
+        <argsstring></argsstring>
+        <name>cam_pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="49" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classStationScene_1a5d9954175cb6ace1783288a5b45b3a5e" compoundref="StationScene_8cpp" startline="46" endline="65">getCard1</referencedby>
+        <referencedby refid="classStationScene_1a9e3c70658905799c1dc1263abcf18e15" compoundref="StationScene_8cpp" startline="77" endline="96">getCard2</referencedby>
+        <referencedby refid="classStationScene_1a3b2c4c0555486a11bb745aa4f76790b3" compoundref="StationScene_8cpp" startline="108" endline="122">getCardText</referencedby>
+        <referencedby refid="classStationScene_1abfd4f868d1d49193791571478563e04a" compoundref="StationScene_8cpp" startline="136" endline="166">getQuestStage</referencedby>
+        <referencedby refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" compoundref="StationScene_8cpp" startline="23" endline="34">Init</referencedby>
+        <referencedby refid="classStationScene_1a10a5019a5c8c1bbd67ee719de9d4c9fd" compoundref="StationScene_8cpp" startline="177" endline="200">openSasame</referencedby>
+        <referencedby refid="classStationScene_1a60b6e3d38657e195f342c48d3d9896da" compoundref="StationScene_8cpp" startline="211" endline="224">roomLight</referencedby>
+        <referencedby refid="classStationScene_1aeefe8a6667f8d20e42a9c1d54b0a263a" compoundref="StationScene_8cpp" startline="236" endline="250">switchText</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStationScene_1a7b0d08d448d3e51f68bb5ffdef83e24d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float StationScene::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="50" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" compoundref="StationScene_8cpp" startline="23" endline="34">Init</referencedby>
+        <referencedby refid="classStationScene_1a60b6e3d38657e195f342c48d3d9896da" compoundref="StationScene_8cpp" startline="211" endline="224">roomLight</referencedby>
+        <referencedby refid="classStationScene_1aac65b0bd488fcd664f765405a79f3b1b" compoundref="StationScene_8cpp" startline="260" endline="263">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStationScene_1a42fc0b791e5b82b2906a30ed01ddb2d2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StationScene::questActive</definition>
+        <argsstring></argsstring>
+        <name>questActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="51" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classStationScene_1a5d9954175cb6ace1783288a5b45b3a5e" compoundref="StationScene_8cpp" startline="46" endline="65">getCard1</referencedby>
+        <referencedby refid="classStationScene_1a9e3c70658905799c1dc1263abcf18e15" compoundref="StationScene_8cpp" startline="77" endline="96">getCard2</referencedby>
+        <referencedby refid="classStationScene_1a3b2c4c0555486a11bb745aa4f76790b3" compoundref="StationScene_8cpp" startline="108" endline="122">getCardText</referencedby>
+        <referencedby refid="classStationScene_1abfd4f868d1d49193791571478563e04a" compoundref="StationScene_8cpp" startline="136" endline="166">getQuestStage</referencedby>
+        <referencedby refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" compoundref="StationScene_8cpp" startline="23" endline="34">Init</referencedby>
+        <referencedby refid="classStationScene_1a6d57f2de3ab2d1c9eb83b9b714342366" compoundref="StationScene_8cpp" startline="271" endline="279">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStationScene_1ac781e651d7aea57391e3964d69003b44" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StationScene::questComplete</definition>
+        <argsstring></argsstring>
+        <name>questComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="52" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classStationScene_1abfd4f868d1d49193791571478563e04a" compoundref="StationScene_8cpp" startline="136" endline="166">getQuestStage</referencedby>
+        <referencedby refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" compoundref="StationScene_8cpp" startline="23" endline="34">Init</referencedby>
+        <referencedby refid="classStationScene_1a10a5019a5c8c1bbd67ee719de9d4c9fd" compoundref="StationScene_8cpp" startline="177" endline="200">openSasame</referencedby>
+        <referencedby refid="classStationScene_1a6d57f2de3ab2d1c9eb83b9b714342366" compoundref="StationScene_8cpp" startline="271" endline="279">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStationScene_1a4e6c9cee4f0dab9933a25122a689b3fa" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StationScene::card1</definition>
+        <argsstring></argsstring>
+        <name>card1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="53" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classStationScene_1a5d9954175cb6ace1783288a5b45b3a5e" compoundref="StationScene_8cpp" startline="46" endline="65">getCard1</referencedby>
+        <referencedby refid="classStationScene_1a3b2c4c0555486a11bb745aa4f76790b3" compoundref="StationScene_8cpp" startline="108" endline="122">getCardText</referencedby>
+        <referencedby refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" compoundref="StationScene_8cpp" startline="23" endline="34">Init</referencedby>
+        <referencedby refid="classStationScene_1a10a5019a5c8c1bbd67ee719de9d4c9fd" compoundref="StationScene_8cpp" startline="177" endline="200">openSasame</referencedby>
+        <referencedby refid="classStationScene_1a6d57f2de3ab2d1c9eb83b9b714342366" compoundref="StationScene_8cpp" startline="271" endline="279">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStationScene_1a8e7764386a9e1c4c5d16dcf4d6c5a56d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StationScene::card2</definition>
+        <argsstring></argsstring>
+        <name>card2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="54" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classStationScene_1a9e3c70658905799c1dc1263abcf18e15" compoundref="StationScene_8cpp" startline="77" endline="96">getCard2</referencedby>
+        <referencedby refid="classStationScene_1a3b2c4c0555486a11bb745aa4f76790b3" compoundref="StationScene_8cpp" startline="108" endline="122">getCardText</referencedby>
+        <referencedby refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" compoundref="StationScene_8cpp" startline="23" endline="34">Init</referencedby>
+        <referencedby refid="classStationScene_1a10a5019a5c8c1bbd67ee719de9d4c9fd" compoundref="StationScene_8cpp" startline="177" endline="200">openSasame</referencedby>
+        <referencedby refid="classStationScene_1a6d57f2de3ab2d1c9eb83b9b714342366" compoundref="StationScene_8cpp" startline="271" endline="279">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStationScene_1a8ac1c1e089cdb0d258497390f3f00708" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short StationScene::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="55" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classStationScene_1a5d9954175cb6ace1783288a5b45b3a5e" compoundref="StationScene_8cpp" startline="46" endline="65">getCard1</referencedby>
+        <referencedby refid="classStationScene_1a9e3c70658905799c1dc1263abcf18e15" compoundref="StationScene_8cpp" startline="77" endline="96">getCard2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStationScene_1a13d0788d812f8c0b0959bc8e45f2b6ea" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StationScene::doorOpened</definition>
+        <argsstring></argsstring>
+        <name>doorOpened</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="56" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" compoundref="StationScene_8cpp" startline="23" endline="34">Init</referencedby>
+        <referencedby refid="classStationScene_1a10a5019a5c8c1bbd67ee719de9d4c9fd" compoundref="StationScene_8cpp" startline="177" endline="200">openSasame</referencedby>
+        <referencedby refid="classStationScene_1a6d57f2de3ab2d1c9eb83b9b714342366" compoundref="StationScene_8cpp" startline="271" endline="279">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStationScene_1a1ab8e546dfc385988b8ee360edcab490" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StationScene::switchLightOn</definition>
+        <argsstring></argsstring>
+        <name>switchLightOn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="57" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" compoundref="StationScene_8cpp" startline="23" endline="34">Init</referencedby>
+        <referencedby refid="classStationScene_1a6d57f2de3ab2d1c9eb83b9b714342366" compoundref="StationScene_8cpp" startline="271" endline="279">reset</referencedby>
+        <referencedby refid="classStationScene_1a60b6e3d38657e195f342c48d3d9896da" compoundref="StationScene_8cpp" startline="211" endline="224">roomLight</referencedby>
+        <referencedby refid="classStationScene_1aeefe8a6667f8d20e42a9c1d54b0a263a" compoundref="StationScene_8cpp" startline="236" endline="250">switchText</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classStationScene_1a3c909eba66ba85cd9d4560b4ff807890" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float StationScene::delay</definition>
+        <argsstring></argsstring>
+        <name>delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="58" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" compoundref="StationScene_8cpp" startline="23" endline="34">Init</referencedby>
+        <referencedby refid="classStationScene_1a60b6e3d38657e195f342c48d3d9896da" compoundref="StationScene_8cpp" startline="211" endline="224">roomLight</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classStationScene_1a414c8e84f7e7b3f8089f1bcdd8d3fd04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StationScene::StationScene</definition>
+        <argsstring>()</argsstring>
+        <name>StationScene</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a default constructor, with all variables becoming default value </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="33" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1aa9cf0c421942fea6c2ef8cd8ffe5c799" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StationScene::~StationScene</definition>
+        <argsstring>()</argsstring>
+        <name>~StationScene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="34" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StationScene::Init</definition>
+        <argsstring>(Camera3 &amp;camera_address)</argsstring>
+        <name>Init</name>
+        <param>
+          <type><ref refid="classCamera3" kindref="compound">Camera3</ref> &amp;</type>
+          <declname>camera_address</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>init the variable that are needed </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="36" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="23" bodyend="34"/>
+        <references refid="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" compoundref="StationScene_8h" startline="49">cam_pointer</references>
+        <references refid="classStationScene_1a4e6c9cee4f0dab9933a25122a689b3fa" compoundref="StationScene_8h" startline="53">card1</references>
+        <references refid="classStationScene_1a8e7764386a9e1c4c5d16dcf4d6c5a56d" compoundref="StationScene_8h" startline="54">card2</references>
+        <references refid="classStationScene_1a3c909eba66ba85cd9d4560b4ff807890" compoundref="StationScene_8h" startline="58">delay</references>
+        <references refid="classStationScene_1a13d0788d812f8c0b0959bc8e45f2b6ea" compoundref="StationScene_8h" startline="56">doorOpened</references>
+        <references refid="classStationScene_1a42fc0b791e5b82b2906a30ed01ddb2d2" compoundref="StationScene_8h" startline="51">questActive</references>
+        <references refid="classStationScene_1ac781e651d7aea57391e3964d69003b44" compoundref="StationScene_8h" startline="52">questComplete</references>
+        <references refid="classStationScene_1a1ab8e546dfc385988b8ee360edcab490" compoundref="StationScene_8h" startline="57">switchLightOn</references>
+        <references refid="classStationScene_1a7b0d08d448d3e51f68bb5ffdef83e24d" compoundref="StationScene_8h" startline="50">time</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1aac65b0bd488fcd664f765405a79f3b1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StationScene::update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>update</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>updating the time </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- frame time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="37" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="260" bodyend="263"/>
+        <references refid="classStationScene_1a7b0d08d448d3e51f68bb5ffdef83e24d" compoundref="StationScene_8h" startline="50">time</references>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1abfd4f868d1d49193791571478563e04a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short StationScene::getQuestStage</definition>
+        <argsstring>()</argsstring>
+        <name>getQuestStage</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to check to check whether what stage his in to open door </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- 1 to tell player press E to open the door</para></simplesect>
+<simplesect kind="return"><para>- 2 to tell player that 2 keycard is needed to open</para></simplesect>
+<simplesect kind="return"><para>- 3 to spawn the card into the world </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="38" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="136" bodyend="166"/>
+        <references refid="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" compoundref="StationScene_8h" startline="49">cam_pointer</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="25">Camera::position</references>
+        <references refid="classStationScene_1a42fc0b791e5b82b2906a30ed01ddb2d2" compoundref="StationScene_8h" startline="51">questActive</references>
+        <references refid="classStationScene_1ac781e651d7aea57391e3964d69003b44" compoundref="StationScene_8h" startline="52">questComplete</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1a5d9954175cb6ace1783288a5b45b3a5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short StationScene::getCard1</definition>
+        <argsstring>()</argsstring>
+        <name>getCard1</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>enable to collect card if is within the boundary </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- 1 when is taken</para></simplesect>
+<simplesect kind="return"><para>- 0 if is not taken </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="39" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="46" bodyend="65"/>
+        <references refid="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" compoundref="StationScene_8h" startline="49">cam_pointer</references>
+        <references refid="classStationScene_1a4e6c9cee4f0dab9933a25122a689b3fa" compoundref="StationScene_8h" startline="53">card1</references>
+        <references refid="classStationScene_1a8ac1c1e089cdb0d258497390f3f00708" compoundref="StationScene_8h" startline="55">count</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="25">Camera::position</references>
+        <references refid="classStationScene_1a42fc0b791e5b82b2906a30ed01ddb2d2" compoundref="StationScene_8h" startline="51">questActive</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1a9e3c70658905799c1dc1263abcf18e15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short StationScene::getCard2</definition>
+        <argsstring>()</argsstring>
+        <name>getCard2</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>enable to collect card if is within the boundary </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- 1 when is taken</para></simplesect>
+<simplesect kind="return"><para>- 0 if is not taken </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="40" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="77" bodyend="96"/>
+        <references refid="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" compoundref="StationScene_8h" startline="49">cam_pointer</references>
+        <references refid="classStationScene_1a8e7764386a9e1c4c5d16dcf4d6c5a56d" compoundref="StationScene_8h" startline="54">card2</references>
+        <references refid="classStationScene_1a8ac1c1e089cdb0d258497390f3f00708" compoundref="StationScene_8h" startline="55">count</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="25">Camera::position</references>
+        <references refid="classStationScene_1a42fc0b791e5b82b2906a30ed01ddb2d2" compoundref="StationScene_8h" startline="51">questActive</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1a3b2c4c0555486a11bb745aa4f76790b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool StationScene::getCardText</definition>
+        <argsstring>()</argsstring>
+        <name>getCardText</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>show text only with the interacting boundary </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- true if the player is inside it&apos;s interacting boundary</para></simplesect>
+<simplesect kind="return"><para>- false if the player is outside it&apos;s interacting boundary </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="41" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="108" bodyend="122"/>
+        <references refid="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" compoundref="StationScene_8h" startline="49">cam_pointer</references>
+        <references refid="classStationScene_1a4e6c9cee4f0dab9933a25122a689b3fa" compoundref="StationScene_8h" startline="53">card1</references>
+        <references refid="classStationScene_1a8e7764386a9e1c4c5d16dcf4d6c5a56d" compoundref="StationScene_8h" startline="54">card2</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="25">Camera::position</references>
+        <references refid="classStationScene_1a42fc0b791e5b82b2906a30ed01ddb2d2" compoundref="StationScene_8h" startline="51">questActive</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1a10a5019a5c8c1bbd67ee719de9d4c9fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short StationScene::openSasame</definition>
+        <argsstring>()</argsstring>
+        <name>openSasame</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to check whether the player taken 2 card and if 2 card is taken door can now be open after you press E </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- 1 if the player has not open the door</para></simplesect>
+<simplesect kind="return"><para>- 2 if the player has open the door </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="42" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="177" bodyend="200"/>
+        <references refid="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" compoundref="StationScene_8h" startline="49">cam_pointer</references>
+        <references refid="classStationScene_1a4e6c9cee4f0dab9933a25122a689b3fa" compoundref="StationScene_8h" startline="53">card1</references>
+        <references refid="classStationScene_1a8e7764386a9e1c4c5d16dcf4d6c5a56d" compoundref="StationScene_8h" startline="54">card2</references>
+        <references refid="classStationScene_1a13d0788d812f8c0b0959bc8e45f2b6ea" compoundref="StationScene_8h" startline="56">doorOpened</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="25">Camera::position</references>
+        <references refid="classStationScene_1ac781e651d7aea57391e3964d69003b44" compoundref="StationScene_8h" startline="52">questComplete</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1a60b6e3d38657e195f342c48d3d9896da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool StationScene::roomLight</definition>
+        <argsstring>()</argsstring>
+        <name>roomLight</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to check whether the player in within it&apos;s interacting boundary to toggle the light </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- true if the player is inside it&apos;s interacting boundary and whether E is press switch ON the light</para></simplesect>
+<simplesect kind="return"><para>- false if the player is inside it&apos;s interacting boundary and whether E is press switch off the light </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="43" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="211" bodyend="224"/>
+        <references refid="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" compoundref="StationScene_8h" startline="49">cam_pointer</references>
+        <references refid="classStationScene_1a3c909eba66ba85cd9d4560b4ff807890" compoundref="StationScene_8h" startline="58">delay</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="25">Camera::position</references>
+        <references refid="classStationScene_1a1ab8e546dfc385988b8ee360edcab490" compoundref="StationScene_8h" startline="57">switchLightOn</references>
+        <references refid="classStationScene_1a7b0d08d448d3e51f68bb5ffdef83e24d" compoundref="StationScene_8h" startline="50">time</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1aeefe8a6667f8d20e42a9c1d54b0a263a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool StationScene::switchText</definition>
+        <argsstring>()</argsstring>
+        <name>switchText</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>show text only with the interacting boundary </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- true if the player is inside it&apos;s interacting boundary</para></simplesect>
+<simplesect kind="return"><para>- false if the player is outside it&apos;s interacting boundary </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="44" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="236" bodyend="250"/>
+        <references refid="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" compoundref="StationScene_8h" startline="49">cam_pointer</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="25">Camera::position</references>
+        <references refid="classStationScene_1a1ab8e546dfc385988b8ee360edcab490" compoundref="StationScene_8h" startline="57">switchLightOn</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classStationScene_1a6d57f2de3ab2d1c9eb83b9b714342366" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StationScene::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>reset the entire room interaction </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/StationScene.h" line="45" column="1" bodyfile="MyGraphics/Source/StationScene.cpp" bodystart="271" bodyend="279"/>
+        <references refid="classStationScene_1a4e6c9cee4f0dab9933a25122a689b3fa" compoundref="StationScene_8h" startline="53">card1</references>
+        <references refid="classStationScene_1a8e7764386a9e1c4c5d16dcf4d6c5a56d" compoundref="StationScene_8h" startline="54">card2</references>
+        <references refid="classStationScene_1a13d0788d812f8c0b0959bc8e45f2b6ea" compoundref="StationScene_8h" startline="56">doorOpened</references>
+        <references refid="classStationScene_1a42fc0b791e5b82b2906a30ed01ddb2d2" compoundref="StationScene_8h" startline="51">questActive</references>
+        <references refid="classStationScene_1ac781e651d7aea57391e3964d69003b44" compoundref="StationScene_8h" startline="52">questComplete</references>
+        <references refid="classStationScene_1a1ab8e546dfc385988b8ee360edcab490" compoundref="StationScene_8h" startline="57">switchLightOn</references>
+        <referencedby refid="classsceneSP2_1ad70fc6c47c485a14285257c1414729d1" compoundref="sceneSP2_8cpp" startline="694" endline="718">sceneSP2::reset</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>Inheirited from <ref refid="classGameObject" kindref="compound">GameObject</ref> It will have the collisiont check and position. And it&apos;s own dialogues and interactions boundary </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>SEETOO WEI JIE VICTOR </para></simplesect>
+<simplesect kind="par"><title>email: 150452J.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1000">
+        <label>StationScene</label>
+        <link refid="classStationScene"/>
+        <childnode refid="1001" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1001">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1011">
+        <label>vector&lt; objectsForDisplay &gt;</label>
+      </node>
+      <node id="1007">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="1008" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="1005">
+        <label>string</label>
+      </node>
+      <node id="1009">
+        <label>float</label>
+      </node>
+      <node id="1006">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="1007" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1009" relation="usage">
+          <edgelabel>cameraSpeed</edgelabel>
+          <edgelabel>cursorCoordX</edgelabel>
+          <edgelabel>boundaryX</edgelabel>
+          <edgelabel>cursorCoordY</edgelabel>
+          <edgelabel>defaultCameraYrotation</edgelabel>
+          <edgelabel>boundaryZ</edgelabel>
+          <edgelabel>minCameraXrotation</edgelabel>
+          <edgelabel>CameraYrotation</edgelabel>
+          <edgelabel>crossHairRadius</edgelabel>
+          <edgelabel>maxCameraXrotation</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="1010" relation="usage">
+          <edgelabel>camType</edgelabel>
+        </childnode>
+        <childnode refid="1008" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+          <edgelabel>invisibleCrossHair</edgelabel>
+        </childnode>
+        <childnode refid="1011" relation="usage">
+          <edgelabel>storage_of_objects</edgelabel>
+        </childnode>
+      </node>
+      <node id="1004">
+        <label>int</label>
+      </node>
+      <node id="1012">
+        <label>short</label>
+      </node>
+      <node id="1010">
+        <label>CameraType</label>
+      </node>
+      <node id="1002">
+        <label>StationScene</label>
+        <link refid="classStationScene"/>
+        <childnode refid="1003" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1006" relation="usage">
+          <edgelabel>cam_pointer</edgelabel>
+        </childnode>
+        <childnode refid="1012" relation="usage">
+          <edgelabel>count</edgelabel>
+        </childnode>
+        <childnode refid="1009" relation="usage">
+          <edgelabel>delay</edgelabel>
+          <edgelabel>time</edgelabel>
+        </childnode>
+        <childnode refid="1013" relation="usage">
+          <edgelabel>questActive</edgelabel>
+          <edgelabel>switchLightOn</edgelabel>
+          <edgelabel>questComplete</edgelabel>
+          <edgelabel>doorOpened</edgelabel>
+          <edgelabel>card1</edgelabel>
+          <edgelabel>card2</edgelabel>
+        </childnode>
+      </node>
+      <node id="1003">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="1004" relation="usage">
+          <edgelabel>count_</edgelabel>
+        </childnode>
+        <childnode refid="1005" relation="usage">
+          <edgelabel>Name_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1013">
+        <label>bool</label>
+      </node>
+      <node id="1008">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1009" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/StationScene.h" line="31" column="1" bodyfile="MyGraphics/Source/StationScene.h" bodystart="30" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classStationScene_1a06a10edf13bede1e5b161da4aca0232e" prot="private" virt="non-virtual"><scope>StationScene</scope><name>cam_pointer</name></member>
+      <member refid="classStationScene_1a4e6c9cee4f0dab9933a25122a689b3fa" prot="private" virt="non-virtual"><scope>StationScene</scope><name>card1</name></member>
+      <member refid="classStationScene_1a8e7764386a9e1c4c5d16dcf4d6c5a56d" prot="private" virt="non-virtual"><scope>StationScene</scope><name>card2</name></member>
+      <member refid="classStationScene_1a8ac1c1e089cdb0d258497390f3f00708" prot="private" virt="non-virtual"><scope>StationScene</scope><name>count</name></member>
+      <member refid="classStationScene_1a3c909eba66ba85cd9d4560b4ff807890" prot="private" virt="non-virtual"><scope>StationScene</scope><name>delay</name></member>
+      <member refid="classStationScene_1a13d0788d812f8c0b0959bc8e45f2b6ea" prot="private" virt="non-virtual"><scope>StationScene</scope><name>doorOpened</name></member>
+      <member refid="classGameObject_1ad06b99a731d8d50e06ee92708b78b4db" prot="protected" virt="non-virtual"><scope>StationScene</scope><name>GameObject</name></member>
+      <member refid="classStationScene_1a5d9954175cb6ace1783288a5b45b3a5e" prot="public" virt="non-virtual"><scope>StationScene</scope><name>getCard1</name></member>
+      <member refid="classStationScene_1a9e3c70658905799c1dc1263abcf18e15" prot="public" virt="non-virtual"><scope>StationScene</scope><name>getCard2</name></member>
+      <member refid="classStationScene_1a3b2c4c0555486a11bb745aa4f76790b3" prot="public" virt="non-virtual"><scope>StationScene</scope><name>getCardText</name></member>
+      <member refid="classGameObject_1a00da4ea36f3945e1da1a2f81061b57d3" prot="public" virt="non-virtual"><scope>StationScene</scope><name>getCount</name></member>
+      <member refid="classGameObject_1ab7c8021dd4caa10448c87396db933e94" prot="public" virt="non-virtual"><scope>StationScene</scope><name>getName</name></member>
+      <member refid="classStationScene_1abfd4f868d1d49193791571478563e04a" prot="public" virt="non-virtual"><scope>StationScene</scope><name>getQuestStage</name></member>
+      <member refid="classStationScene_1ac98958f70b4844f98978b1f43b33fea7" prot="public" virt="non-virtual"><scope>StationScene</scope><name>Init</name></member>
+      <member refid="classGameObject_1a125061a56ff346096387b9d3674d69ca" prot="protected" virt="non-virtual"><scope>StationScene</scope><name>Name_</name></member>
+      <member refid="classStationScene_1a10a5019a5c8c1bbd67ee719de9d4c9fd" prot="public" virt="non-virtual"><scope>StationScene</scope><name>openSasame</name></member>
+      <member refid="classStationScene_1a42fc0b791e5b82b2906a30ed01ddb2d2" prot="private" virt="non-virtual"><scope>StationScene</scope><name>questActive</name></member>
+      <member refid="classStationScene_1ac781e651d7aea57391e3964d69003b44" prot="private" virt="non-virtual"><scope>StationScene</scope><name>questComplete</name></member>
+      <member refid="classStationScene_1a6d57f2de3ab2d1c9eb83b9b714342366" prot="public" virt="non-virtual"><scope>StationScene</scope><name>reset</name></member>
+      <member refid="classStationScene_1a60b6e3d38657e195f342c48d3d9896da" prot="public" virt="non-virtual"><scope>StationScene</scope><name>roomLight</name></member>
+      <member refid="classStationScene_1a414c8e84f7e7b3f8089f1bcdd8d3fd04" prot="public" virt="non-virtual"><scope>StationScene</scope><name>StationScene</name></member>
+      <member refid="classStationScene_1a1ab8e546dfc385988b8ee360edcab490" prot="private" virt="non-virtual"><scope>StationScene</scope><name>switchLightOn</name></member>
+      <member refid="classStationScene_1aeefe8a6667f8d20e42a9c1d54b0a263a" prot="public" virt="non-virtual"><scope>StationScene</scope><name>switchText</name></member>
+      <member refid="classStationScene_1a7b0d08d448d3e51f68bb5ffdef83e24d" prot="private" virt="non-virtual"><scope>StationScene</scope><name>time</name></member>
+      <member refid="classStationScene_1aac65b0bd488fcd664f765405a79f3b1b" prot="public" virt="non-virtual"><scope>StationScene</scope><name>update</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>StationScene</scope><name>~GameObject</name></member>
+      <member refid="classStationScene_1aa9cf0c421942fea6c2ef8cd8ffe5c799" prot="public" virt="non-virtual"><scope>StationScene</scope><name>~StationScene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

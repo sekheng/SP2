@@ -1,0 +1,7 @@
+<map id="Math::RandIntMinMax" name="Math::RandIntMinMax">
+<area shape="rect" id="node2" href="$classminigame.html#abdc34c5361b6af3a81ffb7305f1eee68" title="initialised and randomises values for all the pieces&#39; rotation and initialise other variables ..." alt="" coords="230,31,333,57"/>
+<area shape="rect" id="node6" href="$classLoadingScreen.html#a9325ad1fb08d5103eceefefe7cb1d316" title="where the rendering of all the stuff we needed will be here " alt="" coords="203,81,360,108"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="414,5,521,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#ad70fc6c47c485a14285257c1414729d1" title="reset the entire scene 1 /* " alt="" coords="408,56,527,83"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="575,56,705,83"/>
+</map>

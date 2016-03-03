@@ -1,0 +1,13 @@
+<map id="Vector3::Normalized" name="Vector3::Normalized">
+<area shape="rect" id="node2" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Initialize camera. " alt="" coords="205,132,304,159"/>
+<area shape="rect" id="node8" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="To be called every frame. Camera will get user inputs and update its position and orientation..." alt="" coords="193,309,316,336"/>
+<area shape="rect" id="node3" href="$classLoadingScreen.html#a7fa77cff0af874a23c6043a80af09da3" title="initializing whatever is needed for the scene " alt="" coords="376,5,509,32"/>
+<area shape="rect" id="node4" href="$classscene3SP2.html#a897c1f1d70c68b89f07b25acf4df6809" title="initializing whatever is needed for the scene " alt="" coords="385,56,500,83"/>
+<area shape="rect" id="node5" href="$classscene3__SP2.html#ae4a4e666fc5860fee4d9e091f1571c18" title="initializing whatever is needed for the scene " alt="" coords="382,107,503,133"/>
+<area shape="rect" id="node6" href="$classscene2__SP2.html#a6d5705b83a23421a1f5aa0fec8c28329" title="initializing whatever is needed for the scene " alt="" coords="382,157,503,184"/>
+<area shape="rect" id="node7" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="389,208,496,235"/>
+<area shape="rect" id="node9" href="$classLoadingScreen.html#aadba6b28a70c39e25c9892f93dbff465" title="where the logic of the game is, and update " alt="" coords="364,259,521,285"/>
+<area shape="rect" id="node10" href="$classscene3SP2.html#ac3a634c845cb61d9bbc8b519fa67c43c" title="where the logic of the game is, and update " alt="" coords="373,309,512,336"/>
+<area shape="rect" id="node11" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="370,360,515,387"/>
+<area shape="rect" id="node12" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="377,411,508,437"/>
+</map>

@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Material_8h" kind="file" language="C++">
+    <compoundname>Material.h</compoundname>
+    <includedby refid="MaterialBuilder_8h" local="yes">MyGraphics/Source/MaterialBuilder.h</includedby>
+    <includedby refid="scene2__SP2_8cpp" local="yes">MyGraphics/Source/scene2_SP2.cpp</includedby>
+    <includedby refid="scene3__SP2_8cpp" local="yes">MyGraphics/Source/scene3_SP2.cpp</includedby>
+    <includedby refid="Scene3SP2_8cpp" local="yes">MyGraphics/Source/Scene3SP2.cpp</includedby>
+    <includedby refid="sceneSP2_8cpp" local="yes">MyGraphics/Source/sceneSP2.cpp</includedby>
+    <invincdepgraph>
+      <node id="5046">
+        <label>MyGraphics/Source/MeshBuilder.h</label>
+        <link refid="MeshBuilder_8h"/>
+        <childnode refid="5045" relation="include">
+        </childnode>
+        <childnode refid="5047" relation="include">
+        </childnode>
+        <childnode refid="5036" relation="include">
+        </childnode>
+        <childnode refid="5037" relation="include">
+        </childnode>
+        <childnode refid="5038" relation="include">
+        </childnode>
+        <childnode refid="5039" relation="include">
+        </childnode>
+      </node>
+      <node id="5037">
+        <label>MyGraphics/Source/scene3_SP2.cpp</label>
+        <link refid="scene3__SP2_8cpp"/>
+      </node>
+      <node id="5050">
+        <label>MyGraphics/Source/MaterialBuilder.cpp</label>
+        <link refid="MaterialBuilder_8cpp"/>
+      </node>
+      <node id="5044">
+        <label>MyGraphics/Source/LoadingScreen.h</label>
+        <link refid="LoadingScreen_8h"/>
+        <childnode refid="5027" relation="include">
+        </childnode>
+        <childnode refid="5045" relation="include">
+        </childnode>
+      </node>
+      <node id="5038">
+        <label>MyGraphics/Source/Scene3SP2.cpp</label>
+        <link refid="Scene3SP2_8cpp"/>
+      </node>
+      <node id="5028">
+        <label>MyGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="5025">
+        <label>MyGraphics/Source/scene2_SP2.h</label>
+        <link refid="scene2__SP2_8h"/>
+        <childnode refid="5026" relation="include">
+        </childnode>
+      </node>
+      <node id="5032">
+        <label>MyGraphics/Source/NumPad.cpp</label>
+        <link refid="NumPad_8cpp"/>
+      </node>
+      <node id="5035">
+        <label>MyGraphics/Source/scene2_minigame.cpp</label>
+        <link refid="scene2__minigame_8cpp"/>
+      </node>
+      <node id="5029">
+        <label>MyGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="5030">
+        <label>MyGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5036">
+        <label>MyGraphics/Source/scene2_SP2.cpp</label>
+        <link refid="scene2__SP2_8cpp"/>
+      </node>
+      <node id="5042">
+        <label>MyGraphics/Source/sceneSP2.h</label>
+        <link refid="sceneSP2_8h"/>
+        <childnode refid="5026" relation="include">
+        </childnode>
+      </node>
+      <node id="5045">
+        <label>MyGraphics/Source/LoadingScreen.cpp</label>
+        <link refid="LoadingScreen_8cpp"/>
+      </node>
+      <node id="5047">
+        <label>MyGraphics/Source/MeshBuilder.cpp</label>
+        <link refid="MeshBuilder_8cpp"/>
+      </node>
+      <node id="5033">
+        <label>MyGraphics/Source/Quest.cpp</label>
+        <link refid="Quest_8cpp"/>
+      </node>
+      <node id="5040">
+        <label>MyGraphics/Source/SekHeng.cpp</label>
+        <link refid="SekHeng_8cpp"/>
+      </node>
+      <node id="5043">
+        <label>MyGraphics/Source/scene3_SP2.h</label>
+        <link refid="scene3__SP2_8h"/>
+        <childnode refid="5026" relation="include">
+        </childnode>
+      </node>
+      <node id="5048">
+        <label>MyGraphics/Source/Mesh.cpp</label>
+        <link refid="Mesh_8cpp"/>
+      </node>
+      <node id="5023">
+        <label>MyGraphics/Source/MaterialBuilder.h</label>
+        <link refid="MaterialBuilder_8h"/>
+        <childnode refid="5024" relation="include">
+        </childnode>
+        <childnode refid="5045" relation="include">
+        </childnode>
+        <childnode refid="5050" relation="include">
+        </childnode>
+        <childnode refid="5036" relation="include">
+        </childnode>
+        <childnode refid="5037" relation="include">
+        </childnode>
+        <childnode refid="5038" relation="include">
+        </childnode>
+        <childnode refid="5039" relation="include">
+        </childnode>
+      </node>
+      <node id="5034">
+        <label>MyGraphics/Source/rot_civ.cpp</label>
+        <link refid="rot__civ_8cpp"/>
+      </node>
+      <node id="5024">
+        <label>MyGraphics/Source/Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="5025" relation="include">
+        </childnode>
+        <childnode refid="5042" relation="include">
+        </childnode>
+        <childnode refid="5043" relation="include">
+        </childnode>
+        <childnode refid="5044" relation="include">
+        </childnode>
+        <childnode refid="5046" relation="include">
+        </childnode>
+        <childnode refid="5048" relation="include">
+        </childnode>
+        <childnode refid="5049" relation="include">
+        </childnode>
+      </node>
+      <node id="5039">
+        <label>MyGraphics/Source/sceneSP2.cpp</label>
+        <link refid="sceneSP2_8cpp"/>
+      </node>
+      <node id="5022">
+        <label>MyGraphics/Source/Material.h</label>
+        <link refid="Material.h"/>
+        <childnode refid="5023" relation="include">
+        </childnode>
+        <childnode refid="5036" relation="include">
+        </childnode>
+        <childnode refid="5037" relation="include">
+        </childnode>
+        <childnode refid="5038" relation="include">
+        </childnode>
+        <childnode refid="5039" relation="include">
+        </childnode>
+      </node>
+      <node id="5027">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5026">
+        <label>MyGraphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="5027" relation="include">
+        </childnode>
+        <childnode refid="5028" relation="include">
+        </childnode>
+        <childnode refid="5029" relation="include">
+        </childnode>
+        <childnode refid="5030" relation="include">
+        </childnode>
+        <childnode refid="5031" relation="include">
+        </childnode>
+        <childnode refid="5032" relation="include">
+        </childnode>
+        <childnode refid="5033" relation="include">
+        </childnode>
+        <childnode refid="5034" relation="include">
+        </childnode>
+        <childnode refid="5035" relation="include">
+        </childnode>
+        <childnode refid="5036" relation="include">
+        </childnode>
+        <childnode refid="5037" relation="include">
+        </childnode>
+        <childnode refid="5038" relation="include">
+        </childnode>
+        <childnode refid="5039" relation="include">
+        </childnode>
+        <childnode refid="5040" relation="include">
+        </childnode>
+        <childnode refid="5041" relation="include">
+        </childnode>
+      </node>
+      <node id="5049">
+        <label>MyGraphics/Source/scene3SP2.h</label>
+        <link refid="scene3SP2_8h"/>
+        <childnode refid="5038" relation="include">
+        </childnode>
+      </node>
+      <node id="5031">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="5041">
+        <label>MyGraphics/Source/StationScene.cpp</label>
+        <link refid="StationScene_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structComponent" prot="public">Component</innerclass>
+    <innerclass refid="structMaterial" prot="public">Material</innerclass>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>Structs to define <ref refid="structMaterial" kindref="compound">Material</ref> </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Sek Heng </para></simplesect>
+<simplesect kind="par"><title>email: 150629Z.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MATERIAL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MATERIAL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="structComponent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structComponent" kindref="compound">Component</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22" refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" kindref="member">r</ref>,<sp/><ref refid="structComponent_1a6cf7bfac62ac8aa4a8aa8c3f847428d8" kindref="member">g</ref>,<sp/><ref refid="structComponent_1abd55184abe2aaf269b38f5913721821c" kindref="member">b</ref>;</highlight></codeline>
+<codeline lineno="23" refid="structComponent_1a99b70cf0291f272bf8e94882f68b38d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structComponent_1a99b70cf0291f272bf8e94882f68b38d7" kindref="member">Component</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>0.1f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>g<sp/>=<sp/>0.1f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>1.0f){<sp/><ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(r,<sp/>g,<sp/>b);<sp/>}</highlight></codeline>
+<codeline lineno="24" refid="structComponent_1a85f599b839327709953f0115dc5dfd49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>g,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b){<sp/>this-&gt;r<sp/>=<sp/><ref refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" kindref="member">r</ref>;<sp/>this-&gt;g<sp/>=<sp/><ref refid="structComponent_1a6cf7bfac62ac8aa4a8aa8c3f847428d8" kindref="member">g</ref>;<sp/>this-&gt;b<sp/>=<sp/><ref refid="structComponent_1abd55184abe2aaf269b38f5913721821c" kindref="member">b</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="structMaterial" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structMaterial" kindref="compound">Material</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structComponent" kindref="compound">Component</ref><sp/><ref refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" kindref="member">kAmbient</ref>;</highlight></codeline>
+<codeline lineno="37" refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structComponent" kindref="compound">Component</ref><sp/><ref refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" kindref="member">kDiffuse</ref>;</highlight></codeline>
+<codeline lineno="38" refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structComponent" kindref="compound">Component</ref><sp/><ref refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" kindref="member">kSpecular</ref>;</highlight></codeline>
+<codeline lineno="39" refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" kindref="member">kShininess</ref>;</highlight></codeline>
+<codeline lineno="40" refid="structMaterial_1a137e987401b63eb7c6c27c3e38bc74b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMaterial_1a137e987401b63eb7c6c27c3e38bc74b5" kindref="member">Material</ref>()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/Material.h"/>
+  </compounddef>
+</doxygen>

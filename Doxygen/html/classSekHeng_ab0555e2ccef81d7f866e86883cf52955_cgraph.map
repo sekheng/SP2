@@ -1,0 +1,6 @@
+<map id="SekHeng::interactingWithItem" name="SekHeng::interactingWithItem">
+<area shape="rect" id="node2" href="$classobjectsForDisplay.html#a72bc7040abaa0b361da68452de000f39" title="get this object&#39;s X boundary range " alt="" coords="248,5,391,47"/>
+<area shape="rect" id="node3" href="$classobjectsForDisplay.html#a1598c3caea74983607e719dab07b3704" title="get this object&#39;s Z boundary range " alt="" coords="248,71,391,112"/>
+<area shape="rect" id="node4" href="$classobjectsForDisplay.html#a7be0d40a45472bd1ff986ea8606dfbba" title="get this object&#39;s X coordinate " alt="" coords="252,136,387,177"/>
+<area shape="rect" id="node5" href="$classobjectsForDisplay.html#aa2f7e29218b1bbd07f5186b4c39b037a" title="get this object&#39;s Z coordinate " alt="" coords="252,201,387,243"/>
+</map>

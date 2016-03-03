@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Quest_8h" kind="file" language="C++">
+    <compoundname>Quest.h</compoundname>
+    <includes refid="GameObject_8h" local="yes">GameObject.h</includes>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includes local="no">vector</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includedby refid="sceneSP2_8h" local="yes">MyGraphics/Source/sceneSP2.h</includedby>
+    <includedby refid="SekHeng_8h" local="yes">MyGraphics/Source/SekHeng.h</includedby>
+    <includedby refid="Quest_8cpp" local="yes">MyGraphics/Source/Quest.cpp</includedby>
+    <incdepgraph>
+      <node id="5512">
+        <label>DetectMemoryLeak.h</label>
+        <link refid="DetectMemoryLeak_8h"/>
+        <childnode refid="5513" relation="include">
+        </childnode>
+        <childnode refid="5514" relation="include">
+        </childnode>
+      </node>
+      <node id="5515">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5516" relation="include">
+        </childnode>
+        <childnode refid="5521" relation="include">
+        </childnode>
+      </node>
+      <node id="5516">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5517" relation="include">
+        </childnode>
+        <childnode refid="5518" relation="include">
+        </childnode>
+        <childnode refid="5519" relation="include">
+        </childnode>
+        <childnode refid="5520" relation="include">
+        </childnode>
+      </node>
+      <node id="5513">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5517">
+        <label>cmath</label>
+      </node>
+      <node id="5511">
+        <label>string</label>
+      </node>
+      <node id="5518">
+        <label>exception</label>
+      </node>
+      <node id="5525">
+        <label>objectsForDisplay.h</label>
+        <link refid="objectsForDisplay_8h"/>
+        <childnode refid="5510" relation="include">
+        </childnode>
+        <childnode refid="5515" relation="include">
+        </childnode>
+      </node>
+      <node id="5519">
+        <label>ctime</label>
+      </node>
+      <node id="5522">
+        <label>vector</label>
+      </node>
+      <node id="5514">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="5524">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5515" relation="include">
+        </childnode>
+      </node>
+      <node id="5520">
+        <label>cstdlib</label>
+      </node>
+      <node id="5521">
+        <label>iostream</label>
+      </node>
+      <node id="5509">
+        <label>MyGraphics/Source/Quest.h</label>
+        <link refid="Quest.h"/>
+        <childnode refid="5510" relation="include">
+        </childnode>
+        <childnode refid="5515" relation="include">
+        </childnode>
+        <childnode refid="5522" relation="include">
+        </childnode>
+        <childnode refid="5523" relation="include">
+        </childnode>
+      </node>
+      <node id="5523">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5524" relation="include">
+        </childnode>
+        <childnode refid="5525" relation="include">
+        </childnode>
+        <childnode refid="5522" relation="include">
+        </childnode>
+      </node>
+      <node id="5510">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="5511" relation="include">
+        </childnode>
+        <childnode refid="5512" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5539">
+        <label>MyGraphics/Source/scene3_SP2.cpp</label>
+        <link refid="scene3__SP2_8cpp"/>
+      </node>
+      <node id="5540">
+        <label>MyGraphics/Source/Scene3SP2.cpp</label>
+        <link refid="Scene3SP2_8cpp"/>
+      </node>
+      <node id="5530">
+        <label>MyGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="5534">
+        <label>MyGraphics/Source/NumPad.cpp</label>
+        <link refid="NumPad_8cpp"/>
+      </node>
+      <node id="5537">
+        <label>MyGraphics/Source/scene2_minigame.cpp</label>
+        <link refid="scene2__minigame_8cpp"/>
+      </node>
+      <node id="5531">
+        <label>MyGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="5532">
+        <label>MyGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5538">
+        <label>MyGraphics/Source/scene2_SP2.cpp</label>
+        <link refid="scene2__SP2_8cpp"/>
+      </node>
+      <node id="5527">
+        <label>MyGraphics/Source/sceneSP2.h</label>
+        <link refid="sceneSP2_8h"/>
+        <childnode refid="5528" relation="include">
+        </childnode>
+      </node>
+      <node id="5535">
+        <label>MyGraphics/Source/Quest.cpp</label>
+        <link refid="Quest_8cpp"/>
+      </node>
+      <node id="5542">
+        <label>MyGraphics/Source/SekHeng.cpp</label>
+        <link refid="SekHeng_8cpp"/>
+      </node>
+      <node id="5544">
+        <label>MyGraphics/Source/SekHeng.h</label>
+        <link refid="SekHeng_8h"/>
+        <childnode refid="5527" relation="include">
+        </childnode>
+        <childnode refid="5542" relation="include">
+        </childnode>
+      </node>
+      <node id="5536">
+        <label>MyGraphics/Source/rot_civ.cpp</label>
+        <link refid="rot__civ_8cpp"/>
+      </node>
+      <node id="5541">
+        <label>MyGraphics/Source/sceneSP2.cpp</label>
+        <link refid="sceneSP2_8cpp"/>
+      </node>
+      <node id="5529">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5528">
+        <label>MyGraphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="5529" relation="include">
+        </childnode>
+        <childnode refid="5530" relation="include">
+        </childnode>
+        <childnode refid="5531" relation="include">
+        </childnode>
+        <childnode refid="5532" relation="include">
+        </childnode>
+        <childnode refid="5533" relation="include">
+        </childnode>
+        <childnode refid="5534" relation="include">
+        </childnode>
+        <childnode refid="5535" relation="include">
+        </childnode>
+        <childnode refid="5536" relation="include">
+        </childnode>
+        <childnode refid="5537" relation="include">
+        </childnode>
+        <childnode refid="5538" relation="include">
+        </childnode>
+        <childnode refid="5539" relation="include">
+        </childnode>
+        <childnode refid="5540" relation="include">
+        </childnode>
+        <childnode refid="5541" relation="include">
+        </childnode>
+        <childnode refid="5542" relation="include">
+        </childnode>
+        <childnode refid="5543" relation="include">
+        </childnode>
+      </node>
+      <node id="5526">
+        <label>MyGraphics/Source/Quest.h</label>
+        <link refid="Quest.h"/>
+        <childnode refid="5527" relation="include">
+        </childnode>
+        <childnode refid="5544" relation="include">
+        </childnode>
+        <childnode refid="5535" relation="include">
+        </childnode>
+      </node>
+      <node id="5533">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="5543">
+        <label>MyGraphics/Source/StationScene.cpp</label>
+        <link refid="StationScene_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuest" prot="public">Quest</innerclass>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>The quest class </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lim Guan Hui </para></simplesect>
+<simplesect kind="par"><title>email: 150623L.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QUEST_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QUEST_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameObject_8h" kindref="compound">GameObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classQuest" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuest" kindref="compound">Quest</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuest_1a5cdd6f02fdceaa7b7b53407740a22cf5" kindref="member">Quest</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuest_1ad4341309a8558845c6d93bc8ca0940f4" kindref="member">~Quest</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuest_1aafff8b97348723252d2aad790ea67b74" kindref="member">Init</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>Name_,<sp/><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>&amp;camera_address,<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>no_of_items,<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>Item1_pos,<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>Item1_bounds,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>Item2_pos,<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>Item2_bounds);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a19139139e4ef0d1b6d383f8dfb675c05" kindref="member">check_quest</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>quest_is_taken);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classQuest_1ac23cf044c29e28f4181a7def7b09e75e" kindref="member">stage</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuest_1ad040092b1c64e7da4286bcb358e1f145" kindref="member">boundscheck</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>position_x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>position_z,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bounds_x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bounds_z,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>cameraposition_x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>cameraposition_z);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a9a979db25a8283165ff02d1ba4d6b3dd" kindref="member">getObject1_X</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a04c65bf66e2ac951311f56c720385c21" kindref="member">getObject1_Z</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a4a28652632605e99da750b48b2c85a9a" kindref="member">getObject2_X</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a89a7782b9f2c26c35463e2977882d9b5" kindref="member">getObject2_Z</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a320aa6e7dda5476e11e78a1922d82610" kindref="member">questComplete</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a7f5229fff4c4b0f793e18411e018e517" kindref="member">get_numberof_items</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a54559418f758e8190d29f5f7b37fc553" kindref="member">Item1collected</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a8ea74d521a17cbbdd8ac9ede6cba4207" kindref="member">Item2collected</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuest_1ae32188fcc66cb240b6c0760c10276bae" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46" refid="classQuest_1add02b3c8f67235f7ae44e34505f37597" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classQuest_1add02b3c8f67235f7ae44e34505f37597" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="47" refid="classQuest_1ae6c3ea61f5a5ccf970c34cf0a3c33812" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>*<ref refid="classQuest_1ae6c3ea61f5a5ccf970c34cf0a3c33812" kindref="member">camera</ref>;</highlight></codeline>
+<codeline lineno="48" refid="classQuest_1ae29db24e4cc1a385aec51d5aef765bc5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classQuest_1ae29db24e4cc1a385aec51d5aef765bc5" kindref="member">stages</ref>;</highlight></codeline>
+<codeline lineno="49" refid="classQuest_1a684b8cf1d0a5d9346319ecfc4c943d3c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classQuest_1ab4b31b00b732f38c23f06b6ad8b87da9" kindref="member">x_1</ref>,<sp/><ref refid="classQuest_1a077e69feb0215907c3ccea412d968f2c" kindref="member">y_1</ref>,<sp/><ref refid="classQuest_1a684b8cf1d0a5d9346319ecfc4c943d3c" kindref="member">z_1</ref>;</highlight></codeline>
+<codeline lineno="50" refid="classQuest_1aa65eec2c956d15a5dc1015578f94d074" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a14f4b310deecbae0d1abf046ec890ab0" kindref="member">bounds_1</ref>,<sp/><ref refid="classQuest_1aa65eec2c956d15a5dc1015578f94d074" kindref="member">bounds_2</ref>;</highlight></codeline>
+<codeline lineno="51" refid="classQuest_1a3a14b02b8bd7ed39765594afa8522350" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a25fed1439b0523d2dc8c9e84827775af" kindref="member">x_2</ref>,<sp/><ref refid="classQuest_1a956deda7a10ea7d5192b2603f5637203" kindref="member">y_2</ref>,<sp/><ref refid="classQuest_1a3a14b02b8bd7ed39765594afa8522350" kindref="member">z_2</ref>;</highlight></codeline>
+<codeline lineno="52" refid="classQuest_1a30fd2a8cd5ba9f9268f38be257282645" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a61f2b2380248c4ce534c8a0d78ed5211" kindref="member">CollectItem1</ref>,<sp/><ref refid="classQuest_1a30fd2a8cd5ba9f9268f38be257282645" kindref="member">CollectItem2</ref>;</highlight></codeline>
+<codeline lineno="53" refid="classQuest_1a28c6d6119585e4d74538b358d2d7451e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a28c6d6119585e4d74538b358d2d7451e" kindref="member">time</ref>;</highlight></codeline>
+<codeline lineno="54" refid="classQuest_1ad511b5758f9fac0e45ae6b09e2a12ad6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuest_1ad511b5758f9fac0e45ae6b09e2a12ad6" kindref="member">quest_complete</ref>;</highlight></codeline>
+<codeline lineno="55" refid="classQuest_1a58e19cfab0a50a30808c8258dda24d30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classQuest_1a58e19cfab0a50a30808c8258dda24d30" kindref="member">number_of_items</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/Quest.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,8 @@
+<map id="BGMDriven::playJoinDarkSideEffect" name="BGMDriven::playJoinDarkSideEffect">
+<area shape="rect" id="node2" href="$classirrklang_1_1ISound.html#ade9a05d059ab8fd73973a1f2adc2af81" title="returns if the sound is paused " alt="" coords="248,5,440,32"/>
+<area shape="rect" id="node3" href="$classirrklang_1_1ISound.html#a9d9e758f8500b194580de339c7f96768" title="returns if the sound has finished playing. " alt="" coords="255,56,433,83"/>
+<area shape="rect" id="node4" href="$classirrklang_1_1ISoundEngine.html#adb09ecc8f61120ce14d26545ed43d8ec" title="Loads a sound source (if not loaded already) from a file and plays it as 3D sound. " alt="" coords="268,107,420,149"/>
+<area shape="rect" id="node5" href="$classirrklang_1_1ISound.html#a399fef60d1c48e2dffdf76d83173a15a" title="returns if the sound is paused " alt="" coords="248,173,440,200"/>
+<area shape="rect" id="node6" href="$classirrklang_1_1ISound.html#a994b98c059e8aee6adb82bb12d866338" title="sets the position of the sound in 3d space " alt="" coords="251,224,437,251"/>
+<area shape="rect" id="node7" href="$classirrklang_1_1ISound.html#a4c91357775f1d15e2c276ced09a40599" title="sets the volume of the sound, a value between 0 (mute) and 1 (full volume). " alt="" coords="253,275,435,301"/>
+</map>

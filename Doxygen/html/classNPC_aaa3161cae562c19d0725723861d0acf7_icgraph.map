@@ -1,0 +1,8 @@
+<map id="NPC::NPC_getposition_y" name="NPC::NPC_getposition_y">
+<area shape="rect" id="node2" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="221,5,396,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#a330759ab9405718e498ee50fa1b39d97" title="rendering of NPC and quest " alt="" coords="229,56,388,83"/>
+<area shape="rect" id="node5" href="$classscene2__SP2.html#a510022db1526266df5582f1e1eb19f27" title="rendering robot npcs " alt="" coords="223,107,395,133"/>
+<area shape="rect" id="node7" href="$classscene2__SP2.html#a6d4a4cbe109bbdcf8b901375a4e9b4b7" title="rendering vault " alt="" coords="221,157,396,184"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="451,44,582,71"/>
+<area shape="rect" id="node6" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="444,120,589,147"/>
+</map>

@@ -1,0 +1,424 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="BGMDriven_8cpp" kind="file" language="C++">
+    <compoundname>BGMDriven.cpp</compoundname>
+    <includes refid="BGMDriven_8h" local="yes">BGMDriven.h</includes>
+    <incdepgraph>
+      <node id="4417">
+        <label>../irrKlang-1.5.0/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="4418" relation="include">
+        </childnode>
+        <childnode refid="4420" relation="include">
+        </childnode>
+        <childnode refid="4422" relation="include">
+        </childnode>
+        <childnode refid="4423" relation="include">
+        </childnode>
+        <childnode refid="4424" relation="include">
+        </childnode>
+        <childnode refid="4425" relation="include">
+        </childnode>
+        <childnode refid="4426" relation="include">
+        </childnode>
+        <childnode refid="4427" relation="include">
+        </childnode>
+        <childnode refid="4428" relation="include">
+        </childnode>
+        <childnode refid="4429" relation="include">
+        </childnode>
+        <childnode refid="4430" relation="include">
+        </childnode>
+        <childnode refid="4434" relation="include">
+        </childnode>
+        <childnode refid="4435" relation="include">
+        </childnode>
+        <childnode refid="4431" relation="include">
+        </childnode>
+        <childnode refid="4437" relation="include">
+        </childnode>
+        <childnode refid="4432" relation="include">
+        </childnode>
+        <childnode refid="4436" relation="include">
+        </childnode>
+        <childnode refid="4438" relation="include">
+        </childnode>
+        <childnode refid="4439" relation="include">
+        </childnode>
+        <childnode refid="4433" relation="include">
+        </childnode>
+      </node>
+      <node id="4427">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+      </node>
+      <node id="4415">
+        <label>MyGraphics/Source/BGMDriven.cpp</label>
+        <link refid="BGMDriven.cpp"/>
+        <childnode refid="4416" relation="include">
+        </childnode>
+      </node>
+      <node id="4439">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+        <childnode refid="4429" relation="include">
+        </childnode>
+      </node>
+      <node id="4433">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+        <childnode refid="4427" relation="include">
+        </childnode>
+      </node>
+      <node id="4426">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="4436">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+      </node>
+      <node id="4425">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="4434">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+        <childnode refid="4427" relation="include">
+        </childnode>
+      </node>
+      <node id="4416">
+        <label>BGMDriven.h</label>
+        <link refid="BGMDriven_8h"/>
+        <childnode refid="4417" relation="include">
+        </childnode>
+      </node>
+      <node id="4419">
+        <label>wchar.h</label>
+      </node>
+      <node id="4432">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+      </node>
+      <node id="4438">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+      </node>
+      <node id="4431">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="4423" relation="include">
+        </childnode>
+        <childnode refid="4420" relation="include">
+        </childnode>
+      </node>
+      <node id="4435">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+        <childnode refid="4436" relation="include">
+        </childnode>
+      </node>
+      <node id="4418">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="4419" relation="include">
+        </childnode>
+      </node>
+      <node id="4420">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="4421" relation="include">
+        </childnode>
+        <childnode refid="4418" relation="include">
+        </childnode>
+      </node>
+      <node id="4422">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="4418" relation="include">
+        </childnode>
+      </node>
+      <node id="4421">
+        <label>math.h</label>
+      </node>
+      <node id="4437">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+        <childnode refid="4427" relation="include">
+        </childnode>
+      </node>
+      <node id="4429">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="4423" relation="include">
+        </childnode>
+        <childnode refid="4420" relation="include">
+        </childnode>
+        <childnode refid="4426" relation="include">
+        </childnode>
+        <childnode refid="4427" relation="include">
+        </childnode>
+      </node>
+      <node id="4424">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="4430">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="4423" relation="include">
+        </childnode>
+        <childnode refid="4431" relation="include">
+        </childnode>
+        <childnode refid="4420" relation="include">
+        </childnode>
+      </node>
+      <node id="4423">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="4418" relation="include">
+        </childnode>
+      </node>
+      <node id="4428">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="4422" relation="include">
+        </childnode>
+        <childnode refid="4420" relation="include">
+        </childnode>
+        <childnode refid="4429" relation="include">
+        </childnode>
+        <childnode refid="4430" relation="include">
+        </childnode>
+        <childnode refid="4426" relation="include">
+        </childnode>
+        <childnode refid="4432" relation="include">
+        </childnode>
+        <childnode refid="4433" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="BGMDriven_8h" kindref="compound">BGMDriven.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classBGMDriven_1a5c282f0f2bfec5c1483c613baa00a284" refkind="member"><highlight class="normal"><ref refid="classBGMDriven_1a5c282f0f2bfec5c1483c613baa00a284" kindref="member">BGMDriven::BGMDriven</ref>()</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>DarthVaderbackGround(0),<sp/>GateEffectSource(0),<sp/>GateEffect(0),</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>StarWarsTheme(0),<sp/>PokemonGymBattleSource(0),<sp/>SpaceWarpSource(0),</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>john_cenaSource(0),<sp/>i_amYourFather(0),<sp/>join_DarkSide(0),<sp/>join_DarkSideEffect(0),</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>iamYourFatherEffect(0),<sp/>LovelyLullabySource(0),<sp/>playIAmYourFatherOnce(false),<sp/>playJoinDarkSideOnce(false)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref><sp/>=<sp/><ref refid="namespaceirrklang_1ad9829f898bc0665fdd2554a6f5c7ca1c" kindref="member">createIrrKlangDevice</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classBGMDriven_1aba4c43d1b7864ae3d1c7cc1d904ad7e5" refkind="member"><highlight class="normal"><ref refid="classBGMDriven_1aba4c43d1b7864ae3d1c7cc1d904ad7e5" kindref="member">BGMDriven::~BGMDriven</ref>()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1IRefCounted_1a869fe3adc6e49e8da105e95837a565b1" kindref="member">drop</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" kindref="member">BGMDriven::init</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a066d505555d6c499ea756d424a471de2" kindref="member">DarthVaderbackGround</ref><sp/>=<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(</highlight><highlight class="stringliteral">&quot;music//darth_vader_theme_SP2.ogg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" kindref="member">GateEffectSource</ref><sp/>=</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(</highlight><highlight class="stringliteral">&quot;music//electric_door_opening_2.ogg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" kindref="member">StarWarsTheme</ref><sp/>=</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(</highlight><highlight class="stringliteral">&quot;music//star_wars_edited_SP2.ogg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a84641cb6a4622f960b3579ea7097e80a" kindref="member">PokemonGymBattleSource</ref><sp/>=</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(</highlight><highlight class="stringliteral">&quot;music//pokemon_gym_battle.ogg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1ae038659a44a9f796cac8934f6c82edf7" kindref="member">SpaceWarpSource</ref><sp/>=</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(</highlight><highlight class="stringliteral">&quot;music//space_warp.ogg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a5499e630eaa3294625534906fe80e972" kindref="member">john_cenaSource</ref><sp/>=</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(</highlight><highlight class="stringliteral">&quot;music//john_cena.ogg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa8816f7a83217e6184500a0304eac34c" kindref="member">i_amYourFather</ref><sp/>=</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(</highlight><highlight class="stringliteral">&quot;music//I_am_your_father.ogg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa9a580b384ca8eadaeb77e74cad4eda7" kindref="member">join_DarkSide</ref><sp/>=</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(</highlight><highlight class="stringliteral">&quot;music//join_the_dark_side.ogg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1ac92d5e9bf781ae7624f94726be41fa8b" kindref="member">LovelyLullabySource</ref><sp/>=</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(</highlight><highlight class="stringliteral">&quot;music//1-01<sp/>Lullaby<sp/>of<sp/>Open<sp/>Eyes.ogg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//setting<sp/>volumes<sp/>for<sp/>each<sp/>of<sp/>the<sp/>sounds<sp/>source</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a066d505555d6c499ea756d424a471de2" kindref="member">DarthVaderbackGround</ref>-&gt;<ref refid="classirrklang_1_1ISoundSource_1a52accb16b3a554558f12f99d16f57a7d" kindref="member">setDefaultVolume</ref>(0.3f);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" kindref="member">StarWarsTheme</ref>-&gt;<ref refid="classirrklang_1_1ISoundSource_1a52accb16b3a554558f12f99d16f57a7d" kindref="member">setDefaultVolume</ref>(0.5f);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a5499e630eaa3294625534906fe80e972" kindref="member">john_cenaSource</ref>-&gt;<ref refid="classirrklang_1_1ISoundSource_1a52accb16b3a554558f12f99d16f57a7d" kindref="member">setDefaultVolume</ref>(0.5f);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1ae038659a44a9f796cac8934f6c82edf7" kindref="member">SpaceWarpSource</ref>-&gt;<ref refid="classirrklang_1_1ISoundSource_1a52accb16b3a554558f12f99d16f57a7d" kindref="member">setDefaultVolume</ref>(1.f);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a84641cb6a4622f960b3579ea7097e80a" kindref="member">PokemonGymBattleSource</ref>-&gt;<ref refid="classirrklang_1_1ISoundSource_1a52accb16b3a554558f12f99d16f57a7d" kindref="member">setDefaultVolume</ref>(0.3f);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1ac92d5e9bf781ae7624f94726be41fa8b" kindref="member">LovelyLullabySource</ref>-&gt;<ref refid="classirrklang_1_1ISoundSource_1a52accb16b3a554558f12f99d16f57a7d" kindref="member">setDefaultVolume</ref>(0.5f);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927" kindref="member">play2D</ref>(<ref refid="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" kindref="member">StarWarsTheme</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" kindref="member">GateEffect</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(<ref refid="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" kindref="member">GateEffectSource</ref>,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,<sp/>0,<sp/>0),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" kindref="member">iamYourFatherEffect</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(<ref refid="classBGMDriven_1aa8816f7a83217e6184500a0304eac34c" kindref="member">i_amYourFather</ref>,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,<sp/>0,<sp/>0),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" kindref="member">join_DarkSideEffect</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(<ref refid="classBGMDriven_1aa9a580b384ca8eadaeb77e74cad4eda7" kindref="member">join_DarkSide</ref>,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,<sp/>0,<sp/>0),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="73"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classBGMDriven_1adba6be682af223e347b708a1bb29d177" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1adba6be682af223e347b708a1bb29d177" kindref="member">BGMDriven::playDarthVaderBackground</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1a066d505555d6c499ea756d424a471de2" kindref="member">DarthVaderbackGround</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c" kindref="member">isCurrentlyPlaying</ref>(<ref refid="classBGMDriven_1a066d505555d6c499ea756d424a471de2" kindref="member">DarthVaderbackGround</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927" kindref="member">play2D</ref>(<ref refid="classBGMDriven_1a066d505555d6c499ea756d424a471de2" kindref="member">DarthVaderbackGround</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="91"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classBGMDriven_1a7a30db1ca2365ff04d2712d66da0a503" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1a7a30db1ca2365ff04d2712d66da0a503" kindref="member">BGMDriven::playGateEffect</ref>(<ref refid="classirrklang_1_1vec3d" kindref="compound">vec3df</ref><sp/>pos)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" kindref="member">GateEffectSource</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a4c91357775f1d15e2c276ced09a40599" kindref="member">setVolume</ref>(0.1f);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" kindref="member">GateEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1ade9a05d059ab8fd73973a1f2adc2af81" kindref="member">getIsPaused</ref>()<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" kindref="member">GateEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a399fef60d1c48e2dffdf76d83173a15a" kindref="member">setIsPaused</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" kindref="member">GateEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a994b98c059e8aee6adb82bb12d866338" kindref="member">setPosition</ref>(pos);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" kindref="member">GateEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a9d9e758f8500b194580de339c7f96768" kindref="member">isFinished</ref>()<sp/>==<sp/>true<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" kindref="member">GateEffect</ref><sp/>=</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(<ref refid="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" kindref="member">GateEffectSource</ref>,<sp/>pos,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="118"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classBGMDriven_1a63403095fd55386147f777ca6c618df1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1a63403095fd55386147f777ca6c618df1" kindref="member">BGMDriven::updatePlayerPos</ref>(<ref refid="classirrklang_1_1vec3d" kindref="compound">vec3df</ref><sp/>pos,<sp/><ref refid="classirrklang_1_1vec3d" kindref="compound">vec3df</ref><sp/>target,<sp/><ref refid="classirrklang_1_1vec3d" kindref="compound">vec3df</ref><sp/>up)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1af3e6223435969159ef3b22d0c83d2b84" kindref="member">setListenerPosition</ref>(pos,<sp/>target,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,<sp/>0,<sp/>0),<sp/>up);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="129"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="classBGMDriven_1a0ac0c2672f995d3dd0219761a5a317ac" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1a0ac0c2672f995d3dd0219761a5a317ac" kindref="member">BGMDriven::playJohnCenaBackground</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1a5499e630eaa3294625534906fe80e972" kindref="member">john_cenaSource</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c" kindref="member">isCurrentlyPlaying</ref>(<ref refid="classBGMDriven_1a5499e630eaa3294625534906fe80e972" kindref="member">john_cenaSource</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927" kindref="member">play2D</ref>(<ref refid="classBGMDriven_1a5499e630eaa3294625534906fe80e972" kindref="member">john_cenaSource</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="145"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="classBGMDriven_1a1106212f0ed32a27cf05f488f8709402" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1a1106212f0ed32a27cf05f488f8709402" kindref="member">BGMDriven::playPokemonBattleBackground</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1a84641cb6a4622f960b3579ea7097e80a" kindref="member">PokemonGymBattleSource</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c" kindref="member">isCurrentlyPlaying</ref>(<ref refid="classBGMDriven_1a84641cb6a4622f960b3579ea7097e80a" kindref="member">PokemonGymBattleSource</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927" kindref="member">play2D</ref>(<ref refid="classBGMDriven_1a84641cb6a4622f960b3579ea7097e80a" kindref="member">PokemonGymBattleSource</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="161"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="classBGMDriven_1ace192735193ad55b50aea7b2d9d10078" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1ace192735193ad55b50aea7b2d9d10078" kindref="member">BGMDriven::playStarWarsThemeBackground</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" kindref="member">StarWarsTheme</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c" kindref="member">isCurrentlyPlaying</ref>(<ref refid="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" kindref="member">StarWarsTheme</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927" kindref="member">play2D</ref>(<ref refid="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" kindref="member">StarWarsTheme</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="177"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="classBGMDriven_1ab77835bb55208467e77fa117a70fe624" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1ab77835bb55208467e77fa117a70fe624" kindref="member">BGMDriven::playWarpBackground</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1ae038659a44a9f796cac8934f6c82edf7" kindref="member">SpaceWarpSource</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c" kindref="member">isCurrentlyPlaying</ref>(<ref refid="classBGMDriven_1ae038659a44a9f796cac8934f6c82edf7" kindref="member">SpaceWarpSource</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927" kindref="member">play2D</ref>(<ref refid="classBGMDriven_1ae038659a44a9f796cac8934f6c82edf7" kindref="member">SpaceWarpSource</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="195"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="classBGMDriven_1a7f96f10da396bee4949ad4abeb8655fc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1a7f96f10da396bee4949ad4abeb8655fc" kindref="member">BGMDriven::playIamYourFatherEffect</ref>(<ref refid="classirrklang_1_1vec3d" kindref="compound">vec3df</ref><sp/>pos)<sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" kindref="member">iamYourFatherEffect</ref><sp/>&amp;&amp;<sp/><ref refid="classBGMDriven_1a6228191bf53e0ca582f89ace78475a72" kindref="member">playIAmYourFatherOnce</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a4c91357775f1d15e2c276ced09a40599" kindref="member">setVolume</ref>(0.1f);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a6228191bf53e0ca582f89ace78475a72" kindref="member">playIAmYourFatherOnce</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" kindref="member">iamYourFatherEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1ade9a05d059ab8fd73973a1f2adc2af81" kindref="member">getIsPaused</ref>()<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" kindref="member">iamYourFatherEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a399fef60d1c48e2dffdf76d83173a15a" kindref="member">setIsPaused</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" kindref="member">iamYourFatherEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a994b98c059e8aee6adb82bb12d866338" kindref="member">setPosition</ref>(pos);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" kindref="member">iamYourFatherEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a9d9e758f8500b194580de339c7f96768" kindref="member">isFinished</ref>()<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" kindref="member">iamYourFatherEffect</ref><sp/>=</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(<ref refid="classBGMDriven_1aa8816f7a83217e6184500a0304eac34c" kindref="member">i_amYourFather</ref>,<sp/>pos,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="219"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="classBGMDriven_1aae10f0ff9b2e14d7b62b4c0797d3d714" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1aae10f0ff9b2e14d7b62b4c0797d3d714" kindref="member">BGMDriven::playJoinDarkSideEffect</ref>(<ref refid="classirrklang_1_1vec3d" kindref="compound">vec3df</ref><sp/>pos)<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" kindref="member">join_DarkSideEffect</ref><sp/>&amp;&amp;<sp/><ref refid="classBGMDriven_1a01dadd546b20f1ea2ebd84e216915f92" kindref="member">playJoinDarkSideOnce</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a4c91357775f1d15e2c276ced09a40599" kindref="member">setVolume</ref>(0.1f);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a01dadd546b20f1ea2ebd84e216915f92" kindref="member">playJoinDarkSideOnce</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" kindref="member">join_DarkSideEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1ade9a05d059ab8fd73973a1f2adc2af81" kindref="member">getIsPaused</ref>()<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" kindref="member">join_DarkSideEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a399fef60d1c48e2dffdf76d83173a15a" kindref="member">setIsPaused</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" kindref="member">join_DarkSideEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a994b98c059e8aee6adb82bb12d866338" kindref="member">setPosition</ref>(pos);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" kindref="member">join_DarkSideEffect</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a9d9e758f8500b194580de339c7f96768" kindref="member">isFinished</ref>()<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" kindref="member">join_DarkSideEffect</ref><sp/>=</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(<ref refid="classBGMDriven_1aa9a580b384ca8eadaeb77e74cad4eda7" kindref="member">join_DarkSide</ref>,<sp/>pos,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="243"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="classBGMDriven_1a5769938591177359476657cc9f420959" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1a5769938591177359476657cc9f420959" kindref="member">BGMDriven::soundEffectArePlaying</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c" kindref="member">isCurrentlyPlaying</ref>(<ref refid="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" kindref="member">GateEffectSource</ref>)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>||</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c" kindref="member">isCurrentlyPlaying</ref>(<ref refid="classBGMDriven_1aa8816f7a83217e6184500a0304eac34c" kindref="member">i_amYourFather</ref>)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>||</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c" kindref="member">isCurrentlyPlaying</ref>(<ref refid="classBGMDriven_1aa9a580b384ca8eadaeb77e74cad4eda7" kindref="member">join_DarkSide</ref>)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="257"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258" refid="classBGMDriven_1aff8b36d07ad02f29fc17fc14ffecb462" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1aff8b36d07ad02f29fc17fc14ffecb462" kindref="member">BGMDriven::stopAllSound</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a38dbc2f1d49e3127fc4a81a9c1a2f82d" kindref="member">stopAllSounds</ref>();</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="268"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269" refid="classBGMDriven_1aabfe59db224a3faf27bc58833df35da8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBGMDriven_1aabfe59db224a3faf27bc58833df35da8" kindref="member">BGMDriven::playLovelyLullaby</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classBGMDriven_1ac92d5e9bf781ae7624f94726be41fa8b" kindref="member">LovelyLullabySource</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c" kindref="member">isCurrentlyPlaying</ref>(<ref refid="classBGMDriven_1ac92d5e9bf781ae7624f94726be41fa8b" kindref="member">LovelyLullabySource</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref>-&gt;<ref refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" kindref="member">ZeBackgroundMusic</ref><sp/>=<sp/><ref refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927" kindref="member">play2D</ref>(<ref refid="classBGMDriven_1ac92d5e9bf781ae7624f94726be41fa8b" kindref="member">LovelyLullabySource</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/BGMDriven.cpp"/>
+  </compounddef>
+</doxygen>

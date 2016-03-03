@@ -1,0 +1,6 @@
+<map id="Quest::stage" name="Quest::stage">
+<area shape="rect" id="node2" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="169,5,343,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#a330759ab9405718e498ee50fa1b39d97" title="rendering of NPC and quest " alt="" coords="177,56,335,83"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#a9cfd40b303b8fbd4a67e4d6eedecdc25" title="sceneSP2::RenderQuestObjects" alt="" coords="151,107,361,133"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="409,56,540,83"/>
+</map>

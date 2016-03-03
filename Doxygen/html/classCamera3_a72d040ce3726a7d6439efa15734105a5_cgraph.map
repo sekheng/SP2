@@ -1,0 +1,6 @@
+<map id="Camera3::cameraMovement" name="Camera3::cameraMovement">
+<area shape="rect" id="node2" href="$classCamera3.html#a6bc11ea1b579be216761ff19709d14c2" title="boundary check with the player based on the X&#45;axis, cheaper to compute and determines where the playe..." alt="" coords="237,5,429,32"/>
+<area shape="rect" id="node3" href="$classCamera3.html#afcc4be9968845278c0ee38ce465dac4c" title="boundary check with the player based on the Z&#45;axis, cheaper to compute and determines where the playe..." alt="" coords="237,56,429,83"/>
+<area shape="rect" id="node4" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="256,107,411,133"/>
+<area shape="rect" id="node5" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="246,157,421,184"/>
+</map>

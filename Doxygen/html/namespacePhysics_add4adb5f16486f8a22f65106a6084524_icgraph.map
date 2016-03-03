@@ -1,0 +1,4 @@
+<map id="Physics::gravitational_pulled" name="Physics::gravitational_pulled">
+<area shape="rect" id="node2" href="$classsceneSP2.html#a7b2a8d3962e7f68a3934dc9dfd68902c" title="the logic behind animating of teleporting " alt="" coords="199,13,397,39"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="445,13,576,39"/>
+</map>

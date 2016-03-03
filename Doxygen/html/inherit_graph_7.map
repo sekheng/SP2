@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classGameObject.html" title="Defines GameObject, get the name of the GameObject and count how many gameobjects there are..." alt="" coords="5,81,100,108"/>
+<area shape="rect" id="node2" href="$classNPC.html" title="Inheirited from GameObject It has a text reader file to input it&#39;s dialogue " alt="" coords="187,5,236,32"/>
+<area shape="rect" id="node3" href="$classNumPad.html" title="inheirited from GameObject " alt="" coords="175,56,247,83"/>
+<area shape="rect" id="node4" href="$classobjectsForDisplay.html" title="Inheirited from GameObject It has it&#39;s own text reader file to input it&#39;s values, position..." alt="" coords="148,107,275,133"/>
+<area shape="rect" id="node7" href="$classStationScene.html" title="Inheirited from GameObject It will have the collisiont check and position. And it&#39;s own dialogues and..." alt="" coords="161,157,261,184"/>
+<area shape="rect" id="node5" href="$classrot__civ.html" title="Inheirited from objectsForDisplay to reduce the amount of codes need to be written It can initialise ..." alt="" coords="331,81,389,108"/>
+<area shape="rect" id="node6" href="$classSekHeng.html" title="SekHeng" alt="" coords="323,132,397,159"/>
+</map>

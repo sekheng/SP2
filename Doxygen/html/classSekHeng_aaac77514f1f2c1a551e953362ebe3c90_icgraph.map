@@ -1,0 +1,5 @@
+<map id="SekHeng::SekHengSayIsOk" name="SekHeng::SekHengSayIsOk">
+<area shape="rect" id="node2" href="$classsceneSP2.html#a2a5f5a79ed05066a23f447e4cbbb084f" title="Teleporter and it&#39;s particle effect " alt="" coords="240,5,425,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="267,56,398,83"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="473,5,604,32"/>
+</map>

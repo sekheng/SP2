@@ -1,0 +1,9 @@
+<map id="objectsForDisplay::getObjectposZ" name="objectsForDisplay::getObjectposZ">
+<area shape="rect" id="node2" href="$classSekHeng.html#ab0555e2ccef81d7f866e86883cf52955" title="to check whether the player in within Sek Heng&#39;s hammer interacting boundary " alt="" coords="189,5,383,32"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#a6523e8cf564e7f88ae94958fd9c08d1a" title="a method to render Sek Heng and his quest " alt="" coords="188,56,384,83"/>
+<area shape="rect" id="node7" href="$classscene2__SP2.html#a6541bbd7f340ece91e91bec2b77bac4a" title="a method to render Rot Civ and it&#39;s dialogue " alt="" coords="197,107,375,133"/>
+<area shape="rect" id="node3" href="$classSekHeng.html#ae3bb8042c61652bd6c325fe105fd2c17" title="a method function which will update the logic behind the interaction with Sek Heng ..." alt="" coords="443,5,567,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="625,5,756,32"/>
+<area shape="rect" id="node6" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="439,56,570,83"/>
+<area shape="rect" id="node8" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="432,107,577,133"/>
+</map>

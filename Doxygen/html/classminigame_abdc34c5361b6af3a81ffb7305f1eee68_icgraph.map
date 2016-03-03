@@ -1,0 +1,5 @@
+<map id="minigame::init" name="minigame::init">
+<area shape="rect" id="node2" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="162,5,269,32"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#ad70fc6c47c485a14285257c1414729d1" title="reset the entire scene 1 /* " alt="" coords="156,56,275,83"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="323,56,453,83"/>
+</map>

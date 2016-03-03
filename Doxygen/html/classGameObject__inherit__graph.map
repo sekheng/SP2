@@ -1,0 +1,8 @@
+<map id="GameObject" name="GameObject">
+<area shape="rect" id="node2" href="$classNPC.html" title="Inheirited from GameObject It has a text reader file to input it&#39;s dialogue " alt="" coords="5,80,55,107"/>
+<area shape="rect" id="node3" href="$classNumPad.html" title="inheirited from GameObject " alt="" coords="79,80,151,107"/>
+<area shape="rect" id="node4" href="$classobjectsForDisplay.html" title="Inheirited from GameObject It has it&#39;s own text reader file to input it&#39;s values, position..." alt="" coords="176,80,303,107"/>
+<area shape="rect" id="node7" href="$classStationScene.html" title="Inheirited from GameObject It will have the collisiont check and position. And it&#39;s own dialogues and..." alt="" coords="327,80,427,107"/>
+<area shape="rect" id="node5" href="$classrot__civ.html" title="Inheirited from objectsForDisplay to reduce the amount of codes need to be written It can initialise ..." alt="" coords="165,155,223,181"/>
+<area shape="rect" id="node6" href="$classSekHeng.html" title="SekHeng" alt="" coords="247,155,322,181"/>
+</map>

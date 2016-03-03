@@ -1,0 +1,11 @@
+<map id="irrklang::ISoundEngine::play3D" name="irrklang::ISoundEngine::play3D">
+<area shape="rect" id="node2" href="$classBGMDriven.html#aee3ab26716e6e6582d2cc7d90baeaacf" title="Where the initialization of the ISoundSource and ISound pointers begin. " alt="" coords="251,5,363,32"/>
+<area shape="rect" id="node5" href="$classBGMDriven.html#a7a30db1ca2365ff04d2712d66da0a503" title="A method functions dedicated to just play the 3D gate sound effect " alt="" coords="217,56,397,83"/>
+<area shape="rect" id="node7" href="$classBGMDriven.html#a7f96f10da396bee4949ad4abeb8655fc" title="A method functions dedicated to just play the 3D effect of &#39;I am Your Father&#39; " alt="" coords="205,107,409,149"/>
+<area shape="rect" id="node10" href="$classBGMDriven.html#aae10f0ff9b2e14d7b62b4c0797d3d714" title="A method functions dedicated to just play the 3D effect of &#39;Join the Dark Side&#39; " alt="" coords="210,173,405,214"/>
+<area shape="rect" id="node3" href="$classApplication.html#aaf09cd6cb412086dc039e28cdb059f0d" title="Initializing of the scene, and starting of the game " alt="" coords="497,5,614,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title="the primary functions that the program will run " alt="" coords="749,5,799,32"/>
+<area shape="rect" id="node6" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="490,56,621,83"/>
+<area shape="rect" id="node8" href="$classscene2__SP2.html#a602d4b84d1e8bc11c35060ef0c49a6da" title="a method to render Deadpool and his dialogues " alt="" coords="457,147,653,173"/>
+<area shape="rect" id="node9" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="701,147,847,173"/>
+</map>

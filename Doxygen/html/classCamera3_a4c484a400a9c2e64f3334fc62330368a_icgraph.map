@@ -1,0 +1,29 @@
+<map id="Camera3::getCameraXcoord" name="Camera3::getCameraXcoord">
+<area shape="rect" id="node2" href="$classrot__civ.html#a9d137fc8194ba0a7503b24c13926f7b2" title="The interaction boundary of rot civ " alt="" coords="281,208,408,235"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="1021,208,1167,235"/>
+<area shape="rect" id="node5" href="$classNPC.html#a2b008f0dd95c65339baf466918789062" title="to check if player is within range to interact with this object " alt="" coords="286,639,403,665"/>
+<area shape="rect" id="node12" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="809,816,939,843"/>
+<area shape="rect" id="node14" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="809,993,939,1020"/>
+<area shape="rect" id="node16" href="$classSekHeng.html#ad0a55a0443c8323f968df4bf832dd7ea" title="to check whether the player in within it&#39;s interacting boundary " alt="" coords="273,917,416,944"/>
+<area shape="rect" id="node19" href="$classNumPad.html#a5e056d35eee91dbab3ade47fc7d4f938" title="Check whether player&#39;s position is inside interaction area. " alt="" coords="275,335,415,361"/>
+<area shape="rect" id="node25" href="$classscene3__SP2.html#a7e54396921ff46efeb2fd7c003761561" title="where the rendering of all the stuff we needed will be here " alt="" coords="272,1120,417,1147"/>
+<area shape="rect" id="node26" href="$classsceneSP2.html#aef464b9b4f04ad8cc893ba2bdea01011" title="rendering of item taken on screen " alt="" coords="237,867,452,893"/>
+<area shape="rect" id="node28" href="$classQuest.html#a27be88f6eb1623aeecf5970c1f904be8" title="update&#39;s the quest progress " alt="" coords="291,993,398,1020"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a6541bbd7f340ece91e91bec2b77bac4a" title="a method to render Rot Civ and it&#39;s dialogue " alt="" coords="785,107,963,133"/>
+<area shape="rect" id="node6" href="$classscene2__SP2.html#a6d4a4cbe109bbdcf8b901375a4e9b4b7" title="rendering vault " alt="" coords="787,411,961,437"/>
+<area shape="rect" id="node7" href="$classscene2__SP2.html#a510022db1526266df5582f1e1eb19f27" title="rendering robot npcs " alt="" coords="788,512,960,539"/>
+<area shape="rect" id="node8" href="$classscene2__SP2.html#a8979b2d27bd016bbbacfe13b350cc055" title="robot NPCs animation " alt="" coords="779,613,969,640"/>
+<area shape="rect" id="node10" href="$classscene2__SP2.html#a0e589f588d92247371ee86443306080f" title="boxes animation " alt="" coords="775,563,973,589"/>
+<area shape="rect" id="node11" href="$classsceneSP2.html#a330759ab9405718e498ee50fa1b39d97" title="rendering of NPC and quest " alt="" coords="534,664,693,691"/>
+<area shape="rect" id="node13" href="$classsceneSP2.html#aaddae37328c79dbb87b9963e1eed653d" title="rendering of chun fei head animation " alt="" coords="526,715,701,741"/>
+<area shape="rect" id="node15" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="526,765,701,792"/>
+<area shape="rect" id="node9" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="1021,461,1167,488"/>
+<area shape="rect" id="node17" href="$classsceneSP2.html#a6523e8cf564e7f88ae94958fd9c08d1a" title="a method to render Sek Heng and his quest " alt="" coords="515,917,711,944"/>
+<area shape="rect" id="node18" href="$classSekHeng.html#ae3bb8042c61652bd6c325fe105fd2c17" title="a method function which will update the logic behind the interaction with Sek Heng ..." alt="" coords="551,968,675,995"/>
+<area shape="rect" id="node20" href="$classNumPad.html#a679075331806098ed06549e002c0cac2" title="updating the numpad interaction " alt="" coords="813,461,935,488"/>
+<area shape="rect" id="node21" href="$classNumPad.html#a27fbbd8747f455d3f3f95c17feb098b2" title="&quot;Press &#39;C&#39; to interact&quot; will appear if player&#39;s position is inside interaction area ..." alt="" coords="532,360,695,387"/>
+<area shape="rect" id="node22" href="$classNumPad.html#a9f705cb43de4fd79ebed968e1e67c315" title="Numpad interaction. " alt="" coords="785,309,963,336"/>
+<area shape="rect" id="node23" href="$classNumPad.html#ad464c4cfa4a962a060c2aef648047a67" title="Check whether player&#39;s position is inside interaction area and &#39;C&#39; button is pressed to open numpad o..." alt="" coords="500,259,727,285"/>
+<area shape="rect" id="node24" href="$classNumPad.html#a681b438ce719ac377a7a6dd1ea69223e" title="Display text &quot;Try Again!&quot; if the input does not match with the correct password. " alt="" coords="540,183,687,209"/>
+<area shape="rect" id="node27" href="$classsceneSP2.html#a9cfd40b303b8fbd4a67e4d6eedecdc25" title="sceneSP2::RenderQuestObjects" alt="" coords="508,867,719,893"/>
+</map>

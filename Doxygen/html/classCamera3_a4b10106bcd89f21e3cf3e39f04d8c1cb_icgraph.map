@@ -1,0 +1,11 @@
+<map id="Camera3::Reset" name="Camera3::Reset">
+<area shape="rect" id="node2" href="$classscene3__SP2.html#a5a82a47613e885739cb37186d9ce6e53" title="a method to reset everything inside scenario 2 " alt="" coords="172,5,305,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#ad70fc6c47c485a14285257c1414729d1" title="reset the entire scene 1 /* " alt="" coords="179,56,298,83"/>
+<area shape="rect" id="node6" href="$classscene2__SP2.html#ad113ede4cb02198a21720f2d932aaefa" title="Reset whole scene2 to default. " alt="" coords="169,107,308,133"/>
+<area shape="rect" id="node8" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="To be called every frame. Camera will get user inputs and update its position and orientation..." alt="" coords="177,157,300,184"/>
+<area shape="rect" id="node3" href="$classscene3__SP2.html#a71dd3bb2895b152440016ae97b01fb09" title="where the logic of the game is, and update " alt="" coords="362,5,507,32"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="369,56,500,83"/>
+<area shape="rect" id="node7" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="362,107,507,133"/>
+<area shape="rect" id="node9" href="$classLoadingScreen.html#aadba6b28a70c39e25c9892f93dbff465" title="where the logic of the game is, and update " alt="" coords="356,208,513,235"/>
+<area shape="rect" id="node10" href="$classscene3SP2.html#ac3a634c845cb61d9bbc8b519fa67c43c" title="where the logic of the game is, and update " alt="" coords="365,157,504,184"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="minigame::updatePieceState" name="minigame::updatePieceState">
+<area shape="rect" id="node2" href="$classminigame.html#aeec505c51a2cc3d3c499bc4c21ea85f7" title="get minigame piece 1&#39;s rotation " alt="" coords="243,5,367,32"/>
+<area shape="rect" id="node3" href="$classminigame.html#af78ecfbe0fe4f8324836efcab7408653" title="get minigame piece 2&#39;s rotation " alt="" coords="243,56,367,83"/>
+<area shape="rect" id="node4" href="$classminigame.html#a3421514ab9ef58691039c97e819865b7" title="get minigame piece 3&#39;s rotation " alt="" coords="243,107,367,133"/>
+<area shape="rect" id="node5" href="$classminigame.html#a7ced6b9a798bbf98da9b8699d91b406a" title="get minigame piece 4&#39;s rotation " alt="" coords="243,157,367,184"/>
+<area shape="rect" id="node6" href="$classminigame.html#aab52da72b1e323c33a1dc5581c32ab14" title="get minigame piece 5&#39;s rotation " alt="" coords="243,208,367,235"/>
+<area shape="rect" id="node7" href="$classminigame.html#a78a8a791bbfdea668af7766dd6035e9c" title="get minigame piece 6&#39;s rotation " alt="" coords="243,259,367,285"/>
+<area shape="rect" id="node8" href="$classminigame.html#a6f1976f5354e86df7ae4588192b3aee9" title="get minigame piece 7&#39;s rotation " alt="" coords="243,309,367,336"/>
+<area shape="rect" id="node9" href="$classminigame.html#a34d0f26cff11a1152d6edc0850142ad1" title="get minigame piece 8&#39;s rotation " alt="" coords="243,360,367,387"/>
+<area shape="rect" id="node10" href="$classminigame.html#aeb6091a011ba179d01518faa391e142b" title="get minigame piece 9&#39;s rotation " alt="" coords="243,411,367,437"/>
+</map>

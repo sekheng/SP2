@@ -1,0 +1,8 @@
+<map id="Component::Set" name="Component::Set">
+<area shape="rect" id="node2" href="$structComponent.html#a99b70cf0291f272bf8e94882f68b38d7" title="Component::Component" alt="" coords="173,45,335,71"/>
+<area shape="rect" id="node3" href="$classMaterialBuilder.html#a2847df1e27e666cd88301b11b0e5d3d0" title="generate similar properties to Blinn " alt="" coords="169,96,339,137"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="604,101,711,127"/>
+<area shape="rect" id="node4" href="$classMaterialBuilder.html#ae8609727fcb491a7e1f06d1231c2d17b" title="generate similar properties to Lambert " alt="" coords="387,5,556,47"/>
+<area shape="rect" id="node6" href="$classMaterialBuilder.html#a330c0d164483b9ab0625b47534ec4ca9" title="generate similar properties to Phong " alt="" coords="387,71,556,112"/>
+<area shape="rect" id="node7" href="$classscene3__SP2.html#ae4a4e666fc5860fee4d9e091f1571c18" title="initializing whatever is needed for the scene " alt="" coords="411,137,532,163"/>
+</map>

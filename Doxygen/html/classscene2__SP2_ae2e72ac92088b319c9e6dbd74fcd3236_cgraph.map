@@ -1,0 +1,14 @@
+<map id="scene2_SP2::Ending" name="scene2_SP2::Ending">
+<area shape="rect" id="node2" href="$classcreditScene.html#a7b72cdfc51d8870ef4dd1f7dafbb51ba" title="a method function which will activate the credits which are the people&#39;s position and their names..." alt="" coords="207,5,385,32"/>
+<area shape="rect" id="node3" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="241,56,351,83"/>
+<area shape="rect" id="node5" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="219,107,373,133"/>
+<area shape="rect" id="node6" href="$classCamera3.html#a6f1aeea87c779705decd4204db9370c4" title="getting camera&#39;s rotation based on the x axis " alt="" coords="199,157,393,184"/>
+<area shape="rect" id="node7" href="$classCamera3.html#a99d7d55bafd4d073c828cbbf1d21ece6" title="getting camera&#39;s rotation based on the y axis " alt="" coords="197,208,395,235"/>
+<area shape="rect" id="node8" href="$classBGMDriven.html#adba6be682af223e347b708a1bb29d177" title="A method functions dedicated to just play Darth Vader theme as a background music ..." alt="" coords="204,259,388,301"/>
+<area shape="rect" id="node12" href="$classCamera3.html#ae5525123816e5022e6b3636e93040df7" title="Setting the coordinates of the camera&#39;s position. " alt="" coords="221,325,371,352"/>
+<area shape="rect" id="node13" href="$classCamera3.html#a946f39246e48f465b701e7a7fd77516a" title="a method to set the rotation / target of the camera " alt="" coords="222,376,370,403"/>
+<area shape="rect" id="node4" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="459,56,579,83"/>
+<area shape="rect" id="node9" href="$classirrklang_1_1ISoundEngine.html#a1084577f9f43cb12e86cea43c323b12c" title="Returns if a sound with the specified name is currently playing. " alt="" coords="443,194,595,235"/>
+<area shape="rect" id="node10" href="$classirrklang_1_1ISoundEngine.html#a25f612fe6479d3b22dc5bab2a2eaa927" title="loads a sound source (if not loaded already) from a file and plays it. " alt="" coords="443,259,595,301"/>
+<area shape="rect" id="node11" href="$classirrklang_1_1ISound.html#a108485fe64658441cecd70917782961f" title="Will stop the sound and free its resources. " alt="" coords="446,325,591,352"/>
+</map>

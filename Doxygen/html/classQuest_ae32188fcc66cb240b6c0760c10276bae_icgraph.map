@@ -1,0 +1,4 @@
+<map id="Quest::reset" name="Quest::reset">
+<area shape="rect" id="node2" href="$classsceneSP2.html#ad70fc6c47c485a14285257c1414729d1" title="reset the entire scene 1 /* " alt="" coords="148,5,267,32"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="315,5,445,32"/>
+</map>

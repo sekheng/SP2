@@ -1,0 +1,10 @@
+<map id="scene3_SP2::renderMesh" name="scene3_SP2::renderMesh">
+<area shape="rect" id="node2" href="$classscene3__SP2.html#a7e54396921ff46efeb2fd7c003761561" title="where the rendering of all the stuff we needed will be here " alt="" coords="987,137,1132,164"/>
+<area shape="rect" id="node3" href="$classscene3__SP2.html#a765e00338243d9c980645eee2776fccb" title="rendering of image using quad on screen " alt="" coords="225,100,423,142"/>
+<area shape="rect" id="node7" href="$classscene3__SP2.html#a73f6d5b380a660afce46191b74970559" title="a method to render the skybox " alt="" coords="483,188,672,214"/>
+<area shape="rect" id="node8" href="$classscene3__SP2.html#ad3ed92a636b07bd8c9f058777e902dbc" title="a method to render the space Ship " alt="" coords="476,238,679,265"/>
+<area shape="rect" id="node9" href="$classscene3__SP2.html#aea31bcd7b099d9fbaf6065915975b362" title="a method to render the warp " alt="" coords="239,289,409,316"/>
+<area shape="rect" id="node4" href="$classscene3__SP2.html#a06945bce0c30ba75cb9e75abed815459" title="a method to render the dialogue box in a much simpler way " alt="" coords="471,108,684,134"/>
+<area shape="rect" id="node5" href="$classscene3__SP2.html#ac97992b1e4892376486b2805aef88c69" title="a method to render the instructions needed for QTE " alt="" coords="732,86,939,113"/>
+<area shape="rect" id="node6" href="$classscene3__SP2.html#a31dc84c544a030ea7ab2faa6f48f4c3f" title="a method to render QTE&#39;s stuff " alt="" coords="752,137,919,164"/>
+</map>

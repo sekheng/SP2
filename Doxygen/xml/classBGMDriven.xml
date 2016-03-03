@@ -1,0 +1,859 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classBGMDriven" kind="class" language="C++" prot="public">
+    <compoundname>BGMDriven</compoundname>
+    <includes refid="BGMDriven_8h" local="no">BGMDriven.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundEngine" kindref="compound">ISoundEngine</ref> *</type>
+        <definition>ISoundEngine* BGMDriven::engine</definition>
+        <argsstring></argsstring>
+        <name>engine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="54" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1a5c282f0f2bfec5c1483c613baa00a284" compoundref="BGMDriven_8cpp" startline="8" endline="15">BGMDriven</referencedby>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1adba6be682af223e347b708a1bb29d177" compoundref="BGMDriven_8cpp" startline="74" endline="81">playDarthVaderBackground</referencedby>
+        <referencedby refid="classBGMDriven_1a7a30db1ca2365ff04d2712d66da0a503" compoundref="BGMDriven_8cpp" startline="92" endline="105">playGateEffect</referencedby>
+        <referencedby refid="classBGMDriven_1a7f96f10da396bee4949ad4abeb8655fc" compoundref="BGMDriven_8cpp" startline="196" endline="209">playIamYourFatherEffect</referencedby>
+        <referencedby refid="classBGMDriven_1a0ac0c2672f995d3dd0219761a5a317ac" compoundref="BGMDriven_8cpp" startline="130" endline="137">playJohnCenaBackground</referencedby>
+        <referencedby refid="classBGMDriven_1aae10f0ff9b2e14d7b62b4c0797d3d714" compoundref="BGMDriven_8cpp" startline="220" endline="233">playJoinDarkSideEffect</referencedby>
+        <referencedby refid="classBGMDriven_1aabfe59db224a3faf27bc58833df35da8" compoundref="BGMDriven_8cpp" startline="269" endline="276">playLovelyLullaby</referencedby>
+        <referencedby refid="classBGMDriven_1a1106212f0ed32a27cf05f488f8709402" compoundref="BGMDriven_8cpp" startline="146" endline="153">playPokemonBattleBackground</referencedby>
+        <referencedby refid="classBGMDriven_1ace192735193ad55b50aea7b2d9d10078" compoundref="BGMDriven_8cpp" startline="162" endline="169">playStarWarsThemeBackground</referencedby>
+        <referencedby refid="classBGMDriven_1ab77835bb55208467e77fa117a70fe624" compoundref="BGMDriven_8cpp" startline="178" endline="185">playWarpBackground</referencedby>
+        <referencedby refid="classBGMDriven_1a5769938591177359476657cc9f420959" compoundref="BGMDriven_8cpp" startline="244" endline="251">soundEffectArePlaying</referencedby>
+        <referencedby refid="classBGMDriven_1aff8b36d07ad02f29fc17fc14ffecb462" compoundref="BGMDriven_8cpp" startline="258" endline="260">stopAllSound</referencedby>
+        <referencedby refid="classBGMDriven_1a63403095fd55386147f777ca6c618df1" compoundref="BGMDriven_8cpp" startline="119" endline="121">updatePlayerPos</referencedby>
+        <referencedby refid="classBGMDriven_1aba4c43d1b7864ae3d1c7cc1d904ad7e5" compoundref="BGMDriven_8cpp" startline="22" endline="25">~BGMDriven</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1a066d505555d6c499ea756d424a471de2" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> *</type>
+        <definition>ISoundSource* BGMDriven::DarthVaderbackGround</definition>
+        <argsstring></argsstring>
+        <name>DarthVaderbackGround</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="55" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1adba6be682af223e347b708a1bb29d177" compoundref="BGMDriven_8cpp" startline="74" endline="81">playDarthVaderBackground</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> *</type>
+        <definition>ISoundSource* BGMDriven::GateEffectSource</definition>
+        <argsstring></argsstring>
+        <name>GateEffectSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="56" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1a7a30db1ca2365ff04d2712d66da0a503" compoundref="BGMDriven_8cpp" startline="92" endline="105">playGateEffect</referencedby>
+        <referencedby refid="classBGMDriven_1a5769938591177359476657cc9f420959" compoundref="BGMDriven_8cpp" startline="244" endline="251">soundEffectArePlaying</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> *</type>
+        <definition>ISoundSource* BGMDriven::StarWarsTheme</definition>
+        <argsstring></argsstring>
+        <name>StarWarsTheme</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="57" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1ace192735193ad55b50aea7b2d9d10078" compoundref="BGMDriven_8cpp" startline="162" endline="169">playStarWarsThemeBackground</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1a84641cb6a4622f960b3579ea7097e80a" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> *</type>
+        <definition>ISoundSource* BGMDriven::PokemonGymBattleSource</definition>
+        <argsstring></argsstring>
+        <name>PokemonGymBattleSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="58" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1a1106212f0ed32a27cf05f488f8709402" compoundref="BGMDriven_8cpp" startline="146" endline="153">playPokemonBattleBackground</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1ae038659a44a9f796cac8934f6c82edf7" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> *</type>
+        <definition>ISoundSource* BGMDriven::SpaceWarpSource</definition>
+        <argsstring></argsstring>
+        <name>SpaceWarpSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="59" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1ab77835bb55208467e77fa117a70fe624" compoundref="BGMDriven_8cpp" startline="178" endline="185">playWarpBackground</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1a5499e630eaa3294625534906fe80e972" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> *</type>
+        <definition>ISoundSource* BGMDriven::john_cenaSource</definition>
+        <argsstring></argsstring>
+        <name>john_cenaSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="60" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1a0ac0c2672f995d3dd0219761a5a317ac" compoundref="BGMDriven_8cpp" startline="130" endline="137">playJohnCenaBackground</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1aa8816f7a83217e6184500a0304eac34c" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> *</type>
+        <definition>ISoundSource* BGMDriven::i_amYourFather</definition>
+        <argsstring></argsstring>
+        <name>i_amYourFather</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="61" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1a7f96f10da396bee4949ad4abeb8655fc" compoundref="BGMDriven_8cpp" startline="196" endline="209">playIamYourFatherEffect</referencedby>
+        <referencedby refid="classBGMDriven_1a5769938591177359476657cc9f420959" compoundref="BGMDriven_8cpp" startline="244" endline="251">soundEffectArePlaying</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1aa9a580b384ca8eadaeb77e74cad4eda7" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> *</type>
+        <definition>ISoundSource* BGMDriven::join_DarkSide</definition>
+        <argsstring></argsstring>
+        <name>join_DarkSide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="62" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1aae10f0ff9b2e14d7b62b4c0797d3d714" compoundref="BGMDriven_8cpp" startline="220" endline="233">playJoinDarkSideEffect</referencedby>
+        <referencedby refid="classBGMDriven_1a5769938591177359476657cc9f420959" compoundref="BGMDriven_8cpp" startline="244" endline="251">soundEffectArePlaying</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1ac92d5e9bf781ae7624f94726be41fa8b" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundSource" kindref="compound">ISoundSource</ref> *</type>
+        <definition>ISoundSource* BGMDriven::LovelyLullabySource</definition>
+        <argsstring></argsstring>
+        <name>LovelyLullabySource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="63" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1aabfe59db224a3faf27bc58833df35da8" compoundref="BGMDriven_8cpp" startline="269" endline="276">playLovelyLullaby</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref> *</type>
+        <definition>ISound* BGMDriven::ZeBackgroundMusic</definition>
+        <argsstring></argsstring>
+        <name>ZeBackgroundMusic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="66" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1adba6be682af223e347b708a1bb29d177" compoundref="BGMDriven_8cpp" startline="74" endline="81">playDarthVaderBackground</referencedby>
+        <referencedby refid="classBGMDriven_1a7a30db1ca2365ff04d2712d66da0a503" compoundref="BGMDriven_8cpp" startline="92" endline="105">playGateEffect</referencedby>
+        <referencedby refid="classBGMDriven_1a7f96f10da396bee4949ad4abeb8655fc" compoundref="BGMDriven_8cpp" startline="196" endline="209">playIamYourFatherEffect</referencedby>
+        <referencedby refid="classBGMDriven_1a0ac0c2672f995d3dd0219761a5a317ac" compoundref="BGMDriven_8cpp" startline="130" endline="137">playJohnCenaBackground</referencedby>
+        <referencedby refid="classBGMDriven_1aae10f0ff9b2e14d7b62b4c0797d3d714" compoundref="BGMDriven_8cpp" startline="220" endline="233">playJoinDarkSideEffect</referencedby>
+        <referencedby refid="classBGMDriven_1aabfe59db224a3faf27bc58833df35da8" compoundref="BGMDriven_8cpp" startline="269" endline="276">playLovelyLullaby</referencedby>
+        <referencedby refid="classBGMDriven_1a1106212f0ed32a27cf05f488f8709402" compoundref="BGMDriven_8cpp" startline="146" endline="153">playPokemonBattleBackground</referencedby>
+        <referencedby refid="classBGMDriven_1ace192735193ad55b50aea7b2d9d10078" compoundref="BGMDriven_8cpp" startline="162" endline="169">playStarWarsThemeBackground</referencedby>
+        <referencedby refid="classBGMDriven_1ab77835bb55208467e77fa117a70fe624" compoundref="BGMDriven_8cpp" startline="178" endline="185">playWarpBackground</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref> *</type>
+        <definition>ISound* BGMDriven::GateEffect</definition>
+        <argsstring></argsstring>
+        <name>GateEffect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="67" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1a7a30db1ca2365ff04d2712d66da0a503" compoundref="BGMDriven_8cpp" startline="92" endline="105">playGateEffect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref> *</type>
+        <definition>ISound* BGMDriven::iamYourFatherEffect</definition>
+        <argsstring></argsstring>
+        <name>iamYourFatherEffect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="68" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1a7f96f10da396bee4949ad4abeb8655fc" compoundref="BGMDriven_8cpp" startline="196" endline="209">playIamYourFatherEffect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref> *</type>
+        <definition>ISound* BGMDriven::join_DarkSideEffect</definition>
+        <argsstring></argsstring>
+        <name>join_DarkSideEffect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="69" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">init</referencedby>
+        <referencedby refid="classBGMDriven_1aae10f0ff9b2e14d7b62b4c0797d3d714" compoundref="BGMDriven_8cpp" startline="220" endline="233">playJoinDarkSideEffect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1a6228191bf53e0ca582f89ace78475a72" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BGMDriven::playIAmYourFatherOnce</definition>
+        <argsstring></argsstring>
+        <name>playIAmYourFatherOnce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="72" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1a7f96f10da396bee4949ad4abeb8655fc" compoundref="BGMDriven_8cpp" startline="196" endline="209">playIamYourFatherEffect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classBGMDriven_1a01dadd546b20f1ea2ebd84e216915f92" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BGMDriven::playJoinDarkSideOnce</definition>
+        <argsstring></argsstring>
+        <name>playJoinDarkSideOnce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="73" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classBGMDriven_1aae10f0ff9b2e14d7b62b4c0797d3d714" compoundref="BGMDriven_8cpp" startline="220" endline="233">playJoinDarkSideEffect</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBGMDriven_1a5c282f0f2bfec5c1483c613baa00a284" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BGMDriven::BGMDriven</definition>
+        <argsstring>()</argsstring>
+        <name>BGMDriven</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A default constructor, and the IrrKlang engine is being started right here </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="28" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="8" bodyend="15"/>
+        <references refid="namespaceirrklang_1ad9829f898bc0665fdd2554a6f5c7ca1c">irrklang::createIrrKlangDevice</references>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1aba4c43d1b7864ae3d1c7cc1d904ad7e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BGMDriven::~BGMDriven</definition>
+        <argsstring>()</argsstring>
+        <name>~BGMDriven</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A destructor, and the IrrKlang engine is being dropped right here </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="29" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="22" bodyend="25"/>
+        <references refid="classirrklang_1_1IRefCounted_1a869fe3adc6e49e8da105e95837a565b1" compoundref="ik__IRefCounted_8h" startline="98" endline="109">irrklang::IRefCounted::drop</references>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Where the initialization of the ISoundSource and ISound pointers begin. </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="31" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="32" bodyend="65"/>
+        <references refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005">irrklang::ISoundEngine::addSoundSourceFromFile</references>
+        <references refid="classBGMDriven_1a066d505555d6c499ea756d424a471de2" compoundref="BGMDriven_8h" startline="55">DarthVaderbackGround</references>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" compoundref="BGMDriven_8h" startline="67">GateEffect</references>
+        <references refid="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" compoundref="BGMDriven_8h" startline="56">GateEffectSource</references>
+        <references refid="classBGMDriven_1aa8816f7a83217e6184500a0304eac34c" compoundref="BGMDriven_8h" startline="61">i_amYourFather</references>
+        <references refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" compoundref="BGMDriven_8h" startline="68">iamYourFatherEffect</references>
+        <references refid="classBGMDriven_1a5499e630eaa3294625534906fe80e972" compoundref="BGMDriven_8h" startline="60">john_cenaSource</references>
+        <references refid="classBGMDriven_1aa9a580b384ca8eadaeb77e74cad4eda7" compoundref="BGMDriven_8h" startline="62">join_DarkSide</references>
+        <references refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" compoundref="BGMDriven_8h" startline="69">join_DarkSideEffect</references>
+        <references refid="classBGMDriven_1ac92d5e9bf781ae7624f94726be41fa8b" compoundref="BGMDriven_8h" startline="63">LovelyLullabySource</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <references refid="classBGMDriven_1a84641cb6a4622f960b3579ea7097e80a" compoundref="BGMDriven_8h" startline="58">PokemonGymBattleSource</references>
+        <references refid="classirrklang_1_1ISoundSource_1a52accb16b3a554558f12f99d16f57a7d">irrklang::ISoundSource::setDefaultVolume</references>
+        <references refid="classBGMDriven_1ae038659a44a9f796cac8934f6c82edf7" compoundref="BGMDriven_8h" startline="59">SpaceWarpSource</references>
+        <references refid="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" compoundref="BGMDriven_8h" startline="57">StarWarsTheme</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Application::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1a63403095fd55386147f777ca6c618df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::updatePlayerPos</definition>
+        <argsstring>(vec3df pos, vec3df target, vec3df up)</argsstring>
+        <name>updatePlayerPos</name>
+        <param>
+          <type><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref></type>
+          <declname>up</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>An update function to update the player&apos;s position, target and up. Be warn that if this function is being updated too many times, it will cause inefficiency. </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- position of the player</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- target of / where the player is looking at</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>up</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the up vector of the player. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="33" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="119" bodyend="121"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1af3e6223435969159ef3b22d0c83d2b84">irrklang::ISoundEngine::setListenerPosition</references>
+        <referencedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a" compoundref="scene2__SP2_8cpp" startline="378" endline="462">scene2_SP2::Update</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1adba6be682af223e347b708a1bb29d177" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::playDarthVaderBackground</definition>
+        <argsstring>()</argsstring>
+        <name>playDarthVaderBackground</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions dedicated to just play Darth Vader theme as a background music </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the source file of the music cannot be found, nothing is played </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="36" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="74" bodyend="81"/>
+        <references refid="classBGMDriven_1a066d505555d6c499ea756d424a471de2" compoundref="BGMDriven_8h" startline="55">DarthVaderbackGround</references>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c">irrklang::ISoundEngine::isCurrentlyPlaying</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f">irrklang::ISound::stop</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classscene2__SP2_1ae2e72ac92088b319c9e6dbd74fcd3236" compoundref="scene2__SP2_8cpp" startline="2470" endline="2504">scene2_SP2::Ending</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1a0ac0c2672f995d3dd0219761a5a317ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::playJohnCenaBackground</definition>
+        <argsstring>()</argsstring>
+        <name>playJohnCenaBackground</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions dedicated to just play John Cena theme as a background music </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the source file of the music cannot be found, nothing is played </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="37" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="130" bodyend="137"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c">irrklang::ISoundEngine::isCurrentlyPlaying</references>
+        <references refid="classBGMDriven_1a5499e630eaa3294625534906fe80e972" compoundref="BGMDriven_8h" startline="60">john_cenaSource</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f">irrklang::ISound::stop</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classscene2__SP2_1a5b4e109f6780971770ff3b74d120ad03" compoundref="scene2__SP2_8cpp" startline="2073" endline="2108">scene2_SP2::VaultAnimation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1ace192735193ad55b50aea7b2d9d10078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::playStarWarsThemeBackground</definition>
+        <argsstring>()</argsstring>
+        <name>playStarWarsThemeBackground</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions dedicated to just play Star Wars theme as a background music </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the source file of the music cannot be found, nothing is played </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="38" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="162" bodyend="169"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c">irrklang::ISoundEngine::isCurrentlyPlaying</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" compoundref="BGMDriven_8h" startline="57">StarWarsTheme</references>
+        <references refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f">irrklang::ISound::stop</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classscene2__SP2_1a2933944c895d9437b2364e18747df1ce" compoundref="scene2__SP2_8cpp" startline="2522" endline="2541">scene2_SP2::rollingCredits</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1ab77835bb55208467e77fa117a70fe624" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::playWarpBackground</definition>
+        <argsstring>()</argsstring>
+        <name>playWarpBackground</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions dedicated to just play Space Warp as a background music </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the source file of the music cannot be found, nothing is played </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="39" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="178" bodyend="185"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c">irrklang::ISoundEngine::isCurrentlyPlaying</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classBGMDriven_1ae038659a44a9f796cac8934f6c82edf7" compoundref="BGMDriven_8h" startline="59">SpaceWarpSource</references>
+        <references refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f">irrklang::ISound::stop</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classscene3__SP2_1a1a4ac1aaba2909eff05348201fa29885" compoundref="scene3__SP2_8cpp" startline="912" endline="921">scene3_SP2::animateWarp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1a1106212f0ed32a27cf05f488f8709402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::playPokemonBattleBackground</definition>
+        <argsstring>()</argsstring>
+        <name>playPokemonBattleBackground</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions dedicated to just play Pokemon Battle theme as a background music </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the source file of the music cannot be found, nothing is played </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="40" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="146" bodyend="153"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c">irrklang::ISoundEngine::isCurrentlyPlaying</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classBGMDriven_1a84641cb6a4622f960b3579ea7097e80a" compoundref="BGMDriven_8h" startline="58">PokemonGymBattleSource</references>
+        <references refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f">irrklang::ISound::stop</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classscene3__SP2_1a71dd3bb2895b152440016ae97b01fb09" compoundref="scene3__SP2_8cpp" startline="279" endline="427">scene3_SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1aabfe59db224a3faf27bc58833df35da8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::playLovelyLullaby</definition>
+        <argsstring>()</argsstring>
+        <name>playLovelyLullaby</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions dedicated to play a Lullaby as a background music </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the source file cannot be found, nothing is played </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="41" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="269" bodyend="276"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c">irrklang::ISoundEngine::isCurrentlyPlaying</references>
+        <references refid="classBGMDriven_1ac92d5e9bf781ae7624f94726be41fa8b" compoundref="BGMDriven_8h" startline="63">LovelyLullabySource</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927">irrklang::ISoundEngine::play2D</references>
+        <references refid="classirrklang_1_1ISound_1a108485fe64658441cecd70917782961f">irrklang::ISound::stop</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a" compoundref="scene2__SP2_8cpp" startline="378" endline="462">scene2_SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1a7a30db1ca2365ff04d2712d66da0a503" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::playGateEffect</definition>
+        <argsstring>(vec3df pos)</argsstring>
+        <name>playGateEffect</name>
+        <param>
+          <type><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions dedicated to just play the 3D gate sound effect </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the position of the Gate</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the source file of the music cannot be found, nothing is played </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="44" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="92" bodyend="105"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" compoundref="BGMDriven_8h" startline="67">GateEffect</references>
+        <references refid="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" compoundref="BGMDriven_8h" startline="56">GateEffectSource</references>
+        <references refid="classirrklang_1_1ISound_1ade9a05d059ab8fd73973a1f2adc2af81">irrklang::ISound::getIsPaused</references>
+        <references refid="classirrklang_1_1ISound_1a9d9e758f8500b194580de339c7f96768">irrklang::ISound::isFinished</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <references refid="classirrklang_1_1ISound_1a399fef60d1c48e2dffdf76d83173a15a">irrklang::ISound::setIsPaused</references>
+        <references refid="classirrklang_1_1ISound_1a994b98c059e8aee6adb82bb12d866338">irrklang::ISound::setPosition</references>
+        <references refid="classirrklang_1_1ISound_1a4c91357775f1d15e2c276ced09a40599">irrklang::ISound::setVolume</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1a7f96f10da396bee4949ad4abeb8655fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::playIamYourFatherEffect</definition>
+        <argsstring>(vec3df pos)</argsstring>
+        <name>playIamYourFatherEffect</name>
+        <param>
+          <type><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions dedicated to just play the 3D effect of &apos;I am Your Father&apos; </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the position of the object which will play out this sound</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the source file of the music cannot be found, nothing is played </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="45" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="196" bodyend="209"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISound_1ade9a05d059ab8fd73973a1f2adc2af81">irrklang::ISound::getIsPaused</references>
+        <references refid="classBGMDriven_1aa8816f7a83217e6184500a0304eac34c" compoundref="BGMDriven_8h" startline="61">i_amYourFather</references>
+        <references refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" compoundref="BGMDriven_8h" startline="68">iamYourFatherEffect</references>
+        <references refid="classirrklang_1_1ISound_1a9d9e758f8500b194580de339c7f96768">irrklang::ISound::isFinished</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <references refid="classBGMDriven_1a6228191bf53e0ca582f89ace78475a72" compoundref="BGMDriven_8h" startline="72">playIAmYourFatherOnce</references>
+        <references refid="classirrklang_1_1ISound_1a399fef60d1c48e2dffdf76d83173a15a">irrklang::ISound::setIsPaused</references>
+        <references refid="classirrklang_1_1ISound_1a994b98c059e8aee6adb82bb12d866338">irrklang::ISound::setPosition</references>
+        <references refid="classirrklang_1_1ISound_1a4c91357775f1d15e2c276ced09a40599">irrklang::ISound::setVolume</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classscene2__SP2_1a602d4b84d1e8bc11c35060ef0c49a6da" compoundref="scene2__SP2_8cpp" startline="2381" endline="2406">scene2_SP2::renderDeadPool</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1aae10f0ff9b2e14d7b62b4c0797d3d714" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::playJoinDarkSideEffect</definition>
+        <argsstring>(vec3df pos)</argsstring>
+        <name>playJoinDarkSideEffect</name>
+        <param>
+          <type><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions dedicated to just play the 3D effect of &apos;Join the Dark Side&apos; </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- position of the object to play this sound</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the source file of the music cannot be found, nothing is played </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="46" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="220" bodyend="233"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISound_1ade9a05d059ab8fd73973a1f2adc2af81">irrklang::ISound::getIsPaused</references>
+        <references refid="classirrklang_1_1ISound_1a9d9e758f8500b194580de339c7f96768">irrklang::ISound::isFinished</references>
+        <references refid="classBGMDriven_1aa9a580b384ca8eadaeb77e74cad4eda7" compoundref="BGMDriven_8h" startline="62">join_DarkSide</references>
+        <references refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" compoundref="BGMDriven_8h" startline="69">join_DarkSideEffect</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <references refid="classBGMDriven_1a01dadd546b20f1ea2ebd84e216915f92" compoundref="BGMDriven_8h" startline="73">playJoinDarkSideOnce</references>
+        <references refid="classirrklang_1_1ISound_1a399fef60d1c48e2dffdf76d83173a15a">irrklang::ISound::setIsPaused</references>
+        <references refid="classirrklang_1_1ISound_1a994b98c059e8aee6adb82bb12d866338">irrklang::ISound::setPosition</references>
+        <references refid="classirrklang_1_1ISound_1a4c91357775f1d15e2c276ced09a40599">irrklang::ISound::setVolume</references>
+        <references refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" compoundref="BGMDriven_8h" startline="66">ZeBackgroundMusic</references>
+        <referencedby refid="classscene2__SP2_1a602d4b84d1e8bc11c35060ef0c49a6da" compoundref="scene2__SP2_8cpp" startline="2381" endline="2406">scene2_SP2::renderDeadPool</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classBGMDriven_1aff8b36d07ad02f29fc17fc14ffecb462" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BGMDriven::stopAllSound</definition>
+        <argsstring>()</argsstring>
+        <name>stopAllSound</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>A method functions to stop all sounds </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="49" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="258" bodyend="260"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a38dbc2f1d49e3127fc4a81a9c1a2f82d">irrklang::ISoundEngine::stopAllSounds</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBGMDriven_1a5769938591177359476657cc9f420959" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BGMDriven::soundEffectArePlaying</definition>
+        <argsstring>()</argsstring>
+        <name>soundEffectArePlaying</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>return true / false if the sound effects are being played </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true - if either 1 of the sound effects are being played</para></simplesect>
+<simplesect kind="return"><para>false - if no sound effect is played </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/BGMDriven.h" line="71" column="1" bodyfile="MyGraphics/Source/BGMDriven.cpp" bodystart="244" bodyend="251"/>
+        <references refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" compoundref="BGMDriven_8h" startline="54">engine</references>
+        <references refid="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" compoundref="BGMDriven_8h" startline="56">GateEffectSource</references>
+        <references refid="classBGMDriven_1aa8816f7a83217e6184500a0304eac34c" compoundref="BGMDriven_8h" startline="61">i_amYourFather</references>
+        <references refid="classirrklang_1_1ISoundEngine_1a1084577f9f43cb12e86cea43c323b12c">irrklang::ISoundEngine::isCurrentlyPlaying</references>
+        <references refid="classBGMDriven_1aa9a580b384ca8eadaeb77e74cad4eda7" compoundref="BGMDriven_8h" startline="62">join_DarkSide</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A class to handle the music, and allows the use of its function when other scenes are using it. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classBGMDriven" kindref="compound">BGMDriven</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="539">
+        <label>irrklang::IVirtualRefCounted</label>
+        <link refid="classirrklang_1_1IVirtualRefCounted"/>
+      </node>
+      <node id="535">
+        <label>irrklang::ISoundEngine</label>
+        <link refid="classirrklang_1_1ISoundEngine"/>
+        <childnode refid="536" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="538">
+        <label>irrklang::ISound</label>
+        <link refid="classirrklang_1_1ISound"/>
+        <childnode refid="539" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="534">
+        <label>BGMDriven</label>
+        <link refid="classBGMDriven"/>
+        <childnode refid="535" relation="usage">
+          <edgelabel>engine</edgelabel>
+        </childnode>
+        <childnode refid="538" relation="usage">
+          <edgelabel>ZeBackgroundMusic</edgelabel>
+          <edgelabel>join_DarkSideEffect</edgelabel>
+          <edgelabel>GateEffect</edgelabel>
+          <edgelabel>iamYourFatherEffect</edgelabel>
+        </childnode>
+        <childnode refid="540" relation="usage">
+          <edgelabel>playJoinDarkSideOnce</edgelabel>
+          <edgelabel>playIAmYourFatherOnce</edgelabel>
+        </childnode>
+        <childnode refid="541" relation="usage">
+          <edgelabel>i_amYourFather</edgelabel>
+          <edgelabel>SpaceWarpSource</edgelabel>
+          <edgelabel>DarthVaderbackGround</edgelabel>
+          <edgelabel>LovelyLullabySource</edgelabel>
+          <edgelabel>GateEffectSource</edgelabel>
+          <edgelabel>join_DarkSide</edgelabel>
+          <edgelabel>PokemonGymBattleSource</edgelabel>
+          <edgelabel>StarWarsTheme</edgelabel>
+          <edgelabel>john_cenaSource</edgelabel>
+        </childnode>
+      </node>
+      <node id="537">
+        <label>int</label>
+      </node>
+      <node id="541">
+        <label>irrklang::ISoundSource</label>
+        <link refid="classirrklang_1_1ISoundSource"/>
+        <childnode refid="539" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="536">
+        <label>irrklang::IRefCounted</label>
+        <link refid="classirrklang_1_1IRefCounted"/>
+        <childnode refid="537" relation="usage">
+          <edgelabel>ReferenceCounter</edgelabel>
+        </childnode>
+      </node>
+      <node id="540">
+        <label>bool</label>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/BGMDriven.h" line="26" column="1" bodyfile="MyGraphics/Source/BGMDriven.h" bodystart="26" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classBGMDriven_1a5c282f0f2bfec5c1483c613baa00a284" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>BGMDriven</name></member>
+      <member refid="classBGMDriven_1a066d505555d6c499ea756d424a471de2" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>DarthVaderbackGround</name></member>
+      <member refid="classBGMDriven_1aa07a89585a7af089e88e6bab6e73b5ca" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>engine</name></member>
+      <member refid="classBGMDriven_1a58f8e4fe283894048fbd3c7d7e64ecc7" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>GateEffect</name></member>
+      <member refid="classBGMDriven_1a40502225e27f1604f04cb0a392f5709c" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>GateEffectSource</name></member>
+      <member refid="classBGMDriven_1aa8816f7a83217e6184500a0304eac34c" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>i_amYourFather</name></member>
+      <member refid="classBGMDriven_1adcbdf8b16289e43c8948f37815d479e2" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>iamYourFatherEffect</name></member>
+      <member refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>init</name></member>
+      <member refid="classBGMDriven_1a5499e630eaa3294625534906fe80e972" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>john_cenaSource</name></member>
+      <member refid="classBGMDriven_1aa9a580b384ca8eadaeb77e74cad4eda7" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>join_DarkSide</name></member>
+      <member refid="classBGMDriven_1af71e2a65840ef42bfe0c340f5b099d90" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>join_DarkSideEffect</name></member>
+      <member refid="classBGMDriven_1ac92d5e9bf781ae7624f94726be41fa8b" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>LovelyLullabySource</name></member>
+      <member refid="classBGMDriven_1adba6be682af223e347b708a1bb29d177" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>playDarthVaderBackground</name></member>
+      <member refid="classBGMDriven_1a7a30db1ca2365ff04d2712d66da0a503" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>playGateEffect</name></member>
+      <member refid="classBGMDriven_1a7f96f10da396bee4949ad4abeb8655fc" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>playIamYourFatherEffect</name></member>
+      <member refid="classBGMDriven_1a6228191bf53e0ca582f89ace78475a72" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>playIAmYourFatherOnce</name></member>
+      <member refid="classBGMDriven_1a0ac0c2672f995d3dd0219761a5a317ac" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>playJohnCenaBackground</name></member>
+      <member refid="classBGMDriven_1aae10f0ff9b2e14d7b62b4c0797d3d714" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>playJoinDarkSideEffect</name></member>
+      <member refid="classBGMDriven_1a01dadd546b20f1ea2ebd84e216915f92" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>playJoinDarkSideOnce</name></member>
+      <member refid="classBGMDriven_1aabfe59db224a3faf27bc58833df35da8" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>playLovelyLullaby</name></member>
+      <member refid="classBGMDriven_1a1106212f0ed32a27cf05f488f8709402" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>playPokemonBattleBackground</name></member>
+      <member refid="classBGMDriven_1ace192735193ad55b50aea7b2d9d10078" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>playStarWarsThemeBackground</name></member>
+      <member refid="classBGMDriven_1ab77835bb55208467e77fa117a70fe624" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>playWarpBackground</name></member>
+      <member refid="classBGMDriven_1a84641cb6a4622f960b3579ea7097e80a" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>PokemonGymBattleSource</name></member>
+      <member refid="classBGMDriven_1a5769938591177359476657cc9f420959" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>soundEffectArePlaying</name></member>
+      <member refid="classBGMDriven_1ae038659a44a9f796cac8934f6c82edf7" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>SpaceWarpSource</name></member>
+      <member refid="classBGMDriven_1a56e52998d86c7db5f8d13ef1ba54e269" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>StarWarsTheme</name></member>
+      <member refid="classBGMDriven_1aff8b36d07ad02f29fc17fc14ffecb462" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>stopAllSound</name></member>
+      <member refid="classBGMDriven_1a63403095fd55386147f777ca6c618df1" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>updatePlayerPos</name></member>
+      <member refid="classBGMDriven_1a36f29bd1216b270fd307d7ba48c20e20" prot="private" virt="non-virtual"><scope>BGMDriven</scope><name>ZeBackgroundMusic</name></member>
+      <member refid="classBGMDriven_1aba4c43d1b7864ae3d1c7cc1d904ad7e5" prot="public" virt="non-virtual"><scope>BGMDriven</scope><name>~BGMDriven</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

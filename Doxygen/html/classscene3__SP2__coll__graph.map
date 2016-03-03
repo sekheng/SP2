@@ -1,0 +1,13 @@
+<map id="scene3_SP2" name="scene3_SP2">
+<area shape="rect" id="node2" href="$classScene.html" title="The basic functions of how Scene works. All scenes shall inheirit from this class. " alt="" coords="767,103,825,129"/>
+<area shape="rect" id="node3" href="$structLight.html" title="set the Light, position, color, light type, and light properties " alt="" coords="461,333,512,360"/>
+<area shape="rect" id="node6" href="$structVector3.html" title="Defines a 3D vector and its methods. " alt="" coords="128,507,195,533"/>
+<area shape="rect" id="node7" href="$structPosition.html" title="defines 3D position " alt="" coords="127,456,196,483"/>
+<area shape="rect" id="node8" href="$structColor.html" title="defines color and it&#39;s RGB properties " alt="" coords="135,255,187,281"/>
+<area shape="rect" id="node10" href="$classCamera3.html" title="First Person Camera included Extremely Complex functions of the camera which incorporates mouse contr..." alt="" coords="759,583,833,609"/>
+<area shape="rect" id="node21" href="$structMaterial.html" title="Defines the material and it&#39;s properties. " alt="" coords="453,811,521,837"/>
+<area shape="rect" id="node22" href="$structComponent.html" title="Defines material&#39;s colour. " alt="" coords="117,815,205,841"/>
+<area shape="rect" id="node11" href="$classCamera.html" title="basic functions of the camera " alt="" coords="453,507,520,533"/>
+<area shape="rect" id="node15" href="$classMS.html" title="Matrix Stack class. " alt="" coords="775,1035,817,1061"/>
+<area shape="rect" id="node20" href="$classMesh.html" title="To store VBO (vertex &amp; color buffer) and IBO (index buffer) " alt="" coords="769,777,823,804"/>
+</map>

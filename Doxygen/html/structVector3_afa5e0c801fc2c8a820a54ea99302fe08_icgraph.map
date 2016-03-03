@@ -1,0 +1,29 @@
+<map id="Vector3::Vector3" name="Vector3::Vector3">
+<area shape="rect" id="node2" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="189,335,298,361"/>
+<area shape="rect" id="node25" href="$structVector3.html#a2da0f00c5529bced69763320dac9c414" title="Return a copy of this vector, normalized. " alt="" coords="173,461,313,488"/>
+<area shape="rect" id="node26" href="$structVector3.html#ab8bb1a236776d951a2e43b3ca9448bb2" title="operator* overload for scalar multiplication " alt="" coords="180,512,307,539"/>
+<area shape="rect" id="node27" href="$structVector3.html#a90c345c2a67d220a474a6f209102634d" title="operator+ overload for vector addition " alt="" coords="178,563,309,589"/>
+<area shape="rect" id="node28" href="$structVector3.html#a224d913ac29766a57a5d7c96eb226b92" title="operator&#45; overload for vector subtraction " alt="" coords="180,613,307,640"/>
+<area shape="rect" id="node3" href="$classMtx44.html#a7c3d2d30d9ed5bfca2ba97d0e570930f" title="Set matrix to be a lookat matrix. " alt="" coords="390,132,531,159"/>
+<area shape="rect" id="node10" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Initialize camera. " alt="" coords="411,512,510,539"/>
+<area shape="rect" id="node16" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="To be called every frame. Camera will get user inputs and update its position and orientation..." alt="" coords="613,360,736,387"/>
+<area shape="rect" id="node21" href="$classCamera3.html#a81897b566fc3a2142c40276eb7c6a57b" title="rotation of the camera based on the mouse movement " alt="" coords="381,411,541,437"/>
+<area shape="rect" id="node22" href="$classscene2__SP2.html#ae2e72ac92088b319c9e6dbd74fcd3236" title="the logic behind animating the ending " alt="" coords="389,208,533,235"/>
+<area shape="rect" id="node23" href="$classscene3__SP2.html#a71dd3bb2895b152440016ae97b01fb09" title="where the logic of the game is, and update " alt="" coords="388,259,533,285"/>
+<area shape="rect" id="node24" href="$classsceneSP2.html#a7b2a8d3962e7f68a3934dc9dfd68902c" title="the logic behind animating of teleporting " alt="" coords="361,309,560,336"/>
+<area shape="rect" id="node4" href="$classMS.html#a2638cd3249260877cc31329978fb6b38" title="Setup lookat matrix and push to matrix stack. " alt="" coords="629,119,720,145"/>
+<area shape="rect" id="node5" href="$classLoadingScreen.html#a9325ad1fb08d5103eceefefe7cb1d316" title="where the rendering of all the stuff we needed will be here " alt="" coords="789,56,947,83"/>
+<area shape="rect" id="node6" href="$classscene3SP2.html#aff3cfed153ec3e4c55e8c0bbc80fd459" title="where the rendering of all the stuff we needed will be here " alt="" coords="799,107,937,133"/>
+<area shape="rect" id="node7" href="$classscene3__SP2.html#a7e54396921ff46efeb2fd7c003761561" title="where the rendering of all the stuff we needed will be here " alt="" coords="795,157,941,184"/>
+<area shape="rect" id="node8" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="795,208,941,235"/>
+<area shape="rect" id="node9" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="803,5,933,32"/>
+<area shape="rect" id="node11" href="$classLoadingScreen.html#a7fa77cff0af874a23c6043a80af09da3" title="initializing whatever is needed for the scene " alt="" coords="608,411,741,437"/>
+<area shape="rect" id="node12" href="$classscene3SP2.html#a897c1f1d70c68b89f07b25acf4df6809" title="initializing whatever is needed for the scene " alt="" coords="617,461,732,488"/>
+<area shape="rect" id="node13" href="$classscene3__SP2.html#ae4a4e666fc5860fee4d9e091f1571c18" title="initializing whatever is needed for the scene " alt="" coords="614,512,735,539"/>
+<area shape="rect" id="node14" href="$classscene2__SP2.html#a6d5705b83a23421a1f5aa0fec8c28329" title="initializing whatever is needed for the scene " alt="" coords="614,563,735,589"/>
+<area shape="rect" id="node15" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="621,613,728,640"/>
+<area shape="rect" id="node17" href="$classLoadingScreen.html#aadba6b28a70c39e25c9892f93dbff465" title="where the logic of the game is, and update " alt="" coords="789,360,947,387"/>
+<area shape="rect" id="node18" href="$classscene3SP2.html#ac3a634c845cb61d9bbc8b519fa67c43c" title="where the logic of the game is, and update " alt="" coords="799,411,937,437"/>
+<area shape="rect" id="node19" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="795,259,941,285"/>
+<area shape="rect" id="node20" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="803,309,933,336"/>
+</map>

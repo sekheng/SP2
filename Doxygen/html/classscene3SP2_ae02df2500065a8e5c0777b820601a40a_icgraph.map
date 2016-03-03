@@ -1,0 +1,4 @@
+<map id="scene3SP2::renderMesh" name="scene3SP2::renderMesh">
+<area shape="rect" id="node2" href="$classscene3SP2.html#aff3cfed153ec3e4c55e8c0bbc80fd459" title="where the rendering of all the stuff we needed will be here " alt="" coords="245,5,383,32"/>
+<area shape="rect" id="node3" href="$classscene3SP2.html#a969b5024f3f7e207e93ac7dc0a12a199" title="rendering of image using quad on screen " alt="" coords="219,57,409,98"/>
+</map>

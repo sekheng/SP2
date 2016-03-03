@@ -1,0 +1,8 @@
+<map id="NumPad::NumpadProgram" name="NumPad::NumpadProgram">
+<area shape="rect" id="node2" href="$classNumPad.html#a5e056d35eee91dbab3ade47fc7d4f938" title="Check whether player&#39;s position is inside interaction area. " alt="" coords="505,31,645,57"/>
+<area shape="rect" id="node5" href="$classNumPad.html#a27fbbd8747f455d3f3f95c17feb098b2" title="&quot;Press &#39;C&#39; to interact&quot; will appear if player&#39;s position is inside interaction area ..." alt="" coords="263,31,425,57"/>
+<area shape="rect" id="node6" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="257,81,431,108"/>
+<area shape="rect" id="node7" href="$classNumPad.html#ad464c4cfa4a962a060c2aef648047a67" title="Check whether player&#39;s position is inside interaction area and &#39;C&#39; button is pressed to open numpad o..." alt="" coords="231,132,457,159"/>
+<area shape="rect" id="node3" href="$classCamera3.html#a4c484a400a9c2e64f3334fc62330368a" title="getting camera&#39;s position of x coordinate " alt="" coords="693,5,877,32"/>
+<area shape="rect" id="node4" href="$classCamera3.html#aae412d5efa2bae38cc9d5f38fb289f3a" title="getting camera&#39;s position of z coordinate " alt="" coords="693,56,877,83"/>
+</map>

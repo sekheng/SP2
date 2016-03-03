@@ -1,0 +1,6 @@
+<map id="StationScene::openSasame" name="StationScene::openSasame">
+<area shape="rect" id="node2" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="270,5,377,32"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a963ab61de5342e71f6227d9be05383f9" title="render everything in the room " alt="" coords="237,56,409,83"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="258,107,389,133"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="457,56,588,83"/>
+</map>

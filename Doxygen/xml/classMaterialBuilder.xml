@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classMaterialBuilder" kind="class" language="C++" prot="public">
+    <compoundname>MaterialBuilder</compoundname>
+    <includes refid="MaterialBuilder_8h" local="no">MaterialBuilder.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classMaterialBuilder_1a2847df1e27e666cd88301b11b0e5d3d0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structMaterial" kindref="compound">Material</ref></type>
+        <definition>Material MaterialBuilder::GenerateBlinn</definition>
+        <argsstring>(float shininess=1.f, float ambient=0.8, float diffuse=0.8f, float specular=0.5f)</argsstring>
+        <name>GenerateBlinn</name>
+        <param>
+          <type>float</type>
+          <declname>shininess</declname>
+          <defval>1.f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ambient</declname>
+          <defval>0.8</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>diffuse</declname>
+          <defval>0.8f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>specular</declname>
+          <defval>0.5f</defval>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>generate similar properties to Blinn </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shininess</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- how bright will the object becomes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ambient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- gradient of the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>diffuse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- how the light diffuse on the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>specular</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- how spetacular the object will look like being shined upon</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the material after it&apos;s properties have been set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/MaterialBuilder.h" line="25" column="1" bodyfile="MyGraphics/Source/MaterialBuilder.cpp" bodystart="16" bodyend="26"/>
+        <references refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" compoundref="Material_8h" startline="36">Material::kAmbient</references>
+        <references refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" compoundref="Material_8h" startline="37">Material::kDiffuse</references>
+        <references refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" compoundref="Material_8h" startline="39">Material::kShininess</references>
+        <references refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" compoundref="Material_8h" startline="38">Material::kSpecular</references>
+        <references refid="structComponent_1a85f599b839327709953f0115dc5dfd49" compoundref="Material_8h" startline="24" endline="24">Component::Set</references>
+        <referencedby refid="classMaterialBuilder_1ae8609727fcb491a7e1f06d1231c2d17b" compoundref="MaterialBuilder_8cpp" startline="41" endline="45">GenerateLambert</referencedby>
+        <referencedby refid="classMaterialBuilder_1a330c0d164483b9ab0625b47534ec4ca9" compoundref="MaterialBuilder_8cpp" startline="60" endline="64">GeneratePhong</referencedby>
+        <referencedby refid="classscene3__SP2_1ae4a4e666fc5860fee4d9e091f1571c18" compoundref="scene3__SP2_8cpp" startline="46" endline="269">scene3_SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMaterialBuilder_1ae8609727fcb491a7e1f06d1231c2d17b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structMaterial" kindref="compound">Material</ref></type>
+        <definition>Material MaterialBuilder::GenerateLambert</definition>
+        <argsstring>(float shininess=1.f, float ambient=0.8f, float diffuse=0.8f, float specular=0.2f)</argsstring>
+        <name>GenerateLambert</name>
+        <param>
+          <type>float</type>
+          <declname>shininess</declname>
+          <defval>1.f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ambient</declname>
+          <defval>0.8f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>diffuse</declname>
+          <defval>0.8f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>specular</declname>
+          <defval>0.2f</defval>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>generate similar properties to Lambert </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shininess</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- how bright will the object becomes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ambient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- gradient of the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>diffuse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- how the light diffuse on the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>specular</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- how spetacular the object will look like being shined upon</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the material after it&apos;s properties have been set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/MaterialBuilder.h" line="26" column="1" bodyfile="MyGraphics/Source/MaterialBuilder.cpp" bodystart="41" bodyend="45"/>
+        <references refid="classMaterialBuilder_1a2847df1e27e666cd88301b11b0e5d3d0" compoundref="MaterialBuilder_8cpp" startline="16" endline="26">GenerateBlinn</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMaterialBuilder_1a330c0d164483b9ab0625b47534ec4ca9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structMaterial" kindref="compound">Material</ref></type>
+        <definition>Material MaterialBuilder::GeneratePhong</definition>
+        <argsstring>(float shininess=1.f, float ambient=0.8f, float diffuse=0.8f, float specular=0.9f)</argsstring>
+        <name>GeneratePhong</name>
+        <param>
+          <type>float</type>
+          <declname>shininess</declname>
+          <defval>1.f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ambient</declname>
+          <defval>0.8f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>diffuse</declname>
+          <defval>0.8f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>specular</declname>
+          <defval>0.9f</defval>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>generate similar properties to Phong </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shininess</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- how bright will the object becomes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ambient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- gradient of the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>diffuse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- how the light diffuse on the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>specular</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- how spetacular the object will look like being shined upon</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the material after it&apos;s properties have been set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/MaterialBuilder.h" line="27" column="1" bodyfile="MyGraphics/Source/MaterialBuilder.cpp" bodystart="60" bodyend="64"/>
+        <references refid="classMaterialBuilder_1a2847df1e27e666cd88301b11b0e5d3d0" compoundref="MaterialBuilder_8cpp" startline="16" endline="26">GenerateBlinn</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Provides methods to generate different materials. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classMaterialBuilder" kindref="compound">MaterialBuilder</ref>: </para>    </detaileddescription>
+    <location file="MyGraphics/Source/MaterialBuilder.h" line="23" column="1" bodyfile="MyGraphics/Source/MaterialBuilder.h" bodystart="22" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classMaterialBuilder_1a2847df1e27e666cd88301b11b0e5d3d0" prot="public" virt="non-virtual"><scope>MaterialBuilder</scope><name>GenerateBlinn</name></member>
+      <member refid="classMaterialBuilder_1ae8609727fcb491a7e1f06d1231c2d17b" prot="public" virt="non-virtual"><scope>MaterialBuilder</scope><name>GenerateLambert</name></member>
+      <member refid="classMaterialBuilder_1a330c0d164483b9ab0625b47534ec4ca9" prot="public" virt="non-virtual"><scope>MaterialBuilder</scope><name>GeneratePhong</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

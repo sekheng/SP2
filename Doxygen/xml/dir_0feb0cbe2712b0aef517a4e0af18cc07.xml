@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="dir_0feb0cbe2712b0aef517a4e0af18cc07" kind="dir">
+    <compoundname>MyGraphics/Source</compoundname>
+    <innerfile refid="Application_8cpp">Application.cpp</innerfile>
+    <innerfile refid="Application_8h">Application.h</innerfile>
+    <innerfile refid="BGMDriven_8cpp">BGMDriven.cpp</innerfile>
+    <innerfile refid="BGMDriven_8h">BGMDriven.h</innerfile>
+    <innerfile refid="Camera_8cpp">Camera.cpp</innerfile>
+    <innerfile refid="Camera_8h">Camera.h</innerfile>
+    <innerfile refid="Camera3_8cpp">Camera3.cpp</innerfile>
+    <innerfile refid="Camera3_8h">Camera3.h</innerfile>
+    <innerfile refid="creditScene_8cpp">creditScene.cpp</innerfile>
+    <innerfile refid="creditScene_8h">creditScene.h</innerfile>
+    <innerfile refid="DetectMemoryLeak_8h">DetectMemoryLeak.h</innerfile>
+    <innerfile refid="GameObject_8cpp">GameObject.cpp</innerfile>
+    <innerfile refid="GameObject_8h">GameObject.h</innerfile>
+    <innerfile refid="Light_8h">Light.h</innerfile>
+    <innerfile refid="LoadingScreen_8cpp">LoadingScreen.cpp</innerfile>
+    <innerfile refid="LoadingScreen_8h">LoadingScreen.h</innerfile>
+    <innerfile refid="LoadOBJ_8cpp">LoadOBJ.cpp</innerfile>
+    <innerfile refid="LoadOBJ_8h">LoadOBJ.h</innerfile>
+    <innerfile refid="LoadTGA_8cpp">LoadTGA.cpp</innerfile>
+    <innerfile refid="LoadTGA_8h">LoadTGA.h</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="Material_8h">Material.h</innerfile>
+    <innerfile refid="MaterialBuilder_8cpp">MaterialBuilder.cpp</innerfile>
+    <innerfile refid="MaterialBuilder_8h">MaterialBuilder.h</innerfile>
+    <innerfile refid="Mesh_8cpp">Mesh.cpp</innerfile>
+    <innerfile refid="Mesh_8h">Mesh.h</innerfile>
+    <innerfile refid="MeshBuilder_8cpp">MeshBuilder.cpp</innerfile>
+    <innerfile refid="MeshBuilder_8h">MeshBuilder.h</innerfile>
+    <innerfile refid="NPC_8cpp">NPC.cpp</innerfile>
+    <innerfile refid="NPC_8h">NPC.h</innerfile>
+    <innerfile refid="NumPad_8cpp">NumPad.cpp</innerfile>
+    <innerfile refid="NumPad_8h">NumPad.h</innerfile>
+    <innerfile refid="objectsForDisplay_8cpp">objectsForDisplay.cpp</innerfile>
+    <innerfile refid="objectsForDisplay_8h">objectsForDisplay.h</innerfile>
+    <innerfile refid="Quest_8cpp">Quest.cpp</innerfile>
+    <innerfile refid="Quest_8h">Quest.h</innerfile>
+    <innerfile refid="rot__civ_8cpp">rot_civ.cpp</innerfile>
+    <innerfile refid="rot__civ_8h">rot_civ.h</innerfile>
+    <innerfile refid="Scene_8h">Scene.h</innerfile>
+    <innerfile refid="scene2__minigame_8cpp">scene2_minigame.cpp</innerfile>
+    <innerfile refid="scene2__minigame_8h">scene2_minigame.h</innerfile>
+    <innerfile refid="scene2__SP2_8cpp">scene2_SP2.cpp</innerfile>
+    <innerfile refid="scene2__SP2_8h">scene2_SP2.h</innerfile>
+    <innerfile refid="scene3__SP2_8cpp">scene3_SP2.cpp</innerfile>
+    <innerfile refid="scene3__SP2_8h">scene3_SP2.h</innerfile>
+    <innerfile refid="Scene3SP2_8cpp">Scene3SP2.cpp</innerfile>
+    <innerfile refid="scene3SP2_8h">scene3SP2.h</innerfile>
+    <innerfile refid="sceneSP2_8cpp">sceneSP2.cpp</innerfile>
+    <innerfile refid="sceneSP2_8h">sceneSP2.h</innerfile>
+    <innerfile refid="SekHeng_8cpp">SekHeng.cpp</innerfile>
+    <innerfile refid="SekHeng_8h">SekHeng.h</innerfile>
+    <innerfile refid="shader_8cpp">shader.cpp</innerfile>
+    <innerfile refid="shader_8hpp">shader.hpp</innerfile>
+    <innerfile refid="StationScene_8cpp">StationScene.cpp</innerfile>
+    <innerfile refid="StationScene_8h">StationScene.h</innerfile>
+    <innerfile refid="Utility_8cpp">Utility.cpp</innerfile>
+    <innerfile refid="Utility_8h">Utility.h</innerfile>
+    <innerfile refid="Vertex_8h">Vertex.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MyGraphics/Source/"/>
+  </compounddef>
+</doxygen>

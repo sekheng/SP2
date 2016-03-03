@@ -1,0 +1,8 @@
+<map id="sceneSP2::headanimation" name="sceneSP2::headanimation">
+<area shape="rect" id="node2" href="$classNPC.html#a2b008f0dd95c65339baf466918789062" title="to check if player is within range to interact with this object " alt="" coords="228,81,345,108"/>
+<area shape="rect" id="node3" href="$classNPC.html#aa43e897253da76ea31e903407361cd92" title="bounds checking for interaction " alt="" coords="410,31,561,57"/>
+<area shape="rect" id="node6" href="$classCamera3.html#a4c484a400a9c2e64f3334fc62330368a" title="getting camera&#39;s position of x coordinate " alt="" coords="393,81,577,108"/>
+<area shape="rect" id="node7" href="$classCamera3.html#aae412d5efa2bae38cc9d5f38fb289f3a" title="getting camera&#39;s position of z coordinate " alt="" coords="393,132,577,159"/>
+<area shape="rect" id="node4" href="$classNPC.html#a306047126b65a7f67ad6331a632b8071" title="get this object&#39;s X coordinate " alt="" coords="625,5,793,32"/>
+<area shape="rect" id="node5" href="$classNPC.html#a4f760c4731c0beb5e9d6096e666414bf" title="get this object&#39;s y coordinate " alt="" coords="625,56,793,83"/>
+</map>

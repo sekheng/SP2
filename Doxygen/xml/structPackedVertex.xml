@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="structPackedVertex" kind="struct" language="C++" prot="public">
+    <compoundname>PackedVertex</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPackedVertex_1adbd5c98e027ccce79a27381686efdb62" prot="public" static="no" mutable="no">
+        <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+        <definition>Position PackedVertex::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadOBJ.cpp" line="144" column="1" bodyfile="MyGraphics/Source/LoadOBJ.cpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPackedVertex_1a86428554cc4e4c177eb1161bc3be0230" prot="public" static="no" mutable="no">
+        <type><ref refid="structTexCoord" kindref="compound">TexCoord</ref></type>
+        <definition>TexCoord PackedVertex::uv</definition>
+        <argsstring></argsstring>
+        <name>uv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadOBJ.cpp" line="145" column="1" bodyfile="MyGraphics/Source/LoadOBJ.cpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPackedVertex_1ad7f8bd922bf90fb53ac5a27935179698" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 PackedVertex::normal</definition>
+        <argsstring></argsstring>
+        <name>normal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadOBJ.cpp" line="146" column="1" bodyfile="MyGraphics/Source/LoadOBJ.cpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structPackedVertex_1a86a90d456e948b1105c7e8905f4fa385" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool PackedVertex::operator&lt;</definition>
+        <argsstring>(const PackedVertex that) const </argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="structPackedVertex" kindref="compound">PackedVertex</ref></type>
+          <declname>that</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadOBJ.cpp" line="147" column="1" bodyfile="MyGraphics/Source/LoadOBJ.cpp" bodystart="147" bodyend="149"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>vertex with it&apos;s properties </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para>struct <ref refid="structPackedVertex" kindref="compound">PackedVertex</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="806">
+        <label>Position</label>
+        <link refid="structPosition"/>
+        <childnode refid="804" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="805">
+        <label>TexCoord</label>
+        <link refid="structTexCoord"/>
+        <childnode refid="804" relation="usage">
+          <edgelabel>u</edgelabel>
+          <edgelabel>v</edgelabel>
+        </childnode>
+      </node>
+      <node id="804">
+        <label>float</label>
+      </node>
+      <node id="802">
+        <label>PackedVertex</label>
+        <link refid="structPackedVertex"/>
+        <childnode refid="803" relation="usage">
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="805" relation="usage">
+          <edgelabel>uv</edgelabel>
+        </childnode>
+        <childnode refid="806" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+      </node>
+      <node id="803">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="804" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/LoadOBJ.cpp" line="143" column="1" bodyfile="MyGraphics/Source/LoadOBJ.cpp" bodystart="143" bodyend="150"/>
+    <listofallmembers>
+      <member refid="structPackedVertex_1ad7f8bd922bf90fb53ac5a27935179698" prot="public" virt="non-virtual"><scope>PackedVertex</scope><name>normal</name></member>
+      <member refid="structPackedVertex_1a86a90d456e948b1105c7e8905f4fa385" prot="public" virt="non-virtual"><scope>PackedVertex</scope><name>operator&lt;</name></member>
+      <member refid="structPackedVertex_1adbd5c98e027ccce79a27381686efdb62" prot="public" virt="non-virtual"><scope>PackedVertex</scope><name>position</name></member>
+      <member refid="structPackedVertex_1a86428554cc4e4c177eb1161bc3be0230" prot="public" virt="non-virtual"><scope>PackedVertex</scope><name>uv</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

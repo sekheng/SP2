@@ -1,0 +1,1386 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classLoadingScreen" kind="class" language="C++" prot="public">
+    <compoundname>LoadingScreen</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="LoadingScreen_8h" local="no">LoadingScreen.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6" prot="private" static="no">
+        <name>GEOMETRY_TYPE</name>
+        <enumvalue id="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6a806471348a6c1ff22b654b9624a01cc0" prot="private">
+          <name>GEO_AXES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6a7fdadd1ec6acb75a2d1bdf4acb8eec01" prot="private">
+          <name>GEO_LIGHTBALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6a1daf7d0c641a0f3d4e4974874deafaf2" prot="private">
+          <name>GEO_COMIC_TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6aead3264980d2b26f7de7cbf0f8d8c0b5" prot="private">
+          <name>GEO_LOADING_SCREEN_TITLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6abad6aa8a010fb17510a2b20121bdeaf1" prot="private">
+          <name>GEO_LOADING_DOGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6acd390c7ec4026267ae9f95ba0cac5828" prot="private">
+          <name>GEO_LOADING_BREATHING_CAT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6adcd7aad30220aae320327b4c947818c6" prot="private">
+          <name>NUM_GEOMETRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="29" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="28" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="enum" id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518a" prot="private" static="no">
+        <name>UNIFORM_TYPE</name>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad553e871352b582e02e7eeb81c8e4b01" prot="private">
+          <name>U_MVP</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa70511f0f90006be81d3d7363df159d4e" prot="private">
+          <name>U_MODELVIEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa1376713296a60515822eabf1bd0ed858" prot="private">
+          <name>U_MODELVIEW_INVERSE_TRANSPOSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa996497c1023bd965175dbe7ec46027f6" prot="private">
+          <name>U_MATERIAL_AMBIENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aac5027cf2b4fe122f29185f9d2280bf86" prot="private">
+          <name>U_MATERIAL_DIFFUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3944747124d7b2a791170aba0448a40b" prot="private">
+          <name>U_MATERIAL_SPECULAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa74e08a3f7deed913e4dfa7ce68300723" prot="private">
+          <name>U_MATERIAL_SHININESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3b560614f9b840f874594fc08b46c688" prot="private">
+          <name>U_LIGHT0_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa7eca86d08578c858921504565b0c42e0" prot="private">
+          <name>U_LIGHT0_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa76f5e9d19b6f1fc08c5c49029df0e377" prot="private">
+          <name>U_LIGHT0_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa9d718b112e0418e6cc46bcd0a24cc6c7" prot="private">
+          <name>U_LIGHT0_KC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa6abc00c4493fe990f68661afdc19ff4e" prot="private">
+          <name>U_LIGHT0_KL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aab682f557962f924f5ab30944eefaf589" prot="private">
+          <name>U_LIGHT0_KQ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaaef0bd075643de51be2c28c4fb33c38b" prot="private">
+          <name>U_LIGHTENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa38bed0cc227832ef93f35e2fa9bbb395" prot="private">
+          <name>U_LIGHT0_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa9dea6c272e9e458479a49bb9ea695a15" prot="private">
+          <name>U_LIGHT0_SPOTDIRECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa21d880aaac14130db7d6a27cce0ecc73" prot="private">
+          <name>U_LIGHT0_COSCUTOFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa7f99eac9de9222533e952f7a3294c13f" prot="private">
+          <name>U_LIGHT0_COSINNER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa5e77a0ea1724ac65880200a605a80689" prot="private">
+          <name>U_LIGHT0_EXPONENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaf8c64d9dd06b04f94813cc774664815c" prot="private">
+          <name>U_NUMLIGHTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3ade43a8fb1c85d2798693ab7842ae12" prot="private">
+          <name>U_COLOR_TEXTURE_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaa95d98201b5106f34b45581227bbe152" prot="private">
+          <name>U_COLOR_TEXTURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa2f219d4f92bad4c49161f21ad3dea899" prot="private">
+          <name>U_TEXT_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad4309a05229f787055f29d74f5e96796" prot="private">
+          <name>U_TEXT_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aafa1dcedfcabdce9e35796a4e46d952fd" prot="private">
+          <name>U_TOTAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="40" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="39" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLoadingScreen_1aae643b50936ee1120c874eafb3bd4a30" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool LoadingScreen::on_light</definition>
+        <argsstring></argsstring>
+        <name>on_light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="78" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1a09abd7f5d1bdc294e8883d8d5b5cd30a" prot="private" static="no" mutable="no">
+        <type><ref refid="structLight" kindref="compound">Light</ref></type>
+        <definition>Light LoadingScreen::light[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="79" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1aa7bf7d046824bf336334c120ec38f397" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LoadingScreen::LSPEED</definition>
+        <argsstring></argsstring>
+        <name>LSPEED</name>
+        <initializer>= 10.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="80" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1a52ddece4ec5d3dfbaf54451fe9cb4aef" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned LoadingScreen::m_vertexArrayID</definition>
+        <argsstring></argsstring>
+        <name>m_vertexArrayID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="82" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1aac98339073bd6c44f912eca975201839" compoundref="LoadingScreen_8cpp" startline="283" endline="287">Exit</referencedby>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1ab12fb30cbf7f2c5d51f35e1022bfd9dd" prot="private" static="no" mutable="no">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh* LoadingScreen::meshList[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>meshList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="83" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+        <referencedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" compoundref="LoadingScreen_8cpp" startline="230" endline="275">Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1a4976deb0f83a65017a3fc8502d2d1313" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned LoadingScreen::m_programID</definition>
+        <argsstring></argsstring>
+        <name>m_programID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="85" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1aac98339073bd6c44f912eca975201839" compoundref="LoadingScreen_8cpp" startline="283" endline="287">Exit</referencedby>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1ac88871a1fa341670a559181aff520278" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned LoadingScreen::m_parameters[U_TOTAL]</definition>
+        <argsstring>[U_TOTAL]</argsstring>
+        <name>m_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="86" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+        <referencedby refid="classLoadingScreen_1a8249bb27253ebc256119a0e22a141e3d" compoundref="LoadingScreen_8cpp" startline="182" endline="222">renderMesh</referencedby>
+        <referencedby refid="classLoadingScreen_1a4fe97242b309801cef36ddb6c27aa33f" compoundref="LoadingScreen_8cpp" startline="299" endline="324">RenderText</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1af2b5c96b9c9201f9aecd6122bc88d79d" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref></type>
+        <definition>Camera3 LoadingScreen::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="88" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+        <referencedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" compoundref="LoadingScreen_8cpp" startline="230" endline="275">Render</referencedby>
+        <referencedby refid="classLoadingScreen_1aadba6b28a70c39e25c9892f93dbff465" compoundref="LoadingScreen_8cpp" startline="168" endline="172">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1a79f97b009ef44c55dbc56d555e1e55f3" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS LoadingScreen::modelStack</definition>
+        <argsstring></argsstring>
+        <name>modelStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="90" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">RenderImageOnScreen</referencedby>
+        <referencedby refid="classLoadingScreen_1a8249bb27253ebc256119a0e22a141e3d" compoundref="LoadingScreen_8cpp" startline="182" endline="222">renderMesh</referencedby>
+        <referencedby refid="classLoadingScreen_1a4fe97242b309801cef36ddb6c27aa33f" compoundref="LoadingScreen_8cpp" startline="299" endline="324">RenderText</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1a0462ddfcf3697c0fc4a4b9412035395a" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS LoadingScreen::viewStack</definition>
+        <argsstring></argsstring>
+        <name>viewStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="90" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" compoundref="LoadingScreen_8cpp" startline="230" endline="275">Render</referencedby>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">RenderImageOnScreen</referencedby>
+        <referencedby refid="classLoadingScreen_1a8249bb27253ebc256119a0e22a141e3d" compoundref="LoadingScreen_8cpp" startline="182" endline="222">renderMesh</referencedby>
+        <referencedby refid="classLoadingScreen_1a4fe97242b309801cef36ddb6c27aa33f" compoundref="LoadingScreen_8cpp" startline="299" endline="324">RenderText</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1a9c9d27ea42edc732fe2af4a6ae70e6e5" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS LoadingScreen::projectionStack</definition>
+        <argsstring></argsstring>
+        <name>projectionStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="90" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">RenderImageOnScreen</referencedby>
+        <referencedby refid="classLoadingScreen_1a8249bb27253ebc256119a0e22a141e3d" compoundref="LoadingScreen_8cpp" startline="182" endline="222">renderMesh</referencedby>
+        <referencedby refid="classLoadingScreen_1a4fe97242b309801cef36ddb6c27aa33f" compoundref="LoadingScreen_8cpp" startline="299" endline="324">RenderText</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1a1cb0b25b848efebf084561a88a80a2e3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double LoadingScreen::framePerSecond</definition>
+        <argsstring></argsstring>
+        <name>framePerSecond</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="96" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+        <referencedby refid="classLoadingScreen_1aadba6b28a70c39e25c9892f93dbff465" compoundref="LoadingScreen_8cpp" startline="168" endline="172">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1abfc64a5ecedfdc46acbe62d0e94da220" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LoadingScreen::screenWidth</definition>
+        <argsstring></argsstring>
+        <name>screenWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="97" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1a64a3f159b3971cc33b858dd2f84b6f16" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LoadingScreen::screenHeight</definition>
+        <argsstring></argsstring>
+        <name>screenHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="97" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1aa5b5b2ff46e4a58f4a6cd8ae43612574" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; LoadingScreen::loadingHints</definition>
+        <argsstring></argsstring>
+        <name>loadingHints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="99" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1aa3f240f45054c4deb5f6ecb67025b169" compoundref="LoadingScreen_8cpp" startline="424" endline="441">initLoadingHints</referencedby>
+        <referencedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" compoundref="LoadingScreen_8cpp" startline="230" endline="275">Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classLoadingScreen_1a3540c6582eea2586ed42d086bb70e47e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LoadingScreen::percentage</definition>
+        <argsstring></argsstring>
+        <name>percentage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="102" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+        <referencedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" compoundref="LoadingScreen_8cpp" startline="230" endline="275">Render</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLoadingScreen_1a320bb8b9d9790e70b8f1e8ff0a414e40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LoadingScreen::LoadingScreen</definition>
+        <argsstring>(float screenwidth, float screenheight)</argsstring>
+        <name>LoadingScreen</name>
+        <param>
+          <type>float</type>
+          <declname>screenwidth</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>screenheight</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>constructor with 2 arguments to store the width and height of the screen </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>screenwidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- width of the screen </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>screenheight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- height of the screen </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="69" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classLoadingScreen_1ac4d8e1e47650f66e2260506fa5a1bd7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LoadingScreen::~LoadingScreen</definition>
+        <argsstring>()</argsstring>
+        <name>~LoadingScreen</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>destructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="70" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LoadingScreen::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <reimplements refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Init</reimplements>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>initializing whatever is needed for the scene </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="72" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="44" bodyend="158"/>
+        <references refid="classLoadingScreen_1af2b5c96b9c9201f9aecd6122bc88d79d" compoundref="LoadingScreen_8h" startline="88">camera</references>
+        <references refid="classCamera3_1a3c3b940f7a776c7fb98670a7550ee7f7">Camera3::camType</references>
+        <references refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" compoundref="Light_8h" startline="26">Light::color</references>
+        <references refid="structLight_1af4ce5bbfbf33af96db9b8a222d073298" compoundref="Light_8h" startline="45">Light::cosCutoff</references>
+        <references refid="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" compoundref="Light_8h" startline="46">Light::cosInner</references>
+        <references refid="classCamera3_1a7571ef5c6864d0cb63e1e05128aac154" compoundref="Camera3_8h" startline="60">Camera3::cursorCoordX</references>
+        <references refid="classCamera3_1a7a2bb0b29a978367b5892ca775fe4926" compoundref="Camera3_8h" startline="61">Camera3::cursorCoordY</references>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" compoundref="Light_8h" startline="47">Light::exponent</references>
+        <references refid="classCamera3_1a8de7c70e0927f2b74dec482bc5ad95bfa5b06f24a3422988d8814f20460e46b2b" compoundref="Camera3_8h" startline="32">Camera3::FIRST_PERSON</references>
+        <references refid="classLoadingScreen_1a1cb0b25b848efebf084561a88a80a2e3" compoundref="LoadingScreen_8h" startline="96">framePerSecond</references>
+        <references refid="classMeshBuilder_1aa3751076aa9f74324d49a999a3c3fa55" compoundref="MeshBuilder_8cpp" startline="71" endline="101">MeshBuilder::GenerateQuad</references>
+        <references refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="343" endline="383">MeshBuilder::GenerateText</references>
+        <references refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6a1daf7d0c641a0f3d4e4974874deafaf2" compoundref="LoadingScreen_8h" startline="32">GEO_COMIC_TEXT</references>
+        <references refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6acd390c7ec4026267ae9f95ba0cac5828" compoundref="LoadingScreen_8h" startline="35">GEO_LOADING_BREATHING_CAT</references>
+        <references refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6abad6aa8a010fb17510a2b20121bdeaf1" compoundref="LoadingScreen_8h" startline="34">GEO_LOADING_DOGE</references>
+        <references refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6aead3264980d2b26f7de7cbf0f8d8c0b5" compoundref="LoadingScreen_8h" startline="33">GEO_LOADING_SCREEN_TITLE</references>
+        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="46" endline="63">Camera3::Init</references>
+        <references refid="classLoadingScreen_1aa3f240f45054c4deb5f6ecb67025b169" compoundref="LoadingScreen_8cpp" startline="424" endline="441">initLoadingHints</references>
+        <references refid="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" compoundref="Light_8h" startline="28">Light::kC</references>
+        <references refid="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" compoundref="Light_8h" startline="28">Light::kL</references>
+        <references refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" compoundref="Light_8h" startline="28">Light::kQ</references>
+        <references refid="classLoadingScreen_1a09abd7f5d1bdc294e8883d8d5b5cd30a" compoundref="LoadingScreen_8h" startline="79">light</references>
+        <references refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" compoundref="Light_8h" startline="40">Light::LIGHT_DIRECTIONAL</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="shader_8cpp_1a833f10cca6a76fe34ae9efa23ac5e73c" compoundref="shader_8cpp" startline="25" endline="116">LoadShaders</references>
+        <references refid="LoadTGA_8cpp_1a459a80ca6de67a1e3493bfb66ae317e4" compoundref="LoadTGA_8cpp" startline="19" endline="85">LoadTGA</references>
+        <references refid="classLoadingScreen_1ac88871a1fa341670a559181aff520278" compoundref="LoadingScreen_8h" startline="86">m_parameters</references>
+        <references refid="classLoadingScreen_1a4976deb0f83a65017a3fc8502d2d1313" compoundref="LoadingScreen_8h" startline="85">m_programID</references>
+        <references refid="classLoadingScreen_1a52ddece4ec5d3dfbaf54451fe9cb4aef" compoundref="LoadingScreen_8h" startline="82">m_vertexArrayID</references>
+        <references refid="classLoadingScreen_1ab12fb30cbf7f2c5d51f35e1022bfd9dd" compoundref="LoadingScreen_8h" startline="83">meshList</references>
+        <references refid="classLoadingScreen_1aae643b50936ee1120c874eafb3bd4a30" compoundref="LoadingScreen_8h" startline="78">on_light</references>
+        <references refid="classLoadingScreen_1a3540c6582eea2586ed42d086bb70e47e" compoundref="LoadingScreen_8h" startline="102">percentage</references>
+        <references refid="structLight_1afeb738db41e987719e359166ef93314f" compoundref="Light_8h" startline="25">Light::position</references>
+        <references refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" compoundref="Light_8h" startline="27">Light::power</references>
+        <references refid="classLoadingScreen_1a9c9d27ea42edc732fe2af4a6ae70e6e5" compoundref="LoadingScreen_8h" startline="90">projectionStack</references>
+        <references refid="classLoadingScreen_1a64a3f159b3971cc33b858dd2f84b6f16" compoundref="LoadingScreen_8h" startline="97">screenHeight</references>
+        <references refid="classLoadingScreen_1abfc64a5ecedfdc46acbe62d0e94da220" compoundref="LoadingScreen_8h" startline="97">screenWidth</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="26" endline="26">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="39" endline="39">Color::Set</references>
+        <references refid="classMtx44_1ac6e6521111d78ff36d539bf111a902c6" compoundref="Mtx44_8cpp" startline="466" endline="472">Mtx44::SetToPerspective</references>
+        <references refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" compoundref="Light_8h" startline="44">Light::spotDirection</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="43">Mesh::textureID</references>
+        <references refid="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" compoundref="Light_8h" startline="43">Light::type</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaa95d98201b5106f34b45581227bbe152" compoundref="LoadingScreen_8h" startline="62">U_COLOR_TEXTURE</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3ade43a8fb1c85d2798693ab7842ae12" compoundref="LoadingScreen_8h" startline="61">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa7eca86d08578c858921504565b0c42e0" compoundref="LoadingScreen_8h" startline="49">U_LIGHT0_COLOR</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa21d880aaac14130db7d6a27cce0ecc73" compoundref="LoadingScreen_8h" startline="57">U_LIGHT0_COSCUTOFF</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa7f99eac9de9222533e952f7a3294c13f" compoundref="LoadingScreen_8h" startline="58">U_LIGHT0_COSINNER</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa5e77a0ea1724ac65880200a605a80689" compoundref="LoadingScreen_8h" startline="59">U_LIGHT0_EXPONENT</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa9d718b112e0418e6cc46bcd0a24cc6c7" compoundref="LoadingScreen_8h" startline="51">U_LIGHT0_KC</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa6abc00c4493fe990f68661afdc19ff4e" compoundref="LoadingScreen_8h" startline="52">U_LIGHT0_KL</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aab682f557962f924f5ab30944eefaf589" compoundref="LoadingScreen_8h" startline="53">U_LIGHT0_KQ</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3b560614f9b840f874594fc08b46c688" compoundref="LoadingScreen_8h" startline="48">U_LIGHT0_POSITION</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa76f5e9d19b6f1fc08c5c49029df0e377" compoundref="LoadingScreen_8h" startline="50">U_LIGHT0_POWER</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa9dea6c272e9e458479a49bb9ea695a15" compoundref="LoadingScreen_8h" startline="56">U_LIGHT0_SPOTDIRECTION</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa38bed0cc227832ef93f35e2fa9bbb395" compoundref="LoadingScreen_8h" startline="55">U_LIGHT0_TYPE</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaaef0bd075643de51be2c28c4fb33c38b" compoundref="LoadingScreen_8h" startline="54">U_LIGHTENABLED</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa996497c1023bd965175dbe7ec46027f6" compoundref="LoadingScreen_8h" startline="44">U_MATERIAL_AMBIENT</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aac5027cf2b4fe122f29185f9d2280bf86" compoundref="LoadingScreen_8h" startline="45">U_MATERIAL_DIFFUSE</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa74e08a3f7deed913e4dfa7ce68300723" compoundref="LoadingScreen_8h" startline="47">U_MATERIAL_SHININESS</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3944747124d7b2a791170aba0448a40b" compoundref="LoadingScreen_8h" startline="46">U_MATERIAL_SPECULAR</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa70511f0f90006be81d3d7363df159d4e" compoundref="LoadingScreen_8h" startline="42">U_MODELVIEW</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa1376713296a60515822eabf1bd0ed858" compoundref="LoadingScreen_8h" startline="43">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad553e871352b582e02e7eeb81c8e4b01" compoundref="LoadingScreen_8h" startline="41">U_MVP</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaf8c64d9dd06b04f94813cc774664815c" compoundref="LoadingScreen_8h" startline="60">U_NUMLIGHTS</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad4309a05229f787055f29d74f5e96796" compoundref="LoadingScreen_8h" startline="64">U_TEXT_COLOR</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa2f219d4f92bad4c49161f21ad3dea899" compoundref="LoadingScreen_8h" startline="63">U_TEXT_ENABLED</references>
+      </memberdef>
+      <memberdef kind="function" id="classLoadingScreen_1aadba6b28a70c39e25c9892f93dbff465" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LoadingScreen::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Update</reimplements>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>where the logic of the game is, and update </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- time frame </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="73" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="168" bodyend="172"/>
+        <references refid="classLoadingScreen_1af2b5c96b9c9201f9aecd6122bc88d79d" compoundref="LoadingScreen_8h" startline="88">camera</references>
+        <references refid="classLoadingScreen_1a1cb0b25b848efebf084561a88a80a2e3" compoundref="LoadingScreen_8h" startline="96">framePerSecond</references>
+        <references refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="151" endline="243">Camera3::Update</references>
+      </memberdef>
+      <memberdef kind="function" id="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LoadingScreen::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>where the rendering of all the stuff we needed will be here </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="74" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="230" bodyend="275"/>
+        <references refid="classLoadingScreen_1af2b5c96b9c9201f9aecd6122bc88d79d" compoundref="LoadingScreen_8h" startline="88">camera</references>
+        <references refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6a1daf7d0c641a0f3d4e4974874deafaf2" compoundref="LoadingScreen_8h" startline="32">GEO_COMIC_TEXT</references>
+        <references refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6acd390c7ec4026267ae9f95ba0cac5828" compoundref="LoadingScreen_8h" startline="35">GEO_LOADING_BREATHING_CAT</references>
+        <references refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6abad6aa8a010fb17510a2b20121bdeaf1" compoundref="LoadingScreen_8h" startline="34">GEO_LOADING_DOGE</references>
+        <references refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6aead3264980d2b26f7de7cbf0f8d8c0b5" compoundref="LoadingScreen_8h" startline="33">GEO_LOADING_SCREEN_TITLE</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classLoadingScreen_1aa5b5b2ff46e4a58f4a6cd8ae43612574" compoundref="LoadingScreen_8h" startline="99">loadingHints</references>
+        <references refid="classMS_1a2638cd3249260877cc31329978fb6b38" compoundref="MatrixStack_8cpp" startline="224" endline="231">MS::LookAt</references>
+        <references refid="classLoadingScreen_1ab12fb30cbf7f2c5d51f35e1022bfd9dd" compoundref="LoadingScreen_8h" startline="83">meshList</references>
+        <references refid="classLoadingScreen_1a3540c6582eea2586ed42d086bb70e47e" compoundref="LoadingScreen_8h" startline="102">percentage</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="25">Camera::position</references>
+        <references refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" compoundref="MyMath_8h" startline="215" endline="219">Math::RandIntMinMax</references>
+        <references refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">RenderImageOnScreen</references>
+        <references refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">RenderTextOnScreen</references>
+        <references refid="classMtx44_1a3ac8a0afd66412e15e4246474b893da2" compoundref="Mtx44_8cpp" startline="74" endline="77">Mtx44::SetToIdentity</references>
+        <references refid="classMtx44_1ac6e6521111d78ff36d539bf111a902c6" compoundref="Mtx44_8cpp" startline="466" endline="472">Mtx44::SetToPerspective</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="26">Camera::target</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="27">Camera::up</references>
+        <references refid="classLoadingScreen_1a0462ddfcf3697c0fc4a4b9412035395a" compoundref="LoadingScreen_8h" startline="90">viewStack</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classLoadingScreen_1aac98339073bd6c44f912eca975201839" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LoadingScreen::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <reimplements refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Exit</reimplements>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>cleans up the scene </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="75" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="283" bodyend="287"/>
+        <references refid="classLoadingScreen_1a4976deb0f83a65017a3fc8502d2d1313" compoundref="LoadingScreen_8h" startline="85">m_programID</references>
+        <references refid="classLoadingScreen_1a52ddece4ec5d3dfbaf54451fe9cb4aef" compoundref="LoadingScreen_8h" startline="82">m_vertexArrayID</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLoadingScreen_1a8249bb27253ebc256119a0e22a141e3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LoadingScreen::renderMesh</definition>
+        <argsstring>(Mesh *mesh, bool enableLight)</argsstring>
+        <name>renderMesh</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enableLight</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>rendering of the meshes </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mesh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the specific mesh </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableLight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- to enable lighting on the object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="81" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="182" bodyend="222"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classMtx44_1aac1ba21ddfc5f3c24baa4f58d9c5c256" compoundref="Mtx44_8cpp" startline="139" endline="195">Mtx44::GetInverse</references>
+        <references refid="classMtx44_1aebb16a0329c5237e314af0d75d8081fd" compoundref="Mtx44_8cpp" startline="123" endline="127">Mtx44::GetTranspose</references>
+        <references refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" compoundref="Material_8h" startline="36">Material::kAmbient</references>
+        <references refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" compoundref="Material_8h" startline="37">Material::kDiffuse</references>
+        <references refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" compoundref="Material_8h" startline="39">Material::kShininess</references>
+        <references refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" compoundref="Material_8h" startline="38">Material::kSpecular</references>
+        <references refid="classLoadingScreen_1ac88871a1fa341670a559181aff520278" compoundref="LoadingScreen_8h" startline="86">m_parameters</references>
+        <references refid="classMesh_1a3368c3bc60dd176e522df1542b764847" compoundref="Mesh_8h" startline="45">Mesh::material</references>
+        <references refid="classLoadingScreen_1a79f97b009ef44c55dbc56d555e1e55f3" compoundref="LoadingScreen_8h" startline="90">modelStack</references>
+        <references refid="classLoadingScreen_1a9c9d27ea42edc732fe2af4a6ae70e6e5" compoundref="LoadingScreen_8h" startline="90">projectionStack</references>
+        <references refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" compoundref="Material_8h" startline="22">Component::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="43" endline="78">Mesh::Render</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="43">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaa95d98201b5106f34b45581227bbe152" compoundref="LoadingScreen_8h" startline="62">U_COLOR_TEXTURE</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3ade43a8fb1c85d2798693ab7842ae12" compoundref="LoadingScreen_8h" startline="61">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaaef0bd075643de51be2c28c4fb33c38b" compoundref="LoadingScreen_8h" startline="54">U_LIGHTENABLED</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa996497c1023bd965175dbe7ec46027f6" compoundref="LoadingScreen_8h" startline="44">U_MATERIAL_AMBIENT</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aac5027cf2b4fe122f29185f9d2280bf86" compoundref="LoadingScreen_8h" startline="45">U_MATERIAL_DIFFUSE</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa74e08a3f7deed913e4dfa7ce68300723" compoundref="LoadingScreen_8h" startline="47">U_MATERIAL_SHININESS</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3944747124d7b2a791170aba0448a40b" compoundref="LoadingScreen_8h" startline="46">U_MATERIAL_SPECULAR</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa70511f0f90006be81d3d7363df159d4e" compoundref="LoadingScreen_8h" startline="42">U_MODELVIEW</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa1376713296a60515822eabf1bd0ed858" compoundref="LoadingScreen_8h" startline="43">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad553e871352b582e02e7eeb81c8e4b01" compoundref="LoadingScreen_8h" startline="41">U_MVP</references>
+        <references refid="classLoadingScreen_1a0462ddfcf3697c0fc4a4b9412035395a" compoundref="LoadingScreen_8h" startline="90">viewStack</references>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">RenderImageOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLoadingScreen_1a4fe97242b309801cef36ddb6c27aa33f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LoadingScreen::RenderText</definition>
+        <argsstring>(Mesh *mesh, std::string text, Color color)</argsstring>
+        <name>RenderText</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>rendering of the texts using quads </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mesh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- a pointer to the specific mesh </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the text that needs to be rendered </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the color of the text </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="92" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="299" bodyend="324"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classLoadingScreen_1ac88871a1fa341670a559181aff520278" compoundref="LoadingScreen_8h" startline="86">m_parameters</references>
+        <references refid="classLoadingScreen_1a79f97b009ef44c55dbc56d555e1e55f3" compoundref="LoadingScreen_8h" startline="90">modelStack</references>
+        <references refid="classLoadingScreen_1a9c9d27ea42edc732fe2af4a6ae70e6e5" compoundref="LoadingScreen_8h" startline="90">projectionStack</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="37">Color::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="43" endline="78">Mesh::Render</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="43">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaa95d98201b5106f34b45581227bbe152" compoundref="LoadingScreen_8h" startline="62">U_COLOR_TEXTURE</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3ade43a8fb1c85d2798693ab7842ae12" compoundref="LoadingScreen_8h" startline="61">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaaef0bd075643de51be2c28c4fb33c38b" compoundref="LoadingScreen_8h" startline="54">U_LIGHTENABLED</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad553e871352b582e02e7eeb81c8e4b01" compoundref="LoadingScreen_8h" startline="41">U_MVP</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad4309a05229f787055f29d74f5e96796" compoundref="LoadingScreen_8h" startline="64">U_TEXT_COLOR</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa2f219d4f92bad4c49161f21ad3dea899" compoundref="LoadingScreen_8h" startline="63">U_TEXT_ENABLED</references>
+        <references refid="classLoadingScreen_1a0462ddfcf3697c0fc4a4b9412035395a" compoundref="LoadingScreen_8h" startline="90">viewStack</references>
+      </memberdef>
+      <memberdef kind="function" id="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LoadingScreen::RenderTextOnScreen</definition>
+        <argsstring>(Mesh *mesh, std::string text, Color color, float size, float x, float y)</argsstring>
+        <name>RenderTextOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>rendering of the texts using quads on screen </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mesh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- a pointer to the specific mesh </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the text that needs to be rendered </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the color of the text </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- size of the text </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- x coordinate of the text </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- y coordinate of the text </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="93" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="339" bodyend="379"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="classLoadingScreen_1ac88871a1fa341670a559181aff520278" compoundref="LoadingScreen_8h" startline="86">m_parameters</references>
+        <references refid="classLoadingScreen_1a79f97b009ef44c55dbc56d555e1e55f3" compoundref="LoadingScreen_8h" startline="90">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classLoadingScreen_1a9c9d27ea42edc732fe2af4a6ae70e6e5" compoundref="LoadingScreen_8h" startline="90">projectionStack</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="37">Color::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="43" endline="78">Mesh::Render</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="43">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaa95d98201b5106f34b45581227bbe152" compoundref="LoadingScreen_8h" startline="62">U_COLOR_TEXTURE</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3ade43a8fb1c85d2798693ab7842ae12" compoundref="LoadingScreen_8h" startline="61">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaaef0bd075643de51be2c28c4fb33c38b" compoundref="LoadingScreen_8h" startline="54">U_LIGHTENABLED</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad553e871352b582e02e7eeb81c8e4b01" compoundref="LoadingScreen_8h" startline="41">U_MVP</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad4309a05229f787055f29d74f5e96796" compoundref="LoadingScreen_8h" startline="64">U_TEXT_COLOR</references>
+        <references refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa2f219d4f92bad4c49161f21ad3dea899" compoundref="LoadingScreen_8h" startline="63">U_TEXT_ENABLED</references>
+        <references refid="classLoadingScreen_1a0462ddfcf3697c0fc4a4b9412035395a" compoundref="LoadingScreen_8h" startline="90">viewStack</references>
+        <referencedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" compoundref="LoadingScreen_8cpp" startline="230" endline="275">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LoadingScreen::RenderImageOnScreen</definition>
+        <argsstring>(Mesh *mesh, float size, float x, float y)</argsstring>
+        <name>RenderImageOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>rendering of image using quad on screen </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mesh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- a pointer to the specific mesh </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the text that needs to be rendered </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the color of the text </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- size of the text </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- x coordinate of the text </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- y coordinate of the text </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="94" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="394" bodyend="415"/>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="classLoadingScreen_1a79f97b009ef44c55dbc56d555e1e55f3" compoundref="LoadingScreen_8h" startline="90">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classLoadingScreen_1a9c9d27ea42edc732fe2af4a6ae70e6e5" compoundref="LoadingScreen_8h" startline="90">projectionStack</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classLoadingScreen_1a8249bb27253ebc256119a0e22a141e3d" compoundref="LoadingScreen_8cpp" startline="182" endline="222">renderMesh</references>
+        <references refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">MS::Rotate</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="43">Mesh::textureID</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classLoadingScreen_1a0462ddfcf3697c0fc4a4b9412035395a" compoundref="LoadingScreen_8h" startline="90">viewStack</references>
+        <referencedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" compoundref="LoadingScreen_8cpp" startline="230" endline="275">Render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classLoadingScreen_1aa3f240f45054c4deb5f6ecb67025b169" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LoadingScreen::initLoadingHints</definition>
+        <argsstring>(const char *fileName)</argsstring>
+        <name>initLoadingHints</name>
+        <param>
+          <type>const char *</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>initialising the hints from a text file </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- path name to the file&apos;s location </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/LoadingScreen.h" line="100" column="1" bodyfile="MyGraphics/Source/LoadingScreen.cpp" bodystart="424" bodyend="441"/>
+        <references refid="classLoadingScreen_1aa5b5b2ff46e4a58f4a6cd8ae43612574" compoundref="LoadingScreen_8h" startline="99">loadingHints</references>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Just Rendering of the Loading Screen to ease the boredom of player when initialising other scenes. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classLoadingScreen" kindref="compound">LoadingScreen</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="699">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="698">
+        <label>LoadingScreen</label>
+        <link refid="classLoadingScreen"/>
+        <childnode refid="699" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="706">
+        <label>Position</label>
+        <link refid="structPosition"/>
+        <childnode refid="704" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="714">
+        <label>stack&lt; Mtx44 &gt;</label>
+      </node>
+      <node id="719">
+        <label>Component</label>
+        <link refid="structComponent"/>
+        <childnode refid="704" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="703">
+        <label>LIGHT_TYPE</label>
+      </node>
+      <node id="715">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="717">
+        <label>Mesh</label>
+        <link refid="classMesh"/>
+        <childnode refid="718" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="720" relation="usage">
+          <edgelabel>mode</edgelabel>
+        </childnode>
+        <childnode refid="721" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="722" relation="usage">
+          <edgelabel>colorBuffer</edgelabel>
+          <edgelabel>textureID</edgelabel>
+          <edgelabel>indexBuffer</edgelabel>
+          <edgelabel>indexSize</edgelabel>
+          <edgelabel>vertexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="712">
+        <label>vector&lt; objectsForDisplay &gt;</label>
+      </node>
+      <node id="720">
+        <label>DRAW_MODE</label>
+      </node>
+      <node id="710">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="705" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="721">
+        <label>string</label>
+      </node>
+      <node id="718">
+        <label>Material</label>
+        <link refid="structMaterial"/>
+        <childnode refid="704" relation="usage">
+          <edgelabel>kShininess</edgelabel>
+        </childnode>
+        <childnode refid="719" relation="usage">
+          <edgelabel>kDiffuse</edgelabel>
+          <edgelabel>kAmbient</edgelabel>
+          <edgelabel>kSpecular</edgelabel>
+        </childnode>
+      </node>
+      <node id="704">
+        <label>float</label>
+      </node>
+      <node id="713">
+        <label>MS</label>
+        <link refid="classMS"/>
+        <childnode refid="714" relation="usage">
+          <edgelabel>ms</edgelabel>
+        </childnode>
+      </node>
+      <node id="701">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="702">
+        <label>Light</label>
+        <link refid="structLight"/>
+        <childnode refid="703" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="704" relation="usage">
+          <edgelabel>exponent</edgelabel>
+          <edgelabel>kL</edgelabel>
+          <edgelabel>cosCutoff</edgelabel>
+          <edgelabel>cosInner</edgelabel>
+          <edgelabel>kQ</edgelabel>
+          <edgelabel>kC</edgelabel>
+          <edgelabel>power</edgelabel>
+        </childnode>
+        <childnode refid="705" relation="usage">
+          <edgelabel>spotDirection</edgelabel>
+        </childnode>
+        <childnode refid="706" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="707" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="709">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="710" relation="public-inheritance">
+        </childnode>
+        <childnode refid="704" relation="usage">
+          <edgelabel>cameraSpeed</edgelabel>
+          <edgelabel>cursorCoordX</edgelabel>
+          <edgelabel>boundaryX</edgelabel>
+          <edgelabel>cursorCoordY</edgelabel>
+          <edgelabel>defaultCameraYrotation</edgelabel>
+          <edgelabel>boundaryZ</edgelabel>
+          <edgelabel>minCameraXrotation</edgelabel>
+          <edgelabel>CameraYrotation</edgelabel>
+          <edgelabel>crossHairRadius</edgelabel>
+          <edgelabel>maxCameraXrotation</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="711" relation="usage">
+          <edgelabel>camType</edgelabel>
+        </childnode>
+        <childnode refid="705" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+          <edgelabel>invisibleCrossHair</edgelabel>
+        </childnode>
+        <childnode refid="712" relation="usage">
+          <edgelabel>storage_of_objects</edgelabel>
+        </childnode>
+      </node>
+      <node id="708">
+        <label>double</label>
+      </node>
+      <node id="707">
+        <label>Color</label>
+        <link refid="structColor"/>
+        <childnode refid="704" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="700">
+        <label>LoadingScreen</label>
+        <link refid="classLoadingScreen"/>
+        <childnode refid="701" relation="public-inheritance">
+        </childnode>
+        <childnode refid="702" relation="usage">
+          <edgelabel>light</edgelabel>
+        </childnode>
+        <childnode refid="708" relation="usage">
+          <edgelabel>framePerSecond</edgelabel>
+        </childnode>
+        <childnode refid="709" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="704" relation="usage">
+          <edgelabel>screenWidth</edgelabel>
+          <edgelabel>LSPEED</edgelabel>
+          <edgelabel>percentage</edgelabel>
+          <edgelabel>screenHeight</edgelabel>
+        </childnode>
+        <childnode refid="713" relation="usage">
+          <edgelabel>projectionStack</edgelabel>
+          <edgelabel>modelStack</edgelabel>
+          <edgelabel>viewStack</edgelabel>
+        </childnode>
+        <childnode refid="715" relation="usage">
+          <edgelabel>loadingHints</edgelabel>
+        </childnode>
+        <childnode refid="716" relation="usage">
+          <edgelabel>on_light</edgelabel>
+        </childnode>
+        <childnode refid="717" relation="usage">
+          <edgelabel>meshList</edgelabel>
+        </childnode>
+        <childnode refid="722" relation="usage">
+          <edgelabel>m_parameters</edgelabel>
+          <edgelabel>m_programID</edgelabel>
+          <edgelabel>m_vertexArrayID</edgelabel>
+        </childnode>
+      </node>
+      <node id="711">
+        <label>CameraType</label>
+      </node>
+      <node id="722">
+        <label>unsigned</label>
+      </node>
+      <node id="716">
+        <label>bool</label>
+      </node>
+      <node id="705">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="704" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/LoadingScreen.h" line="27" column="1" bodyfile="MyGraphics/Source/LoadingScreen.h" bodystart="26" bodyend="103"/>
+    <listofallmembers>
+      <member refid="classLoadingScreen_1af2b5c96b9c9201f9aecd6122bc88d79d" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>camera</name></member>
+      <member refid="classLoadingScreen_1aac98339073bd6c44f912eca975201839" prot="public" virt="virtual"><scope>LoadingScreen</scope><name>Exit</name></member>
+      <member refid="classLoadingScreen_1a1cb0b25b848efebf084561a88a80a2e3" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>framePerSecond</name></member>
+      <member refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6a806471348a6c1ff22b654b9624a01cc0" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>GEO_AXES</name></member>
+      <member refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6a1daf7d0c641a0f3d4e4974874deafaf2" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>GEO_COMIC_TEXT</name></member>
+      <member refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6a7fdadd1ec6acb75a2d1bdf4acb8eec01" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>GEO_LIGHTBALL</name></member>
+      <member refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6acd390c7ec4026267ae9f95ba0cac5828" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>GEO_LOADING_BREATHING_CAT</name></member>
+      <member refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6abad6aa8a010fb17510a2b20121bdeaf1" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>GEO_LOADING_DOGE</name></member>
+      <member refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6aead3264980d2b26f7de7cbf0f8d8c0b5" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>GEO_LOADING_SCREEN_TITLE</name></member>
+      <member refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>GEOMETRY_TYPE</name></member>
+      <member refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" prot="public" virt="virtual"><scope>LoadingScreen</scope><name>Init</name></member>
+      <member refid="classLoadingScreen_1aa3f240f45054c4deb5f6ecb67025b169" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>initLoadingHints</name></member>
+      <member refid="classLoadingScreen_1a09abd7f5d1bdc294e8883d8d5b5cd30a" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>light</name></member>
+      <member refid="classLoadingScreen_1aa5b5b2ff46e4a58f4a6cd8ae43612574" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>loadingHints</name></member>
+      <member refid="classLoadingScreen_1a320bb8b9d9790e70b8f1e8ff0a414e40" prot="public" virt="non-virtual"><scope>LoadingScreen</scope><name>LoadingScreen</name></member>
+      <member refid="classLoadingScreen_1aa7bf7d046824bf336334c120ec38f397" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>LSPEED</name></member>
+      <member refid="classLoadingScreen_1ac88871a1fa341670a559181aff520278" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>m_parameters</name></member>
+      <member refid="classLoadingScreen_1a4976deb0f83a65017a3fc8502d2d1313" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>m_programID</name></member>
+      <member refid="classLoadingScreen_1a52ddece4ec5d3dfbaf54451fe9cb4aef" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>m_vertexArrayID</name></member>
+      <member refid="classLoadingScreen_1ab12fb30cbf7f2c5d51f35e1022bfd9dd" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>meshList</name></member>
+      <member refid="classLoadingScreen_1a79f97b009ef44c55dbc56d555e1e55f3" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>modelStack</name></member>
+      <member refid="classLoadingScreen_1ac9c4330809f11cad4597d72c24e1eab6adcd7aad30220aae320327b4c947818c6" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>NUM_GEOMETRY</name></member>
+      <member refid="classLoadingScreen_1aae643b50936ee1120c874eafb3bd4a30" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>on_light</name></member>
+      <member refid="classLoadingScreen_1a3540c6582eea2586ed42d086bb70e47e" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>percentage</name></member>
+      <member refid="classLoadingScreen_1a9c9d27ea42edc732fe2af4a6ae70e6e5" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>projectionStack</name></member>
+      <member refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" prot="public" virt="virtual"><scope>LoadingScreen</scope><name>Render</name></member>
+      <member refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>RenderImageOnScreen</name></member>
+      <member refid="classLoadingScreen_1a8249bb27253ebc256119a0e22a141e3d" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>renderMesh</name></member>
+      <member refid="classLoadingScreen_1a4fe97242b309801cef36ddb6c27aa33f" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>RenderText</name></member>
+      <member refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>RenderTextOnScreen</name></member>
+      <member refid="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" virt="non-virtual"><scope>LoadingScreen</scope><name>Scene</name></member>
+      <member refid="classLoadingScreen_1a64a3f159b3971cc33b858dd2f84b6f16" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>screenHeight</name></member>
+      <member refid="classLoadingScreen_1abfc64a5ecedfdc46acbe62d0e94da220" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>screenWidth</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaa95d98201b5106f34b45581227bbe152" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_COLOR_TEXTURE</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3ade43a8fb1c85d2798693ab7842ae12" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_COLOR_TEXTURE_ENABLED</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa7eca86d08578c858921504565b0c42e0" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_COLOR</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa21d880aaac14130db7d6a27cce0ecc73" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_COSCUTOFF</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa7f99eac9de9222533e952f7a3294c13f" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_COSINNER</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa5e77a0ea1724ac65880200a605a80689" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_EXPONENT</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa9d718b112e0418e6cc46bcd0a24cc6c7" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_KC</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa6abc00c4493fe990f68661afdc19ff4e" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_KL</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aab682f557962f924f5ab30944eefaf589" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_KQ</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3b560614f9b840f874594fc08b46c688" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_POSITION</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa76f5e9d19b6f1fc08c5c49029df0e377" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_POWER</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa9dea6c272e9e458479a49bb9ea695a15" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_SPOTDIRECTION</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa38bed0cc227832ef93f35e2fa9bbb395" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHT0_TYPE</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaaef0bd075643de51be2c28c4fb33c38b" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_LIGHTENABLED</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa996497c1023bd965175dbe7ec46027f6" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_MATERIAL_AMBIENT</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aac5027cf2b4fe122f29185f9d2280bf86" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_MATERIAL_DIFFUSE</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa74e08a3f7deed913e4dfa7ce68300723" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_MATERIAL_SHININESS</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa3944747124d7b2a791170aba0448a40b" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_MATERIAL_SPECULAR</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa70511f0f90006be81d3d7363df159d4e" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_MODELVIEW</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa1376713296a60515822eabf1bd0ed858" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_MODELVIEW_INVERSE_TRANSPOSE</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad553e871352b582e02e7eeb81c8e4b01" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_MVP</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aaf8c64d9dd06b04f94813cc774664815c" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_NUMLIGHTS</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aad4309a05229f787055f29d74f5e96796" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_TEXT_COLOR</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aa2f219d4f92bad4c49161f21ad3dea899" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_TEXT_ENABLED</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518aafa1dcedfcabdce9e35796a4e46d952fd" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>U_TOTAL</name></member>
+      <member refid="classLoadingScreen_1a4b62f3459158ed8c25da1ed17407518a" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>UNIFORM_TYPE</name></member>
+      <member refid="classLoadingScreen_1aadba6b28a70c39e25c9892f93dbff465" prot="public" virt="virtual"><scope>LoadingScreen</scope><name>Update</name></member>
+      <member refid="classLoadingScreen_1a0462ddfcf3697c0fc4a4b9412035395a" prot="private" virt="non-virtual"><scope>LoadingScreen</scope><name>viewStack</name></member>
+      <member refid="classLoadingScreen_1ac4d8e1e47650f66e2260506fa5a1bd7e" prot="public" virt="non-virtual"><scope>LoadingScreen</scope><name>~LoadingScreen</name></member>
+      <member refid="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" virt="non-virtual"><scope>LoadingScreen</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

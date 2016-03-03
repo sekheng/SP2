@@ -1,0 +1,6 @@
+<map id="scene3_SP2::RenderTextOnScreen" name="scene3_SP2::RenderTextOnScreen">
+<area shape="rect" id="node2" href="$classscene3__SP2.html#a7e54396921ff46efeb2fd7c003761561" title="where the rendering of all the stuff we needed will be here " alt="" coords="756,33,901,59"/>
+<area shape="rect" id="node3" href="$classscene3__SP2.html#a06945bce0c30ba75cb9e75abed815459" title="a method to render the dialogue box in a much simpler way " alt="" coords="240,33,453,59"/>
+<area shape="rect" id="node5" href="$classscene3__SP2.html#a31dc84c544a030ea7ab2faa6f48f4c3f" title="a method to render QTE&#39;s stuff " alt="" coords="521,83,688,110"/>
+<area shape="rect" id="node4" href="$classscene3__SP2.html#ac97992b1e4892376486b2805aef88c69" title="a method to render the instructions needed for QTE " alt="" coords="501,33,708,59"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="NumPad::interactiontext" name="NumPad::interactiontext">
+<area shape="rect" id="node2" href="$classNumPad.html#a5e056d35eee91dbab3ade47fc7d4f938" title="Check whether player&#39;s position is inside interaction area. " alt="" coords="216,31,356,57"/>
+<area shape="rect" id="node3" href="$classCamera3.html#a4c484a400a9c2e64f3334fc62330368a" title="getting camera&#39;s position of x coordinate " alt="" coords="404,5,588,32"/>
+<area shape="rect" id="node4" href="$classCamera3.html#aae412d5efa2bae38cc9d5f38fb289f3a" title="getting camera&#39;s position of z coordinate " alt="" coords="404,56,588,83"/>
+</map>

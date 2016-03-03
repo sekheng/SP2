@@ -1,0 +1,11 @@
+<map id="sceneSP2::reset" name="sceneSP2::reset">
+<area shape="rect" id="node2" href="$classminigame.html#abdc34c5361b6af3a81ffb7305f1eee68" title="initialised and randomises values for all the pieces&#39; rotation and initialise other variables ..." alt="" coords="189,5,292,32"/>
+<area shape="rect" id="node4" href="$classQuest.html#aafff8b97348723252d2aad790ea67b74" title="initialised it&#39;s values through parameters " alt="" coords="199,56,282,83"/>
+<area shape="rect" id="node5" href="$classNPC.html#ab6bac3d151a9ff29bebab73604bfdadb" title="to reset all npc dialogue when scene resets " alt="" coords="197,107,284,133"/>
+<area shape="rect" id="node6" href="$classQuest.html#ae32188fcc66cb240b6c0760c10276bae" title="reset the quest " alt="" coords="193,157,288,184"/>
+<area shape="rect" id="node7" href="$classStationScene.html#a6d57f2de3ab2d1c9eb83b9b714342366" title="reset the entire room interaction " alt="" coords="172,208,309,235"/>
+<area shape="rect" id="node8" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Reset the camera settings " alt="" coords="183,259,299,285"/>
+<area shape="rect" id="node9" href="$classSekHeng.html#afa99bb0e52fca8bd53514b23c33ecb0f" title="a method to completely reset the Sek Heng&#39;s variable to it&#39;s default state " alt="" coords="185,309,297,336"/>
+<area shape="rect" id="node3" href="$namespaceMath.html#a7609565ca241d0f70dfd677a7fdac281" title="Return a random integer between min and max. " alt="" coords="358,5,507,32"/>
+<area shape="rect" id="node10" href="$classobjectsForDisplay.html#af5c02d1f662dbdc8d870790c108abdff" title="initialised it&#39;s values through text file reader " alt="" coords="357,309,508,336"/>
+</map>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>SP2</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>PD<sp/>Entertainment<sp/>SP2<sp/>Repository</highlight></codeline>
+<codeline><highlight class="normal">These<sp/>are<sp/>the<sp/>rules<sp/>that<sp/>you<sp/>need<sp/>to<sp/>follow<sp/>for<sp/>committing<sp/>into<sp/>this<sp/>project.</highlight></codeline>
+<codeline><highlight class="normal">#Rule<sp/>No.1<sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Don&apos;t<sp/>use<sp/>global<sp/>variables<sp/>at<sp/>all<sp/>cost!</highlight></codeline>
+<codeline><highlight class="normal">#Rule<sp/>No.2<sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Try<sp/>not<sp/>to<sp/>step<sp/>into<sp/>each<sp/>other&apos;s<sp/>work.<sp/>If<sp/>needed,<sp/>ask<sp/>permission<sp/>from<sp/>that<sp/>person.</highlight></codeline>
+<codeline><highlight class="normal">#Rule<sp/>No.3<sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Use<sp/>Comic<sp/>Sans<sp/>instead<sp/>of<sp/>other<sp/>font<sp/>types<sp/>so<sp/>as<sp/>to<sp/>irritate<sp/>Mr<sp/>Sim.</highlight></codeline>
+<codeline><highlight class="normal">#Rule<sp/>No.4<sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Solve<sp/>as<sp/>many<sp/>warnings<sp/>as<sp/>possible.</highlight></codeline>
+<codeline><highlight class="normal">#Rule<sp/>No.5<sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Document<sp/>every<sp/>single<sp/>one<sp/>of<sp/>your<sp/>codes!</highlight></codeline>
+<codeline><highlight class="normal">#Rule<sp/>No.6<sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Always<sp/>draw<sp/>the<sp/>UML<sp/>Diagrams<sp/>necessary<sp/>for<sp/>the<sp/>codes<sp/>before<sp/>actual<sp/>coding<sp/>so<sp/>as<sp/>to<sp/>prevent<sp/>messiness</highlight></codeline>
+<codeline><highlight class="normal">#Rule<sp/>No.7<sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Don&apos;t<sp/>let<sp/>your<sp/>bugs<sp/>remain<sp/>as<sp/>bugs.<sp/>JUST<sp/>FIX<sp/>THEM!</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

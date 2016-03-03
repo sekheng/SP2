@@ -1,0 +1,35 @@
+<map id="scene2_SP2::renderDeadPool" name="scene2_SP2::renderDeadPool">
+<area shape="rect" id="node2" href="$classBGMDriven.html#a7f96f10da396bee4949ad4abeb8655fc" title="A method functions dedicated to just play the 3D effect of &#39;I am Your Father&#39; " alt="" coords="254,187,458,229"/>
+<area shape="rect" id="node9" href="$classBGMDriven.html#aae10f0ff9b2e14d7b62b4c0797d3d714" title="A method functions dedicated to just play the 3D effect of &#39;Join the Dark Side&#39; " alt="" coords="259,122,453,163"/>
+<area shape="rect" id="node10" href="$classMS.html#aac22e39d0ac437fcb85403a9f0a7a25f" title="Pop the top matrix on the matrix stack. " alt="" coords="787,255,897,281"/>
+<area shape="rect" id="node11" href="$classMS.html#a9fb4fff5036f3f197b893f9a579c97b2" title="Make a copy of the top matrix on the matrix stack and push it on top. " alt="" coords="784,559,900,585"/>
+<area shape="rect" id="node12" href="$classscene2__SP2.html#a466b1dec58240bf09a88a0db06da81f1" title="a method to render dialogue box with the object&#39;s name and dialogue " alt="" coords="249,468,463,495"/>
+<area shape="rect" id="node20" href="$classMS.html#a7e94a35ce566fe3ec49c92b6c4bb663a" title="Multiply the top matrix with a translation matrix based on the following parameters. " alt="" coords="791,153,893,180"/>
+<area shape="rect" id="node22" href="$classMS.html#a52109795de960e24663b315e9128533f" title="Multiply the top matrix with a scale matrix based on the following parameters. " alt="" coords="801,609,883,636"/>
+<area shape="rect" id="node24" href="$classMS.html#a6ce592114042b920b648bca5519690cd" title="Multiply the top matrix with a rotation matrix based on the following parameters. ..." alt="" coords="798,711,886,737"/>
+<area shape="rect" id="node27" href="$classscene2__SP2.html#a9193158aa2b0bed01ffb54ee720dd9bb" title="rendering of the meshes " alt="" coords="756,660,928,687"/>
+<area shape="rect" id="node3" href="$classirrklang_1_1ISound.html#ade9a05d059ab8fd73973a1f2adc2af81" title="returns if the sound is paused " alt="" coords="513,107,705,133"/>
+<area shape="rect" id="node4" href="$classirrklang_1_1ISound.html#a9d9e758f8500b194580de339c7f96768" title="returns if the sound has finished playing. " alt="" coords="520,157,699,184"/>
+<area shape="rect" id="node5" href="$classirrklang_1_1ISoundEngine.html#adb09ecc8f61120ce14d26545ed43d8ec" title="Loads a sound source (if not loaded already) from a file and plays it as 3D sound. " alt="" coords="533,209,685,250"/>
+<area shape="rect" id="node6" href="$classirrklang_1_1ISound.html#a399fef60d1c48e2dffdf76d83173a15a" title="returns if the sound is paused " alt="" coords="513,275,705,301"/>
+<area shape="rect" id="node7" href="$classirrklang_1_1ISound.html#a994b98c059e8aee6adb82bb12d866338" title="sets the position of the sound in 3d space " alt="" coords="517,5,702,32"/>
+<area shape="rect" id="node8" href="$classirrklang_1_1ISound.html#a4c91357775f1d15e2c276ced09a40599" title="sets the volume of the sound, a value between 0 (mute) and 1 (full volume). " alt="" coords="518,56,701,83"/>
+<area shape="rect" id="node13" href="$classscene2__SP2.html#a3d90f91b8fdea7521e6fd4cae57a3307" title="rendering of image using quad on screen " alt="" coords="511,493,708,534"/>
+<area shape="rect" id="node34" href="$classscene2__SP2.html#a4cd06fa3bd5223e0fd36ba84fc9c6d01" title="rendering of the texts using quads on screen " alt="" coords="516,427,703,469"/>
+<area shape="rect" id="node14" href="$classMtx44.html#a0a4c7818be7c1aeb0601ad069c1a591d" title="Setup orthogonal matrix. " alt="" coords="776,508,908,535"/>
+<area shape="rect" id="node16" href="$classMS.html#a86606fe9f575ccb747d77195c8aefdaf" title="Return the top matrix with a new matrix. " alt="" coords="785,457,899,484"/>
+<area shape="rect" id="node17" href="$classMS.html#a77c5f7e4a21ea48dcf902a7ff6824a11" title="Replace the top matrix with an identity matrix. " alt="" coords="782,407,902,433"/>
+<area shape="rect" id="node15" href="$classMtx44.html#a1b985913080679da29ff94217935b3c7" title="Default Constructor. Default values are zero. " alt="" coords="1006,508,1109,535"/>
+<area shape="rect" id="node18" href="$classMtx44.html#a3ac8a0afd66412e15e4246474b893da2" title="Set the matrix to an identity matrix (1&#39;s along the diagonal) " alt="" coords="1187,356,1329,383"/>
+<area shape="rect" id="node19" href="$classMtx44.html#a3aea63c08759ac98b8a4f23fdc0d6a28" title="Set this matrix to zero. " alt="" coords="1377,356,1503,383"/>
+<area shape="rect" id="node21" href="$classMtx44.html#a0cc88cc5c648da14effba480c4d2ac70" title="Set this matrix to a translation matrix with translation of (x, y, z) " alt="" coords="976,204,1139,231"/>
+<area shape="rect" id="node23" href="$classMtx44.html#a04c49a922f8e8ffcb57a90c6ce955600" title="Set this matrix to a scaling matrix with scale factors sx, sy and sz. " alt="" coords="991,559,1124,585"/>
+<area shape="rect" id="node25" href="$classMtx44.html#ac0587ffb5ff9fd58ad5768d28fc06574" title="Set Matrix to a rotation matrix about arbitrary axis. " alt="" coords="983,711,1131,737"/>
+<area shape="rect" id="node26" href="$namespaceMath.html#ac91173ab2efdf7313fe7aaeb6cb44cf6" title="Math::FAbs" alt="" coords="1213,685,1303,712"/>
+<area shape="rect" id="node28" href="$classMS.html#a21291d7fb488f63c589bdc9bd620ba58" title="Return the top matrix on the matrix stack. " alt="" coords="1022,457,1093,484"/>
+<area shape="rect" id="node29" href="$classMtx44.html#aac1ba21ddfc5f3c24baa4f58d9c5c256" title="Return a new matrix that is an inverse. " alt="" coords="994,660,1121,687"/>
+<area shape="rect" id="node30" href="$classMtx44.html#aebb16a0329c5237e314af0d75d8081fd" title="Return a new matrix that is a transpose of this matrix. " alt="" coords="984,609,1131,636"/>
+<area shape="rect" id="node33" href="$classMesh.html#a75e66bcd90c09492676a4cfe5b23c3af" title="OpenGL render code. " alt="" coords="1006,407,1109,433"/>
+<area shape="rect" id="node31" href="$classMtx44.html#a6c95e149e42cba381918782a93f8a68b" title="Set this matrix to its Transpose. " alt="" coords="1195,609,1321,636"/>
+<area shape="rect" id="node32" href="$Mtx44_8cpp.html#a1ef521a2e5e5ae2ef55d1bc0c3b0c437" title="Helper function swap. " alt="" coords="1414,609,1466,636"/>
+</map>

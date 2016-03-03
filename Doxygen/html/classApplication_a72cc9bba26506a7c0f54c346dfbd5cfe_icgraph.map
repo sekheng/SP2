@@ -1,0 +1,38 @@
+<map id="Application::IsKeyPressed" name="Application::IsKeyPressed">
+<area shape="rect" id="node2" href="$classCamera3.html#a72d040ce3726a7d6439efa15734105a5" title="An improved camera movement based on first person " alt="" coords="241,129,425,156"/>
+<area shape="rect" id="node3" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="To be called every frame. Camera will get user inputs and update its position and orientation..." alt="" coords="513,129,635,156"/>
+<area shape="rect" id="node5" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="717,256,862,282"/>
+<area shape="rect" id="node6" href="$classscene3SP2.html#ac3a634c845cb61d9bbc8b519fa67c43c" title="where the logic of the game is, and update " alt="" coords="720,53,859,80"/>
+<area shape="rect" id="node7" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="724,570,855,597"/>
+<area shape="rect" id="node8" href="$classminigame.html#a0e6b8c874f12806f14ded4da42c34da3" title="detect when the player rotates a pice " alt="" coords="228,484,437,510"/>
+<area shape="rect" id="node10" href="$classStationScene.html#a5d9954175cb6ace1783288a5b45b3a5e" title="enable to collect card if is within the boundary " alt="" coords="253,1006,413,1033"/>
+<area shape="rect" id="node14" href="$classStationScene.html#a9e3c70658905799c1dc1263abcf18e15" title="enable to collect card if is within the boundary " alt="" coords="253,1057,413,1084"/>
+<area shape="rect" id="node15" href="$classStationScene.html#abfd4f868d1d49193791571478563e04a" title="to check to check whether what stage his in to open door " alt="" coords="235,956,430,982"/>
+<area shape="rect" id="node16" href="$classNumPad.html#a9f705cb43de4fd79ebed968e1e67c315" title="Numpad interaction. " alt="" coords="485,230,663,257"/>
+<area shape="rect" id="node17" href="$classStationScene.html#a10a5019a5c8c1bbd67ee719de9d4c9fd" title="to check whether the player taken 2 card and if 2 card is taken door can now be open after you press ..." alt="" coords="241,905,425,932"/>
+<area shape="rect" id="node18" href="$classrot__civ.html#a2a5d74ff194dc7d120ade7f343aadf38" title="Prevention of the dialogue from running to fast if player is holding &#39;E&#39; " alt="" coords="247,281,418,308"/>
+<area shape="rect" id="node20" href="$classSekHeng.html#a020545c2ffc79296c045a8bc132a70e6" title="Prevention of the dialogue from running to fast if player is holding &#39;E&#39; " alt="" coords="239,652,426,678"/>
+<area shape="rect" id="node21" href="$classSekHeng.html#ae3bb8042c61652bd6c325fe105fd2c17" title="a method function which will update the logic behind the interaction with Sek Heng ..." alt="" coords="512,652,636,678"/>
+<area shape="rect" id="node22" href="$classNPC.html#aaa5c460f752c30b54e1e6fc5094ee711" title="returns dialogue for the npc when quest is complete " alt="" coords="258,1209,407,1236"/>
+<area shape="rect" id="node23" href="$classsceneSP2.html#a330759ab9405718e498ee50fa1b39d97" title="rendering of NPC and quest " alt="" coords="495,1133,653,1160"/>
+<area shape="rect" id="node24" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="487,1209,661,1236"/>
+<area shape="rect" id="node25" href="$classscene2__SP2.html#a510022db1526266df5582f1e1eb19f27" title="rendering robot npcs " alt="" coords="247,804,419,830"/>
+<area shape="rect" id="node27" href="$classscene2__SP2.html#a6d4a4cbe109bbdcf8b901375a4e9b4b7" title="rendering vault " alt="" coords="245,753,420,780"/>
+<area shape="rect" id="node28" href="$classStationScene.html#a60b6e3d38657e195f342c48d3d9896da" title="to check whether the player in within it&#39;s interacting boundary to toggle the light ..." alt="" coords="250,854,415,881"/>
+<area shape="rect" id="node29" href="$classApplication.html#aaf09cd6cb412086dc039e28cdb059f0d" title="Initializing of the scene, and starting of the game " alt="" coords="274,1310,391,1337"/>
+<area shape="rect" id="node31" href="$classminigame.html#a65239e6cbfa3f29c02bfbf0cea62a51d" title="to calculate which piece the minigame&#39;s selection pointer points to " alt="" coords="263,535,402,576"/>
+<area shape="rect" id="node32" href="$classCamera.html#acc1741feb6d9da849ea4b6c12e0711e6" title="To be called every frame. Camera will get user inputs and update its position and orientation..." alt="" coords="275,1158,391,1185"/>
+<area shape="rect" id="node33" href="$classNumPad.html#a679075331806098ed06549e002c0cac2" title="updating the numpad interaction " alt="" coords="513,180,635,206"/>
+<area shape="rect" id="node34" href="$classNPC.html#a61399424a1ddeaa1f127a9480fcb95ca" title="update some variables at every frame " alt="" coords="526,382,622,409"/>
+<area shape="rect" id="node35" href="$classQuest.html#a27be88f6eb1623aeecf5970c1f904be8" title="update&#39;s the quest progress " alt="" coords="521,597,627,624"/>
+<area shape="rect" id="node36" href="$classscene3__SP2.html#a71dd3bb2895b152440016ae97b01fb09" title="where the logic of the game is, and update " alt="" coords="501,1386,647,1413"/>
+<area shape="rect" id="node37" href="$classscene3__SP2.html#afbf3a66c76d63a1cb0ee0663b809cd60" title="a method to update the logic behind rendering of the instruction and prevent the text from going to f..." alt="" coords="231,1412,434,1438"/>
+<area shape="rect" id="node4" href="$classLoadingScreen.html#aadba6b28a70c39e25c9892f93dbff465" title="where the logic of the game is, and update " alt="" coords="711,129,868,156"/>
+<area shape="rect" id="node9" href="$classminigame.html#aea6576f016f1c9944aa5ea699b412446" title="update the minigame&#39;s progress " alt="" coords="511,542,637,569"/>
+<area shape="rect" id="node11" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="521,956,627,982"/>
+<area shape="rect" id="node12" href="$classsceneSP2.html#a963ab61de5342e71f6227d9be05383f9" title="render everything in the room " alt="" coords="488,1006,660,1033"/>
+<area shape="rect" id="node13" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="724,1133,855,1160"/>
+<area shape="rect" id="node19" href="$classrot__civ.html#a3553e2c63769482b789b42f148d16f24" title="update the interaction logic " alt="" coords="521,281,627,308"/>
+<area shape="rect" id="node26" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="501,778,647,805"/>
+<area shape="rect" id="node30" href="$main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title="the primary functions that the program will run " alt="" coords="549,1310,599,1337"/>
+</map>

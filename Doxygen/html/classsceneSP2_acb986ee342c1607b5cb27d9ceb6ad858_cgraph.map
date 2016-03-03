@@ -1,0 +1,50 @@
+<map id="sceneSP2::Init" name="sceneSP2::Init">
+<area shape="rect" id="node2" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="638,790,793,817"/>
+<area shape="rect" id="node3" href="$classMeshBuilder.html#a78d37e2b0cc068eec801f17c367100e7" title="Generate the vertices of a reference Axes; Use red for x&#45;axis, green for y&#45;axis, blue for z&#45;axis Then..." alt="" coords="165,207,351,234"/>
+<area shape="rect" id="node4" href="$structPosition.html#a2919b2441baf7a2f799791d65a1cfc15" title="Position::Set" alt="" coords="667,385,764,411"/>
+<area shape="rect" id="node5" href="$structColor.html#acc77e4e3583d3eca7e476952e51bfb80" title="Color::Set" alt="" coords="451,157,531,183"/>
+<area shape="rect" id="node6" href="$classMaterialBuilder.html#ae8609727fcb491a7e1f06d1231c2d17b" title="generate similar properties to Lambert " alt="" coords="173,91,343,132"/>
+<area shape="rect" id="node8" href="$structComponent.html#a85f599b839327709953f0115dc5dfd49" title="Component::Set" alt="" coords="657,69,773,95"/>
+<area shape="rect" id="node9" href="$classMeshBuilder.html#aba87550d7726a610c911fbb977fd3575" title="Generate the vertices of an object; Then generate the VBO/IBO and store them in Mesh object..." alt="" coords="168,359,348,386"/>
+<area shape="rect" id="node14" href="$classMeshBuilder.html#aa3751076aa9f74324d49a999a3c3fa55" title="Generate the vertices of a quad; Use random color for each vertex Then generate the VBO/IBO and store..." alt="" coords="165,562,351,589"/>
+<area shape="rect" id="node15" href="$structVector3.html#a9c25d604bd52b162cfcb56302ef032bb" title="Set the elements of this vector. " alt="" coords="444,613,539,639"/>
+<area shape="rect" id="node16" href="$classMeshBuilder.html#a30a1368cb5deb84777a1f6fbfbca110e" title="Generate the vertices of a sphere; Then generate the VBO/IBO and store them in Mesh object..." alt="" coords="160,663,356,690"/>
+<area shape="rect" id="node20" href="$classMeshBuilder.html#aac7c87881dbc08f8d41f2068e0f40c76" title="Generate the vertices of texts; Then generate the VBO/IBO and store them in Mesh object. " alt="" coords="168,486,348,513"/>
+<area shape="rect" id="node21" href="$classStationScene.html#a5d9954175cb6ace1783288a5b45b3a5e" title="enable to collect card if is within the boundary " alt="" coords="178,815,338,842"/>
+<area shape="rect" id="node23" href="$classStationScene.html#a9e3c70658905799c1dc1263abcf18e15" title="enable to collect card if is within the boundary " alt="" coords="178,917,338,943"/>
+<area shape="rect" id="node24" href="$classStationScene.html#a3b2c4c0555486a11bb745aa4f76790b3" title="show text only with the interacting boundary " alt="" coords="169,866,347,893"/>
+<area shape="rect" id="node25" href="$classStationScene.html#abfd4f868d1d49193791571478563e04a" title="to check to check whether what stage his in to open door " alt="" coords="161,967,355,994"/>
+<area shape="rect" id="node26" href="$classminigame.html#abdc34c5361b6af3a81ffb7305f1eee68" title="initialised and randomises values for all the pieces&#39; rotation and initialise other variables ..." alt="" coords="207,1221,309,1247"/>
+<area shape="rect" id="node28" href="$classobjectsForDisplay.html#af5c02d1f662dbdc8d870790c108abdff" title="initialised it&#39;s values through text file reader " alt="" coords="416,1373,567,1399"/>
+<area shape="rect" id="node29" href="$classQuest.html#aafff8b97348723252d2aad790ea67b74" title="initialised it&#39;s values through parameters " alt="" coords="217,1069,299,1095"/>
+<area shape="rect" id="node30" href="$classNPC.html#a2cae4cf96b7118caf28f5be9faef8b2d" title="initialised it&#39;s values through text file reader as well as some other variables initialised through ..." alt="" coords="221,1119,295,1146"/>
+<area shape="rect" id="node31" href="$classStationScene.html#ac98958f70b4844f98978b1f43b33fea7" title="init the variable that are needed " alt="" coords="195,1170,321,1197"/>
+<area shape="rect" id="node32" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Initialize camera. " alt="" coords="209,1575,307,1602"/>
+<area shape="rect" id="node38" href="$classSekHeng.html#a4920e9e606e8c88a899b3930b230121c" title="a Data Driven function that will initialised it&#39;s dialogue " alt="" coords="179,1271,337,1298"/>
+<area shape="rect" id="node39" href="$classCamera3.html#afcbf927fd6fc2be8451da97c663431d8" title="a Data Driven method to initialise a bunch of static objects that can be used to render the coordinat..." alt="" coords="186,1322,330,1349"/>
+<area shape="rect" id="node40" href="$classMS.html#a86606fe9f575ccb747d77195c8aefdaf" title="Return the top matrix with a new matrix. " alt="" coords="201,1373,315,1399"/>
+<area shape="rect" id="node41" href="$shader_8cpp.html#a833f10cca6a76fe34ae9efa23ac5e73c" title="loading of the vertex shaders and fragment shaders from external source " alt="" coords="209,1423,307,1450"/>
+<area shape="rect" id="node42" href="$LoadTGA_8cpp.html#a459a80ca6de67a1e3493bfb66ae317e4" title="loading of targa file from external source " alt="" coords="220,1474,296,1501"/>
+<area shape="rect" id="node43" href="$classStationScene.html#a10a5019a5c8c1bbd67ee719de9d4c9fd" title="to check whether the player taken 2 card and if 2 card is taken door can now be open after you press ..." alt="" coords="166,1018,350,1045"/>
+<area shape="rect" id="node44" href="$namespaceMath.html#aa21138cd1585c3dab1e901c4ead9204d" title="Return a random float between min and max. " alt="" coords="176,1626,340,1653"/>
+<area shape="rect" id="node46" href="$classStationScene.html#a60b6e3d38657e195f342c48d3d9896da" title="to check whether the player in within it&#39;s interacting boundary to toggle the light ..." alt="" coords="175,765,341,791"/>
+<area shape="rect" id="node47" href="$classMtx44.html#ac6e6521111d78ff36d539bf111a902c6" title="Set matrix to be a perspective matrix. " alt="" coords="175,1677,341,1703"/>
+<area shape="rect" id="node49" href="$classStationScene.html#aeefe8a6667f8d20e42a9c1d54b0a263a" title="show text only with the interacting boundary " alt="" coords="173,1727,343,1754"/>
+<area shape="rect" id="node7" href="$classMaterialBuilder.html#a2847df1e27e666cd88301b11b0e5d3d0" title="generate similar properties to Blinn " alt="" coords="407,91,576,132"/>
+<area shape="rect" id="node10" href="$LoadOBJ_8cpp.html#aa99ef9426a57205ed8acb8f7d41f3bae" title="indexing the vertices " alt="" coords="451,309,532,335"/>
+<area shape="rect" id="node13" href="$LoadOBJ_8cpp.html#aa634e9cac0a72d751731db6b4479cbda" title="loading of object file from external source " alt="" coords="454,359,529,386"/>
+<area shape="rect" id="node11" href="$LoadOBJ_8cpp.html#af43afccb67fd9c80513489b75fddb347" title="Copying of vertex " alt="" coords="627,309,804,335"/>
+<area shape="rect" id="node12" href="$structTexCoord.html#a64b4ceeb1733c478cb4b5b1216146c32" title="TexCoord::Set" alt="" coords="663,461,768,487"/>
+<area shape="rect" id="node17" href="$MeshBuilder_8cpp.html#aef75a362a1bdb0980ed4abcf8241da69" title="get the x coordinate of the vertice based on a circular motion " alt="" coords="456,714,527,741"/>
+<area shape="rect" id="node18" href="$MeshBuilder_8cpp.html#af7655f1bbe33f114c8c2457bb80d8d56" title="get the y coordinate of the vertice based on a circular motion " alt="" coords="455,765,527,791"/>
+<area shape="rect" id="node19" href="$MeshBuilder_8cpp.html#a635e807e82196e114ec59993fe28838a" title="get the z coordinate of the vertice based on a circular motion " alt="" coords="456,815,527,842"/>
+<area shape="rect" id="node22" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="404,917,579,943"/>
+<area shape="rect" id="node27" href="$namespaceMath.html#a7609565ca241d0f70dfd677a7fdac281" title="Return a random integer between min and max. " alt="" coords="417,1221,566,1247"/>
+<area shape="rect" id="node33" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="437,1474,546,1501"/>
+<area shape="rect" id="node35" href="$structVector3.html#aaef4f25a38878a640ab4a48002a7eff8" title="Normalize this vector and return a reference to it. " alt="" coords="425,1575,558,1602"/>
+<area shape="rect" id="node37" href="$structVector3.html#a2da0f00c5529bced69763320dac9c414" title="Return a copy of this vector, normalized. " alt="" coords="421,1525,561,1551"/>
+<area shape="rect" id="node34" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="655,1499,775,1526"/>
+<area shape="rect" id="node36" href="$structVector3.html#a200024a8442329de9a625ed58ffe7075" title="Return length of vector. " alt="" coords="658,1563,773,1590"/>
+<area shape="rect" id="node45" href="$namespaceMath.html#a9b2e7be835afb6d9fe78f6c1efa26998" title="Return a random float. " alt="" coords="432,1626,551,1653"/>
+<area shape="rect" id="node48" href="$classMtx44.html#a1b985913080679da29ff94217935b3c7" title="Default Constructor. Default values are zero. " alt="" coords="440,1677,543,1703"/>
+</map>

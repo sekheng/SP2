@@ -1,0 +1,5 @@
+<map id="Math::RandFloat" name="Math::RandFloat">
+<area shape="rect" id="node2" href="$namespaceMath.html#aa21138cd1585c3dab1e901c4ead9204d" title="Return a random float between min and max. " alt="" coords="172,31,336,57"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="396,5,503,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="384,56,515,83"/>
+</map>

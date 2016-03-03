@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="scene2__minigame_8h" kind="file" language="C++">
+    <compoundname>scene2_minigame.h</compoundname>
+    <includedby refid="sceneSP2_8h" local="yes">MyGraphics/Source/sceneSP2.h</includedby>
+    <includedby refid="scene2__minigame_8cpp" local="yes">MyGraphics/Source/scene2_minigame.cpp</includedby>
+    <invincdepgraph>
+      <node id="5743">
+        <label>MyGraphics/Source/scene2_minigame.h</label>
+        <link refid="scene2_minigame.h"/>
+        <childnode refid="5744" relation="include">
+        </childnode>
+        <childnode refid="5754" relation="include">
+        </childnode>
+      </node>
+      <node id="5756">
+        <label>MyGraphics/Source/scene3_SP2.cpp</label>
+        <link refid="scene3__SP2_8cpp"/>
+      </node>
+      <node id="5757">
+        <label>MyGraphics/Source/Scene3SP2.cpp</label>
+        <link refid="Scene3SP2_8cpp"/>
+      </node>
+      <node id="5747">
+        <label>MyGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="5751">
+        <label>MyGraphics/Source/NumPad.cpp</label>
+        <link refid="NumPad_8cpp"/>
+      </node>
+      <node id="5754">
+        <label>MyGraphics/Source/scene2_minigame.cpp</label>
+        <link refid="scene2__minigame_8cpp"/>
+      </node>
+      <node id="5748">
+        <label>MyGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="5749">
+        <label>MyGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5755">
+        <label>MyGraphics/Source/scene2_SP2.cpp</label>
+        <link refid="scene2__SP2_8cpp"/>
+      </node>
+      <node id="5744">
+        <label>MyGraphics/Source/sceneSP2.h</label>
+        <link refid="sceneSP2_8h"/>
+        <childnode refid="5745" relation="include">
+        </childnode>
+      </node>
+      <node id="5752">
+        <label>MyGraphics/Source/Quest.cpp</label>
+        <link refid="Quest_8cpp"/>
+      </node>
+      <node id="5759">
+        <label>MyGraphics/Source/SekHeng.cpp</label>
+        <link refid="SekHeng_8cpp"/>
+      </node>
+      <node id="5753">
+        <label>MyGraphics/Source/rot_civ.cpp</label>
+        <link refid="rot__civ_8cpp"/>
+      </node>
+      <node id="5758">
+        <label>MyGraphics/Source/sceneSP2.cpp</label>
+        <link refid="sceneSP2_8cpp"/>
+      </node>
+      <node id="5746">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5745">
+        <label>MyGraphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="5746" relation="include">
+        </childnode>
+        <childnode refid="5747" relation="include">
+        </childnode>
+        <childnode refid="5748" relation="include">
+        </childnode>
+        <childnode refid="5749" relation="include">
+        </childnode>
+        <childnode refid="5750" relation="include">
+        </childnode>
+        <childnode refid="5751" relation="include">
+        </childnode>
+        <childnode refid="5752" relation="include">
+        </childnode>
+        <childnode refid="5753" relation="include">
+        </childnode>
+        <childnode refid="5754" relation="include">
+        </childnode>
+        <childnode refid="5755" relation="include">
+        </childnode>
+        <childnode refid="5756" relation="include">
+        </childnode>
+        <childnode refid="5757" relation="include">
+        </childnode>
+        <childnode refid="5758" relation="include">
+        </childnode>
+        <childnode refid="5759" relation="include">
+        </childnode>
+        <childnode refid="5760" relation="include">
+        </childnode>
+      </node>
+      <node id="5750">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="5760">
+        <label>MyGraphics/Source/StationScene.cpp</label>
+        <link refid="StationScene_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classminigame" prot="public">minigame</innerclass>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>minigame class </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lim Guan Hui </para></simplesect>
+<simplesect kind="par"><title>email: 150623L.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SCENE2_MINIGAME_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCENE2_MINIGAME_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classminigame" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classminigame" kindref="compound">minigame</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1af3934d180e30ecc3a325c3adb302e089" kindref="member">minigame</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1ac05ff74aedc6c6a006ee12ed68617909" kindref="member">~minigame</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1aeec505c51a2cc3d3c499bc4c21ea85f7" kindref="member">piece1</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1af78ecfbe0fe4f8324836efcab7408653" kindref="member">piece2</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a3421514ab9ef58691039c97e819865b7" kindref="member">piece3</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a7ced6b9a798bbf98da9b8699d91b406a" kindref="member">piece4</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1aab52da72b1e323c33a1dc5581c32ab14" kindref="member">piece5</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a78a8a791bbfdea668af7766dd6035e9c" kindref="member">piece6</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a6f1976f5354e86df7ae4588192b3aee9" kindref="member">piece7</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a34d0f26cff11a1152d6edc0850142ad1" kindref="member">piece8</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1aeb6091a011ba179d01518faa391e142b" kindref="member">piece9</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" kindref="member">selection_pointer</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" kindref="member">changePieceRotation</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" kindref="member">update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>start_game);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" kindref="member">result</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" kindref="member">updatePieceState</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a8633034099119cd39d51beae5564bbc1" kindref="member">minigame_started</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>started);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a8633034099119cd39d51beae5564bbc1" kindref="member">minigame_started</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1afde327efd1330ca79df23de9f1fa4641" kindref="member">get_selector_state</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref>;</highlight></codeline>
+<codeline lineno="39" refid="classminigame_1a67281ae6a0468fd3846b990ac5ed6d6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a67281ae6a0468fd3846b990ac5ed6d6d" kindref="member">piece1_rotate</ref>;</highlight></codeline>
+<codeline lineno="40" refid="classminigame_1ac4092fdec11804259311f24a7405b900" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ac4092fdec11804259311f24a7405b900" kindref="member">piece2_rotate</ref>;</highlight></codeline>
+<codeline lineno="41" refid="classminigame_1a9f1a84b98d821cdc7a17f51cc6b1ff59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a9f1a84b98d821cdc7a17f51cc6b1ff59" kindref="member">piece3_rotate</ref>;</highlight></codeline>
+<codeline lineno="42" refid="classminigame_1afe52a5c448f771122a38189d5298a19b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1afe52a5c448f771122a38189d5298a19b" kindref="member">piece4_rotate</ref>;</highlight></codeline>
+<codeline lineno="43" refid="classminigame_1a4539bc45b9ec63eaffcb63a8752f7196" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a4539bc45b9ec63eaffcb63a8752f7196" kindref="member">piece5_rotate</ref>;</highlight></codeline>
+<codeline lineno="44" refid="classminigame_1afeab68e01fc289c7ee456c8757f8cc11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1afeab68e01fc289c7ee456c8757f8cc11" kindref="member">piece6_rotate</ref>;</highlight></codeline>
+<codeline lineno="45" refid="classminigame_1ad40ae9c23e65cd36ebd536317f3e582e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ad40ae9c23e65cd36ebd536317f3e582e" kindref="member">piece7_rotate</ref>;</highlight></codeline>
+<codeline lineno="46" refid="classminigame_1a37ac310640125301e7f5d77a181b01d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a37ac310640125301e7f5d77a181b01d3" kindref="member">piece8_rotate</ref>;</highlight></codeline>
+<codeline lineno="47" refid="classminigame_1a6d3a5441c842965cdab06f25659e72f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a6d3a5441c842965cdab06f25659e72f1" kindref="member">piece9_rotate</ref>;</highlight></codeline>
+<codeline lineno="48" refid="classminigame_1a1477d8472054155595a66dd8a4477c01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a1477d8472054155595a66dd8a4477c01" kindref="member">piece1_state</ref>;</highlight></codeline>
+<codeline lineno="49" refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" kindref="member">piece2_state</ref>;</highlight></codeline>
+<codeline lineno="50" refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" kindref="member">piece3_state</ref>;</highlight></codeline>
+<codeline lineno="51" refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" kindref="member">piece4_state</ref>;</highlight></codeline>
+<codeline lineno="52" refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" kindref="member">piece5_state</ref>;</highlight></codeline>
+<codeline lineno="53" refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" kindref="member">piece6_state</ref>;</highlight></codeline>
+<codeline lineno="54" refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" kindref="member">piece7_state</ref>;</highlight></codeline>
+<codeline lineno="55" refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" kindref="member">piece8_state</ref>;</highlight></codeline>
+<codeline lineno="56" refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" kindref="member">piece9_state</ref>;</highlight></codeline>
+<codeline lineno="57" refid="classminigame_1af610183de5efc1b1992031ba5a81e186" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classminigame_1af610183de5efc1b1992031ba5a81e186" kindref="member">start</ref>;</highlight></codeline>
+<codeline lineno="58" refid="classminigame_1a60289c525151706ee8e3663587eff6d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref>;</highlight></codeline>
+<codeline lineno="59" refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/scene2_minigame.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,9 @@
+<map id="sceneSP2::renderDialogueBox" name="sceneSP2::renderDialogueBox">
+<area shape="rect" id="node2" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="270,5,445,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#a6523e8cf564e7f88ae94958fd9c08d1a" title="a method to render Sek Heng and his quest " alt="" coords="259,56,455,83"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#a330759ab9405718e498ee50fa1b39d97" title="rendering of NPC and quest " alt="" coords="278,107,437,133"/>
+<area shape="rect" id="node6" href="$classsceneSP2.html#a9cfd40b303b8fbd4a67e4d6eedecdc25" title="sceneSP2::RenderQuestObjects" alt="" coords="252,157,463,184"/>
+<area shape="rect" id="node7" href="$classsceneSP2.html#a963ab61de5342e71f6227d9be05383f9" title="render everything in the room " alt="" coords="271,208,443,235"/>
+<area shape="rect" id="node8" href="$classsceneSP2.html#a2a5f5a79ed05066a23f447e4cbbb084f" title="Teleporter and it&#39;s particle effect " alt="" coords="265,259,450,285"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="511,132,641,159"/>
+</map>

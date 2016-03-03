@@ -1,0 +1,5 @@
+<map id="BGMDriven::playStarWarsThemeBackground" name="BGMDriven::playStarWarsThemeBackground">
+<area shape="rect" id="node2" href="$classirrklang_1_1ISoundEngine.html#a1084577f9f43cb12e86cea43c323b12c" title="Returns if a sound with the specified name is currently playing. " alt="" coords="267,5,419,47"/>
+<area shape="rect" id="node3" href="$classirrklang_1_1ISoundEngine.html#a25f612fe6479d3b22dc5bab2a2eaa927" title="loads a sound source (if not loaded already) from a file and plays it. " alt="" coords="267,71,419,112"/>
+<area shape="rect" id="node4" href="$classirrklang_1_1ISound.html#a108485fe64658441cecd70917782961f" title="Will stop the sound and free its resources. " alt="" coords="270,137,415,163"/>
+</map>

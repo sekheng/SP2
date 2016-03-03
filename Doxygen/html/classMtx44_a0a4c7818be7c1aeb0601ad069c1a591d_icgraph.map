@@ -1,0 +1,41 @@
+<map id="Mtx44::SetToOrtho" name="Mtx44::SetToOrtho">
+<area shape="rect" id="node2" href="$classLoadingScreen.html#a5f4fa01b602172d21c0504c9f822b177" title="rendering of image using quad on screen " alt="" coords="201,71,393,112"/>
+<area shape="rect" id="node4" href="$classscene3SP2.html#a969b5024f3f7e207e93ac7dc0a12a199" title="rendering of image using quad on screen " alt="" coords="202,136,393,177"/>
+<area shape="rect" id="node5" href="$classscene3__SP2.html#a765e00338243d9c980645eee2776fccb" title="rendering of image using quad on screen " alt="" coords="199,267,396,308"/>
+<area shape="rect" id="node10" href="$classsceneSP2.html#ac987b33f8bb07f2078d856dfc9f3ba73" title="rendering of image using quad on screen " alt="" coords="185,585,409,611"/>
+<area shape="rect" id="node21" href="$classscene2__SP2.html#a3d90f91b8fdea7521e6fd4cae57a3307" title="rendering of image using quad on screen " alt="" coords="199,877,396,919"/>
+<area shape="rect" id="node29" href="$classsceneSP2.html#a4db61bd86dd1751ab4664526a155ff3c" title="rendering of the minigame pieces on screen " alt="" coords="204,636,391,677"/>
+<area shape="rect" id="node30" href="$classsceneSP2.html#a27c51bd47d0a61a6304825a7721ddae2" title="rendering minigame selector on screen " alt="" coords="204,701,391,743"/>
+<area shape="rect" id="node31" href="$classscene2__SP2.html#a3a682aa9ecb9b63813f31aa666461a44" title="rendering numpad on screen " alt="" coords="467,1215,661,1256"/>
+<area shape="rect" id="node32" href="$classLoadingScreen.html#a2d9b6a7c706cf6986681680c4fe1347e" title="rendering of the texts using quads on screen " alt="" coords="206,5,389,47"/>
+<area shape="rect" id="node33" href="$classscene3SP2.html#af8d775487dd84ebc4f74ae24210ea346" title="rendering of the texts using quads on screen " alt="" coords="187,994,408,1021"/>
+<area shape="rect" id="node35" href="$classscene3__SP2.html#af4b78c42f0f4d70c8c91c488d2778adc" title="rendering of the texts using quads on screen " alt="" coords="204,201,391,243"/>
+<area shape="rect" id="node36" href="$classscene2__SP2.html#a4cd06fa3bd5223e0fd36ba84fc9c6d01" title="rendering of the texts using quads on screen " alt="" coords="204,769,391,811"/>
+<area shape="rect" id="node38" href="$classsceneSP2.html#a554b644c097af6a01809690d032cec0b" title="rendering of the texts using quads on screen " alt="" coords="190,534,405,561"/>
+<area shape="rect" id="node39" href="$classsceneSP2.html#ade1937e06b702a9fb25247e79916fc47" title="rendering of user interface " alt="" coords="194,1045,401,1071"/>
+<area shape="rect" id="node40" href="$classscene2__SP2.html#aaafa887ab77865b060ca27085a6de1f2" title="rendering user interface " alt="" coords="187,1095,408,1122"/>
+<area shape="rect" id="node3" href="$classLoadingScreen.html#a9325ad1fb08d5103eceefefe7cb1d316" title="where the rendering of all the stuff we needed will be here " alt="" coords="485,25,643,51"/>
+<area shape="rect" id="node6" href="$classscene3__SP2.html#a7e54396921ff46efeb2fd7c003761561" title="where the rendering of all the stuff we needed will be here " alt="" coords="977,173,1123,199"/>
+<area shape="rect" id="node7" href="$classscene3__SP2.html#a06945bce0c30ba75cb9e75abed815459" title="a method to render the dialogue box in a much simpler way " alt="" coords="457,198,671,225"/>
+<area shape="rect" id="node8" href="$classscene3__SP2.html#a31dc84c544a030ea7ab2faa6f48f4c3f" title="a method to render QTE&#39;s stuff " alt="" coords="741,147,907,174"/>
+<area shape="rect" id="node9" href="$classscene3__SP2.html#ac97992b1e4892376486b2805aef88c69" title="a method to render the instructions needed for QTE " alt="" coords="721,198,927,225"/>
+<area shape="rect" id="node11" href="$classsceneSP2.html#ae123d615a0922d326c4c5088e47b9b23" title="create a dialogue box easily " alt="" coords="465,525,663,551"/>
+<area shape="rect" id="node19" href="$classsceneSP2.html#a7eb72bce5028c0b185d95fcc9dfd8f7d" title="rendering of tutorial " alt="" coords="477,576,651,617"/>
+<area shape="rect" id="node20" href="$classsceneSP2.html#aecd0a9336acbd6dcd18007f4e66335a2" title="rendering minigame pieces &amp; minigame selector " alt="" coords="471,641,657,683"/>
+<area shape="rect" id="node12" href="$classsceneSP2.html#a963ab61de5342e71f6227d9be05383f9" title="render everything in the room " alt="" coords="738,502,910,529"/>
+<area shape="rect" id="node14" href="$classsceneSP2.html#a330759ab9405718e498ee50fa1b39d97" title="rendering of NPC and quest " alt="" coords="745,553,903,579"/>
+<area shape="rect" id="node15" href="$classsceneSP2.html#a9cfd40b303b8fbd4a67e4d6eedecdc25" title="sceneSP2::RenderQuestObjects" alt="" coords="719,603,929,630"/>
+<area shape="rect" id="node16" href="$classsceneSP2.html#a6523e8cf564e7f88ae94958fd9c08d1a" title="a method to render Sek Heng and his quest " alt="" coords="726,350,922,377"/>
+<area shape="rect" id="node17" href="$classsceneSP2.html#a2a5f5a79ed05066a23f447e4cbbb084f" title="Teleporter and it&#39;s particle effect " alt="" coords="731,401,917,427"/>
+<area shape="rect" id="node18" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="737,451,911,478"/>
+<area shape="rect" id="node13" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="985,502,1115,529"/>
+<area shape="rect" id="node22" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="977,983,1123,1010"/>
+<area shape="rect" id="node23" href="$classscene2__SP2.html#a466b1dec58240bf09a88a0db06da81f1" title="a method to render dialogue box with the object&#39;s name and dialogue " alt="" coords="457,907,671,934"/>
+<area shape="rect" id="node28" href="$classscene2__SP2.html#a36c071a0d5d5dd96e0df9867aafef5cf" title="a method to render the ending screen " alt="" coords="474,1149,654,1191"/>
+<area shape="rect" id="node24" href="$classscene2__SP2.html#a6541bbd7f340ece91e91bec2b77bac4a" title="a method to render Rot Civ and it&#39;s dialogue " alt="" coords="735,907,913,934"/>
+<area shape="rect" id="node25" href="$classscene2__SP2.html#a6d4a4cbe109bbdcf8b901375a4e9b4b7" title="rendering vault " alt="" coords="737,958,911,985"/>
+<area shape="rect" id="node26" href="$classscene2__SP2.html#a510022db1526266df5582f1e1eb19f27" title="rendering robot npcs " alt="" coords="738,1009,910,1035"/>
+<area shape="rect" id="node27" href="$classscene2__SP2.html#a602d4b84d1e8bc11c35060ef0c49a6da" title="a method to render Deadpool and his dialogues " alt="" coords="726,1059,922,1086"/>
+<area shape="rect" id="node34" href="$classscene3SP2.html#aff3cfed153ec3e4c55e8c0bbc80fd459" title="where the rendering of all the stuff we needed will be here " alt="" coords="495,1281,633,1307"/>
+<area shape="rect" id="node37" href="$classscene2__SP2.html#a2933944c895d9437b2364e18747df1ce" title="a method to render the credits " alt="" coords="475,806,653,833"/>
+</map>

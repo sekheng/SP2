@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="structColor" kind="struct" language="C++" prot="public">
+    <compoundname>Color</compoundname>
+    <includes refid="Vertex_8h" local="no">Vertex.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structColor_1a3958a556b47d2de3dd45c75aac833c20" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Color::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Vertex.h" line="37" column="1" bodyfile="MyGraphics/Source/Vertex.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classLoadingScreen_1a4fe97242b309801cef36ddb6c27aa33f" compoundref="LoadingScreen_8cpp" startline="299" endline="324">LoadingScreen::RenderText</referencedby>
+        <referencedby refid="classscene3SP2_1aadda973c177f83c95d50ebea00f0b329" compoundref="Scene3SP2_8cpp" startline="389" endline="415">scene3SP2::RenderText</referencedby>
+        <referencedby refid="classscene3__SP2_1a48a23c164d99527a3cb1205941facc1b" compoundref="scene3__SP2_8cpp" startline="648" endline="673">scene3_SP2::RenderText</referencedby>
+        <referencedby refid="classsceneSP2_1a5045a8867b1acb99e3d99e83895bad5f" compoundref="sceneSP2_8cpp" startline="1283" endline="1308">sceneSP2::RenderText</referencedby>
+        <referencedby refid="classscene2__SP2_1a771528abab8efc61094fe746b1cae2e5" compoundref="scene2__SP2_8cpp" startline="750" endline="775">scene2_SP2::RenderText</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">LoadingScreen::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1af8d775487dd84ebc4f74ae24210ea346" compoundref="Scene3SP2_8cpp" startline="430" endline="469">scene3SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1af4b78c42f0f4d70c8c91c488d2778adc" compoundref="scene3__SP2_8cpp" startline="688" endline="726">scene3_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a4cd06fa3bd5223e0fd36ba84fc9c6d01" compoundref="scene2__SP2_8cpp" startline="790" endline="828">scene2_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a554b644c097af6a01809690d032cec0b" compoundref="sceneSP2_8cpp" startline="1323" endline="1361">sceneSP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="39" endline="39">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structColor_1a5defbb21620e480e556181772d665f34" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Color::g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Vertex.h" line="37" column="1" bodyfile="MyGraphics/Source/Vertex.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="39" endline="39">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structColor_1a33e482be18d6ea31d2b403bee13683b7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Color::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Vertex.h" line="37" column="1" bodyfile="MyGraphics/Source/Vertex.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="39" endline="39">Set</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structColor_1aa2ccdb977158b64bf8ad9000f443b09c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Color::Color</definition>
+        <argsstring>(float r=1, float g=1, float b=1)</argsstring>
+        <name>Color</name>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>g</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Vertex.h" line="38" column="1" bodyfile="MyGraphics/Source/Vertex.h" bodystart="38" bodyend="38"/>
+        <references refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="39" endline="39">Set</references>
+      </memberdef>
+      <memberdef kind="function" id="structColor_1acc77e4e3583d3eca7e476952e51bfb80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Color::Set</definition>
+        <argsstring>(float r, float g, float b)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Vertex.h" line="39" column="1" bodyfile="MyGraphics/Source/Vertex.h" bodystart="39" bodyend="39"/>
+        <references refid="structColor_1a33e482be18d6ea31d2b403bee13683b7" compoundref="Vertex_8h" startline="37">b</references>
+        <references refid="structColor_1a5defbb21620e480e556181772d665f34" compoundref="Vertex_8h" startline="37">g</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="37">r</references>
+        <referencedby refid="structColor_1aa2ccdb977158b64bf8ad9000f443b09c" compoundref="Vertex_8h" startline="38" endline="38">Color</referencedby>
+        <referencedby refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" compoundref="MeshBuilder_8cpp" startline="26" endline="57">MeshBuilder::GenerateAxes</referencedby>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">LoadingScreen::Init</referencedby>
+        <referencedby refid="classscene3SP2_1a897c1f1d70c68b89f07b25acf4df6809" compoundref="Scene3SP2_8cpp" startline="45" endline="158">scene3SP2::Init</referencedby>
+        <referencedby refid="classscene3__SP2_1ae4a4e666fc5860fee4d9e091f1571c18" compoundref="scene3__SP2_8cpp" startline="46" endline="269">scene3_SP2::Init</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d5705b83a23421a1f5aa0fec8c28329" compoundref="scene2__SP2_8cpp" startline="45" endline="368">scene2_SP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" compoundref="Light_8h" startline="29" endline="35">Light::Light</referencedby>
+        <referencedby refid="classscene3SP2_1ac3a634c845cb61d9bbc8b519fa67c43c" compoundref="Scene3SP2_8cpp" startline="168" endline="220">scene3SP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>defines color and it&apos;s RGB properties </para>    </briefdescription>
+    <detaileddescription>
+<para>struct <ref refid="structColor" kindref="compound">Color</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="581">
+        <label>float</label>
+      </node>
+      <node id="580">
+        <label>Color</label>
+        <link refid="structColor"/>
+        <childnode refid="581" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Vertex.h" line="36" column="1" bodyfile="MyGraphics/Source/Vertex.h" bodystart="35" bodyend="40"/>
+    <listofallmembers>
+      <member refid="structColor_1a33e482be18d6ea31d2b403bee13683b7" prot="public" virt="non-virtual"><scope>Color</scope><name>b</name></member>
+      <member refid="structColor_1aa2ccdb977158b64bf8ad9000f443b09c" prot="public" virt="non-virtual"><scope>Color</scope><name>Color</name></member>
+      <member refid="structColor_1a5defbb21620e480e556181772d665f34" prot="public" virt="non-virtual"><scope>Color</scope><name>g</name></member>
+      <member refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" prot="public" virt="non-virtual"><scope>Color</scope><name>r</name></member>
+      <member refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" prot="public" virt="non-virtual"><scope>Color</scope><name>Set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

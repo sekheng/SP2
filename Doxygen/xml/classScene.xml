@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classScene" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Scene</compoundname>
+    <derivedcompoundref refid="classLoadingScreen" prot="public" virt="non-virtual">LoadingScreen</derivedcompoundref>
+    <derivedcompoundref refid="classscene2__SP2" prot="public" virt="non-virtual">scene2_SP2</derivedcompoundref>
+    <derivedcompoundref refid="classscene3__SP2" prot="public" virt="non-virtual">scene3_SP2</derivedcompoundref>
+    <derivedcompoundref refid="classscene3SP2" prot="public" virt="non-virtual">scene3SP2</derivedcompoundref>
+    <derivedcompoundref refid="classsceneSP2" prot="public" virt="non-virtual">sceneSP2</derivedcompoundref>
+    <includes refid="Scene_8h" local="no">Scene.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Scene::Scene</definition>
+        <argsstring>()</argsstring>
+        <name>Scene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Scene.h" line="24" column="1" bodyfile="MyGraphics/Source/Scene.h" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Scene::~Scene</definition>
+        <argsstring>()</argsstring>
+        <name>~Scene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Scene.h" line="25" column="1" bodyfile="MyGraphics/Source/Scene.h" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Init</definition>
+        <argsstring>()=0</argsstring>
+        <name>Init</name>
+        <reimplementedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3">Init</reimplementedby>
+        <reimplementedby refid="classscene3SP2_1a897c1f1d70c68b89f07b25acf4df6809">Init</reimplementedby>
+        <reimplementedby refid="classscene3__SP2_1ae4a4e666fc5860fee4d9e091f1571c18">Init</reimplementedby>
+        <reimplementedby refid="classscene2__SP2_1a6d5705b83a23421a1f5aa0fec8c28329">Init</reimplementedby>
+        <reimplementedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858">Init</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Scene.h" line="27" column="1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Application::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Update</definition>
+        <argsstring>(double dt)=0</argsstring>
+        <name>Update</name>
+        <reimplementedby refid="classLoadingScreen_1aadba6b28a70c39e25c9892f93dbff465">Update</reimplementedby>
+        <reimplementedby refid="classscene3SP2_1ac3a634c845cb61d9bbc8b519fa67c43c">Update</reimplementedby>
+        <reimplementedby refid="classscene3__SP2_1a71dd3bb2895b152440016ae97b01fb09">Update</reimplementedby>
+        <reimplementedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a">Update</reimplementedby>
+        <reimplementedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871">Update</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Scene.h" line="28" column="1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Application::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1ae24d21e12b34839994ad265662ea24d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Render</definition>
+        <argsstring>()=0</argsstring>
+        <name>Render</name>
+        <reimplementedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316">Render</reimplementedby>
+        <reimplementedby refid="classscene3SP2_1aff3cfed153ec3e4c55e8c0bbc80fd459">Render</reimplementedby>
+        <reimplementedby refid="classscene3__SP2_1a7e54396921ff46efeb2fd7c003761561">Render</reimplementedby>
+        <reimplementedby refid="classscene2__SP2_1a40206086fcf392a0dd9824654ad89880">Render</reimplementedby>
+        <reimplementedby refid="classsceneSP2_1a07940fb3c6a5686d3268b80f5a112b48">Render</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Scene.h" line="29" column="1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Application::Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1aae8e24654ef98c79961c2b804b12852c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Exit</definition>
+        <argsstring>()=0</argsstring>
+        <name>Exit</name>
+        <reimplementedby refid="classLoadingScreen_1aac98339073bd6c44f912eca975201839">Exit</reimplementedby>
+        <reimplementedby refid="classscene3SP2_1aa2c7d4875823d9970d95b8aa6c512da7">Exit</reimplementedby>
+        <reimplementedby refid="classscene3__SP2_1a1bd4ce104ea0cade399556647a495734">Exit</reimplementedby>
+        <reimplementedby refid="classscene2__SP2_1ad0aa8fb1232f637d1377d353501cad79">Exit</reimplementedby>
+        <reimplementedby refid="classsceneSP2_1a87202a5ccae972bbabaa325efdd98f77">Exit</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Scene.h" line="30" column="1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Application::Run</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The basic functions of how <ref refid="classScene" kindref="compound">Scene</ref> works. All scenes shall inheirit from this class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classScene" kindref="compound">Scene</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="852">
+        <label>sceneSP2</label>
+        <link refid="classsceneSP2"/>
+        <childnode refid="847" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="849">
+        <label>scene2_SP2</label>
+        <link refid="classscene2__SP2"/>
+        <childnode refid="847" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="847">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="850">
+        <label>scene3_SP2</label>
+        <link refid="classscene3__SP2"/>
+        <childnode refid="847" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="851">
+        <label>scene3SP2</label>
+        <link refid="classscene3SP2"/>
+        <childnode refid="847" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="848">
+        <label>LoadingScreen</label>
+        <link refid="classLoadingScreen"/>
+        <childnode refid="847" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="MyGraphics/Source/Scene.h" line="22" column="1" bodyfile="MyGraphics/Source/Scene.h" bodystart="21" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classScene_1aae8e24654ef98c79961c2b804b12852c" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Exit</name></member>
+      <member refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Init</name></member>
+      <member refid="classScene_1ae24d21e12b34839994ad265662ea24d7" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Render</name></member>
+      <member refid="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" virt="non-virtual"><scope>Scene</scope><name>Scene</name></member>
+      <member refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Update</name></member>
+      <member refid="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" virt="non-virtual"><scope>Scene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

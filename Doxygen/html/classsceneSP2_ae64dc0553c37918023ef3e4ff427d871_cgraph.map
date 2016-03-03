@@ -1,0 +1,94 @@
+<map id="sceneSP2::Update" name="sceneSP2::Update">
+<area shape="rect" id="node2" href="$classSekHeng.html#add8091a69aa4459db74f14db1f68222e" title="a method function which will activate the Sek Heng&#39;s quest " alt="" coords="211,360,374,387"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a7b2a8d3962e7f68a3934dc9dfd68902c" title="the logic behind animating of teleporting " alt="" coords="193,1752,392,1779"/>
+<area shape="rect" id="node4" href="$classApplication.html#aa009765c90eeec95e353b86f926d4c65" title="a method to transit to scenario 2 " alt="" coords="449,1693,664,1720"/>
+<area shape="rect" id="node12" href="$classApplication.html#a7a6554e7cd225dad8c85551c059a25d9" title="a method to transit to scenario 3 " alt="" coords="185,1904,400,1931"/>
+<area shape="rect" id="node13" href="$classQuest.html#a19139139e4ef0d1b6d383f8dfb675c05" title="check if quest has been taken or should be started " alt="" coords="223,1955,362,1981"/>
+<area shape="rect" id="node14" href="$classSekHeng.html#ad37bc5224a576cdd8591e7378f6a3f32" title="a method function which will allows teleportation and new dialogue upon finishing Sek Heng&#39;s quest ..." alt="" coords="473,1288,640,1315"/>
+<area shape="rect" id="node15" href="$classCamera3.html#a4c484a400a9c2e64f3334fc62330368a" title="getting camera&#39;s position of x coordinate " alt="" coords="716,1855,900,1881"/>
+<area shape="rect" id="node16" href="$classCamera3.html#a209c40f89cb065cb56edba03b4dd9491" title="getting camera&#39;s position of y coordinate " alt="" coords="199,2005,386,2032"/>
+<area shape="rect" id="node17" href="$classCamera3.html#aae412d5efa2bae38cc9d5f38fb289f3a" title="getting camera&#39;s position of z coordinate " alt="" coords="716,1908,900,1935"/>
+<area shape="rect" id="node18" href="$classsceneSP2.html#aaddae37328c79dbb87b9963e1eed653d" title="rendering of chun fei head animation " alt="" coords="205,1803,380,1829"/>
+<area shape="rect" id="node23" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="721,1035,895,1061"/>
+<area shape="rect" id="node24" href="$classminigame.html#a6f19116ca39936d79cbaf56f31b18dac" title="minigame::minigame\l_started" alt="" coords="221,2057,364,2098"/>
+<area shape="rect" id="node25" href="$classStationScene.html#a10a5019a5c8c1bbd67ee719de9d4c9fd" title="to check whether the player taken 2 card and if 2 card is taken door can now be open after you press ..." alt="" coords="201,968,385,995"/>
+<area shape="rect" id="node26" href="$classBGMDriven.html#adba6be682af223e347b708a1bb29d177" title="A method functions dedicated to just play Darth Vader theme as a background music ..." alt="" coords="201,2122,385,2163"/>
+<area shape="rect" id="node30" href="$classBGMDriven.html#a7a30db1ca2365ff04d2712d66da0a503" title="A method functions dedicated to just play the 3D gate sound effect " alt="" coords="203,2188,383,2215"/>
+<area shape="rect" id="node37" href="$classNPC.html#adfca844bf43725b6ef2393cbee67cecc" title="to check if player has been given a quest from this npc object " alt="" coords="230,2239,355,2265"/>
+<area shape="rect" id="node38" href="$classsceneSP2.html#a6d5c2e98eaecf56661456add51700ebf" title="check if quest is completed " alt="" coords="184,2289,401,2316"/>
+<area shape="rect" id="node39" href="$namespaceMath.html#aa21138cd1585c3dab1e901c4ead9204d" title="Return a random float between min and max. " alt="" coords="211,2340,375,2367"/>
+<area shape="rect" id="node41" href="$classsceneSP2.html#ad70fc6c47c485a14285257c1414729d1" title="reset the entire scene 1 /* " alt="" coords="233,740,352,767"/>
+<area shape="rect" id="node51" href="$classminigame.html#ab4bdf13278bd3b81791fe0b12ac58c5e" title="check if minigame is completed " alt="" coords="497,1120,616,1147"/>
+<area shape="rect" id="node52" href="$classStationScene.html#a60b6e3d38657e195f342c48d3d9896da" title="to check whether the player in within it&#39;s interacting boundary to toggle the light ..." alt="" coords="210,1019,375,1045"/>
+<area shape="rect" id="node53" href="$classSekHeng.html#aaac77514f1f2c1a551e953362ebe3c90" title="check whether Sek Heng&#39;s quest is completed " alt="" coords="199,2391,386,2417"/>
+<area shape="rect" id="node54" href="$structPosition.html#a2919b2441baf7a2f799791d65a1cfc15" title="Position::Set" alt="" coords="244,2441,341,2468"/>
+<area shape="rect" id="node55" href="$classsceneSP2.html#a1c55e4f6ea52aeabc02bd4c2341b55c0" title="the logic of interaction between the teleporter and player " alt="" coords="226,2492,359,2519"/>
+<area shape="rect" id="node56" href="$classminigame.html#aea6576f016f1c9944aa5ea699b412446" title="update the minigame&#39;s progress " alt="" coords="230,1237,355,1264"/>
+<area shape="rect" id="node69" href="$classNPC.html#a61399424a1ddeaa1f127a9480fcb95ca" title="update some variables at every frame " alt="" coords="245,917,341,944"/>
+<area shape="rect" id="node70" href="$classStationScene.html#aac65b0bd488fcd664f765405a79f3b1b" title="updating the time " alt="" coords="219,2543,366,2569"/>
+<area shape="rect" id="node71" href="$classSekHeng.html#ae3bb8042c61652bd6c325fe105fd2c17" title="a method function which will update the logic behind the interaction with Sek Heng ..." alt="" coords="231,1479,355,1505"/>
+<area shape="rect" id="node79" href="$classQuest.html#a27be88f6eb1623aeecf5970c1f904be8" title="update&#39;s the quest progress " alt="" coords="503,1541,610,1568"/>
+<area shape="rect" id="node81" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="To be called every frame. Camera will get user inputs and update its position and orientation..." alt="" coords="231,411,354,437"/>
+<area shape="rect" id="node92" href="$classBGMDriven.html#a63403095fd55386147f777ca6c618df1" title="An update function to update the player&#39;s position, target and up. Be warn that if this function is b..." alt="" coords="195,2609,390,2636"/>
+<area shape="rect" id="node5" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="753,284,863,311"/>
+<area shape="rect" id="node7" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="731,157,885,184"/>
+<area shape="rect" id="node8" href="$classCamera3.html#a6f1aeea87c779705decd4204db9370c4" title="getting camera&#39;s rotation based on the x axis " alt="" coords="459,1861,654,1888"/>
+<area shape="rect" id="node9" href="$classCamera3.html#a99d7d55bafd4d073c828cbbf1d21ece6" title="getting camera&#39;s rotation based on the y axis " alt="" coords="458,1912,655,1939"/>
+<area shape="rect" id="node10" href="$namespacePhysics.html#add4adb5f16486f8a22f65106a6084524" title="decreases the velocity. Do note that time&#39;s data type is double " alt="" coords="484,1745,629,1786"/>
+<area shape="rect" id="node11" href="$classCamera3.html#ae5525123816e5022e6b3636e93040df7" title="Setting the coordinates of the camera&#39;s position. " alt="" coords="482,1811,631,1837"/>
+<area shape="rect" id="node6" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="976,316,1096,343"/>
+<area shape="rect" id="node19" href="$classNPC.html#a2b008f0dd95c65339baf466918789062" title="to check if player is within range to interact with this object " alt="" coords="498,1963,615,1989"/>
+<area shape="rect" id="node20" href="$classNPC.html#aa43e897253da76ea31e903407361cd92" title="bounds checking for interaction " alt="" coords="733,1963,883,1989"/>
+<area shape="rect" id="node21" href="$classNPC.html#a306047126b65a7f67ad6331a632b8071" title="get this object&#39;s X coordinate " alt="" coords="952,1937,1120,1964"/>
+<area shape="rect" id="node22" href="$classNPC.html#a4f760c4731c0beb5e9d6096e666414bf" title="get this object&#39;s y coordinate " alt="" coords="952,1988,1120,2015"/>
+<area shape="rect" id="node27" href="$classirrklang_1_1ISoundEngine.html#a1084577f9f43cb12e86cea43c323b12c" title="Returns if a sound with the specified name is currently playing. " alt="" coords="481,2182,633,2223"/>
+<area shape="rect" id="node28" href="$classirrklang_1_1ISoundEngine.html#a25f612fe6479d3b22dc5bab2a2eaa927" title="loads a sound source (if not loaded already) from a file and plays it. " alt="" coords="481,2065,633,2106"/>
+<area shape="rect" id="node29" href="$classirrklang_1_1ISound.html#a108485fe64658441cecd70917782961f" title="Will stop the sound and free its resources. " alt="" coords="484,2131,629,2157"/>
+<area shape="rect" id="node31" href="$classirrklang_1_1ISound.html#ade9a05d059ab8fd73973a1f2adc2af81" title="returns if the sound is paused " alt="" coords="461,2349,653,2376"/>
+<area shape="rect" id="node32" href="$classirrklang_1_1ISound.html#a9d9e758f8500b194580de339c7f96768" title="returns if the sound has finished playing. " alt="" coords="467,2400,646,2427"/>
+<area shape="rect" id="node33" href="$classirrklang_1_1ISoundEngine.html#adb09ecc8f61120ce14d26545ed43d8ec" title="Loads a sound source (if not loaded already) from a file and plays it as 3D sound. " alt="" coords="481,2451,633,2493"/>
+<area shape="rect" id="node34" href="$classirrklang_1_1ISound.html#a399fef60d1c48e2dffdf76d83173a15a" title="returns if the sound is paused " alt="" coords="461,2517,653,2544"/>
+<area shape="rect" id="node35" href="$classirrklang_1_1ISound.html#a994b98c059e8aee6adb82bb12d866338" title="sets the position of the sound in 3d space " alt="" coords="464,2248,649,2275"/>
+<area shape="rect" id="node36" href="$classirrklang_1_1ISound.html#a4c91357775f1d15e2c276ced09a40599" title="sets the volume of the sound, a value between 0 (mute) and 1 (full volume). " alt="" coords="465,2299,648,2325"/>
+<area shape="rect" id="node40" href="$namespaceMath.html#a9b2e7be835afb6d9fe78f6c1efa26998" title="Return a random float. " alt="" coords="497,2568,616,2595"/>
+<area shape="rect" id="node42" href="$classminigame.html#abdc34c5361b6af3a81ffb7305f1eee68" title="initialised and randomises values for all the pieces&#39; rotation and initialise other variables ..." alt="" coords="505,816,608,843"/>
+<area shape="rect" id="node44" href="$classQuest.html#aafff8b97348723252d2aad790ea67b74" title="initialised it&#39;s values through parameters " alt="" coords="515,613,598,640"/>
+<area shape="rect" id="node45" href="$classNPC.html#ab6bac3d151a9ff29bebab73604bfdadb" title="to reset all npc dialogue when scene resets " alt="" coords="513,867,600,893"/>
+<area shape="rect" id="node46" href="$classQuest.html#ae32188fcc66cb240b6c0760c10276bae" title="reset the quest " alt="" coords="509,664,604,691"/>
+<area shape="rect" id="node47" href="$classStationScene.html#a6d57f2de3ab2d1c9eb83b9b714342366" title="reset the entire room interaction " alt="" coords="488,715,625,741"/>
+<area shape="rect" id="node48" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Reset the camera settings " alt="" coords="499,563,615,589"/>
+<area shape="rect" id="node49" href="$classSekHeng.html#afa99bb0e52fca8bd53514b23c33ecb0f" title="a method to completely reset the Sek Heng&#39;s variable to it&#39;s default state " alt="" coords="501,765,613,792"/>
+<area shape="rect" id="node43" href="$namespaceMath.html#a7609565ca241d0f70dfd677a7fdac281" title="Return a random integer between min and max. " alt="" coords="733,816,883,843"/>
+<area shape="rect" id="node50" href="$classobjectsForDisplay.html#af5c02d1f662dbdc8d870790c108abdff" title="initialised it&#39;s values through text file reader " alt="" coords="733,765,883,792"/>
+<area shape="rect" id="node57" href="$classminigame.html#a0e6b8c874f12806f14ded4da42c34da3" title="detect when the player rotates a pice " alt="" coords="452,1237,661,1264"/>
+<area shape="rect" id="node58" href="$classminigame.html#a65239e6cbfa3f29c02bfbf0cea62a51d" title="to calculate which piece the minigame&#39;s selection pointer points to " alt="" coords="487,1171,626,1213"/>
+<area shape="rect" id="node59" href="$classminigame.html#a88ab9683ccf176a8cd1f88f996fae6e2" title="update rotation for al the pieces " alt="" coords="462,1440,651,1467"/>
+<area shape="rect" id="node60" href="$classminigame.html#aeec505c51a2cc3d3c499bc4c21ea85f7" title="get minigame piece 1&#39;s rotation " alt="" coords="746,1085,870,1112"/>
+<area shape="rect" id="node61" href="$classminigame.html#af78ecfbe0fe4f8324836efcab7408653" title="get minigame piece 2&#39;s rotation " alt="" coords="746,1136,870,1163"/>
+<area shape="rect" id="node62" href="$classminigame.html#a3421514ab9ef58691039c97e819865b7" title="get minigame piece 3&#39;s rotation " alt="" coords="746,1187,870,1213"/>
+<area shape="rect" id="node63" href="$classminigame.html#a7ced6b9a798bbf98da9b8699d91b406a" title="get minigame piece 4&#39;s rotation " alt="" coords="746,1237,870,1264"/>
+<area shape="rect" id="node64" href="$classminigame.html#aab52da72b1e323c33a1dc5581c32ab14" title="get minigame piece 5&#39;s rotation " alt="" coords="746,1288,870,1315"/>
+<area shape="rect" id="node65" href="$classminigame.html#a78a8a791bbfdea668af7766dd6035e9c" title="get minigame piece 6&#39;s rotation " alt="" coords="746,1339,870,1365"/>
+<area shape="rect" id="node66" href="$classminigame.html#a6f1976f5354e86df7ae4588192b3aee9" title="get minigame piece 7&#39;s rotation " alt="" coords="746,1389,870,1416"/>
+<area shape="rect" id="node67" href="$classminigame.html#a34d0f26cff11a1152d6edc0850142ad1" title="get minigame piece 8&#39;s rotation " alt="" coords="746,1440,870,1467"/>
+<area shape="rect" id="node68" href="$classminigame.html#aeb6091a011ba179d01518faa391e142b" title="get minigame piece 9&#39;s rotation " alt="" coords="746,1491,870,1517"/>
+<area shape="rect" id="node72" href="$classSekHeng.html#a020545c2ffc79296c045a8bc132a70e6" title="Prevention of the dialogue from running to fast if player is holding &#39;E&#39; " alt="" coords="463,1389,650,1416"/>
+<area shape="rect" id="node73" href="$classSekHeng.html#ad0a55a0443c8323f968df4bf832dd7ea" title="to check whether the player in within it&#39;s interacting boundary " alt="" coords="485,1592,628,1619"/>
+<area shape="rect" id="node74" href="$classSekHeng.html#ab0555e2ccef81d7f866e86883cf52955" title="to check whether the player in within Sek Heng&#39;s hammer interacting boundary " alt="" coords="459,1491,654,1517"/>
+<area shape="rect" id="node75" href="$classobjectsForDisplay.html#a7be0d40a45472bd1ff986ea8606dfbba" title="get this object&#39;s X coordinate " alt="" coords="741,1738,875,1779"/>
+<area shape="rect" id="node76" href="$classobjectsForDisplay.html#a72bc7040abaa0b361da68452de000f39" title="get this object&#39;s X boundary range " alt="" coords="737,1542,879,1583"/>
+<area shape="rect" id="node77" href="$classobjectsForDisplay.html#aa2f7e29218b1bbd07f5186b4c39b037a" title="get this object&#39;s Z coordinate " alt="" coords="741,1607,875,1649"/>
+<area shape="rect" id="node78" href="$classobjectsForDisplay.html#a1598c3caea74983607e719dab07b3704" title="get this object&#39;s Z boundary range " alt="" coords="737,1673,879,1714"/>
+<area shape="rect" id="node80" href="$classQuest.html#ad040092b1c64e7da4286bcb358e1f145" title="bounds check if player is within range to pick up item " alt="" coords="737,1804,879,1831"/>
+<area shape="rect" id="node82" href="$classCamera3.html#a72d040ce3726a7d6439efa15734105a5" title="An improved camera movement based on first person " alt="" coords="465,107,649,133"/>
+<area shape="rect" id="node85" href="$structVector3.html#a200024a8442329de9a625ed58ffe7075" title="Return length of vector. " alt="" coords="751,411,865,437"/>
+<area shape="rect" id="node86" href="$structVector3.html#aaef4f25a38878a640ab4a48002a7eff8" title="Normalize this vector and return a reference to it. " alt="" coords="490,411,623,437"/>
+<area shape="rect" id="node87" href="$structVector3.html#a2da0f00c5529bced69763320dac9c414" title="Return a copy of this vector, normalized. " alt="" coords="487,360,627,387"/>
+<area shape="rect" id="node88" href="$classCamera3.html#a81897b566fc3a2142c40276eb7c6a57b" title="rotation of the camera based on the mouse movement " alt="" coords="477,208,637,235"/>
+<area shape="rect" id="node90" href="$classMtx44.html#ac0587ffb5ff9fd58ad5768d28fc06574" title="Set Matrix to a rotation matrix about arbitrary axis. " alt="" coords="483,31,631,57"/>
+<area shape="rect" id="node83" href="$classCamera3.html#a6bc11ea1b579be216761ff19709d14c2" title="boundary check with the player based on the X&#45;axis, cheaper to compute and determines where the playe..." alt="" coords="712,56,904,83"/>
+<area shape="rect" id="node84" href="$classCamera3.html#afcc4be9968845278c0ee38ce465dac4c" title="boundary check with the player based on the Z&#45;axis, cheaper to compute and determines where the playe..." alt="" coords="712,107,904,133"/>
+<area shape="rect" id="node89" href="$namespaceMath.html#af8dc69787ee8df1ea409e97f53fce3cb" title="Keeps a value between a min and max point. If it goes to low, it will become the min. If the value gets too high, it will become the max. " alt="" coords="760,208,856,235"/>
+<area shape="rect" id="node91" href="$namespaceMath.html#ac91173ab2efdf7313fe7aaeb6cb44cf6" title="Math::FAbs" alt="" coords="763,5,853,32"/>
+<area shape="rect" id="node93" href="$classirrklang_1_1ISoundEngine.html#af3e6223435969159ef3b22d0c83d2b84" title="Sets the current listener 3d position. " alt="" coords="481,2619,633,2661"/>
+</map>

@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="objectsForDisplay_8cpp" kind="file" language="C++">
+    <compoundname>objectsForDisplay.cpp</compoundname>
+    <includes refid="objectsForDisplay_8h" local="yes">objectsForDisplay.h</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">map</includes>
+    <includes local="no">locale</includes>
+    <includes local="no">algorithm</includes>
+    <incdepgraph>
+      <node id="5395">
+        <label>locale</label>
+      </node>
+      <node id="5383">
+        <label>DetectMemoryLeak.h</label>
+        <link refid="DetectMemoryLeak_8h"/>
+        <childnode refid="5384" relation="include">
+        </childnode>
+        <childnode refid="5385" relation="include">
+        </childnode>
+      </node>
+      <node id="5386">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5387" relation="include">
+        </childnode>
+        <childnode refid="5392" relation="include">
+        </childnode>
+      </node>
+      <node id="5387">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5388" relation="include">
+        </childnode>
+        <childnode refid="5389" relation="include">
+        </childnode>
+        <childnode refid="5390" relation="include">
+        </childnode>
+        <childnode refid="5391" relation="include">
+        </childnode>
+      </node>
+      <node id="5384">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5388">
+        <label>cmath</label>
+      </node>
+      <node id="5382">
+        <label>string</label>
+      </node>
+      <node id="5394">
+        <label>map</label>
+      </node>
+      <node id="5389">
+        <label>exception</label>
+      </node>
+      <node id="5393">
+        <label>fstream</label>
+      </node>
+      <node id="5380">
+        <label>objectsForDisplay.h</label>
+        <link refid="objectsForDisplay_8h"/>
+        <childnode refid="5381" relation="include">
+        </childnode>
+        <childnode refid="5386" relation="include">
+        </childnode>
+      </node>
+      <node id="5390">
+        <label>ctime</label>
+      </node>
+      <node id="5385">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="5379">
+        <label>MyGraphics/Source/objectsForDisplay.cpp</label>
+        <link refid="objectsForDisplay.cpp"/>
+        <childnode refid="5380" relation="include">
+        </childnode>
+        <childnode refid="5393" relation="include">
+        </childnode>
+        <childnode refid="5392" relation="include">
+        </childnode>
+        <childnode refid="5394" relation="include">
+        </childnode>
+        <childnode refid="5395" relation="include">
+        </childnode>
+        <childnode refid="5396" relation="include">
+        </childnode>
+      </node>
+      <node id="5391">
+        <label>cstdlib</label>
+      </node>
+      <node id="5392">
+        <label>iostream</label>
+      </node>
+      <node id="5396">
+        <label>algorithm</label>
+      </node>
+      <node id="5381">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="5382" relation="include">
+        </childnode>
+        <childnode refid="5383" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="objectsForDisplay_8h" kindref="compound">objectsForDisplay.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;locale&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::map;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classobjectsForDisplay_1a3226586622081e3d66caea2d91243b13" refkind="member"><highlight class="normal"><ref refid="classobjectsForDisplay_1a3226586622081e3d66caea2d91243b13" kindref="member">objectsForDisplay::objectsForDisplay</ref>()</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classGameObject" kindref="compound">GameObject</ref>(</highlight><highlight class="stringliteral">&quot;nothing&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classobjectsForDisplay_1a248356282ecfca47bdb88940a2a3a2f6" refkind="member"><highlight class="normal"><ref refid="classobjectsForDisplay_1a248356282ecfca47bdb88940a2a3a2f6" kindref="member">objectsForDisplay::~objectsForDisplay</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" kindref="member">objectsForDisplay::init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fileLocation)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,<sp/>string&gt;<sp/>object_stuff;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ifstream<sp/>fileStream(fileLocation,<sp/>std::ios::binary);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fileStream.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Impossible<sp/>to<sp/>open<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>fileLocation<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.<sp/>Are<sp/>you<sp/>in<sp/>the<sp/>right<sp/>directory<sp/>?\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!fileStream.eof())<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>data<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(fileStream,<sp/>data);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>||<sp/>data<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;\r&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//the<sp/>next<sp/>sentence<sp/>after<sp/>the<sp/>delimiter.<sp/>The<sp/>delimiter<sp/>in<sp/>this<sp/>case<sp/>is<sp/>a<sp/>comma.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nextStuff;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//the<sp/>next<sp/>sentence<sp/>after<sp/>the<sp/>delimiter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//stringtoken<sp/>gets<sp/>the<sp/>whole<sp/>statement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*stringtoken<sp/>=<sp/>strtok_s(const_cast&lt;char*&gt;(data.c_str()),<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">,<sp/>&amp;nextStuff);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//stringtoken<sp/>gets<sp/>the<sp/>whole<sp/>statement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//I<sp/>wish<sp/>to<sp/>use<sp/>string<sp/>instead<sp/>of<sp/>C-style<sp/>string<sp/>to<sp/>prevent<sp/>rubbish<sp/>inside<sp/>the<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>taking_the_stuff<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>values<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//taking_the_stuff<sp/>gets<sp/>the<sp/>first<sp/>statement<sp/>just<sp/>before<sp/>the<sp/>delimiter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>taking_the_stuff.append(stringtoken);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//taking_the_stuff<sp/>gets<sp/>the<sp/>first<sp/>statement<sp/>just<sp/>before<sp/>the<sp/>delimiter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//values<sp/>get<sp/>the<sp/>nextStuff&apos;s<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>values.append(nextStuff);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//values<sp/>get<sp/>the<sp/>nextStuff&apos;s<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//erasing<sp/>the<sp/>&apos;\r&apos;<sp/>inside<sp/>values<sp/>as<sp/>the<sp/>string<sp/>taken<sp/>from<sp/>the<sp/>text<sp/>file<sp/>always<sp/>end<sp/>with<sp/>&apos;\r&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>values.erase(std::remove(values.begin(),<sp/>values.end(),<sp/></highlight><highlight class="charliteral">&apos;\r&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//erasing<sp/>the<sp/>&apos;\r&apos;<sp/>inside<sp/>values<sp/>as<sp/>the<sp/>string<sp/>taken<sp/>from<sp/>the<sp/>text<sp/>file<sp/>always<sp/>end<sp/>with<sp/>&apos;\r&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//just<sp/>putting<sp/>locale<sp/>for<sp/>fun.<sp/>Don&apos;t<sp/>do<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::locale<sp/>loc;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>num<sp/>=<sp/>0;<sp/>num<sp/>&lt;<sp/>taking_the_stuff.size();<sp/>++num)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>taking_the_stuff[num]<sp/>=<sp/>tolower(taking_the_stuff[num],<sp/>loc);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//just<sp/>putting<sp/>locale<sp/>for<sp/>fun.<sp/>Don&apos;t<sp/>do<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object_stuff.insert(std::pair&lt;string,<sp/>string&gt;(taking_the_stuff,<sp/>values));</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fileStream.close();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//the<sp/>rest<sp/>of<sp/>the<sp/>statements<sp/>are<sp/>EZ<sp/>stuff.<sp/>If<sp/>you<sp/>find<sp/>it<sp/>difficult,<sp/>read<sp/>up<sp/>on<sp/>map.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,<sp/>string&gt;::iterator<sp/>it<sp/>=<sp/>object_stuff.find(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGameObject_1a125061a56ff346096387b9d3674d69ca" kindref="member">Name_</ref><sp/>=<sp/>it-&gt;second;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>it<sp/>=<sp/>object_stuff.find(</highlight><highlight class="stringliteral">&quot;objectx&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>=<sp/>strtof(it-&gt;second.c_str(),<sp/>NULL);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>it<sp/>=<sp/>object_stuff.find(</highlight><highlight class="stringliteral">&quot;objecty&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>=<sp/>strtof(it-&gt;second.c_str(),<sp/>NULL);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>it<sp/>=<sp/>object_stuff.find(</highlight><highlight class="stringliteral">&quot;objectz&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>=<sp/>strtof(it-&gt;second.c_str(),<sp/>NULL);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>it<sp/>=<sp/>object_stuff.find(</highlight><highlight class="stringliteral">&quot;boundaryradiusx&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" kindref="member">boundaryRadiusX</ref><sp/>=<sp/>strtof(it-&gt;second.c_str(),<sp/>NULL);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>it<sp/>=<sp/>object_stuff.find(</highlight><highlight class="stringliteral">&quot;boundaryradiusz&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" kindref="member">boundaryRadiusZ</ref><sp/>=<sp/>strtof(it-&gt;second.c_str(),<sp/>NULL);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classobjectsForDisplay_1ae52d5d2bba7e53476979c682e49523fc" kindref="member">originalPos</ref><sp/>=<sp/><ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="112"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classobjectsForDisplay_1aa904a63ec3bb19594f91ddc939375649" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1aa904a63ec3bb19594f91ddc939375649" kindref="member">objectsForDisplay::boundaryCheck</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>playerPosX,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>playerPosZ)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>+<sp/><ref refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" kindref="member">boundaryRadiusX</ref>)<sp/>&gt;<sp/>playerPosX<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>-<sp/><ref refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" kindref="member">boundaryRadiusX</ref>)<sp/>&lt;<sp/>playerPosX<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>+<sp/><ref refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" kindref="member">boundaryRadiusZ</ref>)<sp/>&gt;<sp/>playerPosZ<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>-<sp/><ref refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" kindref="member">boundaryRadiusZ</ref>)<sp/>&lt;<sp/>playerPosZ)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="130"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classobjectsForDisplay_1a7be0d40a45472bd1ff986ea8606dfbba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1a7be0d40a45472bd1ff986ea8606dfbba" kindref="member">objectsForDisplay::getObjectposX</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="141"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="classobjectsForDisplay_1a85829a61f5de07d5c83231e49821097f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1a85829a61f5de07d5c83231e49821097f" kindref="member">objectsForDisplay::getObjectposY</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="152"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="classobjectsForDisplay_1aa2f7e29218b1bbd07f5186b4c39b037a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1aa2f7e29218b1bbd07f5186b4c39b037a" kindref="member">objectsForDisplay::getObjectposZ</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="169"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="classobjectsForDisplay_1a7fc07efa02fd65fc144c5989c1d1d382" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" kindref="member">objectsForDisplay::init</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>pos,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>boundaryX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>boundaryZ,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGameObject_1a125061a56ff346096387b9d3674d69ca" kindref="member">Name_</ref><sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref><sp/>=<sp/>pos;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" kindref="member">boundaryRadiusX</ref><sp/>=<sp/>boundaryX;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" kindref="member">boundaryRadiusZ</ref><sp/>=<sp/>boundaryZ;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="183"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="classobjectsForDisplay_1a72bc7040abaa0b361da68452de000f39" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1a72bc7040abaa0b361da68452de000f39" kindref="member">objectsForDisplay::getBoundaryRadiusX</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" kindref="member">boundaryRadiusX</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="194"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="classobjectsForDisplay_1a1598c3caea74983607e719dab07b3704" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1a1598c3caea74983607e719dab07b3704" kindref="member">objectsForDisplay::getBoundaryRadiusZ</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" kindref="member">boundaryRadiusZ</ref>;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/objectsForDisplay.cpp"/>
+  </compounddef>
+</doxygen>

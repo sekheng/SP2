@@ -1,0 +1,4 @@
+<map id="Quest::boundscheck" name="Quest::boundscheck">
+<area shape="rect" id="node2" href="$classQuest.html#a27be88f6eb1623aeecf5970c1f904be8" title="update&#39;s the quest progress " alt="" coords="196,5,303,32"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="351,5,481,32"/>
+</map>

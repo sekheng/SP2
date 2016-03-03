@@ -1,0 +1,9 @@
+<map id="scene2_SP2::RenderImageOnScreen" name="scene2_SP2::RenderImageOnScreen">
+<area shape="rect" id="node2" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="756,120,901,147"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a466b1dec58240bf09a88a0db06da81f1" title="a method to render dialogue box with the object&#39;s name and dialogue " alt="" coords="251,120,464,147"/>
+<area shape="rect" id="node8" href="$classscene2__SP2.html#a36c071a0d5d5dd96e0df9867aafef5cf" title="a method to render the ending screen " alt="" coords="267,218,447,260"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#a602d4b84d1e8bc11c35060ef0c49a6da" title="a method to render Deadpool and his dialogues " alt="" coords="512,70,708,96"/>
+<area shape="rect" id="node5" href="$classscene2__SP2.html#a510022db1526266df5582f1e1eb19f27" title="rendering robot npcs " alt="" coords="524,120,696,147"/>
+<area shape="rect" id="node6" href="$classscene2__SP2.html#a6541bbd7f340ece91e91bec2b77bac4a" title="a method to render Rot Civ and it&#39;s dialogue " alt="" coords="521,171,699,198"/>
+<area shape="rect" id="node7" href="$classscene2__SP2.html#a6d4a4cbe109bbdcf8b901375a4e9b4b7" title="rendering vault " alt="" coords="523,222,697,248"/>
+</map>

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="shader_8hpp" kind="file" language="C++">
+    <compoundname>shader.hpp</compoundname>
+    <includedby refid="LoadingScreen_8cpp" local="yes">MyGraphics/Source/LoadingScreen.cpp</includedby>
+    <includedby refid="scene2__SP2_8cpp" local="yes">MyGraphics/Source/scene2_SP2.cpp</includedby>
+    <includedby refid="scene3__SP2_8cpp" local="yes">MyGraphics/Source/scene3_SP2.cpp</includedby>
+    <includedby refid="Scene3SP2_8cpp" local="yes">MyGraphics/Source/Scene3SP2.cpp</includedby>
+    <includedby refid="sceneSP2_8cpp" local="yes">MyGraphics/Source/sceneSP2.cpp</includedby>
+    <includedby refid="shader_8cpp" local="yes">MyGraphics/Source/shader.cpp</includedby>
+    <invincdepgraph>
+      <node id="6352">
+        <label>MyGraphics/Source/scene3_SP2.cpp</label>
+        <link refid="scene3__SP2_8cpp"/>
+      </node>
+      <node id="6353">
+        <label>MyGraphics/Source/Scene3SP2.cpp</label>
+        <link refid="Scene3SP2_8cpp"/>
+      </node>
+      <node id="6351">
+        <label>MyGraphics/Source/scene2_SP2.cpp</label>
+        <link refid="scene2__SP2_8cpp"/>
+      </node>
+      <node id="6350">
+        <label>MyGraphics/Source/LoadingScreen.cpp</label>
+        <link refid="LoadingScreen_8cpp"/>
+      </node>
+      <node id="6349">
+        <label>MyGraphics/Source/shader.hpp</label>
+        <link refid="shader.hpp"/>
+        <childnode refid="6350" relation="include">
+        </childnode>
+        <childnode refid="6351" relation="include">
+        </childnode>
+        <childnode refid="6352" relation="include">
+        </childnode>
+        <childnode refid="6353" relation="include">
+        </childnode>
+        <childnode refid="6354" relation="include">
+        </childnode>
+        <childnode refid="6355" relation="include">
+        </childnode>
+      </node>
+      <node id="6354">
+        <label>MyGraphics/Source/sceneSP2.cpp</label>
+        <link refid="sceneSP2_8cpp"/>
+      </node>
+      <node id="6355">
+        <label>MyGraphics/Source/shader.cpp</label>
+        <link refid="shader_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="shader_8hpp_1a833f10cca6a76fe34ae9efa23ac5e73c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLuint</type>
+        <definition>GLuint LoadShaders</definition>
+        <argsstring>(const char *vertex_file_path, const char *fragment_file_path)</argsstring>
+        <name>LoadShaders</name>
+        <param>
+          <type>const char *</type>
+          <declname>vertex_file_path</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fragment_file_path</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>loading of the vertex shaders and fragment shaders from external source </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertex_file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- path name to the vertex file location </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fragment_file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- path name to the fragment file location </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/shader.hpp" line="14" column="1" bodyfile="MyGraphics/Source/shader.cpp" bodystart="25" bodyend="116"/>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">LoadingScreen::Init</referencedby>
+        <referencedby refid="classscene3SP2_1a897c1f1d70c68b89f07b25acf4df6809" compoundref="Scene3SP2_8cpp" startline="45" endline="158">scene3SP2::Init</referencedby>
+        <referencedby refid="classscene3__SP2_1ae4a4e666fc5860fee4d9e091f1571c18" compoundref="scene3__SP2_8cpp" startline="46" endline="269">scene3_SP2::Init</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d5705b83a23421a1f5aa0fec8c28329" compoundref="scene2__SP2_8cpp" startline="45" endline="368">scene2_SP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>Loading of shaders Taken from Mr Tang&apos;s framework </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Sek Heng </para></simplesect>
+<simplesect kind="par"><title>email: 150629Z.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SHADER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHADER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">GLuint<sp/><ref refid="shader_8hpp_1a833f10cca6a76fe34ae9efa23ac5e73c" kindref="member">LoadShaders</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>vertex_file_path,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>fragment_file_path);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/shader.hpp"/>
+  </compounddef>
+</doxygen>

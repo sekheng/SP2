@@ -1,0 +1,5 @@
+<map id="NumPad::NumpadRenderOnScreen" name="NumPad::NumpadRenderOnScreen">
+<area shape="rect" id="node2" href="$classNumPad.html#a9f705cb43de4fd79ebed968e1e67c315" title="Numpad interaction. " alt="" coords="280,5,457,32"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="505,31,651,57"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="296,107,441,133"/>
+</map>

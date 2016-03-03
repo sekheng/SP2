@@ -1,0 +1,4 @@
+<map id="sceneSP2::RenderMinigameOnScreen" name="sceneSP2::RenderMinigameOnScreen">
+<area shape="rect" id="node2" href="$classsceneSP2.html#aecd0a9336acbd6dcd18007f4e66335a2" title="rendering minigame pieces &amp; minigame selector " alt="" coords="240,5,427,47"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="475,13,605,39"/>
+</map>

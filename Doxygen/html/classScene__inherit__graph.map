@@ -1,0 +1,7 @@
+<map id="Scene" name="Scene">
+<area shape="rect" id="node2" href="$classLoadingScreen.html" title="Just Rendering of the Loading Screen to ease the boredom of player when initialising other scenes..." alt="" coords="5,80,113,107"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html" title="inheirited from Scene and made improvised to it. To turn it into a game. This is Scenario 3 ..." alt="" coords="138,80,234,107"/>
+<area shape="rect" id="node4" href="$classscene3__SP2.html" title="inheirited from Scene and made improvised to it. To turn it into a game. This is the Scenario 3..." alt="" coords="258,80,354,107"/>
+<area shape="rect" id="node5" href="$classscene3SP2.html" title="inheirited from Scene and made improvised to it. To turn it into a game. " alt="" coords="379,80,468,107"/>
+<area shape="rect" id="node6" href="$classsceneSP2.html" title="inheirited from Scene and made improvised to it. To turn it into a game. This is Scenario 1 ..." alt="" coords="493,80,575,107"/>
+</map>

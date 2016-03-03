@@ -1,0 +1,735 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="SekHeng_8cpp" kind="file" language="C++">
+    <compoundname>SekHeng.cpp</compoundname>
+    <includes refid="SekHeng_8h" local="yes">SekHeng.h</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">algorithm</includes>
+    <includes refid="Application_8h" local="yes">Application.h</includes>
+    <incdepgraph>
+      <node id="6275">
+        <label>../irrKlang-1.5.0/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="6276" relation="include">
+        </childnode>
+        <childnode refid="6278" relation="include">
+        </childnode>
+        <childnode refid="6280" relation="include">
+        </childnode>
+        <childnode refid="6281" relation="include">
+        </childnode>
+        <childnode refid="6282" relation="include">
+        </childnode>
+        <childnode refid="6283" relation="include">
+        </childnode>
+        <childnode refid="6284" relation="include">
+        </childnode>
+        <childnode refid="6285" relation="include">
+        </childnode>
+        <childnode refid="6286" relation="include">
+        </childnode>
+        <childnode refid="6287" relation="include">
+        </childnode>
+        <childnode refid="6288" relation="include">
+        </childnode>
+        <childnode refid="6292" relation="include">
+        </childnode>
+        <childnode refid="6293" relation="include">
+        </childnode>
+        <childnode refid="6289" relation="include">
+        </childnode>
+        <childnode refid="6295" relation="include">
+        </childnode>
+        <childnode refid="6290" relation="include">
+        </childnode>
+        <childnode refid="6294" relation="include">
+        </childnode>
+        <childnode refid="6296" relation="include">
+        </childnode>
+        <childnode refid="6297" relation="include">
+        </childnode>
+        <childnode refid="6291" relation="include">
+        </childnode>
+      </node>
+      <node id="6285">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+      </node>
+      <node id="6262">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="6263" relation="include">
+        </childnode>
+        <childnode refid="6264" relation="include">
+        </childnode>
+      </node>
+      <node id="6273">
+        <label>queue</label>
+      </node>
+      <node id="6271">
+        <label>scene2_minigame.h</label>
+        <link refid="scene2__minigame_8h"/>
+      </node>
+      <node id="6235">
+        <label>DetectMemoryLeak.h</label>
+        <link refid="DetectMemoryLeak_8h"/>
+        <childnode refid="6236" relation="include">
+        </childnode>
+        <childnode refid="6237" relation="include">
+        </childnode>
+      </node>
+      <node id="6254">
+        <label>windows.h</label>
+      </node>
+      <node id="6238">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="6239" relation="include">
+        </childnode>
+        <childnode refid="6244" relation="include">
+        </childnode>
+      </node>
+      <node id="6239">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="6240" relation="include">
+        </childnode>
+        <childnode refid="6241" relation="include">
+        </childnode>
+        <childnode refid="6242" relation="include">
+        </childnode>
+        <childnode refid="6243" relation="include">
+        </childnode>
+      </node>
+      <node id="6297">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+        <childnode refid="6287" relation="include">
+        </childnode>
+      </node>
+      <node id="6291">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+        <childnode refid="6285" relation="include">
+        </childnode>
+      </node>
+      <node id="6236">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6284">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="6255">
+        <label>scene2_SP2.h</label>
+        <link refid="scene2__SP2_8h"/>
+        <childnode refid="6256" relation="include">
+        </childnode>
+        <childnode refid="6257" relation="include">
+        </childnode>
+        <childnode refid="6260" relation="include">
+        </childnode>
+        <childnode refid="6262" relation="include">
+        </childnode>
+        <childnode refid="6265" relation="include">
+        </childnode>
+        <childnode refid="6266" relation="include">
+        </childnode>
+        <childnode refid="6267" relation="include">
+        </childnode>
+        <childnode refid="6268" relation="include">
+        </childnode>
+      </node>
+      <node id="6240">
+        <label>cmath</label>
+      </node>
+      <node id="6294">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+      </node>
+      <node id="6264">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="6239" relation="include">
+        </childnode>
+        <childnode refid="6238" relation="include">
+        </childnode>
+      </node>
+      <node id="6266">
+        <label>NumPad.h</label>
+        <link refid="NumPad_8h"/>
+        <childnode refid="6233" relation="include">
+        </childnode>
+        <childnode refid="6238" relation="include">
+        </childnode>
+        <childnode refid="6246" relation="include">
+        </childnode>
+        <childnode refid="6247" relation="include">
+        </childnode>
+      </node>
+      <node id="6234">
+        <label>string</label>
+      </node>
+      <node id="6249">
+        <label>map</label>
+      </node>
+      <node id="6283">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="6269">
+        <label>sceneSP2.h</label>
+        <link refid="sceneSP2_8h"/>
+        <childnode refid="6256" relation="include">
+        </childnode>
+        <childnode refid="6257" relation="include">
+        </childnode>
+        <childnode refid="6260" relation="include">
+        </childnode>
+        <childnode refid="6247" relation="include">
+        </childnode>
+        <childnode refid="6262" relation="include">
+        </childnode>
+        <childnode refid="6268" relation="include">
+        </childnode>
+        <childnode refid="6270" relation="include">
+        </childnode>
+        <childnode refid="6245" relation="include">
+        </childnode>
+        <childnode refid="6231" relation="include">
+        </childnode>
+        <childnode refid="6271" relation="include">
+        </childnode>
+      </node>
+      <node id="6241">
+        <label>exception</label>
+      </node>
+      <node id="6250">
+        <label>fstream</label>
+      </node>
+      <node id="6292">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+        <childnode refid="6285" relation="include">
+        </childnode>
+      </node>
+      <node id="6274">
+        <label>BGMDriven.h</label>
+        <link refid="BGMDriven_8h"/>
+        <childnode refid="6275" relation="include">
+        </childnode>
+      </node>
+      <node id="6260">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="6261" relation="include">
+        </childnode>
+      </node>
+      <node id="6232">
+        <label>objectsForDisplay.h</label>
+        <link refid="objectsForDisplay_8h"/>
+        <childnode refid="6233" relation="include">
+        </childnode>
+        <childnode refid="6238" relation="include">
+        </childnode>
+      </node>
+      <node id="6277">
+        <label>wchar.h</label>
+      </node>
+      <node id="6290">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+      </node>
+      <node id="6268">
+        <label>NPC.h</label>
+        <link refid="NPC_8h"/>
+        <childnode refid="6233" relation="include">
+        </childnode>
+        <childnode refid="6238" relation="include">
+        </childnode>
+        <childnode refid="6246" relation="include">
+        </childnode>
+        <childnode refid="6247" relation="include">
+        </childnode>
+      </node>
+      <node id="6242">
+        <label>ctime</label>
+      </node>
+      <node id="6296">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+      </node>
+      <node id="6289">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="6281" relation="include">
+        </childnode>
+        <childnode refid="6278" relation="include">
+        </childnode>
+      </node>
+      <node id="6230">
+        <label>MyGraphics/Source/SekHeng.cpp</label>
+        <link refid="SekHeng.cpp"/>
+        <childnode refid="6231" relation="include">
+        </childnode>
+        <childnode refid="6250" relation="include">
+        </childnode>
+        <childnode refid="6251" relation="include">
+        </childnode>
+        <childnode refid="6252" relation="include">
+        </childnode>
+      </node>
+      <node id="6253">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="6254" relation="include">
+        </childnode>
+      </node>
+      <node id="6263">
+        <label>stack</label>
+      </node>
+      <node id="6246">
+        <label>vector</label>
+      </node>
+      <node id="6256">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="6293">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+        <childnode refid="6294" relation="include">
+        </childnode>
+      </node>
+      <node id="6231">
+        <label>SekHeng.h</label>
+        <link refid="SekHeng_8h"/>
+        <childnode refid="6232" relation="include">
+        </childnode>
+        <childnode refid="6245" relation="include">
+        </childnode>
+        <childnode refid="6249" relation="include">
+        </childnode>
+      </node>
+      <node id="6237">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="6265">
+        <label>rot_civ.h</label>
+        <link refid="rot__civ_8h"/>
+        <childnode refid="6232" relation="include">
+        </childnode>
+        <childnode refid="6247" relation="include">
+        </childnode>
+      </node>
+      <node id="6276">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="6277" relation="include">
+        </childnode>
+      </node>
+      <node id="6248">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="6238" relation="include">
+        </childnode>
+      </node>
+      <node id="6272">
+        <label>scene3_SP2.h</label>
+        <link refid="scene3__SP2_8h"/>
+        <childnode refid="6256" relation="include">
+        </childnode>
+        <childnode refid="6257" relation="include">
+        </childnode>
+        <childnode refid="6260" relation="include">
+        </childnode>
+        <childnode refid="6247" relation="include">
+        </childnode>
+        <childnode refid="6262" relation="include">
+        </childnode>
+        <childnode refid="6273" relation="include">
+        </childnode>
+      </node>
+      <node id="6278">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="6279" relation="include">
+        </childnode>
+        <childnode refid="6276" relation="include">
+        </childnode>
+      </node>
+      <node id="6267">
+        <label>creditScene.h</label>
+        <link refid="creditScene_8h"/>
+        <childnode refid="6246" relation="include">
+        </childnode>
+        <childnode refid="6234" relation="include">
+        </childnode>
+      </node>
+      <node id="6280">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="6276" relation="include">
+        </childnode>
+      </node>
+      <node id="6258">
+        <label>MaterialBuilder.h</label>
+        <link refid="MaterialBuilder_8h"/>
+        <childnode refid="6259" relation="include">
+        </childnode>
+      </node>
+      <node id="6279">
+        <label>math.h</label>
+      </node>
+      <node id="6257">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="6234" relation="include">
+        </childnode>
+        <childnode refid="6258" relation="include">
+        </childnode>
+      </node>
+      <node id="6243">
+        <label>cstdlib</label>
+      </node>
+      <node id="6295">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+        <childnode refid="6285" relation="include">
+        </childnode>
+      </node>
+      <node id="6259">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="6287">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="6281" relation="include">
+        </childnode>
+        <childnode refid="6278" relation="include">
+        </childnode>
+        <childnode refid="6284" relation="include">
+        </childnode>
+        <childnode refid="6285" relation="include">
+        </childnode>
+      </node>
+      <node id="6244">
+        <label>iostream</label>
+      </node>
+      <node id="6282">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="6270">
+        <label>StationScene.h</label>
+        <link refid="StationScene_8h"/>
+        <childnode refid="6233" relation="include">
+        </childnode>
+        <childnode refid="6238" relation="include">
+        </childnode>
+        <childnode refid="6246" relation="include">
+        </childnode>
+        <childnode refid="6247" relation="include">
+        </childnode>
+      </node>
+      <node id="6288">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="6281" relation="include">
+        </childnode>
+        <childnode refid="6289" relation="include">
+        </childnode>
+        <childnode refid="6278" relation="include">
+        </childnode>
+      </node>
+      <node id="6281">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="6276" relation="include">
+        </childnode>
+      </node>
+      <node id="6252">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="6253" relation="include">
+        </childnode>
+        <childnode refid="6235" relation="include">
+        </childnode>
+        <childnode refid="6233" relation="include">
+        </childnode>
+        <childnode refid="6255" relation="include">
+        </childnode>
+        <childnode refid="6269" relation="include">
+        </childnode>
+        <childnode refid="6272" relation="include">
+        </childnode>
+        <childnode refid="6274" relation="include">
+        </childnode>
+      </node>
+      <node id="6245">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="6233" relation="include">
+        </childnode>
+        <childnode refid="6238" relation="include">
+        </childnode>
+        <childnode refid="6246" relation="include">
+        </childnode>
+        <childnode refid="6247" relation="include">
+        </childnode>
+      </node>
+      <node id="6286">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="6280" relation="include">
+        </childnode>
+        <childnode refid="6278" relation="include">
+        </childnode>
+        <childnode refid="6287" relation="include">
+        </childnode>
+        <childnode refid="6288" relation="include">
+        </childnode>
+        <childnode refid="6284" relation="include">
+        </childnode>
+        <childnode refid="6290" relation="include">
+        </childnode>
+        <childnode refid="6291" relation="include">
+        </childnode>
+      </node>
+      <node id="6261">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="6238" relation="include">
+        </childnode>
+      </node>
+      <node id="6251">
+        <label>algorithm</label>
+      </node>
+      <node id="6247">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="6248" relation="include">
+        </childnode>
+        <childnode refid="6232" relation="include">
+        </childnode>
+        <childnode refid="6246" relation="include">
+        </childnode>
+      </node>
+      <node id="6233">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="6234" relation="include">
+        </childnode>
+        <childnode refid="6235" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SekHeng_8h" kindref="compound">SekHeng.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Application_8h" kindref="compound">Application.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classSekHeng_1aabfaf63bbdb5b17ce5ae85f6334f6e70" refkind="member"><highlight class="normal"><ref refid="classSekHeng_1aabfaf63bbdb5b17ce5ae85f6334f6e70" kindref="member">SekHeng::SekHeng</ref>()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>order_of_text(0),<sp/>stage(0),<sp/>interatingRadius(6),<sp/>time(0),<sp/>isOkay(false),<sp/>hammerInHand(true)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" kindref="member">init</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref>(87,<sp/>0,<sp/>-9),<sp/>3,<sp/>3,<sp/></highlight><highlight class="stringliteral">&quot;hammer&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classSekHeng_1a694fed7907654893557c1c2849e6dd77" refkind="member"><highlight class="normal"><ref refid="classSekHeng_1a694fed7907654893557c1c2849e6dd77" kindref="member">SekHeng::~SekHeng</ref>()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="classSekHeng_1a4920e9e606e8c88a899b3930b230121c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1a4920e9e606e8c88a899b3930b230121c" kindref="member">SekHeng::initDialogues</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fileLocation,<sp/><ref refid="classCamera3" kindref="compound">Camera3</ref>&amp;<sp/>camera)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" kindref="member">dub_camera</ref><sp/>=<sp/>&amp;camera;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//streaming<sp/>SekHeng&apos;s<sp/>dialogue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ifstream<sp/>fileStream2(fileLocation,<sp/>std::ios::binary);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fileStream2.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Impossible<sp/>to<sp/>open<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>fileLocation<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.<sp/>Are<sp/>you<sp/>in<sp/>the<sp/>right<sp/>directory<sp/>?\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!fileStream2.eof())<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>data<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(fileStream2,<sp/>data);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>||<sp/>data<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;\r&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nextStuff;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*stringtoken<sp/>=<sp/>strtok_s(const_cast&lt;char*&gt;(data.c_str()),<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">,<sp/>&amp;nextStuff);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>taking_the_stuff<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>values<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>taking_the_stuff.append(stringtoken);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>values.append(nextStuff);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>values.erase(std::remove(values.begin(),<sp/>values.end(),<sp/></highlight><highlight class="charliteral">&apos;\r&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>you<sp/>did<sp/>Data<sp/>Struct<sp/>Assignment<sp/>2<sp/>carefully,<sp/>you<sp/>will<sp/>understand<sp/>the<sp/>following<sp/>lines.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>the_stage<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">short</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(stoi(taking_the_stuff));</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;short,<sp/>vector&lt;string&gt;&gt;::iterator<sp/>it;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" kindref="member">dialogues</ref>.count(the_stage)<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/><ref refid="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" kindref="member">dialogues</ref>.find(the_stage);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second.push_back(values);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" kindref="member">dialogues</ref>.insert(std::pair&lt;</highlight><highlight class="keywordtype">short</highlight><highlight class="normal">,<sp/>vector&lt;string&gt;&gt;(the_stage,<sp/>{<sp/>values<sp/>}));</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fileStream2.close();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//streaming<sp/>SekHeng&apos;s<sp/>dialogue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="80"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" kindref="member">SekHeng::Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a3120fec2d40bc4489d5770c9fc89ecb0" kindref="member">time</ref><sp/>+=<sp/>dt;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" kindref="member">preventSpamming</ref>();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//when<sp/>the<sp/>quest<sp/>is<sp/>activated,<sp/>checking<sp/>whether<sp/>the<sp/>player<sp/>has<sp/>the<sp/>hammer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(</highlight><highlight class="charliteral">&apos;E&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/><ref refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" kindref="member">stage</ref><sp/>==<sp/>1<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" kindref="member">interaction</ref>()<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/><ref refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" kindref="member">hammerInHand</ref><sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1ad37bc5224a576cdd8591e7378f6a3f32" kindref="member">FinishedQuest</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//when<sp/>the<sp/>quest<sp/>is<sp/>activated,<sp/>checking<sp/>whether<sp/>the<sp/>player<sp/>has<sp/>the<sp/>hammer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Checking<sp/>whether<sp/>is<sp/>this<sp/>an<sp/>active<sp/>quest<sp/>and<sp/>the<sp/>hammer<sp/>is<sp/>not<sp/>collected,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>the<sp/>hammer<sp/>is<sp/>within<sp/>it&apos;s<sp/>interacting<sp/>boundary,<sp/>the<sp/>hammer<sp/>is<sp/>collected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" kindref="member">hammerInHand</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/><ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(</highlight><highlight class="charliteral">&apos;E&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" kindref="member">interactingWithItem</ref>()<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/><ref refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" kindref="member">stage</ref><sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" kindref="member">hammerInHand</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="105"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classSekHeng_1aa5112cdd864b40df4f60346325b5dc38" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1aa5112cdd864b40df4f60346325b5dc38" kindref="member">SekHeng::returnDialogue</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" kindref="member">dialogues</ref>[<ref refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" kindref="member">stage</ref>][<ref refid="classSekHeng_1a89ef656734bd6144134b429a22834274" kindref="member">order_of_text</ref>];</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="114"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classSekHeng_1add8091a69aa4459db74f14db1f68222e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1add8091a69aa4459db74f14db1f68222e" kindref="member">SekHeng::activateQuest</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" kindref="member">stage</ref><sp/>==<sp/>0<sp/>&amp;&amp;<sp/><ref refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" kindref="member">hammerInHand</ref><sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" kindref="member">hammerInHand</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" kindref="member">stage</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="130"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" kindref="member">SekHeng::interaction</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>+<sp/><ref refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" kindref="member">boundaryRadiusX</ref><sp/>+<sp/><ref refid="classSekHeng_1a93dad4f9f00f4d1173f0f2bc5fae5797" kindref="member">interatingRadius</ref>)<sp/>&gt;<sp/><ref refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" kindref="member">dub_camera</ref>-&gt;<ref refid="classCamera3_1a4c484a400a9c2e64f3334fc62330368a" kindref="member">getCameraXcoord</ref>()<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>-<sp/><ref refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" kindref="member">boundaryRadiusX</ref><sp/>-<sp/><ref refid="classSekHeng_1a93dad4f9f00f4d1173f0f2bc5fae5797" kindref="member">interatingRadius</ref>)<sp/>&lt;<sp/><ref refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" kindref="member">dub_camera</ref>-&gt;<ref refid="classCamera3_1a4c484a400a9c2e64f3334fc62330368a" kindref="member">getCameraXcoord</ref>()<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>+<sp/><ref refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" kindref="member">boundaryRadiusZ</ref><sp/>+<sp/><ref refid="classSekHeng_1a93dad4f9f00f4d1173f0f2bc5fae5797" kindref="member">interatingRadius</ref>)<sp/>&gt;<sp/><ref refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" kindref="member">dub_camera</ref>-&gt;<ref refid="classCamera3_1aae412d5efa2bae38cc9d5f38fb289f3a" kindref="member">getCameraZcoord</ref>()<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>-<sp/><ref refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" kindref="member">boundaryRadiusZ</ref><sp/>-<sp/><ref refid="classSekHeng_1a93dad4f9f00f4d1173f0f2bc5fae5797" kindref="member">interatingRadius</ref>)<sp/>&lt;<sp/><ref refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" kindref="member">dub_camera</ref>-&gt;<ref refid="classCamera3_1aae412d5efa2bae38cc9d5f38fb289f3a" kindref="member">getCameraZcoord</ref>())</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a89ef656734bd6144134b429a22834274" kindref="member">order_of_text</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="147"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" kindref="member">SekHeng::preventSpamming</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(</highlight><highlight class="charliteral">&apos;E&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSekHeng_1a3120fec2d40bc4489d5770c9fc89ecb0" kindref="member">time</ref><sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a89ef656734bd6144134b429a22834274" kindref="member">order_of_text</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a3120fec2d40bc4489d5770c9fc89ecb0" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSekHeng_1a89ef656734bd6144134b429a22834274" kindref="member">order_of_text</ref><sp/>==<sp/><ref refid="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" kindref="member">dialogues</ref>[<ref refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" kindref="member">stage</ref>].size())<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a89ef656734bd6144134b429a22834274" kindref="member">order_of_text</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="168"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="classSekHeng_1aaac77514f1f2c1a551e953362ebe3c90" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1aaac77514f1f2c1a551e953362ebe3c90" kindref="member">SekHeng::SekHengSayIsOk</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSekHeng_1ad54eeb7075a56a5572ce0929c0f10aef" kindref="member">isOkay</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="183"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="classSekHeng_1ad37bc5224a576cdd8591e7378f6a3f32" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1ad37bc5224a576cdd8591e7378f6a3f32" kindref="member">SekHeng::FinishedQuest</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" kindref="member">stage</ref><sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1ad54eeb7075a56a5572ce0929c0f10aef" kindref="member">isOkay</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="197"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198" refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" kindref="member">SekHeng::interactingWithItem</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1a7be0d40a45472bd1ff986ea8606dfbba" kindref="member">getObjectposX</ref>()<sp/>+<sp/><ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1a72bc7040abaa0b361da68452de000f39" kindref="member">getBoundaryRadiusX</ref>())<sp/>&gt;<sp/><ref refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" kindref="member">dub_camera</ref>-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1a7be0d40a45472bd1ff986ea8606dfbba" kindref="member">getObjectposX</ref>()<sp/>-<sp/><ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1a72bc7040abaa0b361da68452de000f39" kindref="member">getBoundaryRadiusX</ref>())<sp/>&lt;<sp/><ref refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" kindref="member">dub_camera</ref>-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1aa2f7e29218b1bbd07f5186b4c39b037a" kindref="member">getObjectposZ</ref>()<sp/>+<sp/><ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1a1598c3caea74983607e719dab07b3704" kindref="member">getBoundaryRadiusZ</ref>())<sp/>&gt;<sp/><ref refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" kindref="member">dub_camera</ref>-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1aa2f7e29218b1bbd07f5186b4c39b037a" kindref="member">getObjectposZ</ref>()<sp/>-<sp/><ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1a1598c3caea74983607e719dab07b3704" kindref="member">getBoundaryRadiusZ</ref>())<sp/>&lt;<sp/><ref refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" kindref="member">dub_camera</ref>-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref>)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="217"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="classSekHeng_1a61c019adb75b2115ea70c66652db0529" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1a61c019adb75b2115ea70c66652db0529" kindref="member">SekHeng::gottenHammer</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" kindref="member">hammerInHand</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="233"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="classSekHeng_1a23a0723e2cd8beebacb08ba0d1ce61a6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1a23a0723e2cd8beebacb08ba0d1ce61a6" kindref="member">SekHeng::getStage</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" kindref="member">stage</ref>;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="242"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" kindref="member">SekHeng::reset</ref>()</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" kindref="member">stage</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a89ef656734bd6144134b429a22834274" kindref="member">order_of_text</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a3120fec2d40bc4489d5770c9fc89ecb0" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1ad54eeb7075a56a5572ce0929c0f10aef" kindref="member">isOkay</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" kindref="member">hammerInHand</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" kindref="member">objectPos</ref><sp/>=<sp/><ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1ae52d5d2bba7e53476979c682e49523fc" kindref="member">originalPos</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" kindref="member">hammer</ref>.<ref refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" kindref="member">init</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref>(87,<sp/>0,<sp/>-9),<sp/>3,<sp/>3,<sp/></highlight><highlight class="stringliteral">&quot;hammer&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/SekHeng.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,6 @@
+<map id="scene3_SP2::animateWarp" name="scene3_SP2::animateWarp">
+<area shape="rect" id="node2" href="$classBGMDriven.html#ab77835bb55208467e77fa117a70fe624" title="A method functions dedicated to just play Space Warp as a background music " alt="" coords="235,78,453,105"/>
+<area shape="rect" id="node3" href="$classirrklang_1_1ISoundEngine.html#a1084577f9f43cb12e86cea43c323b12c" title="Returns if a sound with the specified name is currently playing. " alt="" coords="501,5,653,47"/>
+<area shape="rect" id="node4" href="$classirrklang_1_1ISoundEngine.html#a25f612fe6479d3b22dc5bab2a2eaa927" title="loads a sound source (if not loaded already) from a file and plays it. " alt="" coords="501,71,653,112"/>
+<area shape="rect" id="node5" href="$classirrklang_1_1ISound.html#a108485fe64658441cecd70917782961f" title="Will stop the sound and free its resources. " alt="" coords="505,137,650,163"/>
+</map>

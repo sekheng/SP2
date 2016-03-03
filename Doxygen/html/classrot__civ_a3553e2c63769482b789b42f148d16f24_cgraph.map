@@ -1,0 +1,4 @@
+<map id="rot_civ::update" name="rot_civ::update">
+<area shape="rect" id="node2" href="$classrot__civ.html#a2a5d74ff194dc7d120ade7f343aadf38" title="Prevention of the dialogue from running to fast if player is holding &#39;E&#39; " alt="" coords="160,5,331,32"/>
+<area shape="rect" id="node3" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="379,5,553,32"/>
+</map>

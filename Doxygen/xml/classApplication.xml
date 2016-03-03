@@ -1,0 +1,445 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classApplication" kind="class" language="C++" prot="public">
+    <compoundname>Application</compoundname>
+    <includes refid="Application_8h" local="no">Application.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classApplication_1a916c1e553a92434266c41ad677d96a19" prot="public" static="yes" mutable="no">
+        <type><ref refid="classBGMDriven" kindref="compound">BGMDriven</ref> *</type>
+        <definition>BGMDriven * Application::musics</definition>
+        <argsstring></argsstring>
+        <name>musics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="43" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classscene3__SP2_1a1a4ac1aaba2909eff05348201fa29885" compoundref="scene3__SP2_8cpp" startline="912" endline="921">scene3_SP2::animateWarp</referencedby>
+        <referencedby refid="classscene2__SP2_1ae2e72ac92088b319c9e6dbd74fcd3236" compoundref="scene2__SP2_8cpp" startline="2470" endline="2504">scene2_SP2::Ending</referencedby>
+        <referencedby refid="classscene2__SP2_1a602d4b84d1e8bc11c35060ef0c49a6da" compoundref="scene2__SP2_8cpp" startline="2381" endline="2406">scene2_SP2::renderDeadPool</referencedby>
+        <referencedby refid="classscene2__SP2_1a2933944c895d9437b2364e18747df1ce" compoundref="scene2__SP2_8cpp" startline="2522" endline="2541">scene2_SP2::rollingCredits</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Run</referencedby>
+        <referencedby refid="classscene3__SP2_1a71dd3bb2895b152440016ae97b01fb09" compoundref="scene3__SP2_8cpp" startline="279" endline="427">scene3_SP2::Update</referencedby>
+        <referencedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a" compoundref="scene2__SP2_8cpp" startline="378" endline="462">scene2_SP2::Update</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+        <referencedby refid="classscene2__SP2_1a5b4e109f6780971770ff3b74d120ad03" compoundref="scene2__SP2_8cpp" startline="2073" endline="2108">scene2_SP2::VaultAnimation</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" prot="private" static="yes" mutable="no">
+        <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * Application::scene</definition>
+        <argsstring></argsstring>
+        <name>scene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="45" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classApplication_1a85300b4a96745f6cc7ecd6c5f21fcee4" compoundref="Application_8cpp" startline="270" endline="273">changeIntoScenario1</referencedby>
+        <referencedby refid="classApplication_1aa009765c90eeec95e353b86f926d4c65" compoundref="Application_8cpp" startline="280" endline="282">changeIntoScenario2</referencedby>
+        <referencedby refid="classApplication_1a7a6554e7cd225dad8c85551c059a25d9" compoundref="Application_8cpp" startline="261" endline="263">changeIntoScenario3</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1af17f26e6293f346fd81eb1a26a9e8db7" prot="private" static="yes" mutable="no">
+        <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * Application::scenario1</definition>
+        <argsstring></argsstring>
+        <name>scenario1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="46" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classApplication_1a85300b4a96745f6cc7ecd6c5f21fcee4" compoundref="Application_8cpp" startline="270" endline="273">changeIntoScenario1</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1ae03fee3a69f7034ffdb5b37f301ab662" prot="private" static="yes" mutable="no">
+        <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * Application::scenario3</definition>
+        <argsstring></argsstring>
+        <name>scenario3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="47" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classApplication_1a7a6554e7cd225dad8c85551c059a25d9" compoundref="Application_8cpp" startline="261" endline="263">changeIntoScenario3</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1a1be0916dc2e981b514c1493942fb1eec" prot="private" static="yes" mutable="no">
+        <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * Application::scenario2</definition>
+        <argsstring></argsstring>
+        <name>scenario2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="48" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classApplication_1aa009765c90eeec95e353b86f926d4c65" compoundref="Application_8cpp" startline="280" endline="282">changeIntoScenario2</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Run</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" prot="private" static="no" mutable="no">
+        <type><ref refid="classStopWatch" kindref="compound">StopWatch</ref></type>
+        <definition>StopWatch Application::m_timer</definition>
+        <argsstring></argsstring>
+        <name>m_timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="50" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Run</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::Application</definition>
+        <argsstring>()</argsstring>
+        <name>Application</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Default Constructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="32" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="71" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::~Application</definition>
+        <argsstring>()</argsstring>
+        <name>~Application</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Destructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="33" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="81" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Where the initialization of the glfw and glew, window size, and window&apos;s location </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="34" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="111" bodyend="169"/>
+        <references refid="Application_8cpp_1a6e6d1771a9242858811be0a3569838fa" compoundref="Application_8cpp" startline="34" endline="38">error_callback</references>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="15">m_window</references>
+        <references refid="Application_8cpp_1aadcee9765075e232ca0720f80a76ad37" compoundref="Application_8cpp" startline="100" endline="103">resize_callback</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="22" endline="28">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Initializing of the scene, and starting of the game </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="35" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="177" bodyend="239"/>
+        <references refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Scene::Exit</references>
+        <references refid="Application_8cpp_1ae228418b33873657fa31313fb4189a8f" compoundref="Application_8cpp" startline="17">frameTime</references>
+        <references refid="classStopWatch_1ac8be1626396d1a5ca414f74349d59eb2" compoundref="timer_8cpp" startline="34" endline="41">StopWatch::getElapsedTime</references>
+        <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
+        <references refid="classBGMDriven_1aee3ab26716e6e6582d2cc7d90baeaacf" compoundref="BGMDriven_8cpp" startline="32" endline="65">BGMDriven::init</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">IsKeyPressed</references>
+        <references refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" compoundref="Application_8h" startline="50">m_timer</references>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="15">m_window</references>
+        <references refid="classApplication_1a916c1e553a92434266c41ad677d96a19" compoundref="Application_8h" startline="43">musics</references>
+        <references refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Scene::Render</references>
+        <references refid="classApplication_1af17f26e6293f346fd81eb1a26a9e8db7" compoundref="Application_8h" startline="46">scenario1</references>
+        <references refid="classApplication_1a1be0916dc2e981b514c1493942fb1eec" compoundref="Application_8h" startline="48">scenario2</references>
+        <references refid="classApplication_1ae03fee3a69f7034ffdb5b37f301ab662" compoundref="Application_8h" startline="47">scenario3</references>
+        <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="45">scene</references>
+        <references refid="classStopWatch_1a23301f735a2e3190435e39c9fd70cdf2" compoundref="timer_8cpp" startline="29" endline="32">StopWatch::startTimer</references>
+        <references refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Scene::Update</references>
+        <references refid="classStopWatch_1a2cd0856fc87a40038edfd66d784be8b4" compoundref="timer_8cpp" startline="43" endline="56">StopWatch::waitUntil</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="22" endline="28">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Calls for the destroying of windows and cleaning up GLFW </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="36" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="247" bodyend="254"/>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="15">m_window</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="22" endline="28">main</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Application::IsKeyPressed</definition>
+        <argsstring>(unsigned short key)</argsstring>
+        <name>IsKeyPressed</name>
+        <param>
+          <type>unsigned short</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Define the key input callback and prevent the key from pressing twice </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- whether the key that the player pressed is true </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="37" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="60" bodyend="63"/>
+        <referencedby refid="classCamera3_1a72d040ce3726a7d6439efa15734105a5" compoundref="Camera3_8cpp" startline="290" endline="349">Camera3::cameraMovement</referencedby>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">minigame::changePieceRotation</referencedby>
+        <referencedby refid="classStationScene_1a5d9954175cb6ace1783288a5b45b3a5e" compoundref="StationScene_8cpp" startline="46" endline="65">StationScene::getCard1</referencedby>
+        <referencedby refid="classStationScene_1a9e3c70658905799c1dc1263abcf18e15" compoundref="StationScene_8cpp" startline="77" endline="96">StationScene::getCard2</referencedby>
+        <referencedby refid="classStationScene_1abfd4f868d1d49193791571478563e04a" compoundref="StationScene_8cpp" startline="136" endline="166">StationScene::getQuestStage</referencedby>
+        <referencedby refid="classNumPad_1a9f705cb43de4fd79ebed968e1e67c315" compoundref="NumPad_8cpp" startline="171" endline="302">NumPad::NumpadProgram</referencedby>
+        <referencedby refid="classStationScene_1a10a5019a5c8c1bbd67ee719de9d4c9fd" compoundref="StationScene_8cpp" startline="177" endline="200">StationScene::openSasame</referencedby>
+        <referencedby refid="classrot__civ_1a2a5d74ff194dc7d120ade7f343aadf38" compoundref="rot__civ_8cpp" startline="116" endline="126">rot_civ::preventSpamming</referencedby>
+        <referencedby refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" compoundref="SekHeng_8cpp" startline="148" endline="158">SekHeng::preventSpamming</referencedby>
+        <referencedby refid="classNPC_1aaa5c460f752c30b54e1e6fc5094ee711" compoundref="NPC_8cpp" startline="262" endline="278">NPC::quest_complete</referencedby>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+        <referencedby refid="classStationScene_1a60b6e3d38657e195f342c48d3d9896da" compoundref="StationScene_8cpp" startline="211" endline="224">StationScene::roomLight</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="177" endline="239">Run</referencedby>
+        <referencedby refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" compoundref="scene2__minigame_8cpp" startline="181" endline="213">minigame::selection_pointer</referencedby>
+        <referencedby refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" compoundref="Camera_8cpp" startline="60" endline="82">Camera::Update</referencedby>
+        <referencedby refid="classNumPad_1a679075331806098ed06549e002c0cac2" compoundref="NumPad_8cpp" startline="59" endline="121">NumPad::Update</referencedby>
+        <referencedby refid="classNPC_1a61399424a1ddeaa1f127a9480fcb95ca" compoundref="NPC_8cpp" startline="216" endline="225">NPC::update</referencedby>
+        <referencedby refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" compoundref="SekHeng_8cpp" startline="81" endline="97">SekHeng::Update</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Quest::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="151" endline="243">Camera3::Update</referencedby>
+        <referencedby refid="classscene3SP2_1ac3a634c845cb61d9bbc8b519fa67c43c" compoundref="Scene3SP2_8cpp" startline="168" endline="220">scene3SP2::Update</referencedby>
+        <referencedby refid="classscene3__SP2_1a71dd3bb2895b152440016ae97b01fb09" compoundref="scene3__SP2_8cpp" startline="279" endline="427">scene3_SP2::Update</referencedby>
+        <referencedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a" compoundref="scene2__SP2_8cpp" startline="378" endline="462">scene2_SP2::Update</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+        <referencedby refid="classscene3__SP2_1afbf3a66c76d63a1cb0ee0663b809cd60" compoundref="scene3__SP2_8cpp" startline="1040" endline="1050">scene3_SP2::updateIntructions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a7a6554e7cd225dad8c85551c059a25d9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::changeIntoScenario3</definition>
+        <argsstring>()</argsstring>
+        <name>changeIntoScenario3</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a method to transit to scenario 3 </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="39" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="261" bodyend="263"/>
+        <references refid="classApplication_1ae03fee3a69f7034ffdb5b37f301ab662" compoundref="Application_8h" startline="47">scenario3</references>
+        <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="45">scene</references>
+        <referencedby refid="classscene3__SP2_1a71dd3bb2895b152440016ae97b01fb09" compoundref="scene3__SP2_8cpp" startline="279" endline="427">scene3_SP2::Update</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a85300b4a96745f6cc7ecd6c5f21fcee4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::changeIntoScenario1</definition>
+        <argsstring>()</argsstring>
+        <name>changeIntoScenario1</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a method to transit to scenario 1 </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="40" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="270" bodyend="273"/>
+        <references refid="classApplication_1af17f26e6293f346fd81eb1a26a9e8db7" compoundref="Application_8h" startline="46">scenario1</references>
+        <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="45">scene</references>
+        <referencedby refid="classscene3__SP2_1a71dd3bb2895b152440016ae97b01fb09" compoundref="scene3__SP2_8cpp" startline="279" endline="427">scene3_SP2::Update</referencedby>
+        <referencedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a" compoundref="scene2__SP2_8cpp" startline="378" endline="462">scene2_SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1aa009765c90eeec95e353b86f926d4c65" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::changeIntoScenario2</definition>
+        <argsstring>()</argsstring>
+        <name>changeIntoScenario2</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a method to transit to scenario 2 </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Application.h" line="41" column="1" bodyfile="MyGraphics/Source/Application.cpp" bodystart="280" bodyend="282"/>
+        <references refid="classApplication_1a1be0916dc2e981b514c1493942fb1eec" compoundref="Application_8h" startline="48">scenario2</references>
+        <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="45">scene</references>
+        <referencedby refid="classsceneSP2_1a7b2a8d3962e7f68a3934dc9dfd68902c" compoundref="sceneSP2_8cpp" startline="2551" endline="2566">sceneSP2::animateTeleporting</referencedby>
+        <referencedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a" compoundref="scene2__SP2_8cpp" startline="378" endline="462">scene2_SP2::Update</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Where the glfw and glew do their stuff At the run will be where the game stuff comes in. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classApplication" kindref="compound">Application</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="530">
+        <label>irrklang::IVirtualRefCounted</label>
+        <link refid="classirrklang_1_1IVirtualRefCounted"/>
+      </node>
+      <node id="526">
+        <label>irrklang::ISoundEngine</label>
+        <link refid="classirrklang_1_1ISoundEngine"/>
+        <childnode refid="527" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="524">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="529">
+        <label>irrklang::ISound</label>
+        <link refid="classirrklang_1_1ISound"/>
+        <childnode refid="530" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="525">
+        <label>BGMDriven</label>
+        <link refid="classBGMDriven"/>
+        <childnode refid="526" relation="usage">
+          <edgelabel>engine</edgelabel>
+        </childnode>
+        <childnode refid="529" relation="usage">
+          <edgelabel>ZeBackgroundMusic</edgelabel>
+          <edgelabel>join_DarkSideEffect</edgelabel>
+          <edgelabel>GateEffect</edgelabel>
+          <edgelabel>iamYourFatherEffect</edgelabel>
+        </childnode>
+        <childnode refid="531" relation="usage">
+          <edgelabel>playJoinDarkSideOnce</edgelabel>
+          <edgelabel>playIAmYourFatherOnce</edgelabel>
+        </childnode>
+        <childnode refid="532" relation="usage">
+          <edgelabel>i_amYourFather</edgelabel>
+          <edgelabel>SpaceWarpSource</edgelabel>
+          <edgelabel>DarthVaderbackGround</edgelabel>
+          <edgelabel>LovelyLullabySource</edgelabel>
+          <edgelabel>GateEffectSource</edgelabel>
+          <edgelabel>join_DarkSide</edgelabel>
+          <edgelabel>PokemonGymBattleSource</edgelabel>
+          <edgelabel>StarWarsTheme</edgelabel>
+          <edgelabel>john_cenaSource</edgelabel>
+        </childnode>
+      </node>
+      <node id="528">
+        <label>int</label>
+      </node>
+      <node id="520">
+        <label>Application</label>
+        <link refid="classApplication"/>
+        <childnode refid="521" relation="usage">
+          <edgelabel>m_timer</edgelabel>
+        </childnode>
+        <childnode refid="524" relation="usage">
+          <edgelabel>scenario3</edgelabel>
+          <edgelabel>scene</edgelabel>
+          <edgelabel>scenario1</edgelabel>
+          <edgelabel>scenario2</edgelabel>
+        </childnode>
+        <childnode refid="525" relation="usage">
+          <edgelabel>musics</edgelabel>
+        </childnode>
+      </node>
+      <node id="532">
+        <label>irrklang::ISoundSource</label>
+        <link refid="classirrklang_1_1ISoundSource"/>
+        <childnode refid="530" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="523">
+        <label>LARGE_INTEGER</label>
+      </node>
+      <node id="521">
+        <label>StopWatch</label>
+        <link refid="classStopWatch"/>
+        <childnode refid="522" relation="usage">
+          <edgelabel>wTimerRes</edgelabel>
+        </childnode>
+        <childnode refid="523" relation="usage">
+          <edgelabel>frequency</edgelabel>
+          <edgelabel>currTime</edgelabel>
+          <edgelabel>prevTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="527">
+        <label>irrklang::IRefCounted</label>
+        <link refid="classirrklang_1_1IRefCounted"/>
+        <childnode refid="528" relation="usage">
+          <edgelabel>ReferenceCounter</edgelabel>
+        </childnode>
+      </node>
+      <node id="531">
+        <label>bool</label>
+      </node>
+      <node id="522">
+        <label>UINT</label>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Application.h" line="30" column="1" bodyfile="MyGraphics/Source/Application.h" bodystart="29" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" virt="non-virtual"><scope>Application</scope><name>Application</name></member>
+      <member refid="classApplication_1a85300b4a96745f6cc7ecd6c5f21fcee4" prot="public" virt="non-virtual"><scope>Application</scope><name>changeIntoScenario1</name></member>
+      <member refid="classApplication_1aa009765c90eeec95e353b86f926d4c65" prot="public" virt="non-virtual"><scope>Application</scope><name>changeIntoScenario2</name></member>
+      <member refid="classApplication_1a7a6554e7cd225dad8c85551c059a25d9" prot="public" virt="non-virtual"><scope>Application</scope><name>changeIntoScenario3</name></member>
+      <member refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" prot="public" virt="non-virtual"><scope>Application</scope><name>Exit</name></member>
+      <member refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" prot="public" virt="non-virtual"><scope>Application</scope><name>Init</name></member>
+      <member refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" prot="public" virt="non-virtual"><scope>Application</scope><name>IsKeyPressed</name></member>
+      <member refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" prot="private" virt="non-virtual"><scope>Application</scope><name>m_timer</name></member>
+      <member refid="classApplication_1a916c1e553a92434266c41ad677d96a19" prot="public" virt="non-virtual"><scope>Application</scope><name>musics</name></member>
+      <member refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" virt="non-virtual"><scope>Application</scope><name>Run</name></member>
+      <member refid="classApplication_1af17f26e6293f346fd81eb1a26a9e8db7" prot="private" virt="non-virtual"><scope>Application</scope><name>scenario1</name></member>
+      <member refid="classApplication_1a1be0916dc2e981b514c1493942fb1eec" prot="private" virt="non-virtual"><scope>Application</scope><name>scenario2</name></member>
+      <member refid="classApplication_1ae03fee3a69f7034ffdb5b37f301ab662" prot="private" virt="non-virtual"><scope>Application</scope><name>scenario3</name></member>
+      <member refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" prot="private" virt="non-virtual"><scope>Application</scope><name>scene</name></member>
+      <member refid="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" virt="non-virtual"><scope>Application</scope><name>~Application</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

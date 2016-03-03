@@ -1,0 +1,4 @@
+<map id="Quest::getObject2_Z" name="Quest::getObject2_Z">
+<area shape="rect" id="node2" href="$classsceneSP2.html#a9cfd40b303b8fbd4a67e4d6eedecdc25" title="sceneSP2::RenderQuestObjects" alt="" coords="196,5,407,32"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="455,5,585,32"/>
+</map>

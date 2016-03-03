@@ -1,0 +1,5 @@
+<map id="scene2_SP2::Reset" name="scene2_SP2::Reset">
+<area shape="rect" id="node2" href="$classNumPad.html#a748faa3aea7b780ba4e13a49909bbe53" title="Reset all animations &amp; values to default. " alt="" coords="199,5,313,32"/>
+<area shape="rect" id="node3" href="$classcreditScene.html#a219d255a482631ef94b1164f2bddb643" title="a method that all the variables inside this class to it&#39;s default values " alt="" coords="192,56,320,83"/>
+<area shape="rect" id="node4" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Reset the camera settings " alt="" coords="198,107,314,133"/>
+</map>

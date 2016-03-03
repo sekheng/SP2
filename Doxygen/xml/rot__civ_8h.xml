@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="rot__civ_8h" kind="file" language="C++">
+    <compoundname>rot_civ.h</compoundname>
+    <includes refid="objectsForDisplay_8h" local="yes">objectsForDisplay.h</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includedby refid="scene2__SP2_8h" local="yes">MyGraphics/Source/scene2_SP2.h</includedby>
+    <includedby refid="rot__civ_8cpp" local="yes">MyGraphics/Source/rot_civ.cpp</includedby>
+    <incdepgraph>
+      <node id="5620">
+        <label>DetectMemoryLeak.h</label>
+        <link refid="DetectMemoryLeak_8h"/>
+        <childnode refid="5621" relation="include">
+        </childnode>
+        <childnode refid="5622" relation="include">
+        </childnode>
+      </node>
+      <node id="5623">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5624" relation="include">
+        </childnode>
+        <childnode refid="5629" relation="include">
+        </childnode>
+      </node>
+      <node id="5624">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5625" relation="include">
+        </childnode>
+        <childnode refid="5626" relation="include">
+        </childnode>
+        <childnode refid="5627" relation="include">
+        </childnode>
+        <childnode refid="5628" relation="include">
+        </childnode>
+      </node>
+      <node id="5621">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5625">
+        <label>cmath</label>
+      </node>
+      <node id="5619">
+        <label>string</label>
+      </node>
+      <node id="5626">
+        <label>exception</label>
+      </node>
+      <node id="5617">
+        <label>objectsForDisplay.h</label>
+        <link refid="objectsForDisplay_8h"/>
+        <childnode refid="5618" relation="include">
+        </childnode>
+        <childnode refid="5623" relation="include">
+        </childnode>
+      </node>
+      <node id="5627">
+        <label>ctime</label>
+      </node>
+      <node id="5632">
+        <label>vector</label>
+      </node>
+      <node id="5622">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="5616">
+        <label>MyGraphics/Source/rot_civ.h</label>
+        <link refid="rot_civ.h"/>
+        <childnode refid="5617" relation="include">
+        </childnode>
+        <childnode refid="5630" relation="include">
+        </childnode>
+      </node>
+      <node id="5631">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5623" relation="include">
+        </childnode>
+      </node>
+      <node id="5628">
+        <label>cstdlib</label>
+      </node>
+      <node id="5629">
+        <label>iostream</label>
+      </node>
+      <node id="5630">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5631" relation="include">
+        </childnode>
+        <childnode refid="5617" relation="include">
+        </childnode>
+        <childnode refid="5632" relation="include">
+        </childnode>
+      </node>
+      <node id="5618">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="5619" relation="include">
+        </childnode>
+        <childnode refid="5620" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5646">
+        <label>MyGraphics/Source/scene3_SP2.cpp</label>
+        <link refid="scene3__SP2_8cpp"/>
+      </node>
+      <node id="5647">
+        <label>MyGraphics/Source/Scene3SP2.cpp</label>
+        <link refid="Scene3SP2_8cpp"/>
+      </node>
+      <node id="5637">
+        <label>MyGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="5634">
+        <label>MyGraphics/Source/scene2_SP2.h</label>
+        <link refid="scene2__SP2_8h"/>
+        <childnode refid="5635" relation="include">
+        </childnode>
+      </node>
+      <node id="5641">
+        <label>MyGraphics/Source/NumPad.cpp</label>
+        <link refid="NumPad_8cpp"/>
+      </node>
+      <node id="5644">
+        <label>MyGraphics/Source/scene2_minigame.cpp</label>
+        <link refid="scene2__minigame_8cpp"/>
+      </node>
+      <node id="5638">
+        <label>MyGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="5639">
+        <label>MyGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5645">
+        <label>MyGraphics/Source/scene2_SP2.cpp</label>
+        <link refid="scene2__SP2_8cpp"/>
+      </node>
+      <node id="5642">
+        <label>MyGraphics/Source/Quest.cpp</label>
+        <link refid="Quest_8cpp"/>
+      </node>
+      <node id="5649">
+        <label>MyGraphics/Source/SekHeng.cpp</label>
+        <link refid="SekHeng_8cpp"/>
+      </node>
+      <node id="5633">
+        <label>MyGraphics/Source/rot_civ.h</label>
+        <link refid="rot_civ.h"/>
+        <childnode refid="5634" relation="include">
+        </childnode>
+        <childnode refid="5643" relation="include">
+        </childnode>
+      </node>
+      <node id="5643">
+        <label>MyGraphics/Source/rot_civ.cpp</label>
+        <link refid="rot__civ_8cpp"/>
+      </node>
+      <node id="5648">
+        <label>MyGraphics/Source/sceneSP2.cpp</label>
+        <link refid="sceneSP2_8cpp"/>
+      </node>
+      <node id="5636">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5635">
+        <label>MyGraphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="5636" relation="include">
+        </childnode>
+        <childnode refid="5637" relation="include">
+        </childnode>
+        <childnode refid="5638" relation="include">
+        </childnode>
+        <childnode refid="5639" relation="include">
+        </childnode>
+        <childnode refid="5640" relation="include">
+        </childnode>
+        <childnode refid="5641" relation="include">
+        </childnode>
+        <childnode refid="5642" relation="include">
+        </childnode>
+        <childnode refid="5643" relation="include">
+        </childnode>
+        <childnode refid="5644" relation="include">
+        </childnode>
+        <childnode refid="5645" relation="include">
+        </childnode>
+        <childnode refid="5646" relation="include">
+        </childnode>
+        <childnode refid="5647" relation="include">
+        </childnode>
+        <childnode refid="5648" relation="include">
+        </childnode>
+        <childnode refid="5649" relation="include">
+        </childnode>
+        <childnode refid="5650" relation="include">
+        </childnode>
+      </node>
+      <node id="5640">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="5650">
+        <label>MyGraphics/Source/StationScene.cpp</label>
+        <link refid="StationScene_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classrot__civ" prot="public">rot_civ</innerclass>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>A unique <ref refid="classNPC" kindref="compound">NPC</ref> which differs from others in scenario 3 There is only dialogues and interacting boundary as the rest are re-used from <ref refid="classobjectsForDisplay" kindref="compound">objectsForDisplay</ref> class </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Sek Heng </para></simplesect>
+<simplesect kind="par"><title>email: 150629Z.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ROT_CIV_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ROT_CIV_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="objectsForDisplay_8h" kindref="compound">objectsForDisplay.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classrot__civ" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classrot__civ" kindref="compound">rot_civ</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classobjectsForDisplay" kindref="compound">objectsForDisplay</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classrot__civ_1aea4286cecba90871e4879ddb85d5c70c" kindref="member">rot_civ</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classrot__civ_1aee4e09f95bce62428462c73ee45d4d93" kindref="member">~rot_civ</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrot__civ_1a75da547ef24a10e0ca80d1cb5abb050f" kindref="member">InitDialogues</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileLocation,<sp/><ref refid="classCamera3" kindref="compound">Camera3</ref>&amp;<sp/>camera);</highlight></codeline>
+<codeline lineno="32" refid="classrot__civ_1a69f80833d692b14f1cece6701f517f22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="classrot__civ_1a69f80833d692b14f1cece6701f517f22" kindref="member">dialogues</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrot__civ_1a3553e2c63769482b789b42f148d16f24" kindref="member">update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classrot__civ_1af62b80210ff690292e9176ae757eec01" kindref="member">returnDialogue</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classrot__civ_1a9d137fc8194ba0a7503b24c13926f7b2" kindref="member">interaction</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrot__civ_1a2a5d74ff194dc7d120ade7f343aadf38" kindref="member">preventSpamming</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrot__civ_1ab771e500bddad9794a88637b84d410bb" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42" refid="classrot__civ_1aefe23505a576a61b69743bdcc4faca45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/>*<ref refid="classrot__civ_1aefe23505a576a61b69743bdcc4faca45" kindref="member">dub_camera</ref>;</highlight></codeline>
+<codeline lineno="43" refid="classrot__civ_1add9c261111ef107178af7bd288a30fdb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classrot__civ_1add9c261111ef107178af7bd288a30fdb" kindref="member">interatingRadius</ref>;</highlight></codeline>
+<codeline lineno="44" refid="classrot__civ_1af38496a3dd867830348ddb2a4761da1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classrot__civ_1af38496a3dd867830348ddb2a4761da1d" kindref="member">time</ref>;</highlight></codeline>
+<codeline lineno="45" refid="classrot__civ_1a1369641bbc852cebc6c0253bfb2be7d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classrot__civ_1a1369641bbc852cebc6c0253bfb2be7d7" kindref="member">order_of_text</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/rot_civ.h"/>
+  </compounddef>
+</doxygen>

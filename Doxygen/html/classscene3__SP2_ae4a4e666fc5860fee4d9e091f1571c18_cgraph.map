@@ -1,0 +1,34 @@
+<map id="scene3_SP2::Init" name="scene3_SP2::Init">
+<area shape="rect" id="node2" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="629,701,783,728"/>
+<area shape="rect" id="node3" href="$classMeshBuilder.html#a78d37e2b0cc068eec801f17c367100e7" title="Generate the vertices of a reference Axes; Use red for x&#45;axis, green for y&#45;axis, blue for z&#45;axis Then..." alt="" coords="180,68,365,95"/>
+<area shape="rect" id="node4" href="$structPosition.html#a2919b2441baf7a2f799791d65a1cfc15" title="Position::Set" alt="" coords="657,296,755,323"/>
+<area shape="rect" id="node5" href="$structColor.html#acc77e4e3583d3eca7e476952e51bfb80" title="Color::Set" alt="" coords="454,17,534,44"/>
+<area shape="rect" id="node6" href="$classMaterialBuilder.html#a2847df1e27e666cd88301b11b0e5d3d0" title="generate similar properties to Blinn " alt="" coords="188,137,357,178"/>
+<area shape="rect" id="node8" href="$classMeshBuilder.html#aba87550d7726a610c911fbb977fd3575" title="Generate the vertices of an object; Then generate the VBO/IBO and store them in Mesh object..." alt="" coords="183,220,363,247"/>
+<area shape="rect" id="node13" href="$classMeshBuilder.html#aa3751076aa9f74324d49a999a3c3fa55" title="Generate the vertices of a quad; Use random color for each vertex Then generate the VBO/IBO and store..." alt="" coords="179,517,366,544"/>
+<area shape="rect" id="node14" href="$structVector3.html#a9c25d604bd52b162cfcb56302ef032bb" title="Set the elements of this vector. " alt="" coords="447,423,541,449"/>
+<area shape="rect" id="node15" href="$classMeshBuilder.html#a30a1368cb5deb84777a1f6fbfbca110e" title="Generate the vertices of a sphere; Then generate the VBO/IBO and store them in Mesh object..." alt="" coords="175,625,371,652"/>
+<area shape="rect" id="node19" href="$classMeshBuilder.html#aac7c87881dbc08f8d41f2068e0f40c76" title="Generate the vertices of texts; Then generate the VBO/IBO and store them in Mesh object. " alt="" coords="183,397,363,424"/>
+<area shape="rect" id="node20" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Initialize camera. " alt="" coords="223,777,322,804"/>
+<area shape="rect" id="node26" href="$classCamera3.html#afcbf927fd6fc2be8451da97c663431d8" title="a Data Driven method to initialise a bunch of static objects that can be used to render the coordinat..." alt="" coords="201,828,345,855"/>
+<area shape="rect" id="node28" href="$classscene3__SP2.html#add7c3a91b16b4fa11fac64991d0bee86" title="A Data Driven method that will initialised and determin what are the key press needed to pass this st..." alt="" coords="181,879,364,921"/>
+<area shape="rect" id="node29" href="$classMS.html#a86606fe9f575ccb747d77195c8aefdaf" title="Return the top matrix with a new matrix. " alt="" coords="215,945,330,972"/>
+<area shape="rect" id="node30" href="$shader_8cpp.html#a833f10cca6a76fe34ae9efa23ac5e73c" title="loading of the vertex shaders and fragment shaders from external source " alt="" coords="223,996,322,1023"/>
+<area shape="rect" id="node31" href="$LoadTGA_8cpp.html#a459a80ca6de67a1e3493bfb66ae317e4" title="loading of targa file from external source " alt="" coords="235,1047,311,1073"/>
+<area shape="rect" id="node32" href="$classMtx44.html#ac6e6521111d78ff36d539bf111a902c6" title="Set matrix to be a perspective matrix. " alt="" coords="189,1097,356,1124"/>
+<area shape="rect" id="node7" href="$structComponent.html#a85f599b839327709953f0115dc5dfd49" title="Component::Set" alt="" coords="436,119,552,145"/>
+<area shape="rect" id="node9" href="$LoadOBJ_8cpp.html#aa99ef9426a57205ed8acb8f7d41f3bae" title="indexing the vertices " alt="" coords="453,169,535,196"/>
+<area shape="rect" id="node12" href="$LoadOBJ_8cpp.html#aa634e9cac0a72d751731db6b4479cbda" title="loading of object file from external source " alt="" coords="457,220,531,247"/>
+<area shape="rect" id="node10" href="$LoadOBJ_8cpp.html#af43afccb67fd9c80513489b75fddb347" title="Copying of vertex " alt="" coords="617,169,795,196"/>
+<area shape="rect" id="node11" href="$structTexCoord.html#a64b4ceeb1733c478cb4b5b1216146c32" title="TexCoord::Set" alt="" coords="653,372,759,399"/>
+<area shape="rect" id="node16" href="$MeshBuilder_8cpp.html#aef75a362a1bdb0980ed4abcf8241da69" title="get the x coordinate of the vertice based on a circular motion " alt="" coords="459,625,529,652"/>
+<area shape="rect" id="node17" href="$MeshBuilder_8cpp.html#af7655f1bbe33f114c8c2457bb80d8d56" title="get the y coordinate of the vertice based on a circular motion " alt="" coords="458,676,530,703"/>
+<area shape="rect" id="node18" href="$MeshBuilder_8cpp.html#a635e807e82196e114ec59993fe28838a" title="get the z coordinate of the vertice based on a circular motion " alt="" coords="459,727,529,753"/>
+<area shape="rect" id="node21" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="439,828,549,855"/>
+<area shape="rect" id="node23" href="$structVector3.html#aaef4f25a38878a640ab4a48002a7eff8" title="Normalize this vector and return a reference to it. " alt="" coords="427,929,561,956"/>
+<area shape="rect" id="node25" href="$structVector3.html#a2da0f00c5529bced69763320dac9c414" title="Return a copy of this vector, normalized. " alt="" coords="424,879,564,905"/>
+<area shape="rect" id="node22" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="646,841,766,868"/>
+<area shape="rect" id="node24" href="$structVector3.html#a200024a8442329de9a625ed58ffe7075" title="Return length of vector. " alt="" coords="649,917,763,944"/>
+<area shape="rect" id="node27" href="$classobjectsForDisplay.html#af5c02d1f662dbdc8d870790c108abdff" title="initialised it&#39;s values through text file reader " alt="" coords="419,980,569,1007"/>
+<area shape="rect" id="node33" href="$classMtx44.html#a1b985913080679da29ff94217935b3c7" title="Default Constructor. Default values are zero. " alt="" coords="443,1097,545,1124"/>
+</map>

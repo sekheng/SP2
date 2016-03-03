@@ -1,0 +1,7 @@
+<map id="Camera3::cameraMovement" name="Camera3::cameraMovement">
+<area shape="rect" id="node2" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="To be called every frame. Camera will get user inputs and update its position and orientation..." alt="" coords="237,81,360,108"/>
+<area shape="rect" id="node3" href="$classLoadingScreen.html#aadba6b28a70c39e25c9892f93dbff465" title="where the logic of the game is, and update " alt="" coords="408,5,565,32"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="414,56,559,83"/>
+<area shape="rect" id="node5" href="$classscene3SP2.html#ac3a634c845cb61d9bbc8b519fa67c43c" title="where the logic of the game is, and update " alt="" coords="417,107,556,133"/>
+<area shape="rect" id="node6" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="421,157,552,184"/>
+</map>

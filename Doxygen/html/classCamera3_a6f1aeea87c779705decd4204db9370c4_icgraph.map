@@ -1,0 +1,12 @@
+<map id="Camera3::getCameraXrotation" name="Camera3::getCameraXrotation">
+<area shape="rect" id="node2" href="$classsceneSP2.html#a7b2a8d3962e7f68a3934dc9dfd68902c" title="the logic behind animating of teleporting " alt="" coords="256,5,455,32"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#ae2e72ac92088b319c9e6dbd74fcd3236" title="the logic behind animating the ending " alt="" coords="283,56,427,83"/>
+<area shape="rect" id="node6" href="$classsceneSP2.html#aef464b9b4f04ad8cc893ba2bdea01011" title="rendering of item taken on screen " alt="" coords="248,107,463,133"/>
+<area shape="rect" id="node11" href="$classscene3__SP2.html#a71dd3bb2895b152440016ae97b01fb09" title="where the logic of the game is, and update " alt="" coords="283,157,428,184"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="551,5,681,32"/>
+<area shape="rect" id="node5" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="543,56,689,83"/>
+<area shape="rect" id="node7" href="$classsceneSP2.html#a9cfd40b303b8fbd4a67e4d6eedecdc25" title="sceneSP2::RenderQuestObjects" alt="" coords="511,107,721,133"/>
+<area shape="rect" id="node9" href="$classsceneSP2.html#a6523e8cf564e7f88ae94958fd9c08d1a" title="a method to render Sek Heng and his quest " alt="" coords="518,157,714,184"/>
+<area shape="rect" id="node10" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="529,208,703,235"/>
+<area shape="rect" id="node8" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="769,157,900,184"/>
+</map>

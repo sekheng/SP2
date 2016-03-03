@@ -1,0 +1,4 @@
+<map id="LoadingScreen::renderMesh" name="LoadingScreen::renderMesh">
+<area shape="rect" id="node2" href="$classLoadingScreen.html#a5f4fa01b602172d21c0504c9f822b177" title="rendering of image using quad on screen " alt="" coords="237,5,429,47"/>
+<area shape="rect" id="node3" href="$classLoadingScreen.html#a9325ad1fb08d5103eceefefe7cb1d316" title="where the rendering of all the stuff we needed will be here " alt="" coords="477,13,635,39"/>
+</map>

@@ -1,0 +1,858 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classNPC" kind="class" language="C++" prot="public">
+    <compoundname>NPC</compoundname>
+    <basecompoundref refid="classGameObject" prot="public" virt="non-virtual">GameObject</basecompoundref>
+    <includes refid="NPC_8h" local="no">NPC.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classNPC_1a7e2771837d956f29af539060460f6d45" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 NPC::NPC_pos</definition>
+        <argsstring></argsstring>
+        <name>NPC_pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="44" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1a306047126b65a7f67ad6331a632b8071" compoundref="NPC_8cpp" startline="95" endline="98">NPC_getposition_x</referencedby>
+        <referencedby refid="classNPC_1aaa3161cae562c19d0725723861d0acf7" compoundref="NPC_8cpp" startline="117" endline="120">NPC_getposition_y</referencedby>
+        <referencedby refid="classNPC_1a4f760c4731c0beb5e9d6096e666414bf" compoundref="NPC_8cpp" startline="106" endline="109">NPC_getposition_z</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1af2c4e342aaa5ee77a01a7655de1d81d1" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; NPC::Dialogues</definition>
+        <argsstring></argsstring>
+        <name>Dialogues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="45" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" compoundref="NPC_8cpp" startline="131" endline="166">getDialogue</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1aaa5c460f752c30b54e1e6fc5094ee711" compoundref="NPC_8cpp" startline="262" endline="278">quest_complete</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1aaebe944bb141aefd946e0449929021ff" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref> *</type>
+        <definition>Camera3* NPC::cam_pointer</definition>
+        <argsstring></argsstring>
+        <name>cam_pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="46" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1a2b008f0dd95c65339baf466918789062" compoundref="NPC_8cpp" startline="176" endline="188">interaction</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1adb61a116c94b243bb49565f8aeb54174" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float NPC::bound_x</definition>
+        <argsstring></argsstring>
+        <name>bound_x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="47" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classNPC_1aa43e897253da76ea31e903407361cd92" compoundref="NPC_8cpp" startline="198" endline="208">boundschecking</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a81c50c7b960bb42b0c7dc427acbb35e1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float NPC::bound_z</definition>
+        <argsstring></argsstring>
+        <name>bound_z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="47" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classNPC_1aa43e897253da76ea31e903407361cd92" compoundref="NPC_8cpp" startline="198" endline="208">boundschecking</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a6038c8d620b4b70934b63f3ce5d42bce" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int NPC::dialogue_switch</definition>
+        <argsstring></argsstring>
+        <name>dialogue_switch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="48" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classNPC_1a1e4f47ff8787d1a3094b6ef13e445b19" compoundref="NPC_8cpp" startline="286" endline="289">get_LineOfDialogue</referencedby>
+        <referencedby refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" compoundref="NPC_8cpp" startline="131" endline="166">getDialogue</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a985d585f13e7a6023bceedf8835d8ff6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NPC::dialogue_reset</definition>
+        <argsstring></argsstring>
+        <name>dialogue_reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="49" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" compoundref="NPC_8cpp" startline="131" endline="166">getDialogue</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a7bec4ac479728d8347dbeb038039a33d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double NPC::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="50" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" compoundref="NPC_8cpp" startline="131" endline="166">getDialogue</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</referencedby>
+        <referencedby refid="classNPC_1a61399424a1ddeaa1f127a9480fcb95ca" compoundref="NPC_8cpp" startline="216" endline="225">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a7f1dec988f2bb68af9a3315353aeeb73" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NPC::has_interacted</definition>
+        <argsstring></argsstring>
+        <name>has_interacted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="51" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" compoundref="NPC_8cpp" startline="131" endline="166">getDialogue</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1a2b008f0dd95c65339baf466918789062" compoundref="NPC_8cpp" startline="176" endline="188">interaction</referencedby>
+        <referencedby refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a40985f51ad98439803d4670450502d54" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float NPC::text_delay</definition>
+        <argsstring></argsstring>
+        <name>text_delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="52" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" compoundref="NPC_8cpp" startline="131" endline="166">getDialogue</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a054f6ee866a7299519d6f28f4fa60ad0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NPC::dialogue_finish</definition>
+        <argsstring></argsstring>
+        <name>dialogue_finish</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="53" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" compoundref="NPC_8cpp" startline="131" endline="166">getDialogue</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1adfca844bf43725b6ef2393cbee67cecc" compoundref="NPC_8cpp" startline="251" endline="254">quest_given</referencedby>
+        <referencedby refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a4ec58f14dc64c484c4abce5fb4d73804" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int NPC::stage</definition>
+        <argsstring></argsstring>
+        <name>stage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="54" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a7a511688ab02b50b087372b64b7c956f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NPC::quest_complete_stage</definition>
+        <argsstring></argsstring>
+        <name>quest_complete_stage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="55" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1aaa5c460f752c30b54e1e6fc5094ee711" compoundref="NPC_8cpp" startline="262" endline="278">quest_complete</referencedby>
+        <referencedby refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1ad444c43cfe1143f1e0a8c1a08d6c55ce" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NPC::quest_complete_delay</definition>
+        <argsstring></argsstring>
+        <name>quest_complete_delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="56" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classNPC_1a1fd8e03b925e499eb71a751757450b72" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short NPC::line_of_dialogue</definition>
+        <argsstring></argsstring>
+        <name>line_of_dialogue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="57" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" compoundref="NPC_8cpp" startline="131" endline="166">getDialogue</referencedby>
+        <referencedby refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" compoundref="NPC_8cpp" startline="51" endline="87">Init</referencedby>
+        <referencedby refid="classNPC_1aaa5c460f752c30b54e1e6fc5094ee711" compoundref="NPC_8cpp" startline="262" endline="278">quest_complete</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNPC_1a59b45912692304d555df9d6957046962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NPC::NPC</definition>
+        <argsstring>()</argsstring>
+        <name>NPC</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Default Constructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="28" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1a67c0caca129b56c82bb7ec8bce6be52b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NPC::~NPC</definition>
+        <argsstring>()</argsstring>
+        <name>~NPC</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Destructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="29" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NPC::Init</definition>
+        <argsstring>(string name, short NumberofDialogue, Vector3 pos, float boundaryX, float boundaryZ, Camera3 &amp;camera_address, const char *fileLocation)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>short</type>
+          <declname>NumberofDialogue</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>boundaryX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>boundaryZ</declname>
+        </param>
+        <param>
+          <type><ref refid="classCamera3" kindref="compound">Camera3</ref> &amp;</type>
+          <declname>camera_address</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fileLocation</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>initialised it&apos;s values through text file reader as well as some other variables initialised through function parameters needed for <ref refid="classNPC" kindref="compound">NPC</ref> class to work </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NumberofDialogue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of lines of dialogue the <ref refid="classNPC" kindref="compound">NPC</ref> has</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Coodinates of object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundaryX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- X axis bounds for object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundaryZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Z axis bounds for object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>camera_address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- camera object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileLocation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the path name to the text file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="31" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="51" bodyend="87"/>
+        <references refid="classNPC_1adb61a116c94b243bb49565f8aeb54174" compoundref="NPC_8h" startline="47">bound_x</references>
+        <references refid="classNPC_1a81c50c7b960bb42b0c7dc427acbb35e1" compoundref="NPC_8h" startline="47">bound_z</references>
+        <references refid="classNPC_1aaebe944bb141aefd946e0449929021ff" compoundref="NPC_8h" startline="46">cam_pointer</references>
+        <references refid="classNPC_1a054f6ee866a7299519d6f28f4fa60ad0" compoundref="NPC_8h" startline="53">dialogue_finish</references>
+        <references refid="classNPC_1a985d585f13e7a6023bceedf8835d8ff6" compoundref="NPC_8h" startline="49">dialogue_reset</references>
+        <references refid="classNPC_1a6038c8d620b4b70934b63f3ce5d42bce" compoundref="NPC_8h" startline="48">dialogue_switch</references>
+        <references refid="classNPC_1af2c4e342aaa5ee77a01a7655de1d81d1" compoundref="NPC_8h" startline="45">Dialogues</references>
+        <references refid="classNPC_1a7f1dec988f2bb68af9a3315353aeeb73" compoundref="NPC_8h" startline="51">has_interacted</references>
+        <references refid="classNPC_1a1fd8e03b925e499eb71a751757450b72" compoundref="NPC_8h" startline="57">line_of_dialogue</references>
+        <references refid="classGameObject_1a125061a56ff346096387b9d3674d69ca" compoundref="GameObject_8h" startline="32">GameObject::Name_</references>
+        <references refid="classNPC_1a7e2771837d956f29af539060460f6d45" compoundref="NPC_8h" startline="44">NPC_pos</references>
+        <references refid="classNPC_1ad444c43cfe1143f1e0a8c1a08d6c55ce" compoundref="NPC_8h" startline="56">quest_complete_delay</references>
+        <references refid="classNPC_1a7a511688ab02b50b087372b64b7c956f" compoundref="NPC_8h" startline="55">quest_complete_stage</references>
+        <references refid="classNPC_1a4ec58f14dc64c484c4abce5fb4d73804" compoundref="NPC_8h" startline="54">stage</references>
+        <references refid="classNPC_1a40985f51ad98439803d4670450502d54" compoundref="NPC_8h" startline="52">text_delay</references>
+        <references refid="classNPC_1a7bec4ac479728d8347dbeb038039a33d" compoundref="NPC_8h" startline="50">time</references>
+        <referencedby refid="classscene2__SP2_1a6d5705b83a23421a1f5aa0fec8c28329" compoundref="scene2__SP2_8cpp" startline="45" endline="368">scene2_SP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1a306047126b65a7f67ad6331a632b8071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float NPC::NPC_getposition_x</definition>
+        <argsstring>()</argsstring>
+        <name>NPC_getposition_x</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get this object&apos;s X coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- X coordinate of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="32" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="95" bodyend="98"/>
+        <references refid="classNPC_1a7e2771837d956f29af539060460f6d45" compoundref="NPC_8h" startline="44">NPC_pos</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <referencedby refid="classNPC_1aa43e897253da76ea31e903407361cd92" compoundref="NPC_8cpp" startline="198" endline="208">boundschecking</referencedby>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1a4f760c4731c0beb5e9d6096e666414bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float NPC::NPC_getposition_z</definition>
+        <argsstring>()</argsstring>
+        <name>NPC_getposition_z</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get this object&apos;s y coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- y coordinate of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="33" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="106" bodyend="109"/>
+        <references refid="classNPC_1a7e2771837d956f29af539060460f6d45" compoundref="NPC_8h" startline="44">NPC_pos</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classNPC_1aa43e897253da76ea31e903407361cd92" compoundref="NPC_8cpp" startline="198" endline="208">boundschecking</referencedby>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1aaa3161cae562c19d0725723861d0acf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float NPC::NPC_getposition_y</definition>
+        <argsstring>()</argsstring>
+        <name>NPC_getposition_y</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get this object&apos;s y coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- y coordinate of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="34" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="117" bodyend="120"/>
+        <references refid="classNPC_1a7e2771837d956f29af539060460f6d45" compoundref="NPC_8h" startline="44">NPC_pos</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1aa43e897253da76ea31e903407361cd92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool NPC::boundschecking</definition>
+        <argsstring>(const float &amp;bounds_x, const float &amp;bounds_z)</argsstring>
+        <name>boundschecking</name>
+        <param>
+          <type>const float &amp;</type>
+          <declname>bounds_x</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>bounds_z</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>bounds checking for interaction </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true player is in range of interaction</para></simplesect>
+<simplesect kind="return"><para>false player is not in range of interaction </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="35" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="198" bodyend="208"/>
+        <references refid="classNPC_1adb61a116c94b243bb49565f8aeb54174" compoundref="NPC_8h" startline="47">bound_x</references>
+        <references refid="classNPC_1a81c50c7b960bb42b0c7dc427acbb35e1" compoundref="NPC_8h" startline="47">bound_z</references>
+        <references refid="classNPC_1a306047126b65a7f67ad6331a632b8071" compoundref="NPC_8cpp" startline="95" endline="98">NPC_getposition_x</references>
+        <references refid="classNPC_1a4f760c4731c0beb5e9d6096e666414bf" compoundref="NPC_8cpp" startline="106" endline="109">NPC_getposition_z</references>
+        <referencedby refid="classNPC_1a2b008f0dd95c65339baf466918789062" compoundref="NPC_8cpp" startline="176" endline="188">interaction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1a61399424a1ddeaa1f127a9480fcb95ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NPC::update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>update</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>update some variables at every frame </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- delta time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="36" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="216" bodyend="225"/>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</references>
+        <references refid="classNPC_1a7bec4ac479728d8347dbeb038039a33d" compoundref="NPC_8h" startline="50">time</references>
+        <referencedby refid="classscene2__SP2_1a4c1334b891370489390fa9cf5674353a" compoundref="scene2__SP2_8cpp" startline="378" endline="462">scene2_SP2::Update</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1ab1173e9ee734824a964d5f050d9689b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string NPC::getDialogue</definition>
+        <argsstring>(bool reset)</argsstring>
+        <name>getDialogue</name>
+        <param>
+          <type>bool</type>
+          <declname>reset</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get this object&apos;s dialogue </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- to reset the dialogue if player moves out of range</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>- dialogue for object in the form of a string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="37" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="131" bodyend="166"/>
+        <references refid="classNPC_1a054f6ee866a7299519d6f28f4fa60ad0" compoundref="NPC_8h" startline="53">dialogue_finish</references>
+        <references refid="classNPC_1a985d585f13e7a6023bceedf8835d8ff6" compoundref="NPC_8h" startline="49">dialogue_reset</references>
+        <references refid="classNPC_1a6038c8d620b4b70934b63f3ce5d42bce" compoundref="NPC_8h" startline="48">dialogue_switch</references>
+        <references refid="classNPC_1af2c4e342aaa5ee77a01a7655de1d81d1" compoundref="NPC_8h" startline="45">Dialogues</references>
+        <references refid="classNPC_1a7f1dec988f2bb68af9a3315353aeeb73" compoundref="NPC_8h" startline="51">has_interacted</references>
+        <references refid="classNPC_1a1fd8e03b925e499eb71a751757450b72" compoundref="NPC_8h" startline="57">line_of_dialogue</references>
+        <references refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" compoundref="NPC_8cpp" startline="231" endline="241">reset</references>
+        <references refid="classNPC_1a40985f51ad98439803d4670450502d54" compoundref="NPC_8h" startline="52">text_delay</references>
+        <references refid="classNPC_1a7bec4ac479728d8347dbeb038039a33d" compoundref="NPC_8h" startline="50">time</references>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1a2b008f0dd95c65339baf466918789062" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool NPC::interaction</definition>
+        <argsstring>()</argsstring>
+        <name>interaction</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to check if player is within range to interact with this object </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true player is in range of interacting with this object</para></simplesect>
+<simplesect kind="return"><para>false player is not in range of interacting with this object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="38" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="176" bodyend="188"/>
+        <references refid="classNPC_1aa43e897253da76ea31e903407361cd92" compoundref="NPC_8cpp" startline="198" endline="208">boundschecking</references>
+        <references refid="classNPC_1aaebe944bb141aefd946e0449929021ff" compoundref="NPC_8h" startline="46">cam_pointer</references>
+        <references refid="classCamera3_1a4c484a400a9c2e64f3334fc62330368a" compoundref="Camera3_8cpp" startline="359" endline="362">Camera3::getCameraXcoord</references>
+        <references refid="classCamera3_1aae412d5efa2bae38cc9d5f38fb289f3a" compoundref="Camera3_8cpp" startline="372" endline="375">Camera3::getCameraZcoord</references>
+        <references refid="classNPC_1a7f1dec988f2bb68af9a3315353aeeb73" compoundref="NPC_8h" startline="51">has_interacted</references>
+        <referencedby refid="classscene2__SP2_1a0e589f588d92247371ee86443306080f" compoundref="scene2__SP2_8cpp" startline="2316" endline="2374">scene2_SP2::BoxesAnimation</referencedby>
+        <referencedby refid="classsceneSP2_1aaddae37328c79dbb87b9963e1eed653d" compoundref="sceneSP2_8cpp" startline="1968" endline="1993">sceneSP2::headanimation</referencedby>
+        <referencedby refid="classscene2__SP2_1a8979b2d27bd016bbbacfe13b350cc055" compoundref="scene2__SP2_8cpp" startline="2214" endline="2305">scene2_SP2::NPCAnimation</referencedby>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1adfca844bf43725b6ef2393cbee67cecc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool NPC::quest_given</definition>
+        <argsstring>()</argsstring>
+        <name>quest_given</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to check if player has been given a quest from this npc object </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true quest has been given</para></simplesect>
+<simplesect kind="return"><para>false quest has not been given </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="39" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="251" bodyend="254"/>
+        <references refid="classNPC_1a054f6ee866a7299519d6f28f4fa60ad0" compoundref="NPC_8h" startline="53">dialogue_finish</references>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1aaa5c460f752c30b54e1e6fc5094ee711" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string NPC::quest_complete</definition>
+        <argsstring>()</argsstring>
+        <name>quest_complete</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>returns dialogue for the npc when quest is complete </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>dialogue for the npc when quest is complete </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="40" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="262" bodyend="278"/>
+        <references refid="classNPC_1af2c4e342aaa5ee77a01a7655de1d81d1" compoundref="NPC_8h" startline="45">Dialogues</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classNPC_1a1fd8e03b925e499eb71a751757450b72" compoundref="NPC_8h" startline="57">line_of_dialogue</references>
+        <references refid="classNPC_1a7a511688ab02b50b087372b64b7c956f" compoundref="NPC_8h" startline="55">quest_complete_stage</references>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1a1e4f47ff8787d1a3094b6ef13e445b19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short NPC::get_LineOfDialogue</definition>
+        <argsstring>()</argsstring>
+        <name>get_LineOfDialogue</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to get which line of dialogue the npc object should be currently displaying </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the line number of the dialogue as a short </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="41" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="286" bodyend="289"/>
+        <references refid="classNPC_1a6038c8d620b4b70934b63f3ce5d42bce" compoundref="NPC_8h" startline="48">dialogue_switch</references>
+        <referencedby refid="classscene2__SP2_1a0e589f588d92247371ee86443306080f" compoundref="scene2__SP2_8cpp" startline="2316" endline="2374">scene2_SP2::BoxesAnimation</referencedby>
+        <referencedby refid="classscene2__SP2_1a8979b2d27bd016bbbacfe13b350cc055" compoundref="scene2__SP2_8cpp" startline="2214" endline="2305">scene2_SP2::NPCAnimation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NPC::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to reset all npc dialogue when scene resets </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/NPC.h" line="42" column="1" bodyfile="MyGraphics/Source/NPC.cpp" bodystart="231" bodyend="241"/>
+        <references refid="classNPC_1a054f6ee866a7299519d6f28f4fa60ad0" compoundref="NPC_8h" startline="53">dialogue_finish</references>
+        <references refid="classNPC_1a985d585f13e7a6023bceedf8835d8ff6" compoundref="NPC_8h" startline="49">dialogue_reset</references>
+        <references refid="classNPC_1a6038c8d620b4b70934b63f3ce5d42bce" compoundref="NPC_8h" startline="48">dialogue_switch</references>
+        <references refid="classNPC_1a7f1dec988f2bb68af9a3315353aeeb73" compoundref="NPC_8h" startline="51">has_interacted</references>
+        <references refid="classNPC_1ad444c43cfe1143f1e0a8c1a08d6c55ce" compoundref="NPC_8h" startline="56">quest_complete_delay</references>
+        <references refid="classNPC_1a7a511688ab02b50b087372b64b7c956f" compoundref="NPC_8h" startline="55">quest_complete_stage</references>
+        <references refid="classNPC_1a4ec58f14dc64c484c4abce5fb4d73804" compoundref="NPC_8h" startline="54">stage</references>
+        <references refid="classNPC_1a7bec4ac479728d8347dbeb038039a33d" compoundref="NPC_8h" startline="50">time</references>
+        <referencedby refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" compoundref="NPC_8cpp" startline="131" endline="166">getDialogue</referencedby>
+        <referencedby refid="classsceneSP2_1ad70fc6c47c485a14285257c1414729d1" compoundref="sceneSP2_8cpp" startline="694" endline="718">sceneSP2::reset</referencedby>
+        <referencedby refid="classNPC_1a61399424a1ddeaa1f127a9480fcb95ca" compoundref="NPC_8cpp" startline="216" endline="225">update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>Inheirited from <ref refid="classGameObject" kindref="compound">GameObject</ref> It has a text reader file to input it&apos;s dialogue </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classNPC" kindref="compound">NPC</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="761">
+        <label>NPC</label>
+        <link refid="classNPC"/>
+        <childnode refid="762" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="762">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="763">
+        <label>NPC</label>
+        <link refid="classNPC"/>
+        <childnode refid="764" relation="public-inheritance">
+        </childnode>
+        <childnode refid="767" relation="usage">
+          <edgelabel>time</edgelabel>
+        </childnode>
+        <childnode refid="768" relation="usage">
+          <edgelabel>cam_pointer</edgelabel>
+        </childnode>
+        <childnode refid="774" relation="usage">
+          <edgelabel>line_of_dialogue</edgelabel>
+        </childnode>
+        <childnode refid="771" relation="usage">
+          <edgelabel>bound_x</edgelabel>
+          <edgelabel>bound_z</edgelabel>
+          <edgelabel>text_delay</edgelabel>
+        </childnode>
+        <childnode refid="765" relation="usage">
+          <edgelabel>stage</edgelabel>
+          <edgelabel>dialogue_switch</edgelabel>
+        </childnode>
+        <childnode refid="770" relation="usage">
+          <edgelabel>NPC_pos</edgelabel>
+        </childnode>
+        <childnode refid="775" relation="usage">
+          <edgelabel>quest_complete_delay</edgelabel>
+          <edgelabel>dialogue_reset</edgelabel>
+          <edgelabel>quest_complete_stage</edgelabel>
+          <edgelabel>dialogue_finish</edgelabel>
+          <edgelabel>has_interacted</edgelabel>
+        </childnode>
+        <childnode refid="776" relation="usage">
+          <edgelabel>Dialogues</edgelabel>
+        </childnode>
+      </node>
+      <node id="776">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="773">
+        <label>vector&lt; objectsForDisplay &gt;</label>
+      </node>
+      <node id="769">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="770" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="766">
+        <label>string</label>
+      </node>
+      <node id="771">
+        <label>float</label>
+      </node>
+      <node id="768">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="769" relation="public-inheritance">
+        </childnode>
+        <childnode refid="771" relation="usage">
+          <edgelabel>cameraSpeed</edgelabel>
+          <edgelabel>cursorCoordX</edgelabel>
+          <edgelabel>boundaryX</edgelabel>
+          <edgelabel>cursorCoordY</edgelabel>
+          <edgelabel>defaultCameraYrotation</edgelabel>
+          <edgelabel>boundaryZ</edgelabel>
+          <edgelabel>minCameraXrotation</edgelabel>
+          <edgelabel>CameraYrotation</edgelabel>
+          <edgelabel>crossHairRadius</edgelabel>
+          <edgelabel>maxCameraXrotation</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="772" relation="usage">
+          <edgelabel>camType</edgelabel>
+        </childnode>
+        <childnode refid="770" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+          <edgelabel>invisibleCrossHair</edgelabel>
+        </childnode>
+        <childnode refid="773" relation="usage">
+          <edgelabel>storage_of_objects</edgelabel>
+        </childnode>
+      </node>
+      <node id="765">
+        <label>int</label>
+      </node>
+      <node id="767">
+        <label>double</label>
+      </node>
+      <node id="774">
+        <label>short</label>
+      </node>
+      <node id="772">
+        <label>CameraType</label>
+      </node>
+      <node id="764">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="765" relation="usage">
+          <edgelabel>count_</edgelabel>
+        </childnode>
+        <childnode refid="766" relation="usage">
+          <edgelabel>Name_</edgelabel>
+        </childnode>
+      </node>
+      <node id="775">
+        <label>bool</label>
+      </node>
+      <node id="770">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="771" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/NPC.h" line="26" column="1" bodyfile="MyGraphics/Source/NPC.h" bodystart="25" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classNPC_1adb61a116c94b243bb49565f8aeb54174" prot="private" virt="non-virtual"><scope>NPC</scope><name>bound_x</name></member>
+      <member refid="classNPC_1a81c50c7b960bb42b0c7dc427acbb35e1" prot="private" virt="non-virtual"><scope>NPC</scope><name>bound_z</name></member>
+      <member refid="classNPC_1aa43e897253da76ea31e903407361cd92" prot="public" virt="non-virtual"><scope>NPC</scope><name>boundschecking</name></member>
+      <member refid="classNPC_1aaebe944bb141aefd946e0449929021ff" prot="private" virt="non-virtual"><scope>NPC</scope><name>cam_pointer</name></member>
+      <member refid="classNPC_1a054f6ee866a7299519d6f28f4fa60ad0" prot="private" virt="non-virtual"><scope>NPC</scope><name>dialogue_finish</name></member>
+      <member refid="classNPC_1a985d585f13e7a6023bceedf8835d8ff6" prot="private" virt="non-virtual"><scope>NPC</scope><name>dialogue_reset</name></member>
+      <member refid="classNPC_1a6038c8d620b4b70934b63f3ce5d42bce" prot="private" virt="non-virtual"><scope>NPC</scope><name>dialogue_switch</name></member>
+      <member refid="classNPC_1af2c4e342aaa5ee77a01a7655de1d81d1" prot="private" virt="non-virtual"><scope>NPC</scope><name>Dialogues</name></member>
+      <member refid="classGameObject_1ad06b99a731d8d50e06ee92708b78b4db" prot="protected" virt="non-virtual"><scope>NPC</scope><name>GameObject</name></member>
+      <member refid="classNPC_1a1e4f47ff8787d1a3094b6ef13e445b19" prot="public" virt="non-virtual"><scope>NPC</scope><name>get_LineOfDialogue</name></member>
+      <member refid="classGameObject_1a00da4ea36f3945e1da1a2f81061b57d3" prot="public" virt="non-virtual"><scope>NPC</scope><name>getCount</name></member>
+      <member refid="classNPC_1ab1173e9ee734824a964d5f050d9689b9" prot="public" virt="non-virtual"><scope>NPC</scope><name>getDialogue</name></member>
+      <member refid="classGameObject_1ab7c8021dd4caa10448c87396db933e94" prot="public" virt="non-virtual"><scope>NPC</scope><name>getName</name></member>
+      <member refid="classNPC_1a7f1dec988f2bb68af9a3315353aeeb73" prot="private" virt="non-virtual"><scope>NPC</scope><name>has_interacted</name></member>
+      <member refid="classNPC_1a2cae4cf96b7118caf28f5be9faef8b2d" prot="public" virt="non-virtual"><scope>NPC</scope><name>Init</name></member>
+      <member refid="classNPC_1a2b008f0dd95c65339baf466918789062" prot="public" virt="non-virtual"><scope>NPC</scope><name>interaction</name></member>
+      <member refid="classNPC_1a1fd8e03b925e499eb71a751757450b72" prot="private" virt="non-virtual"><scope>NPC</scope><name>line_of_dialogue</name></member>
+      <member refid="classGameObject_1a125061a56ff346096387b9d3674d69ca" prot="protected" virt="non-virtual"><scope>NPC</scope><name>Name_</name></member>
+      <member refid="classNPC_1a59b45912692304d555df9d6957046962" prot="public" virt="non-virtual"><scope>NPC</scope><name>NPC</name></member>
+      <member refid="classNPC_1a306047126b65a7f67ad6331a632b8071" prot="public" virt="non-virtual"><scope>NPC</scope><name>NPC_getposition_x</name></member>
+      <member refid="classNPC_1aaa3161cae562c19d0725723861d0acf7" prot="public" virt="non-virtual"><scope>NPC</scope><name>NPC_getposition_y</name></member>
+      <member refid="classNPC_1a4f760c4731c0beb5e9d6096e666414bf" prot="public" virt="non-virtual"><scope>NPC</scope><name>NPC_getposition_z</name></member>
+      <member refid="classNPC_1a7e2771837d956f29af539060460f6d45" prot="private" virt="non-virtual"><scope>NPC</scope><name>NPC_pos</name></member>
+      <member refid="classNPC_1aaa5c460f752c30b54e1e6fc5094ee711" prot="public" virt="non-virtual"><scope>NPC</scope><name>quest_complete</name></member>
+      <member refid="classNPC_1ad444c43cfe1143f1e0a8c1a08d6c55ce" prot="private" virt="non-virtual"><scope>NPC</scope><name>quest_complete_delay</name></member>
+      <member refid="classNPC_1a7a511688ab02b50b087372b64b7c956f" prot="private" virt="non-virtual"><scope>NPC</scope><name>quest_complete_stage</name></member>
+      <member refid="classNPC_1adfca844bf43725b6ef2393cbee67cecc" prot="public" virt="non-virtual"><scope>NPC</scope><name>quest_given</name></member>
+      <member refid="classNPC_1ab6bac3d151a9ff29bebab73604bfdadb" prot="public" virt="non-virtual"><scope>NPC</scope><name>reset</name></member>
+      <member refid="classNPC_1a4ec58f14dc64c484c4abce5fb4d73804" prot="private" virt="non-virtual"><scope>NPC</scope><name>stage</name></member>
+      <member refid="classNPC_1a40985f51ad98439803d4670450502d54" prot="private" virt="non-virtual"><scope>NPC</scope><name>text_delay</name></member>
+      <member refid="classNPC_1a7bec4ac479728d8347dbeb038039a33d" prot="private" virt="non-virtual"><scope>NPC</scope><name>time</name></member>
+      <member refid="classNPC_1a61399424a1ddeaa1f127a9480fcb95ca" prot="public" virt="non-virtual"><scope>NPC</scope><name>update</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>NPC</scope><name>~GameObject</name></member>
+      <member refid="classNPC_1a67c0caca129b56c82bb7ec8bce6be52b" prot="public" virt="non-virtual"><scope>NPC</scope><name>~NPC</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

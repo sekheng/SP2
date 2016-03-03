@@ -1,0 +1,5 @@
+<map id="objectsForDisplay::getBoundaryRadiusX" name="objectsForDisplay::getBoundaryRadiusX">
+<area shape="rect" id="node2" href="$classSekHeng.html#ab0555e2ccef81d7f866e86883cf52955" title="to check whether the player in within Sek Heng&#39;s hammer interacting boundary " alt="" coords="196,13,391,39"/>
+<area shape="rect" id="node3" href="$classSekHeng.html#ae3bb8042c61652bd6c325fe105fd2c17" title="a method function which will update the logic behind the interaction with Sek Heng ..." alt="" coords="439,13,563,39"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="611,13,741,39"/>
+</map>

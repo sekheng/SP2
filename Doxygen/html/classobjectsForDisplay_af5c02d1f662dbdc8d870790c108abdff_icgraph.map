@@ -1,0 +1,10 @@
+<map id="objectsForDisplay::init" name="objectsForDisplay::init">
+<area shape="rect" id="node2" href="$classscene2__SP2.html#a6d5705b83a23421a1f5aa0fec8c28329" title="initializing whatever is needed for the scene " alt="" coords="396,5,517,32"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="403,107,510,133"/>
+<area shape="rect" id="node4" href="$classCamera3.html#afcbf927fd6fc2be8451da97c663431d8" title="a Data Driven method to initialise a bunch of static objects that can be used to render the coordinat..." alt="" coords="204,56,348,83"/>
+<area shape="rect" id="node6" href="$classSekHeng.html#afa99bb0e52fca8bd53514b23c33ecb0f" title="a method to completely reset the Sek Heng&#39;s variable to it&#39;s default state " alt="" coords="220,157,332,184"/>
+<area shape="rect" id="node9" href="$classSekHeng.html#aabfaf63bbdb5b17ce5ae85f6334f6e70" title="a default constructor, with all variables becoming default value " alt="" coords="208,208,344,235"/>
+<area shape="rect" id="node5" href="$classscene3__SP2.html#ae4a4e666fc5860fee4d9e091f1571c18" title="initializing whatever is needed for the scene " alt="" coords="396,56,517,83"/>
+<area shape="rect" id="node7" href="$classsceneSP2.html#ad70fc6c47c485a14285257c1414729d1" title="reset the entire scene 1 /* " alt="" coords="397,157,516,184"/>
+<area shape="rect" id="node8" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="565,157,696,184"/>
+</map>

@@ -1,0 +1,866 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classQuest" kind="class" language="C++" prot="public">
+    <compoundname>Quest</compoundname>
+    <includes refid="Quest_8h" local="no">Quest.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuest_1add02b3c8f67235f7ae44e34505f37597" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Quest::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="46" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1ae6c3ea61f5a5ccf970c34cf0a3c33812" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref> *</type>
+        <definition>Camera3* Quest::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="47" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1ae29db24e4cc1a385aec51d5aef765bc5" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short Quest::stages</definition>
+        <argsstring></argsstring>
+        <name>stages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="48" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classQuest_1a19139139e4ef0d1b6d383f8dfb675c05" compoundref="Quest_8cpp" startline="76" endline="83">check_quest</referencedby>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1ae32188fcc66cb240b6c0760c10276bae" compoundref="Quest_8cpp" startline="294" endline="301">reset</referencedby>
+        <referencedby refid="classQuest_1ac23cf044c29e28f4181a7def7b09e75e" compoundref="Quest_8cpp" startline="91" endline="95">stage</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1ab4b31b00b732f38c23f06b6ad8b87da9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quest::x_1</definition>
+        <argsstring></argsstring>
+        <name>x_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="49" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classQuest_1a9a979db25a8283165ff02d1ba4d6b3dd" compoundref="Quest_8cpp" startline="124" endline="127">getObject1_X</referencedby>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a077e69feb0215907c3ccea412d968f2c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quest::y_1</definition>
+        <argsstring></argsstring>
+        <name>y_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="49" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a684b8cf1d0a5d9346319ecfc4c943d3c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quest::z_1</definition>
+        <argsstring></argsstring>
+        <name>z_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="49" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classQuest_1a04c65bf66e2ac951311f56c720385c21" compoundref="Quest_8cpp" startline="135" endline="138">getObject1_Z</referencedby>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a14f4b310deecbae0d1abf046ec890ab0" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quest::bounds_1</definition>
+        <argsstring></argsstring>
+        <name>bounds_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="50" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1aa65eec2c956d15a5dc1015578f94d074" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quest::bounds_2</definition>
+        <argsstring></argsstring>
+        <name>bounds_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="50" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a25fed1439b0523d2dc8c9e84827775af" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quest::x_2</definition>
+        <argsstring></argsstring>
+        <name>x_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="51" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classQuest_1a4a28652632605e99da750b48b2c85a9a" compoundref="Quest_8cpp" startline="147" endline="154">getObject2_X</referencedby>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a956deda7a10ea7d5192b2603f5637203" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quest::y_2</definition>
+        <argsstring></argsstring>
+        <name>y_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="51" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a3a14b02b8bd7ed39765594afa8522350" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Quest::z_2</definition>
+        <argsstring></argsstring>
+        <name>z_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="51" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classQuest_1a89a7782b9f2c26c35463e2977882d9b5" compoundref="Quest_8cpp" startline="163" endline="170">getObject2_Z</referencedby>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a61f2b2380248c4ce534c8a0d78ed5211" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Quest::CollectItem1</definition>
+        <argsstring></argsstring>
+        <name>CollectItem1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="52" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a54559418f758e8190d29f5f7b37fc553" compoundref="Quest_8cpp" startline="269" endline="272">Item1collected</referencedby>
+        <referencedby refid="classQuest_1ae32188fcc66cb240b6c0760c10276bae" compoundref="Quest_8cpp" startline="294" endline="301">reset</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a30fd2a8cd5ba9f9268f38be257282645" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Quest::CollectItem2</definition>
+        <argsstring></argsstring>
+        <name>CollectItem2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="52" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a8ea74d521a17cbbdd8ac9ede6cba4207" compoundref="Quest_8cpp" startline="281" endline="288">Item2collected</referencedby>
+        <referencedby refid="classQuest_1ae32188fcc66cb240b6c0760c10276bae" compoundref="Quest_8cpp" startline="294" endline="301">reset</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a28c6d6119585e4d74538b358d2d7451e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Quest::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="53" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1ae32188fcc66cb240b6c0760c10276bae" compoundref="Quest_8cpp" startline="294" endline="301">reset</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1ad511b5758f9fac0e45ae6b09e2a12ad6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Quest::quest_complete</definition>
+        <argsstring></argsstring>
+        <name>quest_complete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="54" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a320aa6e7dda5476e11e78a1922d82610" compoundref="Quest_8cpp" startline="257" endline="260">questComplete</referencedby>
+        <referencedby refid="classQuest_1ae32188fcc66cb240b6c0760c10276bae" compoundref="Quest_8cpp" startline="294" endline="301">reset</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classQuest_1a58e19cfab0a50a30808c8258dda24d30" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short Quest::number_of_items</definition>
+        <argsstring></argsstring>
+        <name>number_of_items</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="55" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classQuest_1a7f5229fff4c4b0f793e18411e018e517" compoundref="Quest_8cpp" startline="178" endline="181">get_numberof_items</referencedby>
+        <referencedby refid="classQuest_1a4a28652632605e99da750b48b2c85a9a" compoundref="Quest_8cpp" startline="147" endline="154">getObject2_X</referencedby>
+        <referencedby refid="classQuest_1a89a7782b9f2c26c35463e2977882d9b5" compoundref="Quest_8cpp" startline="163" endline="170">getObject2_Z</referencedby>
+        <referencedby refid="classQuest_1aafff8b97348723252d2aad790ea67b74" compoundref="Quest_8cpp" startline="42" endline="64">Init</referencedby>
+        <referencedby refid="classQuest_1a8ea74d521a17cbbdd8ac9ede6cba4207" compoundref="Quest_8cpp" startline="281" endline="288">Item2collected</referencedby>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuest_1a5cdd6f02fdceaa7b7b53407740a22cf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Quest::Quest</definition>
+        <argsstring>()</argsstring>
+        <name>Quest</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Default Constructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="28" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1ad4341309a8558845c6d93bc8ca0940f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Quest::~Quest</definition>
+        <argsstring>()</argsstring>
+        <name>~Quest</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Destructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="29" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1aafff8b97348723252d2aad790ea67b74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Quest::Init</definition>
+        <argsstring>(string Name_, Camera3 &amp;camera_address, short no_of_items, Vector3 Item1_pos, short Item1_bounds, Vector3 Item2_pos, short Item2_bounds)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>string</type>
+          <declname>Name_</declname>
+        </param>
+        <param>
+          <type><ref refid="classCamera3" kindref="compound">Camera3</ref> &amp;</type>
+          <declname>camera_address</declname>
+        </param>
+        <param>
+          <type>short</type>
+          <declname>no_of_items</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>Item1_pos</declname>
+        </param>
+        <param>
+          <type>short</type>
+          <declname>Item1_bounds</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>Item2_pos</declname>
+        </param>
+        <param>
+          <type>short</type>
+          <declname>Item2_bounds</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>initialised it&apos;s values through parameters </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Name_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Name of the quest</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>camera_address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>no_of_items</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of items required to complete the quest</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Item1_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- position of first quest item</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Item1_bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- bounds of first quest item</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Item2_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- position of second quest item</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Item2_bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- bounds of second quest item </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="30" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="42" bodyend="64"/>
+        <references refid="classQuest_1a14f4b310deecbae0d1abf046ec890ab0" compoundref="Quest_8h" startline="50">bounds_1</references>
+        <references refid="classQuest_1aa65eec2c956d15a5dc1015578f94d074" compoundref="Quest_8h" startline="50">bounds_2</references>
+        <references refid="classQuest_1ae6c3ea61f5a5ccf970c34cf0a3c33812" compoundref="Quest_8h" startline="47">camera</references>
+        <references refid="classQuest_1a61f2b2380248c4ce534c8a0d78ed5211" compoundref="Quest_8h" startline="52">CollectItem1</references>
+        <references refid="classQuest_1a30fd2a8cd5ba9f9268f38be257282645" compoundref="Quest_8h" startline="52">CollectItem2</references>
+        <references refid="classQuest_1add02b3c8f67235f7ae44e34505f37597" compoundref="Quest_8h" startline="46">name</references>
+        <references refid="classQuest_1a58e19cfab0a50a30808c8258dda24d30" compoundref="Quest_8h" startline="55">number_of_items</references>
+        <references refid="classQuest_1ad511b5758f9fac0e45ae6b09e2a12ad6" compoundref="Quest_8h" startline="54">quest_complete</references>
+        <references refid="classQuest_1ae29db24e4cc1a385aec51d5aef765bc5" compoundref="Quest_8h" startline="48">stages</references>
+        <references refid="classQuest_1a28c6d6119585e4d74538b358d2d7451e" compoundref="Quest_8h" startline="53">time</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="classQuest_1ab4b31b00b732f38c23f06b6ad8b87da9" compoundref="Quest_8h" startline="49">x_1</references>
+        <references refid="classQuest_1a25fed1439b0523d2dc8c9e84827775af" compoundref="Quest_8h" startline="51">x_2</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="classQuest_1a077e69feb0215907c3ccea412d968f2c" compoundref="Quest_8h" startline="49">y_1</references>
+        <references refid="classQuest_1a956deda7a10ea7d5192b2603f5637203" compoundref="Quest_8h" startline="51">y_2</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <references refid="classQuest_1a684b8cf1d0a5d9346319ecfc4c943d3c" compoundref="Quest_8h" startline="49">z_1</references>
+        <references refid="classQuest_1a3a14b02b8bd7ed39765594afa8522350" compoundref="Quest_8h" startline="51">z_2</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1ad70fc6c47c485a14285257c1414729d1" compoundref="sceneSP2_8cpp" startline="694" endline="718">sceneSP2::reset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a19139139e4ef0d1b6d383f8dfb675c05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Quest::check_quest</definition>
+        <argsstring>(bool quest_is_taken)</argsstring>
+        <name>check_quest</name>
+        <param>
+          <type>bool</type>
+          <declname>quest_is_taken</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>check if quest has been taken or should be started </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>quest_is_taken</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- if true, quest is taken, if false, quest is not taken</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true - quest is taken</para></simplesect>
+<simplesect kind="return"><para>false - quest is not taken </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="32" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="76" bodyend="83"/>
+        <references refid="classQuest_1ae29db24e4cc1a385aec51d5aef765bc5" compoundref="Quest_8h" startline="48">stages</references>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1ac23cf044c29e28f4181a7def7b09e75e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short Quest::stage</definition>
+        <argsstring>()</argsstring>
+        <name>stage</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get the current progress of the quest </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- which stage of the quest is the player currently at </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="33" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="91" bodyend="95"/>
+        <references refid="classQuest_1ae29db24e4cc1a385aec51d5aef765bc5" compoundref="Quest_8h" startline="48">stages</references>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1ad040092b1c64e7da4286bcb358e1f145" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Quest::boundscheck</definition>
+        <argsstring>(float position_x, float position_z, float bounds_x, float bounds_z, float cameraposition_x, float cameraposition_z)</argsstring>
+        <name>boundscheck</name>
+        <param>
+          <type>float</type>
+          <declname>position_x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>position_z</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>bounds_x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>bounds_z</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>cameraposition_x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>cameraposition_z</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>bounds check if player is within range to pick up item </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true - player is within the bounds</para></simplesect>
+<simplesect kind="return"><para>false - player is not within the bounds </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="34" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="105" bodyend="115"/>
+        <referencedby refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" compoundref="Quest_8cpp" startline="189" endline="248">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a9a979db25a8283165ff02d1ba4d6b3dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Quest::getObject1_X</definition>
+        <argsstring>()</argsstring>
+        <name>getObject1_X</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get first item&apos;s x coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>x coordinate of first item </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="35" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="124" bodyend="127"/>
+        <references refid="classQuest_1ab4b31b00b732f38c23f06b6ad8b87da9" compoundref="Quest_8h" startline="49">x_1</references>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a04c65bf66e2ac951311f56c720385c21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Quest::getObject1_Z</definition>
+        <argsstring>()</argsstring>
+        <name>getObject1_Z</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get first item&apos;s z coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>z coordinate of first item </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="36" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="135" bodyend="138"/>
+        <references refid="classQuest_1a684b8cf1d0a5d9346319ecfc4c943d3c" compoundref="Quest_8h" startline="49">z_1</references>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a4a28652632605e99da750b48b2c85a9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Quest::getObject2_X</definition>
+        <argsstring>()</argsstring>
+        <name>getObject2_X</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get second item&apos;s x coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>x coordinate of second item </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="37" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="147" bodyend="154"/>
+        <references refid="classQuest_1a58e19cfab0a50a30808c8258dda24d30" compoundref="Quest_8h" startline="55">number_of_items</references>
+        <references refid="classQuest_1a25fed1439b0523d2dc8c9e84827775af" compoundref="Quest_8h" startline="51">x_2</references>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a89a7782b9f2c26c35463e2977882d9b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Quest::getObject2_Z</definition>
+        <argsstring>()</argsstring>
+        <name>getObject2_Z</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get second item&apos;s z coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>z coordinate of second item </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="38" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="163" bodyend="170"/>
+        <references refid="classQuest_1a58e19cfab0a50a30808c8258dda24d30" compoundref="Quest_8h" startline="55">number_of_items</references>
+        <references refid="classQuest_1a3a14b02b8bd7ed39765594afa8522350" compoundref="Quest_8h" startline="51">z_2</references>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Quest::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>update&apos;s the quest progress </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- delta time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="39" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="189" bodyend="248"/>
+        <references refid="classQuest_1a14f4b310deecbae0d1abf046ec890ab0" compoundref="Quest_8h" startline="50">bounds_1</references>
+        <references refid="classQuest_1aa65eec2c956d15a5dc1015578f94d074" compoundref="Quest_8h" startline="50">bounds_2</references>
+        <references refid="classQuest_1ad040092b1c64e7da4286bcb358e1f145" compoundref="Quest_8cpp" startline="105" endline="115">boundscheck</references>
+        <references refid="classQuest_1ae6c3ea61f5a5ccf970c34cf0a3c33812" compoundref="Quest_8h" startline="47">camera</references>
+        <references refid="classQuest_1a61f2b2380248c4ce534c8a0d78ed5211" compoundref="Quest_8h" startline="52">CollectItem1</references>
+        <references refid="classQuest_1a30fd2a8cd5ba9f9268f38be257282645" compoundref="Quest_8h" startline="52">CollectItem2</references>
+        <references refid="classCamera3_1a4c484a400a9c2e64f3334fc62330368a" compoundref="Camera3_8cpp" startline="359" endline="362">Camera3::getCameraXcoord</references>
+        <references refid="classCamera3_1aae412d5efa2bae38cc9d5f38fb289f3a" compoundref="Camera3_8cpp" startline="372" endline="375">Camera3::getCameraZcoord</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classQuest_1a58e19cfab0a50a30808c8258dda24d30" compoundref="Quest_8h" startline="55">number_of_items</references>
+        <references refid="classQuest_1ad511b5758f9fac0e45ae6b09e2a12ad6" compoundref="Quest_8h" startline="54">quest_complete</references>
+        <references refid="classQuest_1ae29db24e4cc1a385aec51d5aef765bc5" compoundref="Quest_8h" startline="48">stages</references>
+        <references refid="classQuest_1a28c6d6119585e4d74538b358d2d7451e" compoundref="Quest_8h" startline="53">time</references>
+        <references refid="classQuest_1ab4b31b00b732f38c23f06b6ad8b87da9" compoundref="Quest_8h" startline="49">x_1</references>
+        <references refid="classQuest_1a25fed1439b0523d2dc8c9e84827775af" compoundref="Quest_8h" startline="51">x_2</references>
+        <references refid="classQuest_1a684b8cf1d0a5d9346319ecfc4c943d3c" compoundref="Quest_8h" startline="49">z_1</references>
+        <references refid="classQuest_1a3a14b02b8bd7ed39765594afa8522350" compoundref="Quest_8h" startline="51">z_2</references>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a320aa6e7dda5476e11e78a1922d82610" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Quest::questComplete</definition>
+        <argsstring>()</argsstring>
+        <name>questComplete</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>check if quest completed </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true - quest is complete </para></simplesect>
+<simplesect kind="return"><para>false - quest is not complete </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="40" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="257" bodyend="260"/>
+        <references refid="classQuest_1ad511b5758f9fac0e45ae6b09e2a12ad6" compoundref="Quest_8h" startline="54">quest_complete</references>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a7f5229fff4c4b0f793e18411e018e517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short Quest::get_numberof_items</definition>
+        <argsstring>()</argsstring>
+        <name>get_numberof_items</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get number of items the quest requires </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the number of items required in the quest </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="41" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="178" bodyend="181"/>
+        <references refid="classQuest_1a58e19cfab0a50a30808c8258dda24d30" compoundref="Quest_8h" startline="55">number_of_items</references>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a54559418f758e8190d29f5f7b37fc553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Quest::Item1collected</definition>
+        <argsstring>()</argsstring>
+        <name>Item1collected</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>check if first item has been picked up </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true - first item has been picked up </para></simplesect>
+<simplesect kind="return"><para>false - first item has not been picked up </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="42" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="269" bodyend="272"/>
+        <references refid="classQuest_1a61f2b2380248c4ce534c8a0d78ed5211" compoundref="Quest_8h" startline="52">CollectItem1</references>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1a8ea74d521a17cbbdd8ac9ede6cba4207" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Quest::Item2collected</definition>
+        <argsstring>()</argsstring>
+        <name>Item2collected</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>check if second item has been picked up </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true - second item has been picked up </para></simplesect>
+<simplesect kind="return"><para>false - second item has not been picked up </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="43" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="281" bodyend="288"/>
+        <references refid="classQuest_1a30fd2a8cd5ba9f9268f38be257282645" compoundref="Quest_8h" startline="52">CollectItem2</references>
+        <references refid="classQuest_1a58e19cfab0a50a30808c8258dda24d30" compoundref="Quest_8h" startline="55">number_of_items</references>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classQuest_1ae32188fcc66cb240b6c0760c10276bae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Quest::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>reset the quest </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/Quest.h" line="44" column="1" bodyfile="MyGraphics/Source/Quest.cpp" bodystart="294" bodyend="301"/>
+        <references refid="classQuest_1a61f2b2380248c4ce534c8a0d78ed5211" compoundref="Quest_8h" startline="52">CollectItem1</references>
+        <references refid="classQuest_1a30fd2a8cd5ba9f9268f38be257282645" compoundref="Quest_8h" startline="52">CollectItem2</references>
+        <references refid="classQuest_1ad511b5758f9fac0e45ae6b09e2a12ad6" compoundref="Quest_8h" startline="54">quest_complete</references>
+        <references refid="classQuest_1ae29db24e4cc1a385aec51d5aef765bc5" compoundref="Quest_8h" startline="48">stages</references>
+        <references refid="classQuest_1a28c6d6119585e4d74538b358d2d7451e" compoundref="Quest_8h" startline="53">time</references>
+        <referencedby refid="classsceneSP2_1ad70fc6c47c485a14285257c1414729d1" compoundref="sceneSP2_8cpp" startline="694" endline="718">sceneSP2::reset</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para><ref refid="classQuest" kindref="compound">Quest</ref> system used to help create a flow of quests easily in the game </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classQuest" kindref="compound">Quest</ref> </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="818">
+        <label>vector&lt; objectsForDisplay &gt;</label>
+      </node>
+      <node id="814">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="815" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="821">
+        <label>string</label>
+      </node>
+      <node id="816">
+        <label>float</label>
+      </node>
+      <node id="813">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="814" relation="public-inheritance">
+        </childnode>
+        <childnode refid="816" relation="usage">
+          <edgelabel>cameraSpeed</edgelabel>
+          <edgelabel>cursorCoordX</edgelabel>
+          <edgelabel>boundaryX</edgelabel>
+          <edgelabel>cursorCoordY</edgelabel>
+          <edgelabel>defaultCameraYrotation</edgelabel>
+          <edgelabel>boundaryZ</edgelabel>
+          <edgelabel>minCameraXrotation</edgelabel>
+          <edgelabel>CameraYrotation</edgelabel>
+          <edgelabel>crossHairRadius</edgelabel>
+          <edgelabel>maxCameraXrotation</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="817" relation="usage">
+          <edgelabel>camType</edgelabel>
+        </childnode>
+        <childnode refid="815" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+          <edgelabel>invisibleCrossHair</edgelabel>
+        </childnode>
+        <childnode refid="818" relation="usage">
+          <edgelabel>storage_of_objects</edgelabel>
+        </childnode>
+      </node>
+      <node id="812">
+        <label>double</label>
+      </node>
+      <node id="811">
+        <label>Quest</label>
+        <link refid="classQuest"/>
+        <childnode refid="812" relation="usage">
+          <edgelabel>time</edgelabel>
+        </childnode>
+        <childnode refid="813" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="816" relation="usage">
+          <edgelabel>x_1</edgelabel>
+          <edgelabel>x_2</edgelabel>
+          <edgelabel>y_1</edgelabel>
+          <edgelabel>y_2</edgelabel>
+          <edgelabel>z_1</edgelabel>
+          <edgelabel>z_2</edgelabel>
+          <edgelabel>bounds_1</edgelabel>
+          <edgelabel>bounds_2</edgelabel>
+        </childnode>
+        <childnode refid="819" relation="usage">
+          <edgelabel>stages</edgelabel>
+          <edgelabel>number_of_items</edgelabel>
+        </childnode>
+        <childnode refid="820" relation="usage">
+          <edgelabel>quest_complete</edgelabel>
+          <edgelabel>CollectItem1</edgelabel>
+          <edgelabel>CollectItem2</edgelabel>
+        </childnode>
+        <childnode refid="821" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="819">
+        <label>short</label>
+      </node>
+      <node id="817">
+        <label>CameraType</label>
+      </node>
+      <node id="820">
+        <label>bool</label>
+      </node>
+      <node id="815">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="816" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/Quest.h" line="26" column="1" bodyfile="MyGraphics/Source/Quest.h" bodystart="25" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classQuest_1a14f4b310deecbae0d1abf046ec890ab0" prot="private" virt="non-virtual"><scope>Quest</scope><name>bounds_1</name></member>
+      <member refid="classQuest_1aa65eec2c956d15a5dc1015578f94d074" prot="private" virt="non-virtual"><scope>Quest</scope><name>bounds_2</name></member>
+      <member refid="classQuest_1ad040092b1c64e7da4286bcb358e1f145" prot="public" virt="non-virtual"><scope>Quest</scope><name>boundscheck</name></member>
+      <member refid="classQuest_1ae6c3ea61f5a5ccf970c34cf0a3c33812" prot="private" virt="non-virtual"><scope>Quest</scope><name>camera</name></member>
+      <member refid="classQuest_1a19139139e4ef0d1b6d383f8dfb675c05" prot="public" virt="non-virtual"><scope>Quest</scope><name>check_quest</name></member>
+      <member refid="classQuest_1a61f2b2380248c4ce534c8a0d78ed5211" prot="private" virt="non-virtual"><scope>Quest</scope><name>CollectItem1</name></member>
+      <member refid="classQuest_1a30fd2a8cd5ba9f9268f38be257282645" prot="private" virt="non-virtual"><scope>Quest</scope><name>CollectItem2</name></member>
+      <member refid="classQuest_1a7f5229fff4c4b0f793e18411e018e517" prot="public" virt="non-virtual"><scope>Quest</scope><name>get_numberof_items</name></member>
+      <member refid="classQuest_1a9a979db25a8283165ff02d1ba4d6b3dd" prot="public" virt="non-virtual"><scope>Quest</scope><name>getObject1_X</name></member>
+      <member refid="classQuest_1a04c65bf66e2ac951311f56c720385c21" prot="public" virt="non-virtual"><scope>Quest</scope><name>getObject1_Z</name></member>
+      <member refid="classQuest_1a4a28652632605e99da750b48b2c85a9a" prot="public" virt="non-virtual"><scope>Quest</scope><name>getObject2_X</name></member>
+      <member refid="classQuest_1a89a7782b9f2c26c35463e2977882d9b5" prot="public" virt="non-virtual"><scope>Quest</scope><name>getObject2_Z</name></member>
+      <member refid="classQuest_1aafff8b97348723252d2aad790ea67b74" prot="public" virt="non-virtual"><scope>Quest</scope><name>Init</name></member>
+      <member refid="classQuest_1a54559418f758e8190d29f5f7b37fc553" prot="public" virt="non-virtual"><scope>Quest</scope><name>Item1collected</name></member>
+      <member refid="classQuest_1a8ea74d521a17cbbdd8ac9ede6cba4207" prot="public" virt="non-virtual"><scope>Quest</scope><name>Item2collected</name></member>
+      <member refid="classQuest_1add02b3c8f67235f7ae44e34505f37597" prot="private" virt="non-virtual"><scope>Quest</scope><name>name</name></member>
+      <member refid="classQuest_1a58e19cfab0a50a30808c8258dda24d30" prot="private" virt="non-virtual"><scope>Quest</scope><name>number_of_items</name></member>
+      <member refid="classQuest_1a5cdd6f02fdceaa7b7b53407740a22cf5" prot="public" virt="non-virtual"><scope>Quest</scope><name>Quest</name></member>
+      <member refid="classQuest_1ad511b5758f9fac0e45ae6b09e2a12ad6" prot="private" virt="non-virtual"><scope>Quest</scope><name>quest_complete</name></member>
+      <member refid="classQuest_1a320aa6e7dda5476e11e78a1922d82610" prot="public" virt="non-virtual"><scope>Quest</scope><name>questComplete</name></member>
+      <member refid="classQuest_1ae32188fcc66cb240b6c0760c10276bae" prot="public" virt="non-virtual"><scope>Quest</scope><name>reset</name></member>
+      <member refid="classQuest_1ac23cf044c29e28f4181a7def7b09e75e" prot="public" virt="non-virtual"><scope>Quest</scope><name>stage</name></member>
+      <member refid="classQuest_1ae29db24e4cc1a385aec51d5aef765bc5" prot="private" virt="non-virtual"><scope>Quest</scope><name>stages</name></member>
+      <member refid="classQuest_1a28c6d6119585e4d74538b358d2d7451e" prot="private" virt="non-virtual"><scope>Quest</scope><name>time</name></member>
+      <member refid="classQuest_1a27be88f6eb1623aeecf5970c1f904be8" prot="public" virt="non-virtual"><scope>Quest</scope><name>Update</name></member>
+      <member refid="classQuest_1ab4b31b00b732f38c23f06b6ad8b87da9" prot="private" virt="non-virtual"><scope>Quest</scope><name>x_1</name></member>
+      <member refid="classQuest_1a25fed1439b0523d2dc8c9e84827775af" prot="private" virt="non-virtual"><scope>Quest</scope><name>x_2</name></member>
+      <member refid="classQuest_1a077e69feb0215907c3ccea412d968f2c" prot="private" virt="non-virtual"><scope>Quest</scope><name>y_1</name></member>
+      <member refid="classQuest_1a956deda7a10ea7d5192b2603f5637203" prot="private" virt="non-virtual"><scope>Quest</scope><name>y_2</name></member>
+      <member refid="classQuest_1a684b8cf1d0a5d9346319ecfc4c943d3c" prot="private" virt="non-virtual"><scope>Quest</scope><name>z_1</name></member>
+      <member refid="classQuest_1a3a14b02b8bd7ed39765594afa8522350" prot="private" virt="non-virtual"><scope>Quest</scope><name>z_2</name></member>
+      <member refid="classQuest_1ad4341309a8558845c6d93bc8ca0940f4" prot="public" virt="non-virtual"><scope>Quest</scope><name>~Quest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

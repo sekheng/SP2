@@ -1,0 +1,4 @@
+<map id="BGMDriven::playWarpBackground" name="BGMDriven::playWarpBackground">
+<area shape="rect" id="node2" href="$classscene3__SP2.html#a1a4ac1aaba2909eff05348201fa29885" title="a method to animate the warp and it&#39;s logic " alt="" coords="272,5,453,32"/>
+<area shape="rect" id="node3" href="$classscene3__SP2.html#a71dd3bb2895b152440016ae97b01fb09" title="where the logic of the game is, and update " alt="" coords="501,5,647,32"/>
+</map>

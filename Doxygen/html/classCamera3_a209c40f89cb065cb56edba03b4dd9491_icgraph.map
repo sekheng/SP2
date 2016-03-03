@@ -1,0 +1,9 @@
+<map id="Camera3::getCameraYcoord" name="Camera3::getCameraYcoord">
+<area shape="rect" id="node2" href="$classscene3__SP2.html#a7e54396921ff46efeb2fd7c003761561" title="where the rendering of all the stuff we needed will be here " alt="" coords="275,5,420,32"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#aef464b9b4f04ad8cc893ba2bdea01011" title="rendering of item taken on screen " alt="" coords="240,56,455,83"/>
+<area shape="rect" id="node8" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="282,107,413,133"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#a9cfd40b303b8fbd4a67e4d6eedecdc25" title="sceneSP2::RenderQuestObjects" alt="" coords="503,5,713,32"/>
+<area shape="rect" id="node6" href="$classsceneSP2.html#a6523e8cf564e7f88ae94958fd9c08d1a" title="a method to render Sek Heng and his quest " alt="" coords="510,56,706,83"/>
+<area shape="rect" id="node7" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="521,107,695,133"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="761,56,892,83"/>
+</map>

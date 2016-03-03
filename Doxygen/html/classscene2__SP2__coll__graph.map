@@ -1,0 +1,19 @@
+<map id="scene2_SP2" name="scene2_SP2">
+<area shape="rect" id="node2" href="$classScene.html" title="The basic functions of how Scene works. All scenes shall inheirit from this class. " alt="" coords="1113,103,1172,129"/>
+<area shape="rect" id="node3" href="$classrot__civ.html" title="Inheirited from objectsForDisplay to reduce the amount of codes need to be written It can initialise ..." alt="" coords="1113,429,1172,456"/>
+<area shape="rect" id="node4" href="$classobjectsForDisplay.html" title="Inheirited from GameObject It has it&#39;s own text reader file to input it&#39;s values, position..." alt="" coords="751,325,877,352"/>
+<area shape="rect" id="node5" href="$classGameObject.html" title="Defines GameObject, get the name of the GameObject and count how many gameobjects there are..." alt="" coords="439,1065,534,1092"/>
+<area shape="rect" id="node25" href="$classNumPad.html" title="inheirited from GameObject " alt="" coords="1107,829,1179,856"/>
+<area shape="rect" id="node31" href="$classNPC.html" title="Inheirited from GameObject It has a text reader file to input it&#39;s dialogue " alt="" coords="1118,1069,1167,1096"/>
+<area shape="rect" id="node26" href="$classMesh.html" title="To store VBO (vertex &amp; color buffer) and IBO (index buffer) " alt="" coords="787,1499,841,1525"/>
+<area shape="rect" id="node9" href="$structVector3.html" title="Defines a 3D vector and its methods. " alt="" coords="128,763,195,789"/>
+<area shape="rect" id="node11" href="$classCamera3.html" title="First Person Camera included Extremely Complex functions of the camera which incorporates mouse contr..." alt="" coords="777,520,851,547"/>
+<area shape="rect" id="node17" href="$structLight.html" title="set the Light, position, color, light type, and light properties " alt="" coords="461,1697,512,1724"/>
+<area shape="rect" id="node19" href="$structPosition.html" title="defines 3D position " alt="" coords="127,1697,196,1724"/>
+<area shape="rect" id="node20" href="$structColor.html" title="defines color and it&#39;s RGB properties " alt="" coords="135,1748,187,1775"/>
+<area shape="rect" id="node24" href="$classcreditScene.html" title="The logic class of credit scene. " alt="" coords="1097,1449,1188,1476"/>
+<area shape="rect" id="node27" href="$structMaterial.html" title="Defines the material and it&#39;s properties. " alt="" coords="453,1507,521,1533"/>
+<area shape="rect" id="node28" href="$structComponent.html" title="Defines material&#39;s colour. " alt="" coords="117,1433,205,1460"/>
+<area shape="rect" id="node12" href="$classCamera.html" title="basic functions of the camera " alt="" coords="453,504,520,531"/>
+<area shape="rect" id="node21" href="$classMS.html" title="Matrix Stack class. " alt="" coords="1121,1761,1164,1788"/>
+</map>

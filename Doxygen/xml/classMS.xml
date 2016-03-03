@@ -1,0 +1,868 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classMS" kind="class" language="C++" prot="public">
+    <compoundname>MS</compoundname>
+    <includes refid="MatrixStack_8h" local="no">MatrixStack.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMS_1a52ff310fee5be24b7777e472ef2acea6" prot="private" static="no" mutable="no">
+        <type>std::stack&lt; <ref refid="classMtx44" kindref="compound">Mtx44</ref> &gt;</type>
+        <definition>std::stack&lt;Mtx44&gt; MS::ms</definition>
+        <argsstring></argsstring>
+        <name>ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="23" column="1" bodyfile="Common/Source/MatrixStack.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classMS_1ab3eb89506a55a00137cba928686b0201" compoundref="MatrixStack_8cpp" startline="72" endline="75">Clear</referencedby>
+        <referencedby refid="classMS_1a155508354e47f5aa755e181e69fc3cd4" compoundref="MatrixStack_8cpp" startline="194" endline="198">Frustum</referencedby>
+        <referencedby refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">LoadIdentity</referencedby>
+        <referencedby refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">LoadMatrix</referencedby>
+        <referencedby refid="classMS_1a2638cd3249260877cc31329978fb6b38" compoundref="MatrixStack_8cpp" startline="224" endline="231">LookAt</referencedby>
+        <referencedby refid="classMS_1adddd1194f4978eab6618be6a22ed8e48" compoundref="MatrixStack_8cpp" startline="18" endline="22">MS</referencedby>
+        <referencedby refid="classMS_1af5a89751ef3b273288bee108113d4899" compoundref="MatrixStack_8cpp" startline="111" endline="113">MultMatrix</referencedby>
+        <referencedby refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">PopMatrix</referencedby>
+        <referencedby refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">PushMatrix</referencedby>
+        <referencedby refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">Rotate</referencedby>
+        <referencedby refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">Scale</referencedby>
+        <referencedby refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">Top</referencedby>
+        <referencedby refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">Translate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMS_1adddd1194f4978eab6618be6a22ed8e48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MS::MS</definition>
+        <argsstring>()</argsstring>
+        <name>MS</name>
+        <briefdescription>
+<para><ref refid="classMS" kindref="compound">MS</ref> default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="25" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="18" bodyend="22"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <references refid="classMtx44_1a3ac8a0afd66412e15e4246474b893da2" compoundref="Mtx44_8cpp" startline="74" endline="77">Mtx44::SetToIdentity</references>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1ac7ec3f1bdabca61e69d3068ee9ba0995" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MS::~MS</definition>
+        <argsstring>()</argsstring>
+        <name>~MS</name>
+        <briefdescription>
+<para><ref refid="classMS" kindref="compound">MS</ref> destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="26" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="30" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1a21291d7fb488f63c589bdc9bd620ba58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classMtx44" kindref="compound">Mtx44</ref> &amp;</type>
+        <definition>const Mtx44 &amp; MS::Top</definition>
+        <argsstring>() const </argsstring>
+        <name>Top</name>
+        <briefdescription>
+<para>Return the top matrix on the matrix stack. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A copy of the top matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="27" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="42" bodyend="44"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <referencedby refid="classscene3SP2_1aff3cfed153ec3e4c55e8c0bbc80fd459" compoundref="Scene3SP2_8cpp" startline="278" endline="365">scene3SP2::Render</referencedby>
+        <referencedby refid="classscene3__SP2_1a7e54396921ff46efeb2fd7c003761561" compoundref="scene3__SP2_8cpp" startline="485" endline="624">scene3_SP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a40206086fcf392a0dd9824654ad89880" compoundref="scene2__SP2_8cpp" startline="520" endline="726">scene2_SP2::Render</referencedby>
+        <referencedby refid="classsceneSP2_1a07940fb3c6a5686d3268b80f5a112b48" compoundref="sceneSP2_8cpp" startline="1086" endline="1257">sceneSP2::Render</referencedby>
+        <referencedby refid="classLoadingScreen_1a8249bb27253ebc256119a0e22a141e3d" compoundref="LoadingScreen_8cpp" startline="182" endline="222">LoadingScreen::renderMesh</referencedby>
+        <referencedby refid="classscene3SP2_1ae02df2500065a8e5c0777b820601a40a" compoundref="Scene3SP2_8cpp" startline="230" endline="270">scene3SP2::renderMesh</referencedby>
+        <referencedby refid="classscene3__SP2_1abe608124990e3c759e14edb4d9c902e4" compoundref="scene3__SP2_8cpp" startline="437" endline="477">scene3_SP2::renderMesh</referencedby>
+        <referencedby refid="classsceneSP2_1a629009d3d968165925af64a07cb83847" compoundref="sceneSP2_8cpp" startline="728" endline="768">sceneSP2::renderMesh</referencedby>
+        <referencedby refid="classscene2__SP2_1a9193158aa2b0bed01ffb54ee720dd9bb" compoundref="scene2__SP2_8cpp" startline="472" endline="512">scene2_SP2::renderMesh</referencedby>
+        <referencedby refid="classLoadingScreen_1a4fe97242b309801cef36ddb6c27aa33f" compoundref="LoadingScreen_8cpp" startline="299" endline="324">LoadingScreen::RenderText</referencedby>
+        <referencedby refid="classscene3SP2_1aadda973c177f83c95d50ebea00f0b329" compoundref="Scene3SP2_8cpp" startline="389" endline="415">scene3SP2::RenderText</referencedby>
+        <referencedby refid="classscene3__SP2_1a48a23c164d99527a3cb1205941facc1b" compoundref="scene3__SP2_8cpp" startline="648" endline="673">scene3_SP2::RenderText</referencedby>
+        <referencedby refid="classsceneSP2_1a5045a8867b1acb99e3d99e83895bad5f" compoundref="sceneSP2_8cpp" startline="1283" endline="1308">sceneSP2::RenderText</referencedby>
+        <referencedby refid="classscene2__SP2_1a771528abab8efc61094fe746b1cae2e5" compoundref="scene2__SP2_8cpp" startline="750" endline="775">scene2_SP2::RenderText</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">LoadingScreen::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1af8d775487dd84ebc4f74ae24210ea346" compoundref="Scene3SP2_8cpp" startline="430" endline="469">scene3SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1af4b78c42f0f4d70c8c91c488d2778adc" compoundref="scene3__SP2_8cpp" startline="688" endline="726">scene3_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a554b644c097af6a01809690d032cec0b" compoundref="sceneSP2_8cpp" startline="1323" endline="1361">sceneSP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a4cd06fa3bd5223e0fd36ba84fc9c6d01" compoundref="scene2__SP2_8cpp" startline="790" endline="828">scene2_SP2::RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::PopMatrix</definition>
+        <argsstring>()</argsstring>
+        <name>PopMatrix</name>
+        <briefdescription>
+<para>Pop the top matrix on the matrix stack. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="28" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="52" bodyend="54"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <referencedby refid="classsceneSP2_1afd5bafac85490eaca7c0b1795654911f" compoundref="sceneSP2_8cpp" startline="2187" endline="2541">sceneSP2::populateArea</referencedby>
+        <referencedby refid="classscene3SP2_1aff3cfed153ec3e4c55e8c0bbc80fd459" compoundref="Scene3SP2_8cpp" startline="278" endline="365">scene3SP2::Render</referencedby>
+        <referencedby refid="classscene3__SP2_1a7e54396921ff46efeb2fd7c003761561" compoundref="scene3__SP2_8cpp" startline="485" endline="624">scene3_SP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a40206086fcf392a0dd9824654ad89880" compoundref="scene2__SP2_8cpp" startline="520" endline="726">scene2_SP2::Render</referencedby>
+        <referencedby refid="classsceneSP2_1a07940fb3c6a5686d3268b80f5a112b48" compoundref="sceneSP2_8cpp" startline="1086" endline="1257">sceneSP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a57f2ebb6b3ed353203b2ed8ecb8c7143" compoundref="scene2__SP2_8cpp" startline="1262" endline="1276">scene2_SP2::RenderArrow</referencedby>
+        <referencedby refid="classscene2__SP2_1a70deb418246d8ed16d4d6847b287d3c6" compoundref="scene2__SP2_8cpp" startline="1857" endline="2062">scene2_SP2::RenderAsteroid</referencedby>
+        <referencedby refid="classscene2__SP2_1a37282bea05c3a24ef6373816729bc848" compoundref="scene2__SP2_8cpp" startline="1738" endline="1848">scene2_SP2::RenderBoxes</referencedby>
+        <referencedby refid="classsceneSP2_1a42247c1b8c563d1b335911da5d2d98a9" compoundref="sceneSP2_8cpp" startline="1924" endline="1961">sceneSP2::RenderBuilding</referencedby>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1abdffaa97b7e0723b7be3b65b971ff9c0" compoundref="sceneSP2_8cpp" startline="1529" endline="1535">sceneSP2::RenderContainer</referencedby>
+        <referencedby refid="classscene2__SP2_1a602d4b84d1e8bc11c35060ef0c49a6da" compoundref="scene2__SP2_8cpp" startline="2381" endline="2406">scene2_SP2::renderDeadPool</referencedby>
+        <referencedby refid="classscene2__SP2_1a1a972432405bd72a5ba7804c738ab535" compoundref="scene2__SP2_8cpp" startline="1347" endline="1583">scene2_SP2::RenderDiamond</referencedby>
+        <referencedby refid="classscene2__SP2_1a36c071a0d5d5dd96e0df9867aafef5cf" compoundref="scene2__SP2_8cpp" startline="2511" endline="2515">scene2_SP2::renderEndingScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1abc95a3006aead494582b5f1622c326fe" compoundref="scene2__SP2_8cpp" startline="976" endline="991">scene2_SP2::RenderFlyingVehicle</referencedby>
+        <referencedby refid="classsceneSP2_1a8ad24c07e46d22efa70c4911938da42b" compoundref="sceneSP2_8cpp" startline="1536" endline="1542">sceneSP2::RenderGasoline</referencedby>
+        <referencedby refid="classsceneSP2_1a49f8376bc37b58353f12d444bb5d7d9a" compoundref="sceneSP2_8cpp" startline="1506" endline="1511">sceneSP2::Rendergroundmesh</referencedby>
+        <referencedby refid="classsceneSP2_1a9433a15f7680dcf369daaf5d7b44de8d" compoundref="sceneSP2_8cpp" startline="1522" endline="1528">sceneSP2::RenderHammer</referencedby>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">LoadingScreen::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1a969b5024f3f7e207e93ac7dc0a12a199" compoundref="Scene3SP2_8cpp" startline="484" endline="505">scene3SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1a765e00338243d9c980645eee2776fccb" compoundref="scene3__SP2_8cpp" startline="741" endline="762">scene3_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ac987b33f8bb07f2078d856dfc9f3ba73" compoundref="sceneSP2_8cpp" startline="1375" endline="1396">sceneSP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a3d90f91b8fdea7521e6fd4cae57a3307" compoundref="scene2__SP2_8cpp" startline="843" endline="865">scene2_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+        <referencedby refid="classscene2__SP2_1a5ded8f5a2aa75bb0b8104d782e1a6970" compoundref="scene2__SP2_8cpp" startline="1000" endline="1013">scene2_SP2::RenderLandingVehicle</referencedby>
+        <referencedby refid="classsceneSP2_1a4db61bd86dd1751ab4664526a155ff3c" compoundref="sceneSP2_8cpp" startline="2661" endline="2685">sceneSP2::RenderMinigameOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classsceneSP2_1a27c51bd47d0a61a6304825a7721ddae2" compoundref="sceneSP2_8cpp" startline="2692" endline="2716">sceneSP2::RenderMinigameSelectorOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a3348064a9b395cb0a56f6dca71afd280" compoundref="scene2__SP2_8cpp" startline="1157" endline="1253">scene2_SP2::RenderNumpad</referencedby>
+        <referencedby refid="classscene2__SP2_1a3a682aa9ecb9b63813f31aa666461a44" compoundref="scene2__SP2_8cpp" startline="881" endline="902">scene2_SP2::RenderNumPadOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+        <referencedby refid="classscene2__SP2_1a6541bbd7f340ece91e91bec2b77bac4a" compoundref="scene2__SP2_8cpp" startline="956" endline="967">scene2_SP2::RenderRobot</referencedby>
+        <referencedby refid="classscene2__SP2_1a0918495227e0fd17eb8d46f32fe41e8e" compoundref="scene2__SP2_8cpp" startline="1285" endline="1339">scene2_SP2::RenderSatellite</referencedby>
+        <referencedby refid="classsceneSP2_1afb433e694c8971a472bb70f674cb3a7a" compoundref="sceneSP2_8cpp" startline="1515" endline="1521">sceneSP2::RenderScrewDriver</referencedby>
+        <referencedby refid="classscene3__SP2_1a73f6d5b380a660afce46191b74970559" compoundref="scene3__SP2_8cpp" startline="769" endline="774">scene3_SP2::RenderSkybox</referencedby>
+        <referencedby refid="classsceneSP2_1a29028ca91b43536bfdab19a8ac5f53ab" compoundref="sceneSP2_8cpp" startline="1404" endline="1461">sceneSP2::RenderSkybox</referencedby>
+        <referencedby refid="classscene2__SP2_1a859dff9b7106eb2dc873437c8450b42b" compoundref="scene2__SP2_8cpp" startline="909" endline="914">scene2_SP2::RenderSkybox</referencedby>
+        <referencedby refid="classscene3__SP2_1ad3ed92a636b07bd8c9f058777e902dbc" compoundref="scene3__SP2_8cpp" startline="781" endline="793">scene3_SP2::renderSpaceShip</referencedby>
+        <referencedby refid="classsceneSP2_1acca3ebdcd7a31f60020d477ba50af35a" compoundref="sceneSP2_8cpp" startline="1554" endline="1566">sceneSP2::RenderSpaceShuttle</referencedby>
+        <referencedby refid="classscene2__SP2_1ace71dabc759be27e9091b70211084d08" compoundref="scene2__SP2_8cpp" startline="1022" endline="1035">scene2_SP2::RenderSpaceShuttle</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+        <referencedby refid="classsceneSP2_1aef464b9b4f04ad8cc893ba2bdea01011" compoundref="sceneSP2_8cpp" startline="2027" endline="2096">sceneSP2::RenderStuffOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a2a5f5a79ed05066a23f447e4cbbb084f" compoundref="sceneSP2_8cpp" startline="1818" endline="1870">sceneSP2::Renderteleporter</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">LoadingScreen::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1af8d775487dd84ebc4f74ae24210ea346" compoundref="Scene3SP2_8cpp" startline="430" endline="469">scene3SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1af4b78c42f0f4d70c8c91c488d2778adc" compoundref="scene3__SP2_8cpp" startline="688" endline="726">scene3_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a4cd06fa3bd5223e0fd36ba84fc9c6d01" compoundref="scene2__SP2_8cpp" startline="790" endline="828">scene2_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a554b644c097af6a01809690d032cec0b" compoundref="sceneSP2_8cpp" startline="1323" endline="1361">sceneSP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ade1937e06b702a9fb25247e79916fc47" compoundref="sceneSP2_8cpp" startline="1474" endline="1498">sceneSP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1aaafa887ab77865b060ca27085a6de1f2" compoundref="scene2__SP2_8cpp" startline="927" endline="949">scene2_SP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+        <referencedby refid="classscene3__SP2_1aea31bcd7b099d9fbaf6065915975b362" compoundref="scene3__SP2_8cpp" startline="859" endline="903">scene3_SP2::renderWarp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::PushMatrix</definition>
+        <argsstring>()</argsstring>
+        <name>PushMatrix</name>
+        <briefdescription>
+<para>Make a copy of the top matrix on the matrix stack and push it on top. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="29" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="62" bodyend="64"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <referencedby refid="classsceneSP2_1afd5bafac85490eaca7c0b1795654911f" compoundref="sceneSP2_8cpp" startline="2187" endline="2541">sceneSP2::populateArea</referencedby>
+        <referencedby refid="classscene3SP2_1aff3cfed153ec3e4c55e8c0bbc80fd459" compoundref="Scene3SP2_8cpp" startline="278" endline="365">scene3SP2::Render</referencedby>
+        <referencedby refid="classscene3__SP2_1a7e54396921ff46efeb2fd7c003761561" compoundref="scene3__SP2_8cpp" startline="485" endline="624">scene3_SP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a40206086fcf392a0dd9824654ad89880" compoundref="scene2__SP2_8cpp" startline="520" endline="726">scene2_SP2::Render</referencedby>
+        <referencedby refid="classsceneSP2_1a07940fb3c6a5686d3268b80f5a112b48" compoundref="sceneSP2_8cpp" startline="1086" endline="1257">sceneSP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a57f2ebb6b3ed353203b2ed8ecb8c7143" compoundref="scene2__SP2_8cpp" startline="1262" endline="1276">scene2_SP2::RenderArrow</referencedby>
+        <referencedby refid="classscene2__SP2_1a70deb418246d8ed16d4d6847b287d3c6" compoundref="scene2__SP2_8cpp" startline="1857" endline="2062">scene2_SP2::RenderAsteroid</referencedby>
+        <referencedby refid="classscene2__SP2_1a37282bea05c3a24ef6373816729bc848" compoundref="scene2__SP2_8cpp" startline="1738" endline="1848">scene2_SP2::RenderBoxes</referencedby>
+        <referencedby refid="classsceneSP2_1a42247c1b8c563d1b335911da5d2d98a9" compoundref="sceneSP2_8cpp" startline="1924" endline="1961">sceneSP2::RenderBuilding</referencedby>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1abdffaa97b7e0723b7be3b65b971ff9c0" compoundref="sceneSP2_8cpp" startline="1529" endline="1535">sceneSP2::RenderContainer</referencedby>
+        <referencedby refid="classscene2__SP2_1a602d4b84d1e8bc11c35060ef0c49a6da" compoundref="scene2__SP2_8cpp" startline="2381" endline="2406">scene2_SP2::renderDeadPool</referencedby>
+        <referencedby refid="classscene2__SP2_1a1a972432405bd72a5ba7804c738ab535" compoundref="scene2__SP2_8cpp" startline="1347" endline="1583">scene2_SP2::RenderDiamond</referencedby>
+        <referencedby refid="classscene2__SP2_1a36c071a0d5d5dd96e0df9867aafef5cf" compoundref="scene2__SP2_8cpp" startline="2511" endline="2515">scene2_SP2::renderEndingScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1abc95a3006aead494582b5f1622c326fe" compoundref="scene2__SP2_8cpp" startline="976" endline="991">scene2_SP2::RenderFlyingVehicle</referencedby>
+        <referencedby refid="classsceneSP2_1a8ad24c07e46d22efa70c4911938da42b" compoundref="sceneSP2_8cpp" startline="1536" endline="1542">sceneSP2::RenderGasoline</referencedby>
+        <referencedby refid="classsceneSP2_1a49f8376bc37b58353f12d444bb5d7d9a" compoundref="sceneSP2_8cpp" startline="1506" endline="1511">sceneSP2::Rendergroundmesh</referencedby>
+        <referencedby refid="classsceneSP2_1a9433a15f7680dcf369daaf5d7b44de8d" compoundref="sceneSP2_8cpp" startline="1522" endline="1528">sceneSP2::RenderHammer</referencedby>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">LoadingScreen::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1a969b5024f3f7e207e93ac7dc0a12a199" compoundref="Scene3SP2_8cpp" startline="484" endline="505">scene3SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1a765e00338243d9c980645eee2776fccb" compoundref="scene3__SP2_8cpp" startline="741" endline="762">scene3_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ac987b33f8bb07f2078d856dfc9f3ba73" compoundref="sceneSP2_8cpp" startline="1375" endline="1396">sceneSP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a3d90f91b8fdea7521e6fd4cae57a3307" compoundref="scene2__SP2_8cpp" startline="843" endline="865">scene2_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+        <referencedby refid="classscene2__SP2_1a5ded8f5a2aa75bb0b8104d782e1a6970" compoundref="scene2__SP2_8cpp" startline="1000" endline="1013">scene2_SP2::RenderLandingVehicle</referencedby>
+        <referencedby refid="classsceneSP2_1a4db61bd86dd1751ab4664526a155ff3c" compoundref="sceneSP2_8cpp" startline="2661" endline="2685">sceneSP2::RenderMinigameOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classsceneSP2_1a27c51bd47d0a61a6304825a7721ddae2" compoundref="sceneSP2_8cpp" startline="2692" endline="2716">sceneSP2::RenderMinigameSelectorOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a3348064a9b395cb0a56f6dca71afd280" compoundref="scene2__SP2_8cpp" startline="1157" endline="1253">scene2_SP2::RenderNumpad</referencedby>
+        <referencedby refid="classscene2__SP2_1a3a682aa9ecb9b63813f31aa666461a44" compoundref="scene2__SP2_8cpp" startline="881" endline="902">scene2_SP2::RenderNumPadOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+        <referencedby refid="classscene2__SP2_1a6541bbd7f340ece91e91bec2b77bac4a" compoundref="scene2__SP2_8cpp" startline="956" endline="967">scene2_SP2::RenderRobot</referencedby>
+        <referencedby refid="classscene2__SP2_1a0918495227e0fd17eb8d46f32fe41e8e" compoundref="scene2__SP2_8cpp" startline="1285" endline="1339">scene2_SP2::RenderSatellite</referencedby>
+        <referencedby refid="classsceneSP2_1afb433e694c8971a472bb70f674cb3a7a" compoundref="sceneSP2_8cpp" startline="1515" endline="1521">sceneSP2::RenderScrewDriver</referencedby>
+        <referencedby refid="classscene3__SP2_1a73f6d5b380a660afce46191b74970559" compoundref="scene3__SP2_8cpp" startline="769" endline="774">scene3_SP2::RenderSkybox</referencedby>
+        <referencedby refid="classsceneSP2_1a29028ca91b43536bfdab19a8ac5f53ab" compoundref="sceneSP2_8cpp" startline="1404" endline="1461">sceneSP2::RenderSkybox</referencedby>
+        <referencedby refid="classscene2__SP2_1a859dff9b7106eb2dc873437c8450b42b" compoundref="scene2__SP2_8cpp" startline="909" endline="914">scene2_SP2::RenderSkybox</referencedby>
+        <referencedby refid="classscene3__SP2_1ad3ed92a636b07bd8c9f058777e902dbc" compoundref="scene3__SP2_8cpp" startline="781" endline="793">scene3_SP2::renderSpaceShip</referencedby>
+        <referencedby refid="classsceneSP2_1acca3ebdcd7a31f60020d477ba50af35a" compoundref="sceneSP2_8cpp" startline="1554" endline="1566">sceneSP2::RenderSpaceShuttle</referencedby>
+        <referencedby refid="classscene2__SP2_1ace71dabc759be27e9091b70211084d08" compoundref="scene2__SP2_8cpp" startline="1022" endline="1035">scene2_SP2::RenderSpaceShuttle</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+        <referencedby refid="classsceneSP2_1aef464b9b4f04ad8cc893ba2bdea01011" compoundref="sceneSP2_8cpp" startline="2027" endline="2096">sceneSP2::RenderStuffOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a2a5f5a79ed05066a23f447e4cbbb084f" compoundref="sceneSP2_8cpp" startline="1818" endline="1870">sceneSP2::Renderteleporter</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">LoadingScreen::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1af8d775487dd84ebc4f74ae24210ea346" compoundref="Scene3SP2_8cpp" startline="430" endline="469">scene3SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1af4b78c42f0f4d70c8c91c488d2778adc" compoundref="scene3__SP2_8cpp" startline="688" endline="726">scene3_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a4cd06fa3bd5223e0fd36ba84fc9c6d01" compoundref="scene2__SP2_8cpp" startline="790" endline="828">scene2_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a554b644c097af6a01809690d032cec0b" compoundref="sceneSP2_8cpp" startline="1323" endline="1361">sceneSP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ade1937e06b702a9fb25247e79916fc47" compoundref="sceneSP2_8cpp" startline="1474" endline="1498">sceneSP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1aaafa887ab77865b060ca27085a6de1f2" compoundref="scene2__SP2_8cpp" startline="927" endline="949">scene2_SP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+        <referencedby refid="classscene3__SP2_1aea31bcd7b099d9fbaf6065915975b362" compoundref="scene3__SP2_8cpp" startline="859" endline="903">scene3_SP2::renderWarp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1ab3eb89506a55a00137cba928686b0201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+<para>Clear the matrix stack. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="30" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="72" bodyend="75"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::LoadIdentity</definition>
+        <argsstring>()</argsstring>
+        <name>LoadIdentity</name>
+        <briefdescription>
+<para>Replace the top matrix with an identity matrix. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="31" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="83" bodyend="87"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <references refid="classMtx44_1a3ac8a0afd66412e15e4246474b893da2" compoundref="Mtx44_8cpp" startline="74" endline="77">Mtx44::SetToIdentity</references>
+        <referencedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" compoundref="LoadingScreen_8cpp" startline="230" endline="275">LoadingScreen::Render</referencedby>
+        <referencedby refid="classscene3SP2_1aff3cfed153ec3e4c55e8c0bbc80fd459" compoundref="Scene3SP2_8cpp" startline="278" endline="365">scene3SP2::Render</referencedby>
+        <referencedby refid="classscene3__SP2_1a7e54396921ff46efeb2fd7c003761561" compoundref="scene3__SP2_8cpp" startline="485" endline="624">scene3_SP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a40206086fcf392a0dd9824654ad89880" compoundref="scene2__SP2_8cpp" startline="520" endline="726">scene2_SP2::Render</referencedby>
+        <referencedby refid="classsceneSP2_1a07940fb3c6a5686d3268b80f5a112b48" compoundref="sceneSP2_8cpp" startline="1086" endline="1257">sceneSP2::Render</referencedby>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">LoadingScreen::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1a969b5024f3f7e207e93ac7dc0a12a199" compoundref="Scene3SP2_8cpp" startline="484" endline="505">scene3SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1a765e00338243d9c980645eee2776fccb" compoundref="scene3__SP2_8cpp" startline="741" endline="762">scene3_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ac987b33f8bb07f2078d856dfc9f3ba73" compoundref="sceneSP2_8cpp" startline="1375" endline="1396">sceneSP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a3d90f91b8fdea7521e6fd4cae57a3307" compoundref="scene2__SP2_8cpp" startline="843" endline="865">scene2_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a4db61bd86dd1751ab4664526a155ff3c" compoundref="sceneSP2_8cpp" startline="2661" endline="2685">sceneSP2::RenderMinigameOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a27c51bd47d0a61a6304825a7721ddae2" compoundref="sceneSP2_8cpp" startline="2692" endline="2716">sceneSP2::RenderMinigameSelectorOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a3a682aa9ecb9b63813f31aa666461a44" compoundref="scene2__SP2_8cpp" startline="881" endline="902">scene2_SP2::RenderNumPadOnScreen</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">LoadingScreen::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1af8d775487dd84ebc4f74ae24210ea346" compoundref="Scene3SP2_8cpp" startline="430" endline="469">scene3SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1af4b78c42f0f4d70c8c91c488d2778adc" compoundref="scene3__SP2_8cpp" startline="688" endline="726">scene3_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a4cd06fa3bd5223e0fd36ba84fc9c6d01" compoundref="scene2__SP2_8cpp" startline="790" endline="828">scene2_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a554b644c097af6a01809690d032cec0b" compoundref="sceneSP2_8cpp" startline="1323" endline="1361">sceneSP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ade1937e06b702a9fb25247e79916fc47" compoundref="sceneSP2_8cpp" startline="1474" endline="1498">sceneSP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1aaafa887ab77865b060ca27085a6de1f2" compoundref="scene2__SP2_8cpp" startline="927" endline="949">scene2_SP2::RenderUserInterface</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1a86606fe9f575ccb747d77195c8aefdaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::LoadMatrix</definition>
+        <argsstring>(const Mtx44 &amp;matrix)</argsstring>
+        <name>LoadMatrix</name>
+        <param>
+          <type>const <ref refid="classMtx44" kindref="compound">Mtx44</ref> &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+<para>Return the top matrix with a new matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new matrix to replace the top </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="32" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="98" bodyend="100"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <referencedby refid="classLoadingScreen_1a7fa77cff0af874a23c6043a80af09da3" compoundref="LoadingScreen_8cpp" startline="44" endline="158">LoadingScreen::Init</referencedby>
+        <referencedby refid="classscene3SP2_1a897c1f1d70c68b89f07b25acf4df6809" compoundref="Scene3SP2_8cpp" startline="45" endline="158">scene3SP2::Init</referencedby>
+        <referencedby refid="classscene3__SP2_1ae4a4e666fc5860fee4d9e091f1571c18" compoundref="scene3__SP2_8cpp" startline="46" endline="269">scene3_SP2::Init</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d5705b83a23421a1f5aa0fec8c28329" compoundref="scene2__SP2_8cpp" startline="45" endline="368">scene2_SP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">LoadingScreen::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1a969b5024f3f7e207e93ac7dc0a12a199" compoundref="Scene3SP2_8cpp" startline="484" endline="505">scene3SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1a765e00338243d9c980645eee2776fccb" compoundref="scene3__SP2_8cpp" startline="741" endline="762">scene3_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ac987b33f8bb07f2078d856dfc9f3ba73" compoundref="sceneSP2_8cpp" startline="1375" endline="1396">sceneSP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a3d90f91b8fdea7521e6fd4cae57a3307" compoundref="scene2__SP2_8cpp" startline="843" endline="865">scene2_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a4db61bd86dd1751ab4664526a155ff3c" compoundref="sceneSP2_8cpp" startline="2661" endline="2685">sceneSP2::RenderMinigameOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a27c51bd47d0a61a6304825a7721ddae2" compoundref="sceneSP2_8cpp" startline="2692" endline="2716">sceneSP2::RenderMinigameSelectorOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a3a682aa9ecb9b63813f31aa666461a44" compoundref="scene2__SP2_8cpp" startline="881" endline="902">scene2_SP2::RenderNumPadOnScreen</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">LoadingScreen::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1af8d775487dd84ebc4f74ae24210ea346" compoundref="Scene3SP2_8cpp" startline="430" endline="469">scene3SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1af4b78c42f0f4d70c8c91c488d2778adc" compoundref="scene3__SP2_8cpp" startline="688" endline="726">scene3_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a4cd06fa3bd5223e0fd36ba84fc9c6d01" compoundref="scene2__SP2_8cpp" startline="790" endline="828">scene2_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a554b644c097af6a01809690d032cec0b" compoundref="sceneSP2_8cpp" startline="1323" endline="1361">sceneSP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ade1937e06b702a9fb25247e79916fc47" compoundref="sceneSP2_8cpp" startline="1474" endline="1498">sceneSP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1aaafa887ab77865b060ca27085a6de1f2" compoundref="scene2__SP2_8cpp" startline="927" endline="949">scene2_SP2::RenderUserInterface</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1af5a89751ef3b273288bee108113d4899" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::MultMatrix</definition>
+        <argsstring>(const Mtx44 &amp;matrix)</argsstring>
+        <name>MultMatrix</name>
+        <param>
+          <type>const <ref refid="classMtx44" kindref="compound">Mtx44</ref> &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+<para>Multiply the top matrix with a new matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new matrix to replace the top </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="33" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="111" bodyend="113"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1a6ce592114042b920b648bca5519690cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::Rotate</definition>
+        <argsstring>(float degrees, float axisX, float axisY, float axisZ)</argsstring>
+        <name>Rotate</name>
+        <param>
+          <type>float</type>
+          <declname>degrees</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>axisX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>axisY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>axisZ</declname>
+        </param>
+        <briefdescription>
+<para>Multiply the top matrix with a rotation matrix based on the following parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>degrees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angle of rotation, in degrees, clockwise </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>axisX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-component of the rotation axis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>axisY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-component of the rotation axis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>axisZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Z-component of the rotation axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="34" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="130" bodyend="134"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <references refid="classMtx44_1ac0587ffb5ff9fd58ad5768d28fc06574" compoundref="Mtx44_8cpp" startline="319" endline="341">Mtx44::SetToRotation</references>
+        <referencedby refid="classsceneSP2_1afd5bafac85490eaca7c0b1795654911f" compoundref="sceneSP2_8cpp" startline="2187" endline="2541">sceneSP2::populateArea</referencedby>
+        <referencedby refid="classscene3SP2_1aff3cfed153ec3e4c55e8c0bbc80fd459" compoundref="Scene3SP2_8cpp" startline="278" endline="365">scene3SP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a57f2ebb6b3ed353203b2ed8ecb8c7143" compoundref="scene2__SP2_8cpp" startline="1262" endline="1276">scene2_SP2::RenderArrow</referencedby>
+        <referencedby refid="classscene2__SP2_1a37282bea05c3a24ef6373816729bc848" compoundref="scene2__SP2_8cpp" startline="1738" endline="1848">scene2_SP2::RenderBoxes</referencedby>
+        <referencedby refid="classsceneSP2_1a42247c1b8c563d1b335911da5d2d98a9" compoundref="sceneSP2_8cpp" startline="1924" endline="1961">sceneSP2::RenderBuilding</referencedby>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classscene2__SP2_1a602d4b84d1e8bc11c35060ef0c49a6da" compoundref="scene2__SP2_8cpp" startline="2381" endline="2406">scene2_SP2::renderDeadPool</referencedby>
+        <referencedby refid="classscene2__SP2_1a1a972432405bd72a5ba7804c738ab535" compoundref="scene2__SP2_8cpp" startline="1347" endline="1583">scene2_SP2::RenderDiamond</referencedby>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">LoadingScreen::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1a969b5024f3f7e207e93ac7dc0a12a199" compoundref="Scene3SP2_8cpp" startline="484" endline="505">scene3SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1a765e00338243d9c980645eee2776fccb" compoundref="scene3__SP2_8cpp" startline="741" endline="762">scene3_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ac987b33f8bb07f2078d856dfc9f3ba73" compoundref="sceneSP2_8cpp" startline="1375" endline="1396">sceneSP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a3d90f91b8fdea7521e6fd4cae57a3307" compoundref="scene2__SP2_8cpp" startline="843" endline="865">scene2_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a5ded8f5a2aa75bb0b8104d782e1a6970" compoundref="scene2__SP2_8cpp" startline="1000" endline="1013">scene2_SP2::RenderLandingVehicle</referencedby>
+        <referencedby refid="classsceneSP2_1a4db61bd86dd1751ab4664526a155ff3c" compoundref="sceneSP2_8cpp" startline="2661" endline="2685">sceneSP2::RenderMinigameOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a27c51bd47d0a61a6304825a7721ddae2" compoundref="sceneSP2_8cpp" startline="2692" endline="2716">sceneSP2::RenderMinigameSelectorOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a3348064a9b395cb0a56f6dca71afd280" compoundref="scene2__SP2_8cpp" startline="1157" endline="1253">scene2_SP2::RenderNumpad</referencedby>
+        <referencedby refid="classscene2__SP2_1a3a682aa9ecb9b63813f31aa666461a44" compoundref="scene2__SP2_8cpp" startline="881" endline="902">scene2_SP2::RenderNumPadOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a0918495227e0fd17eb8d46f32fe41e8e" compoundref="scene2__SP2_8cpp" startline="1285" endline="1339">scene2_SP2::RenderSatellite</referencedby>
+        <referencedby refid="classscene3__SP2_1ad3ed92a636b07bd8c9f058777e902dbc" compoundref="scene3__SP2_8cpp" startline="781" endline="793">scene3_SP2::renderSpaceShip</referencedby>
+        <referencedby refid="classscene2__SP2_1ace71dabc759be27e9091b70211084d08" compoundref="scene2__SP2_8cpp" startline="1022" endline="1035">scene2_SP2::RenderSpaceShuttle</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+        <referencedby refid="classsceneSP2_1aef464b9b4f04ad8cc893ba2bdea01011" compoundref="sceneSP2_8cpp" startline="2027" endline="2096">sceneSP2::RenderStuffOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ade1937e06b702a9fb25247e79916fc47" compoundref="sceneSP2_8cpp" startline="1474" endline="1498">sceneSP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1aaafa887ab77865b060ca27085a6de1f2" compoundref="scene2__SP2_8cpp" startline="927" endline="949">scene2_SP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1a52109795de960e24663b315e9128533f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::Scale</definition>
+        <argsstring>(float scaleX, float scaleY, float scaleZ)</argsstring>
+        <name>Scale</name>
+        <param>
+          <type>float</type>
+          <declname>scaleX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>scaleY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>scaleZ</declname>
+        </param>
+        <briefdescription>
+<para>Multiply the top matrix with a scale matrix based on the following parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scaleX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Factor to scale along x-axis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scaleY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Factor to scale along y-axis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scaleZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Factor to scale along z-axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="35" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="149" bodyend="153"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <references refid="classMtx44_1a04c49a922f8e8ffcb57a90c6ce955600" compoundref="Mtx44_8cpp" startline="356" endline="361">Mtx44::SetToScale</references>
+        <referencedby refid="classsceneSP2_1afd5bafac85490eaca7c0b1795654911f" compoundref="sceneSP2_8cpp" startline="2187" endline="2541">sceneSP2::populateArea</referencedby>
+        <referencedby refid="classscene3SP2_1aff3cfed153ec3e4c55e8c0bbc80fd459" compoundref="Scene3SP2_8cpp" startline="278" endline="365">scene3SP2::Render</referencedby>
+        <referencedby refid="classscene3__SP2_1a7e54396921ff46efeb2fd7c003761561" compoundref="scene3__SP2_8cpp" startline="485" endline="624">scene3_SP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a40206086fcf392a0dd9824654ad89880" compoundref="scene2__SP2_8cpp" startline="520" endline="726">scene2_SP2::Render</referencedby>
+        <referencedby refid="classsceneSP2_1a07940fb3c6a5686d3268b80f5a112b48" compoundref="sceneSP2_8cpp" startline="1086" endline="1257">sceneSP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a57f2ebb6b3ed353203b2ed8ecb8c7143" compoundref="scene2__SP2_8cpp" startline="1262" endline="1276">scene2_SP2::RenderArrow</referencedby>
+        <referencedby refid="classscene2__SP2_1a70deb418246d8ed16d4d6847b287d3c6" compoundref="scene2__SP2_8cpp" startline="1857" endline="2062">scene2_SP2::RenderAsteroid</referencedby>
+        <referencedby refid="classscene2__SP2_1a37282bea05c3a24ef6373816729bc848" compoundref="scene2__SP2_8cpp" startline="1738" endline="1848">scene2_SP2::RenderBoxes</referencedby>
+        <referencedby refid="classsceneSP2_1a42247c1b8c563d1b335911da5d2d98a9" compoundref="sceneSP2_8cpp" startline="1924" endline="1961">sceneSP2::RenderBuilding</referencedby>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classscene2__SP2_1a602d4b84d1e8bc11c35060ef0c49a6da" compoundref="scene2__SP2_8cpp" startline="2381" endline="2406">scene2_SP2::renderDeadPool</referencedby>
+        <referencedby refid="classscene2__SP2_1a1a972432405bd72a5ba7804c738ab535" compoundref="scene2__SP2_8cpp" startline="1347" endline="1583">scene2_SP2::RenderDiamond</referencedby>
+        <referencedby refid="classscene2__SP2_1abc95a3006aead494582b5f1622c326fe" compoundref="scene2__SP2_8cpp" startline="976" endline="991">scene2_SP2::RenderFlyingVehicle</referencedby>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">LoadingScreen::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1a969b5024f3f7e207e93ac7dc0a12a199" compoundref="Scene3SP2_8cpp" startline="484" endline="505">scene3SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1a765e00338243d9c980645eee2776fccb" compoundref="scene3__SP2_8cpp" startline="741" endline="762">scene3_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ac987b33f8bb07f2078d856dfc9f3ba73" compoundref="sceneSP2_8cpp" startline="1375" endline="1396">sceneSP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a3d90f91b8fdea7521e6fd4cae57a3307" compoundref="scene2__SP2_8cpp" startline="843" endline="865">scene2_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+        <referencedby refid="classscene2__SP2_1a5ded8f5a2aa75bb0b8104d782e1a6970" compoundref="scene2__SP2_8cpp" startline="1000" endline="1013">scene2_SP2::RenderLandingVehicle</referencedby>
+        <referencedby refid="classsceneSP2_1a4db61bd86dd1751ab4664526a155ff3c" compoundref="sceneSP2_8cpp" startline="2661" endline="2685">sceneSP2::RenderMinigameOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a27c51bd47d0a61a6304825a7721ddae2" compoundref="sceneSP2_8cpp" startline="2692" endline="2716">sceneSP2::RenderMinigameSelectorOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a3348064a9b395cb0a56f6dca71afd280" compoundref="scene2__SP2_8cpp" startline="1157" endline="1253">scene2_SP2::RenderNumpad</referencedby>
+        <referencedby refid="classscene2__SP2_1a3a682aa9ecb9b63813f31aa666461a44" compoundref="scene2__SP2_8cpp" startline="881" endline="902">scene2_SP2::RenderNumPadOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+        <referencedby refid="classscene2__SP2_1a6541bbd7f340ece91e91bec2b77bac4a" compoundref="scene2__SP2_8cpp" startline="956" endline="967">scene2_SP2::RenderRobot</referencedby>
+        <referencedby refid="classscene2__SP2_1a0918495227e0fd17eb8d46f32fe41e8e" compoundref="scene2__SP2_8cpp" startline="1285" endline="1339">scene2_SP2::RenderSatellite</referencedby>
+        <referencedby refid="classscene3__SP2_1ad3ed92a636b07bd8c9f058777e902dbc" compoundref="scene3__SP2_8cpp" startline="781" endline="793">scene3_SP2::renderSpaceShip</referencedby>
+        <referencedby refid="classsceneSP2_1acca3ebdcd7a31f60020d477ba50af35a" compoundref="sceneSP2_8cpp" startline="1554" endline="1566">sceneSP2::RenderSpaceShuttle</referencedby>
+        <referencedby refid="classscene2__SP2_1ace71dabc759be27e9091b70211084d08" compoundref="scene2__SP2_8cpp" startline="1022" endline="1035">scene2_SP2::RenderSpaceShuttle</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+        <referencedby refid="classsceneSP2_1aef464b9b4f04ad8cc893ba2bdea01011" compoundref="sceneSP2_8cpp" startline="2027" endline="2096">sceneSP2::RenderStuffOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a2a5f5a79ed05066a23f447e4cbbb084f" compoundref="sceneSP2_8cpp" startline="1818" endline="1870">sceneSP2::Renderteleporter</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">LoadingScreen::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1af8d775487dd84ebc4f74ae24210ea346" compoundref="Scene3SP2_8cpp" startline="430" endline="469">scene3SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1af4b78c42f0f4d70c8c91c488d2778adc" compoundref="scene3__SP2_8cpp" startline="688" endline="726">scene3_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a554b644c097af6a01809690d032cec0b" compoundref="sceneSP2_8cpp" startline="1323" endline="1361">sceneSP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a4cd06fa3bd5223e0fd36ba84fc9c6d01" compoundref="scene2__SP2_8cpp" startline="790" endline="828">scene2_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ade1937e06b702a9fb25247e79916fc47" compoundref="sceneSP2_8cpp" startline="1474" endline="1498">sceneSP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1aaafa887ab77865b060ca27085a6de1f2" compoundref="scene2__SP2_8cpp" startline="927" endline="949">scene2_SP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+        <referencedby refid="classscene3__SP2_1aea31bcd7b099d9fbaf6065915975b362" compoundref="scene3__SP2_8cpp" startline="859" endline="903">scene3_SP2::renderWarp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::Translate</definition>
+        <argsstring>(float translateX, float translateY, float translateZ)</argsstring>
+        <name>Translate</name>
+        <param>
+          <type>float</type>
+          <declname>translateX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>translateY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>translateZ</declname>
+        </param>
+        <briefdescription>
+<para>Multiply the top matrix with a translation matrix based on the following parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>translateX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Offset along x-axis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scaleY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Offset along y-axis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scaleZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Offset along z-axis </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="36" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="169" bodyend="173"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <referencedby refid="classsceneSP2_1afd5bafac85490eaca7c0b1795654911f" compoundref="sceneSP2_8cpp" startline="2187" endline="2541">sceneSP2::populateArea</referencedby>
+        <referencedby refid="classscene3SP2_1aff3cfed153ec3e4c55e8c0bbc80fd459" compoundref="Scene3SP2_8cpp" startline="278" endline="365">scene3SP2::Render</referencedby>
+        <referencedby refid="classscene3__SP2_1a7e54396921ff46efeb2fd7c003761561" compoundref="scene3__SP2_8cpp" startline="485" endline="624">scene3_SP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a40206086fcf392a0dd9824654ad89880" compoundref="scene2__SP2_8cpp" startline="520" endline="726">scene2_SP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a57f2ebb6b3ed353203b2ed8ecb8c7143" compoundref="scene2__SP2_8cpp" startline="1262" endline="1276">scene2_SP2::RenderArrow</referencedby>
+        <referencedby refid="classscene2__SP2_1a70deb418246d8ed16d4d6847b287d3c6" compoundref="scene2__SP2_8cpp" startline="1857" endline="2062">scene2_SP2::RenderAsteroid</referencedby>
+        <referencedby refid="classscene2__SP2_1a37282bea05c3a24ef6373816729bc848" compoundref="scene2__SP2_8cpp" startline="1738" endline="1848">scene2_SP2::RenderBoxes</referencedby>
+        <referencedby refid="classsceneSP2_1a42247c1b8c563d1b335911da5d2d98a9" compoundref="sceneSP2_8cpp" startline="1924" endline="1961">sceneSP2::RenderBuilding</referencedby>
+        <referencedby refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" compoundref="sceneSP2_8cpp" startline="2105" endline="2178">sceneSP2::renderChunFei</referencedby>
+        <referencedby refid="classsceneSP2_1abdffaa97b7e0723b7be3b65b971ff9c0" compoundref="sceneSP2_8cpp" startline="1529" endline="1535">sceneSP2::RenderContainer</referencedby>
+        <referencedby refid="classscene2__SP2_1a602d4b84d1e8bc11c35060ef0c49a6da" compoundref="scene2__SP2_8cpp" startline="2381" endline="2406">scene2_SP2::renderDeadPool</referencedby>
+        <referencedby refid="classscene2__SP2_1a1a972432405bd72a5ba7804c738ab535" compoundref="scene2__SP2_8cpp" startline="1347" endline="1583">scene2_SP2::RenderDiamond</referencedby>
+        <referencedby refid="classscene2__SP2_1abc95a3006aead494582b5f1622c326fe" compoundref="scene2__SP2_8cpp" startline="976" endline="991">scene2_SP2::RenderFlyingVehicle</referencedby>
+        <referencedby refid="classsceneSP2_1a8ad24c07e46d22efa70c4911938da42b" compoundref="sceneSP2_8cpp" startline="1536" endline="1542">sceneSP2::RenderGasoline</referencedby>
+        <referencedby refid="classsceneSP2_1a9433a15f7680dcf369daaf5d7b44de8d" compoundref="sceneSP2_8cpp" startline="1522" endline="1528">sceneSP2::RenderHammer</referencedby>
+        <referencedby refid="classLoadingScreen_1a5f4fa01b602172d21c0504c9f822b177" compoundref="LoadingScreen_8cpp" startline="394" endline="415">LoadingScreen::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1a969b5024f3f7e207e93ac7dc0a12a199" compoundref="Scene3SP2_8cpp" startline="484" endline="505">scene3SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1a765e00338243d9c980645eee2776fccb" compoundref="scene3__SP2_8cpp" startline="741" endline="762">scene3_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ac987b33f8bb07f2078d856dfc9f3ba73" compoundref="sceneSP2_8cpp" startline="1375" endline="1396">sceneSP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a3d90f91b8fdea7521e6fd4cae57a3307" compoundref="scene2__SP2_8cpp" startline="843" endline="865">scene2_SP2::RenderImageOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+        <referencedby refid="classscene2__SP2_1a5ded8f5a2aa75bb0b8104d782e1a6970" compoundref="scene2__SP2_8cpp" startline="1000" endline="1013">scene2_SP2::RenderLandingVehicle</referencedby>
+        <referencedby refid="classsceneSP2_1a4db61bd86dd1751ab4664526a155ff3c" compoundref="sceneSP2_8cpp" startline="2661" endline="2685">sceneSP2::RenderMinigameOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a27c51bd47d0a61a6304825a7721ddae2" compoundref="sceneSP2_8cpp" startline="2692" endline="2716">sceneSP2::RenderMinigameSelectorOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" compoundref="sceneSP2_8cpp" startline="1573" endline="1652">sceneSP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a510022db1526266df5582f1e1eb19f27" compoundref="scene2__SP2_8cpp" startline="1591" endline="1729">scene2_SP2::RenderNPC</referencedby>
+        <referencedby refid="classscene2__SP2_1a3348064a9b395cb0a56f6dca71afd280" compoundref="scene2__SP2_8cpp" startline="1157" endline="1253">scene2_SP2::RenderNumpad</referencedby>
+        <referencedby refid="classscene2__SP2_1a3a682aa9ecb9b63813f31aa666461a44" compoundref="scene2__SP2_8cpp" startline="881" endline="902">scene2_SP2::RenderNumPadOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" compoundref="sceneSP2_8cpp" startline="1654" endline="1744">sceneSP2::RenderQuestObjects</referencedby>
+        <referencedby refid="classscene2__SP2_1a6541bbd7f340ece91e91bec2b77bac4a" compoundref="scene2__SP2_8cpp" startline="956" endline="967">scene2_SP2::RenderRobot</referencedby>
+        <referencedby refid="classscene2__SP2_1a0918495227e0fd17eb8d46f32fe41e8e" compoundref="scene2__SP2_8cpp" startline="1285" endline="1339">scene2_SP2::RenderSatellite</referencedby>
+        <referencedby refid="classsceneSP2_1afb433e694c8971a472bb70f674cb3a7a" compoundref="sceneSP2_8cpp" startline="1515" endline="1521">sceneSP2::RenderScrewDriver</referencedby>
+        <referencedby refid="classscene3__SP2_1ad3ed92a636b07bd8c9f058777e902dbc" compoundref="scene3__SP2_8cpp" startline="781" endline="793">scene3_SP2::renderSpaceShip</referencedby>
+        <referencedby refid="classsceneSP2_1acca3ebdcd7a31f60020d477ba50af35a" compoundref="sceneSP2_8cpp" startline="1554" endline="1566">sceneSP2::RenderSpaceShuttle</referencedby>
+        <referencedby refid="classscene2__SP2_1ace71dabc759be27e9091b70211084d08" compoundref="scene2__SP2_8cpp" startline="1022" endline="1035">scene2_SP2::RenderSpaceShuttle</referencedby>
+        <referencedby refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" compoundref="sceneSP2_8cpp" startline="776" endline="1078">sceneSP2::RenderStation</referencedby>
+        <referencedby refid="classsceneSP2_1aef464b9b4f04ad8cc893ba2bdea01011" compoundref="sceneSP2_8cpp" startline="2027" endline="2096">sceneSP2::RenderStuffOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a2a5f5a79ed05066a23f447e4cbbb084f" compoundref="sceneSP2_8cpp" startline="1818" endline="1870">sceneSP2::Renderteleporter</referencedby>
+        <referencedby refid="classLoadingScreen_1a2d9b6a7c706cf6986681680c4fe1347e" compoundref="LoadingScreen_8cpp" startline="339" endline="379">LoadingScreen::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3SP2_1af8d775487dd84ebc4f74ae24210ea346" compoundref="Scene3SP2_8cpp" startline="430" endline="469">scene3SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene3__SP2_1af4b78c42f0f4d70c8c91c488d2778adc" compoundref="scene3__SP2_8cpp" startline="688" endline="726">scene3_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1a554b644c097af6a01809690d032cec0b" compoundref="sceneSP2_8cpp" startline="1323" endline="1361">sceneSP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classscene2__SP2_1a4cd06fa3bd5223e0fd36ba84fc9c6d01" compoundref="scene2__SP2_8cpp" startline="790" endline="828">scene2_SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="classsceneSP2_1ade1937e06b702a9fb25247e79916fc47" compoundref="sceneSP2_8cpp" startline="1474" endline="1498">sceneSP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1aaafa887ab77865b060ca27085a6de1f2" compoundref="scene2__SP2_8cpp" startline="927" endline="949">scene2_SP2::RenderUserInterface</referencedby>
+        <referencedby refid="classscene2__SP2_1a6d4a4cbe109bbdcf8b901375a4e9b4b7" compoundref="scene2__SP2_8cpp" startline="1044" endline="1148">scene2_SP2::RenderVault</referencedby>
+        <referencedby refid="classscene3__SP2_1aea31bcd7b099d9fbaf6065915975b362" compoundref="scene3__SP2_8cpp" startline="859" endline="903">scene3_SP2::renderWarp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1a155508354e47f5aa755e181e69fc3cd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::Frustum</definition>
+        <argsstring>(double left, double right, double bottom, double top, double near, double far)</argsstring>
+        <name>Frustum</name>
+        <param>
+          <type>double</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>right</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>bottom</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>top</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>near</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>far</declname>
+        </param>
+        <briefdescription>
+<para>Setup frustum matrix and push to matrix stack. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Frustum - left </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Frustum - right </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bottom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Frustum - bottom </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>top</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Frustum - top </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>near</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Frustum - front </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>far</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Frustum - back </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="37" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="194" bodyend="198"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <references refid="classMtx44_1a465dcf811eb34049aab4266795d7bd62" compoundref="Mtx44_8cpp" startline="402" endline="407">Mtx44::SetToFrustum</references>
+      </memberdef>
+      <memberdef kind="function" id="classMS_1a2638cd3249260877cc31329978fb6b38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MS::LookAt</definition>
+        <argsstring>(double eyeX, double eyeY, double eyeZ, double centerX, double centerY, double centerZ, double upX, double upY, double upZ)</argsstring>
+        <name>LookAt</name>
+        <param>
+          <type>double</type>
+          <declname>eyeX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>eyeY</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>eyeZ</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>centerX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>centerY</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>centerZ</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>upX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>upY</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>upZ</declname>
+        </param>
+        <briefdescription>
+<para>Setup lookat matrix and push to matrix stack. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>eyeX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>eye vector x value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eyeY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>eye vector y value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eyeZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>eye vector z value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>centerX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>target position x value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>centerY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>target position y value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>centerZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>target position z value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>upX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>up vector x value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>upY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>up vector y value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>upZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>up vector z value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/MatrixStack.h" line="38" column="1" bodyfile="Common/Source/MatrixStack.cpp" bodystart="224" bodyend="231"/>
+        <references refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" compoundref="MatrixStack_8h" startline="23">ms</references>
+        <references refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</references>
+        <referencedby refid="classLoadingScreen_1a9325ad1fb08d5103eceefefe7cb1d316" compoundref="LoadingScreen_8cpp" startline="230" endline="275">LoadingScreen::Render</referencedby>
+        <referencedby refid="classscene3SP2_1aff3cfed153ec3e4c55e8c0bbc80fd459" compoundref="Scene3SP2_8cpp" startline="278" endline="365">scene3SP2::Render</referencedby>
+        <referencedby refid="classscene3__SP2_1a7e54396921ff46efeb2fd7c003761561" compoundref="scene3__SP2_8cpp" startline="485" endline="624">scene3_SP2::Render</referencedby>
+        <referencedby refid="classscene2__SP2_1a40206086fcf392a0dd9824654ad89880" compoundref="scene2__SP2_8cpp" startline="520" endline="726">scene2_SP2::Render</referencedby>
+        <referencedby refid="classsceneSP2_1a07940fb3c6a5686d3268b80f5a112b48" compoundref="sceneSP2_8cpp" startline="1086" endline="1257">sceneSP2::Render</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Matrix Stack class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classMS" kindref="compound">MS</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="757">
+        <label>stack&lt; Mtx44 &gt;</label>
+      </node>
+      <node id="756">
+        <label>MS</label>
+        <link refid="classMS"/>
+        <childnode refid="757" relation="usage">
+          <edgelabel>ms</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Common/Source/MatrixStack.h" line="22" column="1" bodyfile="Common/Source/MatrixStack.h" bodystart="22" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classMS_1ab3eb89506a55a00137cba928686b0201" prot="public" virt="non-virtual"><scope>MS</scope><name>Clear</name></member>
+      <member refid="classMS_1a155508354e47f5aa755e181e69fc3cd4" prot="public" virt="non-virtual"><scope>MS</scope><name>Frustum</name></member>
+      <member refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" prot="public" virt="non-virtual"><scope>MS</scope><name>LoadIdentity</name></member>
+      <member refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" prot="public" virt="non-virtual"><scope>MS</scope><name>LoadMatrix</name></member>
+      <member refid="classMS_1a2638cd3249260877cc31329978fb6b38" prot="public" virt="non-virtual"><scope>MS</scope><name>LookAt</name></member>
+      <member refid="classMS_1adddd1194f4978eab6618be6a22ed8e48" prot="public" virt="non-virtual"><scope>MS</scope><name>MS</name></member>
+      <member refid="classMS_1a52ff310fee5be24b7777e472ef2acea6" prot="private" virt="non-virtual"><scope>MS</scope><name>ms</name></member>
+      <member refid="classMS_1af5a89751ef3b273288bee108113d4899" prot="public" virt="non-virtual"><scope>MS</scope><name>MultMatrix</name></member>
+      <member refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" prot="public" virt="non-virtual"><scope>MS</scope><name>PopMatrix</name></member>
+      <member refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" prot="public" virt="non-virtual"><scope>MS</scope><name>PushMatrix</name></member>
+      <member refid="classMS_1a6ce592114042b920b648bca5519690cd" prot="public" virt="non-virtual"><scope>MS</scope><name>Rotate</name></member>
+      <member refid="classMS_1a52109795de960e24663b315e9128533f" prot="public" virt="non-virtual"><scope>MS</scope><name>Scale</name></member>
+      <member refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" prot="public" virt="non-virtual"><scope>MS</scope><name>Top</name></member>
+      <member refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" prot="public" virt="non-virtual"><scope>MS</scope><name>Translate</name></member>
+      <member refid="classMS_1ac7ec3f1bdabca61e69d3068ee9ba0995" prot="public" virt="non-virtual"><scope>MS</scope><name>~MS</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,25 @@
+<map id="MyGraphics/irrKlang&#45;1.5.0/include/ik_EStreamModes.h" name="MyGraphics/irrKlang&#45;1.5.0/include/ik_EStreamModes.h">
+<area shape="rect" id="node2" href="$ik__ISoundSource_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_ISoundSource.h" alt="" coords="1561,95,1774,136"/>
+<area shape="rect" id="node4" href="$irrKlang_8h.html" title="Main header file of the irrKlang sound library, the only file needed to include. " alt="" coords="1660,273,1819,315"/>
+<area shape="rect" id="node24" href="$ik__ISoundEngine_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_ISoundEngine.h" alt="" coords="1705,184,1917,225"/>
+<area shape="rect" id="node3" href="$ik__IAudioRecorder_8h.html" title="MyGraphics/irrKlang\l&#45;1.5.0/include/ik_IAudioRecorder.h" alt="" coords="1409,184,1629,225"/>
+<area shape="rect" id="node5" href="$ikpMP3_8cpp.html" title="MyGraphics/irrKlang\l&#45;1.5.0/plugins/ikpMP3\l/ikpMP3.cpp" alt="" coords="1563,363,1711,419"/>
+<area shape="rect" id="node6" href="$BGMDriven_8h.html" title="This is where the music logic is being handled " alt="" coords="1735,377,1952,404"/>
+<area shape="rect" id="node7" href="$Application_8h.html" title="The functions that is being run in main.cpp Taken from Mr Tang&#39;s original framework. " alt="" coords="1611,467,1827,493"/>
+<area shape="rect" id="node23" href="$BGMDriven_8cpp.html" title="MyGraphics/Source/BGMDriven.cpp" alt="" coords="1852,467,2083,493"/>
+<area shape="rect" id="node8" href="$Application_8cpp.html" title="MyGraphics/Source/Application.cpp" alt="" coords="5,549,236,575"/>
+<area shape="rect" id="node9" href="$Camera_8cpp.html" title="MyGraphics/Source/Camera.cpp" alt="" coords="261,549,471,575"/>
+<area shape="rect" id="node10" href="$Camera3_8cpp.html" title="MyGraphics/Source/Camera3.cpp" alt="" coords="495,549,714,575"/>
+<area shape="rect" id="node11" href="$main_8cpp.html" title="The main primary function that will be run. Taken from Mr Tang&#39;s framework. " alt="" coords="738,549,933,575"/>
+<area shape="rect" id="node12" href="$NPC_8cpp.html" title="MyGraphics/Source/NPC.cpp" alt="" coords="957,549,1151,575"/>
+<area shape="rect" id="node13" href="$NumPad_8cpp.html" title="MyGraphics/Source/NumPad.cpp" alt="" coords="1175,549,1391,575"/>
+<area shape="rect" id="node14" href="$Quest_8cpp.html" title="MyGraphics/Source/Quest.cpp" alt="" coords="1416,549,1617,575"/>
+<area shape="rect" id="node15" href="$rot__civ_8cpp.html" title="MyGraphics/Source/rot\l_civ.cpp" alt="" coords="1641,541,1797,583"/>
+<area shape="rect" id="node16" href="$scene2__minigame_8cpp.html" title="MyGraphics/Source/scene2\l_minigame.cpp" alt="" coords="1821,541,2004,583"/>
+<area shape="rect" id="node17" href="$scene2__SP2_8cpp.html" title="MyGraphics/Source/scene2\l_SP2.cpp" alt="" coords="2028,541,2211,583"/>
+<area shape="rect" id="node18" href="$scene3__SP2_8cpp.html" title="MyGraphics/Source/scene3\l_SP2.cpp" alt="" coords="2235,541,2417,583"/>
+<area shape="rect" id="node19" href="$Scene3SP2_8cpp.html" title="MyGraphics/Source/Scene3\lSP2.cpp" alt="" coords="2441,541,2627,583"/>
+<area shape="rect" id="node20" href="$sceneSP2_8cpp.html" title="MyGraphics/Source/sceneSP2.cpp" alt="" coords="2651,549,2878,575"/>
+<area shape="rect" id="node21" href="$SekHeng_8cpp.html" title="MyGraphics/Source/SekHeng.cpp" alt="" coords="2902,549,3121,575"/>
+<area shape="rect" id="node22" href="$StationScene_8cpp.html" title="MyGraphics/Source/Station\lScene.cpp" alt="" coords="3145,541,3328,583"/>
+</map>

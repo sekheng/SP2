@@ -1,0 +1,5 @@
+<map id="objectsForDisplay" name="objectsForDisplay">
+<area shape="rect" id="node3" href="$classrot__civ.html" title="Inheirited from objectsForDisplay to reduce the amount of codes need to be written It can initialise ..." alt="" coords="5,155,64,181"/>
+<area shape="rect" id="node4" href="$classSekHeng.html" title="SekHeng" alt="" coords="88,155,163,181"/>
+<area shape="rect" id="node2" href="$classGameObject.html" title="Defines GameObject, get the name of the GameObject and count how many gameobjects there are..." alt="" coords="33,5,127,32"/>
+</map>

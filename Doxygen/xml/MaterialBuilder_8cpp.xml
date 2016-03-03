@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="MaterialBuilder_8cpp" kind="file" language="C++">
+    <compoundname>MaterialBuilder.cpp</compoundname>
+    <includes refid="MaterialBuilder_8h" local="yes">MaterialBuilder.h</includes>
+    <incdepgraph>
+      <node id="5051">
+        <label>MyGraphics/Source/MaterialBuilder.cpp</label>
+        <link refid="MaterialBuilder.cpp"/>
+        <childnode refid="5052" relation="include">
+        </childnode>
+      </node>
+      <node id="5052">
+        <label>MaterialBuilder.h</label>
+        <link refid="MaterialBuilder_8h"/>
+        <childnode refid="5053" relation="include">
+        </childnode>
+      </node>
+      <node id="5053">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MaterialBuilder_8h" kindref="compound">MaterialBuilder.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classMaterialBuilder_1a2847df1e27e666cd88301b11b0e5d3d0" refkind="member"><highlight class="normal"><ref refid="structMaterial" kindref="compound">Material</ref><sp/><ref refid="classMaterialBuilder_1a2847df1e27e666cd88301b11b0e5d3d0" kindref="member">MaterialBuilder::GenerateBlinn</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>shininess,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ambient,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>diffuse,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>specular)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structMaterial" kindref="compound">Material</ref><sp/>material;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>material.<ref refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" kindref="member">kSpecular</ref>.<ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(specular,<sp/>specular,<sp/>specular);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>material.<ref refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" kindref="member">kDiffuse</ref>.<ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(diffuse,<sp/>diffuse,<sp/>diffuse);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>material.<ref refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" kindref="member">kAmbient</ref>.<ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(ambient,<sp/>ambient,<sp/>ambient);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>material.<ref refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" kindref="member">kShininess</ref><sp/>=<sp/>shininess;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>material;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classMaterialBuilder_1ae8609727fcb491a7e1f06d1231c2d17b" refkind="member"><highlight class="normal"><ref refid="structMaterial" kindref="compound">Material</ref><sp/><ref refid="classMaterialBuilder_1ae8609727fcb491a7e1f06d1231c2d17b" kindref="member">MaterialBuilder::GenerateLambert</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>shininess,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ambient,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>diffuse,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>specular)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structMaterial" kindref="compound">Material</ref><sp/>material<sp/>=<sp/><ref refid="classMaterialBuilder_1a2847df1e27e666cd88301b11b0e5d3d0" kindref="member">GenerateBlinn</ref>(shininess,<sp/>ambient,<sp/>diffuse,<sp/>specular);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>material;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="59"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classMaterialBuilder_1a330c0d164483b9ab0625b47534ec4ca9" refkind="member"><highlight class="normal"><ref refid="structMaterial" kindref="compound">Material</ref><sp/><ref refid="classMaterialBuilder_1a330c0d164483b9ab0625b47534ec4ca9" kindref="member">MaterialBuilder::GeneratePhong</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>shininess,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ambient,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>diffuse,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>specular)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structMaterial" kindref="compound">Material</ref><sp/>material<sp/>=<sp/><ref refid="classMaterialBuilder_1a2847df1e27e666cd88301b11b0e5d3d0" kindref="member">GenerateBlinn</ref>(shininess,<sp/>ambient,<sp/>diffuse,<sp/>specular);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>material;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/MaterialBuilder.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,6 @@
+<map id="BGMDriven::init" name="BGMDriven::init">
+<area shape="rect" id="node2" href="$classirrklang_1_1ISoundEngine.html#a4eed0fa6712872e55003b26462e21005" title="Adds sound source into the sound engine as file. " alt="" coords="165,5,345,47"/>
+<area shape="rect" id="node3" href="$classirrklang_1_1ISoundEngine.html#a25f612fe6479d3b22dc5bab2a2eaa927" title="loads a sound source (if not loaded already) from a file and plays it. " alt="" coords="179,71,331,112"/>
+<area shape="rect" id="node4" href="$classirrklang_1_1ISoundEngine.html#adb09ecc8f61120ce14d26545ed43d8ec" title="Loads a sound source (if not loaded already) from a file and plays it as 3D sound. " alt="" coords="179,136,331,177"/>
+<area shape="rect" id="node5" href="$classirrklang_1_1ISoundSource.html#a52accb16b3a554558f12f99d16f57a7d" title="Sets the default volume for a sound played from this source. " alt="" coords="179,201,332,243"/>
+</map>

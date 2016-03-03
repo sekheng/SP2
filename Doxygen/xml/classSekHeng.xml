@@ -1,0 +1,688 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classSekHeng" kind="class" language="C++" prot="public">
+    <compoundname>SekHeng</compoundname>
+    <basecompoundref refid="classobjectsForDisplay" prot="public" virt="non-virtual">objectsForDisplay</basecompoundref>
+    <includes refid="SekHeng_8h" local="no">SekHeng.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" prot="public" static="no" mutable="no">
+        <type><ref refid="classobjectsForDisplay" kindref="compound">objectsForDisplay</ref></type>
+        <definition>objectsForDisplay SekHeng::hammer</definition>
+        <argsstring></argsstring>
+        <name>hammer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="47" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" compoundref="SekHeng_8cpp" startline="198" endline="207">interactingWithItem</referencedby>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+        <referencedby refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" compoundref="SekHeng_8cpp" startline="243" endline="252">reset</referencedby>
+        <referencedby refid="classSekHeng_1aabfaf63bbdb5b17ce5ae85f6334f6e70" compoundref="SekHeng_8cpp" startline="11" endline="15">SekHeng</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref> *</type>
+        <definition>Camera3* SekHeng::dub_camera</definition>
+        <argsstring></argsstring>
+        <name>dub_camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="54" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classSekHeng_1a4920e9e606e8c88a899b3930b230121c" compoundref="SekHeng_8cpp" startline="35" endline="72">initDialogues</referencedby>
+        <referencedby refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" compoundref="SekHeng_8cpp" startline="198" endline="207">interactingWithItem</referencedby>
+        <referencedby refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" compoundref="SekHeng_8cpp" startline="131" endline="141">interaction</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSekHeng_1a93dad4f9f00f4d1173f0f2bc5fae5797" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SekHeng::interatingRadius</definition>
+        <argsstring></argsstring>
+        <name>interatingRadius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="55" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" compoundref="SekHeng_8cpp" startline="131" endline="141">interaction</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSekHeng_1a3120fec2d40bc4489d5770c9fc89ecb0" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SekHeng::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="56" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" compoundref="SekHeng_8cpp" startline="148" endline="158">preventSpamming</referencedby>
+        <referencedby refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" compoundref="SekHeng_8cpp" startline="243" endline="252">reset</referencedby>
+        <referencedby refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" compoundref="SekHeng_8cpp" startline="81" endline="97">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSekHeng_1a9b2c7398727e183e25089850e9978484" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short SekHeng::stage</definition>
+        <argsstring></argsstring>
+        <name>stage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="57" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="classSekHeng_1add8091a69aa4459db74f14db1f68222e" compoundref="SekHeng_8cpp" startline="115" endline="120">activateQuest</referencedby>
+        <referencedby refid="classSekHeng_1ad37bc5224a576cdd8591e7378f6a3f32" compoundref="SekHeng_8cpp" startline="184" endline="187">FinishedQuest</referencedby>
+        <referencedby refid="classSekHeng_1a23a0723e2cd8beebacb08ba0d1ce61a6" compoundref="SekHeng_8cpp" startline="234" endline="236">getStage</referencedby>
+        <referencedby refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" compoundref="SekHeng_8cpp" startline="148" endline="158">preventSpamming</referencedby>
+        <referencedby refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" compoundref="SekHeng_8cpp" startline="243" endline="252">reset</referencedby>
+        <referencedby refid="classSekHeng_1aa5112cdd864b40df4f60346325b5dc38" compoundref="SekHeng_8cpp" startline="106" endline="108">returnDialogue</referencedby>
+        <referencedby refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" compoundref="SekHeng_8cpp" startline="81" endline="97">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSekHeng_1a89ef656734bd6144134b429a22834274" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short SekHeng::order_of_text</definition>
+        <argsstring></argsstring>
+        <name>order_of_text</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="58" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" compoundref="SekHeng_8cpp" startline="131" endline="141">interaction</referencedby>
+        <referencedby refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" compoundref="SekHeng_8cpp" startline="148" endline="158">preventSpamming</referencedby>
+        <referencedby refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" compoundref="SekHeng_8cpp" startline="243" endline="252">reset</referencedby>
+        <referencedby refid="classSekHeng_1aa5112cdd864b40df4f60346325b5dc38" compoundref="SekHeng_8cpp" startline="106" endline="108">returnDialogue</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" prot="private" static="no" mutable="no">
+        <type>map&lt; short, vector&lt; string &gt; &gt;</type>
+        <definition>map&lt;short, vector&lt;string&gt; &gt; SekHeng::dialogues</definition>
+        <argsstring></argsstring>
+        <name>dialogues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="60" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classSekHeng_1a4920e9e606e8c88a899b3930b230121c" compoundref="SekHeng_8cpp" startline="35" endline="72">initDialogues</referencedby>
+        <referencedby refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" compoundref="SekHeng_8cpp" startline="148" endline="158">preventSpamming</referencedby>
+        <referencedby refid="classSekHeng_1aa5112cdd864b40df4f60346325b5dc38" compoundref="SekHeng_8cpp" startline="106" endline="108">returnDialogue</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSekHeng_1ad54eeb7075a56a5572ce0929c0f10aef" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SekHeng::isOkay</definition>
+        <argsstring></argsstring>
+        <name>isOkay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="62" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classSekHeng_1ad37bc5224a576cdd8591e7378f6a3f32" compoundref="SekHeng_8cpp" startline="184" endline="187">FinishedQuest</referencedby>
+        <referencedby refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" compoundref="SekHeng_8cpp" startline="243" endline="252">reset</referencedby>
+        <referencedby refid="classSekHeng_1aaac77514f1f2c1a551e953362ebe3c90" compoundref="SekHeng_8cpp" startline="169" endline="176">SekHengSayIsOk</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SekHeng::hammerInHand</definition>
+        <argsstring></argsstring>
+        <name>hammerInHand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="64" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classSekHeng_1add8091a69aa4459db74f14db1f68222e" compoundref="SekHeng_8cpp" startline="115" endline="120">activateQuest</referencedby>
+        <referencedby refid="classSekHeng_1a61c019adb75b2115ea70c66652db0529" compoundref="SekHeng_8cpp" startline="218" endline="223">gottenHammer</referencedby>
+        <referencedby refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" compoundref="SekHeng_8cpp" startline="243" endline="252">reset</referencedby>
+        <referencedby refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" compoundref="SekHeng_8cpp" startline="81" endline="97">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSekHeng_1aabfaf63bbdb5b17ce5ae85f6334f6e70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SekHeng::SekHeng</definition>
+        <argsstring>()</argsstring>
+        <name>SekHeng</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a default constructor, with all variables becoming default value </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="33" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="11" bodyend="15"/>
+        <references refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" compoundref="SekHeng_8h" startline="47">hammer</references>
+        <references refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" compoundref="objectsForDisplay_8cpp" startline="38" endline="98">objectsForDisplay::init</references>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1a694fed7907654893557c1c2849e6dd77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SekHeng::~SekHeng</definition>
+        <argsstring>()</argsstring>
+        <name>~SekHeng</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a destructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="34" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1a4920e9e606e8c88a899b3930b230121c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SekHeng::initDialogues</definition>
+        <argsstring>(const char *fileLocation, Camera3 &amp;camera)</argsstring>
+        <name>initDialogues</name>
+        <param>
+          <type>const char *</type>
+          <declname>fileLocation</declname>
+        </param>
+        <param>
+          <type><ref refid="classCamera3" kindref="compound">Camera3</ref> &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a Data Driven function that will initialised it&apos;s dialogue </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileLocation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the path name to the file&apos;s location</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>camera</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- a reference pointer to the scene&apos;s camera </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="36" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="35" bodyend="72"/>
+        <references refid="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" compoundref="SekHeng_8h" startline="60">dialogues</references>
+        <references refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" compoundref="SekHeng_8h" startline="54">dub_camera</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SekHeng::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a method function which will update the logic behind the interaction with Sek Heng </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- frame time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="37" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="81" bodyend="97"/>
+        <references refid="classSekHeng_1ad37bc5224a576cdd8591e7378f6a3f32" compoundref="SekHeng_8cpp" startline="184" endline="187">FinishedQuest</references>
+        <references refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" compoundref="SekHeng_8h" startline="64">hammerInHand</references>
+        <references refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" compoundref="SekHeng_8cpp" startline="198" endline="207">interactingWithItem</references>
+        <references refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" compoundref="SekHeng_8cpp" startline="131" endline="141">interaction</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" compoundref="SekHeng_8cpp" startline="148" endline="158">preventSpamming</references>
+        <references refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" compoundref="SekHeng_8h" startline="57">stage</references>
+        <references refid="classSekHeng_1a3120fec2d40bc4489d5770c9fc89ecb0" compoundref="SekHeng_8h" startline="56">time</references>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1aa5112cdd864b40df4f60346325b5dc38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string SekHeng::returnDialogue</definition>
+        <argsstring>()</argsstring>
+        <name>returnDialogue</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a getter function which user can get the dialogue from Sek Heng </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- a string of the dialogue </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="39" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="106" bodyend="108"/>
+        <references refid="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" compoundref="SekHeng_8h" startline="60">dialogues</references>
+        <references refid="classSekHeng_1a89ef656734bd6144134b429a22834274" compoundref="SekHeng_8h" startline="58">order_of_text</references>
+        <references refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" compoundref="SekHeng_8h" startline="57">stage</references>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SekHeng::interaction</definition>
+        <argsstring>()</argsstring>
+        <name>interaction</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to check whether the player in within it&apos;s interacting boundary </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- true if the player is outside it&apos;s interacting boundary</para></simplesect>
+<simplesect kind="return"><para>- false if the player is inside it&apos;s interacting boundary </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="40" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="131" bodyend="141"/>
+        <references refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" compoundref="objectsForDisplay_8h" startline="43">objectsForDisplay::boundaryRadiusX</references>
+        <references refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" compoundref="objectsForDisplay_8h" startline="43">objectsForDisplay::boundaryRadiusZ</references>
+        <references refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" compoundref="SekHeng_8h" startline="54">dub_camera</references>
+        <references refid="classCamera3_1a4c484a400a9c2e64f3334fc62330368a" compoundref="Camera3_8cpp" startline="359" endline="362">Camera3::getCameraXcoord</references>
+        <references refid="classCamera3_1aae412d5efa2bae38cc9d5f38fb289f3a" compoundref="Camera3_8cpp" startline="372" endline="375">Camera3::getCameraZcoord</references>
+        <references refid="classSekHeng_1a93dad4f9f00f4d1173f0f2bc5fae5797" compoundref="SekHeng_8h" startline="55">interatingRadius</references>
+        <references refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" compoundref="objectsForDisplay_8h" startline="36">objectsForDisplay::objectPos</references>
+        <references refid="classSekHeng_1a89ef656734bd6144134b429a22834274" compoundref="SekHeng_8h" startline="58">order_of_text</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+        <referencedby refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" compoundref="SekHeng_8cpp" startline="81" endline="97">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SekHeng::preventSpamming</definition>
+        <argsstring>()</argsstring>
+        <name>preventSpamming</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Prevention of the dialogue from running to fast if player is holding &apos;E&apos; </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="41" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="148" bodyend="158"/>
+        <references refid="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" compoundref="SekHeng_8h" startline="60">dialogues</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classSekHeng_1a89ef656734bd6144134b429a22834274" compoundref="SekHeng_8h" startline="58">order_of_text</references>
+        <references refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" compoundref="SekHeng_8h" startline="57">stage</references>
+        <references refid="classSekHeng_1a3120fec2d40bc4489d5770c9fc89ecb0" compoundref="SekHeng_8h" startline="56">time</references>
+        <referencedby refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" compoundref="SekHeng_8cpp" startline="81" endline="97">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1add8091a69aa4459db74f14db1f68222e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SekHeng::activateQuest</definition>
+        <argsstring>()</argsstring>
+        <name>activateQuest</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a method function which will activate the Sek Heng&apos;s quest </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="43" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="115" bodyend="120"/>
+        <references refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" compoundref="SekHeng_8h" startline="64">hammerInHand</references>
+        <references refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" compoundref="SekHeng_8h" startline="57">stage</references>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1aaac77514f1f2c1a551e953362ebe3c90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SekHeng::SekHengSayIsOk</definition>
+        <argsstring>()</argsstring>
+        <name>SekHengSayIsOk</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>check whether Sek Heng&apos;s quest is completed </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- true if Sek Heng&apos;s quest is completed</para></simplesect>
+<simplesect kind="return"><para>- false if Sek Heng&apos;s quest is incomplete </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="44" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="169" bodyend="176"/>
+        <references refid="classSekHeng_1ad54eeb7075a56a5572ce0929c0f10aef" compoundref="SekHeng_8h" startline="62">isOkay</references>
+        <referencedby refid="classsceneSP2_1a2a5f5a79ed05066a23f447e4cbbb084f" compoundref="sceneSP2_8cpp" startline="1818" endline="1870">sceneSP2::Renderteleporter</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1ad37bc5224a576cdd8591e7378f6a3f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SekHeng::FinishedQuest</definition>
+        <argsstring>()</argsstring>
+        <name>FinishedQuest</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a method function which will allows teleportation and new dialogue upon finishing Sek Heng&apos;s quest </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="45" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="184" bodyend="187"/>
+        <references refid="classSekHeng_1ad54eeb7075a56a5572ce0929c0f10aef" compoundref="SekHeng_8h" startline="62">isOkay</references>
+        <references refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" compoundref="SekHeng_8h" startline="57">stage</references>
+        <referencedby refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" compoundref="SekHeng_8cpp" startline="81" endline="97">Update</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1a61c019adb75b2115ea70c66652db0529" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SekHeng::gottenHammer</definition>
+        <argsstring>()</argsstring>
+        <name>gottenHammer</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>check whether player has gotten the hammer </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- true if player has interacted with the hammer</para></simplesect>
+<simplesect kind="return"><para>- false if the player has not interacted with the hammer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="48" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="218" bodyend="223"/>
+        <references refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" compoundref="SekHeng_8h" startline="64">hammerInHand</references>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1a23a0723e2cd8beebacb08ba0d1ce61a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short SekHeng::getStage</definition>
+        <argsstring>()</argsstring>
+        <name>getStage</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a getter function that returns the dialogue which Sek Heng will say in 3 different state which are when Sek Heng is waiting for other quests to be completed, Sek Heng is waiting for the player to finish his quest, and Sek Heng&apos;s quest is completed </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- the order of dialogues </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="49" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="234" bodyend="236"/>
+        <references refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" compoundref="SekHeng_8h" startline="57">stage</references>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SekHeng::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>a method to completely reset the Sek Heng&apos;s variable to it&apos;s default state </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="51" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="243" bodyend="252"/>
+        <references refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" compoundref="SekHeng_8h" startline="47">hammer</references>
+        <references refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" compoundref="SekHeng_8h" startline="64">hammerInHand</references>
+        <references refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" compoundref="objectsForDisplay_8cpp" startline="38" endline="98">objectsForDisplay::init</references>
+        <references refid="classSekHeng_1ad54eeb7075a56a5572ce0929c0f10aef" compoundref="SekHeng_8h" startline="62">isOkay</references>
+        <references refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" compoundref="objectsForDisplay_8h" startline="36">objectsForDisplay::objectPos</references>
+        <references refid="classSekHeng_1a89ef656734bd6144134b429a22834274" compoundref="SekHeng_8h" startline="58">order_of_text</references>
+        <references refid="classobjectsForDisplay_1ae52d5d2bba7e53476979c682e49523fc" compoundref="objectsForDisplay_8h" startline="37">objectsForDisplay::originalPos</references>
+        <references refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" compoundref="SekHeng_8h" startline="57">stage</references>
+        <references refid="classSekHeng_1a3120fec2d40bc4489d5770c9fc89ecb0" compoundref="SekHeng_8h" startline="56">time</references>
+        <referencedby refid="classsceneSP2_1ad70fc6c47c485a14285257c1414729d1" compoundref="sceneSP2_8cpp" startline="694" endline="718">sceneSP2::reset</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SekHeng::interactingWithItem</definition>
+        <argsstring>()</argsstring>
+        <name>interactingWithItem</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to check whether the player in within Sek Heng&apos;s hammer interacting boundary </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- true if the player is outside Sek Heng&apos;s hammer interacting boundary</para></simplesect>
+<simplesect kind="return"><para>- false if the player is inside Sek Heng&apos;s hammer interacting boundary </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/SekHeng.h" line="63" column="1" bodyfile="MyGraphics/Source/SekHeng.cpp" bodystart="198" bodyend="207"/>
+        <references refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" compoundref="SekHeng_8h" startline="54">dub_camera</references>
+        <references refid="classobjectsForDisplay_1a72bc7040abaa0b361da68452de000f39" compoundref="objectsForDisplay_8cpp" startline="184" endline="186">objectsForDisplay::getBoundaryRadiusX</references>
+        <references refid="classobjectsForDisplay_1a1598c3caea74983607e719dab07b3704" compoundref="objectsForDisplay_8cpp" startline="195" endline="197">objectsForDisplay::getBoundaryRadiusZ</references>
+        <references refid="classobjectsForDisplay_1a7be0d40a45472bd1ff986ea8606dfbba" compoundref="objectsForDisplay_8cpp" startline="131" endline="133">objectsForDisplay::getObjectposX</references>
+        <references refid="classobjectsForDisplay_1aa2f7e29218b1bbd07f5186b4c39b037a" compoundref="objectsForDisplay_8cpp" startline="153" endline="155">objectsForDisplay::getObjectposZ</references>
+        <references refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" compoundref="SekHeng_8h" startline="47">hammer</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="25">Camera::position</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" compoundref="SekHeng_8cpp" startline="81" endline="97">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="976">
+        <label>objectsForDisplay</label>
+        <link refid="classobjectsForDisplay"/>
+        <childnode refid="977" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="975">
+        <label>SekHeng</label>
+        <link refid="classSekHeng"/>
+        <childnode refid="976" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="977">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="979">
+        <label>objectsForDisplay</label>
+        <link refid="classobjectsForDisplay"/>
+        <childnode refid="980" relation="public-inheritance">
+        </childnode>
+        <childnode refid="983" relation="usage">
+          <edgelabel>boundaryRadiusX</edgelabel>
+          <edgelabel>boundaryRadiusZ</edgelabel>
+        </childnode>
+        <childnode refid="984" relation="usage">
+          <edgelabel>objectPos</edgelabel>
+          <edgelabel>originalPos</edgelabel>
+        </childnode>
+      </node>
+      <node id="989">
+        <label>vector&lt; objectsForDisplay &gt;</label>
+      </node>
+      <node id="992">
+        <label>map&lt; short, vector&lt; string &gt; &gt;</label>
+      </node>
+      <node id="987">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="984" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="982">
+        <label>string</label>
+      </node>
+      <node id="983">
+        <label>float</label>
+      </node>
+      <node id="986">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="987" relation="public-inheritance">
+        </childnode>
+        <childnode refid="983" relation="usage">
+          <edgelabel>cameraSpeed</edgelabel>
+          <edgelabel>cursorCoordX</edgelabel>
+          <edgelabel>boundaryX</edgelabel>
+          <edgelabel>cursorCoordY</edgelabel>
+          <edgelabel>defaultCameraYrotation</edgelabel>
+          <edgelabel>boundaryZ</edgelabel>
+          <edgelabel>minCameraXrotation</edgelabel>
+          <edgelabel>CameraYrotation</edgelabel>
+          <edgelabel>crossHairRadius</edgelabel>
+          <edgelabel>maxCameraXrotation</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="988" relation="usage">
+          <edgelabel>camType</edgelabel>
+        </childnode>
+        <childnode refid="984" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+          <edgelabel>invisibleCrossHair</edgelabel>
+        </childnode>
+        <childnode refid="989" relation="usage">
+          <edgelabel>storage_of_objects</edgelabel>
+        </childnode>
+      </node>
+      <node id="981">
+        <label>int</label>
+      </node>
+      <node id="985">
+        <label>double</label>
+      </node>
+      <node id="990">
+        <label>short</label>
+      </node>
+      <node id="978">
+        <label>SekHeng</label>
+        <link refid="classSekHeng"/>
+        <childnode refid="979" relation="public-inheritance">
+        </childnode>
+        <childnode refid="985" relation="usage">
+          <edgelabel>time</edgelabel>
+        </childnode>
+        <childnode refid="986" relation="usage">
+          <edgelabel>dub_camera</edgelabel>
+        </childnode>
+        <childnode refid="979" relation="usage">
+          <edgelabel>hammer</edgelabel>
+        </childnode>
+        <childnode refid="990" relation="usage">
+          <edgelabel>order_of_text</edgelabel>
+          <edgelabel>stage</edgelabel>
+        </childnode>
+        <childnode refid="983" relation="usage">
+          <edgelabel>interatingRadius</edgelabel>
+        </childnode>
+        <childnode refid="991" relation="usage">
+          <edgelabel>isOkay</edgelabel>
+          <edgelabel>hammerInHand</edgelabel>
+        </childnode>
+        <childnode refid="992" relation="usage">
+          <edgelabel>dialogues</edgelabel>
+        </childnode>
+      </node>
+      <node id="988">
+        <label>CameraType</label>
+      </node>
+      <node id="980">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="981" relation="usage">
+          <edgelabel>count_</edgelabel>
+        </childnode>
+        <childnode refid="982" relation="usage">
+          <edgelabel>Name_</edgelabel>
+        </childnode>
+      </node>
+      <node id="991">
+        <label>bool</label>
+      </node>
+      <node id="984">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="983" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/SekHeng.h" line="31" column="1" bodyfile="MyGraphics/Source/SekHeng.h" bodystart="30" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classSekHeng_1add8091a69aa4459db74f14db1f68222e" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>activateQuest</name></member>
+      <member refid="classobjectsForDisplay_1aa904a63ec3bb19594f91ddc939375649" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>boundaryCheck</name></member>
+      <member refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" prot="protected" virt="non-virtual"><scope>SekHeng</scope><name>boundaryRadiusX</name></member>
+      <member refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" prot="protected" virt="non-virtual"><scope>SekHeng</scope><name>boundaryRadiusZ</name></member>
+      <member refid="classSekHeng_1a0b3c4e5fcaf601dbb0a9f5d39ec4d6f1" prot="private" virt="non-virtual"><scope>SekHeng</scope><name>dialogues</name></member>
+      <member refid="classSekHeng_1a472e4d1d311687fe8929d5285285ca13" prot="private" virt="non-virtual"><scope>SekHeng</scope><name>dub_camera</name></member>
+      <member refid="classSekHeng_1ad37bc5224a576cdd8591e7378f6a3f32" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>FinishedQuest</name></member>
+      <member refid="classGameObject_1ad06b99a731d8d50e06ee92708b78b4db" prot="protected" virt="non-virtual"><scope>SekHeng</scope><name>GameObject</name></member>
+      <member refid="classobjectsForDisplay_1a72bc7040abaa0b361da68452de000f39" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>getBoundaryRadiusX</name></member>
+      <member refid="classobjectsForDisplay_1a1598c3caea74983607e719dab07b3704" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>getBoundaryRadiusZ</name></member>
+      <member refid="classGameObject_1a00da4ea36f3945e1da1a2f81061b57d3" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>getCount</name></member>
+      <member refid="classGameObject_1ab7c8021dd4caa10448c87396db933e94" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>getName</name></member>
+      <member refid="classobjectsForDisplay_1a7be0d40a45472bd1ff986ea8606dfbba" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>getObjectposX</name></member>
+      <member refid="classobjectsForDisplay_1a85829a61f5de07d5c83231e49821097f" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>getObjectposY</name></member>
+      <member refid="classobjectsForDisplay_1aa2f7e29218b1bbd07f5186b4c39b037a" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>getObjectposZ</name></member>
+      <member refid="classSekHeng_1a23a0723e2cd8beebacb08ba0d1ce61a6" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>getStage</name></member>
+      <member refid="classSekHeng_1a61c019adb75b2115ea70c66652db0529" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>gottenHammer</name></member>
+      <member refid="classSekHeng_1adf76e5ec42a241cf065cf6eaf9bfca73" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>hammer</name></member>
+      <member refid="classSekHeng_1a67a6b4416656a6719e34d0c8253bbf14" prot="private" virt="non-virtual"><scope>SekHeng</scope><name>hammerInHand</name></member>
+      <member refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>init</name></member>
+      <member refid="classobjectsForDisplay_1a7fc07efa02fd65fc144c5989c1d1d382" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>init</name></member>
+      <member refid="classSekHeng_1a4920e9e606e8c88a899b3930b230121c" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>initDialogues</name></member>
+      <member refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" prot="private" virt="non-virtual"><scope>SekHeng</scope><name>interactingWithItem</name></member>
+      <member refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>interaction</name></member>
+      <member refid="classSekHeng_1a93dad4f9f00f4d1173f0f2bc5fae5797" prot="private" virt="non-virtual"><scope>SekHeng</scope><name>interatingRadius</name></member>
+      <member refid="classSekHeng_1ad54eeb7075a56a5572ce0929c0f10aef" prot="private" virt="non-virtual"><scope>SekHeng</scope><name>isOkay</name></member>
+      <member refid="classGameObject_1a125061a56ff346096387b9d3674d69ca" prot="protected" virt="non-virtual"><scope>SekHeng</scope><name>Name_</name></member>
+      <member refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>objectPos</name></member>
+      <member refid="classobjectsForDisplay_1a3226586622081e3d66caea2d91243b13" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>objectsForDisplay</name></member>
+      <member refid="classSekHeng_1a89ef656734bd6144134b429a22834274" prot="private" virt="non-virtual"><scope>SekHeng</scope><name>order_of_text</name></member>
+      <member refid="classobjectsForDisplay_1ae52d5d2bba7e53476979c682e49523fc" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>originalPos</name></member>
+      <member refid="classSekHeng_1a020545c2ffc79296c045a8bc132a70e6" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>preventSpamming</name></member>
+      <member refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>reset</name></member>
+      <member refid="classSekHeng_1aa5112cdd864b40df4f60346325b5dc38" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>returnDialogue</name></member>
+      <member refid="classSekHeng_1aabfaf63bbdb5b17ce5ae85f6334f6e70" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>SekHeng</name></member>
+      <member refid="classSekHeng_1aaac77514f1f2c1a551e953362ebe3c90" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>SekHengSayIsOk</name></member>
+      <member refid="classSekHeng_1a9b2c7398727e183e25089850e9978484" prot="private" virt="non-virtual"><scope>SekHeng</scope><name>stage</name></member>
+      <member refid="classSekHeng_1a3120fec2d40bc4489d5770c9fc89ecb0" prot="private" virt="non-virtual"><scope>SekHeng</scope><name>time</name></member>
+      <member refid="classSekHeng_1ae3bb8042c61652bd6c325fe105fd2c17" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>Update</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>SekHeng</scope><name>~GameObject</name></member>
+      <member refid="classobjectsForDisplay_1a248356282ecfca47bdb88940a2a3a2f6" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>~objectsForDisplay</name></member>
+      <member refid="classSekHeng_1a694fed7907654893557c1c2849e6dd77" prot="public" virt="non-virtual"><scope>SekHeng</scope><name>~SekHeng</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

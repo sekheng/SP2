@@ -1,0 +1,4 @@
+<map id="rot_civ" name="rot_civ">
+<area shape="rect" id="node2" href="$classobjectsForDisplay.html" title="Inheirited from GameObject It has it&#39;s own text reader file to input it&#39;s values, position..." alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node3" href="$classGameObject.html" title="Defines GameObject, get the name of the GameObject and count how many gameobjects there are..." alt="" coords="21,5,116,32"/>
+</map>

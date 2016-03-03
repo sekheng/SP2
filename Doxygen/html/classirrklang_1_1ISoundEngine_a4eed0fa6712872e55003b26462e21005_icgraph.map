@@ -1,0 +1,5 @@
+<map id="irrklang::ISoundEngine::addSoundSourceFromFile" name="irrklang::ISoundEngine::addSoundSourceFromFile">
+<area shape="rect" id="node2" href="$classBGMDriven.html#aee3ab26716e6e6582d2cc7d90baeaacf" title="Where the initialization of the ISoundSource and ISound pointers begin. " alt="" coords="233,13,345,39"/>
+<area shape="rect" id="node3" href="$classApplication.html#aaf09cd6cb412086dc039e28cdb059f0d" title="Initializing of the scene, and starting of the game " alt="" coords="393,13,511,39"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title="the primary functions that the program will run " alt="" coords="559,13,609,39"/>
+</map>

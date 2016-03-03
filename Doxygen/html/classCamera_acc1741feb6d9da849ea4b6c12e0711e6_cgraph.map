@@ -1,0 +1,7 @@
+<map id="Camera::Update" name="Camera::Update">
+<area shape="rect" id="node2" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="169,5,344,32"/>
+<area shape="rect" id="node3" href="$classCamera.html#af2e60c5b64a99d929cb9473e27fbe1a0" title="Move the x coordinate of the camera in a circular way " alt="" coords="201,56,313,83"/>
+<area shape="rect" id="node5" href="$classCamera.html#a6659feaf74c1f2b65fd986152b0c5936" title="Move the y coordinate of the camera in a circular way " alt="" coords="199,107,314,133"/>
+<area shape="rect" id="node6" href="$classCamera.html#a82e9635fa34e36f6a39885fc0d8e19bc" title="Move the z coordinate of the camera in a circular way " alt="" coords="201,157,313,184"/>
+<area shape="rect" id="node4" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="392,107,547,133"/>
+</map>

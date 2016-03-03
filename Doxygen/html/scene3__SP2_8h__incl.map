@@ -1,0 +1,17 @@
+<map id="MyGraphics/Source/scene3_SP2.h" name="MyGraphics/Source/scene3_SP2.h">
+<area shape="rect" id="node2" href="$Scene_8h.html" title="Creating a pure virtual scenes Taken from Mr Tang&#39;s framework " alt="" coords="51,95,121,121"/>
+<area shape="rect" id="node3" href="$Mesh_8h.html" title="class to define mesh " alt="" coords="145,95,211,121"/>
+<area shape="rect" id="node7" href="$Light_8h.html" title="Creating light for the scene " alt="" coords="459,95,521,121"/>
+<area shape="rect" id="node16" href="$Camera3_8h.html" title="An improvised camera inheirited from Camera Class " alt="" coords="331,95,417,121"/>
+<area shape="rect" id="node24" href="$MatrixStack_8h.html" title="Matrix Stack to replace openGL math function. " alt="" coords="581,95,684,121"/>
+<area shape="rect" id="node5" href="$MaterialBuilder_8h.html" title="A factory to create different types of materials " alt="" coords="32,169,151,196"/>
+<area shape="rect" id="node6" href="$Material_8h.html" title="Structs to define Material " alt="" coords="52,244,131,271"/>
+<area shape="rect" id="node8" href="$Vertex_8h.html" title="Define Vertex, Position, Color, TexCoord " alt="" coords="520,169,591,196"/>
+<area shape="rect" id="node9" href="$Vector3_8h.html" title="Struct to define a 3D vector. " alt="" coords="516,244,595,271"/>
+<area shape="rect" id="node10" href="$MyMath_8h.html" title="Header file for math helper functions. " alt="" coords="651,319,731,345"/>
+<area shape="rect" id="node17" href="$Camera_8h.html" title="Creating the functions of a Camera. But not fully improvised so it is important to create another cam..." alt="" coords="417,169,496,196"/>
+<area shape="rect" id="node18" href="$objectsForDisplay_8h.html" title="creates object of static game object " alt="" coords="175,169,312,196"/>
+<area shape="rect" id="node19" href="$GameObject_8h.html" title="The base class of objects inside the game To create and count how many GameObjects are there in the g..." alt="" coords="173,244,279,271"/>
+<area shape="rect" id="node20" href="$DetectMemoryLeak_8h.html" title="Check whether is there memory leak by improving the memory allocation. Taken from Mr Sim&#39;s Data Struc..." alt="" coords="153,319,299,345"/>
+<area shape="rect" id="node26" href="$Mtx44_8h.html" title="Matrix 4 by 4 use for affine transformation. " alt="" coords="694,169,763,196"/>
+</map>

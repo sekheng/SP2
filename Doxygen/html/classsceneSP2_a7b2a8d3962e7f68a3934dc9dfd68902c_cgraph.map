@@ -1,0 +1,10 @@
+<map id="sceneSP2::animateTeleporting" name="sceneSP2::animateTeleporting">
+<area shape="rect" id="node2" href="$classApplication.html#aa009765c90eeec95e353b86f926d4c65" title="a method to transit to scenario 2 " alt="" coords="252,5,467,32"/>
+<area shape="rect" id="node3" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="305,56,414,83"/>
+<area shape="rect" id="node5" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="282,107,437,133"/>
+<area shape="rect" id="node6" href="$classCamera3.html#a6f1aeea87c779705decd4204db9370c4" title="getting camera&#39;s rotation based on the x axis " alt="" coords="262,157,457,184"/>
+<area shape="rect" id="node7" href="$classCamera3.html#a99d7d55bafd4d073c828cbbf1d21ece6" title="getting camera&#39;s rotation based on the y axis " alt="" coords="261,208,458,235"/>
+<area shape="rect" id="node8" href="$namespacePhysics.html#add4adb5f16486f8a22f65106a6084524" title="decreases the velocity. Do note that time&#39;s data type is double " alt="" coords="287,259,432,301"/>
+<area shape="rect" id="node9" href="$classCamera3.html#ae5525123816e5022e6b3636e93040df7" title="Setting the coordinates of the camera&#39;s position. " alt="" coords="285,325,434,352"/>
+<area shape="rect" id="node4" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="515,56,635,83"/>
+</map>

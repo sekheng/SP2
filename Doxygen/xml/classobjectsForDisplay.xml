@@ -1,0 +1,461 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classobjectsForDisplay" kind="class" language="C++" prot="public">
+    <compoundname>objectsForDisplay</compoundname>
+    <basecompoundref refid="classGameObject" prot="public" virt="non-virtual">GameObject</basecompoundref>
+    <derivedcompoundref refid="classrot__civ" prot="public" virt="non-virtual">rot_civ</derivedcompoundref>
+    <derivedcompoundref refid="classSekHeng" prot="public" virt="non-virtual">SekHeng</derivedcompoundref>
+    <includes refid="objectsForDisplay_8h" local="no">objectsForDisplay.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 objectsForDisplay::objectPos</definition>
+        <argsstring></argsstring>
+        <name>objectPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="36" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classobjectsForDisplay_1aa904a63ec3bb19594f91ddc939375649" compoundref="objectsForDisplay_8cpp" startline="113" endline="122">boundaryCheck</referencedby>
+        <referencedby refid="classobjectsForDisplay_1a7be0d40a45472bd1ff986ea8606dfbba" compoundref="objectsForDisplay_8cpp" startline="131" endline="133">getObjectposX</referencedby>
+        <referencedby refid="classobjectsForDisplay_1a85829a61f5de07d5c83231e49821097f" compoundref="objectsForDisplay_8cpp" startline="142" endline="144">getObjectposY</referencedby>
+        <referencedby refid="classobjectsForDisplay_1aa2f7e29218b1bbd07f5186b4c39b037a" compoundref="objectsForDisplay_8cpp" startline="153" endline="155">getObjectposZ</referencedby>
+        <referencedby refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" compoundref="objectsForDisplay_8cpp" startline="38" endline="98">init</referencedby>
+        <referencedby refid="classrot__civ_1a9d137fc8194ba0a7503b24c13926f7b2" compoundref="rot__civ_8cpp" startline="99" endline="109">rot_civ::interaction</referencedby>
+        <referencedby refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" compoundref="SekHeng_8cpp" startline="131" endline="141">SekHeng::interaction</referencedby>
+        <referencedby refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" compoundref="SekHeng_8cpp" startline="243" endline="252">SekHeng::reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classobjectsForDisplay_1ae52d5d2bba7e53476979c682e49523fc" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 objectsForDisplay::originalPos</definition>
+        <argsstring></argsstring>
+        <name>originalPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="37" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" compoundref="objectsForDisplay_8cpp" startline="38" endline="98">init</referencedby>
+        <referencedby refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" compoundref="SekHeng_8cpp" startline="243" endline="252">SekHeng::reset</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float objectsForDisplay::boundaryRadiusX</definition>
+        <argsstring></argsstring>
+        <name>boundaryRadiusX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="43" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classobjectsForDisplay_1aa904a63ec3bb19594f91ddc939375649" compoundref="objectsForDisplay_8cpp" startline="113" endline="122">boundaryCheck</referencedby>
+        <referencedby refid="classobjectsForDisplay_1a72bc7040abaa0b361da68452de000f39" compoundref="objectsForDisplay_8cpp" startline="184" endline="186">getBoundaryRadiusX</referencedby>
+        <referencedby refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" compoundref="objectsForDisplay_8cpp" startline="38" endline="98">init</referencedby>
+        <referencedby refid="classrot__civ_1a9d137fc8194ba0a7503b24c13926f7b2" compoundref="rot__civ_8cpp" startline="99" endline="109">rot_civ::interaction</referencedby>
+        <referencedby refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" compoundref="SekHeng_8cpp" startline="131" endline="141">SekHeng::interaction</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float objectsForDisplay::boundaryRadiusZ</definition>
+        <argsstring></argsstring>
+        <name>boundaryRadiusZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="43" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classobjectsForDisplay_1aa904a63ec3bb19594f91ddc939375649" compoundref="objectsForDisplay_8cpp" startline="113" endline="122">boundaryCheck</referencedby>
+        <referencedby refid="classobjectsForDisplay_1a1598c3caea74983607e719dab07b3704" compoundref="objectsForDisplay_8cpp" startline="195" endline="197">getBoundaryRadiusZ</referencedby>
+        <referencedby refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" compoundref="objectsForDisplay_8cpp" startline="38" endline="98">init</referencedby>
+        <referencedby refid="classrot__civ_1a9d137fc8194ba0a7503b24c13926f7b2" compoundref="rot__civ_8cpp" startline="99" endline="109">rot_civ::interaction</referencedby>
+        <referencedby refid="classSekHeng_1ad0a55a0443c8323f968df4bf832dd7ea" compoundref="SekHeng_8cpp" startline="131" endline="141">SekHeng::interaction</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classobjectsForDisplay_1a3226586622081e3d66caea2d91243b13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>objectsForDisplay::objectsForDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>objectsForDisplay</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Default Constructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="26" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classobjectsForDisplay_1a248356282ecfca47bdb88940a2a3a2f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>objectsForDisplay::~objectsForDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>~objectsForDisplay</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Destructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="27" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void objectsForDisplay::init</definition>
+        <argsstring>(const char *fileLocation)</argsstring>
+        <name>init</name>
+        <param>
+          <type>const char *</type>
+          <declname>fileLocation</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>initialised it&apos;s values through text file reader </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileLocation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the path name to the text file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="29" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="38" bodyend="98"/>
+        <references refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" compoundref="objectsForDisplay_8h" startline="43">boundaryRadiusX</references>
+        <references refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" compoundref="objectsForDisplay_8h" startline="43">boundaryRadiusZ</references>
+        <references refid="classGameObject_1a125061a56ff346096387b9d3674d69ca" compoundref="GameObject_8h" startline="32">GameObject::Name_</references>
+        <references refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" compoundref="objectsForDisplay_8h" startline="36">objectPos</references>
+        <references refid="classobjectsForDisplay_1ae52d5d2bba7e53476979c682e49523fc" compoundref="objectsForDisplay_8h" startline="37">originalPos</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classscene2__SP2_1a6d5705b83a23421a1f5aa0fec8c28329" compoundref="scene2__SP2_8cpp" startline="45" endline="368">scene2_SP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classCamera3_1afcbf927fd6fc2be8451da97c663431d8" compoundref="Camera3_8cpp" startline="476" endline="526">Camera3::InitObjects</referencedby>
+        <referencedby refid="classSekHeng_1afa99bb0e52fca8bd53514b23c33ecb0f" compoundref="SekHeng_8cpp" startline="243" endline="252">SekHeng::reset</referencedby>
+        <referencedby refid="classSekHeng_1aabfaf63bbdb5b17ce5ae85f6334f6e70" compoundref="SekHeng_8cpp" startline="11" endline="15">SekHeng::SekHeng</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classobjectsForDisplay_1a7fc07efa02fd65fc144c5989c1d1d382" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void objectsForDisplay::init</definition>
+        <argsstring>(Vector3 pos, float boundaryX, float boundaryZ, string name)</argsstring>
+        <name>init</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>boundaryX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>boundaryZ</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>initialised it&apos;s variables by passing in parameter </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Coordinates of the object</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundaryX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- boundary of the object based on the X Axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundaryZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- boundary of the object based on the Z Axis</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Name of the object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="30" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="170" bodyend="175"/>
+        <references refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" compoundref="objectsForDisplay_8h" startline="43">boundaryRadiusX</references>
+        <references refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" compoundref="objectsForDisplay_8h" startline="43">boundaryRadiusZ</references>
+        <references refid="classGameObject_1a125061a56ff346096387b9d3674d69ca" compoundref="GameObject_8h" startline="32">GameObject::Name_</references>
+        <references refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" compoundref="objectsForDisplay_8h" startline="36">objectPos</references>
+      </memberdef>
+      <memberdef kind="function" id="classobjectsForDisplay_1aa904a63ec3bb19594f91ddc939375649" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool objectsForDisplay::boundaryCheck</definition>
+        <argsstring>(const float &amp;playerPosX, const float &amp;playerPosZ)</argsstring>
+        <name>boundaryCheck</name>
+        <param>
+          <type>const float &amp;</type>
+          <declname>playerPosX</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>playerPosZ</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>the boundary check with the camera&apos;s position </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerPosX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- X coordinate of the camera</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>playerPosZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Z coordinate of the camera</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true - if the player is not within it&apos;s box boundary</para></simplesect>
+<simplesect kind="return"><para>false - if the player is within it&apos;s box boundary </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="31" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="113" bodyend="122"/>
+        <references refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" compoundref="objectsForDisplay_8h" startline="43">boundaryRadiusX</references>
+        <references refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" compoundref="objectsForDisplay_8h" startline="43">boundaryRadiusZ</references>
+        <references refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" compoundref="objectsForDisplay_8h" startline="36">objectPos</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classobjectsForDisplay_1a7be0d40a45472bd1ff986ea8606dfbba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float objectsForDisplay::getObjectposX</definition>
+        <argsstring>()</argsstring>
+        <name>getObjectposX</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get this object&apos;s X coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- X coordinate of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="33" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="131" bodyend="133"/>
+        <references refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" compoundref="objectsForDisplay_8h" startline="36">objectPos</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <referencedby refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" compoundref="SekHeng_8cpp" startline="198" endline="207">SekHeng::interactingWithItem</referencedby>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+        <referencedby refid="classscene2__SP2_1a6541bbd7f340ece91e91bec2b77bac4a" compoundref="scene2__SP2_8cpp" startline="956" endline="967">scene2_SP2::RenderRobot</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classobjectsForDisplay_1a85829a61f5de07d5c83231e49821097f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float objectsForDisplay::getObjectposY</definition>
+        <argsstring>()</argsstring>
+        <name>getObjectposY</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get this object&apos;s Y coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- Y coordinate of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="34" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="142" bodyend="144"/>
+        <references refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" compoundref="objectsForDisplay_8h" startline="36">objectPos</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+        <referencedby refid="classscene2__SP2_1a6541bbd7f340ece91e91bec2b77bac4a" compoundref="scene2__SP2_8cpp" startline="956" endline="967">scene2_SP2::RenderRobot</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classobjectsForDisplay_1aa2f7e29218b1bbd07f5186b4c39b037a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float objectsForDisplay::getObjectposZ</definition>
+        <argsstring>()</argsstring>
+        <name>getObjectposZ</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get this object&apos;s Z coordinate </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- Z coordinate of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="35" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="153" bodyend="155"/>
+        <references refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" compoundref="objectsForDisplay_8h" startline="36">objectPos</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" compoundref="SekHeng_8cpp" startline="198" endline="207">SekHeng::interactingWithItem</referencedby>
+        <referencedby refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" compoundref="sceneSP2_8cpp" startline="1751" endline="1773">sceneSP2::renderingSekHeng</referencedby>
+        <referencedby refid="classscene2__SP2_1a6541bbd7f340ece91e91bec2b77bac4a" compoundref="scene2__SP2_8cpp" startline="956" endline="967">scene2_SP2::RenderRobot</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classobjectsForDisplay_1a72bc7040abaa0b361da68452de000f39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float objectsForDisplay::getBoundaryRadiusX</definition>
+        <argsstring>()</argsstring>
+        <name>getBoundaryRadiusX</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get this object&apos;s X boundary range </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- X boundary range of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="39" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="184" bodyend="186"/>
+        <references refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" compoundref="objectsForDisplay_8h" startline="43">boundaryRadiusX</references>
+        <referencedby refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" compoundref="SekHeng_8cpp" startline="198" endline="207">SekHeng::interactingWithItem</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classobjectsForDisplay_1a1598c3caea74983607e719dab07b3704" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float objectsForDisplay::getBoundaryRadiusZ</definition>
+        <argsstring>()</argsstring>
+        <name>getBoundaryRadiusZ</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get this object&apos;s Z boundary range </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- Z boundary range of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/objectsForDisplay.h" line="40" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.cpp" bodystart="195" bodyend="197"/>
+        <references refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" compoundref="objectsForDisplay_8h" startline="43">boundaryRadiusZ</references>
+        <referencedby refid="classSekHeng_1ab0555e2ccef81d7f866e86883cf52955" compoundref="SekHeng_8cpp" startline="198" endline="207">SekHeng::interactingWithItem</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>Inheirited from <ref refid="classGameObject" kindref="compound">GameObject</ref> It has it&apos;s own text reader file to input it&apos;s values, position, and boundary. </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classobjectsForDisplay" kindref="compound">objectsForDisplay</ref>: </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="791">
+        <label>objectsForDisplay</label>
+        <link refid="classobjectsForDisplay"/>
+        <childnode refid="792" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="794">
+        <label>SekHeng</label>
+        <link refid="classSekHeng"/>
+        <childnode refid="791" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="792">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+      </node>
+      <node id="793">
+        <label>rot_civ</label>
+        <link refid="classrot__civ"/>
+        <childnode refid="791" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="795">
+        <label>objectsForDisplay</label>
+        <link refid="classobjectsForDisplay"/>
+        <childnode refid="796" relation="public-inheritance">
+        </childnode>
+        <childnode refid="799" relation="usage">
+          <edgelabel>boundaryRadiusX</edgelabel>
+          <edgelabel>boundaryRadiusZ</edgelabel>
+        </childnode>
+        <childnode refid="800" relation="usage">
+          <edgelabel>objectPos</edgelabel>
+          <edgelabel>originalPos</edgelabel>
+        </childnode>
+      </node>
+      <node id="798">
+        <label>string</label>
+      </node>
+      <node id="799">
+        <label>float</label>
+      </node>
+      <node id="797">
+        <label>int</label>
+      </node>
+      <node id="796">
+        <label>GameObject</label>
+        <link refid="classGameObject"/>
+        <childnode refid="797" relation="usage">
+          <edgelabel>count_</edgelabel>
+        </childnode>
+        <childnode refid="798" relation="usage">
+          <edgelabel>Name_</edgelabel>
+        </childnode>
+      </node>
+      <node id="800">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="799" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/objectsForDisplay.h" line="24" column="1" bodyfile="MyGraphics/Source/objectsForDisplay.h" bodystart="24" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classobjectsForDisplay_1aa904a63ec3bb19594f91ddc939375649" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>boundaryCheck</name></member>
+      <member refid="classobjectsForDisplay_1a1b85ed30ffdafe79b1fedb1e608f666a" prot="protected" virt="non-virtual"><scope>objectsForDisplay</scope><name>boundaryRadiusX</name></member>
+      <member refid="classobjectsForDisplay_1a29fface0009b8c6669d20db41a8496c4" prot="protected" virt="non-virtual"><scope>objectsForDisplay</scope><name>boundaryRadiusZ</name></member>
+      <member refid="classGameObject_1ad06b99a731d8d50e06ee92708b78b4db" prot="protected" virt="non-virtual"><scope>objectsForDisplay</scope><name>GameObject</name></member>
+      <member refid="classobjectsForDisplay_1a72bc7040abaa0b361da68452de000f39" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>getBoundaryRadiusX</name></member>
+      <member refid="classobjectsForDisplay_1a1598c3caea74983607e719dab07b3704" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>getBoundaryRadiusZ</name></member>
+      <member refid="classGameObject_1a00da4ea36f3945e1da1a2f81061b57d3" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>getCount</name></member>
+      <member refid="classGameObject_1ab7c8021dd4caa10448c87396db933e94" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>getName</name></member>
+      <member refid="classobjectsForDisplay_1a7be0d40a45472bd1ff986ea8606dfbba" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>getObjectposX</name></member>
+      <member refid="classobjectsForDisplay_1a85829a61f5de07d5c83231e49821097f" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>getObjectposY</name></member>
+      <member refid="classobjectsForDisplay_1aa2f7e29218b1bbd07f5186b4c39b037a" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>getObjectposZ</name></member>
+      <member refid="classobjectsForDisplay_1af5c02d1f662dbdc8d870790c108abdff" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>init</name></member>
+      <member refid="classobjectsForDisplay_1a7fc07efa02fd65fc144c5989c1d1d382" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>init</name></member>
+      <member refid="classGameObject_1a125061a56ff346096387b9d3674d69ca" prot="protected" virt="non-virtual"><scope>objectsForDisplay</scope><name>Name_</name></member>
+      <member refid="classobjectsForDisplay_1a51df86cc4fc2949060983d52b7cb3f0e" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>objectPos</name></member>
+      <member refid="classobjectsForDisplay_1a3226586622081e3d66caea2d91243b13" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>objectsForDisplay</name></member>
+      <member refid="classobjectsForDisplay_1ae52d5d2bba7e53476979c682e49523fc" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>originalPos</name></member>
+      <member refid="classGameObject_1ab82dfdb656f9051c0587e6593b2dda97" prot="public" virt="virtual"><scope>objectsForDisplay</scope><name>~GameObject</name></member>
+      <member refid="classobjectsForDisplay_1a248356282ecfca47bdb88940a2a3a2f6" prot="public" virt="non-virtual"><scope>objectsForDisplay</scope><name>~objectsForDisplay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

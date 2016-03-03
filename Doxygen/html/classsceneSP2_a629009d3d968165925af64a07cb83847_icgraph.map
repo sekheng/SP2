@@ -1,0 +1,26 @@
+<map id="sceneSP2::renderMesh" name="sceneSP2::renderMesh">
+<area shape="rect" id="node2" href="$classsceneSP2.html#afd5bafac85490eaca7c0b1795654911f" title="rendering of environment object " alt="" coords="508,68,675,95"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="1005,397,1136,424"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#a42247c1b8c563d1b335911da5d2d98a9" title="rendering of building " alt="" coords="503,119,680,145"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="765,271,939,297"/>
+<area shape="rect" id="node6" href="$classsceneSP2.html#abdffaa97b7e0723b7be3b65b971ff9c0" title="sceneSP2::RenderContainer" alt="" coords="231,859,417,885"/>
+<area shape="rect" id="node7" href="$classsceneSP2.html#a8ad24c07e46d22efa70c4911938da42b" title="sceneSP2::RenderGasoline" alt="" coords="233,909,415,936"/>
+<area shape="rect" id="node8" href="$classsceneSP2.html#a49f8376bc37b58353f12d444bb5d7d9a" title="rendering of ground texture " alt="" coords="490,169,693,196"/>
+<area shape="rect" id="node9" href="$classsceneSP2.html#a9433a15f7680dcf369daaf5d7b44de8d" title="sceneSP2::RenderHammer" alt="" coords="234,960,414,987"/>
+<area shape="rect" id="node10" href="$classsceneSP2.html#ac987b33f8bb07f2078d856dfc9f3ba73" title="rendering of image using quad on screen " alt="" coords="212,575,436,601"/>
+<area shape="rect" id="node12" href="$classsceneSP2.html#a6523e8cf564e7f88ae94958fd9c08d1a" title="a method to render Sek Heng and his quest " alt="" coords="754,321,950,348"/>
+<area shape="rect" id="node13" href="$classsceneSP2.html#a330759ab9405718e498ee50fa1b39d97" title="rendering of NPC and quest " alt="" coords="773,423,931,449"/>
+<area shape="rect" id="node14" href="$classsceneSP2.html#a9cfd40b303b8fbd4a67e4d6eedecdc25" title="sceneSP2::RenderQuestObjects" alt="" coords="747,372,957,399"/>
+<area shape="rect" id="node15" href="$classsceneSP2.html#a963ab61de5342e71f6227d9be05383f9" title="render everything in the room " alt="" coords="766,473,938,500"/>
+<area shape="rect" id="node16" href="$classsceneSP2.html#a2a5f5a79ed05066a23f447e4cbbb084f" title="Teleporter and it&#39;s particle effect " alt="" coords="759,524,945,551"/>
+<area shape="rect" id="node19" href="$classsceneSP2.html#a4db61bd86dd1751ab4664526a155ff3c" title="rendering of the minigame pieces on screen " alt="" coords="231,691,417,733"/>
+<area shape="rect" id="node20" href="$classsceneSP2.html#a27c51bd47d0a61a6304825a7721ddae2" title="rendering minigame selector on screen " alt="" coords="231,626,417,667"/>
+<area shape="rect" id="node21" href="$classsceneSP2.html#afb433e694c8971a472bb70f674cb3a7a" title="sceneSP2::RenderScrewDriver" alt="" coords="225,1011,423,1037"/>
+<area shape="rect" id="node22" href="$classsceneSP2.html#a29028ca91b43536bfdab19a8ac5f53ab" title="rendering of skybox " alt="" coords="765,747,939,773"/>
+<area shape="rect" id="node23" href="$classsceneSP2.html#acca3ebdcd7a31f60020d477ba50af35a" title="rendering of space shuttle " alt="" coords="487,808,696,835"/>
+<area shape="rect" id="node24" href="$classsceneSP2.html#aef464b9b4f04ad8cc893ba2bdea01011" title="rendering of item taken on screen " alt="" coords="484,321,699,348"/>
+<area shape="rect" id="node25" href="$classsceneSP2.html#ade1937e06b702a9fb25247e79916fc47" title="rendering of user interface " alt="" coords="221,1061,427,1088"/>
+<area shape="rect" id="node11" href="$classsceneSP2.html#ae123d615a0922d326c4c5088e47b9b23" title="create a dialogue box easily " alt="" coords="492,473,691,500"/>
+<area shape="rect" id="node17" href="$classsceneSP2.html#aecd0a9336acbd6dcd18007f4e66335a2" title="rendering minigame pieces &amp; minigame selector " alt="" coords="498,691,685,733"/>
+<area shape="rect" id="node18" href="$classsceneSP2.html#a7eb72bce5028c0b185d95fcc9dfd8f7d" title="rendering of tutorial " alt="" coords="505,626,678,667"/>
+</map>

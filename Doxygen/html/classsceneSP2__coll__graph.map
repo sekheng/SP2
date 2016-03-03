@@ -1,0 +1,20 @@
+<map id="sceneSP2" name="sceneSP2">
+<area shape="rect" id="node2" href="$classScene.html" title="The basic functions of how Scene works. All scenes shall inheirit from this class. " alt="" coords="1075,29,1133,56"/>
+<area shape="rect" id="node3" href="$classSekHeng.html" title="SekHeng" alt="" coords="1067,551,1141,577"/>
+<area shape="rect" id="node4" href="$classobjectsForDisplay.html" title="Inheirited from GameObject It has it&#39;s own text reader file to input it&#39;s values, position..." alt="" coords="742,521,869,548"/>
+<area shape="rect" id="node5" href="$classGameObject.html" title="Defines GameObject, get the name of the GameObject and count how many gameobjects there are..." alt="" coords="439,1091,534,1117"/>
+<area shape="rect" id="node24" href="$classStationScene.html" title="Inheirited from GameObject It will have the collisiont check and position. And it&#39;s own dialogues and..." alt="" coords="1054,1209,1154,1236"/>
+<area shape="rect" id="node31" href="$classNPC.html" title="Inheirited from GameObject It has a text reader file to input it&#39;s dialogue " alt="" coords="1079,1064,1129,1091"/>
+<area shape="rect" id="node25" href="$classMesh.html" title="To store VBO (vertex &amp; color buffer) and IBO (index buffer) " alt="" coords="778,2292,833,2319"/>
+<area shape="rect" id="node33" href="$classQuest.html" title="Quest system used to help create a flow of quests easily in the game " alt="" coords="1075,1771,1133,1797"/>
+<area shape="rect" id="node9" href="$structVector3.html" title="Defines a 3D vector and its methods. " alt="" coords="128,621,195,648"/>
+<area shape="rect" id="node11" href="$classCamera3.html" title="First Person Camera included Extremely Complex functions of the camera which incorporates mouse contr..." alt="" coords="768,699,843,725"/>
+<area shape="rect" id="node18" href="$structLight.html" title="set the Light, position, color, light type, and light properties " alt="" coords="461,315,512,341"/>
+<area shape="rect" id="node20" href="$structPosition.html" title="defines 3D position " alt="" coords="127,332,196,359"/>
+<area shape="rect" id="node21" href="$structColor.html" title="defines color and it&#39;s RGB properties " alt="" coords="135,384,187,411"/>
+<area shape="rect" id="node26" href="$structMaterial.html" title="Defines the material and it&#39;s properties. " alt="" coords="453,2369,521,2396"/>
+<area shape="rect" id="node27" href="$structComponent.html" title="Defines material&#39;s colour. " alt="" coords="117,2364,205,2391"/>
+<area shape="rect" id="node30" href="$classminigame.html" title="minigame" alt="" coords="1065,2057,1143,2084"/>
+<area shape="rect" id="node12" href="$classCamera.html" title="basic functions of the camera " alt="" coords="453,741,520,768"/>
+<area shape="rect" id="node22" href="$classMS.html" title="Matrix Stack class. " alt="" coords="1083,2549,1125,2576"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="NPC::quest_complete" name="NPC::quest_complete">
+<area shape="rect" id="node2" href="$classsceneSP2.html#ae60186d06cd8213f6f5767667d3e2822" title="render chunfei npc " alt="" coords="203,5,377,32"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#a330759ab9405718e498ee50fa1b39d97" title="rendering of NPC and quest " alt="" coords="211,56,369,83"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="425,31,556,57"/>
+</map>

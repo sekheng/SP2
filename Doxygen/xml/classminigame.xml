@@ -1,0 +1,916 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classminigame" kind="class" language="C++" prot="public">
+    <compoundname>minigame</compoundname>
+    <includes refid="scene2__minigame_8h" local="no">scene2_minigame.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece_state</definition>
+        <argsstring></argsstring>
+        <name>piece_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="38" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1afde327efd1330ca79df23de9f1fa4641" compoundref="scene2__minigame_8cpp" startline="377" endline="380">get_selector_state</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" compoundref="scene2__minigame_8cpp" startline="181" endline="213">selection_pointer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a67281ae6a0468fd3846b990ac5ed6d6d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float minigame::piece1_rotate</definition>
+        <argsstring></argsstring>
+        <name>piece1_rotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="39" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1aeec505c51a2cc3d3c499bc4c21ea85f7" compoundref="scene2__minigame_8cpp" startline="65" endline="68">piece1</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1ac4092fdec11804259311f24a7405b900" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float minigame::piece2_rotate</definition>
+        <argsstring></argsstring>
+        <name>piece2_rotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="40" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1af78ecfbe0fe4f8324836efcab7408653" compoundref="scene2__minigame_8cpp" startline="76" endline="79">piece2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a9f1a84b98d821cdc7a17f51cc6b1ff59" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float minigame::piece3_rotate</definition>
+        <argsstring></argsstring>
+        <name>piece3_rotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="41" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a3421514ab9ef58691039c97e819865b7" compoundref="scene2__minigame_8cpp" startline="87" endline="90">piece3</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1afe52a5c448f771122a38189d5298a19b" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float minigame::piece4_rotate</definition>
+        <argsstring></argsstring>
+        <name>piece4_rotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="42" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a7ced6b9a798bbf98da9b8699d91b406a" compoundref="scene2__minigame_8cpp" startline="98" endline="101">piece4</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a4539bc45b9ec63eaffcb63a8752f7196" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float minigame::piece5_rotate</definition>
+        <argsstring></argsstring>
+        <name>piece5_rotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="43" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1aab52da72b1e323c33a1dc5581c32ab14" compoundref="scene2__minigame_8cpp" startline="109" endline="112">piece5</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1afeab68e01fc289c7ee456c8757f8cc11" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float minigame::piece6_rotate</definition>
+        <argsstring></argsstring>
+        <name>piece6_rotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="44" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a78a8a791bbfdea668af7766dd6035e9c" compoundref="scene2__minigame_8cpp" startline="120" endline="123">piece6</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1ad40ae9c23e65cd36ebd536317f3e582e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float minigame::piece7_rotate</definition>
+        <argsstring></argsstring>
+        <name>piece7_rotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="45" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a6f1976f5354e86df7ae4588192b3aee9" compoundref="scene2__minigame_8cpp" startline="131" endline="134">piece7</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a37ac310640125301e7f5d77a181b01d3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float minigame::piece8_rotate</definition>
+        <argsstring></argsstring>
+        <name>piece8_rotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="46" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a34d0f26cff11a1152d6edc0850142ad1" compoundref="scene2__minigame_8cpp" startline="142" endline="145">piece8</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a6d3a5441c842965cdab06f25659e72f1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float minigame::piece9_rotate</definition>
+        <argsstring></argsstring>
+        <name>piece9_rotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="47" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1aeb6091a011ba179d01518faa391e142b" compoundref="scene2__minigame_8cpp" startline="153" endline="156">piece9</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a1477d8472054155595a66dd8a4477c01" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece1_state</definition>
+        <argsstring></argsstring>
+        <name>piece1_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="48" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1aeec505c51a2cc3d3c499bc4c21ea85f7" compoundref="scene2__minigame_8cpp" startline="65" endline="68">piece1</referencedby>
+        <referencedby refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1aba86f197a156fa58a85c53ce7533706d" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece2_state</definition>
+        <argsstring></argsstring>
+        <name>piece2_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="49" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1af78ecfbe0fe4f8324836efcab7408653" compoundref="scene2__minigame_8cpp" startline="76" endline="79">piece2</referencedby>
+        <referencedby refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece3_state</definition>
+        <argsstring></argsstring>
+        <name>piece3_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="50" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a3421514ab9ef58691039c97e819865b7" compoundref="scene2__minigame_8cpp" startline="87" endline="90">piece3</referencedby>
+        <referencedby refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece4_state</definition>
+        <argsstring></argsstring>
+        <name>piece4_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="51" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a7ced6b9a798bbf98da9b8699d91b406a" compoundref="scene2__minigame_8cpp" startline="98" endline="101">piece4</referencedby>
+        <referencedby refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1ad98acd0eea93748c000c21ead6b660ab" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece5_state</definition>
+        <argsstring></argsstring>
+        <name>piece5_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="52" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1aab52da72b1e323c33a1dc5581c32ab14" compoundref="scene2__minigame_8cpp" startline="109" endline="112">piece5</referencedby>
+        <referencedby refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece6_state</definition>
+        <argsstring></argsstring>
+        <name>piece6_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="53" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a78a8a791bbfdea668af7766dd6035e9c" compoundref="scene2__minigame_8cpp" startline="120" endline="123">piece6</referencedby>
+        <referencedby refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1ab6108aacb89613f87601ec85bb88f43e" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece7_state</definition>
+        <argsstring></argsstring>
+        <name>piece7_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="54" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a6f1976f5354e86df7ae4588192b3aee9" compoundref="scene2__minigame_8cpp" startline="131" endline="134">piece7</referencedby>
+        <referencedby refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a6096fd9085ff163b8a35a6443827dde6" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece8_state</definition>
+        <argsstring></argsstring>
+        <name>piece8_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="55" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a34d0f26cff11a1152d6edc0850142ad1" compoundref="scene2__minigame_8cpp" startline="142" endline="145">piece8</referencedby>
+        <referencedby refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" prot="private" static="no" mutable="no">
+        <type>short</type>
+        <definition>short minigame::piece9_state</definition>
+        <argsstring></argsstring>
+        <name>piece9_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="56" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1aeb6091a011ba179d01518faa391e142b" compoundref="scene2__minigame_8cpp" startline="153" endline="156">piece9</referencedby>
+        <referencedby refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1af610183de5efc1b1992031ba5a81e186" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool minigame::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="57" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a8633034099119cd39d51beae5564bbc1" compoundref="scene2__minigame_8cpp" startline="365" endline="368">minigame_started</referencedby>
+        <referencedby refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" compoundref="scene2__minigame_8cpp" startline="343" endline="354">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a60289c525151706ee8e3663587eff6d1" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double minigame::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="58" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" compoundref="scene2__minigame_8cpp" startline="181" endline="213">selection_pointer</referencedby>
+        <referencedby refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" compoundref="scene2__minigame_8cpp" startline="343" endline="354">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double minigame::input_delay</definition>
+        <argsstring></argsstring>
+        <name>input_delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="59" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</referencedby>
+        <referencedby refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" compoundref="scene2__minigame_8cpp" startline="30" endline="58">init</referencedby>
+        <referencedby refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" compoundref="scene2__minigame_8cpp" startline="181" endline="213">selection_pointer</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classminigame_1af3934d180e30ecc3a325c3adb302e089" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>minigame::minigame</definition>
+        <argsstring>()</argsstring>
+        <name>minigame</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Default Constructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="17" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1ac05ff74aedc6c6a006ee12ed68617909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>minigame::~minigame</definition>
+        <argsstring>()</argsstring>
+        <name>~minigame</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>Destructor </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="18" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minigame::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>initialised and randomises values for all the pieces&apos; rotation and initialise other variables </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="19" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="30" bodyend="58"/>
+        <references refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" compoundref="scene2__minigame_8h" startline="59">input_delay</references>
+        <references refid="classminigame_1a67281ae6a0468fd3846b990ac5ed6d6d" compoundref="scene2__minigame_8h" startline="39">piece1_rotate</references>
+        <references refid="classminigame_1a1477d8472054155595a66dd8a4477c01" compoundref="scene2__minigame_8h" startline="48">piece1_state</references>
+        <references refid="classminigame_1ac4092fdec11804259311f24a7405b900" compoundref="scene2__minigame_8h" startline="40">piece2_rotate</references>
+        <references refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" compoundref="scene2__minigame_8h" startline="49">piece2_state</references>
+        <references refid="classminigame_1a9f1a84b98d821cdc7a17f51cc6b1ff59" compoundref="scene2__minigame_8h" startline="41">piece3_rotate</references>
+        <references refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" compoundref="scene2__minigame_8h" startline="50">piece3_state</references>
+        <references refid="classminigame_1afe52a5c448f771122a38189d5298a19b" compoundref="scene2__minigame_8h" startline="42">piece4_rotate</references>
+        <references refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" compoundref="scene2__minigame_8h" startline="51">piece4_state</references>
+        <references refid="classminigame_1a4539bc45b9ec63eaffcb63a8752f7196" compoundref="scene2__minigame_8h" startline="43">piece5_rotate</references>
+        <references refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" compoundref="scene2__minigame_8h" startline="52">piece5_state</references>
+        <references refid="classminigame_1afeab68e01fc289c7ee456c8757f8cc11" compoundref="scene2__minigame_8h" startline="44">piece6_rotate</references>
+        <references refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" compoundref="scene2__minigame_8h" startline="53">piece6_state</references>
+        <references refid="classminigame_1ad40ae9c23e65cd36ebd536317f3e582e" compoundref="scene2__minigame_8h" startline="45">piece7_rotate</references>
+        <references refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" compoundref="scene2__minigame_8h" startline="54">piece7_state</references>
+        <references refid="classminigame_1a37ac310640125301e7f5d77a181b01d3" compoundref="scene2__minigame_8h" startline="46">piece8_rotate</references>
+        <references refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" compoundref="scene2__minigame_8h" startline="55">piece8_state</references>
+        <references refid="classminigame_1a6d3a5441c842965cdab06f25659e72f1" compoundref="scene2__minigame_8h" startline="47">piece9_rotate</references>
+        <references refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" compoundref="scene2__minigame_8h" startline="56">piece9_state</references>
+        <references refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" compoundref="scene2__minigame_8h" startline="38">piece_state</references>
+        <references refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" compoundref="MyMath_8h" startline="215" endline="219">Math::RandIntMinMax</references>
+        <references refid="classminigame_1af610183de5efc1b1992031ba5a81e186" compoundref="scene2__minigame_8h" startline="57">start</references>
+        <references refid="classminigame_1a60289c525151706ee8e3663587eff6d1" compoundref="scene2__minigame_8h" startline="58">time</references>
+        <referencedby refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" compoundref="sceneSP2_8cpp" startline="44" endline="519">sceneSP2::Init</referencedby>
+        <referencedby refid="classsceneSP2_1ad70fc6c47c485a14285257c1414729d1" compoundref="sceneSP2_8cpp" startline="694" endline="718">sceneSP2::reset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1aeec505c51a2cc3d3c499bc4c21ea85f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minigame::piece1</definition>
+        <argsstring>()</argsstring>
+        <name>piece1</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get minigame piece 1&apos;s rotation </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- amount of rotation for piece 1 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="20" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="65" bodyend="68"/>
+        <references refid="classminigame_1a67281ae6a0468fd3846b990ac5ed6d6d" compoundref="scene2__minigame_8h" startline="39">piece1_rotate</references>
+        <references refid="classminigame_1a1477d8472054155595a66dd8a4477c01" compoundref="scene2__minigame_8h" startline="48">piece1_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1af78ecfbe0fe4f8324836efcab7408653" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minigame::piece2</definition>
+        <argsstring>()</argsstring>
+        <name>piece2</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get minigame piece 2&apos;s rotation </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- amount of rotation for piece 2 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="21" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="76" bodyend="79"/>
+        <references refid="classminigame_1ac4092fdec11804259311f24a7405b900" compoundref="scene2__minigame_8h" startline="40">piece2_rotate</references>
+        <references refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" compoundref="scene2__minigame_8h" startline="49">piece2_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a3421514ab9ef58691039c97e819865b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minigame::piece3</definition>
+        <argsstring>()</argsstring>
+        <name>piece3</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get minigame piece 3&apos;s rotation </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- amount of rotation for piece 3 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="22" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="87" bodyend="90"/>
+        <references refid="classminigame_1a9f1a84b98d821cdc7a17f51cc6b1ff59" compoundref="scene2__minigame_8h" startline="41">piece3_rotate</references>
+        <references refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" compoundref="scene2__minigame_8h" startline="50">piece3_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a7ced6b9a798bbf98da9b8699d91b406a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minigame::piece4</definition>
+        <argsstring>()</argsstring>
+        <name>piece4</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get minigame piece 4&apos;s rotation </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- amount of rotation for piece 4 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="23" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="98" bodyend="101"/>
+        <references refid="classminigame_1afe52a5c448f771122a38189d5298a19b" compoundref="scene2__minigame_8h" startline="42">piece4_rotate</references>
+        <references refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" compoundref="scene2__minigame_8h" startline="51">piece4_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1aab52da72b1e323c33a1dc5581c32ab14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minigame::piece5</definition>
+        <argsstring>()</argsstring>
+        <name>piece5</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get minigame piece 5&apos;s rotation </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- amount of rotation for piece 5 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="24" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="109" bodyend="112"/>
+        <references refid="classminigame_1a4539bc45b9ec63eaffcb63a8752f7196" compoundref="scene2__minigame_8h" startline="43">piece5_rotate</references>
+        <references refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" compoundref="scene2__minigame_8h" startline="52">piece5_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a78a8a791bbfdea668af7766dd6035e9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minigame::piece6</definition>
+        <argsstring>()</argsstring>
+        <name>piece6</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get minigame piece 6&apos;s rotation </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- amount of rotation for piece 6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="25" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="120" bodyend="123"/>
+        <references refid="classminigame_1afeab68e01fc289c7ee456c8757f8cc11" compoundref="scene2__minigame_8h" startline="44">piece6_rotate</references>
+        <references refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" compoundref="scene2__minigame_8h" startline="53">piece6_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a6f1976f5354e86df7ae4588192b3aee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minigame::piece7</definition>
+        <argsstring>()</argsstring>
+        <name>piece7</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get minigame piece 7&apos;s rotation </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- amount of rotation for piece 7 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="26" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="131" bodyend="134"/>
+        <references refid="classminigame_1ad40ae9c23e65cd36ebd536317f3e582e" compoundref="scene2__minigame_8h" startline="45">piece7_rotate</references>
+        <references refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" compoundref="scene2__minigame_8h" startline="54">piece7_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a34d0f26cff11a1152d6edc0850142ad1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minigame::piece8</definition>
+        <argsstring>()</argsstring>
+        <name>piece8</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get minigame piece 8&apos;s rotation </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- amount of rotation for piece 8 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="27" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="142" bodyend="145"/>
+        <references refid="classminigame_1a37ac310640125301e7f5d77a181b01d3" compoundref="scene2__minigame_8h" startline="46">piece8_rotate</references>
+        <references refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" compoundref="scene2__minigame_8h" startline="55">piece8_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1aeb6091a011ba179d01518faa391e142b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minigame::piece9</definition>
+        <argsstring>()</argsstring>
+        <name>piece9</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get minigame piece 9&apos;s rotation </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- amount of rotation for piece 9 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="28" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="153" bodyend="156"/>
+        <references refid="classminigame_1a6d3a5441c842965cdab06f25659e72f1" compoundref="scene2__minigame_8h" startline="47">piece9_rotate</references>
+        <references refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" compoundref="scene2__minigame_8h" startline="56">piece9_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minigame::selection_pointer</definition>
+        <argsstring>()</argsstring>
+        <name>selection_pointer</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>to calculate which piece the minigame&apos;s selection pointer points to </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="29" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="181" bodyend="213"/>
+        <references refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" compoundref="scene2__minigame_8h" startline="59">input_delay</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" compoundref="scene2__minigame_8h" startline="38">piece_state</references>
+        <references refid="classminigame_1a60289c525151706ee8e3663587eff6d1" compoundref="scene2__minigame_8h" startline="58">time</references>
+        <referencedby refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" compoundref="scene2__minigame_8cpp" startline="343" endline="354">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minigame::changePieceRotation</definition>
+        <argsstring>()</argsstring>
+        <name>changePieceRotation</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>detect when the player rotates a pice </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="30" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="220" bodyend="303"/>
+        <references refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" compoundref="scene2__minigame_8h" startline="59">input_delay</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="60" endline="63">Application::IsKeyPressed</references>
+        <references refid="classminigame_1a1477d8472054155595a66dd8a4477c01" compoundref="scene2__minigame_8h" startline="48">piece1_state</references>
+        <references refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" compoundref="scene2__minigame_8h" startline="49">piece2_state</references>
+        <references refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" compoundref="scene2__minigame_8h" startline="50">piece3_state</references>
+        <references refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" compoundref="scene2__minigame_8h" startline="51">piece4_state</references>
+        <references refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" compoundref="scene2__minigame_8h" startline="52">piece5_state</references>
+        <references refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" compoundref="scene2__minigame_8h" startline="53">piece6_state</references>
+        <references refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" compoundref="scene2__minigame_8h" startline="54">piece7_state</references>
+        <references refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" compoundref="scene2__minigame_8h" startline="55">piece8_state</references>
+        <references refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" compoundref="scene2__minigame_8h" startline="56">piece9_state</references>
+        <references refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" compoundref="scene2__minigame_8h" startline="38">piece_state</references>
+        <references refid="classminigame_1a60289c525151706ee8e3663587eff6d1" compoundref="scene2__minigame_8h" startline="58">time</references>
+        <referencedby refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" compoundref="scene2__minigame_8cpp" startline="343" endline="354">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1aea6576f016f1c9944aa5ea699b412446" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minigame::update</definition>
+        <argsstring>(double dt, bool start_game)</argsstring>
+        <name>update</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>start_game</declname>
+        </param>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>update the minigame&apos;s progress </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- delta time</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start_game</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- boolean to check if player has started minigame </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="31" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="343" bodyend="354"/>
+        <references refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" compoundref="scene2__minigame_8cpp" startline="220" endline="303">changePieceRotation</references>
+        <references refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" compoundref="scene2__minigame_8cpp" startline="316" endline="332">result</references>
+        <references refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" compoundref="scene2__minigame_8cpp" startline="181" endline="213">selection_pointer</references>
+        <references refid="classminigame_1af610183de5efc1b1992031ba5a81e186" compoundref="scene2__minigame_8h" startline="57">start</references>
+        <references refid="classminigame_1a60289c525151706ee8e3663587eff6d1" compoundref="scene2__minigame_8h" startline="58">time</references>
+        <references refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" compoundref="scene2__minigame_8cpp" startline="163" endline="174">updatePieceState</references>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool minigame::result</definition>
+        <argsstring>()</argsstring>
+        <name>result</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>check if minigame is completed </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true - player has completed minigame</para></simplesect>
+<simplesect kind="return"><para>false - player has not completed minigame </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="32" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="316" bodyend="332"/>
+        <references refid="classminigame_1a1477d8472054155595a66dd8a4477c01" compoundref="scene2__minigame_8h" startline="48">piece1_state</references>
+        <references refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" compoundref="scene2__minigame_8h" startline="49">piece2_state</references>
+        <references refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" compoundref="scene2__minigame_8h" startline="50">piece3_state</references>
+        <references refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" compoundref="scene2__minigame_8h" startline="51">piece4_state</references>
+        <references refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" compoundref="scene2__minigame_8h" startline="52">piece5_state</references>
+        <references refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" compoundref="scene2__minigame_8h" startline="53">piece6_state</references>
+        <references refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" compoundref="scene2__minigame_8h" startline="54">piece7_state</references>
+        <references refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" compoundref="scene2__minigame_8h" startline="55">piece8_state</references>
+        <references refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" compoundref="scene2__minigame_8h" startline="56">piece9_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" compoundref="scene2__minigame_8cpp" startline="343" endline="354">update</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minigame::updatePieceState</definition>
+        <argsstring>()</argsstring>
+        <name>updatePieceState</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>update rotation for al the pieces </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="33" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="163" bodyend="174"/>
+        <references refid="classminigame_1aeec505c51a2cc3d3c499bc4c21ea85f7" compoundref="scene2__minigame_8cpp" startline="65" endline="68">piece1</references>
+        <references refid="classminigame_1af78ecfbe0fe4f8324836efcab7408653" compoundref="scene2__minigame_8cpp" startline="76" endline="79">piece2</references>
+        <references refid="classminigame_1a3421514ab9ef58691039c97e819865b7" compoundref="scene2__minigame_8cpp" startline="87" endline="90">piece3</references>
+        <references refid="classminigame_1a7ced6b9a798bbf98da9b8699d91b406a" compoundref="scene2__minigame_8cpp" startline="98" endline="101">piece4</references>
+        <references refid="classminigame_1aab52da72b1e323c33a1dc5581c32ab14" compoundref="scene2__minigame_8cpp" startline="109" endline="112">piece5</references>
+        <references refid="classminigame_1a78a8a791bbfdea668af7766dd6035e9c" compoundref="scene2__minigame_8cpp" startline="120" endline="123">piece6</references>
+        <references refid="classminigame_1a6f1976f5354e86df7ae4588192b3aee9" compoundref="scene2__minigame_8cpp" startline="131" endline="134">piece7</references>
+        <references refid="classminigame_1a34d0f26cff11a1152d6edc0850142ad1" compoundref="scene2__minigame_8cpp" startline="142" endline="145">piece8</references>
+        <references refid="classminigame_1aeb6091a011ba179d01518faa391e142b" compoundref="scene2__minigame_8cpp" startline="153" endline="156">piece9</references>
+        <referencedby refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" compoundref="scene2__minigame_8cpp" startline="343" endline="354">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a6f19116ca39936d79cbaf56f31b18dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minigame::minigame_started</definition>
+        <argsstring>(bool started)</argsstring>
+        <name>minigame_started</name>
+        <param>
+          <type>bool</type>
+          <declname>started</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="34" column="1"/>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+        <referencedby refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" compoundref="sceneSP2_8cpp" startline="529" endline="687">sceneSP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1a8633034099119cd39d51beae5564bbc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool minigame::minigame_started</definition>
+        <argsstring>()</argsstring>
+        <name>minigame_started</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get status for minigame if it has started or not </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true - minigame has started</para></simplesect>
+<simplesect kind="return"><para>false - minigame has not started </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="35" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="365" bodyend="368"/>
+        <references refid="classminigame_1af610183de5efc1b1992031ba5a81e186" compoundref="scene2__minigame_8h" startline="57">start</references>
+      </memberdef>
+      <memberdef kind="function" id="classminigame_1afde327efd1330ca79df23de9f1fa4641" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short minigame::get_selector_state</definition>
+        <argsstring>()</argsstring>
+        <name>get_selector_state</name>
+        <briefdescription>
+<para><itemizedlist>
+<listitem><para>get where the selector is pointing to </para></listitem></itemizedlist>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- which piece the selector should be pointing at </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MyGraphics/Source/scene2_minigame.h" line="36" column="1" bodyfile="MyGraphics/Source/scene2_minigame.cpp" bodystart="377" bodyend="380"/>
+        <references refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" compoundref="scene2__minigame_8h" startline="38">piece_state</references>
+        <referencedby refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" compoundref="sceneSP2_8cpp" startline="2593" endline="2654">sceneSP2::RenderMinigamePieces</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="742">
+        <label>float</label>
+      </node>
+      <node id="740">
+        <label>minigame</label>
+        <link refid="classminigame"/>
+        <childnode refid="741" relation="usage">
+          <edgelabel>input_delay</edgelabel>
+          <edgelabel>time</edgelabel>
+        </childnode>
+        <childnode refid="742" relation="usage">
+          <edgelabel>piece6_rotate</edgelabel>
+          <edgelabel>piece7_rotate</edgelabel>
+          <edgelabel>piece4_rotate</edgelabel>
+          <edgelabel>piece5_rotate</edgelabel>
+          <edgelabel>piece8_rotate</edgelabel>
+          <edgelabel>piece9_rotate</edgelabel>
+          <edgelabel>piece2_rotate</edgelabel>
+          <edgelabel>piece3_rotate</edgelabel>
+          <edgelabel>piece1_rotate</edgelabel>
+        </childnode>
+        <childnode refid="743" relation="usage">
+          <edgelabel>piece9_state</edgelabel>
+          <edgelabel>piece8_state</edgelabel>
+          <edgelabel>piece7_state</edgelabel>
+          <edgelabel>piece6_state</edgelabel>
+          <edgelabel>piece5_state</edgelabel>
+          <edgelabel>piece_state</edgelabel>
+          <edgelabel>piece4_state</edgelabel>
+          <edgelabel>piece3_state</edgelabel>
+          <edgelabel>piece2_state</edgelabel>
+          <edgelabel>piece1_state</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="744" relation="usage">
+          <edgelabel>start</edgelabel>
+        </childnode>
+      </node>
+      <node id="741">
+        <label>double</label>
+      </node>
+      <node id="743">
+        <label>short</label>
+      </node>
+      <node id="744">
+        <label>bool</label>
+      </node>
+    </collaborationgraph>
+    <location file="MyGraphics/Source/scene2_minigame.h" line="15" column="1" bodyfile="MyGraphics/Source/scene2_minigame.h" bodystart="14" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" prot="public" virt="non-virtual"><scope>minigame</scope><name>changePieceRotation</name></member>
+      <member refid="classminigame_1afde327efd1330ca79df23de9f1fa4641" prot="public" virt="non-virtual"><scope>minigame</scope><name>get_selector_state</name></member>
+      <member refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" prot="public" virt="non-virtual"><scope>minigame</scope><name>init</name></member>
+      <member refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" prot="private" virt="non-virtual"><scope>minigame</scope><name>input_delay</name></member>
+      <member refid="classminigame_1af3934d180e30ecc3a325c3adb302e089" prot="public" virt="non-virtual"><scope>minigame</scope><name>minigame</name></member>
+      <member refid="classminigame_1a6f19116ca39936d79cbaf56f31b18dac" prot="public" virt="non-virtual"><scope>minigame</scope><name>minigame_started</name></member>
+      <member refid="classminigame_1a8633034099119cd39d51beae5564bbc1" prot="public" virt="non-virtual"><scope>minigame</scope><name>minigame_started</name></member>
+      <member refid="classminigame_1aeec505c51a2cc3d3c499bc4c21ea85f7" prot="public" virt="non-virtual"><scope>minigame</scope><name>piece1</name></member>
+      <member refid="classminigame_1a67281ae6a0468fd3846b990ac5ed6d6d" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece1_rotate</name></member>
+      <member refid="classminigame_1a1477d8472054155595a66dd8a4477c01" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece1_state</name></member>
+      <member refid="classminigame_1af78ecfbe0fe4f8324836efcab7408653" prot="public" virt="non-virtual"><scope>minigame</scope><name>piece2</name></member>
+      <member refid="classminigame_1ac4092fdec11804259311f24a7405b900" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece2_rotate</name></member>
+      <member refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece2_state</name></member>
+      <member refid="classminigame_1a3421514ab9ef58691039c97e819865b7" prot="public" virt="non-virtual"><scope>minigame</scope><name>piece3</name></member>
+      <member refid="classminigame_1a9f1a84b98d821cdc7a17f51cc6b1ff59" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece3_rotate</name></member>
+      <member refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece3_state</name></member>
+      <member refid="classminigame_1a7ced6b9a798bbf98da9b8699d91b406a" prot="public" virt="non-virtual"><scope>minigame</scope><name>piece4</name></member>
+      <member refid="classminigame_1afe52a5c448f771122a38189d5298a19b" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece4_rotate</name></member>
+      <member refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece4_state</name></member>
+      <member refid="classminigame_1aab52da72b1e323c33a1dc5581c32ab14" prot="public" virt="non-virtual"><scope>minigame</scope><name>piece5</name></member>
+      <member refid="classminigame_1a4539bc45b9ec63eaffcb63a8752f7196" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece5_rotate</name></member>
+      <member refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece5_state</name></member>
+      <member refid="classminigame_1a78a8a791bbfdea668af7766dd6035e9c" prot="public" virt="non-virtual"><scope>minigame</scope><name>piece6</name></member>
+      <member refid="classminigame_1afeab68e01fc289c7ee456c8757f8cc11" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece6_rotate</name></member>
+      <member refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece6_state</name></member>
+      <member refid="classminigame_1a6f1976f5354e86df7ae4588192b3aee9" prot="public" virt="non-virtual"><scope>minigame</scope><name>piece7</name></member>
+      <member refid="classminigame_1ad40ae9c23e65cd36ebd536317f3e582e" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece7_rotate</name></member>
+      <member refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece7_state</name></member>
+      <member refid="classminigame_1a34d0f26cff11a1152d6edc0850142ad1" prot="public" virt="non-virtual"><scope>minigame</scope><name>piece8</name></member>
+      <member refid="classminigame_1a37ac310640125301e7f5d77a181b01d3" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece8_rotate</name></member>
+      <member refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece8_state</name></member>
+      <member refid="classminigame_1aeb6091a011ba179d01518faa391e142b" prot="public" virt="non-virtual"><scope>minigame</scope><name>piece9</name></member>
+      <member refid="classminigame_1a6d3a5441c842965cdab06f25659e72f1" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece9_rotate</name></member>
+      <member refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece9_state</name></member>
+      <member refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" prot="private" virt="non-virtual"><scope>minigame</scope><name>piece_state</name></member>
+      <member refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" prot="public" virt="non-virtual"><scope>minigame</scope><name>result</name></member>
+      <member refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" prot="public" virt="non-virtual"><scope>minigame</scope><name>selection_pointer</name></member>
+      <member refid="classminigame_1af610183de5efc1b1992031ba5a81e186" prot="private" virt="non-virtual"><scope>minigame</scope><name>start</name></member>
+      <member refid="classminigame_1a60289c525151706ee8e3663587eff6d1" prot="private" virt="non-virtual"><scope>minigame</scope><name>time</name></member>
+      <member refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" prot="public" virt="non-virtual"><scope>minigame</scope><name>update</name></member>
+      <member refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" prot="public" virt="non-virtual"><scope>minigame</scope><name>updatePieceState</name></member>
+      <member refid="classminigame_1ac05ff74aedc6c6a006ee12ed68617909" prot="public" virt="non-virtual"><scope>minigame</scope><name>~minigame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,8 @@
+<map id="irrklang::ISound::setPosition" name="irrklang::ISound::setPosition">
+<area shape="rect" id="node2" href="$classBGMDriven.html#a7a30db1ca2365ff04d2712d66da0a503" title="A method functions dedicated to just play the 3D gate sound effect " alt="" coords="251,5,431,32"/>
+<area shape="rect" id="node4" href="$classBGMDriven.html#a7f96f10da396bee4949ad4abeb8655fc" title="A method functions dedicated to just play the 3D effect of &#39;I am Your Father&#39; " alt="" coords="239,57,443,98"/>
+<area shape="rect" id="node7" href="$classBGMDriven.html#aae10f0ff9b2e14d7b62b4c0797d3d714" title="A method functions dedicated to just play the 3D effect of &#39;Join the Dark Side&#39; " alt="" coords="243,122,438,163"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="523,5,654,32"/>
+<area shape="rect" id="node5" href="$classscene2__SP2.html#a602d4b84d1e8bc11c35060ef0c49a6da" title="a method to render Deadpool and his dialogues " alt="" coords="491,96,687,123"/>
+<area shape="rect" id="node6" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="735,96,880,123"/>
+</map>

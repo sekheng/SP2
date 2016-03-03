@@ -1,0 +1,5 @@
+<map id="creditScene::goRollCredit" name="creditScene::goRollCredit">
+<area shape="rect" id="node2" href="$classscene2__SP2.html#a2933944c895d9437b2364e18747df1ce" title="a method to render the credits " alt="" coords="223,5,401,32"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="239,56,385,83"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="449,5,595,32"/>
+</map>

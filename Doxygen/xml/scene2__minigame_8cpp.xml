@@ -1,0 +1,842 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="scene2__minigame_8cpp" kind="file" language="C++">
+    <compoundname>scene2_minigame.cpp</compoundname>
+    <includes refid="scene2__minigame_8h" local="yes">scene2_minigame.h</includes>
+    <includes refid="MyMath_8h" local="yes">MyMath.h</includes>
+    <includes refid="Application_8h" local="yes">Application.h</includes>
+    <incdepgraph>
+      <node id="5718">
+        <label>../irrKlang-1.5.0/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="5719" relation="include">
+        </childnode>
+        <childnode refid="5721" relation="include">
+        </childnode>
+        <childnode refid="5723" relation="include">
+        </childnode>
+        <childnode refid="5724" relation="include">
+        </childnode>
+        <childnode refid="5725" relation="include">
+        </childnode>
+        <childnode refid="5726" relation="include">
+        </childnode>
+        <childnode refid="5727" relation="include">
+        </childnode>
+        <childnode refid="5728" relation="include">
+        </childnode>
+        <childnode refid="5729" relation="include">
+        </childnode>
+        <childnode refid="5730" relation="include">
+        </childnode>
+        <childnode refid="5731" relation="include">
+        </childnode>
+        <childnode refid="5735" relation="include">
+        </childnode>
+        <childnode refid="5736" relation="include">
+        </childnode>
+        <childnode refid="5732" relation="include">
+        </childnode>
+        <childnode refid="5738" relation="include">
+        </childnode>
+        <childnode refid="5733" relation="include">
+        </childnode>
+        <childnode refid="5737" relation="include">
+        </childnode>
+        <childnode refid="5739" relation="include">
+        </childnode>
+        <childnode refid="5740" relation="include">
+        </childnode>
+        <childnode refid="5734" relation="include">
+        </childnode>
+      </node>
+      <node id="5728">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+      </node>
+      <node id="5699">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="5700" relation="include">
+        </childnode>
+        <childnode refid="5701" relation="include">
+        </childnode>
+      </node>
+      <node id="5716">
+        <label>queue</label>
+      </node>
+      <node id="5676">
+        <label>scene2_minigame.h</label>
+        <link refid="scene2__minigame_8h"/>
+      </node>
+      <node id="5685">
+        <label>DetectMemoryLeak.h</label>
+        <link refid="DetectMemoryLeak_8h"/>
+        <childnode refid="5686" relation="include">
+        </childnode>
+        <childnode refid="5687" relation="include">
+        </childnode>
+      </node>
+      <node id="5684">
+        <label>windows.h</label>
+      </node>
+      <node id="5697">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5677" relation="include">
+        </childnode>
+        <childnode refid="5698" relation="include">
+        </childnode>
+      </node>
+      <node id="5677">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5678" relation="include">
+        </childnode>
+        <childnode refid="5679" relation="include">
+        </childnode>
+        <childnode refid="5680" relation="include">
+        </childnode>
+        <childnode refid="5681" relation="include">
+        </childnode>
+      </node>
+      <node id="5740">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+        <childnode refid="5730" relation="include">
+        </childnode>
+      </node>
+      <node id="5734">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+        <childnode refid="5728" relation="include">
+        </childnode>
+      </node>
+      <node id="5686">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5727">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="5690">
+        <label>scene2_SP2.h</label>
+        <link refid="scene2__SP2_8h"/>
+        <childnode refid="5691" relation="include">
+        </childnode>
+        <childnode refid="5692" relation="include">
+        </childnode>
+        <childnode refid="5695" relation="include">
+        </childnode>
+        <childnode refid="5699" relation="include">
+        </childnode>
+        <childnode refid="5702" relation="include">
+        </childnode>
+        <childnode refid="5707" relation="include">
+        </childnode>
+        <childnode refid="5708" relation="include">
+        </childnode>
+        <childnode refid="5709" relation="include">
+        </childnode>
+      </node>
+      <node id="5678">
+        <label>cmath</label>
+      </node>
+      <node id="5737">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+      </node>
+      <node id="5675">
+        <label>MyGraphics/Source/scene2_minigame.cpp</label>
+        <link refid="scene2_minigame.cpp"/>
+        <childnode refid="5676" relation="include">
+        </childnode>
+        <childnode refid="5677" relation="include">
+        </childnode>
+        <childnode refid="5682" relation="include">
+        </childnode>
+      </node>
+      <node id="5701">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="5677" relation="include">
+        </childnode>
+        <childnode refid="5697" relation="include">
+        </childnode>
+      </node>
+      <node id="5707">
+        <label>NumPad.h</label>
+        <link refid="NumPad_8h"/>
+        <childnode refid="5688" relation="include">
+        </childnode>
+        <childnode refid="5697" relation="include">
+        </childnode>
+        <childnode refid="5706" relation="include">
+        </childnode>
+        <childnode refid="5704" relation="include">
+        </childnode>
+      </node>
+      <node id="5689">
+        <label>string</label>
+      </node>
+      <node id="5714">
+        <label>map</label>
+      </node>
+      <node id="5726">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="5710">
+        <label>sceneSP2.h</label>
+        <link refid="sceneSP2_8h"/>
+        <childnode refid="5691" relation="include">
+        </childnode>
+        <childnode refid="5692" relation="include">
+        </childnode>
+        <childnode refid="5695" relation="include">
+        </childnode>
+        <childnode refid="5704" relation="include">
+        </childnode>
+        <childnode refid="5699" relation="include">
+        </childnode>
+        <childnode refid="5709" relation="include">
+        </childnode>
+        <childnode refid="5711" relation="include">
+        </childnode>
+        <childnode refid="5712" relation="include">
+        </childnode>
+        <childnode refid="5713" relation="include">
+        </childnode>
+        <childnode refid="5676" relation="include">
+        </childnode>
+      </node>
+      <node id="5679">
+        <label>exception</label>
+      </node>
+      <node id="5735">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+        <childnode refid="5728" relation="include">
+        </childnode>
+      </node>
+      <node id="5717">
+        <label>BGMDriven.h</label>
+        <link refid="BGMDriven_8h"/>
+        <childnode refid="5718" relation="include">
+        </childnode>
+      </node>
+      <node id="5695">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="5696" relation="include">
+        </childnode>
+      </node>
+      <node id="5703">
+        <label>objectsForDisplay.h</label>
+        <link refid="objectsForDisplay_8h"/>
+        <childnode refid="5688" relation="include">
+        </childnode>
+        <childnode refid="5697" relation="include">
+        </childnode>
+      </node>
+      <node id="5720">
+        <label>wchar.h</label>
+      </node>
+      <node id="5733">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+      </node>
+      <node id="5709">
+        <label>NPC.h</label>
+        <link refid="NPC_8h"/>
+        <childnode refid="5688" relation="include">
+        </childnode>
+        <childnode refid="5697" relation="include">
+        </childnode>
+        <childnode refid="5706" relation="include">
+        </childnode>
+        <childnode refid="5704" relation="include">
+        </childnode>
+      </node>
+      <node id="5680">
+        <label>ctime</label>
+      </node>
+      <node id="5739">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+      </node>
+      <node id="5732">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="5724" relation="include">
+        </childnode>
+        <childnode refid="5721" relation="include">
+        </childnode>
+      </node>
+      <node id="5683">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="5684" relation="include">
+        </childnode>
+      </node>
+      <node id="5706">
+        <label>vector</label>
+      </node>
+      <node id="5700">
+        <label>stack</label>
+      </node>
+      <node id="5691">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="5736">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+        <childnode refid="5737" relation="include">
+        </childnode>
+      </node>
+      <node id="5713">
+        <label>SekHeng.h</label>
+        <link refid="SekHeng_8h"/>
+        <childnode refid="5703" relation="include">
+        </childnode>
+        <childnode refid="5712" relation="include">
+        </childnode>
+        <childnode refid="5714" relation="include">
+        </childnode>
+      </node>
+      <node id="5687">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="5702">
+        <label>rot_civ.h</label>
+        <link refid="rot__civ_8h"/>
+        <childnode refid="5703" relation="include">
+        </childnode>
+        <childnode refid="5704" relation="include">
+        </childnode>
+      </node>
+      <node id="5719">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="5720" relation="include">
+        </childnode>
+      </node>
+      <node id="5705">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5697" relation="include">
+        </childnode>
+      </node>
+      <node id="5715">
+        <label>scene3_SP2.h</label>
+        <link refid="scene3__SP2_8h"/>
+        <childnode refid="5691" relation="include">
+        </childnode>
+        <childnode refid="5692" relation="include">
+        </childnode>
+        <childnode refid="5695" relation="include">
+        </childnode>
+        <childnode refid="5704" relation="include">
+        </childnode>
+        <childnode refid="5699" relation="include">
+        </childnode>
+        <childnode refid="5716" relation="include">
+        </childnode>
+      </node>
+      <node id="5721">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="5722" relation="include">
+        </childnode>
+        <childnode refid="5719" relation="include">
+        </childnode>
+      </node>
+      <node id="5708">
+        <label>creditScene.h</label>
+        <link refid="creditScene_8h"/>
+        <childnode refid="5706" relation="include">
+        </childnode>
+        <childnode refid="5689" relation="include">
+        </childnode>
+      </node>
+      <node id="5723">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="5719" relation="include">
+        </childnode>
+      </node>
+      <node id="5693">
+        <label>MaterialBuilder.h</label>
+        <link refid="MaterialBuilder_8h"/>
+        <childnode refid="5694" relation="include">
+        </childnode>
+      </node>
+      <node id="5722">
+        <label>math.h</label>
+      </node>
+      <node id="5692">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="5689" relation="include">
+        </childnode>
+        <childnode refid="5693" relation="include">
+        </childnode>
+      </node>
+      <node id="5681">
+        <label>cstdlib</label>
+      </node>
+      <node id="5738">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+        <childnode refid="5728" relation="include">
+        </childnode>
+      </node>
+      <node id="5694">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="5730">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="5724" relation="include">
+        </childnode>
+        <childnode refid="5721" relation="include">
+        </childnode>
+        <childnode refid="5727" relation="include">
+        </childnode>
+        <childnode refid="5728" relation="include">
+        </childnode>
+      </node>
+      <node id="5698">
+        <label>iostream</label>
+      </node>
+      <node id="5725">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="5711">
+        <label>StationScene.h</label>
+        <link refid="StationScene_8h"/>
+        <childnode refid="5688" relation="include">
+        </childnode>
+        <childnode refid="5697" relation="include">
+        </childnode>
+        <childnode refid="5706" relation="include">
+        </childnode>
+        <childnode refid="5704" relation="include">
+        </childnode>
+      </node>
+      <node id="5731">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="5724" relation="include">
+        </childnode>
+        <childnode refid="5732" relation="include">
+        </childnode>
+        <childnode refid="5721" relation="include">
+        </childnode>
+      </node>
+      <node id="5724">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="5719" relation="include">
+        </childnode>
+      </node>
+      <node id="5682">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="5683" relation="include">
+        </childnode>
+        <childnode refid="5685" relation="include">
+        </childnode>
+        <childnode refid="5688" relation="include">
+        </childnode>
+        <childnode refid="5690" relation="include">
+        </childnode>
+        <childnode refid="5710" relation="include">
+        </childnode>
+        <childnode refid="5715" relation="include">
+        </childnode>
+        <childnode refid="5717" relation="include">
+        </childnode>
+      </node>
+      <node id="5712">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="5688" relation="include">
+        </childnode>
+        <childnode refid="5697" relation="include">
+        </childnode>
+        <childnode refid="5706" relation="include">
+        </childnode>
+        <childnode refid="5704" relation="include">
+        </childnode>
+      </node>
+      <node id="5729">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="5723" relation="include">
+        </childnode>
+        <childnode refid="5721" relation="include">
+        </childnode>
+        <childnode refid="5730" relation="include">
+        </childnode>
+        <childnode refid="5731" relation="include">
+        </childnode>
+        <childnode refid="5727" relation="include">
+        </childnode>
+        <childnode refid="5733" relation="include">
+        </childnode>
+        <childnode refid="5734" relation="include">
+        </childnode>
+      </node>
+      <node id="5696">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="5697" relation="include">
+        </childnode>
+      </node>
+      <node id="5704">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5705" relation="include">
+        </childnode>
+        <childnode refid="5703" relation="include">
+        </childnode>
+        <childnode refid="5706" relation="include">
+        </childnode>
+      </node>
+      <node id="5688">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="5689" relation="include">
+        </childnode>
+        <childnode refid="5685" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="scene2__minigame_8h" kindref="compound">scene2_minigame.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MyMath_8h" kindref="compound">MyMath.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Application_8h" kindref="compound">Application.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classminigame_1af3934d180e30ecc3a325c3adb302e089" refkind="member"><highlight class="normal"><ref refid="classminigame_1af3934d180e30ecc3a325c3adb302e089" kindref="member">minigame::minigame</ref>()</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classminigame_1ac05ff74aedc6c6a006ee12ed68617909" refkind="member"><highlight class="normal"><ref refid="classminigame_1ac05ff74aedc6c6a006ee12ed68617909" kindref="member">minigame::~minigame</ref>()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1abdc34c5361b6af3a81ffb7305f1eee68" kindref="member">minigame::init</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a1477d8472054155595a66dd8a4477c01" kindref="member">piece1_state</ref><sp/>=<sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">Math::RandIntMinMax</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" kindref="member">piece2_state</ref><sp/>=<sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">Math::RandIntMinMax</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" kindref="member">piece3_state</ref><sp/>=<sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">Math::RandIntMinMax</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" kindref="member">piece4_state</ref><sp/>=<sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">Math::RandIntMinMax</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" kindref="member">piece5_state</ref><sp/>=<sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">Math::RandIntMinMax</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" kindref="member">piece6_state</ref><sp/>=<sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">Math::RandIntMinMax</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" kindref="member">piece7_state</ref><sp/>=<sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">Math::RandIntMinMax</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" kindref="member">piece8_state</ref><sp/>=<sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">Math::RandIntMinMax</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" kindref="member">piece9_state</ref><sp/>=<sp/><ref refid="namespaceMath_1a7609565ca241d0f70dfd677a7fdac281" kindref="member">Math::RandIntMinMax</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a67281ae6a0468fd3846b990ac5ed6d6d" kindref="member">piece1_rotate</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1ac4092fdec11804259311f24a7405b900" kindref="member">piece2_rotate</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a9f1a84b98d821cdc7a17f51cc6b1ff59" kindref="member">piece3_rotate</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1afe52a5c448f771122a38189d5298a19b" kindref="member">piece4_rotate</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a4539bc45b9ec63eaffcb63a8752f7196" kindref="member">piece5_rotate</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1afeab68e01fc289c7ee456c8757f8cc11" kindref="member">piece6_rotate</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad40ae9c23e65cd36ebd536317f3e582e" kindref="member">piece7_rotate</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a37ac310640125301e7f5d77a181b01d3" kindref="member">piece8_rotate</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a6d3a5441c842965cdab06f25659e72f1" kindref="member">piece9_rotate</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1af610183de5efc1b1992031ba5a81e186" kindref="member">start</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref><sp/>=<sp/>0.2;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="64"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classminigame_1aeec505c51a2cc3d3c499bc4c21ea85f7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1aeec505c51a2cc3d3c499bc4c21ea85f7" kindref="member">minigame::piece1</ref>()</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a67281ae6a0468fd3846b990ac5ed6d6d" kindref="member">piece1_rotate</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(90<sp/>*<sp/><ref refid="classminigame_1a1477d8472054155595a66dd8a4477c01" kindref="member">piece1_state</ref>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="74"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classminigame_1af78ecfbe0fe4f8324836efcab7408653" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1af78ecfbe0fe4f8324836efcab7408653" kindref="member">minigame::piece2</ref>()</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ac4092fdec11804259311f24a7405b900" kindref="member">piece2_rotate</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(90<sp/>*<sp/><ref refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" kindref="member">piece2_state</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="85"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classminigame_1a3421514ab9ef58691039c97e819865b7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a3421514ab9ef58691039c97e819865b7" kindref="member">minigame::piece3</ref>()</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a9f1a84b98d821cdc7a17f51cc6b1ff59" kindref="member">piece3_rotate</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(90<sp/>*<sp/><ref refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" kindref="member">piece3_state</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="96"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classminigame_1a7ced6b9a798bbf98da9b8699d91b406a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a7ced6b9a798bbf98da9b8699d91b406a" kindref="member">minigame::piece4</ref>()</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1afe52a5c448f771122a38189d5298a19b" kindref="member">piece4_rotate</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(90<sp/>*<sp/><ref refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" kindref="member">piece4_state</ref>);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="107"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classminigame_1aab52da72b1e323c33a1dc5581c32ab14" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1aab52da72b1e323c33a1dc5581c32ab14" kindref="member">minigame::piece5</ref>()</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a4539bc45b9ec63eaffcb63a8752f7196" kindref="member">piece5_rotate</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(90<sp/>*<sp/><ref refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" kindref="member">piece5_state</ref>);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="118"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="classminigame_1a78a8a791bbfdea668af7766dd6035e9c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a78a8a791bbfdea668af7766dd6035e9c" kindref="member">minigame::piece6</ref>()</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1afeab68e01fc289c7ee456c8757f8cc11" kindref="member">piece6_rotate</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(90<sp/>*<sp/><ref refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" kindref="member">piece6_state</ref>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="129"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classminigame_1a6f1976f5354e86df7ae4588192b3aee9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a6f1976f5354e86df7ae4588192b3aee9" kindref="member">minigame::piece7</ref>()</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ad40ae9c23e65cd36ebd536317f3e582e" kindref="member">piece7_rotate</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(90<sp/>*<sp/><ref refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" kindref="member">piece7_state</ref>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="140"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="classminigame_1a34d0f26cff11a1152d6edc0850142ad1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a34d0f26cff11a1152d6edc0850142ad1" kindref="member">minigame::piece8</ref>()</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a37ac310640125301e7f5d77a181b01d3" kindref="member">piece8_rotate</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(90<sp/>*<sp/><ref refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" kindref="member">piece8_state</ref>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="151"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="classminigame_1aeb6091a011ba179d01518faa391e142b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classminigame_1aeb6091a011ba179d01518faa391e142b" kindref="member">minigame::piece9</ref>()</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a6d3a5441c842965cdab06f25659e72f1" kindref="member">piece9_rotate</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(90<sp/>*<sp/><ref refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" kindref="member">piece9_state</ref>);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="161"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" kindref="member">minigame::updatePieceState</ref>()</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1aeec505c51a2cc3d3c499bc4c21ea85f7" kindref="member">piece1</ref>();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1af78ecfbe0fe4f8324836efcab7408653" kindref="member">piece2</ref>();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a3421514ab9ef58691039c97e819865b7" kindref="member">piece3</ref>();</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a7ced6b9a798bbf98da9b8699d91b406a" kindref="member">piece4</ref>();</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1aab52da72b1e323c33a1dc5581c32ab14" kindref="member">piece5</ref>();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a78a8a791bbfdea668af7766dd6035e9c" kindref="member">piece6</ref>();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a6f1976f5354e86df7ae4588192b3aee9" kindref="member">piece7</ref>();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1a34d0f26cff11a1152d6edc0850142ad1" kindref="member">piece8</ref>();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame_1aeb6091a011ba179d01518faa391e142b" kindref="member">piece9</ref>();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="179"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" kindref="member">minigame::selection_pointer</ref>()</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//controlling<sp/>the<sp/>selector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RIGHT)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_LEFT)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>-=<sp/>1;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_UP)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>-=<sp/>3;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_DOWN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>+=<sp/>3;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>the<sp/>selector<sp/>reaches<sp/>the<sp/>edges<sp/>of<sp/>the<sp/>puzzle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>&lt;<sp/>1)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>&gt;<sp/>9)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="218"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" kindref="member">minigame::changePieceRotation</ref>()</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RETURN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>==<sp/>1<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a1477d8472054155595a66dd8a4477c01" kindref="member">piece1_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1a1477d8472054155595a66dd8a4477c01" kindref="member">piece1_state</ref><sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a1477d8472054155595a66dd8a4477c01" kindref="member">piece1_state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RETURN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>==<sp/>2<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" kindref="member">piece2_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" kindref="member">piece2_state</ref><sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" kindref="member">piece2_state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RETURN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>==<sp/>3<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" kindref="member">piece3_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" kindref="member">piece3_state</ref><sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" kindref="member">piece3_state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RETURN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>==<sp/>4<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" kindref="member">piece4_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" kindref="member">piece4_state</ref><sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" kindref="member">piece4_state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RETURN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>==<sp/>5<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" kindref="member">piece5_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" kindref="member">piece5_state</ref><sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" kindref="member">piece5_state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RETURN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>==<sp/>6<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" kindref="member">piece6_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" kindref="member">piece6_state</ref><sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" kindref="member">piece6_state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RETURN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>==<sp/>7<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" kindref="member">piece7_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" kindref="member">piece7_state</ref><sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" kindref="member">piece7_state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RETURN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>==<sp/>8<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" kindref="member">piece8_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" kindref="member">piece8_state</ref><sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" kindref="member">piece8_state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_RETURN)<sp/>&amp;&amp;<sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref><sp/>==<sp/>9<sp/>&amp;&amp;<sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>&gt;<sp/><ref refid="classminigame_1a68ba778c09cdf0bb0e362406d10079b9" kindref="member">input_delay</ref>)</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" kindref="member">piece9_state</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" kindref="member">piece9_state</ref><sp/>&gt;<sp/>3)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" kindref="member">piece9_state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="314"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316" refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" kindref="member">minigame::result</ref>()</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classminigame_1a1477d8472054155595a66dd8a4477c01" kindref="member">piece1_state</ref><sp/>==<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1aba86f197a156fa58a85c53ce7533706d" kindref="member">piece2_state</ref><sp/>==<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a0ac71c645115dc092a9b75bf052dcdf6" kindref="member">piece3_state</ref><sp/>==<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad3eaa38027eb83737d6298a3bf3c55e5" kindref="member">piece4_state</ref><sp/>==<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ad98acd0eea93748c000c21ead6b660ab" kindref="member">piece5_state</ref><sp/>==<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a1c630142ff4e4145ad8a8ff1c1c0bf06" kindref="member">piece6_state</ref><sp/>==<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ab6108aacb89613f87601ec85bb88f43e" kindref="member">piece7_state</ref><sp/>==<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a6096fd9085ff163b8a35a6443827dde6" kindref="member">piece8_state</ref><sp/>==<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a2d430a7cc128d9efdde7e9aa6fcdf40d" kindref="member">piece9_state</ref><sp/>==<sp/>0</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="341"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343" refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classminigame_1aea6576f016f1c9944aa5ea699b412446" kindref="member">minigame::update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>start_game)</highlight></codeline>
+<codeline lineno="344"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*if<sp/>(start)</highlight></codeline>
+<codeline lineno="346"><highlight class="comment"><sp/><sp/><sp/><sp/>{*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a60289c525151706ee8e3663587eff6d1" kindref="member">time</ref><sp/>+=<sp/>dt;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1af610183de5efc1b1992031ba5a81e186" kindref="member">start</ref><sp/>=<sp/>start_game;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a65239e6cbfa3f29c02bfbf0cea62a51d" kindref="member">selection_pointer</ref>();</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a0e6b8c874f12806f14ded4da42c34da3" kindref="member">changePieceRotation</ref>();</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1a88ab9683ccf176a8cd1f88f996fae6e2" kindref="member">updatePieceState</ref>();</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classminigame_1ab4bdf13278bd3b81791fe0b12ac58c5e" kindref="member">result</ref>();</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="363"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365" refid="classminigame_1a8633034099119cd39d51beae5564bbc1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classminigame_1a8633034099119cd39d51beae5564bbc1" kindref="member">minigame::minigame_started</ref>()</highlight></codeline>
+<codeline lineno="366"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1af610183de5efc1b1992031ba5a81e186" kindref="member">start</ref>;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="375"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377" refid="classminigame_1afde327efd1330ca79df23de9f1fa4641" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classminigame_1afde327efd1330ca79df23de9f1fa4641" kindref="member">minigame::get_selector_state</ref>()</highlight></codeline>
+<codeline lineno="378"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classminigame_1ad5f5a4c9f6c3e3770f83ce9186a13694" kindref="member">piece_state</ref>;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/scene2_minigame.cpp"/>
+  </compounddef>
+</doxygen>

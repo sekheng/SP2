@@ -1,0 +1,16 @@
+<map id="irrklang::ISound::stop" name="irrklang::ISound::stop">
+<area shape="rect" id="node2" href="$classBGMDriven.html#adba6be682af223e347b708a1bb29d177" title="A method functions dedicated to just play Darth Vader theme as a background music ..." alt="" coords="229,41,413,82"/>
+<area shape="rect" id="node6" href="$classBGMDriven.html#a0ac0c2672f995d3dd0219761a5a317ac" title="A method functions dedicated to just play John Cena theme as a background music " alt="" coords="199,157,444,184"/>
+<area shape="rect" id="node8" href="$classBGMDriven.html#aabfe59db224a3faf27bc58833df35da8" title="A method functions dedicated to play a Lullaby as a background music " alt="" coords="492,107,688,133"/>
+<area shape="rect" id="node9" href="$classBGMDriven.html#a1106212f0ed32a27cf05f488f8709402" title="A method functions dedicated to just play Pokemon Battle theme as a background music ..." alt="" coords="217,274,425,315"/>
+<area shape="rect" id="node11" href="$classBGMDriven.html#ace192735193ad55b50aea7b2d9d10078" title="A method functions dedicated to just play Star Wars theme as a background music " alt="" coords="215,209,428,250"/>
+<area shape="rect" id="node14" href="$classBGMDriven.html#ab77835bb55208467e77fa117a70fe624" title="A method functions dedicated to just play Space Warp as a background music " alt="" coords="212,340,431,367"/>
+<area shape="rect" id="node3" href="$classscene2__SP2.html#ae2e72ac92088b319c9e6dbd74fcd3236" title="the logic behind animating the ending " alt="" coords="518,56,662,83"/>
+<area shape="rect" id="node5" href="$classsceneSP2.html#ae64dc0553c37918023ef3e4ff427d871" title="where the logic of the game is, and update " alt="" coords="525,5,655,32"/>
+<area shape="rect" id="node4" href="$classscene2__SP2.html#a4c1334b891370489390fa9cf5674353a" title="where the logic of the game is, and update " alt="" coords="736,107,881,133"/>
+<area shape="rect" id="node7" href="$classscene2__SP2.html#a5b4e109f6780971770ff3b74d120ad03" title="vault animation " alt="" coords="494,157,686,184"/>
+<area shape="rect" id="node10" href="$classscene3__SP2.html#a71dd3bb2895b152440016ae97b01fb09" title="where the logic of the game is, and update " alt="" coords="736,309,881,336"/>
+<area shape="rect" id="node12" href="$classscene2__SP2.html#a2933944c895d9437b2364e18747df1ce" title="a method to render the credits " alt="" coords="501,216,679,243"/>
+<area shape="rect" id="node13" href="$classscene2__SP2.html#a40206086fcf392a0dd9824654ad89880" title="where the rendering of all the stuff we needed will be here " alt="" coords="736,216,881,243"/>
+<area shape="rect" id="node15" href="$classscene3__SP2.html#a1a4ac1aaba2909eff05348201fa29885" title="a method to animate the warp and it&#39;s logic " alt="" coords="499,339,681,365"/>
+</map>

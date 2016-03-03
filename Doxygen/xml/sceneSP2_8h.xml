@@ -1,0 +1,643 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="sceneSP2_8h" kind="file" language="C++">
+    <compoundname>sceneSP2.h</compoundname>
+    <includes refid="Scene_8h" local="yes">Scene.h</includes>
+    <includes refid="Mesh_8h" local="yes">Mesh.h</includes>
+    <includes refid="Light_8h" local="yes">Light.h</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includes refid="MatrixStack_8h" local="yes">MatrixStack.h</includes>
+    <includes refid="NPC_8h" local="yes">NPC.h</includes>
+    <includes refid="StationScene_8h" local="yes">StationScene.h</includes>
+    <includes refid="Quest_8h" local="yes">Quest.h</includes>
+    <includes refid="SekHeng_8h" local="yes">SekHeng.h</includes>
+    <includes refid="scene2__minigame_8h" local="yes">scene2_minigame.h</includes>
+    <includedby refid="Application_8h" local="yes">MyGraphics/Source/Application.h</includedby>
+    <incdepgraph>
+      <node id="6204">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="6205" relation="include">
+        </childnode>
+        <childnode refid="6206" relation="include">
+        </childnode>
+      </node>
+      <node id="6212">
+        <label>scene2_minigame.h</label>
+        <link refid="scene2__minigame_8h"/>
+      </node>
+      <node id="6200">
+        <label>DetectMemoryLeak.h</label>
+        <link refid="DetectMemoryLeak_8h"/>
+        <childnode refid="6201" relation="include">
+        </childnode>
+        <childnode refid="6202" relation="include">
+        </childnode>
+      </node>
+      <node id="6189">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="6190" relation="include">
+        </childnode>
+        <childnode refid="6195" relation="include">
+        </childnode>
+      </node>
+      <node id="6190">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="6191" relation="include">
+        </childnode>
+        <childnode refid="6192" relation="include">
+        </childnode>
+        <childnode refid="6193" relation="include">
+        </childnode>
+        <childnode refid="6194" relation="include">
+        </childnode>
+      </node>
+      <node id="6201">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6191">
+        <label>cmath</label>
+      </node>
+      <node id="6206">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="6190" relation="include">
+        </childnode>
+        <childnode refid="6189" relation="include">
+        </childnode>
+      </node>
+      <node id="6184">
+        <label>string</label>
+      </node>
+      <node id="6211">
+        <label>map</label>
+      </node>
+      <node id="6181">
+        <label>MyGraphics/Source/sceneSP2.h</label>
+        <link refid="sceneSP2.h"/>
+        <childnode refid="6182" relation="include">
+        </childnode>
+        <childnode refid="6183" relation="include">
+        </childnode>
+        <childnode refid="6187" relation="include">
+        </childnode>
+        <childnode refid="6196" relation="include">
+        </childnode>
+        <childnode refid="6204" relation="include">
+        </childnode>
+        <childnode refid="6207" relation="include">
+        </childnode>
+        <childnode refid="6208" relation="include">
+        </childnode>
+        <childnode refid="6209" relation="include">
+        </childnode>
+        <childnode refid="6210" relation="include">
+        </childnode>
+        <childnode refid="6212" relation="include">
+        </childnode>
+      </node>
+      <node id="6192">
+        <label>exception</label>
+      </node>
+      <node id="6187">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="6188" relation="include">
+        </childnode>
+      </node>
+      <node id="6198">
+        <label>objectsForDisplay.h</label>
+        <link refid="objectsForDisplay_8h"/>
+        <childnode refid="6199" relation="include">
+        </childnode>
+        <childnode refid="6189" relation="include">
+        </childnode>
+      </node>
+      <node id="6207">
+        <label>NPC.h</label>
+        <link refid="NPC_8h"/>
+        <childnode refid="6199" relation="include">
+        </childnode>
+        <childnode refid="6189" relation="include">
+        </childnode>
+        <childnode refid="6203" relation="include">
+        </childnode>
+        <childnode refid="6196" relation="include">
+        </childnode>
+      </node>
+      <node id="6193">
+        <label>ctime</label>
+      </node>
+      <node id="6205">
+        <label>stack</label>
+      </node>
+      <node id="6203">
+        <label>vector</label>
+      </node>
+      <node id="6182">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+      </node>
+      <node id="6210">
+        <label>SekHeng.h</label>
+        <link refid="SekHeng_8h"/>
+        <childnode refid="6198" relation="include">
+        </childnode>
+        <childnode refid="6209" relation="include">
+        </childnode>
+        <childnode refid="6211" relation="include">
+        </childnode>
+      </node>
+      <node id="6202">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="6197">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="6189" relation="include">
+        </childnode>
+      </node>
+      <node id="6185">
+        <label>MaterialBuilder.h</label>
+        <link refid="MaterialBuilder_8h"/>
+        <childnode refid="6186" relation="include">
+        </childnode>
+      </node>
+      <node id="6183">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="6184" relation="include">
+        </childnode>
+        <childnode refid="6185" relation="include">
+        </childnode>
+      </node>
+      <node id="6194">
+        <label>cstdlib</label>
+      </node>
+      <node id="6186">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="6195">
+        <label>iostream</label>
+      </node>
+      <node id="6208">
+        <label>StationScene.h</label>
+        <link refid="StationScene_8h"/>
+        <childnode refid="6199" relation="include">
+        </childnode>
+        <childnode refid="6189" relation="include">
+        </childnode>
+        <childnode refid="6203" relation="include">
+        </childnode>
+        <childnode refid="6196" relation="include">
+        </childnode>
+      </node>
+      <node id="6209">
+        <label>Quest.h</label>
+        <link refid="Quest_8h"/>
+        <childnode refid="6199" relation="include">
+        </childnode>
+        <childnode refid="6189" relation="include">
+        </childnode>
+        <childnode refid="6203" relation="include">
+        </childnode>
+        <childnode refid="6196" relation="include">
+        </childnode>
+      </node>
+      <node id="6188">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="6189" relation="include">
+        </childnode>
+      </node>
+      <node id="6199">
+        <label>GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="6184" relation="include">
+        </childnode>
+        <childnode refid="6200" relation="include">
+        </childnode>
+      </node>
+      <node id="6196">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="6197" relation="include">
+        </childnode>
+        <childnode refid="6198" relation="include">
+        </childnode>
+        <childnode refid="6203" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6225">
+        <label>MyGraphics/Source/scene3_SP2.cpp</label>
+        <link refid="scene3__SP2_8cpp"/>
+      </node>
+      <node id="6226">
+        <label>MyGraphics/Source/Scene3SP2.cpp</label>
+        <link refid="Scene3SP2_8cpp"/>
+      </node>
+      <node id="6216">
+        <label>MyGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="6220">
+        <label>MyGraphics/Source/NumPad.cpp</label>
+        <link refid="NumPad_8cpp"/>
+      </node>
+      <node id="6223">
+        <label>MyGraphics/Source/scene2_minigame.cpp</label>
+        <link refid="scene2__minigame_8cpp"/>
+      </node>
+      <node id="6217">
+        <label>MyGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="6218">
+        <label>MyGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="6224">
+        <label>MyGraphics/Source/scene2_SP2.cpp</label>
+        <link refid="scene2__SP2_8cpp"/>
+      </node>
+      <node id="6213">
+        <label>MyGraphics/Source/sceneSP2.h</label>
+        <link refid="sceneSP2.h"/>
+        <childnode refid="6214" relation="include">
+        </childnode>
+      </node>
+      <node id="6221">
+        <label>MyGraphics/Source/Quest.cpp</label>
+        <link refid="Quest_8cpp"/>
+      </node>
+      <node id="6228">
+        <label>MyGraphics/Source/SekHeng.cpp</label>
+        <link refid="SekHeng_8cpp"/>
+      </node>
+      <node id="6222">
+        <label>MyGraphics/Source/rot_civ.cpp</label>
+        <link refid="rot__civ_8cpp"/>
+      </node>
+      <node id="6227">
+        <label>MyGraphics/Source/sceneSP2.cpp</label>
+        <link refid="sceneSP2_8cpp"/>
+      </node>
+      <node id="6215">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="6214">
+        <label>MyGraphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="6215" relation="include">
+        </childnode>
+        <childnode refid="6216" relation="include">
+        </childnode>
+        <childnode refid="6217" relation="include">
+        </childnode>
+        <childnode refid="6218" relation="include">
+        </childnode>
+        <childnode refid="6219" relation="include">
+        </childnode>
+        <childnode refid="6220" relation="include">
+        </childnode>
+        <childnode refid="6221" relation="include">
+        </childnode>
+        <childnode refid="6222" relation="include">
+        </childnode>
+        <childnode refid="6223" relation="include">
+        </childnode>
+        <childnode refid="6224" relation="include">
+        </childnode>
+        <childnode refid="6225" relation="include">
+        </childnode>
+        <childnode refid="6226" relation="include">
+        </childnode>
+        <childnode refid="6227" relation="include">
+        </childnode>
+        <childnode refid="6228" relation="include">
+        </childnode>
+        <childnode refid="6229" relation="include">
+        </childnode>
+      </node>
+      <node id="6219">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="6229">
+        <label>MyGraphics/Source/StationScene.cpp</label>
+        <link refid="StationScene_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classsceneSP2" prot="public">sceneSP2</innerclass>
+    <briefdescription>
+<para><itemizedlist>
+<listitem><para>Creating a clean scene so that my teammates can code in ease Hopefully they don&apos;t mess it up </para></listitem></itemizedlist>
+</para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Lee Sek Heng, Seetoo Victor, Lim Guan Hui, Li Chun Fei </para></simplesect>
+<simplesect kind="par"><title>email: 150629Z.nyp.edu.sg</title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SCENE_SP2_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCENE_SP2_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mesh_8h" kindref="compound">Mesh.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Light_8h" kindref="compound">Light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MatrixStack_8h" kindref="compound">MatrixStack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="NPC_8h" kindref="compound">NPC.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="StationScene_8h" kindref="compound">StationScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Quest_8h" kindref="compound">Quest.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SekHeng_8h" kindref="compound">SekHeng.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="scene2__minigame_8h" kindref="compound">scene2_minigame.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classsceneSP2" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsceneSP2" kindref="compound">sceneSP2</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8" kindref="member">GEOMETRY_TYPE</ref></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a458afe5d65209a6900129bb3400300d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a458afe5d65209a6900129bb3400300d0" kindref="member">GEO_AXES</ref>,</highlight></codeline>
+<codeline lineno="39" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a80b37dd029de05995aa7ce1856999775" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a80b37dd029de05995aa7ce1856999775" kindref="member">GEO_LIGHTBALL</ref>,</highlight></codeline>
+<codeline lineno="40" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8aa8eb5a06da1f0d58e3cf85a944df9419" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8aa8eb5a06da1f0d58e3cf85a944df9419" kindref="member">GEO_COMIC_TEXT</ref>,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8aac2bcd9fbe0db8568c4db49951438de1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8aac2bcd9fbe0db8568c4db49951438de1" kindref="member">GEO_LANDVEHICLE</ref>,</highlight></codeline>
+<codeline lineno="43" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a358504defb367e12c42d3938f73cc06c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a358504defb367e12c42d3938f73cc06c" kindref="member">GEO_FLYINGVEHICLE</ref>,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//environment**********************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a2f47141607d46dfc37b28076f0cd5f21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a2f47141607d46dfc37b28076f0cd5f21" kindref="member">GEO_SPACE_SKYBOX</ref>,</highlight></codeline>
+<codeline lineno="48" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a707df8c023032a829ad0ac3fd49e7f77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a707df8c023032a829ad0ac3fd49e7f77" kindref="member">GEO_SPACE_GROUNDMESH</ref>,</highlight></codeline>
+<codeline lineno="49" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a423ed04ea967728384caa448c0100b85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a423ed04ea967728384caa448c0100b85" kindref="member">GEO_SPACE_WALL</ref>,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//environment**********************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cryostasis</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a0a8a61c9e25f5063e33d98d057a9c17d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a0a8a61c9e25f5063e33d98d057a9c17d" kindref="member">GEO_CRYOSTASIS</ref>,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//User<sp/>Interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8af3f268a4009873e38ed2a8102402e8a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8af3f268a4009873e38ed2a8102402e8a6" kindref="member">GEO_UI</ref>,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//User<sp/>Interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//quest<sp/>items</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8acaca8268733411ecaf4daf08607fd2b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8acaca8268733411ecaf4daf08607fd2b3" kindref="member">GEO_SCREWDRIVER</ref>,</highlight></codeline>
+<codeline lineno="61" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ae7c88a13ed41535e4151b4b90135269d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ae7c88a13ed41535e4151b4b90135269d" kindref="member">GEO_CONTAINER</ref>,</highlight></codeline>
+<codeline lineno="62" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a2f4d07c373031f0e4d831667d9ba5658" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a2f4d07c373031f0e4d831667d9ba5658" kindref="member">GEO_GASOLINE</ref>,</highlight></codeline>
+<codeline lineno="63" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8aa28480e9de23a71fec281367b0ed4b4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8aa28480e9de23a71fec281367b0ed4b4b" kindref="member">GEO_HAMMER</ref>,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//quest<sp/>items</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SpaceStation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a607382c2c59c3a4ef23f8416268d98b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a607382c2c59c3a4ef23f8416268d98b3" kindref="member">GEO_STATION</ref>,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Chair</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a30273aa552c3811348fb86ff6a12278e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a30273aa552c3811348fb86ff6a12278e" kindref="member">GEO_CHAIR</ref>,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a2551e1b5151a97c33ee5e7c29cba266c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a2551e1b5151a97c33ee5e7c29cba266c" kindref="member">GEO_TABLE</ref>,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Box</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a8d76500aa729c17ebb19d6f7b909ac75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a8d76500aa729c17ebb19d6f7b909ac75" kindref="member">GEO_BOX</ref>,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Door</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ae463e9fef32c273854321ff08aeb69c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ae463e9fef32c273854321ff08aeb69c8" kindref="member">GEO_DOOR</ref>,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//KeyCard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a88e4954041c2dbf9d601bf5fe3d16e2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a88e4954041c2dbf9d601bf5fe3d16e2c" kindref="member">GEO_KEYCARD</ref>,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Teleporter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8aa8c761d06c7d22c8dbb1d2ea55d7201c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8aa8c761d06c7d22c8dbb1d2ea55d7201c" kindref="member">GEO_TELEPORTER</ref>,</highlight></codeline>
+<codeline lineno="82" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a30e82875c6517693408e145b278d4df5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a30e82875c6517693408e145b278d4df5" kindref="member">GEO_PARTICLE_LIGHT</ref>,</highlight></codeline>
+<codeline lineno="83" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a9355efc6f7e9171504f8d5d9ce68d4fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a9355efc6f7e9171504f8d5d9ce68d4fb" kindref="member">GEO_PARTICLE_CUBE</ref>,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Teleporter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//building</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a4ebb8ceca200bc2ed8670ec13442e45e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a4ebb8ceca200bc2ed8670ec13442e45e" kindref="member">GEO_BUILDINGRED</ref>,</highlight></codeline>
+<codeline lineno="87" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8acb846885a59b2d7be71c0b1eb7812d59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8acb846885a59b2d7be71c0b1eb7812d59" kindref="member">GEO_BUILDINGGREEN</ref>,</highlight></codeline>
+<codeline lineno="88" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a55554efb7fdafebd268c724458c26895" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a55554efb7fdafebd268c724458c26895" kindref="member">GEO_BUILDINGBLUE</ref>,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SpaceShuttle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a96e2b40802c0732e98329501490932f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a96e2b40802c0732e98329501490932f8" kindref="member">GEO_SPACESHUTTLE</ref>,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//light<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ad723c70687edfa1726d88185d88b0de2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ad723c70687edfa1726d88185d88b0de2" kindref="member">GEO_BUTTON</ref>,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Barrel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a987882dd44761c3ca2d9c52eb29c4d35" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a987882dd44761c3ca2d9c52eb29c4d35" kindref="member">GEO_BARREL</ref>,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//NPC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a26c3c08125e7ae856d46528b0cb1d6c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a26c3c08125e7ae856d46528b0cb1d6c4" kindref="member">GEO_NPC1</ref>,</highlight></codeline>
+<codeline lineno="98" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a6072cc1208c0bf479cccea283c609e9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a6072cc1208c0bf479cccea283c609e9e" kindref="member">GEO_NPC_QUEST1</ref>,</highlight></codeline>
+<codeline lineno="99" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ab065032c08019d10c3863907842b22eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ab065032c08019d10c3863907842b22eb" kindref="member">GEO_NPC_QUEST2</ref>,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//no<sp/>one<sp/>is<sp/>using<sp/>it!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//GEO_NPC_QUEST3,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//GEO_NPC_QUEST4,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//NPC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a3e2c97ab478c23c9a8af012a65922b41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a3e2c97ab478c23c9a8af012a65922b41" kindref="member">GEO_INVIS_CURSOR</ref>,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//better<sp/>UI<sp/>by<sp/>Sek<sp/>Heng</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a603f8c4f10a36226719d655b82f006f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a603f8c4f10a36226719d655b82f006f4" kindref="member">GEO_TEXT_BOX</ref>,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//better<sp/>UI<sp/>by<sp/>Sek<sp/>Heng</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//chunfei&apos;s<sp/>NPC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a58bffe1e886ded10f919272aa0fa7b1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a58bffe1e886ded10f919272aa0fa7b1d" kindref="member">GEO_ROBOTHEAD</ref>,</highlight></codeline>
+<codeline lineno="113" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ad953789bc3971f6f9e2940aea56a5460" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ad953789bc3971f6f9e2940aea56a5460" kindref="member">GEO_ROBOTBODY</ref>,</highlight></codeline>
+<codeline lineno="114" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ad5eb0ca76aa9df7c66d6225574175a9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ad5eb0ca76aa9df7c66d6225574175a9e" kindref="member">GEO_SWORD</ref>,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8af9af91cf8439b39a240d47803d9bc47b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8af9af91cf8439b39a240d47803d9bc47b" kindref="member">GEO_TYRE</ref>,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//minigame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a69781faf9eb622ab2336241867720ad7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a69781faf9eb622ab2336241867720ad7" kindref="member">GEO_MINIGAME_PIECE_1</ref>,</highlight></codeline>
+<codeline lineno="120" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a9825d087172430cfc62027c997a0b909" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a9825d087172430cfc62027c997a0b909" kindref="member">GEO_MINIGAME_PIECE_2</ref>,</highlight></codeline>
+<codeline lineno="121" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a7dd7fbc6e7c98deab79865ab7db5f2b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a7dd7fbc6e7c98deab79865ab7db5f2b1" kindref="member">GEO_MINIGAME_PIECE_3</ref>,</highlight></codeline>
+<codeline lineno="122" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ac668346cdbf3b86f3f7a12ce8919647b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8ac668346cdbf3b86f3f7a12ce8919647b" kindref="member">GEO_MINIGAME_PIECE_4</ref>,</highlight></codeline>
+<codeline lineno="123" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a0076cb428ba7ba846998d16a2ed6a74b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a0076cb428ba7ba846998d16a2ed6a74b" kindref="member">GEO_MINIGAME_PIECE_5</ref>,</highlight></codeline>
+<codeline lineno="124" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a57f89da7e135eeb224ded4161da47065" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a57f89da7e135eeb224ded4161da47065" kindref="member">GEO_MINIGAME_PIECE_6</ref>,</highlight></codeline>
+<codeline lineno="125" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a0202b479a7514bce93e0b9e253d87745" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a0202b479a7514bce93e0b9e253d87745" kindref="member">GEO_MINIGAME_PIECE_7</ref>,</highlight></codeline>
+<codeline lineno="126" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a31b5a849e04c4653a5e228a6f0f7dda3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a31b5a849e04c4653a5e228a6f0f7dda3" kindref="member">GEO_MINIGAME_PIECE_8</ref>,</highlight></codeline>
+<codeline lineno="127" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a8acd1c1d7755d256c2109b6fdac4aab4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a8acd1c1d7755d256c2109b6fdac4aab4" kindref="member">GEO_MINIGAME_PIECE_9</ref>,</highlight></codeline>
+<codeline lineno="128" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a1873e97dee6e6bc0e8153f90bfee4b9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a1873e97dee6e6bc0e8153f90bfee4b9e" kindref="member">GEO_MINIGAME_SELECTOR</ref>,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a564baa89b671afdfa586dcdfecc1ba84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a564baa89b671afdfa586dcdfecc1ba84" kindref="member">NUM_GEOMETRY</ref>,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386" kindref="member">UNIFORM_TYPE</ref></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="135" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aaf1cc232fa7cfc162eb56e93acf0c188" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aaf1cc232fa7cfc162eb56e93acf0c188" kindref="member">U_MVP</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="136" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ad779b60f36b45e69186926cb7503424c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ad779b60f36b45e69186926cb7503424c" kindref="member">U_MODELVIEW</ref>,</highlight></codeline>
+<codeline lineno="137" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ad21ab1944ff3971d351a9101043c79cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ad21ab1944ff3971d351a9101043c79cd" kindref="member">U_MODELVIEW_INVERSE_TRANSPOSE</ref>,</highlight></codeline>
+<codeline lineno="138" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a7c38588e05849414b2ee4ca4c134f671" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a7c38588e05849414b2ee4ca4c134f671" kindref="member">U_MATERIAL_AMBIENT</ref>,</highlight></codeline>
+<codeline lineno="139" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ac1fadb2620242b2379a141d94f367f9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ac1fadb2620242b2379a141d94f367f9e" kindref="member">U_MATERIAL_DIFFUSE</ref>,</highlight></codeline>
+<codeline lineno="140" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a5dda6bf62a1744a8967f3a131c9eb23b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a5dda6bf62a1744a8967f3a131c9eb23b" kindref="member">U_MATERIAL_SPECULAR</ref>,</highlight></codeline>
+<codeline lineno="141" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a0864b78011bc23c2ec034c4ba861cdbd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a0864b78011bc23c2ec034c4ba861cdbd" kindref="member">U_MATERIAL_SHININESS</ref>,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a91ba9e3dced496c16aa25ec4a0b2f760" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a91ba9e3dced496c16aa25ec4a0b2f760" kindref="member">U_LIGHT0_POSITION</ref>,</highlight></codeline>
+<codeline lineno="144" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a7886c652ba75b8c74fe0f8415135f063" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a7886c652ba75b8c74fe0f8415135f063" kindref="member">U_LIGHT0_COLOR</ref>,</highlight></codeline>
+<codeline lineno="145" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aa2fc86191e7af61514f463601c9f1284" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aa2fc86191e7af61514f463601c9f1284" kindref="member">U_LIGHT0_POWER</ref>,</highlight></codeline>
+<codeline lineno="146" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aed387b4d5a78a7694204a2bfc21c2063" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aed387b4d5a78a7694204a2bfc21c2063" kindref="member">U_LIGHT0_KC</ref>,</highlight></codeline>
+<codeline lineno="147" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a9239bdc8dc2c58ee8383367a5e02d618" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a9239bdc8dc2c58ee8383367a5e02d618" kindref="member">U_LIGHT0_KL</ref>,</highlight></codeline>
+<codeline lineno="148" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a6c3b12389125381d30a1688b0d1e6b19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a6c3b12389125381d30a1688b0d1e6b19" kindref="member">U_LIGHT0_KQ</ref>,</highlight></codeline>
+<codeline lineno="149" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ab790823010685110652a6d8104f189a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ab790823010685110652a6d8104f189a1" kindref="member">U_LIGHTENABLED</ref>,</highlight></codeline>
+<codeline lineno="150" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a43458a206a8d8874ae86a456cf707b54" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a43458a206a8d8874ae86a456cf707b54" kindref="member">U_LIGHT0_TYPE</ref>,</highlight></codeline>
+<codeline lineno="151" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a073d4da4076e6c799ba9e27be6809f03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a073d4da4076e6c799ba9e27be6809f03" kindref="member">U_LIGHT0_SPOTDIRECTION</ref>,</highlight></codeline>
+<codeline lineno="152" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aa13881d6f52c1dad6919574567cf2df3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aa13881d6f52c1dad6919574567cf2df3" kindref="member">U_LIGHT0_COSCUTOFF</ref>,</highlight></codeline>
+<codeline lineno="153" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ae97f55663c278b24c4ebb1a76a4929e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ae97f55663c278b24c4ebb1a76a4929e3" kindref="member">U_LIGHT0_COSINNER</ref>,</highlight></codeline>
+<codeline lineno="154" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a8ecaf4d80347eb3c675120062c5990ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a8ecaf4d80347eb3c675120062c5990ec" kindref="member">U_LIGHT0_EXPONENT</ref>,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a4900e22261e839551470134af3b63f69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a4900e22261e839551470134af3b63f69" kindref="member">U_LIGHT1_POSITION</ref>,</highlight></codeline>
+<codeline lineno="157" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aad9fd20632f898e3ae2480efecf8f030" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aad9fd20632f898e3ae2480efecf8f030" kindref="member">U_LIGHT1_COLOR</ref>,</highlight></codeline>
+<codeline lineno="158" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aa2a30cb5f57d70477eb041c2947a362a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aa2a30cb5f57d70477eb041c2947a362a" kindref="member">U_LIGHT1_POWER</ref>,</highlight></codeline>
+<codeline lineno="159" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ab96d14ed1e62b9b474bc9a062b94be8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386ab96d14ed1e62b9b474bc9a062b94be8e" kindref="member">U_LIGHT1_KC</ref>,</highlight></codeline>
+<codeline lineno="160" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a104c4f6ed0ca72e8cc0a23709a85bceb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a104c4f6ed0ca72e8cc0a23709a85bceb" kindref="member">U_LIGHT1_KL</ref>,</highlight></codeline>
+<codeline lineno="161" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386abda7f25c7d059afcadf97c678e0f7531" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386abda7f25c7d059afcadf97c678e0f7531" kindref="member">U_LIGHT1_KQ</ref>,</highlight></codeline>
+<codeline lineno="162" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386abad7e7f0c236248bcdb9a6267edd097f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386abad7e7f0c236248bcdb9a6267edd097f" kindref="member">U_LIGHT1_TYPE</ref>,</highlight></codeline>
+<codeline lineno="163" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a6e576d35f878fa8da95e557e914919cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a6e576d35f878fa8da95e557e914919cb" kindref="member">U_LIGHT1_SPOTDIRECTION</ref>,</highlight></codeline>
+<codeline lineno="164" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aaff8b3d6cf26d3b02b6701edc9c62183" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aaff8b3d6cf26d3b02b6701edc9c62183" kindref="member">U_LIGHT1_COSCUTOFF</ref>,</highlight></codeline>
+<codeline lineno="165" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a97a5a8fe6e5ed0829c3d5ac5bf584d40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a97a5a8fe6e5ed0829c3d5ac5bf584d40" kindref="member">U_LIGHT1_COSINNER</ref>,</highlight></codeline>
+<codeline lineno="166" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a61725f8c4b6e00aed74fbd78f672aea9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a61725f8c4b6e00aed74fbd78f672aea9" kindref="member">U_LIGHT1_EXPONENT</ref>,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aecba9188b1de011cf5d0ee38766f0de4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386aecba9188b1de011cf5d0ee38766f0de4" kindref="member">U_NUMLIGHTS</ref>,</highlight></codeline>
+<codeline lineno="169" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a392837a51169ce195218d1af1a56e579" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a392837a51169ce195218d1af1a56e579" kindref="member">U_NUMLIGHTS2</ref>,</highlight></codeline>
+<codeline lineno="170" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a2abdbb3874f1f899799e96cd78bf05ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a2abdbb3874f1f899799e96cd78bf05ba" kindref="member">U_COLOR_TEXTURE_ENABLED</ref>,</highlight></codeline>
+<codeline lineno="171" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a249bdb0c4e922af8ee41ac79a3625f41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a249bdb0c4e922af8ee41ac79a3625f41" kindref="member">U_COLOR_TEXTURE</ref>,</highlight></codeline>
+<codeline lineno="172" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a4f9a8676b12ca283cca01cccf3cf67ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a4f9a8676b12ca283cca01cccf3cf67ba" kindref="member">U_TEXT_ENABLED</ref>,</highlight></codeline>
+<codeline lineno="173" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a095626d7c7bd3a09133ffbb6e2146bd1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a095626d7c7bd3a09133ffbb6e2146bd1" kindref="member">U_TEXT_COLOR</ref>,</highlight></codeline>
+<codeline lineno="174" refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a9e9c58d1797ffd9d13a094debd9c9c95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a9e9c58d1797ffd9d13a094debd9c9c95" kindref="member">U_TOTAL</ref>,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a3fcfaa3de5ad332f335abce500d1efd9" kindref="member">sceneSP2</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>screenwidth,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>screenheight);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classsceneSP2_1a4605a61f17f33e7d7690f7cc870cef2d" kindref="member">~sceneSP2</ref>();</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1acb986ee342c1607b5cb27d9ceb6ad858" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1ae64dc0553c37918023ef3e4ff427d871" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a07940fb3c6a5686d3268b80f5a112b48" kindref="member">Render</ref>();</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a87202a5ccae972bbabaa325efdd98f77" kindref="member">Exit</ref>();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1ad70fc6c47c485a14285257c1414729d1" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="187" refid="classsceneSP2_1a41c8182653f3118f7d94958d0ee1ee95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a41c8182653f3118f7d94958d0ee1ee95" kindref="member">on_light</ref>;</highlight></codeline>
+<codeline lineno="188" refid="classsceneSP2_1a53ca6ff55779af52ef09303e58950ae1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structLight" kindref="compound">Light</ref><sp/><ref refid="classsceneSP2_1a53ca6ff55779af52ef09303e58950ae1" kindref="member">light</ref>[2];</highlight></codeline>
+<codeline lineno="189" refid="classsceneSP2_1a314a7a2fcae8384cfdc074ef4bda4cf3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a314a7a2fcae8384cfdc074ef4bda4cf3" kindref="member">LSPEED</ref><sp/>=<sp/>10.f;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a629009d3d968165925af64a07cb83847" kindref="member">renderMesh</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref><sp/>*mesh,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enableLight);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a29028ca91b43536bfdab19a8ac5f53ab" kindref="member">RenderSkybox</ref>();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a49f8376bc37b58353f12d444bb5d7d9a" kindref="member">Rendergroundmesh</ref>();</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//render<sp/>quest<sp/>items</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1afb433e694c8971a472bb70f674cb3a7a" kindref="member">RenderScrewDriver</ref>();</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a9433a15f7680dcf369daaf5d7b44de8d" kindref="member">RenderHammer</ref>();</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1abdffaa97b7e0723b7be3b65b971ff9c0" kindref="member">RenderContainer</ref>();</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a8ad24c07e46d22efa70c4911938da42b" kindref="member">RenderGasoline</ref>();</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//render<sp/>quest<sp/>items</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1acca3ebdcd7a31f60020d477ba50af35a" kindref="member">RenderSpaceShuttle</ref>();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a963ab61de5342e71f6227d9be05383f9" kindref="member">RenderStation</ref>();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a330759ab9405718e498ee50fa1b39d97" kindref="member">RenderNPC</ref>();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a9cfd40b303b8fbd4a67e4d6eedecdc25" kindref="member">RenderQuestObjects</ref>();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a0ad8a9bcbd5907bc671d588e13032010" kindref="member">RenderBarrel</ref>();</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1ade1937e06b702a9fb25247e79916fc47" kindref="member">sceneSP2::RenderUserInterface</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//minigame<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1aecd0a9336acbd6dcd18007f4e66335a2" kindref="member">RenderMinigamePieces</ref>();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a4db61bd86dd1751ab4664526a155ff3c" kindref="member">RenderMinigameOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotate_x);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a27c51bd47d0a61a6304825a7721ddae2" kindref="member">RenderMinigameSelectorOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotate_x);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="classsceneSP2_1a7243b018d1470b4fac34c682d4390ded" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a7243b018d1470b4fac34c682d4390ded" kindref="member">m_vertexArrayID</ref>;</highlight></codeline>
+<codeline lineno="215" refid="classsceneSP2_1a1ce45c3859442c91be584cfec61001ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMesh" kindref="compound">Mesh</ref><sp/>*<ref refid="classsceneSP2_1a1ce45c3859442c91be584cfec61001ef" kindref="member">meshList</ref>[<ref refid="classsceneSP2_1ab3306cae63f6ead316907d3c36d79cc8a564baa89b671afdfa586dcdfecc1ba84" kindref="member">NUM_GEOMETRY</ref>];</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="classsceneSP2_1ab90bf90fa574f91ae43d24559ac616ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1ab90bf90fa574f91ae43d24559ac616ae" kindref="member">m_programID</ref>;</highlight></codeline>
+<codeline lineno="218" refid="classsceneSP2_1aa346b687b6df563cdab5cb27151ab66b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1aa346b687b6df563cdab5cb27151ab66b" kindref="member">m_parameters</ref>[<ref refid="classsceneSP2_1a147934d558bfc4600a63b0f90ca2a386a9e9c58d1797ffd9d13a094debd9c9c95" kindref="member">U_TOTAL</ref>];</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="classsceneSP2_1a3b7a1bc984062603a2812051e214ecec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/><ref refid="classsceneSP2_1a3b7a1bc984062603a2812051e214ecec" kindref="member">camera</ref>;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="classsceneSP2_1ad90425a95938ea6bb6336883d9cc7d2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMS" kindref="compound">MS</ref><sp/><ref refid="classsceneSP2_1a9354fcc678f6d1f82001609143170947" kindref="member">modelStack</ref>,<sp/><ref refid="classsceneSP2_1ad90425a95938ea6bb6336883d9cc7d2d" kindref="member">viewStack</ref>,<sp/><ref refid="classsceneSP2_1a65b366036888c3903055d0e1b3d18d51" kindref="member">projectionStack</ref>;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//NPC<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225" refid="classsceneSP2_1aa483ee3d21232e327dadfcfe0afa5fd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classNPC" kindref="compound">NPC</ref><sp/><ref refid="classsceneSP2_1aa483ee3d21232e327dadfcfe0afa5fd9" kindref="member">npc1</ref>;</highlight><highlight class="comment">//example</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="classsceneSP2_1a41f330d68f79a3f1858d77a5b6be6954" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classNPC" kindref="compound">NPC</ref><sp/><ref refid="classsceneSP2_1a41f330d68f79a3f1858d77a5b6be6954" kindref="member">QUEST1</ref>;</highlight></codeline>
+<codeline lineno="227" refid="classsceneSP2_1a5d75f7bb4d025f5d64844e14692067b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classNPC" kindref="compound">NPC</ref><sp/><ref refid="classsceneSP2_1a5d75f7bb4d025f5d64844e14692067b6" kindref="member">QUEST2</ref>;</highlight></codeline>
+<codeline lineno="228" refid="classsceneSP2_1acae5bd888a34b08b868786c88d4af214" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classNPC" kindref="compound">NPC</ref><sp/><ref refid="classsceneSP2_1acae5bd888a34b08b868786c88d4af214" kindref="member">QUEST3</ref>;</highlight></codeline>
+<codeline lineno="229" refid="classsceneSP2_1a2cd96c7aefb67e303b2ae748e083dedb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classNPC" kindref="compound">NPC</ref><sp/><ref refid="classsceneSP2_1a2cd96c7aefb67e303b2ae748e083dedb" kindref="member">QUEST4</ref>;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Quest<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="classsceneSP2_1a6c06510fe9cc06e39796b66712ff282a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuest" kindref="compound">Quest</ref><sp/><ref refid="classsceneSP2_1a6c06510fe9cc06e39796b66712ff282a" kindref="member">test_quest</ref>;</highlight><highlight class="comment">//example</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="classsceneSP2_1a0ca9c0e26087106b19d78986a3e89735" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuest" kindref="compound">Quest</ref><sp/><ref refid="classsceneSP2_1a0ca9c0e26087106b19d78986a3e89735" kindref="member">One</ref>;</highlight></codeline>
+<codeline lineno="234" refid="classsceneSP2_1aa2e4c0f2a513ce62ff9a0d196afb2c6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuest" kindref="compound">Quest</ref><sp/><ref refid="classsceneSP2_1aa2e4c0f2a513ce62ff9a0d196afb2c6d" kindref="member">Two</ref>;</highlight></codeline>
+<codeline lineno="235" refid="classsceneSP2_1a349231128a7210be3312325d387b1239" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuest" kindref="compound">Quest</ref><sp/><ref refid="classsceneSP2_1a349231128a7210be3312325d387b1239" kindref="member">Three</ref>;</highlight></codeline>
+<codeline lineno="236" refid="classsceneSP2_1a8ff5e1ebe3f907af6392add26a9f31e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuest" kindref="compound">Quest</ref><sp/><ref refid="classsceneSP2_1a8ff5e1ebe3f907af6392add26a9f31e6" kindref="member">Four</ref>;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//room<sp/>interaction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="classsceneSP2_1ae59b6dbc32ceca06e5dec05800768c7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classStationScene" kindref="compound">StationScene</ref><sp/><ref refid="classsceneSP2_1ae59b6dbc32ceca06e5dec05800768c7d" kindref="member">door</ref>;</highlight></codeline>
+<codeline lineno="240" refid="classsceneSP2_1a4c8fb56cf5b618b425153849da3a7843" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a4c8fb56cf5b618b425153849da3a7843" kindref="member">lightSwitch</ref>;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a5045a8867b1acb99e3d99e83895bad5f" kindref="member">RenderText</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/>std::string<sp/>text,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a554b644c097af6a01809690d032cec0b" kindref="member">RenderTextOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/>std::string<sp/>text,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1ac987b33f8bb07f2078d856dfc9f3ba73" kindref="member">RenderImageOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1ac987b33f8bb07f2078d856dfc9f3ba73" kindref="member">RenderImageOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sizeX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sizeY);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a6d5c2e98eaecf56661456add51700ebf" kindref="member">QuestCompleteCheck</ref>();</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1aef464b9b4f04ad8cc893ba2bdea01011" kindref="member">RenderStuffOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>direction,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotate_x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotate_y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotate_z);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a7eb72bce5028c0b185d95fcc9dfd8f7d" kindref="member">RenderTutorialScreen</ref>();</highlight></codeline>
+<codeline lineno="249" refid="classsceneSP2_1a15c5f3c343c58e07c93bb8a14e4fc325" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a15c5f3c343c58e07c93bb8a14e4fc325" kindref="member">framePerSecond</ref>;</highlight></codeline>
+<codeline lineno="250" refid="classsceneSP2_1a814107061dabfc8a91a9264479aa57a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a814107061dabfc8a91a9264479aa57a8" kindref="member">screenWidth</ref>,<sp/><ref refid="classsceneSP2_1ac05969b1088221b241046c649e702773" kindref="member">screenHeight</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Creating<sp/>the<sp/>player<sp/>who<sp/>gives<sp/>the<sp/>last<sp/>quest</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="classsceneSP2_1aabae0d1c2fc22fb522de134fde0832bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSekHeng" kindref="compound">SekHeng</ref><sp/><ref refid="classsceneSP2_1aabae0d1c2fc22fb522de134fde0832bc" kindref="member">sek_heng_</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a6523e8cf564e7f88ae94958fd9c08d1a" kindref="member">renderingSekHeng</ref>();</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Creating<sp/>the<sp/>player<sp/>who<sp/>gives<sp/>the<sp/>last<sp/>quest</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//making<sp/>dialogue<sp/>box<sp/>easier<sp/>for<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1ae123d615a0922d326c4c5088e47b9b23" kindref="member">renderDialogueBox</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>dialogue);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//making<sp/>dialogue<sp/>box<sp/>easier<sp/>for<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//rendering<sp/>the<sp/>teleporter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a2a5f5a79ed05066a23f447e4cbbb084f" kindref="member">Renderteleporter</ref>();</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//rendering<sp/>the<sp/>teleporter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265" refid="classsceneSP2_1a09d7c0ef86055fdce58f8a26772e30ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a09d7c0ef86055fdce58f8a26772e30ad" kindref="member">headrotating</ref>;</highlight></codeline>
+<codeline lineno="266" refid="classsceneSP2_1a923aaf76219020bdb355827823b13303" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a923aaf76219020bdb355827823b13303" kindref="member">headrotate</ref>;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1ae60186d06cd8213f6f5767667d3e2822" kindref="member">renderChunFei</ref>();</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1aaddae37328c79dbb87b9963e1eed653d" kindref="member">headanimation</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a408f792ee899362f90a59583f3173f5f" kindref="member">renderNPC3</ref>();</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//render<sp/>building</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a42247c1b8c563d1b335911da5d2d98a9" kindref="member">RenderBuilding</ref>();</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1afd5bafac85490eaca7c0b1795654911f" kindref="member">populateArea</ref>();</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//quest<sp/>flow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="classsceneSP2_1a0e376bc1886a0502be375d9580bffe32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a0e376bc1886a0502be375d9580bffe32" kindref="member">quest_stage</ref>;</highlight></codeline>
+<codeline lineno="277" refid="classsceneSP2_1aac11816d17ab18c9082af56655c40f73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1aac11816d17ab18c9082af56655c40f73" kindref="member">Quest1_finished</ref>;</highlight></codeline>
+<codeline lineno="278" refid="classsceneSP2_1add3605bb34ef65cd6e87220fce77cd2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1add3605bb34ef65cd6e87220fce77cd2c" kindref="member">Quest2_finished</ref>;</highlight></codeline>
+<codeline lineno="279" refid="classsceneSP2_1af65e712a9fe9066327b9a6a64b2632aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1af65e712a9fe9066327b9a6a64b2632aa" kindref="member">Quest3_finished</ref>;</highlight></codeline>
+<codeline lineno="280" refid="classsceneSP2_1a2808ff6966a423b7db417e8cb71f222a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a2808ff6966a423b7db417e8cb71f222a" kindref="member">Quest4_finished</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//animating<sp/>teleportation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a7b2a8d3962e7f68a3934dc9dfd68902c" kindref="member">animateTeleporting</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>dt);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1abf4eb8b0bfd2b347797ba393db83f53e" kindref="member">animateTeleportation</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>dt);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//logic<sp/>of<sp/>teleporter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a1c55e4f6ea52aeabc02bd4c2341b55c0" kindref="member">teleport</ref>();</highlight></codeline>
+<codeline lineno="287" refid="classsceneSP2_1a1f3ea08dbc5eac4e3b8eb25564c86dbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a1f3ea08dbc5eac4e3b8eb25564c86dbf" kindref="member">teleportCoordY</ref>;</highlight></codeline>
+<codeline lineno="288" refid="classsceneSP2_1a14c24204864c6ed9f73dba523d9a47ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a14c24204864c6ed9f73dba523d9a47ec" kindref="member">startTeleporting</ref>;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//logic<sp/>of<sp/>teleporter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//animating<sp/>teleportation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//particle<sp/>effect<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="classsceneSP2_1a2bf234626dbed9764ca9b21f37a0a672" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;objectsForDisplay&gt;<sp/><ref refid="classsceneSP2_1a2bf234626dbed9764ca9b21f37a0a672" kindref="member">particleHandlers</ref>;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//particle<sp/>effect<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//music<sp/>updates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297" refid="classsceneSP2_1a961f4b109c551012dc7586a4bed7a1d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a961f4b109c551012dc7586a4bed7a1d6" kindref="member">musicTimeDelay</ref>;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//music<sp/>updates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//show<sp/>tutorial<sp/>screen</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301" refid="classsceneSP2_1a0e7537db0e97011ee38805f7c9beac40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classsceneSP2_1a0e7537db0e97011ee38805f7c9beac40" kindref="member">tutorialscreen</ref>;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//minigame<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304" refid="classsceneSP2_1a68a37999b3be57e8df462adba53fc18a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classminigame" kindref="compound">minigame</ref><sp/><ref refid="classsceneSP2_1a68a37999b3be57e8df462adba53fc18a" kindref="member">MiniGame</ref>;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="MyGraphics/Source/sceneSP2.h"/>
+  </compounddef>
+</doxygen>

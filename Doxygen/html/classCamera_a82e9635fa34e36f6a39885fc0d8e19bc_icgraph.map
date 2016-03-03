@@ -1,0 +1,3 @@
+<map id="Camera::moveZ" name="Camera::moveZ">
+<area shape="rect" id="node2" href="$classCamera.html#acc1741feb6d9da849ea4b6c12e0711e6" title="To be called every frame. Camera will get user inputs and update its position and orientation..." alt="" coords="165,5,281,32"/>
+</map>

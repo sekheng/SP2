@@ -1,0 +1,6 @@
+<map id="Quest::Update" name="Quest::Update">
+<area shape="rect" id="node2" href="$classQuest.html#ad040092b1c64e7da4286bcb358e1f145" title="bounds check if player is within range to pick up item " alt="" coords="181,5,323,32"/>
+<area shape="rect" id="node3" href="$classCamera3.html#a4c484a400a9c2e64f3334fc62330368a" title="getting camera&#39;s position of x coordinate " alt="" coords="160,56,344,83"/>
+<area shape="rect" id="node4" href="$classCamera3.html#aae412d5efa2bae38cc9d5f38fb289f3a" title="getting camera&#39;s position of z coordinate " alt="" coords="160,107,344,133"/>
+<area shape="rect" id="node5" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Define the key input callback and prevent the key from pressing twice " alt="" coords="165,157,339,184"/>
+</map>

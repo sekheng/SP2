@@ -1,0 +1,5 @@
+<map id="StationScene::getCard1" name="StationScene::getCard1">
+<area shape="rect" id="node2" href="$classsceneSP2.html#acb986ee342c1607b5cb27d9ceb6ad858" title="initializing whatever is needed for the scene " alt="" coords="246,5,353,32"/>
+<area shape="rect" id="node3" href="$classsceneSP2.html#a963ab61de5342e71f6227d9be05383f9" title="render everything in the room " alt="" coords="213,56,385,83"/>
+<area shape="rect" id="node4" href="$classsceneSP2.html#a07940fb3c6a5686d3268b80f5a112b48" title="where the rendering of all the stuff we needed will be here " alt="" coords="433,56,564,83"/>
+</map>
