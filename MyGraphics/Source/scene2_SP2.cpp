@@ -696,7 +696,7 @@ void scene2_SP2::Render()
 			RenderTextOnScreen(meshList[GEO_COMIC_TEXT], "Try Again!", Color(1, 0, 0), 5, 6, 8);
 	}
 	//interaction text
-    if (Numpad.NumpadRenderOnScreen() == false && Numpad.interactiontext()) // "Press 'C' to interact" appear
+    if (Numpad.NumpadRenderOnScreen() == false && Numpad.interactiontext() && beginEnding == false) // "Press 'C' to interact" appear
 	{
         renderDialogueBox("Numpad", "Press C to interact");
 	}
@@ -708,17 +708,17 @@ void scene2_SP2::Render()
 
 
     
-    std::stringstream connectPosX;
-    connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.f);
+ //   std::stringstream connectPosX;
+ //   connectPosX << std::fixed << std::setprecision(2) << "X : " << camera.getCameraXcoord();
+	//RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosX.str(), Color(0, 1, 0), 1.8f, 1.25f, 16.f);
 
-    std::stringstream connectPosZ;
-    connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
-	RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 14.f);
+ //   std::stringstream connectPosZ;
+ //   connectPosZ << std::fixed << std::setprecision(2) << "Z : " << camera.getCameraZcoord();
+	//RenderTextOnScreen(meshList[GEO_COMIC_TEXT], connectPosZ.str(), Color(0, 1, 0), 1.8f, 1.25f, 14.f);
 
-    std::stringstream ss;
-    ss << "FPS : " << static_cast<int>(framePerSecond);
-    RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
+ //   std::stringstream ss;
+ //   ss << "FPS : " << static_cast<int>(framePerSecond);
+ //   RenderTextOnScreen(meshList[GEO_COMIC_TEXT], ss.str(), Color(0, 1, 0), 4, 0.5, 0.5);
 
 	//std::stringstream input;
 	//input << "text : " << robotNPC2.get_LineOfDialogue(); /*<< Numpad.getdigit2() << Numpad.getdigit3() << Numpad.getdigit4();*/
@@ -1054,7 +1054,7 @@ void scene2_SP2::RenderVault()
 				renderMesh(meshList[GEO_VAULTCUBE], true);
 				if (vault.interaction() == true && !Numpad.interactiontext())
 				{
-					if (!Application::IsKeyPressed('E'))
+					if (!Application::IsKeyPressed('E') && beginEnding == false)
 					{
 						renderDialogueBox("Vault", vault.getDialogue(true));
 					}
@@ -2562,4 +2562,5 @@ void scene2_SP2::Reset()
 	endingTime = 0;
 	moveToDeadPoolZ = 0;
 	sizeofEndingScreen = 1;
+    Application::musics->reset();
 }

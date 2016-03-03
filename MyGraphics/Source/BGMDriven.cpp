@@ -274,3 +274,13 @@ void BGMDriven::playLovelyLullaby() {
         }
     }
 }
+
+/******************************************************************************/
+/*!
+\brief - A method to reset all the logic of BGMDriven
+*/
+/******************************************************************************/
+void BGMDriven::reset() {
+    playIAmYourFatherOnce = false;
+    playJoinDarkSideOnce = false;
+}

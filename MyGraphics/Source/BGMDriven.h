@@ -48,6 +48,8 @@ public:
     //to stop all music
     void stopAllSound();
 
+    void reset();
+
 private:
     //these stuff will have the music source files and 
     //ensure engine won't have to keep on going to external files and play music
