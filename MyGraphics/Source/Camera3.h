@@ -56,12 +56,6 @@ public:
     float getCameraYrotation();
     float getCameraXrotation();
 
-    //CrossHair Stuff
-    float getCrossHairX();
-    float getCrossHairY();
-    float getCrossHairZ();
-    void setRadiusBetcrosshair_cam(float radius);
-    //CrossHair Stuff
 
     float cursorCoordX;
     float cursorCoordY;

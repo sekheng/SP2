@@ -1,7 +1,7 @@
 /******************************************************************************/
 /*!
 \file       scene3_SP2.h
-\author  Lee Sek Heng
+\author  Lee Sek Heng, Seetoo Victor, Lim Guan Hui, Li Chun Fei
 \par        email: 150629Z@mymail.nyp.edu.sg
 \brief -
 Creating a clean scene so that my teammates can code in ease

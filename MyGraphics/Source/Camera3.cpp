@@ -138,10 +138,6 @@ void Camera3::Init(const char *fileLocation)
     it = cameraCoordinates.find("boundscheckz");
     boundaryZ = it->second;
 
-    if (cameraCoordinates.count("crosshairradius") == 1) {
-        it = cameraCoordinates.find("crosshairradius");
-        crossHairRadius = it->second;
-    }
     cameraCoordinates.clear();
 }
 /******************************************************************************/
@@ -248,7 +244,7 @@ void Camera3::Update(double dt)
 
 /******************************************************************************/
 /*!
-\brief
+\brief - 
 Reset the camera settings
 */
 /******************************************************************************/
@@ -263,7 +259,7 @@ void Camera3::Reset()
 
 /******************************************************************************/
 /*!
-\brief
+\brief - 
 rotation of the camera based on the mouse movement
 
 \param dt - frame time
@@ -279,7 +275,6 @@ void Camera3::rotateCamera(double dt)
     CameraXrotation = Math::Clamp(CameraXrotation, minCameraXrotation, maxCameraXrotation);
 
    target = Vector3(sin(Math::DegreeToRadian(CameraYrotation)) * cos(Math::DegreeToRadian(CameraXrotation)) + position.x, -sin(Math::DegreeToRadian(CameraXrotation)) + position.y, cos(Math::DegreeToRadian(CameraYrotation)) * cos(Math::DegreeToRadian(CameraXrotation)) + position.z );
-   invisibleCrossHair = Vector3(crossHairRadius * sin(Math::DegreeToRadian(CameraYrotation)) * crossHairRadius * cos(Math::DegreeToRadian(CameraXrotation)) + position.x, crossHairRadius * -sin(Math::DegreeToRadian(CameraXrotation)) + position.y, crossHairRadius * cos(Math::DegreeToRadian(CameraYrotation)) * crossHairRadius * cos(Math::DegreeToRadian(CameraXrotation)) + position.z);
    Vector3 view = (target - position).Normalized();
    Vector3 right = view.Cross(defaultUp);
     up = right.Cross(view);
@@ -287,14 +282,11 @@ void Camera3::rotateCamera(double dt)
 
 /******************************************************************************/
 /*!
-\brief
-An improved camera movement based on first person
+\brief - An improved camera movement based on first person
 
 \param dt - frame time
 */
 /******************************************************************************/
-
-
 void Camera3::cameraMovement(double dt)
 {
     float walkingX = 0;
@@ -437,6 +429,16 @@ void Camera3::setLocation(float x, float y, float z) {
     position.z = z;
 }
 
+/******************************************************************************/
+/*!
+\brief - boundary check with the player based on the X-axis, cheaper to compute and determines
+ where the player can go
+
+\param x - the distance from the origin based on the X-axis, in both direction
+
+\param posX - x coordinate of player's position
+*/
+/******************************************************************************/
 bool Camera3::boundsCheckXaxis(const float& x, const float& posX) {
     if (posX < x && posX > -x)
     {
@@ -445,6 +447,16 @@ bool Camera3::boundsCheckXaxis(const float& x, const float& posX) {
     return false;
 }
 
+/******************************************************************************/
+/*!
+\brief - boundary check with the player based on the Z-axis, cheaper to compute and determines
+where the player can go
+
+\param z - the distance from the origin based on the Z-axis, in both direction
+
+\param posZ - z coordinate of player's position
+*/
+/******************************************************************************/
 bool Camera3::boundsCheckZaxis(const float& z, const float& posZ) {
     if (posZ < z && posZ > -z)
     {
@@ -453,6 +465,14 @@ bool Camera3::boundsCheckZaxis(const float& z, const float& posZ) {
     return false;
 }
 
+/******************************************************************************/
+/*!
+\brief - a Data Driven method to initialise a bunch of static objects that can be used to render
+ the coordinates of GameObject, and as a bounds check with the player's coordinate
+
+\param fileLocation - the path name to the text file
+*/
+/******************************************************************************/
 void Camera3::InitObjects(const char *fileLocation) {
     std::ifstream fileStream(fileLocation, std::ios::binary);
     if (!fileStream.is_open()) {
@@ -505,22 +525,13 @@ void Camera3::InitObjects(const char *fileLocation) {
     }
 }
 
-float Camera3::getCrossHairX() {
-    return invisibleCrossHair.x;
-}
+/******************************************************************************/
+/*!
+\brief - a method to set the rotation / target of the camera
 
-float Camera3::getCrossHairY() {
-    return invisibleCrossHair.y;
-}
-
-float Camera3::getCrossHairZ() {
-    return invisibleCrossHair.z;
-}
-
-void Camera3::setRadiusBetcrosshair_cam(float radius) {
-    crossHairRadius = radius;
-}
-
+\param fileLocation - the path name to the text file
+*/
+/******************************************************************************/
 void Camera3::setRotation(float rotateX, float rotateY) {
     CameraXrotation = rotateX;
     CameraYrotation = rotateY;
