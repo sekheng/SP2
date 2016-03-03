@@ -504,3 +504,19 @@ int NumPad::getdigit4()
 {
 	return digit4;
 }
+/****************************************************************************/
+/*!
+\brief
+Reset all animations & values to default
+*/
+/****************************************************************************/
+void NumPad::Reset()
+{
+	firstrotate = secondrotate = thirdrotate = fourthrotate = 0;
+	check = open = close = render = false;
+	firstrotate = secondrotate = thirdrotate = fourthrotate = arrow = 0.0f;
+	time = 0.0;
+	time_delay = 0.2f;
+	changearrow = 19.5;
+	digit1 = digit2 = digit3 = digit4 = 0;
+}

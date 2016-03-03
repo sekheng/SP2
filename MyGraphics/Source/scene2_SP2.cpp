@@ -329,6 +329,7 @@ void scene2_SP2::Init()
 	robotNPC1.Init("robotNPC1", 5, Vector3(0, 0, -300), 10, 40, camera, "NPC data//NPC_4.txt");
 	robotNPC2.Init("robotNPC2", 6, Vector3(800, 0, 800), 40, 40, camera, "NPC data//NPC_5.txt");
 	robotNPC3.Init("robotNPC3", 6, Vector3(-700, 0, 100), 40, 40, camera, "NPC data//NPC_6.txt");
+	vault.Init("vault", 5, Vector3(0, 0, 0), 80, 100, camera, "NPC data//NPC_7.txt");
 	//NumpadNPC.Init("numpad", 1, Vector3(22, 25, 40), 40, 40, camera, "NPC data//NPC_6.txt");
 	//diamondNPC.Init("diamondNPC", 6, Vector3(900,200,800), 80, 80, camera, "NPC data//NPC_5.txt");
 
@@ -376,6 +377,7 @@ where the logic of the game is, and update
 /******************************************************************************/
 void scene2_SP2::Update(double dt)
 {
+	
     VaultAnimation(dt);
     Numpad.Update(dt);
     Numpad.NumpadProgram(dt);
@@ -387,6 +389,7 @@ void scene2_SP2::Update(double dt)
 	robotNPC1.update(dt);
 	robotNPC2.update(dt);
 	robotNPC3.update(dt);
+	vault.update(dt);
 	//diamondNPC.update(dt);
 	
     //displaying instructions
@@ -438,11 +441,7 @@ void scene2_SP2::Update(double dt)
     }
 	if (Application::IsKeyPressed('R'))
 	{
-		change3 = false;
-		NPCrotate3 = false;
-		NPCrotating3 = 0;
-		boxesappear3 = false;
-
+		Reset();
 	}
 
     //For 3D effects of the music
@@ -699,7 +698,7 @@ void scene2_SP2::Render()
 	//interaction text
     if (Numpad.NumpadRenderOnScreen() == false && Numpad.interactiontext()) // "Press 'C' to interact" appear
 	{
-        renderDialogueBox("Numpad", "Press 'C' to interact");
+        renderDialogueBox("Numpad", "Press C to interact");
 	}
     if (beginIamYourFather == true && moveToDeadPoolZ < -135) {
         renderEndingScreen();
@@ -1048,10 +1047,23 @@ void scene2_SP2::RenderVault()
 		
 			if (it.getName() == "vaultcube") {
 				modelStack.PushMatrix();
-				modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+				//modelStack.Translate(it.getObjectposX(), it.getObjectposY(), it.getObjectposZ());
+				modelStack.Translate(vault.NPC_getposition_x(), vault.NPC_getposition_y(), vault.NPC_getposition_z());
 				modelStack.Rotate(180, 0, 1, 0);
 				modelStack.Scale(7, 3, 3);
 				renderMesh(meshList[GEO_VAULTCUBE], true);
+				if (vault.interaction() == true && !Numpad.interactiontext())
+				{
+					if (!Application::IsKeyPressed('E'))
+					{
+						renderDialogueBox("Vault", vault.getDialogue(true));
+					}
+					else
+					{
+						renderDialogueBox("Vault", vault.getDialogue(false));
+					}
+
+				}
 				modelStack.PopMatrix();
 				break;
 			}
@@ -2526,4 +2538,28 @@ void scene2_SP2::rollingCredits() {
             }
         }
     }
+}
+/******************************************************************************/
+/*!
+\brief 
+Reset whole scene2 to default
+*/
+/******************************************************************************/
+void scene2_SP2::Reset()
+{
+	camera.Reset();
+	Numpad.Reset();
+	creditRolling.reset();
+	beginEnding = false;
+	change3 = false;
+	NPCrotate3 = false;
+	NPCrotating3 = 0;
+	boxesappear3 = false;
+	wheelturn = stickpush = dooropen = false;
+	wheelturning = stickpushing = dooropening = 0;
+	beginEnding = false;
+	beginIamYourFather = false;
+	endingTime = 0;
+	moveToDeadPoolZ = 0;
+	sizeofEndingScreen = 1;
 }
