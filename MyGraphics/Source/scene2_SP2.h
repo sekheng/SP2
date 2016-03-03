@@ -220,6 +220,7 @@ private:
 	void diamondAnimation(double dt);
 	void NPCAnimation(double dt);
 	void BoxesAnimation(double dt);
+	void Reset();
 	
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -233,6 +234,7 @@ private:
 	NPC robotNPC1;
 	NPC robotNPC2;
 	NPC robotNPC3;
+	NPC vault;
 	//NPC NumpadNPC;
 	
     MS modelStack, viewStack, projectionStack;

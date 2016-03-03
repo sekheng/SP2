@@ -1,0 +1,5 @@
+Press E to interact
+Welcome to this planet.
+You can find out your identity 
+by solving the puzzle here.
+Good Luck!
